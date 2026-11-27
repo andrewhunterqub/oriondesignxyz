@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Calculating Hardware Startup Cash Flow | Orion Design</title>
+    <meta
+      name="description"
+      content="A practical guide to hardware startup cash flow, covering opening cash, upfront spend, inventory timing, payment delay, overhead, and runway."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/calculating-hardware-startup-cash-flow.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Calculating Hardware Startup Cash Flow">
+    <meta
+      property="og:description"
+      content="A practical guide to hardware startup cash flow, covering opening cash, upfront spend, inventory timing, payment delay, overhead, and runway."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/calculating-hardware-startup-cash-flow.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-calculating-hardware-startup-cash-flow.jpg">
+    <meta property="og:image:alt" content="Guide to calculating hardware startup cash flow">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculating Hardware Startup Cash Flow">
+    <meta
+      name="twitter:description"
+      content="A practical guide to hardware startup cash flow, covering opening cash, upfront spend, inventory timing, payment delay, overhead, and runway."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-calculating-hardware-startup-cash-flow.jpg">
+    <meta name="twitter:image:alt" content="Guide to calculating hardware startup cash flow">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-calculating-hardware-startup-cash-flow.jpg",
+        "headline": "Calculating Hardware Startup Cash Flow",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-24",
+        "articleSection": "Startup finance",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/calculating-hardware-startup-cash-flow.html",
+        "datePublished": "2026-03-13"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Hardware startup cash flow",
+                "item": "https://oriondesign.xyz/guides/calculating-hardware-startup-cash-flow.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the difference between cash flow and profit?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Profit measures whether sales exceed costs over a period. Cash flow measures when money actually enters and leaves the bank. A hardware business can be profitable on paper and still run out of cash because it pays for stock and tooling long before customers or channels pay it."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why do growing hardware businesses run out of cash?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Because each extra unit sold usually has to be bought, shipped and stored before it is paid for. Faster growth means larger stock orders sooner, so more cash is tied up in inventory and unpaid invoices at any one time."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I calculate cash runway?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Divide the cash you have by your average monthly net cash outflow. For an early hardware business, a monthly cash flow model is more reliable than a single average, because burn changes as stock orders, launch costs and sales arrive at different times."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much runway does a hardware startup need?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no fixed rule, but many founders aim for twelve to eighteen months of runway after a funding round. Hardware often needs the upper end, or more, because tooling, certification and manufacturing lead times make delays common and expensive."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is working capital in a hardware business?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Working capital is the cash tied up in running the business day to day, mainly stock, goods in transit and money owed by customers, minus what you owe suppliers. Longer supplier lead times and slower customer payment both increase the working capital you need."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Hardware startup cash flow</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 24 November 2026 <span aria-hidden="true">·</span> For founders planning how much cash a hardware launch needs, and when</p>
+            <h1>Calculating hardware startup cash flow</h1>
+            <p>
+              Hardware businesses fail on cash more often than on spreadsheet profit. The difference is timing:
+              when cash leaves for tooling, stock, and overhead versus when customers or channels finally pay you.
+            </p>
+          </div>
+          <div class="metric-strip">
+            <div class="metric-pill">
+              <strong>Topic</strong>
+              <span>Startup cash flow</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Audience</strong>
+              <span>Founders and commercial leads</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Tool</strong>
+              <span>Cashflow Projection Tool</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Use it for</strong>
+              <span>Runway and working-capital planning</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Cash flow is a timing problem, not just a margin problem.</h2>
+              <div class="formula-block">Closing cash = opening cash + cash received - cash paid</div>
+              <p>
+                To calculate hardware startup cash flow, list each month's cash in (customer and channel payments, when they actually arrive) and cash out
+                (upfront development and tooling, stock, overhead), then carry the closing balance forward. A business can grow in revenue and still run out of cash
+                if it pays for stock and overhead before customer cash arrives.
+              </p>
+            </div>
+
+            <p>
+              This is especially common in hardware because growth often increases the need for <a class="glossary-term" href="../knowledge/glossary.html#term-working-capital" data-definition="Cash tied up between paying for stock and being paid for it." aria-label="working capital: Cash tied up between paying for stock and being paid for it. (glossary)">working capital</a>.
+              You buy more stock, carry more packaging, pay more suppliers, and still wait thirty or sixty days for cash to return.
+              Software businesses can often scale with little extra cash tied up. Hardware businesses cannot: every extra unit sold usually has to be paid for first.
+            </p>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#definitions">Key definitions</a></li>
+              <li><a class="text-link-inline" href="#cashflow-traps">The four cashflow traps hardware teams hit early</a></li>
+              <li><a class="text-link-inline" href="#model-needs">What a useful early cashflow model needs</a></li>
+              <li><a class="text-link-inline" href="#example">A worked example</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common cash flow modelling mistakes</a></li>
+              <li><a class="text-link-inline" href="#using-the-model">How to use the model well</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Practical next steps</a></li>
+            </ol>
+
+            <h2 id="definitions">Key definitions</h2>
+            <div class="formula-block">Monthly net cash flow = cash received - (stock payments + overhead + one-off spend)</div>
+            <div class="formula-block">Runway (months) = cash available / average monthly net cash outflow</div>
+            <div class="formula-block">Cash conversion cycle (days) = days stock is held + days customers take to pay - days you take to pay suppliers</div>
+            <p>
+              The cash conversion cycle is the most useful single idea here. It measures how long each pound spent on stock is away from the business before it comes back.
+              The longer the cycle, the more cash growth consumes.
+            </p>
+
+            <h2 id="cashflow-traps">The four cashflow traps hardware teams hit early</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Inventory is paid before it is sold.</strong>
+                Even if the business is profitable per unit, the stock still has to be financed first. Many overseas suppliers ask for a deposit at order and the balance before shipment, weeks before the stock reaches a customer.
+              </div>
+              <div>
+                <strong>Channels pay late.</strong>
+                Marketplaces, distributors, and retailers often introduce a delay between sale and cash receipt.
+              </div>
+              <div>
+                <strong>Upfront project spend is treated as one-off and ignored.</strong>
+                Tooling, development, compliance, and launch assets can create a hole that growth does not refill quickly enough.
+              </div>
+              <div>
+                <strong>Fixed overhead keeps leaving every month.</strong>
+                Rent, people, software, contractors, and basic operations do not wait for the revenue curve to mature.
+              </div>
+            </div>
+
+            <h2 id="model-needs">What a useful early cashflow model needs</h2>
+            <ol>
+              <li>opening cash</li>
+              <li>one-off launch or development spend, placed in the month it is actually paid</li>
+              <li>monthly unit sales and growth</li>
+              <li><a class="glossary-term" href="../knowledge/glossary.html#term-cogs" data-definition="Cost of goods sold: the direct cost of making and delivering each unit sold." aria-label="COGS: Cost of goods sold: the direct cost of making and delivering each unit sold. (glossary)">COGS</a> per unit, including freight, duty and packaging</li>
+              <li>fixed monthly overhead</li>
+              <li>payment delay from customers or channels</li>
+              <li>supplier <a class="glossary-term" href="../knowledge/glossary.html#term-payment-terms" data-definition="The agreed timing and conditions of payment between buyer and seller, such as a deposit with the order and the balance before shipment, or payment a set number of days after invoice." aria-label="payment terms: The agreed timing and conditions of payment between buyer and seller, such as a deposit with the order and the balance before shipment, or payment a set number of days after invoice. (glossary)">payment terms</a> and minimum order quantities, once you have them</li>
+            </ol>
+
+            <div class="pull-quote">
+              <p>
+                The business does not run out of cash because growth is bad. It runs out of cash because growth changes the timing of cash faster than the team planned for.
+              </p>
+            </div>
+
+            <h2 id="example">A worked example</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative figures only. Start with GBP85,000 in cash, spend GBP18,000 upfront on development or tooling, sell 120 units in month 1,
+                grow 12% per month, and carry GBP22 of COGS on a GBP49 sale price. Add GBP9,500 of monthly overhead and a one-month payment delay.
+                Stock is paid in the month it is sold.
+              </p>
+              <p>
+                Each unit contributes GBP27, so the business needs about 352 units a month just to cover overhead. Sales do not reach that level until month 11,
+                and because cash arrives a month late, the bank balance keeps falling for the whole first year.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Units sold</th>
+                  <th>Cash in</th>
+                  <th>Cash out</th>
+                  <th>Closing cash</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>120</td>
+                  <td>GBP0</td>
+                  <td>GBP30,140</td>
+                  <td>GBP54,860</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>151</td>
+                  <td>GBP6,566</td>
+                  <td>GBP12,822</td>
+                  <td>GBP42,036</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>211</td>
+                  <td>GBP9,261</td>
+                  <td>GBP14,142</td>
+                  <td>GBP25,959</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>297</td>
+                  <td>GBP12,985</td>
+                  <td>GBP16,034</td>
+                  <td>GBP14,818</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>417</td>
+                  <td>GBP18,277</td>
+                  <td>GBP18,674</td>
+                  <td>GBP10,759</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The low point is roughly GBP10,800 in month 12, and cash only starts to rise in month 13. The P&amp;L may look healthy later in the year,
+              but the cash graph dips much earlier because month 1 and 2 outflows happen before revenue arrives.
+            </p>
+            <p>
+              Now change one input. If customers or channels pay after two months instead of one, the same business runs out of cash in month 10
+              and is still roughly GBP9,600 short in month 14. Nothing about the product or the margin changed. Only the timing did.
+            </p>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 274" width="100%" role="img" aria-labelledby="cf-fig-title cf-fig-desc">
+                <title id="cf-fig-title">Closing cash month by month, with customers paying one month late or two months late</title>
+                <desc id="cf-fig-desc">Line chart of closing cash for months 1 to 14, using the worked example: £85,000 opening cash, £18,000 upfront spend, 120 units in month 1 growing 12% a month, £27 contribution a unit and £9,500 monthly overhead. With a one-month payment delay, cash falls from £54,860 in month 1 to a low point of about £10,800 in month 12, then starts to rise. With a two-month delay, cash falls below zero in month 10 and is still about £9,600 short in month 14.</desc>
+                <line x1="62" y1="30" x2="322" y2="30" class="gd-grid"/>
+                <text x="56" y="35" text-anchor="end" class="gd-m">£60k</text>
+                <line x1="62" y1="82" x2="322" y2="82" class="gd-grid"/>
+                <text x="56" y="87" text-anchor="end" class="gd-m">£40k</text>
+                <line x1="62" y1="134" x2="322" y2="134" class="gd-grid"/>
+                <text x="56" y="139" text-anchor="end" class="gd-m">£20k</text>
+                <text x="56" y="191" text-anchor="end" class="gd-m">£0</text>
+                <line x1="62" y1="20" x2="62" y2="212" class="gd-axis"/>
+                <line x1="62" y1="186" x2="322" y2="186" class="gd-axis"/>
+                <text x="62" y="14" class="gd-m">Closing cash</text>
+                <text x="62" y="244" text-anchor="middle" class="gd-m">1</text>
+                <text x="122" y="244" text-anchor="middle" class="gd-m">4</text>
+                <text x="182" y="244" text-anchor="middle" class="gd-m">7</text>
+                <text x="242" y="244" text-anchor="middle" class="gd-m">10</text>
+                <text x="322" y="244" text-anchor="middle" class="gd-m">14</text>
+                <text x="192" y="264" text-anchor="middle" class="gd-m">Month</text>
+                <polyline points="62,43.4 82,75.7 102,93.8 122,111.1 142,127.3 162,142.6 182,156.8 202,169.7 222,181.2 242,191.2 262,199.4 282,205.5 302,209.5 322,211" class="gd-curve gd-stroke-magenta gd-dash"/>
+                <polyline points="62,43.4 82,60.4 102,76.7 122,91.8 142,105.8 162,118.5 182,129.9 202,139.5 222,147.5 242,153.4 262,157 282,158 302,156.4 322,151.4" class="gd-curve gd-stroke-indigo"/>
+                <circle cx="282" cy="158" r="6" class="gd-fill-teal"/>
+                <circle cx="242" cy="191.2" r="5" class="gd-fill-magenta"/>
+                <line x1="176" y1="34" x2="200" y2="34" class="gd-curve gd-stroke-indigo"/>
+                <text x="208" y="39" class="gd-t">Paid 1 month late</text>
+                <line x1="176" y1="58" x2="200" y2="58" class="gd-curve gd-stroke-magenta gd-dash"/>
+                <text x="208" y="63" class="gd-t">Paid 2 months late</text>
+                <text x="322" y="122" text-anchor="end" class="gd-v gd-tt">Low point ≈ £10,800</text>
+                <text x="322" y="139" text-anchor="end" class="gd-t">in month 12</text>
+                <text x="70" y="205" class="gd-v gd-tm">Out of cash in month 10</text>
+                <text x="70" y="222" class="gd-t">≈ £9,600 short in month 14</text>
+              </svg>
+              <figcaption>Illustrative figures from the worked example, drawn to scale. The same product and margin either bottoms out at about £10,800 or runs out of cash in month 10: only the payment delay changed.</figcaption>
+            </figure>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              find the month with the lowest closing cash in your most cautious scenario, then make sure the business can survive it with a buffer of several months' overhead.
+            </div>
+
+            <h2 id="mistakes">Common cash flow modelling mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Modelling profit instead of cash.</strong>
+                Profit records a sale when it happens. Cash records it when the money lands. In hardware the gap can be months.
+              </div>
+              <div>
+                <strong>Annual or quarterly totals.</strong>
+                The low point usually sits inside a single month. Model monthly for at least the first eighteen months.
+              </div>
+              <div>
+                <strong>Ignoring minimum order quantities.</strong>
+                A supplier MOQ can force you to buy several months of stock at once, which often creates a deeper low point than launch itself.
+              </div>
+              <div>
+                <strong>Forgetting tax timing.</strong>
+                VAT and import duty paid on stock, and VAT collected on sales, move cash between periods. Check the timing with your accountant rather than assuming it nets out.
+              </div>
+              <div>
+                <strong>No re-order lead time.</strong>
+                If stock takes ten to twelve weeks to arrive, the next order must be paid for well before the current batch is sold.
+              </div>
+            </div>
+
+            <h2 id="using-the-model">How to use the model well</h2>
+            <ul>
+              <li>run a conservative, expected, and optimistic sales case</li>
+              <li>test both same-month payment and delayed-payment scenarios</li>
+              <li>check whether your first large stock order creates the real low point, not the launch month</li>
+              <li>pair the result with startup-cost and break-even tools, not in isolation; <a class="text-link-inline" href="building-a-hardware-financial-model.html">building a hardware financial model</a> shows how the pieces connect</li>
+            </ul>
+
+            <h2 id="next-steps">Practical next steps</h2>
+            <ol>
+              <li>Estimate the pre-launch spend with the <a class="text-link-inline" href="../tools/startup-cost-planner.html">Startup Cost Planner</a> and the approach in <a class="text-link-inline" href="estimating-hardware-development-costs.html">estimating hardware development costs</a>.</li>
+              <li>Ask likely suppliers and channels for their payment terms, deposits and MOQs, even informally.</li>
+              <li>Build a monthly model in the <a class="text-link-inline" href="../tools/cashflow-projection.html">Cashflow Projection Tool</a> and identify the low point in each scenario.</li>
+              <li>Check how far away unit break-even is using <a class="text-link-inline" href="financial-break-even-for-hardware-products.html">financial break-even for hardware products</a>.</li>
+              <li>Decide how much funding, or which changes to terms, stock or launch timing, would keep the low point safely above zero.</li>
+            </ol>
+            <p>
+              If you want the cash plan to sit alongside development stages, tooling and launch timing, the
+              <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a> helps bring those decisions into one staged plan.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Project the cash curve</h3>
+                <p>Model opening cash, upfront spend, growth, and payment timing over the first twelve months.</p>
+                <a
+                  class="button button-primary"
+                  href="../tools/cashflow-projection.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="cashflow_article_to_cashflow_tool"
+                >
+                  Open Cashflow Projection Tool
+                </a>
+              </div>
+              <div class="article-action-card">
+                <h3>Check the pre-launch requirement</h3>
+                <p>Use the startup-cost planner if you need to estimate how much capital the project needs before sales begin.</p>
+                <a
+                  class="button button-secondary"
+                  href="../tools/startup-cost-planner.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="cashflow_article_to_startup_cost_tool"
+                >
+                  Open Startup Cost Planner
+                </a>
+              </div>
+            </div>
+
+            <div class="callout-banner">
+              <h2>If the cash low-point surprises you, the model is doing its job.</h2>
+              <p>
+                Orion Design can help founders connect product cost, launch route, and working-capital pressure so the business model survives the first real scale-up.
+              </p>
+              <div class="cta-row">
+                <a
+                  class="button button-primary"
+                  href="../contact/index.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="cashflow_article_to_contact"
+                >
+                  Discuss a live project
+                </a>
+                <a class="button button-secondary" href="../tools/index.html">Explore all tools</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="funding-and-cash.html">Funding and cash: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/break-even-calculator.html">Break-even Calculator</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="minimum-order-quantities-and-cash.html">Minimum order quantities and cash</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="crowdfunding-a-hardware-product.html">Crowdfunding a hardware product</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This article answers</p>
+              <div class="tag-row">
+                <span>Hardware startup cashflow</span>
+                <span>Working capital</span>
+                <span>Runway planning</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is the difference between cash flow and profit?</h3>
+                <p>Profit measures whether sales exceed costs over a period. Cash flow measures when money actually enters and leaves the bank. A hardware business can be profitable on paper and still run out of cash because it pays for stock and tooling long before customers or channels pay it.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why do growing hardware businesses run out of cash?</h3>
+                <p>Because each extra unit sold usually has to be bought, shipped and stored before it is paid for. Faster growth means larger stock orders sooner, so more cash is tied up in inventory and unpaid invoices at any one time.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do I calculate cash runway?</h3>
+                <p>Divide the cash you have by your average monthly net cash outflow. For an early hardware business, a monthly cash flow model is more reliable than a single average, because burn changes as stock orders, launch costs and sales arrive at different times.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How much runway does a hardware startup need?</h3>
+                <p>There is no fixed rule, but many founders aim for twelve to eighteen months of runway after a funding round. Hardware often needs the upper end, or more, because tooling, certification and manufacturing lead times make delays common and expensive.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is working capital in a hardware business?</h3>
+                <p>Working capital is the cash tied up in running the business day to day, mainly stock, goods in transit and money owed by customers, minus what you owe suppliers. Longer supplier lead times and slower customer payment both increase the working capital you need.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container knowledge-footer">
+          <div class="knowledge-meta">
+            <div class="author-card">
+              <p class="eyebrow">Author</p>
+              <h2>Andrew Hunter</h2>
+              <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+            </div>
+            <div class="citation-card">
+              <p class="eyebrow">Source and Attribution</p>
+              <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to structure early cash planning, then validate it with project-specific sales, payment, and inventory data.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/break-even-calculator.html">Break-even Calculator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Cashflow Projection Tool for Hardware Startups | Orion Design</title>
+    <meta
+      name="description"
+      content="Project twelve months of hardware startup cashflow using opening cash, upfront spend, monthly sales, growth, COGS, overhead, and payment delay."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/cashflow-projection.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Cashflow Projection Tool for Hardware Startups | Orion Design">
+    <meta
+      property="og:description"
+      content="Project twelve months of hardware startup cashflow using opening cash, upfront spend, monthly sales, growth, COGS, overhead, and payment delay."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/cashflow-projection.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-cashflow-projection.jpg">
+    <meta property="og:image:alt" content="Cashflow projection tool for hardware startups from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cashflow Projection Tool for Hardware Startups | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Project twelve months of hardware startup cashflow using opening cash, upfront spend, monthly sales, growth, COGS, overhead, and payment delay."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-cashflow-projection.jpg">
+    <meta name="twitter:image:alt" content="Cashflow projection tool for hardware startups from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "image": "https://oriondesign.xyz/images/social/og/tools-cashflow-projection.jpg",
+        "name": "Cashflow Projection Tool for Hardware Startups",
+        "url": "https://oriondesign.xyz/tools/cashflow-projection.html",
+        "description": "Project twelve months of hardware startup cashflow using opening cash, upfront spend, monthly sales, growth, COGS, overhead, and payment delay.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-cashflow-projection.jpg",
+        "name": "Cashflow Projection Tool",
+        "url": "https://oriondesign.xyz/tools/cashflow-projection.html",
+        "description": "Project twelve months of hardware startup cashflow using opening cash, upfront spend, monthly sales, growth, COGS, overhead, and payment delay.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Cashflow Projection",
+                "item": "https://oriondesign.xyz/tools/cashflow-projection.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Why does faster growth make my cash position worse?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Each extra unit needs stock paid for before the customer pays you, so rapid growth pulls more cash out of the business in the short term. This is normal for hardware and is why profitable products can still run out of cash while scaling."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What payment delay should I use for retail or distributor sales?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Direct online sales are usually paid in the same month. Retailers and distributors commonly pay 30 to 90 days after invoice. One or two months is a sensible starting point until you have agreed terms in writing; the tool models up to three months, so you can test the longest common terms."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this include VAT, deposits or tooling instalments?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The model keeps things simple: month 1 spend is a single lump, and stock and overhead are paid in the month they occur. If your supplier asks for deposits or you pay tooling in stages, adjust the opening cash and month 1 spend to reflect what actually leaves the bank and when."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much cash buffer should a hardware startup keep?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no single right number, but keeping several months of fixed overhead in reserve is a common rule of thumb, and more if you depend on large stock orders or slow-paying customers. Hardware lead times mean problems take time to fix, so a thin buffer leaves little room to react."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Cashflow Projection</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Cashflow Projection Tool</h1>
+            <p>
+              Project twelve months of startup cashflow so you can see whether growth, payment timing, and upfront spend
+              are creating a runway problem long before the P&amp;L says the business is profitable.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Cashflow worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"openingCash":"60000","upfrontSpend":"15000","monthlyUnits":"200","monthlyGrowth":"10","sellingPriceCash":"29","cogsPerUnit":"13","monthlyOverhead":"4500","paymentDelay":"0"}'>Kitchen gadget, DTC</button>
+              <button class="preset-button" type="button" data-tool-preset='{"openingCash":"250000","upfrontSpend":"60000","monthlyUnits":"300","monthlyGrowth":"8","sellingPriceCash":"82","cogsPerUnit":"44","monthlyOverhead":"22000","paymentDelay":"2"}'>Smart home, retail</button>
+              <button class="preset-button" type="button" data-tool-preset='{"openingCash":"300000","upfrontSpend":"40000","monthlyUnits":"10","monthlyGrowth":"10","sellingPriceCash":"1200","cogsPerUnit":"430","monthlyOverhead":"18000","paymentDelay":"2"}'>B2B instrument</button>
+            </div>
+            <form class="tool-form" id="cashflow-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="openingCash">Opening cash</label>
+                  <input id="openingCash" type="number" min="0" value="85000" step="1000">
+                </div>
+                <div class="field-group">
+                  <label for="upfrontSpend">Month 1 development or tooling spend</label>
+                  <input id="upfrontSpend" type="number" min="0" value="18000" step="500">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="monthlyUnits">Month 1 units sold</label>
+                  <input id="monthlyUnits" type="number" min="0" value="120" step="10">
+                </div>
+                <div class="field-group">
+                  <label for="monthlyGrowth">Monthly unit growth (%)</label>
+                  <input id="monthlyGrowth" type="number" min="0" value="12" step="0.5">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="sellingPriceCash">Selling price per unit</label>
+                  <input id="sellingPriceCash" type="number" min="0" value="49" step="0.1">
+                </div>
+                <div class="field-group">
+                  <label for="cogsPerUnit">COGS per unit</label>
+                  <input id="cogsPerUnit" type="number" min="0" value="22" step="0.1">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="monthlyOverhead">Monthly fixed overhead</label>
+                  <input id="monthlyOverhead" type="number" min="0" value="9500" step="100">
+                </div>
+                <div class="field-group">
+                  <label for="paymentDelay">Customer payment delay</label>
+                  <select id="paymentDelay">
+                    <option value="0">Paid in the same month</option>
+                    <option value="1" selected>Paid one month later</option>
+                    <option value="2">Paid two months later</option>
+                    <option value="3">Paid three months later (about 90 days)</option>
+                  </select>
+                </div>
+              </div>
+              <button class="button button-primary" type="submit">Project cashflow</button>
+            </form>
+            <p class="helper-text">
+              Model assumption: stock purchase and overhead are paid in the month incurred, while revenue arrives according to the selected payment delay.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell">
+              <canvas id="cashflowChart" role="img" aria-label="Twelve month cashflow chart"></canvas>
+            </div>
+            <div class="result-grid" id="cashflowSummary"></div>
+            <div class="comparison-list" id="cashflowBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#cashflowCopy"
+                  data-copy-feedback="#cashflowCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="cashflowCopy" class="copy-output" readonly></textarea>
+              <div id="cashflowCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="cashflow_projection_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Profitable growth can still kill cash.</h2>
+              <div class="formula-block">Closing cash = opening cash + cash in - cash out</div>
+              <p>For hardware teams, the dangerous gap is often the time between paying for stock and being paid by customers, distributors, or retailers.</p>
+            </div>
+
+            <h2>What this tool is showing</h2>
+            <p>
+              The model tracks monthly units, revenue timing, stock cost, fixed overhead, and one-off month 1 spend.
+              That is enough to show whether the business is on course to dip below zero even if demand looks encouraging.
+            </p>
+
+            <h2>Use it for</h2>
+            <ul>
+              <li>estimating runway pressure before launch</li>
+              <li>testing the effect of payment delay from channels or customers</li>
+              <li>seeing whether higher sales volumes actually increase short-term cash strain</li>
+            </ul>
+            <h2>How to read your result</h2>
+            <p>
+              The most important figure is the lowest cash point across the twelve months, and when it happens, rather than the closing balance.
+            </p>
+            <ul>
+              <li><strong>Comfortable:</strong> cash never falls below a buffer of roughly three to six months of fixed overhead, and the curve flattens or turns upwards within the year. The plan can absorb a late payment or a slower sales month.</li>
+              <li><strong>Borderline:</strong> the lowest point comes close to zero, or the buffer drops below about three months of overhead. One delayed customer payment, a larger stock order or a slip in launch timing could tip the business into a shortfall.</li>
+              <li><strong>Worrying:</strong> cash goes negative at some point in the year. Note the month: that is the date by which you need more funding, better payment terms, or a smaller commitment to stock and overhead.</li>
+            </ul>
+            <p>
+              If the result is borderline or worrying, try the payment delay and growth inputs first, because faster growth often deepens the dip when stock is paid for before customers pay you. Then look at staging stock purchases, negotiating deposits or shorter terms, and timing the fundraise so it lands well before the lowest point. Many founders aim to raise with twelve to eighteen months of runway, as fundraising itself usually takes several months. Save your result to your <a href="product-plan-builder.html">product plan</a> to keep the cash picture next to your startup costs and margin assumptions.
+            </p>
+            <p>
+              If the projection only works with growth or payment terms you have not yet tested with real customers, a second opinion can help. You can <a href="../contact/index.html">get in touch with Andrew</a> to talk through the assumptions.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/minimum-order-quantities-and-cash.html">Minimum order quantities and cash</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/calculating-hardware-startup-cash-flow.html">Calculating hardware startup cash flow</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="startup-cost-planner.html">Startup Cost Planner</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="break-even-calculator.html">Break-even Calculator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/funding-and-cash.html">Funding and cash: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/funding-routes-uk-northern-ireland.html">Funding routes for hardware start-ups in the UK and Northern Ireland</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Runway</span>
+                <span>Working capital</span>
+                <span>Growth planning</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Why does faster growth make my cash position worse?</h3>
+                <p>Each extra unit needs stock paid for before the customer pays you, so rapid growth pulls more cash out of the business in the short term. This is normal for hardware and is why profitable products can still run out of cash while scaling.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What payment delay should I use for retail or distributor sales?</h3>
+                <p>Direct online sales are usually paid in the same month. Retailers and distributors commonly pay 30 to 90 days after invoice. One or two months is a sensible starting point until you have agreed terms in writing; the tool models up to three months, so you can test the longest common terms.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does this include VAT, deposits or tooling instalments?</h3>
+                <p>No. The model keeps things simple: month 1 spend is a single lump, and stock and overhead are paid in the month they occur. If your supplier asks for deposits or you pay tooling in stages, adjust the opening cash and month 1 spend to reflect what actually leaves the bank and when.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How much cash buffer should a hardware startup keep?</h3>
+                <p>There is no single right number, but keeping several months of fixed overhead in reserve is a common rule of thumb, and more if you depend on large stock orders or slow-paying customers. Hardware lead times mean problems take time to fix, so a thin buffer leaves little room to react.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for hardware teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="break-even-calculator.html">Break-even Calculator</a>
+          <a href="../guides/calculating-hardware-startup-cash-flow.html">Cashflow guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/cashflow-projection.js" defer></script>
+  </body>
+</html>

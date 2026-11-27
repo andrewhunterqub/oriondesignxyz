@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Choosing Plastic Materials for Products | Orion Design</title>
+    <meta
+      name="description"
+      content="How to choose a plastic for a product: requirements first, common polymers compared (PP, ABS, PC, nylon, acetal and more), grades, a worked example and recycling."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/choosing-plastic-materials.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Choosing plastic materials for products | Orion Design">
+    <meta
+      property="og:description"
+      content="How to choose a plastic for a product: requirements first, common polymers compared (PP, ABS, PC, nylon, acetal and more), grades, a worked example and recycling."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/choosing-plastic-materials.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-choosing-plastic-materials.jpg">
+    <meta property="og:image:alt" content="Choosing plastic materials guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Choosing plastic materials for products | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to choose a plastic for a product: requirements first, common polymers compared (PP, ABS, PC, nylon, acetal and more), grades, a worked example and recycling."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-choosing-plastic-materials.jpg">
+    <meta name="twitter:image:alt" content="Choosing plastic materials guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-choosing-plastic-materials.jpg",
+        "headline": "Choosing materials for plastic products: common polymers, trade-offs and how to decide",
+        "description": "How to choose a plastic for a product: requirements first, common polymers compared (PP, ABS, PC, nylon, acetal and more), grades, a worked example and recycling.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-26",
+        "articleSection": "Materials",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/choosing-plastic-materials.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Plastic materials"
+          },
+          {
+            "@type": "Thing",
+            "name": "Material selection"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Choosing plastic materials",
+                "item": "https://oriondesign.xyz/guides/choosing-plastic-materials.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the best plastic for a product enclosure?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no single best choice. ABS is a common starting point for indoor enclosures thanks to its finish and cost; PC/ABS adds toughness and heat resistance and is widely available in flame-retardant grades; polycarbonate suits very tough or transparent parts; polypropylene suits parts needing chemical resistance or living hinges. Choose from the requirements and test."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between ABS and polycarbonate?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ABS is cheaper, easier to mould and finish, and takes paint and plating well, but has lower heat and impact resistance. Polycarbonate is much tougher, has better heat resistance and comes in transparent grades, but costs more, needs drying before moulding and can stress-crack with some chemicals."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which plastic is best for gears and moving parts?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Acetal (POM) and nylon (PA) are the usual choices. Acetal has low friction and stays dimensionally stable; nylon is tougher but absorbs moisture, which changes its size and stiffness. Both are available in filled and lubricated grades."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I change the plastic after the mould is made?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sometimes, but it is risky. Different plastics shrink by different amounts, so a tool cut for one material may produce parts out of tolerance in another. Choose the material, and ideally the grade, before the tool is designed."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are recycled plastics suitable for products?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Often, for parts where their properties are adequate and consistent supply is available. Recycled grades can vary more between batches, so test them, agree specifications with the supplier, and avoid them where regulation requires specific virgin grades, such as some food-contact or medical uses."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Choosing plastic materials</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For designers, engineers and founders choosing plastics for moulded or machined parts</p>
+            <h1>Choosing materials for plastic products: common polymers, trade-offs and how to decide</h1>
+            <p>
+              How to choose a plastic for a physical product: start from the requirements, shortlist from the common polymers, understand grades and additives, and test in the real material before committing to tooling.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Choose a plastic from the product's requirements, not its reputation: load, temperature, chemicals, appearance, regulation, cost and end of life.</h2>
+              <p>
+                For many consumer and enclosure parts, the shortlist is polypropylene (PP), ABS, polycarbonate (PC) or a PC/ABS blend; for wear parts and gears, acetal (POM) or nylon (PA);
+                for soft-touch grips and seals, a thermoplastic elastomer (TPE). Write the requirements down first, shortlist two or three materials, check the datasheets for the specific grade,
+                and test prototypes in the intended material before the tool is cut, because each plastic shrinks differently.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#requirements">Start with the requirements</a></li>
+              <li><a class="text-link-inline" href="#plastics-compared">Common plastics compared</a></li>
+              <li><a class="text-link-inline" href="#grades-fillers">Grades, fillers and additives</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: choosing a material for a handheld device housing</a></li>
+              <li><a class="text-link-inline" href="#end-of-life">Recycling and end of life</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Next steps</a></li>
+            </ol>
+
+            <h2 id="requirements">Start with the requirements</h2>
+            <p>Before looking at materials, write down what the part must cope with. These questions eliminate most candidates quickly:</p>
+            <ul>
+              <li><strong>Loads:</strong> static, impact, fatigue or long-term load (plastics creep under sustained load).</li>
+              <li><strong>Temperature:</strong> the highest and lowest temperatures in use, storage and shipping, including inside a hot car or near a heat source.</li>
+              <li><strong>Chemicals and environment:</strong> cleaning products, oils, sunscreen, food, outdoor UV and moisture.</li>
+              <li><strong>Appearance:</strong> gloss, texture, colour, transparency, scratch resistance.</li>
+              <li><strong>Assembly:</strong> <a class="text-link-inline" href="joining-methods-for-product-design.html">snap fits</a>, <a class="text-link-inline" href="designing-snap-fits-and-living-hinges.html">living hinges</a>, screws, <a class="glossary-term" href="../knowledge/glossary.html#term-ultrasonic-welding" data-definition="Joining two plastic parts by pressing them together and vibrating them at high frequency until the interface melts and fuses. The joint is quick, strong and can seal, but cannot be undone." aria-label="ultrasonic welding: Joining two plastic parts by pressing them together and vibrating them at high frequency until the interface melts and fuses. The joint is quick, strong and can seal, but cannot be undone. (glossary)">ultrasonic welding</a>, bonding, painting or printing.</li>
+              <li><strong>Regulation:</strong> flammability ratings for electrical enclosures, <a class="glossary-term" href="../knowledge/glossary.html#term-food-contact-materials" data-definition="Materials and parts intended to touch food or drink, such as containers, utensils and appliance parts. They need grades and evidence suited to that use, so check the rules early." aria-label="food contact: Materials and parts intended to touch food or drink, such as containers, utensils and appliance parts. They need grades and evidence suited to that use, so check the rules early. (glossary)">food contact</a>, toys, medical use.</li>
+              <li><strong>Cost and supply:</strong> price per kilogram, availability of the grade, and whether recycled grades exist.</li>
+              <li><strong>End of life:</strong> whether the material can be identified, separated and recycled.</li>
+            </ul>
+
+            <h2 id="plastics-compared">Common plastics compared</h2>
+            <p>
+              Relative comparisons for typical unfilled grades. Properties vary widely between grades and suppliers, so use this to shortlist, then check the datasheet of the actual grade.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Material</th>
+                  <th>Strengths</th>
+                  <th>Watch out for</th>
+                  <th>Typical uses</th>
+                  <th>Relative cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-polypropylene-pp" data-definition="A light, tough, chemical-resistant plastic often used for containers and living hinges." aria-label="Polypropylene: A light, tough, chemical-resistant plastic often used for containers and living hinges. (glossary)">Polypropylene</a> (PP)</td>
+                  <td>Tough, light, good chemical resistance, living hinges</td>
+                  <td>Hard to bond and paint; lower stiffness; can warp</td>
+                  <td>Containers, caps, hinged lids, housings, automotive trim</td>
+                  <td>Low</td>
+                </tr>
+                <tr>
+                  <td>Polyethylene (HDPE, LDPE)</td>
+                  <td>Very tough, chemical resistant, flexible (LDPE)</td>
+                  <td>Low stiffness and heat resistance; hard to bond or print</td>
+                  <td>Bottles, tanks, toys, flexible parts</td>
+                  <td>Low</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-abs" data-definition="Acrylonitrile butadiene styrene: a common, low-cost rigid plastic with a good surface finish, widely used for enclosures and consumer products." aria-label="ABS: Acrylonitrile butadiene styrene: a common, low-cost rigid plastic with a good surface finish, widely used for enclosures and consumer products. (glossary)">ABS</a></td>
+                  <td>Good <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">surface finish</a>, easy to colour, paint and plate, stiff and fairly tough</td>
+                  <td>Poor UV resistance and limited resistance to many solvents unless modified</td>
+                  <td>Enclosures, consumer products, appliance housings</td>
+                  <td>Low to medium</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-polycarbonate-pc" data-definition="A very tough, heat-resistant plastic available in transparent grades." aria-label="Polycarbonate: A very tough, heat-resistant plastic available in transparent grades. (glossary)">Polycarbonate</a> (PC)</td>
+                  <td>Very tough, transparent grades, good heat resistance</td>
+                  <td>Can stress-crack with some chemicals; scratches; needs drying</td>
+                  <td>Clear covers, lenses, tough housings, safety parts</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-pc-abs" data-definition="A blend of polycarbonate and ABS that balances toughness, heat resistance and surface finish." aria-label="PC/ABS: A blend of polycarbonate and ABS that balances toughness, heat resistance and surface finish. (glossary)">PC/ABS</a> blend</td>
+                  <td>Combines PC toughness and heat resistance with ABS processing and finish</td>
+                  <td>Chemical resistance limited like ABS</td>
+                  <td>Electronics enclosures, handheld devices</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-nylon-pa" data-definition="Polyamide: a strong, tough engineering plastic that absorbs moisture, often glass-filled for stiffness." aria-label="Nylon: Polyamide: a strong, tough engineering plastic that absorbs moisture, often glass-filled for stiffness. (glossary)">Nylon</a> (PA6, PA66)</td>
+                  <td>Strong, tough, wear resistant; often glass-filled for stiffness</td>
+                  <td>Absorbs moisture, which changes size and stiffness</td>
+                  <td>Brackets, clips, gears, structural parts, cable ties</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-acetal-pom" data-definition="Polyoxymethylene: a stiff, low-friction engineering plastic used for gears, clips and mechanisms." aria-label="Acetal: Polyoxymethylene: a stiff, low-friction engineering plastic used for gears, clips and mechanisms. (glossary)">Acetal</a> (POM)</td>
+                  <td>Low friction, stiff, dimensionally stable, good fatigue resistance</td>
+                  <td>Hard to bond and paint; poor UV resistance</td>
+                  <td>Gears, bearings, clips, mechanisms</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td>Acrylic (PMMA)</td>
+                  <td>Clear, good scratch and UV resistance</td>
+                  <td>Brittle compared with PC</td>
+                  <td>Light guides, display windows, lenses</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td>Thermoplastic elastomers (TPE, TPU)</td>
+                  <td>Rubber-like, soft touch, can be over-moulded onto rigid parts</td>
+                  <td>Bonding to the rigid part depends on matching materials</td>
+                  <td>Grips, seals, feet, flexible covers</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td>High-performance plastics (for example PPS, PEEK)</td>
+                  <td>High temperature, chemical resistance and strength</td>
+                  <td>High cost; harder to process</td>
+                  <td>Demanding industrial, medical and automotive parts</td>
+                  <td>High to very high</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 id="grades-fillers">Grades, fillers and additives</h2>
+            <p>
+              Each plastic comes in many grades. Glass or mineral fillers increase stiffness and heat resistance but make parts more brittle and the tool wear faster.
+              Additives give UV stabilisation, flame retardancy, colour, impact modification or antistatic properties. For electrical products, flammability ratings
+              (often to the UL 94 scale, such as V-0) may be required by the product's safety standard. Always specify the grade, not just the polymer family, on drawings and purchase orders.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              choose the material before the tool is designed. Plastics shrink by different amounts as they cool, and the tool is cut oversize to suit one specific material. Changing material later can mean changing the tool.
+            </div>
+
+            <h2 id="example">Worked example: choosing a material for a handheld device housing</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A rechargeable handheld device needs a two-part housing. Requirements: survive a 1 m drop, stay rigid at up to 60 °C in a parked car,
+                resist hand cream and common cleaning wipes, take a smooth painted-look finish, and meet the flammability rating required by its safety standard.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Candidate</th>
+                  <th>Assessment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ABS</td>
+                  <td>Good finish and low cost, but marginal on heat and chemical resistance for this use</td>
+                </tr>
+                <tr>
+                  <td>Polycarbonate</td>
+                  <td>Excellent toughness and heat resistance; risk of stress cracking with some chemicals; harder to get the finish</td>
+                </tr>
+                <tr>
+                  <td>PC/ABS</td>
+                  <td>Balances toughness, heat and finish; flame-retardant grades are widely available. Shortlisted, with chemical tests against the actual creams and wipes</td>
+                </tr>
+                <tr>
+                  <td>Polypropylene</td>
+                  <td>Tough and chemical resistant, but too flexible for a rigid housing and harder to finish</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The team chooses a flame-retardant PC/ABS grade, makes prototype housings from it (vacuum casting resins only approximate it, so a few machined or bridge-moulded parts are worth having),
+              and tests drop, heat and chemical resistance before the production tool is cut.
+            </p>
+
+            <h2 id="end-of-life">Recycling and end of life</h2>
+            <p>
+              Mark parts with their material identification code so they can be sorted later; the codes used on products and packaging include 1 (PET), 2 (HDPE), 3 (PVC), 4 (LDPE), 5 (PP), 6 (PS) and 7 (other).
+              Avoid permanently joining different plastics where you can, use one material family across parts where possible, and consider recycled grades where they meet the requirement.
+              In practice, recycling of durable products is far less established than packaging, so durability and repairability usually matter more; see the
+              <a class="text-link-inline" href="sustainability-and-product-life.html">Sustainability and product life hub</a>.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Choosing a material because a similar product uses it.</strong>
+                The other product may have different loads, chemicals or cost targets.
+              </div>
+              <div>
+                <strong>Specifying the family, not the grade.</strong>
+                "Nylon" or "ABS" covers materials with very different properties.
+              </div>
+              <div>
+                <strong>Testing only in printed prototypes.</strong>
+                3D-printed and cast parts behave differently from moulded parts in the same nominal material.
+              </div>
+              <div>
+                <strong>Forgetting chemical exposure.</strong>
+                Sun cream, cleaning products and oils crack some otherwise suitable plastics.
+              </div>
+              <div>
+                <strong>Ignoring moisture.</strong>
+                Nylon changes size and stiffness as it absorbs water; several plastics must be dried before moulding.
+              </div>
+            </div>
+
+            <h2 id="next-steps">Next steps</h2>
+            <ol>
+              <li>Write the requirements list above for your part.</li>
+              <li>Shortlist two or three materials, for example with the <a class="text-link-inline" href="../tools/material-selector.html">Plastic Material Selector</a>, and ask suppliers or your moulder for datasheets of specific grades.</li>
+              <li>Check the part design against <a class="text-link-inline" href="injection-moulding-dfm-checklist.html">the injection moulding DFM checklist</a>, since wall thickness and draft depend on the material.</li>
+              <li>Estimate material cost per part with the <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>.</li>
+              <li>Compare footprints of candidate materials with the <a class="text-link-inline" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a>.</li>
+            </ol>
+            <p>
+              For products that touch food, check the Food Standards Agency's guidance on food contact materials and ask suppliers for declarations of compliance for the specific grade.
+              If a part needs to be stiffer, stronger or more heat resistant than a plastic allows, see <a class="text-link-inline" href="choosing-metals-for-a-product.html">choosing metals for a product</a>.
+              For the wider picture, see the <a class="text-link-inline" href="manufacturing-and-cost.html">Manufacturing and cost hub</a>.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Shortlist your material</h3>
+                <p>Rank common plastics against the properties your part needs.</p>
+                <a class="button button-primary" href="../tools/material-selector.html" data-analytics-event="article_cta_click" data-analytics-label="materials_guide_to_selector">Open Plastic Material Selector</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Compare material footprints</h3>
+                <p>Screen the carbon impact of candidate materials early.</p>
+                <a class="button button-secondary" href="../tools/carbon-footprint.html" data-analytics-event="article_cta_click" data-analytics-label="materials_guide_to_carbon">Open Carbon Footprint Estimator</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/material-selector.html">Plastic Material Selector</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="injection-moulding-explained.html">Injection moulding explained</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="sustainability-and-product-life.html">Sustainability and product life</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-lower-carbon-materials.html">Choosing lower-carbon materials</a></div>
+                <div class="aside-item"><a class="text-link" href="manufacturing-processes-compared.html">Manufacturing processes compared</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Plastics</span>
+                <span>Material selection</span>
+                <span>Grades</span>
+                <span>Recycling</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is the best plastic for a product enclosure?</h3>
+                <p>There is no single best choice. ABS is a common starting point for indoor enclosures thanks to its finish and cost; PC/ABS adds toughness and heat resistance and is widely available in flame-retardant grades; polycarbonate suits very tough or transparent parts; polypropylene suits parts needing chemical resistance or living hinges. Choose from the requirements and test.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between ABS and polycarbonate?</h3>
+                <p>ABS is cheaper, easier to mould and finish, and takes paint and plating well, but has lower heat and <a class="text-link-inline" href="designing-for-drops-and-impacts.html">impact resistance</a>. Polycarbonate is much tougher, has better heat resistance and comes in transparent grades, but costs more, needs drying before moulding and can stress-crack with some chemicals.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Which plastic is best for gears and moving parts?</h3>
+                <p>Acetal (POM) and nylon (PA) are the usual choices. Acetal has low friction and stays dimensionally stable; nylon is tougher but absorbs moisture, which changes its size and stiffness. Both are available in filled and lubricated grades.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I change the plastic after the mould is made?</h3>
+                <p>Sometimes, but it is risky. Different plastics shrink by different amounts, so a tool cut for one material may produce parts out of tolerance in another. Choose the material, and ideally the grade, before the tool is designed.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Are recycled plastics suitable for products?</h3>
+                <p>Often, for parts where their properties are adequate and consistent supply is available. Recycled grades can vary more between batches, so test them, agree specifications with the supplier, and avoid them where regulation requires specific virgin grades, such as some food-contact or medical uses.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

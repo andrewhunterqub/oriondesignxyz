@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Designing Buttons, Switches and Controls | Orion Design</title>
+    <meta
+      name="description"
+      content="How to design buttons, switches and controls for a product: choosing a switch type, actuator travel and stack-ups, sealing, graphics, life and testing."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/designing-buttons-switches-and-controls.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Designing buttons, switches and controls | Orion Design">
+    <meta
+      property="og:description"
+      content="How to design buttons, switches and controls for a product: choosing a switch type, actuator travel and stack-ups, sealing, graphics, life and testing."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/designing-buttons-switches-and-controls.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-designing-buttons-switches-and-controls.jpg">
+    <meta property="og:image:alt" content="Designing buttons, switches and controls guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Designing buttons, switches and controls | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to design buttons, switches and controls for a product: choosing a switch type, actuator travel and stack-ups, sealing, graphics, life and testing."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-designing-buttons-switches-and-controls.jpg">
+    <meta name="twitter:image:alt" content="Designing buttons, switches and controls guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-designing-buttons-switches-and-controls.jpg",
+        "headline": "Designing buttons, switches and controls: controls that feel right and keep working",
+        "description": "How to design buttons, switches and controls for a product: choosing a switch type, actuator travel and stack-ups, sealing, graphics, life and testing.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Development and prototyping",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/designing-buttons-switches-and-controls.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Product controls"
+          },
+          {
+            "@type": "Thing",
+            "name": "Button and actuator design"
+          },
+          {
+            "@type": "Thing",
+            "name": "Switch selection"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Designing buttons, switches and controls",
+                "item": "https://oriondesign.xyz/guides/designing-buttons-switches-and-controls.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Should I use tactile switches or a silicone keypad?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tactile switches with plastic actuators give a crisp click and suit products with a few buttons, but need a separate seal. A silicone keypad seals the openings and suits several buttons together, with a softer feel and its own mould. A keypad over tactile switches combines a seal with a firmer click."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does capacitive touch work with gloves or wet hands?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Often not reliably. Gloves can stop a touch registering, and water can cause false presses. It can be tuned to cope better, but if gloves or wet hands are normal for your users, a mechanical button or a combination is usually safer. Test with real gloves and water early."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I stop a button rattling or wobbling?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Guide it along its length with ribs or a sleeve in the housing rather than only at the top edge, keep the clearance small and even, and make sure it rests against a stop in the housing when not pressed. A longer guide resists tilting better than a tighter one."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many presses should a button be designed for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Estimate it from how often each control is used and how long the product should last, then choose a switch whose datasheet rating sits comfortably above that. Check the rest of the button, such as hinges, keypads and legends, with a cycling test on the real assembly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I prototype the feel of a button with 3D printing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, for travel, gaps, guides and overall layout, especially by printing several variants at once. Printed parts are rougher and less consistent than mouldings, so confirm the final feel and any moulded hinge on the first tool samples."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Designing buttons, switches and controls</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders and designers choosing and detailing the buttons, switches and controls on a product</p>
+            <h1>Designing buttons, switches and controls: controls that feel right and keep working</h1>
+            <p>
+              How to start from the person pressing the button, the main types of switch and control and their trade-offs, the mechanical details that stop buttons feeling mushy or sticking, sealing, graphics and backlighting, switch life, and how to prototype and test the feel.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A good control starts with how it will be used, then chooses a switch type to suit, and only then gets detailed in CAD around a checked tolerance stack-up.</h2>
+              <p>
+                Decide how often the control is used, whether people will wear gloves or have wet hands, how to prevent accidental presses and how the user will know it worked.
+                Choose between tactile switches with a plastic actuator, silicone keypads, membrane switches, capacitive touch, rotary controls and toggles on feel, sealing, cost and life.
+                Then check the gap between the button and the switch at the tolerance extremes, guide the button so it cannot wobble or rub, keep side loads off the switch, and test the feel on prototypes with real users.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#user">Start with the user</a></li>
+              <li><a class="text-link-inline" href="#options">The main options</a></li>
+              <li><a class="text-link-inline" href="#mechanical">Mechanical design of a button</a></li>
+              <li><a class="text-link-inline" href="#sealing">Sealing buttons</a></li>
+              <li><a class="text-link-inline" href="#graphics">Graphics, legibility and backlighting</a></li>
+              <li><a class="text-link-inline" href="#life">Switch life</a></li>
+              <li><a class="text-link-inline" href="#prototyping">Prototyping and testing the feel</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a mushy, sticking button</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+            </ol>
+
+            <h2 id="user">Start with the user</h2>
+            <p>
+              Buttons are often designed last and touched first. Before choosing a switch, write down what each control does and for whom:
+            </p>
+            <ul>
+              <li><strong>What it does and how often.</strong> A power button pressed twice a day, a reset button pressed once a year and a volume control turned constantly need different switches.</li>
+              <li><strong>Gloves and wet hands.</strong> Gloved fingers need larger, well-spaced buttons and a clear click. Gloves and water can stop <a class="glossary-term" href="../knowledge/glossary.html#term-capacitive-touch" data-definition="A touch control with no moving parts that works through a solid wall, so it seals well and has nothing to wear. It needs light, sound or vibration as feedback, and gloves or water can stop it working reliably." aria-label="capacitive touch: A touch control with no moving parts that works through a solid wall, so it seals well and has nothing to wear. It needs light, sound or vibration as feedback, and gloves or water can stop it working reliably. (glossary)">capacitive touch</a> working reliably.</li>
+              <li><strong>Accessibility.</strong> Allow for weak grip, limited sight or tremor: a modest operating force, buttons that can be told apart by touch, good contrast and no meaning carried by colour alone.</li>
+              <li><strong>Accidental presses.</strong> Keep important buttons away from where the hand grips or the product rests, recess or guard them, or ask for a long press for anything that switches off or erases.</li>
+              <li><strong>Feedback.</strong> The user needs to know the press worked: tactile (a click you feel), audible (a click or beep) or visual (an LED or screen change). Use more than one where users may not be looking.</li>
+            </ul>
+            <p>
+              Record these in your <a class="text-link-inline" href="how-to-write-a-product-requirements-document.html">product requirements document</a> so the switch choice can be checked against them.
+            </p>
+
+            <h2 id="options">The main options</h2>
+            <p>
+              Each option trades feel, sealing, cost, tooling and life against each other:
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Option</th>
+                  <th>Feel</th>
+                  <th>Sealing</th>
+                  <th>Cost, tooling and life</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Board-mounted <a class="glossary-term" href="../knowledge/glossary.html#term-tactile-switch" data-definition="A small switch on the circuit board that gives a crisp click after a short travel, usually pressed by a plastic button in the housing. It is made to be pressed straight down, so the button needs an end stop and the board needs support under it." aria-label="tactile switch: A small switch on the circuit board that gives a crisp click after a short travel, usually pressed by a plastic button in the housing. It is made to be pressed straight down, so the button needs an end stop and the board needs support under it. (glossary)">tactile switch</a> with a plastic actuator</td>
+                  <td>Crisp click</td>
+                  <td>Needs a separate seal</td>
+                  <td>Cheap switches; actuator is part of the housing tooling. Sensitive to tolerances</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-silicone-keypad" data-definition="A moulded silicone rubber part carrying one or more buttons, with carbon pills underneath that press on contact pads on the circuit board. Clamped round its edge it is both button and seal, with a softer press than a tactile switch, but it needs its own mould." aria-label="Silicone rubber keypad: A moulded silicone rubber part carrying one or more buttons, with carbon pills underneath that press on contact pads on the circuit board. Clamped round its edge it is both button and seal, with a softer press than a tactile switch, but it needs its own mould. (glossary)">Silicone rubber keypad</a> with carbon pills</td>
+                  <td>Softer press, set by the moulded web</td>
+                  <td>Good: the keypad seals the openings</td>
+                  <td>Own silicone mould and contact pads on the board; printed legends can wear</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-membrane-switch" data-definition="A flat switch panel bonded to the face of a product, usually under a printed overlay that carries the graphics on its back face. It seals the face in one piece and needs little tooling; metal domes can add a click." aria-label="Membrane switch: A flat switch panel bonded to the face of a product, usually under a printed overlay that carries the graphics on its back face. It seals the face in one piece and needs little tooling; metal domes can add a click. (glossary)">Membrane switch</a> and printed overlay</td>
+                  <td>Flat; metal domes can add a click</td>
+                  <td>Good: one bonded face</td>
+                  <td>Low tooling; graphics printed behind the film. Adhesive and edges need care</td>
+                </tr>
+                <tr>
+                  <td>Capacitive touch</td>
+                  <td>No movement; needs light, sound or vibration</td>
+                  <td>Excellent: behind a solid wall</td>
+                  <td>Nothing to wear, but needs careful electronics and testing with water and gloves</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-rotary-encoder" data-definition="A turning control that counts steps, often with detents you can feel, whereas a potentiometer gives a position. Its shaft needs a seal, and it should be held in the housing so side loads stay off the board." aria-label="Rotary encoder: A turning control that counts steps, often with detents you can feel, whereas a potentiometer gives a position. Its shaft needs a seal, and it should be held in the housing so side loads stay off the board. (glossary)">Rotary encoder</a> or potentiometer</td>
+                  <td>Turning, often with detents</td>
+                  <td>Shaft needs a seal</td>
+                  <td>An encoder counts steps; a potentiometer gives a position. Keep side loads off the board</td>
+                </tr>
+                <tr>
+                  <td>Toggle or rocker switch</td>
+                  <td>Clear, visible on/off state</td>
+                  <td>Sealing boots available</td>
+                  <td>Usually panel-mounted; check the electrical rating if it switches main power</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Agree the choice with your electronics designer early, because it changes the board. The <a class="text-link-inline" href="electronics-in-a-physical-product.html">electronics in a physical product guide</a> covers designing the board and housing together.
+            </p>
+
+            <h2 id="mechanical">Mechanical design of a button</h2>
+            <p>
+              The commonest control is a plastic button pressing a tactile switch on the board. Most complaints about mushy, rattling, sticking or dead buttons come from a few details.
+            </p>
+
+            <h3>Travel and the tolerance stack-up</h3>
+            <p>
+              A tactile switch has only a small travel before it clicks. If the actuator already presses on it at rest, the switch is half-pressed: the click disappears and the button feels mushy. If the gap is too large, the user pushes through dead travel first.
+            </p>
+            <p>
+              The gap is set by a chain of parts: the button, the stop that holds it in the housing, the bosses the board sits on, the board and the switch. Check it at both tolerance extremes, not just nominal, as the <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances and engineering drawings guide</a> explains, and shorten the chain by locating the board next to the button.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 360 230" width="100%" role="img" aria-labelledby="btn-fig-title btn-fig-desc">
+                <title id="btn-fig-title">Cross-section of a button, actuator and tactile switch</title>
+                <desc id="btn-fig-desc">A side section through a housing wall with a button passing through a hole. The button cap sits in the hole with clearance all round, a flange under the wall keeps it captive, and housing ribs either side guide it. A stem runs down from the button to a tactile switch on the circuit board, with a small gap above the switch plunger. A support under the board sits directly beneath the switch.</desc>
+                <rect x="20" y="60" width="72" height="12" class="gd-box"/>
+                <rect x="138" y="60" width="92" height="12" class="gd-box"/>
+                <rect x="70" y="72" width="6" height="40" class="gd-box"/>
+                <rect x="154" y="72" width="6" height="40" class="gd-box"/>
+                <path d="M96,40 L134,40 L134,72 L150,72 L150,80 L121,80 L121,148 L109,148 L109,80 L80,80 L80,72 L96,72 Z" class="gd-box-indigo"/>
+                <rect x="109" y="154" width="12" height="8" class="gd-fill-teal"/>
+                <rect x="95" y="162" width="40" height="14" rx="2" class="gd-box-teal"/>
+                <rect x="20" y="176" width="210" height="8" rx="2" class="gd-box"/>
+                <rect x="105" y="184" width="20" height="30" class="gd-box"/>
+                <line x1="124" y1="148" x2="172" y2="148" class="gd-ghost"/>
+                <line x1="124" y1="154" x2="172" y2="154" class="gd-ghost"/>
+                <line x1="134" y1="46" x2="236" y2="46" class="gd-line"/>
+                <text x="240" y="50" class="gd-m">Button cap</text>
+                <text x="240" y="70" class="gd-m">Housing wall</text>
+                <line x1="150" y1="76" x2="236" y2="92" class="gd-line"/>
+                <text x="240" y="96" class="gd-m">Captive flange</text>
+                <line x1="160" y1="104" x2="236" y2="118" class="gd-line"/>
+                <text x="240" y="122" class="gd-m">Guide rib</text>
+                <line x1="172" y1="151" x2="236" y2="146" class="gd-line"/>
+                <text x="240" y="150" class="gd-h">Gap</text>
+                <line x1="135" y1="169" x2="236" y2="172" class="gd-line"/>
+                <text x="240" y="176" class="gd-m">Tactile switch</text>
+                <line x1="125" y1="200" x2="236" y2="200" class="gd-line"/>
+                <text x="240" y="204" class="gd-m">Board support</text>
+              </svg>
+              <figcaption>The gap between the stem and the switch depends on every part in the chain. Check it at both tolerance extremes so the button never preloads the switch and never has excessive dead travel.</figcaption>
+            </figure>
+
+            <h3>Captive buttons and wobble</h3>
+            <p>
+              A separate button needs a stop so it cannot fall or be pulled out, usually a flange inside the housing larger than the hole, or a snap or retaining plate. At rest it should sit against that stop, not on the switch. A button held only at its top edge rocks under an off-centre press and rattles when shaken, so guide it with ribs or a sleeve, as long as space allows, with a small, even clearance.
+            </p>
+
+            <h3>Buttons moulded into the housing</h3>
+            <p>
+              Some products mould the button into the wall as a flap or tongue. This saves a part, but the flexing section must suit the material: a true <a class="glossary-term" href="../knowledge/glossary.html#term-living-hinge" data-definition="A thin, flexible section of plastic that acts as a hinge, typically moulded in polypropylene." aria-label="living hinge: A thin, flexible section of plastic that acts as a hinge, typically moulded in polypropylene. (glossary)">living hinge</a> is normally <a class="glossary-term" href="../knowledge/glossary.html#term-polypropylene-pp" data-definition="A light, tough, chemical-resistant plastic often used for containers and living hinges." aria-label="polypropylene: A light, tough, chemical-resistant plastic often used for containers and living hinges. (glossary)">polypropylene</a>, as the <a class="text-link-inline" href="designing-snap-fits-and-living-hinges.html">snap fits and living hinges guide</a> explains. In a rigid plastic, use a longer tongue that bends only slightly, and check the strain.
+            </p>
+
+            <h3>Avoiding sticking buttons</h3>
+            <p>
+              Buttons stick when clearance is too tight once draft and moulding variation are included, when an off-centre press tilts the button onto an edge, when the switch alone is too weak to return a large cap against friction, or when dirt gets into the gap. Long guides, even clearance and, for large caps, a separate spring or rubber return prevent most of it.
+            </p>
+
+            <h3>Side loads and drops</h3>
+            <p>
+              Tactile switches are made to be pressed straight down. Sideways pushes, users leaning on a knob or a button hitting the switch in a drop all end up in the solder joints. Give the button an end stop on the housing, support the board directly under each switch, and hold knobs and shafts in the housing rather than the board. The <a class="text-link-inline" href="designing-for-drops-and-impacts.html">drops and impacts guide</a> covers board support more widely.
+            </p>
+
+            <h2 id="sealing">Sealing buttons</h2>
+            <p>
+              Every button is a hole in the housing. Common ways to seal it are a <strong>membrane or overlay</strong> bonded to a flat face over the switches, a <strong>silicone keypad</strong> clamped around its edge so it is both button and seal, or a <strong>boot or O-ring</strong> on each rigid button or shaft. The keypad clamp is a seal like any other, so its squeeze depends on tolerances; the <a class="text-link-inline" href="sealing-and-waterproofing-an-enclosure.html">sealing and waterproofing guide</a> explains how to design and test it. Sealing also changes the feel, so test the two together.
+            </p>
+
+            <h2 id="graphics">Graphics, legibility and backlighting</h2>
+            <p>
+              Legends must stay readable for the product's life. <strong>Pad or screen printing</strong> is common, but printed legends on a top surface wear, so a protective coating may be needed. <strong>Laser etching</strong> marks the plastic itself or removes a painted layer to let light through. <strong>In-mould decoration</strong> moulds a printed film into the part; it is durable but adds tooling effort. <strong>Printed overlays</strong> carry the graphics on the back face, where they cannot rub off. The <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">surface finishes guide</a> covers these in more detail. Check legend size and contrast in real lighting.
+            </p>
+            <p>
+              Backlighting usually uses an LED on the board and a <a class="glossary-term" href="../knowledge/glossary.html#term-light-pipe" data-definition="A clear plastic part that carries light from an LED on a circuit board to the outside of an enclosure." aria-label="light pipe: A clear plastic part that carries light from an LED on a circuit board to the outside of an enclosure. (glossary)">light pipe</a>, a clear part that carries the light to the button. Watch for light leaking into neighbouring buttons and bright spots over the LED; opaque walls and a diffusing texture help. Prototype it early in a dark room.
+            </p>
+
+            <h2 id="life">Switch life</h2>
+            <p>
+              Use the rated life from the switch datasheet, and check its test conditions match your use. Estimate the presses over the product's life from how often each control is used, and choose a switch with a comfortable margin. Actuators, hinges, keypads and legends wear too, so test the whole assembly with a <strong>simple cycling rig</strong>: a motor and cam, or a small linear actuator, pressing the real button in the real housing, with a counter. Stop at intervals to check function, feel and legend.
+            </p>
+
+            <h2 id="prototyping">Prototyping and testing the feel</h2>
+            <ul>
+              <li><strong>Printed actuators.</strong> Print several versions with different lengths, clearances and guides, and try them on the real board. <a class="text-link-inline" href="choosing-a-3d-printing-process.html">Printed parts</a> are rougher than mouldings, so treat friction as approximate.</li>
+              <li><strong>Feel panels.</strong> Mount candidate switches or keypad samples side by side so people can compare force, travel and click directly.</li>
+              <li><strong>Usability testing.</strong> Give real users realistic tasks, with gloves, wet hands or dim light where those are normal, and watch for missed, accidental or repeated presses. See the <a class="text-link-inline" href="usability-testing-a-prototype.html">usability testing guide</a>.</li>
+            </ul>
+            <p>
+              Confirm the feel again on the first moulded samples.
+            </p>
+
+            <h2 id="example">Worked example: a mushy, sticking button</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A handheld device has two moulded buttons, power and mode, pressing tactile switches on the main board. On the first moulded samples the mode button feels mushy on some units and sometimes stays down on others. The team cut a sample through the button and measured the parts in the chain.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Finding</th>
+                  <th>Cause</th>
+                  <th>Fix</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mushy, no click on some units</td>
+                  <td>The gap had only been checked at nominal; at one extreme the stem half-pressed the switch</td>
+                  <td>Re-ran the stack-up at both extremes and shortened the stem so the smallest gap is still positive</td>
+                </tr>
+                <tr>
+                  <td>Long tolerance chain</td>
+                  <td>The board was located by bosses at the far end of the housing</td>
+                  <td>Added a locating feature and support next to the switch</td>
+                </tr>
+                <tr>
+                  <td>Button sometimes stays down</td>
+                  <td>Guided only at its top edge, the cap tilted and rubbed on the drafted edge of the hole</td>
+                  <td>Added guide ribs, slightly increased the hole clearance and rounded the cap edge</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              They checked the changes with printed actuators before agreeing the tool changes with the toolmaker. Adding guide ribs only removes steel, but shortening the stem and opening up the hole take plastic off the part, which means adding steel to the tool, so they asked how best to make those. They then ran a short cycling test on the new samples.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Designing the buttons last.</strong>
+                Button positions, switch types and board layout are linked; settle them together.
+              </div>
+              <div>
+                <strong>Checking the gap only at nominal.</strong>
+                Check the stack-up at both extremes.
+              </div>
+              <div>
+                <strong>Letting the switch take the load.</strong>
+                Add an end stop and support the board under each switch.
+              </div>
+              <div>
+                <strong>Capacitive touch without feedback.</strong>
+                Add light, sound or vibration, and test with water and gloves.
+              </div>
+              <div>
+                <strong>Testing the switch, not the button.</strong>
+                Cycle-test the whole assembly.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>List every control with what it does, how often it is used, and any gloves, wet hands or accessibility needs.</li>
+              <li>Choose a switch type for each and agree the board layout with your electronics designer.</li>
+              <li>Check each button gap at the tolerance extremes with the <a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a>.</li>
+              <li>Add feel, life and sealing tests to your plan with the <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a>.</li>
+              <li>See where this sits in the wider journey in the <a class="text-link-inline" href="development-and-prototyping.html">development and prototyping hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Check the button gap</h3>
+                <p>Stack up the parts between the button and the switch at both extremes.</p>
+                <a class="button button-primary" href="../tools/tolerance-stack-up.html" data-analytics-event="article_cta_click" data-analytics-label="controls_guide_to_tolerance_stack_up">Open Tolerance Stack-up Calculator</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Plan the tests</h3>
+                <p>Turn feel, life and sealing checks into tests for each prototype round.</p>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html" data-analytics-event="article_cta_click" data-analytics-label="controls_guide_to_test_plan">Open Product Test Plan Builder</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Product Test Plan Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/snap-fit-calculator.html">Snap-fit Calculator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="electronics-in-a-physical-product.html">Electronics in a physical product</a></div>
+                <div class="aside-item"><a class="text-link" href="sealing-and-waterproofing-an-enclosure.html">Sealing and waterproofing an enclosure</a></div>
+                <div class="aside-item"><a class="text-link" href="usability-testing-a-prototype.html">Usability testing a prototype</a></div>
+                <div class="aside-item"><a class="text-link" href="designing-snap-fits-and-living-hinges.html">Designing snap fits and living hinges</a></div>
+                <div class="aside-item"><a class="text-link" href="tolerances-and-engineering-drawings.html">Tolerances and engineering drawings</a></div>
+                <div class="aside-item"><a class="text-link" href="designing-for-drops-and-impacts.html">Designing for drops and impacts</a></div>
+                <div class="aside-item"><a class="text-link" href="cables-wiring-and-connectors-inside-a-product.html">Cables, wiring and connectors</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Button design</span>
+                <span>Tactile switches</span>
+                <span>Silicone keypads</span>
+                <span>Capacitive touch</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Should I use tactile switches or a silicone keypad?</h3>
+                <p>Tactile switches with plastic actuators give a crisp click and suit products with a few buttons, but need a separate seal. A silicone keypad seals the openings and suits several buttons together, with a softer feel and its own mould. A keypad over tactile switches combines a seal with a firmer click.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does capacitive touch work with gloves or wet hands?</h3>
+                <p>Often not reliably. Gloves can stop a touch registering, and water can cause false presses. It can be tuned to cope better, but if gloves or wet hands are normal for your users, a mechanical button or a combination is usually safer. Test with real gloves and water early.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do I stop a button rattling or wobbling?</h3>
+                <p>Guide it along its length with ribs or a sleeve in the housing rather than only at the top edge, keep the clearance small and even, and make sure it rests against a stop in the housing when not pressed. A longer guide resists tilting better than a tighter one.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How many presses should a button be designed for?</h3>
+                <p>Estimate it from how often each control is used and how long the product should last, then choose a switch whose datasheet rating sits comfortably above that. Check the rest of the button, such as hinges, keypads and legends, with a cycling test on the real assembly.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I prototype the feel of a button with 3D printing?</h3>
+                <p>Yes, for travel, gaps, guides and overall layout, especially by printing several variants at once. Printed parts are rougher and less consistent than mouldings, so confirm the final feel and any moulded hinge on the first tool samples.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

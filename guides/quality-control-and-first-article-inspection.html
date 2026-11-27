@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Quality Control and First-Article Inspection | Orion Design</title>
+    <meta
+      name="description"
+      content="How to plan quality control for a manufactured product: specifications, golden samples, first-article inspection, production checks, AQL sampling and fixing problems."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/quality-control-and-first-article-inspection.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Quality control and first-article inspection | Orion Design">
+    <meta
+      property="og:description"
+      content="How to plan quality control for a manufactured product: specifications, golden samples, first-article inspection, production checks, AQL sampling and fixing problems."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/quality-control-and-first-article-inspection.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-quality-control-and-first-article-inspection.jpg">
+    <meta property="og:image:alt" content="Quality control and first-article inspection guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quality control and first-article inspection | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to plan quality control for a manufactured product: specifications, golden samples, first-article inspection, production checks, AQL sampling and fixing problems."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-quality-control-and-first-article-inspection.jpg">
+    <meta name="twitter:image:alt" content="Quality control and first-article inspection guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-quality-control-and-first-article-inspection.jpg",
+        "headline": "Quality control and first-article inspection for new products",
+        "description": "How to plan quality control for a manufactured product: specifications, golden samples, first-article inspection, production checks, AQL sampling and fixing problems.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-26",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/quality-control-and-first-article-inspection.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Quality control"
+          },
+          {
+            "@type": "Thing",
+            "name": "First article inspection"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Quality control and first-article inspection",
+                "item": "https://oriondesign.xyz/guides/quality-control-and-first-article-inspection.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a first-article inspection?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A full check of the first parts made with production tooling, materials and processes against every requirement on the drawings and specification, covering dimensions, materials, fit, function and cosmetics, before volume production is approved."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should a first-article inspection be repeated?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Whenever something that could change the part changes: a new or repaired tool, a different material or supplier, a process change or a move to another factory."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is AQL in quality control?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The acceptance quality limit (often still called the acceptable quality level): the defect level used with a sampling standard such as ISO 2859-1 to decide whether a batch passes, based on inspecting a sample. Brands usually set separate limits for critical, major and minor defects, with none allowed for critical defects."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a golden sample?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "An approved reference unit, signed off by the brand and the manufacturer, that production is compared against, especially for colour, finish and feel that drawings cannot fully describe."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need an independent inspector?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not always, but an independent pre-shipment inspection is common when manufacturing overseas or with a new supplier, because it gives an objective check before you pay for and ship the goods."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Quality control and first-article inspection</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders and engineers moving a product into production with a manufacturer</p>
+            <h1>Quality control and first-article inspection for new products</h1>
+            <p>
+              A practical approach to quality for a new product: define what good looks like, check the first production parts in full, inspect during production and before shipment, and agree how problems will be handled before they happen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Agree in writing what "good" means before production, check the first parts against it in full, then sample every batch against the same standard.</h2>
+              <p>
+                Quality control starts with a clear specification: drawings with tolerances, critical-to-quality features, cosmetic standards and golden samples.
+                A first-article inspection (FAI) measures and tests the first production parts against every requirement before volume production is approved.
+                After that, incoming, in-process and pre-shipment inspections catch problems while they are still cheap to fix.
+              </p>
+            </div>
+
+            <h2>Why quality control needs planning</h2>
+            <p>
+              A factory can only meet a standard it has been given. Many disputes between brands and manufacturers come from requirements that were never written down:
+              a colour that was "close enough", a gap that was within the drawing but felt wrong, or a function nobody tested. Planning quality early is far cheaper than sorting or reworking a shipment.
+            </p>
+
+            <h2>Step 1: define what good looks like</h2>
+            <ul>
+              <li><strong>Drawings and tolerances</strong> for every part, with the critical dimensions marked. See the <a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a>.</li>
+              <li><strong>Critical-to-quality (CTQ) features:</strong> the few dimensions and functions that decide whether the product works, is safe or looks right.</li>
+              <li><strong>Cosmetic standards:</strong> which surfaces matter, which defects are acceptable, at what viewing distance and lighting.</li>
+              <li><strong>Golden samples:</strong> approved reference units, signed off and kept by both you and the factory.</li>
+              <li><strong>Functional tests:</strong> what each unit, or each sample, must do before it ships.</li>
+              <li><strong>Packaging and labelling</strong> requirements, including drop and transit expectations.</li>
+            </ul>
+
+            <h2>Step 2: first-article inspection</h2>
+            <p>
+              A first-article inspection checks the first parts made with production tooling, materials and processes against every requirement on the drawings and specification.
+              It confirms that the process can make the part correctly before you commit to volume.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>FAI covers</th>
+                  <th>What to check</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Dimensions</td>
+                  <td>Every dimension on the drawing, with the critical ones measured on several parts, and results recorded in an inspection report</td>
+                </tr>
+                <tr>
+                  <td>Materials</td>
+                  <td>Material grade, colour and finish match the specification, with supplier certificates where relevant</td>
+                </tr>
+                <tr>
+                  <td>Assembly and fit</td>
+                  <td>Parts assemble as intended, with correct gaps, alignment and fastener torque</td>
+                </tr>
+                <tr>
+                  <td>Function</td>
+                  <td>The product passes its functional tests and any safety checks</td>
+                </tr>
+                <tr>
+                  <td>Cosmetics</td>
+                  <td>Surfaces compared with the <a class="glossary-term" href="../knowledge/glossary.html#term-golden-sample" data-definition="An approved reference unit that production parts are compared against." aria-label="golden sample: An approved reference unit that production parts are compared against. (glossary)">golden sample</a> and cosmetic standard</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              For moulded parts this usually follows tool trials (T1, T2 and so on) and texture or colour approval. See
+              <a class="text-link-inline" href="../tools/ready-for-tooling.html">Ready for Tooling</a> and the
+              <a class="text-link-inline" href="injection-moulding-dfm-checklist.html">injection moulding DFM checklist</a>. Repeat the FAI whenever the tool, material, process or supplier changes.
+              <a class="text-link-inline" href="mould-tool-trials-and-sample-approval.html">Mould tool trials and sample approval</a> explains what to ask for with each trial round and how to read the first moulded samples.
+              Once first articles are approved, a <a class="text-link-inline" href="planning-a-pilot-production-run.html">pilot production run</a> checks that the full line makes good, packed products repeatedly before volume.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              do not approve volume production from a sample that was hand-finished or made on a different process. Approve parts made exactly as production parts will be made.
+            </div>
+
+            <h2>Step 3: inspection during production</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Stage</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Incoming inspection</td>
+                  <td>Check bought-in parts and materials before they are used</td>
+                </tr>
+                <tr>
+                  <td>In-process checks</td>
+                  <td>Catch drift early, for example measuring critical dimensions at set intervals</td>
+                </tr>
+                <tr>
+                  <td>End-of-line testing</td>
+                  <td>Functional or safety tests on each unit, or on a defined sample</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-pre-shipment-inspection" data-definition="A check of a sample from a finished, packed batch before it leaves the factory, against an agreed standard and sampling plan." aria-label="Pre-shipment inspection: A check of a sample from a finished, packed batch before it leaves the factory, against an agreed standard and sampling plan. (glossary)">Pre-shipment inspection</a></td>
+                  <td>A sample from the finished, packed batch checked before it leaves the factory, often by an independent inspector</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>Sampling and acceptance levels</h2>
+            <p>
+              Inspecting every unit is rarely practical, so batches are usually checked by sampling. Acceptance sampling standards such as ISO 2859-1 set how many units to inspect for a given batch size
+              and how many defects are acceptable, expressed as an acceptance quality limit (<a class="glossary-term" href="../knowledge/glossary.html#term-acceptable-quality-limit-aql" data-definition="The defect level used with a sampling standard such as ISO 2859-1 to decide whether a production batch passes inspection." aria-label="AQL: The defect level used with a sampling standard such as ISO 2859-1 to decide whether a production batch passes inspection. (glossary)">AQL</a>), the term ISO 2859-1 uses (older texts say acceptable quality level). Agree the AQL for critical, major and minor defects with your manufacturer before production,
+              with critical defects (safety or regulatory) usually allowed none.
+            </p>
+
+            <h2>When things go wrong</h2>
+            <ul>
+              <li><strong>Contain:</strong> stop shipment and separate suspect stock.</li>
+              <li><strong>Find the root cause:</strong> tool wear, material change, process drift or an unclear specification.</li>
+              <li><strong>Correct and prevent:</strong> fix the cause, update the specification or checks, and confirm with a fresh inspection. For problems found by customers, see <a class="text-link-inline" href="after-launch-returns-feedback-and-design-changes.html">after launch: returns, feedback and design changes</a>.</li>
+              <li><strong>Agree responsibility</strong> in advance in your <a class="text-link-inline" href="supply-agreements-with-a-manufacturer.html">supply agreement</a>: who pays for sorting, rework and replacement.</li>
+            </ul>
+
+            <h2>Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>No written cosmetic standard.</strong>
+                "It looks wrong" is hard to enforce without agreed criteria and golden samples.
+              </div>
+              <div>
+                <strong>Skipping FAI to save time.</strong>
+                Problems found in a full shipment are far more expensive than in the first parts.
+              </div>
+              <div>
+                <strong>Only checking at the end.</strong>
+                Pre-shipment inspection finds problems after the batch is made; earlier checks prevent them.
+              </div>
+              <div>
+                <strong>Not repeating checks after changes.</strong>
+                A new material, tool repair or second supplier can change the parts without anyone noticing.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>List <a class="glossary-term" href="../knowledge/glossary.html#term-critical-to-quality-ctq" data-definition="A dimension, function or property that decides whether a product works, is safe or is acceptable to the customer. CTQ features are marked on drawings and checked more closely than the rest." aria-label="critical-to-quality: A dimension, function or property that decides whether a product works, is safe or is acceptable to the customer. CTQ features are marked on drawings and checked more closely than the rest. (glossary)">critical-to-quality</a> features and test requirements with the <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a>.</li>
+              <li>Include quality requirements in your quote request with the <a class="text-link-inline" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a>.</li>
+              <li>Check your handover with <a class="text-link-inline" href="../tools/ready-for-manufacturer.html">Ready for Manufacturer</a>.</li>
+              <li>Read <a class="text-link-inline" href="how-to-find-and-brief-a-manufacturer.html">how to find and brief a manufacturer</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Plan the tests</h3>
+                <p>Build a test plan covering function, durability and safety.</p>
+                <a class="button button-primary" href="../tools/test-plan-builder.html" data-analytics-event="article_cta_click" data-analytics-label="qc_guide_to_test_plan">Open Product Test Plan Builder</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Brief the factory</h3>
+                <p>Put quality requirements into your quote request from the start.</p>
+                <a class="button button-secondary" href="../tools/rfq-pack-builder.html" data-analytics-event="article_cta_click" data-analytics-label="qc_guide_to_rfq">Open RFQ Pack Builder</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Product Test Plan Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="how-to-find-and-brief-a-manufacturer.html">Find and brief a manufacturer</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="product-certification-basics.html">Product certification basics</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Quality</span>
+                <span>Inspection</span>
+                <span>FAI</span>
+                <span>AQL</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is a first-article inspection?</h3>
+                <p>A full check of the first parts made with production tooling, materials and processes against every requirement on the drawings and specification, covering dimensions, materials, fit, function and cosmetics, before volume production is approved.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should a first-article inspection be repeated?</h3>
+                <p>Whenever something that could change the part changes: a new or repaired tool, a different material or supplier, a process change or a move to another factory.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is AQL in quality control?</h3>
+                <p>The acceptance quality limit (often still called the acceptable quality level): the defect level used with a sampling standard such as ISO 2859-1 to decide whether a batch passes, based on inspecting a sample. Brands usually set separate limits for critical, major and minor defects, with none allowed for critical defects.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is a golden sample?</h3>
+                <p>An approved reference unit, signed off by the brand and the manufacturer, that production is compared against, especially for colour, finish and feel that drawings cannot fully describe.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need an independent inspector?</h3>
+                <p>Not always, but an independent pre-shipment inspection is common when <a class="text-link-inline" href="uk-vs-overseas-manufacturing.html">manufacturing overseas</a> or with a new supplier, because it gives an objective check before you pay for and ship the goods.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Planning a Pilot Production Run | Orion Design</title>
+    <meta
+      name="description"
+      content="How to plan a pilot production run: what it proves, where it sits after first-article approval, what to measure, go/no-go criteria and using the results."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/planning-a-pilot-production-run.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Planning a pilot production run | Orion Design">
+    <meta
+      property="og:description"
+      content="How to plan a pilot production run: what it proves, where it sits after first-article approval, what to measure, go/no-go criteria and using the results."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/planning-a-pilot-production-run.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-planning-a-pilot-production-run.jpg">
+    <meta property="og:image:alt" content="Planning a pilot production run guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Planning a pilot production run | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to plan a pilot production run: what it proves, where it sits after first-article approval, what to measure, go/no-go criteria and using the results."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-planning-a-pilot-production-run.jpg">
+    <meta name="twitter:image:alt" content="Planning a pilot production run guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-planning-a-pilot-production-run.jpg",
+        "headline": "Planning a pilot production run",
+        "description": "How to plan a pilot production run: what it proves, where it sits after first-article approval, what to measure, go/no-go criteria and using the results.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/planning-a-pilot-production-run.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Pilot production run"
+          },
+          {
+            "@type": "Thing",
+            "name": "Production ramp-up"
+          },
+          {
+            "@type": "Thing",
+            "name": "Manufacturing process validation"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Planning a pilot production run",
+                "item": "https://oriondesign.xyz/guides/planning-a-pilot-production-run.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a pilot production run?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A small batch built on the real production line, with production tools, fixtures, operators, packaging and suppliers, at normal rate. Its purpose is to prove the manufacturing process before committing to volume, not to prove the design."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How is a pilot run different from first-article inspection?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "First-article inspection checks the first parts from production tools in full, to show the process can make a correct part. A pilot run builds complete, packed products at production rate, to show the process does so repeatedly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many units should a pilot run be?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no standard number. Make it large enough for the line to run normally for a sustained period and for occasional problems to show, and enough to cover planned tests and samples, but not so large that a process problem becomes expensive."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I sell units from a pilot run?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Units that pass the same checks as production can be sold, often to friendly early customers. Do not plan the pilot as a sales batch, though, because the pressure to ship can override what the results are telling you."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens if the pilot run fails?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Find the cause of each problem. Process, fixture and instruction problems are fixed and proven with a focused re-run; design or tooling problems go through change control, with new first articles where parts change, before you try again."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Planning a pilot production run</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders and engineers with approved first-article parts who are about to place their first production order</p>
+            <h1>Planning a pilot production run</h1>
+            <p>
+              What a pilot run is for, where it sits between first-article approval and volume production, how large to make it, what to plan and measure, how to run it with a supplier you cannot visit every day, and how to decide whether you are ready to ramp up.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A pilot run is a small batch built on the real production line, at production rate, to prove the process rather than the design, before you commit to volume.</h2>
+              <p>
+                It comes after design freeze and first-article approval. Plan it like an experiment: agree in advance what you will measure, including yield, defect types, assembly time, test results and how packed units survive transit, and what result counts as a pass.
+                Then decide go, fix and repeat, or stop, and feed what you learned into your cost, quotes and cash plan before placing the volume order.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#what-it-is">What a pilot run is for</a></li>
+              <li><a class="text-link-inline" href="#where">Where it sits in the journey</a></li>
+              <li><a class="text-link-inline" href="#size">How large should it be?</a></li>
+              <li><a class="text-link-inline" href="#plan-measure">What to plan and measure</a></li>
+              <li><a class="text-link-inline" href="#running">Who attends, and running it with a remote supplier</a></li>
+              <li><a class="text-link-inline" href="#units">Using the pilot units</a></li>
+              <li><a class="text-link-inline" href="#criteria">Go/no-go criteria and what happens if it fails</a></li>
+              <li><a class="text-link-inline" href="#feeding">Feeding the results into cost and plan</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a small consumer product made overseas</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#rules">Decision rules</a></li>
+            </ol>
+
+            <h2 id="what-it-is">What a pilot run is for</h2>
+            <p>
+              By the time you reach a <a class="glossary-term" href="../knowledge/glossary.html#term-pilot-production" data-definition="A small production run on the real process to prove it can make the product repeatably." aria-label="pilot run: A small production run on the real process to prove it can make the product repeatably. (glossary)">pilot run</a>, the design should already be proven and the first parts from production tools checked against the drawings. What is not yet proven is whether the whole system can make the product repeatedly, at the rate and quality you need. That system includes:
+            </p>
+            <ul>
+              <li><strong>The process:</strong> settings that hold steady over hours, not just for a handful of careful samples.</li>
+              <li><strong>The tooling and fixtures:</strong> tools that run at their intended cycle, and the jigs, fixtures and test stations that assembly depends on.</li>
+              <li><strong>The assembly line:</strong> operators who have not built your product before, working from written instructions at normal speed.</li>
+              <li><strong>Packaging and labelling:</strong> the real box, inserts, labels and documents, packed the way production will pack them.</li>
+              <li><strong>The supply chain:</strong> bought-in parts arriving from production suppliers, in production quantities, on time.</li>
+            </ul>
+            <p>
+              Electronics teams often call this stage production validation, or PVT. The question is the same: if we place the volume order tomorrow, will what arrives be what we approved?
+            </p>
+
+            <h2 id="where">Where it sits in the journey</h2>
+            <p>
+              A pilot run follows two earlier gates. First, <strong>design freeze</strong>: the design has met its requirements, its tests are complete and further changes go through <a class="text-link-inline" href="bills-of-materials-and-revision-control.html">change control</a>. The <a class="text-link-inline" href="product-testing-and-validation-plans.html">testing and validation plans guide</a> covers the evidence you need, and <a class="text-link-inline" href="../tools/ready-for-tooling.html">Am I Ready to Commit to Tooling?</a> checks whether you are ready to cut tools at all.
+            </p>
+            <p>
+              Second, <strong>first-article approval</strong>: parts from production tools and processes are measured and checked in full, and <a class="text-link-inline" href="mould-tool-trials-and-sample-approval.html">golden samples</a> are signed off. <a class="text-link-inline" href="quality-control-and-first-article-inspection.html">Quality control and first-article inspection</a> explains how. A first article proves that the process <em>can</em> make a good part; a pilot proves that it <em>does</em>, repeatedly, when the line is running normally.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 354" width="100%" role="img" aria-labelledby="pilot-fig-title pilot-fig-desc">
+                <title id="pilot-fig-title">Design freeze, first-article approval, pilot run and ramp-up, with a gate before each step</title>
+                <desc id="pilot-fig-desc">Four stages from top to bottom. Design freeze: the design is proven and changes are controlled. A gate follows: drawings and specifications released. First-article approval: parts from production tools are checked in full. A second gate follows: first articles passed and golden samples signed off. Pilot run: the process, line, packaging and supply chain are proven at production rate. A third gate follows: the agreed go/no-go criteria are met. Ramp-up: volume production begins.</desc>
+                <defs><marker id="pilot-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <line x1="22" y1="10" x2="22" y2="342" class="gd-arrow" marker-end="url(#pilot-arrow)"/>
+                <text x="0" y="0" transform="translate(13 177) rotate(-90)" text-anchor="middle" class="gd-m">Each step commits more</text>
+                <rect x="36" y="8" width="296" height="50" rx="10" class="gd-box"/>
+                <text x="50" y="29" class="gd-h">Design freeze</text>
+                <text x="50" y="48" class="gd-m">Design proven, changes controlled</text>
+                <rect x="56" y="66" width="276" height="30" rx="8" class="gd-ghost"/>
+                <text x="68" y="86" class="gd-v">Gate: drawings released</text>
+                <rect x="36" y="104" width="296" height="50" rx="10" class="gd-box-indigo"/>
+                <text x="50" y="125" class="gd-h">First-article approval</text>
+                <text x="50" y="144" class="gd-m">Production-tool parts checked in full</text>
+                <rect x="56" y="162" width="276" height="30" rx="8" class="gd-ghost"/>
+                <text x="68" y="182" class="gd-v">Gate: golden samples signed</text>
+                <rect x="36" y="200" width="296" height="50" rx="10" class="gd-box-teal"/>
+                <text x="50" y="221" class="gd-h">Pilot run</text>
+                <text x="50" y="240" class="gd-m">Process, line, packaging, supply</text>
+                <rect x="56" y="258" width="276" height="30" rx="8" class="gd-ghost"/>
+                <text x="68" y="278" class="gd-v">Gate: go/no-go criteria met</text>
+                <rect x="36" y="296" width="296" height="50" rx="10" class="gd-box"/>
+                <text x="50" y="317" class="gd-h">Ramp-up</text>
+                <text x="50" y="336" class="gd-m">Volume production begins</text>
+              </svg>
+              <figcaption>The pilot is the last gate before volume. A failed gate sends you back a step to fix the cause, not forward with a hope that the next batch will be better.</figcaption>
+            </figure>
+            <p>
+              The pilot is also the bridge into the wider staged approach described in the <a class="text-link-inline" href="risk-progressive-manufacturing-strategy.html">risk-progressive manufacturing strategy</a>: it supplies the yield, defect and process evidence that justifies the next, larger commitment.
+            </p>
+
+            <h2 id="size">How large should it be?</h2>
+            <p>
+              There is no standard number. The batch needs to be large enough for the line to run as it will in production, long enough to settle and show drift, and for occasional problems to have a fair chance of appearing. A handful of units built slowly by the best technician proves very little.
+            </p>
+            <p>
+              But every pilot unit is built before the process is proven, so a very large pilot carries the risk it was meant to reduce. A sensible size usually follows from the process: a shift or a few hours of continuous assembly, a full cycle of any batch process such as painting, and enough units for the tests and samples you have planned. Agree the quantity with your supplier, and what happens to units that fail.
+            </p>
+
+            <h2 id="plan-measure">What to plan and measure</h2>
+            <p>Write a short pilot plan before the run and share it with the supplier. It should name what will be built, how, and what will be recorded:</p>
+            <ul>
+              <li><strong>Work instructions.</strong> Illustrated steps for each station, written for operators new to the product. Where they hesitate or improvise, the instructions are unclear. <a class="text-link-inline" href="assembly-and-work-instructions.html">Assembly instructions and work instructions for production</a> explains what each step should contain.</li>
+              <li><strong>Fixtures and test stations.</strong> Check that jigs hold parts repeatably and end-of-line tests catch faults without rejecting good units. Record each unit's results, not just pass or fail.</li>
+              <li><strong>Yield and defect types.</strong> Count units that pass first time, need rework or are scrapped, and record each defect by type and station. The pattern matters more than the total: one recurring defect usually has one fixable cause.</li>
+              <li><strong>Cycle and assembly time.</strong> Time each station and compare it with the estimate your costing assumed. The <a class="text-link-inline" href="assembly-time-estimate.html">assembly time guide</a> and the <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a> give the baseline to compare against. Note the bottleneck station, because it sets the rate of the whole line.</li>
+              <li><strong>Packaging and transit.</strong> Pack units exactly as production will, then ship or drop-test them and inspect what arrives. <a class="text-link-inline" href="packaging-design-for-shipping.html">Packaging design for shipping</a> covers the checks.</li>
+              <li><strong>Labelling and documents.</strong> Check rating labels, <a class="text-link-inline" href="retail-ready-packaging-and-barcodes.html">barcodes</a>, serial numbers, warnings and instructions against your specification and required markings.</li>
+              <li><strong>Supply chain.</strong> Note any bought-in part that arrived late, short, in the wrong revision or with quality problems.</li>
+            </ul>
+
+            <h2 id="running">Who attends, and running it with a remote supplier</h2>
+            <p>
+              On the supplier side, the process engineer, line leader and quality lead should own the run. On your side, someone who knows the design should be present: ideally its engineer, or a trusted representative or inspection company if you cannot travel. Their job is to observe, record and answer questions, not to fix problems by hand.
+            </p>
+            <p>
+              With a distant supplier, agree the plan, quantity and acceptance criteria in writing before the run. Ask for photos or video of each station, a daily summary of yield and defects, the test data and measured times, and some finished, packed units sent to you. <a class="text-link-inline" href="uk-vs-overseas-manufacturing.html">UK vs overseas manufacturing</a> discusses the wider trade-offs of distance.
+            </p>
+
+            <h2 id="units">Using the pilot units</h2>
+            <p>Pilot units are the first that truly represent production, which makes them valuable:</p>
+            <ul>
+              <li><strong>Testing.</strong> Repeat the key tests from your validation plan on production-made units, especially durability, drop, temperature and anything sensitive to process settings.</li>
+              <li><strong>Certification samples, where appropriate.</strong> Test houses generally want samples that represent what you will sell, so pilot units can be a good source. Confirm with your test house what they need and when; <a class="text-link-inline" href="product-certification-basics.html">product certification basics</a> outlines how conformity is shown.</li>
+              <li><strong>Early customers.</strong> A few units with friendly customers can reveal set-up and instruction problems that factory tests miss. Tell them these are early units, and only sell units that passed the same checks as production.</li>
+              <li><strong>Reference samples.</strong> Keep a few as reference units for comparing future batches.</li>
+            </ul>
+
+            <h2 id="criteria">Go/no-go criteria and what happens if it fails</h2>
+            <p>
+              Agree the criteria with the supplier before the run, so the decision is about evidence rather than opinion. Typical criteria: <a class="glossary-term" href="../knowledge/glossary.html#term-yield" data-definition="The share of parts or products that pass inspection first time." aria-label="first-pass yield: The share of parts or products that pass inspection first time. (glossary)">first-pass yield</a> at or above an agreed level; no safety or <a class="glossary-term" href="../knowledge/glossary.html#term-critical-to-quality-ctq" data-definition="A dimension, function or property that decides whether a product works, is safe or is acceptable to the customer. CTQ features are marked on drawings and checked more closely than the rest." aria-label="critical-to-quality: A dimension, function or property that decides whether a product works, is safe or is acceptable to the customer. CTQ features are marked on drawings and checked more closely than the rest. (glossary)">critical-to-quality</a> defects; every recurring defect understood and fixable; <a class="glossary-term" href="../knowledge/glossary.html#term-assembly-time" data-definition="The labour time needed to put a product together, which drives assembly cost on every unit." aria-label="assembly time: The labour time needed to put a product together, which drives assembly cost on every unit. (glossary)">assembly time</a> close enough to the estimate to support your costing; packed units surviving transit checks; correct labelling; and bought-in parts available in production quantities.
+            </p>
+            <p>The outcome is usually one of three:</p>
+            <ul>
+              <li><strong>Go:</strong> the criteria are met, perhaps with minor actions that can be closed during <a class="glossary-term" href="../knowledge/glossary.html#term-ramp-up" data-definition="The period after a successful pilot run when production builds up from first batches to full volume, while any remaining actions are closed." aria-label="ramp-up: The period after a successful pilot run when production builds up from first batches to full volume, while any remaining actions are closed. (glossary)">ramp-up</a>.</li>
+              <li><strong>Fix and repeat:</strong> the causes are understood and fixable, such as a fixture, an instruction or a process setting, but the fix must be proven, often with a smaller, focused re-run.</li>
+              <li><strong>Stop:</strong> a problem points back to the design or tooling. Treat it as a controlled design change, with new first articles where parts change, rather than patching it on the line.</li>
+            </ul>
+            <p>
+              Agree in advance who pays for a repeat run: often the supplier for process faults, and you for design or specification issues.
+            </p>
+
+            <h2 id="feeding">Feeding the results into cost and plan</h2>
+            <p>
+              The pilot replaces assumptions with measurements. Update your unit cost with measured assembly time, real yield and scrap, and actual packaging in the <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>. If the numbers have moved, revisit your quotes using <a class="text-link-inline" href="comparing-manufacturing-quotes.html">getting and comparing manufacturing quotes</a>, since a supplier's price was based on their own assumptions about time and yield.
+            </p>
+            <p>
+              Then check timing and cash. A repeat run delays first stock, and the volume order may carry a minimum quantity and a deposit due well before sales arrive. <a class="text-link-inline" href="minimum-order-quantities-and-cash.html">Minimum order quantities and cash</a> shows how to plan for that.
+            </p>
+
+            <h2 id="example">Worked example: a small consumer product made overseas</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative and qualitative. A start-up's small battery-powered kitchen gadget has two moulded housing parts, a bought-in <a class="text-link-inline" href="electronics-in-a-physical-product.html">circuit board</a>, a battery, a button and a printed retail box. The supplier is overseas, and first articles were approved from video and samples.
+              </p>
+              <p>
+                The team and supplier agree a written plan: roughly a shift's output, yield recorded by defect type, every station timed, every unit tested, and a carton of packed units sent by the normal freight route. The criteria are no safety defects, recurring defects understood, times close to the estimate and packed units arriving undamaged. An inspection company attends for the team.
+              </p>
+              <p>What the pilot finds:</p>
+              <ul>
+                <li><strong>A recurring button defect.</strong> Several buttons stick, because a fixture lets the housing close slightly off-centre. The supplier modifies the fixture; the design does not change.</li>
+                <li><strong>Assembly slower than estimated.</strong> Operators struggle to route a cable around a boss. Clearer instructions and a pre-formed cable bring the time down, though not fully to the estimate, so the team updates its costing.</li>
+                <li><strong>Transit damage.</strong> In the shipped carton, some retail boxes are crushed at the corners. A stronger shipping carton and a change of pallet pattern solve it, and the change is checked with a drop test.</li>
+                <li><strong>A late bought-in part.</strong> The battery arrives late from its supplier. The team agrees a <a class="glossary-term" href="../knowledge/glossary.html#term-buffer-stock" data-definition="Extra stock of a part or product held in reserve, so a late delivery or a sudden rise in demand does not stop production or sales." aria-label="buffer stock: Extra stock of a part or product held in reserve, so a late delivery or a sudden rise in demand does not stop production or sales. (glossary)">buffer stock</a> and a second approved source.</li>
+              </ul>
+              <p>
+                The decision is fix and repeat: a short re-run proves the fixture, cable and carton changes before the volume order is placed. A few pilot units go to the test house, and a few to friendly early customers, who find the quick-start card unclear; it is reprinted before launch.
+              </p>
+            </div>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Treating the pilot as a sales batch.</strong>
+                When pilot units are already promised to customers, the pressure is to ship them whatever the results show. Plan the pilot to learn, and size and promise units accordingly.
+              </div>
+              <div>
+                <strong>No agreed acceptance criteria.</strong>
+                Without criteria written down beforehand, every result can be argued either way, and the volume order goes ahead by default.
+              </div>
+              <div>
+                <strong>Design changes slipped in during the pilot.</strong>
+                A "small tweak" on the line means the pilot no longer represents what was approved, and the change has not been tested. Route any change through change control and re-prove it.
+              </div>
+              <div>
+                <strong>Skipping packaging and transit checks.</strong>
+                A product that leaves the factory perfect can arrive damaged. Pack and ship pilot units the way production will be packed and shipped.
+              </div>
+            </div>
+
+            <h2 id="rules">Decision rules</h2>
+            <ul>
+              <li><strong>Prove the process, not the design:</strong> freeze the design and approve first articles before the pilot.</li>
+              <li><strong>Write the plan and criteria first,</strong> and agree them with the supplier.</li>
+              <li><strong>Run at production rate</strong> with normal operators, fixtures, packaging and suppliers.</li>
+              <li><strong>Record yield by defect type and time by station,</strong> then fix causes, not symptoms.</li>
+              <li><strong>Update cost, quotes and cash</strong> from the measured results before placing the volume order.</li>
+            </ul>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Confirm you are ready with <a class="text-link-inline" href="../tools/ready-for-tooling.html">Am I Ready to Commit to Tooling?</a> and a completed first-article inspection.</li>
+              <li>Plan the tests the pilot units will go through in the <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a>.</li>
+              <li>Agree the pilot plan, quantity and go/no-go criteria with your supplier in writing, as part of the brief described in <a class="text-link-inline" href="how-to-find-and-brief-a-manufacturer.html">how to find and brief a manufacturer</a>.</li>
+              <li>See where this sits in the wider picture in the <a class="text-link-inline" href="manufacturing-and-cost.html">manufacturing and cost hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Update the unit cost</h3>
+                <p>Put measured assembly time, yield and packaging into your costing.</p>
+                <a class="button button-primary" href="../tools/product-cost-estimator.html" data-analytics-event="article_cta_click" data-analytics-label="pilot_guide_to_cost_estimator">Open Product Cost Estimator</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Plan the pilot tests</h3>
+                <p>Choose which tests production-made units must pass before ramp-up.</p>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html" data-analytics-event="article_cta_click" data-analytics-label="pilot_guide_to_test_plan">Open Test Plan Builder</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/ready-for-tooling.html">Ready for Tooling self-check</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Product Test Plan Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/assembly-time.html">Assembly Time Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="quality-control-and-first-article-inspection.html">Quality control and first-article inspection</a></div>
+                <div class="aside-item"><a class="text-link" href="risk-progressive-manufacturing-strategy.html">Risk-progressive manufacturing</a></div>
+                <div class="aside-item"><a class="text-link" href="packaging-design-for-shipping.html">Packaging design for shipping</a></div>
+                <div class="aside-item"><a class="text-link" href="minimum-order-quantities-and-cash.html">Minimum order quantities and cash</a></div>
+                <div class="aside-item"><a class="text-link" href="mould-tool-trials-and-sample-approval.html">Mould tool trials and sample approval</a></div>
+                <div class="aside-item"><a class="text-link" href="assembly-and-work-instructions.html">Assembly and work instructions</a></div>
+                <div class="aside-item"><a class="text-link" href="bills-of-materials-and-revision-control.html">Bills of materials and revision control</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Pilot run</span>
+                <span>Ramp-up</span>
+                <span>Yield</span>
+                <span>Go/no-go</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is a pilot production run?</h3>
+                <p>A small batch built on the real production line, with production tools, fixtures, operators, packaging and suppliers, at normal rate. Its purpose is to prove the manufacturing process before committing to volume, not to prove the design.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How is a pilot run different from first-article inspection?</h3>
+                <p>First-article inspection checks the first parts from production tools in full, to show the process can make a correct part. A pilot run builds complete, packed products at production rate, to show the process does so repeatedly.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How many units should a pilot run be?</h3>
+                <p>There is no standard number. Make it large enough for the line to run normally for a sustained period and for occasional problems to show, and enough to cover planned tests and samples, but not so large that a process problem becomes expensive.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I sell units from a pilot run?</h3>
+                <p>Units that pass the same checks as production can be sold, often to friendly early customers. Do not plan the pilot as a sales batch, though, because the pressure to ship can override what the results are telling you.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What happens if the pilot run fails?</h3>
+                <p>Find the cause of each problem. Process, fixture and instruction problems are fixed and proven with a focused re-run; design or tooling problems go through change control, with new first articles where parts change, before you try again.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="../tools/test-plan-builder.html">Test Plan Builder</a>
+          <a href="../tools/ready-for-tooling.html">Ready for Tooling</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

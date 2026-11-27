@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Change Request Builder: Engineering Change Request | Orion Design</title>
+    <meta
+      name="description"
+      content="Build a clear engineering change request for a small hardware team: affected parts and revisions, form, fit and function, impact check, approval and effectivity."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/change-request-builder.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Change Request Builder | Orion Design">
+    <meta
+      property="og:description"
+      content="Build a clear engineering change request for a small hardware team: affected parts and revisions, form, fit and function, impact check, approval and effectivity."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/change-request-builder.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-change-request-builder.jpg">
+    <meta property="og:image:alt" content="Change request builder from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Change Request Builder | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Build a clear engineering change request for a small hardware team: affected parts and revisions, form, fit and function, impact check, approval and effectivity."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-change-request-builder.jpg">
+    <meta name="twitter:image:alt" content="Change request builder from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-change-request-builder.jpg",
+        "name": "Change Request Builder",
+        "url": "https://oriondesign.xyz/tools/change-request-builder.html",
+        "description": "A short form that produces a printable engineering change request: affected parts and revisions, form, fit and function, impact check, approval, release and effectivity.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Change Request Builder",
+                "item": "https://oriondesign.xyz/tools/change-request-builder.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is an engineering change request?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A short, numbered record of a proposed change to a released part: what should change, why, and which part numbers are affected. It then carries the impact check, the approval decision and the point from which the change applies, so the whole history of the change is in one place."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When does a change need a new part number instead of a new revision?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "When the old and new parts are no longer interchangeable in form, fit or function. If the new part can replace the old one everywhere without any other change, raise the revision; if mixing them could cause a problem, give the new part its own number, and raise the revision of the parent BOM too."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does effectivity mean?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It is the point from which a change applies, given as a date, a production batch or a serial number. Recording it means you can always tell which units contain the old part and which contain the new one."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is what I type stored anywhere?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not on a server. The change request is generated in your browser, and your inputs are remembered in your own browser's storage so they are still there when you come back; clearing this site's data removes them. The request is added to your product plan only if you choose to save it there, and the plan also stays in your browser."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Change Request Builder</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Change Request Builder</h1>
+            <p>
+              Fill in a short form and get a clear engineering change request (ECR) that follows the five steps in the
+              <a class="text-link-inline" href="../guides/bills-of-materials-and-revision-control.html">bills of materials and revision control guide</a>:
+              request, impact check, approval, release and effectivity. Copy it, print it or save it to your product plan. Everything is generated in your browser and nothing you type is sent anywhere.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout ecr-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Change request worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"ecrNumber":"CR-007","ecrDate":"27 November 2026","ecrRequester":"Assembly lead, pilot build","ecrProduct":"Rechargeable bike light (1000)","ecrPart1":"1103","ecrDesc1":"Rear cover, PC/ABS, black","ecrCurRev1":"B","ecrNewRev1":"C","ecrNewPn1":"","ecrPart2":"1100","ecrDesc2":"Light assembly","ecrCurRev2":"A","ecrNewRev2":"B","ecrNewPn2":"","ecrPart3":"1000","ecrDesc3":"Bike light, packed","ecrCurRev3":"A","ecrNewRev3":"B","ecrNewPn3":"","ecrPart4":"","ecrDesc4":"","ecrCurRev4":"","ecrNewRev4":"","ecrNewPn4":"","ecrPart5":"","ecrDesc5":"","ecrCurRev5":"","ecrNewRev5":"","ecrNewPn5":"","ecrPart6":"","ecrDesc6":"","ecrCurRev6":"","ecrNewRev6":"","ecrNewPn6":"","ecrReason":"fault","ecrDescription":"Two rear covers cracked at a screw boss during pilot assembly when the screws were driven. Thicken the boss wall and add a small fillet at its base. The outside of the cover, the screw holes and the sealing face do not move.","ecrFff":"interchangeable","ecrStock":"useup","ecrTooling":"modify","ecrCert":"retest","ecrCost":"oneoff","ecrCostNote":"One-off tool modification charge quoted by the moulder; piece price unchanged","ecrSuppliers":"Moulder; assembler","ecrDocCad":"update","ecrDocDrawing":"update","ecrDocBom":"update","ecrDocInstructions":"nochange","ecrDocPackaging":"nochange","ecrImpactNotes":"Rev B covers already moulded are used up with an extra visual check at assembly. Water test repeated on first-off rev C parts.","ecrApprover1":"Founder","ecrRole1":"Product owner","ecrApprover2":"","ecrRole2":"","ecrDecision":"approved","ecrDecisionDate":"27 November 2026","ecrEffType":"serial","ecrEffFrom":"0501"}'>Cracked screw boss (new revision)</button>
+              <button class="preset-button" type="button" data-tool-preset='{"ecrNumber":"CR-012","ecrDate":"27 November 2026","ecrRequester":"Design engineer","ecrProduct":"Rechargeable bike light (1000)","ecrPart1":"1101","ecrDesc1":"Housing, PC/ABS, black","ecrCurRev1":"B","ecrNewRev1":"A","ecrNewPn1":"1108","ecrPart2":"1100","ecrDesc2":"Light assembly","ecrCurRev2":"B","ecrNewRev2":"C","ecrNewPn2":"","ecrPart3":"","ecrDesc3":"","ecrCurRev3":"","ecrNewRev3":"","ecrNewPn3":"","ecrPart4":"","ecrDesc4":"","ecrCurRev4":"","ecrNewRev4":"","ecrNewPn4":"","ecrPart5":"","ecrDesc5":"","ecrCurRev5":"","ecrNewRev5":"","ecrNewPn5":"","ecrPart6":"","ecrDesc6":"","ecrCurRev6":"","ecrNewRev6":"","ecrNewPn6":"","ecrReason":"other","ecrDescription":"Move the mounting hole in the housing so the circuit board clears a taller component. The old screw no longer reaches with the new housing, so old and new housings must not be mixed.","ecrFff":"not","ecrStock":"notchecked","ecrTooling":"modify","ecrCert":"notchecked","ecrCost":"notchecked","ecrCostNote":"","ecrSuppliers":"Moulder; assembler","ecrDocCad":"update","ecrDocDrawing":"update","ecrDocBom":"update","ecrDocInstructions":"notchecked","ecrDocPackaging":"nochange","ecrImpactNotes":"","ecrApprover1":"Founder","ecrRole1":"Product owner","ecrApprover2":"","ecrRole2":"","ecrDecision":"pending","ecrDecisionDate":"","ecrEffType":"batch","ecrEffFrom":""}'>Moved mounting hole (new part number)</button>
+            </div>
+            <form class="tool-form" id="ecrForm">
+              <p class="tool-chip">1 · Change request</p>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrNumber">Change number</label>
+                  <input id="ecrNumber" type="text" value="" placeholder="e.g. CR-007" autocomplete="off">
+                </div>
+                <div class="field-group">
+                  <label for="ecrDate">Date raised</label>
+                  <input id="ecrDate" type="text" value="" placeholder="e.g. 27 November 2026" autocomplete="off">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrRequester">Requested by (name and role)</label>
+                  <input id="ecrRequester" type="text" value="" autocomplete="off">
+                </div>
+                <div class="field-group">
+                  <label for="ecrProduct">Product or top-level assembly</label>
+                  <input id="ecrProduct" type="text" value="" autocomplete="off">
+                </div>
+              </div>
+
+              <p class="mat-out-title" id="ecrPartsTitle">Affected part numbers</p>
+              <p class="helper-text" id="ecrPartsHelp">One row per part. Include any parent assembly whose BOM will change. Fill in "New part no." only when the change is not interchangeable.</p>
+              <div class="tool-table-wrap">
+                <table class="tool-table ecr-parts-table" aria-labelledby="ecrPartsTitle" aria-describedby="ecrPartsHelp">
+                  <thead>
+                    <tr>
+                      <th scope="col">Part no.</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Current rev</th>
+                      <th scope="col">New rev</th>
+                      <th scope="col">New part no.</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-ecr-part-row="1">
+                      <td><input id="ecrPart1" type="text" value="" aria-label="Part 1 part number" placeholder="e.g. 1103" autocomplete="off"></td>
+                      <td><input id="ecrDesc1" type="text" value="" aria-label="Part 1 description" autocomplete="off"></td>
+                      <td><input id="ecrCurRev1" type="text" value="" aria-label="Part 1 current revision" placeholder="B" autocomplete="off"></td>
+                      <td><input id="ecrNewRev1" type="text" value="" aria-label="Part 1 new revision" placeholder="C" autocomplete="off"></td>
+                      <td><input id="ecrNewPn1" type="text" value="" aria-label="Part 1 new part number, if not interchangeable" autocomplete="off"></td>
+                    </tr>
+                    <tr data-ecr-part-row="2" hidden>
+                      <td><input id="ecrPart2" type="text" value="" aria-label="Part 2 part number" autocomplete="off"></td>
+                      <td><input id="ecrDesc2" type="text" value="" aria-label="Part 2 description" autocomplete="off"></td>
+                      <td><input id="ecrCurRev2" type="text" value="" aria-label="Part 2 current revision" autocomplete="off"></td>
+                      <td><input id="ecrNewRev2" type="text" value="" aria-label="Part 2 new revision" autocomplete="off"></td>
+                      <td><input id="ecrNewPn2" type="text" value="" aria-label="Part 2 new part number, if not interchangeable" autocomplete="off"></td>
+                    </tr>
+                    <tr data-ecr-part-row="3" hidden>
+                      <td><input id="ecrPart3" type="text" value="" aria-label="Part 3 part number" autocomplete="off"></td>
+                      <td><input id="ecrDesc3" type="text" value="" aria-label="Part 3 description" autocomplete="off"></td>
+                      <td><input id="ecrCurRev3" type="text" value="" aria-label="Part 3 current revision" autocomplete="off"></td>
+                      <td><input id="ecrNewRev3" type="text" value="" aria-label="Part 3 new revision" autocomplete="off"></td>
+                      <td><input id="ecrNewPn3" type="text" value="" aria-label="Part 3 new part number, if not interchangeable" autocomplete="off"></td>
+                    </tr>
+                    <tr data-ecr-part-row="4" hidden>
+                      <td><input id="ecrPart4" type="text" value="" aria-label="Part 4 part number" autocomplete="off"></td>
+                      <td><input id="ecrDesc4" type="text" value="" aria-label="Part 4 description" autocomplete="off"></td>
+                      <td><input id="ecrCurRev4" type="text" value="" aria-label="Part 4 current revision" autocomplete="off"></td>
+                      <td><input id="ecrNewRev4" type="text" value="" aria-label="Part 4 new revision" autocomplete="off"></td>
+                      <td><input id="ecrNewPn4" type="text" value="" aria-label="Part 4 new part number, if not interchangeable" autocomplete="off"></td>
+                    </tr>
+                    <tr data-ecr-part-row="5" hidden>
+                      <td><input id="ecrPart5" type="text" value="" aria-label="Part 5 part number" autocomplete="off"></td>
+                      <td><input id="ecrDesc5" type="text" value="" aria-label="Part 5 description" autocomplete="off"></td>
+                      <td><input id="ecrCurRev5" type="text" value="" aria-label="Part 5 current revision" autocomplete="off"></td>
+                      <td><input id="ecrNewRev5" type="text" value="" aria-label="Part 5 new revision" autocomplete="off"></td>
+                      <td><input id="ecrNewPn5" type="text" value="" aria-label="Part 5 new part number, if not interchangeable" autocomplete="off"></td>
+                    </tr>
+                    <tr data-ecr-part-row="6" hidden>
+                      <td><input id="ecrPart6" type="text" value="" aria-label="Part 6 part number" autocomplete="off"></td>
+                      <td><input id="ecrDesc6" type="text" value="" aria-label="Part 6 description" autocomplete="off"></td>
+                      <td><input id="ecrCurRev6" type="text" value="" aria-label="Part 6 current revision" autocomplete="off"></td>
+                      <td><input id="ecrNewRev6" type="text" value="" aria-label="Part 6 new revision" autocomplete="off"></td>
+                      <td><input id="ecrNewPn6" type="text" value="" aria-label="Part 6 new part number, if not interchangeable" autocomplete="off"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-row">
+                <button class="button button-tertiary" type="button" id="ecrAddPart">Add another part</button>
+                <button class="button button-tertiary" type="button" id="ecrRemovePart">Remove last part</button>
+              </div>
+              <p class="helper-text" id="ecrPartsStatus" aria-live="polite"></p>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrReason">Reason for the change</label>
+                  <select id="ecrReason">
+                    <option value="fault" selected>Fault or failure</option>
+                    <option value="cost">Cost reduction</option>
+                    <option value="supply">Supply (part unavailable, supplier change)</option>
+                    <option value="feedback">Customer feedback</option>
+                    <option value="compliance">Compliance</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field-group">
+                <label for="ecrDescription">Description of the change: what changes and why</label>
+                <textarea id="ecrDescription" rows="4"></textarea>
+              </div>
+              <div class="field-group">
+                <label for="ecrFff">Will old and new parts be interchangeable in form, fit and function?</label>
+                <select id="ecrFff" aria-describedby="ecrFffHelp">
+                  <option value="unsure" selected>Not sure yet</option>
+                  <option value="interchangeable">Yes: the new part can replace the old one everywhere</option>
+                  <option value="not">No: mixing old and new parts would cause a problem</option>
+                </select>
+                <p class="helper-text ecr-guidance" id="ecrFffHelp">
+                  If the changed part can still replace the old one in every product where it is used, without any other change, it is interchangeable: <strong>raise the revision</strong>.
+                  If it no longer fits, works or looks the same in a way that matters, give it a <strong>new part number</strong>, and give the parent BOM a new revision too.
+                  When in doubt, ask whether anyone, including a repair technician years from now, could pick up the wrong one and get into trouble. If so, it needs a new number.
+                </p>
+              </div>
+
+              <p class="tool-chip">2 · Impact check</p>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrStock">Stock on hand and work in progress</label>
+                  <select id="ecrStock">
+                    <option value="notchecked" selected>Not checked yet</option>
+                    <option value="none">None affected</option>
+                    <option value="useup">Use up existing stock</option>
+                    <option value="rework">Rework existing stock</option>
+                    <option value="scrap">Scrap existing stock</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="ecrTooling">Tooling</label>
+                  <select id="ecrTooling">
+                    <option value="notchecked" selected>Not checked yet</option>
+                    <option value="none">No tooling change</option>
+                    <option value="modify">Tool modification needed</option>
+                    <option value="new">New tool needed</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrCert">Certification and testing</label>
+                  <select id="ecrCert">
+                    <option value="notchecked" selected>Not checked yet</option>
+                    <option value="none">Test results still hold</option>
+                    <option value="retest">Re-test or review needed</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="ecrCost">Cost</label>
+                  <select id="ecrCost">
+                    <option value="notchecked" selected>Not checked yet</option>
+                    <option value="none">No cost change</option>
+                    <option value="oneoff">One-off cost only</option>
+                    <option value="unit">Unit cost changes</option>
+                    <option value="both">One-off and unit cost</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrCostNote">Cost note (optional)</label>
+                  <input id="ecrCostNote" type="text" value="" placeholder="e.g. tool charge, quote awaited" autocomplete="off">
+                </div>
+                <div class="field-group">
+                  <label for="ecrSuppliers">Suppliers to notify</label>
+                  <input id="ecrSuppliers" type="text" value="" placeholder="e.g. moulder; assembler, or none" autocomplete="off">
+                </div>
+              </div>
+              <p class="mat-out-title">Documents to update</p>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrDocCad">CAD models</label>
+                  <select id="ecrDocCad">
+                    <option value="notchecked" selected>Not checked yet</option>
+                    <option value="update">Update needed</option>
+                    <option value="nochange">No change</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="ecrDocDrawing">Drawings</label>
+                  <select id="ecrDocDrawing">
+                    <option value="notchecked" selected>Not checked yet</option>
+                    <option value="update">Update needed</option>
+                    <option value="nochange">No change</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrDocBom">Bill of materials</label>
+                  <select id="ecrDocBom">
+                    <option value="notchecked" selected>Not checked yet</option>
+                    <option value="update">Update needed</option>
+                    <option value="nochange">No change</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="ecrDocInstructions">Assembly or user instructions</label>
+                  <select id="ecrDocInstructions">
+                    <option value="notchecked" selected>Not checked yet</option>
+                    <option value="update">Update needed</option>
+                    <option value="nochange">No change</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrDocPackaging">Packaging and labels</label>
+                  <select id="ecrDocPackaging">
+                    <option value="notchecked" selected>Not checked yet</option>
+                    <option value="update">Update needed</option>
+                    <option value="nochange">No change</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field-group">
+                <label for="ecrImpactNotes">Impact notes (optional)</label>
+                <textarea id="ecrImpactNotes" rows="3"></textarea>
+              </div>
+
+              <p class="tool-chip">3 · Approval</p>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrApprover1">Approver name</label>
+                  <input id="ecrApprover1" type="text" value="" autocomplete="off">
+                </div>
+                <div class="field-group">
+                  <label for="ecrRole1">Approver role</label>
+                  <input id="ecrRole1" type="text" value="" placeholder="e.g. Product owner" autocomplete="off">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrApprover2">Second approver name (optional)</label>
+                  <input id="ecrApprover2" type="text" value="" autocomplete="off">
+                </div>
+                <div class="field-group">
+                  <label for="ecrRole2">Second approver role</label>
+                  <input id="ecrRole2" type="text" value="" placeholder="e.g. Quality" autocomplete="off">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrDecision">Decision</label>
+                  <select id="ecrDecision">
+                    <option value="pending" selected>Awaiting decision</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="ecrDecisionDate">Decision date</label>
+                  <input id="ecrDecisionDate" type="text" value="" placeholder="e.g. 4 December 2026" autocomplete="off">
+                </div>
+              </div>
+
+              <p class="tool-chip">4 · Release and 5 · Effectivity</p>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ecrEffType">The change takes effect from</label>
+                  <select id="ecrEffType">
+                    <option value="undecided" selected>Not decided yet</option>
+                    <option value="date">A date</option>
+                    <option value="batch">A production batch</option>
+                    <option value="serial">A serial number</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="ecrEffFrom">Effective from (date, batch or serial)</label>
+                  <input id="ecrEffFrom" type="text" value="" placeholder="e.g. serial 0501" autocomplete="off">
+                </div>
+              </div>
+              <button class="button button-primary" type="submit">Update change request</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="ecrSummary"></div>
+            <div class="ecr-gaps" id="ecrGaps"></div>
+            <div class="ecr-doc" id="ecrDoc"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#ecrCopy"
+                  data-copy-feedback="#ecrCopyFeedback"
+                >
+                  Copy change request
+                </button>
+              </div>
+              <textarea aria-label="Change request text (select all to copy)" id="ecrCopy" class="copy-output rfq-output" readonly></textarea>
+              <div id="ecrCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want a second pair of eyes on the change?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="change_request_builder_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>An engineering change request records what should change, why, which parts it affects, what it touches, who approved it and from when it applies.</h2>
+              <div class="formula-block">Request → impact check → approval → release → effectivity</div>
+              <p>A small team needs the same steps as a large company, not the overhead: a numbered request like this one, a change log and a folder per change is enough. The form, fit and function answer decides whether the changed part gets a new revision or a new part number.</p>
+            </div>
+            <h2>How to use the change request</h2>
+            <ol>
+              <li>Raise the request as soon as a change is proposed. Give it a number and list every affected part number with its current revision.</li>
+              <li>Answer the form, fit and function question, then work through the impact check. Use your indented BOM to find every assembly that contains the part.</li>
+              <li>Ask the named approver to decide, and record the decision and the date.</li>
+              <li>Once approved, update the CAD, drawing and BOM together, release the new revision or new part number, and mark the old revision obsolete or "use up existing stock".</li>
+              <li>Set the effectivity, tell suppliers in writing and ask them to confirm. Print the request or save it to your <a href="product-plan-builder.html">product plan</a> and keep it with the change log.</li>
+            </ol>
+            <h2>How to read your result</h2>
+            <ul>
+              <li><strong>Change type</strong> follows your form, fit and function answer: interchangeable parts get a new revision, parts that are not interchangeable get a new part number.</li>
+              <li><strong>Impact areas checked</strong> counts stock, tooling, certification and testing, cost, suppliers and documents. "Not checked yet" is honest; it just means the request is not ready for a decision.</li>
+              <li><strong>Still to complete</strong> lists gaps and contradictions, such as an interchangeable change with a new part number, or an approval with no effectivity.</li>
+            </ul>
+            <h2>Assumptions and notes</h2>
+            <ul>
+              <li>The steps and terms follow the <a class="text-link-inline" href="../guides/bills-of-materials-and-revision-control.html">bills of materials and revision control guide</a>: revisions as letters (A, B, C), three release states (draft, released, obsolete) and the form, fit and function test.</li>
+              <li>The tool does not decide whether a change is interchangeable, what it will cost or whether test results still hold. It records your answers and points out gaps; the judgement stays with your team.</li>
+              <li>If a customer, certification body or contract asks for its own change notification, follow that as well. This tool does not check those requirements.</li>
+              <li>The worked examples use the illustrative bike light from the guide. The part numbers, revisions and serial numbers are invented to show the layout.</li>
+              <li>Your inputs are kept in your own browser so they are still there when you come back; nothing is sent to a server.</li>
+            </ul>
+            <p>
+              Faults found after launch follow the same steps, with root cause and re-testing added; <a class="text-link-inline" href="../guides/after-launch-returns-feedback-and-design-changes.html">after launch: returns, feedback and design changes</a> covers that side.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/bills-of-materials-and-revision-control.html">Bills of materials and revision control</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/manufacturing-and-cost.html">Manufacturing and cost hub</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/tolerances-and-engineering-drawings.html">Tolerances and engineering drawings</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/running-a-design-review.html">Running a design review</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/after-launch-returns-feedback-and-design-changes.html">After launch: returns, feedback and design changes</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/product-certification-basics.html">Product certification basics</a></div>
+                <div class="aside-item"><a class="text-link" href="bom-builder.html">Bill of Materials Cost Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="rfq-pack-builder.html">RFQ Pack Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="test-plan-builder.html">Product Test Plan Builder</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Change control</span>
+                <span>Revision letters</span>
+                <span>Part numbers</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is an engineering change request?</h3>
+                <p>A short, numbered record of a proposed change to a released part: what should change, why, and which part numbers are affected. It then carries the impact check, the approval decision and the point from which the change applies, so the whole history of the change is in one place.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When does a change need a new part number instead of a new revision?</h3>
+                <p>When the old and new parts are no longer interchangeable in form, fit or function. If the new part can replace the old one everywhere without any other change, raise the revision; if mixing them could cause a problem, give the new part its own number, and raise the revision of the parent BOM too.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What does effectivity mean?</h3>
+                <p>It is the point from which a change applies, given as a date, a production batch or a serial number. Recording it means you can always tell which units contain the old part and which contain the new one.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is what I type stored anywhere?</h3>
+                <p>Not on a server. The change request is generated in your browser, and your inputs are remembered in your own browser's storage so they are still there when you come back; clearing this site's data removes them. The request is added to your product plan only if you choose to save it there, and the plan also stays in your browser.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="../guides/bills-of-materials-and-revision-control.html">BOM and revision control guide</a>
+          <a href="bom-builder.html">Bill of Materials Cost Builder</a>
+          <a href="rfq-pack-builder.html">RFQ Pack Builder</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/change-request-builder.js" defer></script>
+  </body>
+</html>

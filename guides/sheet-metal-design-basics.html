@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Sheet Metal Design Basics: Bends and Holes | Orion Design</title>
+    <meta
+      name="description"
+      content="How sheet-metal parts are cut and bent, design rules of thumb for bend radii, flanges, holes and reliefs, material choices, joining and the mistakes that add cost."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/sheet-metal-design-basics.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Sheet metal design basics | Orion Design">
+    <meta
+      property="og:description"
+      content="How sheet-metal parts are cut and bent, design rules of thumb for bend radii, flanges, holes and reliefs, material choices, joining and the mistakes that add cost."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/sheet-metal-design-basics.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-sheet-metal-design-basics.jpg">
+    <meta property="og:image:alt" content="Sheet metal design basics guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sheet metal design basics | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How sheet-metal parts are cut and bent, design rules of thumb for bend radii, flanges, holes and reliefs, material choices, joining and the mistakes that add cost."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-sheet-metal-design-basics.jpg">
+    <meta name="twitter:image:alt" content="Sheet metal design basics guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-sheet-metal-design-basics.jpg",
+        "headline": "Sheet metal design basics: bends, holes, reliefs, materials and tolerances",
+        "description": "How sheet-metal parts are cut and bent, design rules of thumb for bend radii, flanges, holes and reliefs, material choices, joining and the mistakes that add cost.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-25",
+        "articleSection": "Design for manufacture",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/sheet-metal-design-basics.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Sheet metal design"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design for manufacture"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Sheet metal design basics",
+                "item": "https://oriondesign.xyz/guides/sheet-metal-design-basics.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What bend radius should I use for sheet metal?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A common starting point is an inside radius around the material thickness, but it depends on the material, thickness and the fabricator's tooling. Use one radius throughout the part and confirm it with your fabricator."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How close can a hole be to a bend?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Keep holes a few material thicknesses plus the bend radius away from the bend so they do not distort. If a feature must be closer, ask the fabricator about cutting it after bending or adding a relief."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a bend relief?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A small notch cut where a bend meets an edge or another bend. It lets the metal fold without tearing or bulging at the corner."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a K-factor in sheet metal?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A value that describes where the neutral axis sits within the material as it bends, used to calculate the flat pattern. It varies with material, thickness and tooling, so use your fabricator's value."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is sheet metal cheaper than injection moulding?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "At low to moderate volumes it often is, because laser cutting and press-brake bending need no part-specific tooling. At high volumes, moulding or press-tooled sheet metal can be cheaper per part. Compare routes for your volumes."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Sheet metal design basics</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 25 November 2026 <span aria-hidden="true">·</span> For designers, engineers and founders designing brackets, enclosures and chassis in sheet metal</p>
+            <h1>Sheet metal design basics: bends, holes, reliefs, materials and tolerances</h1>
+            <p>
+              The essentials of designing parts for laser cutting and press-brake bending: how the process works, the rules of thumb that keep parts accurate and cheap, material and joining choices, and what to agree with your fabricator.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Design sheet-metal parts around the bending process: consistent bend radii, enough distance between holes and bends, bend reliefs, realistic flanges and tolerances.</h2>
+              <p>
+                Sheet-metal parts are cut flat (usually by laser or punch) and then folded on a press brake. Most problems come from features too close to bends, flanges too short to bend,
+                missing reliefs, and tolerances tighter than bending can hold. The values below are common starting points that depend on material, thickness and the fabricator's tooling,
+                so share your CAD with the fabricator early and use their bend radii and allowances.
+              </p>
+            </div>
+
+            <h2>How sheet-metal parts are made</h2>
+            <ol>
+              <li><strong>Cutting:</strong> the flat pattern is cut from sheet by laser, punching or waterjet. No part-specific tooling is needed for laser cutting, which suits prototypes and moderate volumes.</li>
+              <li><strong>Forming:</strong> bends are made on a press brake with standard punches and dies; the available tools set the practical bend radii and minimum flanges.</li>
+              <li><strong>Joining and hardware:</strong> welding, rivets, screws, or <a class="glossary-term" href="../knowledge/glossary.html#term-self-clinching-fastener" data-definition="A nut, stud or standoff pressed into a hole in sheet metal so that the metal flows into its grooves and locks it in place, giving a strong thread in sheet too thin to tap." aria-label="self-clinching fasteners: A nut, stud or standoff pressed into a hole in sheet metal so that the metal flows into its grooves and locks it in place, giving a strong thread in sheet too thin to tap. (glossary)">self-clinching fasteners</a> pressed into the sheet.</li>
+              <li><strong>Finishing:</strong> for example <a class="glossary-term" href="../knowledge/glossary.html#term-powder-coating" data-definition="A finish in which a dry powder is sprayed onto a metal part and baked into a tough, even coat. It comes in many colours and textures, builds up thicker than paint and is electrically insulating." aria-label="powder coating: A finish in which a dry powder is sprayed onto a metal part and baked into a tough, even coat. It comes in many colours and textures, builds up thicker than paint and is electrically insulating. (glossary)">powder coating</a> or <a class="glossary-term" href="../knowledge/glossary.html#term-plating" data-definition="Depositing a thin layer of metal, such as zinc, nickel or chrome, onto a part for corrosion protection, wear resistance or a decorative metal look." aria-label="plating: Depositing a thin layer of metal, such as zinc, nickel or chrome, onto a part for corrosion protection, wear resistance or a decorative metal look. (glossary)">plating</a> for steel, <a class="glossary-term" href="../knowledge/glossary.html#term-anodising" data-definition="A process that grows a hard oxide layer out of the surface of a metal, usually aluminium. It can be clear or dyed, resists wear and corrosion, does not chip like paint and is electrically insulating." aria-label="anodising: A process that grows a hard oxide layer out of the surface of a metal, usually aluminium. It can be clear or dyed, resists wear and corrosion, does not chip like paint and is electrically insulating. (glossary)">anodising</a> for aluminium, or brushed and <a class="glossary-term" href="../knowledge/glossary.html#term-passivation" data-definition="A chemical treatment for stainless steel that removes surface contamination, such as iron from tools, so the steel's own corrosion resistance works as intended. It barely changes the look of the part." aria-label="passivated: A chemical treatment for stainless steel that removes surface contamination, such as iron from tools, so the steel's own corrosion resistance works as intended. It barely changes the look of the part. (glossary)">passivated</a> <a class="text-link-inline" href="choosing-metals-for-a-product.html">stainless steel</a>.</li>
+            </ol>
+            <p>At high volumes, dedicated press tools can replace laser cutting and press-brake bending, trading tooling cost for lower part cost, the same trade-off described in the <a class="text-link-inline" href="manufacturing-and-cost.html">Manufacturing and cost hub</a>.</p>
+
+            <h2>Design rules of thumb</h2>
+            <figure class="article-figure article-figure-narrow">
+              <svg viewBox="0 0 440 300" role="img" aria-labelledby="sm-fig-title sm-fig-desc">
+                <title id="sm-fig-title">Flat pattern of a simple bracket showing bend lines, bend reliefs and hole spacing</title>
+                <desc id="sm-fig-desc">A flat sheet with two dashed bend lines forming flanges on each side. Small rectangular notches at the ends of the bend lines are bend reliefs. Holes are kept a distance away from the bend lines and from the edges.</desc>
+                <path d="M40,40 H400 V260 H40 Z" class="dfm-part"/>
+                <path d="M40,100 H400 M40,200 H400" class="sm-bend"/>
+                <rect x="40" y="96" width="10" height="8" class="sm-relief"/>
+                <rect x="390" y="96" width="10" height="8" class="sm-relief"/>
+                <rect x="40" y="196" width="10" height="8" class="sm-relief"/>
+                <rect x="390" y="196" width="10" height="8" class="sm-relief"/>
+                <circle cx="140" cy="150" r="10" class="sm-hole"/>
+                <circle cx="300" cy="150" r="10" class="sm-hole"/>
+                <circle cx="140" cy="62" r="7" class="sm-hole"/>
+                <circle cx="300" cy="62" r="7" class="sm-hole"/>
+                <path d="M170,150 V100" class="dfm-dim"/>
+                <text x="176" y="130" class="dfm-label">hole well clear of bend</text>
+                <text x="250" y="94" class="dfm-label">bend line</text>
+                <path d="M60,120 L46,104" class="dfm-leader"/>
+                <text x="62" y="132" class="dfm-label">bend relief</text>
+                <text x="140" y="240" class="dfm-label">flange (folds up along bend line)</text>
+              </svg>
+              <figcaption>Flat pattern, not to scale. Reliefs stop the corner tearing as it bends; holes kept away from bends and edges stay round and in position.</figcaption>
+            </figure>
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Typical starting point</th>
+                  <th>Why it matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Inside bend radius</td>
+                  <td>Commonly around the material thickness; use one radius throughout the part</td>
+                  <td>Too tight a radius can crack the outside of the bend; one radius means one set of tools</td>
+                </tr>
+                <tr>
+                  <td>Flange length</td>
+                  <td>Several times the material thickness, as set by the fabricator's die</td>
+                  <td>A flange too short cannot be gripped and bent accurately</td>
+                </tr>
+                <tr>
+                  <td>Holes near bends</td>
+                  <td>Keep holes a few material thicknesses plus the bend radius away from the bend</td>
+                  <td>Holes too close distort into ovals as the metal stretches</td>
+                </tr>
+                <tr>
+                  <td>Holes near edges and each other</td>
+                  <td>At least about the material thickness or more between edges</td>
+                  <td>Thin webs distort or tear when cut or formed</td>
+                </tr>
+                <tr>
+                  <td>Hole size</td>
+                  <td>Generally no smaller than the material thickness</td>
+                  <td>Very small holes are hard to cut cleanly, especially in thicker sheet</td>
+                </tr>
+                <tr>
+                  <td>Bend relief</td>
+                  <td>A small notch where a bend meets an edge or another bend</td>
+                  <td>Prevents tearing and bulging at corners</td>
+                </tr>
+                <tr>
+                  <td>Grain direction</td>
+                  <td>Bend across the grain where possible, especially for harder aluminium alloys</td>
+                  <td>Bending along the grain is more likely to crack</td>
+                </tr>
+                <tr>
+                  <td>Tolerances</td>
+                  <td>Looser across bends than within a flat cut feature</td>
+                  <td>Each bend adds variation; dimension critical features from the same face</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The flat pattern depends on the bend allowance (often expressed as a K-factor), which varies with material, thickness and tooling. CAD sheet-metal tools calculate it,
+              but use your fabricator's values so the folded part comes out the right size.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              send the fabricator a 3D model and a drawing showing only the critical dimensions and tolerances. Let them adjust bend allowances and reliefs to suit their tooling, and ask them to confirm any changes. See <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances and engineering drawings</a> for what that drawing should show.
+            </div>
+
+            <h2>Choosing a material</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Material</th>
+                  <th>Strengths</th>
+                  <th>Watch out for</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mild steel</td>
+                  <td>Low cost, strong, easy to form and weld</td>
+                  <td>Needs a protective finish such as powder coat or plating</td>
+                </tr>
+                <tr>
+                  <td>Galvanised steel</td>
+                  <td>Corrosion protection built in</td>
+                  <td>Welding damages the coating; cosmetic finish is limited</td>
+                </tr>
+                <tr>
+                  <td>Stainless steel</td>
+                  <td>Corrosion resistant, good appearance</td>
+                  <td>More expensive and harder to form; springs back more</td>
+                </tr>
+                <tr>
+                  <td>Aluminium</td>
+                  <td>Light, corrosion resistant, can be anodised</td>
+                  <td>Some alloys crack on tight bends; choose a formable grade</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>Joining and hardware</h2>
+            <ul>
+              <li><strong>Self-clinching fasteners</strong> (nuts, studs and standoffs pressed into the sheet) give strong threads in thin material without welding.</li>
+              <li><strong>Tabs and slots</strong> help locate parts for welding or assembly and reduce the need for fixtures.</li>
+              <li><strong>Welding</strong> is strong but adds cost, heat distortion and finishing work; spot welds suit overlapping sheets.</li>
+              <li><strong>Rivets and screws</strong> allow disassembly and joining different materials.</li>
+            </ul>
+
+            <h2>Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Different bend radii on one part.</strong>
+                Each radius may need a different tool set-up.
+              </div>
+              <div>
+                <strong>Holes and slots too close to bends.</strong>
+                They distort as the bend forms.
+              </div>
+              <div>
+                <strong>Machining-level tolerances on bent features.</strong>
+                Bending cannot hold them economically.
+              </div>
+              <div>
+                <strong>Forgetting the finish thickness.</strong>
+                Powder coating adds thickness to holes, threads and mating faces; mask or allow for it, as <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">surface finishes for plastic and metal parts</a> explains.
+              </div>
+              <div>
+                <strong>Designing a box that cannot be folded.</strong>
+                Later flanges can collide with earlier ones or the press brake; ask the fabricator to check the bend sequence.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Ask your fabricator for their standard bend radii, minimum flange lengths and K-factor for your material and thickness.</li>
+              <li>Check critical fits with the <a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a>.</li>
+              <li>Roll up part costs with the <a class="text-link-inline" href="../tools/bom-builder.html">Bill of Materials Cost Builder</a>.</li>
+              <li>Prepare the <a class="glossary-term" href="../knowledge/glossary.html#term-request-for-quotation-rfq" data-definition="A request to suppliers for a price, sent with drawings, quantities and requirements." aria-label="request for quotation: A request to suppliers for a price, sent with drawings, quantities and requirements. (glossary)">request for quotation</a> with the <a class="text-link-inline" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Prepare an RFQ</h3>
+                <p>Check the pack is complete and generate the request for the fabricator.</p>
+                <a class="button button-primary" href="../tools/rfq-pack-builder.html" data-analytics-event="article_cta_click" data-analytics-label="sheet_guide_to_rfq">Open RFQ Pack Builder</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Check critical fits</h3>
+                <p>Add up tolerances across a chain of parts.</p>
+                <a class="button button-secondary" href="../tools/tolerance-stack-up.html" data-analytics-event="article_cta_click" data-analytics-label="sheet_guide_to_stack">Open Tolerance Stack-up Calculator</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/bom-builder.html">Bill of Materials Cost Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="how-to-find-and-brief-a-manufacturer.html">Finding and briefing a manufacturer</a></div>
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Sheet metal</span>
+                <span>DFM</span>
+                <span>Bending</span>
+                <span>Fabrication</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What bend radius should I use for sheet metal?</h3>
+                <p>A common starting point is an inside radius around the material thickness, but it depends on the material, thickness and the fabricator's tooling. Use one radius throughout the part and confirm it with your fabricator.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How close can a hole be to a bend?</h3>
+                <p>Keep holes a few material thicknesses plus the bend radius away from the bend so they do not distort. If a feature must be closer, ask the fabricator about cutting it after bending or adding a relief.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is a bend relief?</h3>
+                <p>A small notch cut where a bend meets an edge or another bend. It lets the metal fold without tearing or bulging at the corner.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is a K-factor in sheet metal?</h3>
+                <p>A value that describes where the neutral axis sits within the material as it bends, used to calculate the flat pattern. It varies with material, thickness and tooling, so use your fabricator's value.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is sheet metal cheaper than injection moulding?</h3>
+                <p>At low to moderate volumes it often is, because laser cutting and press-brake bending need no part-specific tooling. At high volumes, moulding or press-tooled sheet metal can be cheaper per part. Compare routes for your volumes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

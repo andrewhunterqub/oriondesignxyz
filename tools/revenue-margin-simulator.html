@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Launch Margin Planner | Orion Design</title>
+    <meta
+      name="description"
+      content="Plan launch margins using route mix, RRP, COGS, warehousing, packaging, logistics, marketplace fees, retailer terms, and annual overhead."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/revenue-margin-simulator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Launch Margin Planner | Orion Design">
+    <meta
+      property="og:description"
+      content="See how route mix and hidden selling costs affect annual contribution, break-even volume, and operating profit."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/revenue-margin-simulator.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-revenue-margin-simulator.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Launch Margin Planner | Orion Design">
+    <meta
+      name="twitter:description"
+      content="See how route mix and hidden selling costs affect annual contribution, break-even volume, and operating profit."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-revenue-margin-simulator.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-revenue-margin-simulator.jpg",
+        "name": "Launch margin planner.",
+        "url": "https://oriondesign.xyz/tools/revenue-margin-simulator.html",
+        "description": "Plan launch margins using route mix, RRP, COGS, warehousing, packaging, logistics, marketplace fees, retailer terms, and annual overhead.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Launch Margin Planner",
+                "item": "https://oriondesign.xyz/tools/revenue-margin-simulator.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Why plan launch margin by route to market?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Because DTC, marketplace, and retailer routes keep very different amounts of the retail price once fees, logistics, and selling costs are counted."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What hidden costs damage launch margin most often?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Warehousing, packaging, fulfilment, marketplace commissions, retailer margin, site or payment fees, and undercounted operating overhead are the usual leaks."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What gross margin should a hardware product aim for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It varies by category and channel, but many hardware businesses aim for a gross margin of roughly 40–60% on the price they actually receive, so there is room for marketing, overheads and profit. Products sold mainly through retail often see lower margin per unit because the retailer's share comes off the top."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I reduce the impact of channel fees on margin?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Price for each channel rather than using one price everywhere, reduce packaging and fulfilment cost per unit, sell bundles or higher-value variants through high-fee channels, and design for a lower COGS from the start. The Target COGS tool shows the cost ceiling each route allows."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should VAT be included in the retail price I enter?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Enter the shelf price including VAT, as UK customers see it, and set the VAT rate. The planner removes VAT before working out margin, because VAT is collected for HMRC rather than earned by the business. Forgetting to remove it is one of the most common reasons launch margins look better on paper than in practice."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Launch Margin Planner</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Live tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Launch margin planner.</h1>
+            <p>
+              Turn route mix, retail price, COGS, and hidden selling costs into a clearer view of annual contribution,
+              break-even volume, and whether the launch still works once real operating costs are included.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Launch margin worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"annualUnits":"6000","sellingPrice":"35","vatRate":"20","unitCogs":"8","dtcMix":"70","marketplaceMix":"30","retailerMix":"0","annualOverhead":"50000","warehouseCost":"0.5","secondaryPackaging":"0.5","returnRate":"3","dtcLogistics":"4","dtcSiteFees":"1.5","dtcMarketing":"5","marketplaceFee":"15","marketplaceCosts":"3","retailerMargin":"40","retailerCosts":"1","retailLogistics":"1"}'>Kitchen gadget, DTC</button>
+              <button class="preset-button" type="button" data-tool-preset='{"annualUnits":"8000","sellingPrice":"180","vatRate":"20","unitCogs":"44","dtcMix":"20","marketplaceMix":"20","retailerMix":"60","annualOverhead":"240000","warehouseCost":"2.5","secondaryPackaging":"2","returnRate":"4","dtcLogistics":"7","dtcSiteFees":"4.5","dtcMarketing":"15","marketplaceFee":"15","marketplaceCosts":"8","retailerMargin":"45","retailerCosts":"4","retailLogistics":"2"}'>Smart home, retail</button>
+              <button class="preset-button" type="button" data-tool-preset='{"annualUnits":"400","sellingPrice":"1440","vatRate":"20","unitCogs":"430","dtcMix":"60","marketplaceMix":"10","retailerMix":"30","annualOverhead":"200000","warehouseCost":"8","secondaryPackaging":"12","returnRate":"2","dtcLogistics":"25","dtcSiteFees":"30","dtcMarketing":"150","marketplaceFee":"12","marketplaceCosts":"40","retailerMargin":"30","retailerCosts":"40","retailLogistics":"10"}'>B2B instrument</button>
+            </div>
+            <form class="tool-form" id="revenue-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="annualUnits">Annual units sold</label>
+                  <input id="annualUnits" type="number" min="1" step="1" value="6000">
+                </div>
+                <div class="field-group">
+                  <label for="sellingPrice">RRP incl. VAT (GBP)</label>
+                  <input id="sellingPrice" type="number" min="1" step="1" value="180">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="vatRate">VAT rate (%)</label>
+                  <input id="vatRate" type="number" min="0" max="30" step="1" value="20">
+                </div>
+                <div class="field-group">
+                  <label for="unitCogs">Unit COGS (GBP)</label>
+                  <input id="unitCogs" type="number" min="0" step="1" value="42">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="dtcMix">DTC mix (%)</label>
+                  <input id="dtcMix" type="number" min="0" max="100" step="1" value="35">
+                </div>
+                <div class="field-group">
+                  <label for="marketplaceMix">Marketplace mix (%)</label>
+                  <input id="marketplaceMix" type="number" min="0" max="100" step="1" value="25">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="retailerMix">Retailer mix (%)</label>
+                  <input id="retailerMix" type="number" min="0" max="100" step="1" value="40">
+                </div>
+                <div class="field-group">
+                  <label for="annualOverhead">Annual fixed overhead (GBP)</label>
+                  <input id="annualOverhead" type="number" min="0" step="1000" value="240000">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="warehouseCost">Warehousing per unit (GBP)</label>
+                  <input id="warehouseCost" type="number" min="0" step="0.5" value="2.5">
+                </div>
+                <div class="field-group">
+                  <label for="secondaryPackaging">Secondary packaging per unit (GBP)</label>
+                  <input id="secondaryPackaging" type="number" min="0" step="0.1" value="1.8">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="returnRate">Returns and aftercare reserve (%)</label>
+                  <input id="returnRate" type="number" min="0" max="20" step="1" value="4">
+                </div>
+                <div class="field-group">
+                  <label for="dtcLogistics">DTC pick, pack, and delivery (GBP)</label>
+                  <input id="dtcLogistics" type="number" min="0" step="0.5" value="6.5">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="dtcSiteFees">DTC site, hosting, and payment fees (GBP)</label>
+                  <input id="dtcSiteFees" type="number" min="0" step="0.5" value="4">
+                </div>
+                <div class="field-group">
+                  <label for="dtcMarketing">DTC marketing per unit (GBP)</label>
+                  <input id="dtcMarketing" type="number" min="0" step="0.5" value="12">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="marketplaceFee">Marketplace fee (%)</label>
+                  <input id="marketplaceFee" type="number" min="0" max="40" step="1" value="15">
+                </div>
+                <div class="field-group">
+                  <label for="marketplaceCosts">Marketplace ads and fulfilment extras (GBP)</label>
+                  <input id="marketplaceCosts" type="number" min="0" step="0.5" value="7">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="retailerMargin">Retailer margin / wholesale discount (%)</label>
+                  <input id="retailerMargin" type="number" min="0" max="70" step="1" value="45">
+                </div>
+                <div class="field-group">
+                  <label for="retailerCosts">Retail trade spend and account costs (GBP)</label>
+                  <input id="retailerCosts" type="number" min="0" step="0.5" value="3">
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="retailLogistics">Retail inbound logistics (GBP)</label>
+                <input id="retailLogistics" type="number" min="0" step="0.5" value="2">
+              </div>
+
+              <button class="button button-primary" type="submit">Plan launch margin</button>
+            </form>
+            <p class="helper-text">
+              If the mix does not add to 100%, the planner will normalise it before calculating annual contribution.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell chart-shell-small">
+              <canvas id="revenueChart" role="img" aria-label="Annual contribution by route"></canvas>
+            </div>
+            <div class="result-grid" id="revenueSummary"></div>
+            <div class="comparison-list" id="revenueBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#revenueCopy"
+                  data-copy-feedback="#revenueCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="revenueCopy" class="copy-output" readonly></textarea>
+              <div id="revenueCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="revenue_margin_simulator_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Launch margin is what remains after route deductions, COGS, hidden selling costs, returns, and overhead are counted.</h2>
+              <div class="formula-block">Operating profit = annual contribution after variable costs - annual overhead</div>
+              <p>If a launch only works before marketplace fees, retail terms, packaging, fulfilment, and overhead are included, it is not commercially ready.</p>
+            </div>
+
+            <h2>What the planner helps you see</h2>
+            <p>
+              Launch economics often look fine until you add the cost stack that sits between the customer and the factory.
+              This planner shows how route mix, hidden selling costs, and annual overhead alter the real margin picture.
+            </p>
+            <div class="worked-example">
+              <p>
+                A product can look profitable at list price and still disappoint once marketplace fees, retailer terms, secondary packaging,
+                warehousing, and fulfilment are layered in. That is why route choice and cost structure need to be reviewed together.
+              </p>
+            </div>
+            <h2>Questions to ask after the result</h2>
+            <ul>
+              <li>Is the route mix giving away too much of the retail price?</li>
+              <li>Are we undercounting fulfilment, packaging, or account-management costs?</li>
+              <li>Does the product need a lower COGS or a different launch route to become resilient?</li>
+            </ul>
+            <h2 id="method">Method and assumptions</h2>
+            <div class="formula-block">Price after VAT = RRP ÷ (1 + VAT rate)
+Kept per route = price after VAT × (1 − route fee or retailer margin)
+Contribution per unit = kept − COGS − route costs − returns reserve
+Annual contribution = Σ (annual units × route share × contribution per unit)
+Operating profit = annual contribution − annual fixed overhead</div>
+            <p><strong>Assumptions</strong></p>
+            <ul>
+              <li>Channel shares are normalised so they add up to 100%.</li>
+              <li>Route costs per unit are the figures you enter; the returns reserve is a percentage of the amount kept.</li>
+              <li>One average price and COGS apply across all routes.</li>
+            </ul>
+            <p><strong>Limits</strong></p>
+            <ul>
+              <li>It does not model timing, payment terms, promotions, price changes or volume discounts.</li>
+              <li>Marketplace and retailer terms vary; replace the defaults with quoted figures.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <p>
+              Start with operating profit and the break-even volume, then look at contribution per route to see which part of the mix is helping or hurting.
+            </p>
+            <ul>
+              <li><strong>Comfortable:</strong> operating profit is positive at the volume you can realistically sell, break-even sits comfortably below that volume, and every route makes a positive contribution per unit.</li>
+              <li><strong>Borderline:</strong> the plan is close to break-even, or one route has a very thin or negative contribution that the others are carrying. Consider whether that route is worth its cost at launch or better added later.</li>
+              <li><strong>Worrying:</strong> operating profit is negative and break-even is well above your forecast volume. Look first at unit COGS and the most expensive route, rather than assuming higher volume will close the gap.</li>
+            </ul>
+            <p>
+              It is normal for retail to carry the lowest contribution per unit, as it trades margin for reach. The question is whether the volume it brings is enough to justify it. Save your result to your <a href="product-plan-builder.html">product plan</a> so the launch margin sits alongside your cost, route and cashflow assumptions.
+            </p>
+            <p>
+              If the plan only works with a COGS figure that has not yet been confirmed by a manufacturer, a second opinion is worthwhile. You can <a href="../contact/index.html">get in touch with Andrew</a> to talk it through.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/selling-on-marketplaces.html">Selling on marketplaces</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/hardware-revenue-margin-planning.html">How to Turn RRP into Target COGS</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/route-to-market-hardware-product.html">How Route to Market Shapes Product Design and Cost</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/route-to-market-and-margins.html">Route to market and margins: overview</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Launch planning</span>
+                <span>Hidden costs</span>
+                <span>Break-even</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Why plan launch margin by route to market?</h3>
+                <p>Because DTC, marketplace, and retailer routes keep very different amounts of the retail price once fees, logistics, and selling costs are counted.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What hidden costs damage launch margin most often?</h3>
+                <p>Warehousing, packaging, fulfilment, marketplace commissions, retailer margin, site or payment fees, and undercounted operating overhead are the usual leaks.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What gross margin should a hardware product aim for?</h3>
+                <p>It varies by category and channel, but many hardware businesses aim for a gross margin of roughly 40–60% on the price they actually receive, so there is room for marketing, overheads and profit. Products sold mainly through retail often see lower margin per unit because the retailer's share comes off the top.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How can I reduce the impact of channel fees on margin?</h3>
+                <p>Price for each channel rather than using one price everywhere, reduce packaging and fulfilment cost per unit, sell bundles or higher-value variants through high-fee channels, and design for a lower COGS from the start. The <a class="text-link-inline" href="route-to-market-simulator.html">Target COGS tool</a> shows the cost ceiling each route allows.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should VAT be included in the retail price I enter?</h3>
+                <p>Yes. Enter the shelf price including VAT, as UK customers see it, and set the VAT rate. The planner removes VAT before working out margin, because VAT is collected for HMRC rather than earned by the business. Forgetting to remove it is one of the most common reasons launch margins look better on paper than in practice.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early engineering or commercial estimate. It is most useful for comparing options, surfacing trade-offs, and deciding what needs deeper validation next.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Use the result as an early decision aid, then confirm the numbers with suppliers, manufacturing partners, and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="hardware-business-case-builder.html">Business Case Builder</a>
+          <a href="route-to-market-simulator.html">Target COGS Tool</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/revenue-margin-simulator.js" defer></script>
+  </body>
+</html>

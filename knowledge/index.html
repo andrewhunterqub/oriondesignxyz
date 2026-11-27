@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Orion Engineering Knowledge Base | Orion Design</title>
+    <meta
+      name="description"
+      content="Free hardware product knowledge base: glossary, estimating formulas, process comparisons, checklists, seven plan-section hubs and a start-here guide by question."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/knowledge/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Orion Engineering Knowledge Base">
+    <meta
+      property="og:description"
+      content="Reference pages, engineering formulas, interactive tools, and practical articles for hardware teams and founders."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/knowledge/">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/knowledge.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orion Engineering Knowledge Base">
+    <meta
+      name="twitter:description"
+      content="Reference pages, engineering formulas, interactive tools, and practical articles for hardware teams and founders."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/knowledge.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "image": "https://oriondesign.xyz/images/social/og/knowledge.jpg",
+        "name": "Orion Engineering Knowledge Base",
+        "url": "https://oriondesign.xyz/knowledge/",
+        "description": "Reference pages, engineering formulas, interactive tools, and practical articles for hardware teams and founders.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Knowledge Base",
+                "item": "https://oriondesign.xyz/knowledge/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is in the Orion knowledge base?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Reference pages (a glossary, an estimating formulas page, a manufacturing processes comparison and printable checklists), hub guides for the seven sections of a product plan, in-depth guides with worked examples, and free interactive tools that run the numbers for your own product."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to sign up to use the tools or guides?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Everything is free to read and use with no sign-up or email address. The figures you enter in the tools stay in your browser, as the privacy page explains."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where should I start if I am new to hardware product development?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Read the idea to manufacture overview to see the seven stages, then follow the learning path for your role. The \"start here by question\" table on this page points to the right guide and tool for the most common early questions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are the figures in the guides real prices?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Worked examples use illustrative figures to show the method. Costs vary widely by product, volume, supplier and date, so use the tools with your own figures and confirm them with supplier quotes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I cite or link to these pages?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. The reference pages are written to be clear and citable. Please link to the page you used and treat it as general guidance to check against your own project data."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <span aria-current="page">Knowledge Base</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Reference hub</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders, engineers and product teams developing a physical product</p>
+            <h1>Orion engineering knowledge base.</h1>
+            <p>
+              A human-first reference hub for hardware teams. Use it to find definitions, formulas, process comparisons, checklists and decision guides
+              across product development, manufacturing, sustainability, route to market, funding and compliance. Everything is free to read and use, with no sign-up.
+            </p>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <strong data-count="knowledge">02</strong>
+              <span>reference pages built specifically for citation-friendly clarity</span>
+            </div>
+            <div class="stat">
+              <strong data-count="tools">36</strong>
+              <span>interactive engineering and commercial tools</span>
+            </div>
+            <div class="stat">
+              <strong data-count="guides">84</strong>
+              <span>long-form articles with practical worked examples</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Start here</p>
+            <h2>Reference pages built for quick answers and deeper engineering context.</h2>
+            <p>These pages are structured as knowledge resources first: clear definitions, formulas, worked examples, and the tool or article to use next.</p>
+          </div>
+          <div class="knowledge-grid">
+            <article class="knowledge-card reveal">
+              <p class="essay-meta">Formulas</p>
+              <h3>Engineering estimation formulas</h3>
+              <p>Unit cost, landed cost, tooling break-even, assembly time, margin and markup, target COGS, break-even, contingency, runway and tolerance stack-up, each with a worked example and its tool.</p>
+              <div class="tag-row">
+                <span>Formulas</span>
+                <span>Examples</span>
+                <span>Quick answers</span>
+              </div>
+              <a class="button button-primary" href="engineering-estimation-formulas.html">Open reference page</a>
+            </article>
+            <article class="knowledge-card reveal">
+              <p class="essay-meta">Definitions</p>
+              <h3>Product design and manufacturing glossary</h3>
+              <p>Plain-English definitions of over 200 terms across development, manufacturing, cost, funding, sustainability and compliance.</p>
+              <div class="tag-row">
+                <span>Definitions</span>
+                <span>A to Z</span>
+              </div>
+              <a class="button button-primary" href="glossary.html">Open glossary</a>
+            </article>
+            <article class="knowledge-card reveal">
+              <p class="essay-meta">Reference</p>
+              <h3>Manufacturing processes compared</h3>
+              <p>Eight common processes side by side: typical volumes, tooling, unit cost, lead time and design constraints.</p>
+              <div class="tag-row">
+                <span>Processes</span>
+                <span>Comparison</span>
+              </div>
+              <a class="button button-primary" href="../guides/manufacturing-processes-compared.html">Open reference page</a>
+            </article>
+            <article class="knowledge-card reveal">
+              <p class="essay-meta">Checklists</p>
+              <h3>Printable product development checklists</h3>
+              <p>Six free checklists for manufacturer meetings, tooling, certification, moulded parts, quote requests and launch.</p>
+              <div class="tag-row">
+                <span>Printable</span>
+                <span>No sign-up</span>
+              </div>
+              <a class="button button-primary" href="../guides/product-development-checklists.html">Open checklists</a>
+            </article>
+            <article class="knowledge-card reveal">
+              <p class="essay-meta">Manufacturing</p>
+              <h3>Injection mould break-even guide</h3>
+              <p>Understand break-even volume, tooling timing, and the practical limits of spreadsheet-only decision making.</p>
+              <div class="tag-row">
+                <span>Break-even</span>
+                <span>Tooling</span>
+                <span>Examples</span>
+              </div>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/injection-mould-break-even.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/manufacturing-payoff.html">Open tool</a>
+              </div>
+            </article>
+            <article class="knowledge-card reveal">
+              <p class="essay-meta">Commercial planning</p>
+              <h3>Route-to-market margin guide</h3>
+              <p>Work backwards from retail price to target COGS and see how DTC, marketplace, and retailer routes reshape the commercial brief.</p>
+              <div class="tag-row">
+                <span>RRP</span>
+                <span>Target COGS</span>
+                <span>Hidden costs</span>
+              </div>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/route-to-market-hardware-product.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/route-to-market-simulator.html">Open tool</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Browse by plan section</p>
+            <h2>Seven sections, from first idea to a product on sale.</h2>
+            <p>
+              Everything on the site is organised around the seven sections of a product plan. Each has a hub guide that explains how the decisions fit together,
+              plus the tools and guides that go deeper. The sections overlap, so expect to move back and forth between them.
+            </p>
+          </div>
+          <div class="knowledge-grid">
+            <article class="knowledge-card reveal">
+              <h3>1. Opportunity and concept</h3>
+              <p>Prove the problem, check competitors and patents, write measurable requirements and choose a concept.</p>
+              <div class="page-links">
+                <a href="../guides/opportunity-and-concept.html">Opportunity and concept hub</a>
+                <a href="../guides/how-to-validate-a-product-idea.html">How to validate a product idea</a>
+                <a href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a>
+              </div>
+            </article>
+            <article class="knowledge-card reveal">
+              <h3>2. Development and prototyping</h3>
+              <p>The stages of development, which prototypes each needs, how many rounds to plan, testing and design freeze.</p>
+              <div class="page-links">
+                <a href="../guides/development-and-prototyping.html">Development and prototyping hub</a>
+                <a href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>
+                <a href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a>
+                <a href="../tools/snap-fit-calculator.html">Snap-fit Calculator</a>
+                <a href="../tools/bracket-deflection-calculator.html">Bracket Deflection Calculator</a>
+                <a href="../tools/temperature-rise-estimator.html">Enclosure Temperature Rise Estimator</a>
+              </div>
+            </article>
+            <article class="knowledge-card reveal">
+              <h3>3. Manufacturing and cost</h3>
+              <p>How processes, unit cost, tooling and volume fit together, and how assembly and landed cost change the numbers.</p>
+              <div class="page-links">
+                <a href="../guides/manufacturing-and-cost.html">Manufacturing and cost hub</a>
+                <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+                <a href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>
+                <a href="../tools/assembly-time.html">Assembly Time Estimator</a>
+              </div>
+            </article>
+            <article class="knowledge-card reveal">
+              <h3>4. Sustainability and product life</h3>
+              <p>Where a product's impact comes from, why lifetime matters, footprints versus LCA, and the rules on green claims.</p>
+              <div class="page-links">
+                <a href="../guides/sustainability-and-product-life.html">Sustainability and product life hub</a>
+                <a href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a>
+                <a href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a>
+              </div>
+            </article>
+            <article class="knowledge-card reveal">
+              <h3>5. Route to market and margins</h3>
+              <p>How direct, marketplace, retail, distributor and B2B routes change what you keep, when you are paid and what the product can cost.</p>
+              <div class="page-links">
+                <a href="../guides/route-to-market-and-margins.html">Route to market and margins hub</a>
+                <a href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a>
+                <a href="../tools/revenue-margin-simulator.html">Launch Margin Planner</a>
+              </div>
+            </article>
+            <article class="knowledge-card reveal">
+              <h3>6. Funding and cash</h3>
+              <p>Find the real funding requirement from a cash forecast, compare funding sources and stage funding to milestones.</p>
+              <div class="page-links">
+                <a href="../guides/funding-and-cash.html">Funding and cash hub</a>
+                <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+                <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+              </div>
+            </article>
+            <article class="knowledge-card reveal">
+              <h3>7. IP, partners and compliance</h3>
+              <p>Patents, designs, trade marks and NDAs; contracts with designers and manufacturers; product marking and safety duties.</p>
+              <div class="page-links">
+                <a href="../guides/ip-partners-and-compliance.html">IP, partners and compliance hub</a>
+                <a href="../tools/nda-generator.html">NDA Generator</a>
+                <a href="../tools/certification-readiness.html">Certification Readiness Checklist</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <h2>How to use the knowledge base</h2>
+            <p>The site has four kinds of page, and most questions are best answered by using two or three of them together.</p>
+            <ul>
+              <li><strong>Reference pages</strong> give a quick, citable answer: a definition in the <a class="text-link-inline" href="glossary.html">glossary</a>, a formula on the <a class="text-link-inline" href="engineering-estimation-formulas.html">formulas page</a>, or a side-by-side table such as the <a class="text-link-inline" href="../guides/manufacturing-processes-compared.html">processes comparison</a>.</li>
+              <li><strong>Guides</strong> explain the trade-off behind a decision, with a worked example and the common mistakes. Start with the hub guide for the plan section you are in.</li>
+              <li><strong>Tools</strong> run the numbers for your own product. The figures you enter stay in your browser, and you can collect them in the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a>.</li>
+              <li><strong>Checklists and readiness checks</strong> tell you whether you are ready for a big commitment, such as talking to a manufacturer or paying for tooling.</li>
+            </ul>
+            <p>
+              A good pattern is to read the quick answer, run the tool with your own figures, then read the guide to understand what the result means and what to check next.
+              If you are not sure where you are, the <a class="text-link-inline" href="../idea-to-manufacture/index.html">idea to manufacture overview</a> describes the seven stages,
+              and the <a class="text-link-inline" href="../walkthrough/index.html">walkthrough</a> follows one illustrative product through all of them.
+            </p>
+
+            <h2>Start here by question</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>If you are asking…</th>
+                  <th>Read, then try</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Is my idea worth developing?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/how-to-validate-a-product-idea.html">How to validate a product idea</a><br>Tool: <a class="text-link-inline" href="../tools/product-purpose.html">Product Purpose Framework</a></td>
+                </tr>
+                <tr>
+                  <td>How much will it cost to develop?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/estimating-hardware-development-costs.html">Estimating hardware development costs</a><br>Tool: <a class="text-link-inline" href="../tools/startup-cost-planner.html">Startup Cost Planner</a></td>
+                </tr>
+                <tr>
+                  <td>How long will it take?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/mapping-the-product-design-process.html">Mapping the product design process</a><br>Tool: <a class="text-link-inline" href="../tools/timeline-planner.html">Product Development Timeline Planner</a></td>
+                </tr>
+                <tr>
+                  <td>How many prototypes do I need?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/how-many-prototypes-do-you-need.html">How many prototypes do you need?</a><br>Tool: <a class="text-link-inline" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a></td>
+                </tr>
+                <tr>
+                  <td>What will each unit cost to make?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/how-to-estimate-manufacturing-cost.html">How to estimate manufacturing cost</a><br>Tool: <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></td>
+                </tr>
+                <tr>
+                  <td>When should I pay for an injection mould?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/injection-mould-break-even.html">Injection mould break-even</a><br>Tool: <a class="text-link-inline" href="../tools/ready-for-tooling.html">Ready to Commit to Tooling?</a></td>
+                </tr>
+                <tr>
+                  <td>Should I make it in the UK or overseas?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/uk-vs-overseas-manufacturing.html">UK vs overseas manufacturing</a><br>Tool: <a class="text-link-inline" href="../tools/landed-cost-calculator.html">Landed Cost Calculator</a></td>
+                </tr>
+                <tr>
+                  <td>What should I charge?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/how-to-price-a-physical-product.html">How to price a physical product</a><br>Tool: <a class="text-link-inline" href="../tools/pricing-ladder.html">Pricing Ladder</a></td>
+                </tr>
+                <tr>
+                  <td>How many do I need to sell?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/financial-break-even-for-hardware-products.html">Financial break-even</a><br>Tool: <a class="text-link-inline" href="../tools/break-even-calculator.html">Break-even Calculator</a></td>
+                </tr>
+                <tr>
+                  <td>How much funding do I need?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/calculating-hardware-startup-cash-flow.html">Calculating startup cash flow</a><br>Tool: <a class="text-link-inline" href="../tools/cashflow-projection.html">Cashflow Projection Tool</a></td>
+                </tr>
+                <tr>
+                  <td>How do I protect the idea?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/how-to-protect-product-ip.html">How to protect product IP</a><br>Tool: <a class="text-link-inline" href="../tools/nda-generator.html">NDA Generator</a></td>
+                </tr>
+                <tr>
+                  <td>What certification does it need?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/product-certification-basics.html">Product certification basics</a><br>Tool: <a class="text-link-inline" href="../tools/certification-readiness.html">Certification Readiness Checklist</a></td>
+                </tr>
+                <tr>
+                  <td>Am I ready to approach a manufacturer?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/must-have-documents-before-talking-to-a-manufacturer.html">Documents to have before talking to a manufacturer</a><br>Tool: <a class="text-link-inline" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a></td>
+                </tr>
+                <tr>
+                  <td>How do I control a change to a released part?</td>
+                  <td>Guide: <a class="text-link-inline" href="../guides/bills-of-materials-and-revision-control.html">Bills of materials and revision control</a><br>Tool: <a class="text-link-inline" href="../tools/change-request-builder.html">Change Request Builder</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>How the content is written</h2>
+            <p>
+              Every guide and reference page is written or reviewed by Andrew Hunter, a product design engineer in Belfast, and carries a last-reviewed date.
+              Rules of thumb are given as typical ranges with their assumptions stated, and worked examples are labelled as illustrative: they show the method, not a quote or a benchmark for your product.
+              Where a topic depends on law, tax or regulation, the pages link to the official UK source and say so; they are general information, not legal, tax or certification advice.
+              If you spot an error, <a class="text-link-inline" href="../contact/index.html">get in touch</a> and it will be corrected openly.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              use the knowledge base to frame the decision and find the input that matters most, then test that input with a supplier quote, a prototype or a customer conversation.
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Other ways in</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/learning-paths.html">Learning paths by role</a></div>
+                <div class="aside-item"><a class="text-link" href="../ready-to-launch/index.html">Product development roadmap</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/index.html">All tools</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/index.html">All guides</a></div>
+                <div class="aside-item"><a class="text-link" href="../case-studies/index.html">Case studies</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Popular references</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="engineering-estimation-formulas.html#margin-markup">Margin vs markup</a></div>
+                <div class="aside-item"><a class="text-link" href="engineering-estimation-formulas.html#crossover">Tooling break-even volume</a></div>
+                <div class="aside-item"><a class="text-link" href="engineering-estimation-formulas.html#tolerance">Worst-case and RSS stack-up</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/landed-cost-freight-duty-vat.html">Landed cost explained</a></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is in the Orion knowledge base?</h3>
+                <p>Reference pages (a glossary, an estimating formulas page, a manufacturing processes comparison and printable checklists), hub guides for the seven sections of a product plan, in-depth guides with worked examples, and free interactive tools that run the numbers for your own product.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need to sign up to use the tools or guides?</h3>
+                <p>No. Everything is free to read and use with no sign-up or email address. The figures you enter in the tools stay in your browser, as the privacy page explains.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Where should I start if I am new to hardware product development?</h3>
+                <p>Read the idea to manufacture overview to see the seven stages, then follow the learning path for your role. The "start here by question" table on this page points to the right guide and tool for the most common early questions.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Are the figures in the guides real prices?</h3>
+                <p>No. Worked examples use illustrative figures to show the method. Costs vary widely by product, volume, supplier and date, so use the tools with your own figures and confirm them with supplier quotes.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I cite or link to these pages?</h3>
+                <p>Yes. The reference pages are written to be clear and citable. Please link to the page you used and treat it as general guidance to check against your own project data.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">A human-first engineering knowledge resource for hardware teams, founders, and manufacturing decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Reference pages</h3>
+          <a href="index.html">Knowledge Base</a>
+          <a href="engineering-estimation-formulas.html">Engineering Formulas</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

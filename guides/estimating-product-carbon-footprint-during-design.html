@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Estimating Product Carbon Footprint During Design | Orion Design</title>
+    <meta
+      name="description"
+      content="How to estimate product carbon footprint during design using material, process, transport, use-phase energy, and lifetime assumptions."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/estimating-product-carbon-footprint-during-design.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Estimating Product Carbon Footprint During Design">
+    <meta
+      property="og:description"
+      content="How to estimate product carbon footprint during design using material, process, transport, use-phase energy, and lifetime assumptions."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/estimating-product-carbon-footprint-during-design.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-estimating-product-carbon-footprint-during-design.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Estimating Product Carbon Footprint During Design">
+    <meta
+      name="twitter:description"
+      content="How to estimate product carbon footprint during design using material, process, transport, use-phase energy, and lifetime assumptions."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-estimating-product-carbon-footprint-during-design.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-estimating-product-carbon-footprint-during-design.jpg",
+        "headline": "Estimating Product Carbon Footprint During Design",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-25",
+        "articleSection": "Sustainable design",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/estimating-product-carbon-footprint-during-design.html",
+        "datePublished": "2026-03-12"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Estimating product carbon footprint",
+                "item": "https://oriondesign.xyz/guides/estimating-product-carbon-footprint-during-design.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can you estimate product carbon footprint before doing a full lifecycle assessment?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Early estimates use material mass, process route, transport, product lifetime, and energy use to compare directions before a formal LCA is needed."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What usually drives product carbon footprint most?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The biggest drivers are usually embodied material burden, energy-intensive manufacturing, transport distance and mode, and use-phase energy over the product lifetime."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between a product carbon footprint and a lifecycle assessment?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A carbon footprint measures one impact, greenhouse gas emissions, expressed in kg CO2e. A lifecycle assessment can cover many impacts, such as water use, toxicity and resource depletion, as well as climate. ISO 14067 covers product carbon footprints, while ISO 14040 and ISO 14044 cover lifecycle assessment."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does cradle-to-gate mean compared with cradle-to-grave?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cradle-to-gate covers emissions from raw materials up to the point the product leaves the factory. Cradle-to-grave also includes distribution, use and end of life. For products that use energy, cradle-to-gate figures can leave out most of the total."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use an early carbon estimate in marketing or sustainability claims?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not on its own. A design-stage estimate with placeholder factors is for comparing options. Public claims need a properly bounded assessment with sourced data, and in the UK they should meet the Competition and Markets Authority's Green Claims Code."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "@id": "https://oriondesign.xyz/guides/estimating-product-carbon-footprint-during-design.html#howto-1",
+            "name": "How to estimate a product's carbon footprint during design",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "text": "Define the functional unit. Decide what you are comparing: one product, or one product delivering a service for a stated time (for example, five years of daily use). Comparing per year of service stops a cheap, short-lived option looking better than it is.",
+                "name": "Define the functional unit"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "text": "List the bill of materials by mass. Weigh or estimate each significant part and group it by material. Electronics, batteries and metals deserve their own lines because their factors are usually much higher per kilogram than common plastics.",
+                "name": "List the bill of materials by mass"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "text": "Assign emission factors from one dataset. Use the same source for every option so that the differences you see come from the design, not from mixing databases.",
+                "name": "Assign emission factors from one dataset"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "text": "Add manufacturing. Include process energy and waste, such as machining swarf, moulding runners and offcuts. At concept stage a per-kilogram allowance by process is often enough.",
+                "name": "Add manufacturing"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "text": "Add transport. Multiply shipped mass (including packaging) by distance and a factor for each mode. Note every leg: factory to port, sea or air, port to warehouse, warehouse to customer.",
+                "name": "Add transport"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 6,
+                "text": "Add the use phase. Annual energy in kWh = power in watts × hours of use per day × days per year ÷ 1,000. Multiply by lifetime and by a grid electricity factor for the market where the product will be used.",
+                "name": "Add the use phase"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 7,
+                "text": "Sum by stage and find the hotspot. The largest stage is where design effort pays back most.",
+                "name": "Sum by stage and find the hotspot"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 8,
+                "text": "Test sensitivity. Change one assumption at a time (lifetime, power, transport mode, material) and see which ones change the ranking. Those are the assumptions to firm up first.",
+                "name": "Test sensitivity"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Estimating product carbon footprint</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 25 November 2026 <span aria-hidden="true">·</span> For designers, engineers and founders comparing concepts before the design is fixed</p>
+            <h1>Estimating product carbon footprint during design.</h1>
+            <p>
+              You do not need a full lifecycle assessment to make better early decisions. A concept-stage carbon estimate can already show whether
+              the main burden sits in materials, manufacturing, transport, or the use phase.
+            </p>
+          </div>
+          <div class="metric-strip">
+            <div class="metric-pill">
+              <strong>Topic</strong>
+              <span>Concept-stage carbon</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Audience</strong>
+              <span>Designers and engineering teams</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Tool</strong>
+              <span>Carbon Footprint Estimator</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Use it for</strong>
+              <span>Option comparison</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Estimate a product's carbon footprint during design by multiplying each material mass, process, journey and kilowatt-hour by an emission factor, then adding the results by lifecycle stage.</h2>
+              <div class="formula-block">Footprint (kg CO2e) ≈ Σ(material mass × material factor) + manufacturing + Σ(shipped mass × distance × transport factor) + (annual energy × lifetime × grid factor) + end of life</div>
+              <p>
+                At concept stage the aim is not a precise number but a reliable ranking: which stage dominates, and which design change would move the total most.
+                Use one consistent set of emission factors, state your assumptions, and treat the result as a comparison tool rather than a figure for public claims.
+              </p>
+            </div>
+
+            <p>
+              Teams often delay carbon thinking until supplier data is available, but that is usually too late to influence the architecture.
+              By then material choice, form factor, assembly logic, and use-phase behaviour are already harder to change.
+              You do not need a full lifecycle assessment to make better early decisions: a rough model built from the <a class="glossary-term" href="../knowledge/glossary.html#term-bill-of-materials-bom" data-definition="The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly." aria-label="bill of materials: The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly. (glossary)">bill of materials</a> and a few honest assumptions is usually enough to show where the burden sits.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Useful principle:</strong>
+              early carbon estimates are not for reporting. They are for comparison. The goal is to identify which option is directionally lighter and why.
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#embodied-use-phase">Embodied carbon and use-phase carbon</a></li>
+              <li><a class="text-link-inline" href="#estimate-first">What to estimate first</a></li>
+              <li><a class="text-link-inline" href="#method">A simple method you can repeat</a></li>
+              <li><a class="text-link-inline" href="#emission-factors">Where emission factors come from</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#compare-not-claim">Use the estimate to compare choices, not to make claims</a></li>
+              <li><a class="text-link-inline" href="#lifecycle-quality">Connect carbon to lifecycle quality</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Next steps</a></li>
+            </ol>
+
+            <h2 id="embodied-use-phase">Embodied carbon and use-phase carbon</h2>
+            <p>
+              A product's footprint is usually reported in kilograms of carbon dioxide equivalent (kg CO2e), which converts other greenhouse gases into the warming effect of an equivalent mass of CO2.
+              It is helpful to split the total into two broad parts.
+            </p>
+            <ul>
+              <li><strong>Embodied carbon</strong> is everything emitted to make and deliver the product: extracting and refining materials, making components, manufacturing and assembly, packaging, and transport. It is fixed the moment the product is built.</li>
+              <li><strong>Use-phase carbon</strong> comes from running the product: electricity, fuel, consumables, and sometimes maintenance and spare parts. It accumulates every year the product is in service.</li>
+            </ul>
+            <p>
+              End-of-life treatment (landfill, incineration, recycling or reuse) adds or offsets a smaller amount for most products, and is the least certain part of an early estimate because nobody yet knows where the product will end up.
+            </p>
+            <p>
+              The boundary you choose matters. A <strong>cradle-to-gate</strong> estimate stops when the product leaves the factory, covering materials and manufacturing only.
+              A <strong>cradle-to-grave</strong> estimate follows the product through distribution, use and disposal. <a class="glossary-term" href="../knowledge/glossary.html#term-cradle-to-gate" data-definition="A footprint boundary covering raw materials and manufacturing, up to the product leaving the factory." aria-label="Cradle-to-gate: A footprint boundary covering raw materials and manufacturing, up to the product leaving the factory. (glossary)">Cradle-to-gate</a> figures are common in supplier data, but for anything that uses energy they can miss most of the footprint.
+              Always say which boundary a number uses before comparing it with another.
+            </p>
+
+            <h2 id="estimate-first">What to estimate first</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Carbon driver</th>
+                  <th>What to ask</th>
+                  <th>Why it matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Material mass</td>
+                  <td>How much material is the product actually carrying?</td>
+                  <td>Heavy, high-impact materials create embodied burden immediately</td>
+                </tr>
+                <tr>
+                  <td>Manufacturing process</td>
+                  <td>Is the route materially or energy intensive?</td>
+                  <td>Process choice changes both waste and energy profile</td>
+                </tr>
+                <tr>
+                  <td>Transport</td>
+                  <td>How far is the product moving and by which mode?</td>
+                  <td>Transport can be a major penalty, especially when air freight appears</td>
+                </tr>
+                <tr>
+                  <td>Use phase</td>
+                  <td>Does the product consume energy over years of operation?</td>
+                  <td>Use-phase carbon can dominate the total for active products</td>
+                </tr>
+                <tr>
+                  <td>Lifetime</td>
+                  <td>How long does the product stay useful before replacement?</td>
+                  <td>Short lifetime makes embodied impact harder to justify</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 id="method">A simple method you can repeat</h2>
+            <ol data-howto="How to estimate a product's carbon footprint during design">
+              <li><strong>Define the functional unit.</strong> Decide what you are comparing: one product, or one product delivering a service for a stated time (for example, five years of daily use). Comparing per year of service stops a cheap, short-lived option looking better than it is.</li>
+              <li><strong>List the bill of materials by mass.</strong> Weigh or estimate each significant part and group it by material. Electronics, batteries and metals deserve their own lines because their factors are usually much higher per kilogram than common plastics.</li>
+              <li><strong>Assign emission factors from one dataset.</strong> Use the same source for every option so that the differences you see come from the design, not from mixing databases.</li>
+              <li><strong>Add manufacturing.</strong> Include process energy and waste, such as machining swarf, moulding runners and offcuts. At concept stage a per-kilogram allowance by process is often enough.</li>
+              <li><strong>Add transport.</strong> Multiply shipped mass (including packaging) by distance and a factor for each mode. Note every leg: factory to port, sea or air, port to warehouse, warehouse to customer.</li>
+              <li><strong>Add the use phase.</strong> Annual energy in kWh = power in watts × hours of use per day × days per year ÷ 1,000. Multiply by lifetime and by a grid electricity factor for the market where the product will be used.</li>
+              <li><strong>Sum by stage and find the hotspot.</strong> The largest stage is where design effort pays back most.</li>
+              <li><strong>Test sensitivity.</strong> Change one assumption at a time (lifetime, power, transport mode, material) and see which ones change the ranking. Those are the assumptions to firm up first.</li>
+            </ol>
+
+            <h2 id="emission-factors">Where emission factors come from</h2>
+            <p>
+              Emission factors are published in lifecycle inventory databases, government conversion factor sets, industry association data and suppliers' environmental product declarations.
+              Values for the same material can differ noticeably between sources because they assume different production routes, energy mixes, recycled content and system boundaries.
+              That is normal, and it is why a single unexplained number should never be treated as authoritative.
+            </p>
+            <ul>
+              <li>Record the source and version of every factor you use.</li>
+              <li>Keep to one dataset for a comparison wherever possible.</li>
+              <li>Prefer supplier-specific data once you have chosen a supplier, and note when you switch to it.</li>
+              <li>Use the grid factor for the country where the product will be used, not where it is designed, and remember grid factors change over time.</li>
+            </ul>
+            <p>
+              Formal studies follow recognised standards: ISO 14040 and ISO 14044 for lifecycle assessment, and ISO 14067 for the <a class="glossary-term" href="../knowledge/glossary.html#term-carbon-footprint" data-definition="The greenhouse gas emissions linked to a product across the life cycle stages counted, usually expressed as carbon dioxide equivalent. It measures one impact, where a life cycle assessment looks at many." aria-label="carbon footprint: The greenhouse gas emissions linked to a product across the life cycle stages counted, usually expressed as carbon dioxide equivalent. It measures one impact, where a life cycle assessment looks at many. (glossary)">carbon footprint</a> of products.
+              An early design estimate does not need to meet those standards, but borrowing their discipline about boundaries, functional units and documented assumptions makes the estimate far more useful later.
+            </p>
+
+            <div class="pull-quote">
+              <p>
+                A rough carbon model is valuable when it changes a design decision. It does not need to be perfect to be useful.
+              </p>
+            </div>
+
+            <h2 id="example">Worked example</h2>
+            <div class="worked-example">
+              <p>
+                A compact electronic product may look low impact because it uses little material, but if it runs every day for five years the use phase can exceed the embodied footprint.
+                A passive product can behave the opposite way, where material choice and transport dominate almost everything.
+              </p>
+              <p>
+                Illustrative figures only. The factors below are rounded placeholders chosen to show the method, so they differ slightly from the Carbon Footprint Estimator's built-in factors (for example 0.2 here against its 0.193 kg CO2e per kWh); real values depend on the dataset, supplier and country, and should be replaced with sourced figures.
+                Consider a mains-powered desk lamp with a 0.4 kg <a class="glossary-term" href="../knowledge/glossary.html#term-abs" data-definition="Acrylonitrile butadiene styrene: a common, low-cost rigid plastic with a good surface finish, widely used for enclosures and consumer products." aria-label="ABS: Acrylonitrile butadiene styrene: a common, low-cost rigid plastic with a good surface finish, widely used for enclosures and consumer products. (glossary)">ABS</a> housing, a 0.1 kg aluminium <a class="glossary-term" href="../knowledge/glossary.html#term-heat-sink" data-definition="Finned metal, usually aluminium, fixed to a hot component to give it more surface area to lose heat. It needs moving air around it, so it suits vented products better than small sealed ones." aria-label="heatsink: Finned metal, usually aluminium, fixed to a hot component to give it more surface area to lose heat. It needs moving air around it, so it suits vented products better than small sealed ones. (glossary)">heatsink</a> and a small LED driver board, shipped 20,000 km by sea at 0.8 kg packed, drawing 10 W for 4 hours a day over a five-year life.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Stage</th>
+                  <th>Illustrative assumption</th>
+                  <th>kg CO2e</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ABS housing</td>
+                  <td>0.4 kg × 3.5 kg CO2e/kg</td>
+                  <td>1.40</td>
+                </tr>
+                <tr>
+                  <td>Aluminium heatsink</td>
+                  <td>0.1 kg × 9.0 kg CO2e/kg</td>
+                  <td>0.90</td>
+                </tr>
+                <tr>
+                  <td>Electronics</td>
+                  <td>Lumped allowance for the LED and driver board</td>
+                  <td>4.00</td>
+                </tr>
+                <tr>
+                  <td>Manufacturing and assembly</td>
+                  <td>Lumped allowance for moulding, finishing and assembly</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td>Transport</td>
+                  <td>0.0008 t × 20,000 km × 0.015 kg CO2e per tonne-km (sea)</td>
+                  <td>0.24</td>
+                </tr>
+                <tr>
+                  <td>Use phase</td>
+                  <td>10 W × 4 h × 365 days ÷ 1,000 = 14.6 kWh a year × 5 years = 73 kWh × 0.2 kg CO2e/kWh</td>
+                  <td>14.60</td>
+                </tr>
+                <tr>
+                  <td><strong>Total</strong></td>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-cradle-to-grave" data-definition="A footprint boundary covering a product's whole life: materials, manufacturing, distribution, use and end of life." aria-label="Cradle-to-grave: A footprint boundary covering a product's whole life: materials, manufacturing, distribution, use and end of life. (glossary)">Cradle-to-grave</a>, excluding end of life</td>
+                  <td><strong>22.14</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              On these assumptions, <a class="glossary-term" href="../knowledge/glossary.html#term-embodied-carbon" data-definition="The greenhouse gas emissions from making a product's materials and parts, before it is used." aria-label="embodied carbon: The greenhouse gas emissions from making a product's materials and parts, before it is used. (glossary)">embodied carbon</a> is 7.54 kg CO2e (about 34 per cent) and the use phase is 14.60 kg CO2e (about 66 per cent). The hotspot is energy in use, not the housing. Now test the alternatives one at a time:
+            </p>
+            <ul>
+              <li><strong>A more efficient 7 W LED design</strong> uses 10.22 kWh a year, or 51.1 kWh over five years, which is 10.22 kg CO2e. That saves 4.38 kg and brings the total to 17.76 kg CO2e.</li>
+              <li><strong>Recycled ABS</strong> at an assumed 2.0 kg CO2e/kg cuts the housing from 1.40 to 0.80, saving 0.60 kg. Worth doing, but about a seventh of the efficiency gain.</li>
+              <li><strong>Air freight instead of sea</strong> at an assumed 0.6 kg CO2e per tonne-km gives 0.0008 × 20,000 × 0.6 = 9.60 kg, raising the total to 31.50 kg CO2e, an increase of about 42 per cent.</li>
+              <li><strong>Halving the lifetime</strong> to two and a half years leaves the embodied 7.54 kg unchanged but spreads it over half the time: about 3.02 kg CO2e per year of service instead of 1.51.</li>
+            </ul>
+            <p>
+              The example shows why ranking matters more than precision. Even if individual factors were 30 per cent out, the conclusions would very likely stand: keep it off air freight, design for low power, and make it last.
+            </p>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 280" width="100%" role="img" aria-labelledby="pcf-fig-title pcf-fig-desc">
+                <title id="pcf-fig-title">Desk lamp carbon footprint by stage, and how three design changes move it</title>
+                <desc id="pcf-fig-desc">Stacked bars drawn to scale from the worked example, in kg CO2e. Base case: 7.30 for materials, electronics and making, 0.24 for sea transport and 14.60 for five years of use, 22.14 in total. A 7 W LED design cuts use to 10.22, a total of 17.76. Recycled ABS saves 0.60 on the housing. Air freight raises transport to 9.60, a total of 31.50.</desc>
+                <rect x="20" y="6" width="14" height="14" rx="2" class="gd-fill-indigo"/>
+                <text x="40" y="18" class="gd-t">Materials, electronics, making</text>
+                <rect x="20" y="28" width="14" height="14" rx="2" class="gd-fill-magenta"/>
+                <text x="40" y="40" class="gd-t">Transport</text>
+                <rect x="130" y="28" width="14" height="14" rx="2" class="gd-fill-teal"/>
+                <text x="150" y="40" class="gd-t">Use phase, 5 years</text>
+                <text x="20" y="78" class="gd-t"><tspan class="gd-v">22.14 kg</tspan> base case, sea freight</text>
+                <rect x="20" y="85" width="69.5" height="18" class="gd-fill-indigo gd-seg"/>
+                <rect x="89.5" y="85" width="2.3" height="18" class="gd-fill-magenta gd-seg"/>
+                <rect x="91.8" y="85" width="139" height="18" class="gd-fill-teal gd-seg"/>
+                <text x="20" y="134" class="gd-t"><tspan class="gd-v">17.76 kg</tspan> with a 7 W LED design</text>
+                <rect x="20" y="141" width="69.5" height="18" class="gd-fill-indigo gd-seg"/>
+                <rect x="89.5" y="141" width="2.3" height="18" class="gd-fill-magenta gd-seg"/>
+                <rect x="91.8" y="141" width="97.3" height="18" class="gd-fill-teal gd-seg"/>
+                <text x="20" y="190" class="gd-t"><tspan class="gd-v">0.60 kg saved</tspan> with recycled ABS</text>
+                <rect x="20" y="197" width="63.8" height="18" class="gd-fill-indigo gd-seg"/>
+                <rect x="83.8" y="197" width="2.3" height="18" class="gd-fill-magenta gd-seg"/>
+                <rect x="86.1" y="197" width="139" height="18" class="gd-fill-teal gd-seg"/>
+                <text x="20" y="246" class="gd-t"><tspan class="gd-v gd-tm">31.50 kg</tspan> by air freight</text>
+                <rect x="20" y="253" width="69.5" height="18" class="gd-fill-indigo gd-seg"/>
+                <rect x="89.5" y="253" width="91.4" height="18" class="gd-fill-magenta gd-seg"/>
+                <rect x="181" y="253" width="139" height="18" class="gd-fill-teal gd-seg"/>
+              </svg>
+              <figcaption>Illustrative figures from the example above, in kg CO₂e, bars drawn to scale. Energy in use is the largest stage, so designing for low power saves far more than recycled plastic, and air freight undoes both.</figcaption>
+            </figure>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>They compare materials but ignore lifetime.</strong>
+                A lower-carbon material is useful, but not if the product becomes less durable and gets replaced sooner.
+              </div>
+              <div>
+                <strong>They focus on recycling before reducing burden.</strong>
+                If the design is heavy, energy-hungry, or over-engineered, recycling will not rescue the concept.
+              </div>
+              <div>
+                <strong>They overlook logistics.</strong>
+                A small product moved inefficiently over long distances can still carry a disproportionate footprint.
+              </div>
+              <div>
+                <strong>They mix datasets and boundaries.</strong>
+                Comparing a cradle-to-gate figure from one source with a cradle-to-grave figure from another produces a difference that has nothing to do with the design.
+              </div>
+              <div>
+                <strong>They leave out electronics and batteries.</strong>
+                These are often small by mass but large by footprint. A model built only from the plastic and metal parts can badly understate the embodied total.
+              </div>
+              <div>
+                <strong>They assume the use phase away.</strong>
+                Standby power, chargers and consumables are easy to forget and can add up over years of service.
+              </div>
+              <div>
+                <strong>They quote the estimate as a fact.</strong>
+                A concept-stage number with placeholder factors is not evidence for a marketing claim.
+              </div>
+            </div>
+
+            <h2 id="compare-not-claim">Use the estimate to compare choices, not to make claims</h2>
+            <ul>
+              <li>Compare one material system against another.</li>
+              <li>Test whether manufacturing-route changes alter the picture meaningfully.</li>
+              <li>Stress-test lifetime and use-phase assumptions.</li>
+              <li>See whether the product improves more by consuming less energy than by changing polymer grade.</li>
+            </ul>
+            <p>
+              If you later want to make a public environmental claim, it needs a properly bounded assessment with sourced data, and the claim itself must be accurate, clear and substantiated.
+              In the UK, the Competition and Markets Authority's <a class="text-link-inline" href="https://www.gov.uk/government/publications/green-claims-code-making-environmental-claims" rel="noopener">Green Claims Code</a> sets out what that means in practice.
+            </p>
+
+            <h2 id="lifecycle-quality">Connect carbon to lifecycle quality</h2>
+            <p>
+              Carbon is one lens, not the whole answer. The <a class="text-link-inline" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a> shows where the emissions burden is likely to sit.
+              The <a class="text-link-inline" href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a> helps test whether lifetime, repairability, and recovery design make the concept more defensible overall.
+              <a class="text-link-inline" href="why-product-lifetime-matters-more-than-recycling.html">Why product lifetime matters more than recycling</a> explains why durability so often beats material substitution,
+              and <a class="text-link-inline" href="design-for-repair-and-disassembly.html">design for repair and disassembly</a> covers how to make a longer life realistic.
+            </p>
+
+            <h2 id="next-steps">Next steps</h2>
+            <ol>
+              <li>Write down the <a class="glossary-term" href="../knowledge/glossary.html#term-functional-unit" data-definition="The basis a footprint or LCA compares on, such as one year of use, so products with different lifetimes compare fairly." aria-label="functional unit: The basis a footprint or LCA compares on, such as one year of use, so products with different lifetimes compare fairly. (glossary)">functional unit</a>, boundary and lifetime you are assuming, before choosing any factors.</li>
+              <li>Run your main concept options through the <a class="text-link-inline" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a> and note which stage dominates for each.</li>
+              <li>If materials dominate, compare candidates with the <a class="text-link-inline" href="../tools/material-selector.html">Plastic Material Selector</a> and the guide to <a class="text-link-inline" href="choosing-plastic-materials.html">choosing plastic materials</a>, checking durability as well as carbon.</li>
+              <li>If the use phase dominates, set a power budget early and treat it as a design requirement.</li>
+              <li>Repeat the estimate when supplier data arrives, and commission a formal assessment only when you need a figure for reporting or claims.</li>
+            </ol>
+            <p>For the wider picture, see the <a class="text-link-inline" href="sustainability-and-product-life.html">Sustainability and product life hub</a>.</p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Run a concept-stage carbon comparison</h3>
+                <p>Use the tool to compare material, process, transport, and use-phase assumptions before the architecture is fixed.</p>
+                <a class="button button-primary" href="../tools/carbon-footprint.html" data-analytics-event="article_cta_click" data-analytics-label="carbon_article_to_carbon_tool">
+                  Open Carbon Footprint Estimator
+                </a>
+              </div>
+              <div class="article-action-card">
+                <h3>Look beyond carbon alone</h3>
+                <p>Use the lifecycle tool next if durability, repairability, or product lifetime might matter more than recycling claims.</p>
+                <a class="button button-secondary" href="../tools/product-lifecycle-explorer.html" data-analytics-event="article_cta_click" data-analytics-label="carbon_article_to_lifecycle_tool">
+                  Open Lifecycle Explorer
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="sustainability-and-product-life.html">Sustainability and product life: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related tools</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/material-selector.html">Plastic Material Selector</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/product-purpose.html">Product Purpose Framework</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="why-product-lifetime-matters-more-than-recycling.html">Why product lifetime matters more than recycling</a></div>
+                <div class="aside-item"><a class="text-link" href="design-for-repair-and-disassembly.html">Design for repair and disassembly</a></div>
+                <div class="aside-item"><a class="text-link" href="sustainable-product-design.html">Sustainable product design</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-plastic-materials.html">Choosing plastic materials</a></div>
+                <div class="aside-item"><a class="text-link" href="product-carbon-footprint-vs-lca.html">Product carbon footprint vs LCA</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-lower-carbon-materials.html">Choosing lower-carbon materials</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Typical questions</p>
+              <div class="tag-row">
+                <span>Product carbon footprint calculator</span>
+                <span>Estimate carbon during design</span>
+                <span>Embodied vs use-phase carbon</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Can you estimate product carbon footprint before doing a full lifecycle assessment?</h3>
+                <p>Yes. Early estimates use material mass, process route, transport, product lifetime, and energy use to compare directions before a formal LCA is needed.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What usually drives product carbon footprint most?</h3>
+                <p>The biggest drivers are usually embodied material burden, energy-intensive manufacturing, transport distance and mode, and use-phase energy over the product lifetime.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between a product carbon footprint and a lifecycle assessment?</h3>
+                <p>A carbon footprint measures one impact, greenhouse gas emissions, expressed in kg CO2e. A lifecycle assessment can cover many impacts, such as water use, toxicity and resource depletion, as well as climate. ISO 14067 covers product carbon footprints, while ISO 14040 and ISO 14044 cover lifecycle assessment.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What does cradle-to-gate mean compared with cradle-to-grave?</h3>
+                <p>Cradle-to-gate covers emissions from raw materials up to the point the product leaves the factory. Cradle-to-grave also includes distribution, use and end of life. For products that use energy, cradle-to-gate figures can leave out most of the total.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I use an early carbon estimate in marketing or sustainability claims?</h3>
+                <p>Not on its own. A design-stage estimate with placeholder factors is for comparing options. Public claims need a properly bounded assessment with sourced data, and in the UK they should meet the Competition and Markets Authority's Green Claims Code.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">Author</p>
+            <h2>Andrew Hunter</h2>
+            <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to inform early decisions, then validate against project-specific data, supplier input, and production constraints.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports real product and sustainability decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a>
+          <a href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a>
+          <a href="sustainable-product-design.html">Sustainable product design</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

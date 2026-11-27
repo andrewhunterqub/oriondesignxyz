@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Product Test Plan Builder for Hardware | Orion Design</title>
+    <meta
+      name="description"
+      content="Tick your product's characteristics and get a starting test plan: what to test, example references, and when in development, ready to copy and complete."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/test-plan-builder.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Product Test Plan Builder | Orion Design">
+    <meta
+      property="og:description"
+      content="Tick your product's characteristics and get a starting test plan: what to test, example references, and when in development, ready to copy and complete."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/test-plan-builder.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-test-plan-builder.jpg">
+    <meta property="og:image:alt" content="Product test plan builder from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Product Test Plan Builder | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Tick your product's characteristics and get a starting test plan: what to test, example references, and when in development, ready to copy and complete."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-test-plan-builder.jpg">
+    <meta name="twitter:image:alt" content="Product test plan builder from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-test-plan-builder.jpg",
+        "name": "Product Test Plan Builder",
+        "url": "https://oriondesign.xyz/tools/test-plan-builder.html",
+        "description": "Generate a starting test plan for a hardware product from its characteristics, with example references and development stages.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Product Test Plan Builder",
+                "item": "https://oriondesign.xyz/tools/test-plan-builder.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What should a product test plan include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For each requirement: what is tested, the method or standard, the number of samples, a pass criterion set in advance, when it will be tested, and the result with evidence. The plan should cover function, users, durability, safety, compliance, packaging and production consistency."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this tool tell me which standards my product must meet?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It gives examples of where requirements commonly come from. The applicable regulations and designated standards depend on the exact product; confirm them with a test laboratory or the official GOV.UK guidance."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should testing start?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Functional and user testing start with the first prototypes. Pre-compliance testing for electrical, EMC and radio products should happen on engineering prototypes, and formal testing on production-intent units before or alongside tooling."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many samples do I need for testing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on the test: some standards specify sample numbers, and durability tests often need several units. Ask your laboratory early, because samples can be a significant cost before production tooling exists."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is the copied plan different from the table?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The copied version is grouped by development stage and adds blanks for pass criteria and results, so you can paste it into your own document and complete it."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Product Test Plan Builder</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Product Test Plan Builder</h1>
+            <p>
+              Answer eight questions about your product and get a starting test plan: the areas to test, an example of where requirements commonly come from,
+              and when in development to test them. Copy it into your own document and add pass criteria. It is a planning aid, not a compliance determination.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Your product</span>
+            <div class="preset-row" role="group" aria-label="Test plan builder worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"tpMains":"no","tpBattery":"yes","tpRadio":"yes","tpPortable":"yes","tpOutdoor":"no","tpMoving":"yes","tpChildren":"no","tpFood":"no"}'>Bluetooth gadget</button>
+              <button class="preset-button" type="button" data-tool-preset='{"tpMains":"yes","tpBattery":"no","tpRadio":"no","tpPortable":"no","tpOutdoor":"no","tpMoving":"yes","tpChildren":"no","tpFood":"yes"}'>Mains kitchen appliance</button>
+              <button class="preset-button" type="button" data-tool-preset='{"tpMains":"no","tpBattery":"no","tpRadio":"no","tpPortable":"yes","tpOutdoor":"yes","tpMoving":"yes","tpChildren":"no","tpFood":"no"}'>Outdoor product, no electronics</button>
+              <button class="preset-button" type="button" data-tool-preset='{"tpMains":"no","tpBattery":"yes","tpRadio":"no","tpPortable":"yes","tpOutdoor":"no","tpMoving":"yes","tpChildren":"yes","tpFood":"no"}'>Electronic toy</button>
+            </div>
+            <form class="tool-form" id="tpForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="tpMains">Mains powered?</label>
+                  <select id="tpMains">
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="tpBattery">Battery powered?</label>
+                  <select id="tpBattery">
+                    <option value="yes" selected>Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="tpRadio">Has a radio (Bluetooth, Wi-Fi, cellular)?</label>
+                  <select id="tpRadio">
+                    <option value="yes" selected>Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="tpPortable">Handheld or portable?</label>
+                  <select id="tpPortable">
+                    <option value="yes" selected>Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="tpOutdoor">Used outdoors or near water?</label>
+                  <select id="tpOutdoor">
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="tpMoving">Has buttons, hinges or moving parts?</label>
+                  <select id="tpMoving">
+                    <option value="yes" selected>Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="tpChildren">Intended for children?</label>
+                  <select id="tpChildren">
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="tpFood">In contact with food?</label>
+                  <select id="tpFood">
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                  </select>
+                </div>
+              </div>
+              <button class="button button-primary" type="submit">Build the test plan</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="tpSummary"></div>
+            <div id="tpTable"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#tpCopy"
+                  data-copy-feedback="#tpCopyFeedback"
+                >
+                  Copy test plan
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="tpCopy" class="copy-output rfq-output" readonly></textarea>
+              <div id="tpCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help planning the testing?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="test_plan_builder_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A test plan lists each requirement, how it will be tested, the pass criterion and when; the product's characteristics decide which tests apply.</h2>
+              <p>Every product needs functional, user, fit, cosmetic, packaging and production-consistency checks. Power, radio, outdoor use, moving parts, children and food contact each add their own tests, several of which usually need a test laboratory.</p>
+            </div>
+            <h2>How to use the plan</h2>
+            <ol>
+              <li>Copy the plan and add a measurable pass criterion to every line before testing.</li>
+              <li>Ask a test laboratory to confirm the standards and tests for your category, and quote for formal testing.</li>
+              <li>Run pre-compliance and design-verification tests on engineering prototypes, before tooling is final.</li>
+              <li>Record results and evidence; they become part of the technical file.</li>
+            </ol>
+            <h2>How to read your result</h2>
+            <p>
+              The number of laboratory tests is a rough guide to certification effort and cost: products with mains power, radios or batteries, or intended for children, usually need the most.
+              References are examples of where requirements commonly come from, not a complete list; regulations and designated standards depend on the exact product.
+              <a class="text-link-inline" href="../guides/product-certification-basics.html">Product certification basics</a> explains the process, and the
+              <a class="text-link-inline" href="certification-readiness.html">Certification Readiness Checklist</a> checks the rest of your preparation. Save your plan to your <a href="product-plan-builder.html">product plan</a>.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/product-testing-and-validation-plans.html">Product testing and validation plans</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/packaging-design-for-shipping.html">Packaging design for shipping</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/how-to-write-a-product-requirements-document.html">How to write a product requirements document</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/quality-control-and-first-article-inspection.html">Quality control and first-article inspection</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/product-certification-basics.html">Product certification basics</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/development-and-prototyping.html">Development and prototyping</a></div>
+                <div class="aside-item"><a class="text-link" href="certification-readiness.html">Certification Readiness Checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="prototype-strategy-tool.html">Prototype Strategy Tool</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Testing</span>
+                <span>Validation</span>
+                <span>Certification</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What should a product test plan include?</h3>
+                <p>For each requirement: what is tested, the method or standard, the number of samples, a pass criterion set in advance, when it will be tested, and the result with evidence. The plan should cover function, users, durability, safety, compliance, packaging and production consistency.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does this tool tell me which standards my product must meet?</h3>
+                <p>No. It gives examples of where requirements commonly come from. The applicable regulations and designated standards depend on the exact product; confirm them with a test laboratory or the official GOV.UK guidance.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should testing start?</h3>
+                <p>Functional and <a class="text-link-inline" href="../guides/usability-testing-a-prototype.html">user testing</a> start with the first prototypes. Pre-compliance testing for electrical, EMC and radio products should happen on engineering prototypes, and formal testing on production-intent units before or alongside tooling.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How many samples do I need for testing?</h3>
+                <p>It depends on the test: some standards specify sample numbers, and durability tests often need several units. Ask your laboratory early, because samples can be a significant cost before production tooling exists.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why is the copied plan different from the table?</h3>
+                <p>The copied version is grouped by development stage and adds blanks for pass criteria and results, so you can paste it into your own document and complete it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="cashflow-projection.html">Cashflow Projection</a>
+          <a href="../guides/financial-break-even-for-hardware-products.html">Break-even guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/test-plan-builder.js" defer></script>
+  </body>
+</html>

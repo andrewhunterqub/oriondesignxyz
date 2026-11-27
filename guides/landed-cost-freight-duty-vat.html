@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Landed Cost: Freight, Duty and Import VAT | Orion Design</title>
+    <meta
+      name="description"
+      content="What landed cost includes, how UK import duty and import VAT are worked out, an illustrative factory-to-warehouse calculation, and the mistakes that inflate margins."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/landed-cost-freight-duty-vat.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Landed cost explained: freight, duty and import VAT | Orion Design">
+    <meta
+      property="og:description"
+      content="What landed cost includes, how UK import duty and import VAT are worked out, an illustrative factory-to-warehouse calculation, and the mistakes that inflate margins."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/landed-cost-freight-duty-vat.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-landed-cost-freight-duty-vat.jpg">
+    <meta property="og:image:alt" content="Landed cost guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Landed cost explained: freight, duty and import VAT | Orion Design">
+    <meta
+      name="twitter:description"
+      content="What landed cost includes, how UK import duty and import VAT are worked out, an illustrative factory-to-warehouse calculation, and the mistakes that inflate margins."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-landed-cost-freight-duty-vat.jpg">
+    <meta name="twitter:image:alt" content="Landed cost guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-landed-cost-freight-duty-vat.jpg",
+        "headline": "Landed cost explained: freight, duty and import VAT for physical products",
+        "description": "What landed cost includes, how UK import duty and import VAT are worked out, an illustrative factory-to-warehouse calculation, and the mistakes that inflate margins.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-26",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/landed-cost-freight-duty-vat.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Landed cost"
+          },
+          {
+            "@type": "Thing",
+            "name": "Import duty"
+          },
+          {
+            "@type": "Thing",
+            "name": "Import VAT"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Landed cost",
+                "item": "https://oriondesign.xyz/guides/landed-cost-freight-duty-vat.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is landed cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The total cost of getting a product from the supplier to your warehouse ready to sell: the goods, packaging, freight, insurance, import duty, customs and port charges and inland delivery, plus import VAT if you cannot reclaim it. It is the figure to use in margins and pricing, not the factory price."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How is UK import duty calculated?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Find the commodity code for the product, look up the duty rate for that code and the country of origin on the UK Trade Tariff, and apply it to the customs value, which is usually the price paid plus transport and insurance to the UK border. Trade agreements can reduce the rate if the goods meet the rules of origin."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I have to pay VAT on imported goods?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Import VAT is normally charged, but VAT-registered businesses can usually reclaim it and can often account for it on their VAT return rather than paying at the border. It still matters for cash planning, and non-registered businesses bear it as a cost."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does freight add to the cost of a product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on size, weight, distance, mode and shipment size. Sea freight is usually cheapest per unit but slow; air and courier are much faster and more expensive. Fixed charges make small shipments relatively expensive, so get forwarder quotes for your expected shipment sizes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between FOB and landed cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A FOB price covers the goods loaded onto the ship at the origin port. Landed cost adds everything after that: sea freight, insurance, duty, customs and port charges, and delivery to your warehouse."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Landed cost</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders and product teams importing products or components into the UK</p>
+            <h1>Landed cost explained: freight, duty and import VAT for physical products</h1>
+            <p>
+              What it really costs to get a product from a factory to your warehouse: the parts of landed cost, how UK import duty and import VAT are worked out, and an illustrative calculation from factory price to landed cost per unit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Landed cost is everything it costs to get a product from the factory to your warehouse, ready to sell, not just the price on the supplier's quote.</h2>
+              <div class="formula-block">Landed cost = goods + packaging + freight + insurance + import duty + clearance and port charges + inland delivery (+ import VAT if you cannot reclaim it)</div>
+              <p>
+                For goods made overseas these extras can add a substantial share on top of the factory price. Duty is charged on the customs value, which in the UK usually includes freight and insurance to the UK border,
+                at a rate set by the product's commodity code. Import VAT is charged on top but can normally be reclaimed by VAT-registered businesses. Build landed cost into the unit cost from the first quote,
+                and check duty rates on the official UK Trade Tariff. This is general information, not tax or customs advice.
+              </p>
+            </div>
+
+            <h2>The parts of landed cost</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cost</th>
+                  <th>What it covers</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Goods</td>
+                  <td>The supplier's price on the agreed delivery terms (<a class="glossary-term" href="../knowledge/glossary.html#term-incoterms" data-definition="International rules, published by the International Chamber of Commerce, that define who pays for transport, insurance and duty in a sale." aria-label="Incoterms: International rules, published by the International Chamber of Commerce, that define who pays for transport, insurance and duty in a sale. (glossary)">Incoterms</a>)</td>
+                  <td>An <a class="glossary-term" href="../knowledge/glossary.html#term-exw" data-definition="Ex works: an Incoterms rule under which the buyer takes responsibility for the goods from the seller's premises." aria-label="EXW: Ex works: an Incoterms rule under which the buyer takes responsibility for the goods from the seller's premises. (glossary)">EXW</a> price leaves more for you to pay than a <a class="glossary-term" href="../knowledge/glossary.html#term-fob" data-definition="Free on board: an Incoterms rule under which the seller pays to load the goods onto the ship at the origin port." aria-label="FOB: Free on board: an Incoterms rule under which the seller pays to load the goods onto the ship at the origin port. (glossary)">FOB</a> or <a class="glossary-term" href="../knowledge/glossary.html#term-ddp" data-definition="Delivered duty paid: an Incoterms rule under which the seller delivers to the buyer's premises with duty paid." aria-label="DDP: Delivered duty paid: an Incoterms rule under which the seller delivers to the buyer's premises with duty paid. (glossary)">DDP</a> price</td>
+                </tr>
+                <tr>
+                  <td>Packaging</td>
+                  <td><a class="text-link-inline" href="retail-ready-packaging-and-barcodes.html">Retail packaging</a>, inner cartons, shipping cartons, pallets</td>
+                  <td>Sometimes quoted separately from the product</td>
+                </tr>
+                <tr>
+                  <td>Freight</td>
+                  <td>Sea, air, rail, road or courier, plus origin charges</td>
+                  <td>Sea is usually cheapest per unit but slow; air and courier are fast and expensive</td>
+                </tr>
+                <tr>
+                  <td>Insurance</td>
+                  <td>Cover for loss or damage in transit</td>
+                  <td>Check whose responsibility it is under the Incoterms used</td>
+                </tr>
+                <tr>
+                  <td>Import duty</td>
+                  <td>Customs duty at the rate for the product's <a class="glossary-term" href="../knowledge/glossary.html#term-commodity-code" data-definition="The classification number that sets the duty rate and import rules for a product." aria-label="commodity code: The classification number that sets the duty rate and import rules for a product. (glossary)">commodity code</a></td>
+                  <td>May be reduced or zero under a trade agreement if the goods meet the <a class="glossary-term" href="../knowledge/glossary.html#term-rules-of-origin" data-definition="Rules that decide where goods come from for trade purposes, which can affect duty under trade agreements." aria-label="rules of origin: Rules that decide where goods come from for trade purposes, which can affect duty under trade agreements. (glossary)">rules of origin</a></td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-import-vat" data-definition="VAT charged on imported goods, normally reclaimable by VAT-registered businesses." aria-label="Import VAT: VAT charged on imported goods, normally reclaimable by VAT-registered businesses. (glossary)">Import VAT</a></td>
+                  <td>VAT on imported goods, normally at the standard rate</td>
+                  <td>Usually reclaimable by VAT-registered businesses; it still affects cash unless accounted for on the VAT return</td>
+                </tr>
+                <tr>
+                  <td>Clearance and port charges</td>
+                  <td>Customs broker fees, terminal handling, documentation</td>
+                  <td>Often several separate small invoices; easy to forget</td>
+                </tr>
+                <tr>
+                  <td>Inland delivery</td>
+                  <td>From port or airport to your warehouse or <a class="glossary-term" href="../knowledge/glossary.html#term-fulfilment" data-definition="Storing, picking, packing and delivering orders to customers, done yourself or by a third party such as a marketplace." aria-label="fulfilment: Storing, picking, packing and delivering orders to customers, done yourself or by a third party such as a marketplace. (glossary)">fulfilment</a> centre</td>
+                  <td>Can be significant for small shipments</td>
+                </tr>
+                <tr>
+                  <td>Other</td>
+                  <td>Pre-shipment inspection, currency exchange costs, financing the stock in transit</td>
+                  <td>Not always in the unit cost, but real</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>How import duty is worked out</h2>
+            <ol>
+              <li><strong>Find the commodity code.</strong> Every product has a code that sets its duty rate. See GOV.UK's guidance on <a class="text-link-inline" href="https://www.gov.uk/guidance/finding-commodity-codes-for-imports-or-exports" rel="noopener">finding commodity codes</a>.</li>
+              <li><strong>Look up the rate</strong> for that code and the country of origin on the <a class="text-link-inline" href="https://www.gov.uk/trade-tariff" rel="noopener">UK Trade Tariff</a>.</li>
+              <li><strong>Work out the customs value.</strong> Usually the price paid plus the cost of transport and insurance to the UK border. GOV.UK explains <a class="text-link-inline" href="https://www.gov.uk/guidance/how-to-value-your-imports-for-customs-duty-and-trade-statistics" rel="noopener">how to value imports</a>.</li>
+              <li><strong>Check for preferences.</strong> Goods from a country with a UK trade agreement may pay less or no duty if they meet the <a class="text-link-inline" href="https://www.gov.uk/guidance/check-your-goods-meet-the-rules-of-origin" rel="noopener">rules of origin</a>.</li>
+              <li><strong>Duty = customs value × duty rate.</strong> Import VAT is then charged on the customs value plus duty and certain other costs.</li>
+            </ol>
+            <p>
+              VAT-registered businesses can usually account for import VAT on their VAT return rather than paying it at the border; see GOV.UK on
+              <a class="text-link-inline" href="https://www.gov.uk/guidance/check-when-you-can-account-for-import-vat-on-your-vat-return" rel="noopener">accounting for import VAT on your VAT return</a>.
+              Different arrangements apply to some goods moving into Northern Ireland, so check current GOV.UK guidance if you sell there. A customs broker or freight forwarder can confirm codes and costs for your shipments.
+            </p>
+
+            <h2>Worked example: from factory price to landed cost</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative figures only. A start-up imports 1,000 units of a small product at £6.00 each FOB (the supplier pays to load the goods onto the ship).
+                The goods share a container (a "less than container load" shipment). The duty rate is assumed at 4 per cent; the real rate depends on the commodity code and origin.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Calculation</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Goods (FOB)</td>
+                  <td>1,000 × £6.00</td>
+                  <td>£6,000.00</td>
+                </tr>
+                <tr>
+                  <td>Sea freight and insurance</td>
+                  <td>Quoted by the forwarder</td>
+                  <td>£760.00</td>
+                </tr>
+                <tr>
+                  <td>Customs value</td>
+                  <td>Goods + freight + insurance</td>
+                  <td>£6,760.00</td>
+                </tr>
+                <tr>
+                  <td>Import duty</td>
+                  <td>4% × £6,760</td>
+                  <td>£270.40</td>
+                </tr>
+                <tr>
+                  <td>Clearance and UK delivery</td>
+                  <td>Broker fee + haulage</td>
+                  <td>£300.00</td>
+                </tr>
+                <tr>
+                  <td>Landed cost (excluding reclaimable VAT)</td>
+                  <td>Total ÷ 1,000 units</td>
+                  <td>£7,330.40, or about £7.33 a unit</td>
+                </tr>
+                <tr>
+                  <td>Import VAT (reclaimable)</td>
+                  <td>20% × (customs value + duty), simplified</td>
+                  <td>£1,406.08</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="article-figure article-figure-narrow">
+              <svg viewBox="0 0 440 486" role="img" aria-labelledby="lc-fig-title lc-fig-desc">
+                <title id="lc-fig-title">How 1,000 units at 6 pounds each become a landed cost of about 7.33 pounds a unit</title>
+                <desc id="lc-fig-desc">Goods 6,000 pounds, freight 700, insurance 60, duty 270.40, customs clearance 120 and UK delivery 180, totalling 7,330.40 pounds or about 7.33 pounds a unit before import VAT, which a VAT-registered business can normally reclaim.</desc>
+                <text x="6" y="23" class="wf-label">Goods at FOB price: £6,000.00</text>
+                <rect x="6.0" y="30" width="350.3" height="28" rx="4" class="wf-cogs"/>
+                <text x="6" y="93" class="wf-label">Sea freight (shared container): £700.00</text>
+                <rect x="356.3" y="100" width="40.9" height="28" rx="4" class="wf-selling"/>
+                <text x="6" y="163" class="wf-label">Insurance: £60.00</text>
+                <rect x="397.2" y="170" width="3.5" height="28" rx="4" class="wf-selling"/>
+                <text x="6" y="233" class="wf-label">Import duty (assumed 4%): £270.40</text>
+                <rect x="400.7" y="240" width="15.8" height="28" rx="4" class="wf-channel"/>
+                <text x="6" y="303" class="wf-label">Customs clearance: £120.00</text>
+                <rect x="416.5" y="310" width="7.0" height="28" rx="4" class="wf-tax"/>
+                <text x="6" y="373" class="wf-label">UK delivery to warehouse: £180.00</text>
+                <rect x="423.5" y="380" width="10.5" height="28" rx="4" class="wf-tax"/>
+                <text x="6" y="443" class="wf-label wf-total">Landed cost: £7,330.40 (£7.33 a unit)</text>
+                <rect x="6" y="450" width="428" height="28" rx="4" class="wf-margin"/>
+              </svg>
+              <figcaption>Illustrative figures only. Each bar starts where the last ended; together they make the landed cost, about 22 per cent above the factory price. Import VAT is not shown because a VAT-registered business can normally reclaim it.</figcaption>
+            </figure>
+            <p>
+              The landed cost is about 22 per cent above the factory price. On a shipment half the size, the fixed charges (clearance, delivery and the minimum freight charge) would weigh more heavily per unit.
+              The VAT line is simplified: in practice some costs after the border, such as onward delivery, can also count towards the value import VAT is charged on.
+              The <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a> includes freight and duty in the unit cost.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              compare suppliers on landed cost, not factory price. A cheaper quote on EXW terms from further away can cost more on arrival than a dearer quote delivered to your door.
+            </div>
+
+            <h2>Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Using the factory price in the business case.</strong>
+                Margins calculated on the quote, not the landed cost, are too high.
+              </div>
+              <div>
+                <strong>Guessing the duty rate.</strong>
+                Rates differ widely between commodity codes; look the code up or ask a broker.
+              </div>
+              <div>
+                <strong>Forgetting the small charges.</strong>
+                Port handling, documentation and broker fees add up, especially on small shipments.
+              </div>
+              <div>
+                <strong>Ignoring cash timing.</strong>
+                Freight, duty and VAT can be due before the goods are sold; plan them in the cash flow.
+              </div>
+              <div>
+                <strong>Comparing quotes on different Incoterms.</strong>
+                Put every quote on the same delivered basis before comparing; <a class="text-link-inline" href="comparing-manufacturing-quotes.html">comparing manufacturing quotes</a> shows how, with tooling and cash included.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Find the commodity code and duty rate for your product.</li>
+              <li>Ask a freight forwarder for a quote to your warehouse on the shipment size you expect.</li>
+              <li>Calculate it for your shipment with the <a class="text-link-inline" href="../tools/landed-cost-calculator.html">Landed Cost Calculator</a>, then build it into the <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>.</li>
+              <li>Check the target cost still works with <a class="text-link-inline" href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a>.</li>
+              <li>Add freight, duty and VAT timing to the <a class="text-link-inline" href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>.</li>
+            </ol>
+            <p>
+              <a class="text-link-inline" href="how-to-find-and-brief-a-manufacturer.html">How to find and brief a manufacturer</a> compares three quotes on landed cost,
+              and the <a class="text-link-inline" href="manufacturing-and-cost.html">Manufacturing and cost hub</a> gives the wider picture.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Calculate your landed cost</h3>
+                <p>Supplier price, freight, insurance, duty, clearance, delivery and VAT for your shipment.</p>
+                <a class="button button-primary" href="../tools/landed-cost-calculator.html" data-analytics-event="article_cta_click" data-analytics-label="landed_guide_to_calculator">Open Landed Cost Calculator</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Check the target cost</h3>
+                <p>See whether the landed cost fits the route to market.</p>
+                <a class="button button-secondary" href="../tools/route-to-market-simulator.html" data-analytics-event="article_cta_click" data-analytics-label="landed_guide_to_route">Open Target COGS by Route to Market</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+                <div class="aside-item"><a class="text-link" href="route-to-market-and-margins.html">Route to market and margins: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/cashflow-projection.html">Cashflow Projection Tool</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="how-to-find-and-brief-a-manufacturer.html">Finding and briefing a manufacturer</a></div>
+                <div class="aside-item"><a class="text-link" href="how-to-estimate-manufacturing-cost.html">Estimate manufacturing cost</a></div>
+                <div class="aside-item"><a class="text-link" href="hardware-revenue-margin-planning.html">Turn RRP into target COGS</a></div>
+                <div class="aside-item"><a class="text-link" href="minimum-order-quantities-and-cash.html">Minimum order quantities and cash</a></div>
+                <div class="aside-item"><a class="text-link" href="uk-vs-overseas-manufacturing.html">UK vs overseas manufacturing</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Landed cost</span>
+                <span>Import duty</span>
+                <span>Import VAT</span>
+                <span>Freight</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is landed cost?</h3>
+                <p>The total cost of getting a product from the supplier to your warehouse ready to sell: the goods, packaging, freight, insurance, import duty, customs and port charges and inland delivery, plus import VAT if you cannot reclaim it. It is the figure to use in margins and pricing, not the factory price.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How is UK import duty calculated?</h3>
+                <p>Find the commodity code for the product, look up the duty rate for that code and the country of origin on the UK Trade Tariff, and apply it to the customs value, which is usually the price paid plus transport and insurance to the UK border. Trade agreements can reduce the rate if the goods meet the rules of origin.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I have to pay VAT on imported goods?</h3>
+                <p>Import VAT is normally charged, but VAT-registered businesses can usually reclaim it and can often account for it on their VAT return rather than paying at the border. It still matters for cash planning, and non-registered businesses bear it as a cost.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How much does freight add to the cost of a product?</h3>
+                <p>It depends on size, weight, distance, mode and shipment size. Sea freight is usually cheapest per unit but slow; air and courier are much faster and more expensive. Fixed charges make small shipments relatively expensive, so get forwarder quotes for your expected shipment sizes.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between FOB and landed cost?</h3>
+                <p>A FOB price covers the goods loaded onto the ship at the origin port. Landed cost adds everything after that: sea freight, insurance, duty, customs and port charges, and delivery to your warehouse.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

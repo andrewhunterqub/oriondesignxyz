@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>How to Turn RRP into Target COGS | Orion Design</title>
+    <meta
+      name="description"
+      content="How to turn retail price into target COGS by accounting for VAT, hidden selling costs, route-to-market fees, and the margin the business needs to keep."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/hardware-revenue-margin-planning.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="How to Turn RRP into Target COGS">
+    <meta
+      property="og:description"
+      content="Work backwards from RRP to a realistic target COGS once VAT, fees, logistics, packaging, and margin targets are counted."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/hardware-revenue-margin-planning.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-hardware-revenue-margin-planning.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Turn RRP into Target COGS">
+    <meta
+      name="twitter:description"
+      content="Work backwards from RRP to a realistic target COGS once VAT, fees, logistics, packaging, and margin targets are counted."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-hardware-revenue-margin-planning.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-hardware-revenue-margin-planning.jpg",
+        "headline": "How to Turn RRP into Target COGS",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-24",
+        "articleSection": "Commercial planning",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/hardware-revenue-margin-planning.html",
+        "datePublished": "2026-03-12"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Target COGS from RRP",
+                "item": "https://oriondesign.xyz/guides/hardware-revenue-margin-planning.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do you calculate target COGS from RRP?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Remove VAT from the RRP, then subtract the channel's share, the selling and fulfilment costs for that route, and the margin the business needs to keep. The remainder is the maximum landed cost the product can carry. Repeat it for each route you expect to use."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between margin and markup?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Margin is profit as a percentage of the selling price. Markup is profit as a percentage of cost. A product that costs GBP50 and sells for GBP100 has a 50% margin and a 100% markup."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What percentage of RRP should COGS be?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on the route, category and selling costs, so there is no single answer. A common rule of thumb for consumer products sold through retail is an RRP of roughly three to five times landed cost. Direct sales can support a higher share, provided acquisition and fulfilment costs are included."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should target COGS include freight and duty?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Compare the target with landed cost, which includes the factory price plus freight, insurance, import duty and packaging. Comparing against the ex-works factory price makes the product look cheaper than it really is."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does RRP include VAT in the UK?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Prices shown to UK consumers normally include VAT, which is 20% at the standard rate. Some products qualify for reduced or zero rates, so check the rate for your category before working back to a cost target."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>/</span><a href="../guides/index.html">Guides</a><span>/</span><span aria-current="page">Target COGS from RRP</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 24 November 2026 <span aria-hidden="true">·</span> For founders and product teams setting a target cost from the retail price</p>
+            <h1>How to turn RRP into target COGS.</h1>
+            <p>
+              If you know the retail price the market can support, you can work backwards to the COGS the product needs.
+              The mistake is stopping too early and forgetting how much of that price gets consumed before profit appears.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Target COGS is the amount left after VAT, route costs, hidden selling costs, and the margin the business needs to keep.</h2>
+              <div class="formula-block">Target COGS = net selling price - channel deductions - selling costs - required margin</div>
+              <p>
+                Start from the RRP, remove VAT, remove what the retailer or marketplace keeps, remove fulfilment, acquisition and returns costs, then remove the margin the business needs.
+                What remains is the most the product can cost to make and land. Working backwards like this gives founders and engineers a clearer cost target than treating the retail price as if it belongs to the factory.
+              </p>
+            </div>
+
+            <p>
+              Product teams often set a target <a class="glossary-term" href="../knowledge/glossary.html#term-retail-price-rrp" data-definition="Recommended retail price: the price the end customer is expected to pay, usually including VAT in the UK." aria-label="retail price: Recommended retail price: the price the end customer is expected to pay, usually including VAT in the UK. (glossary)">retail price</a> and then ask engineering to make the cost work. That only becomes useful once the target <a class="glossary-term" href="../knowledge/glossary.html#term-cogs" data-definition="Cost of goods sold: the direct cost of making and delivering each unit sold." aria-label="COGS: Cost of goods sold: the direct cost of making and delivering each unit sold. (glossary)">COGS</a> is derived properly.
+              Retail price is not factory value. It has to absorb VAT, route-to-market fees, warehousing, packaging, logistics, selling costs, and the margin the business needs to keep.
+            </p>
+            <div class="article-highlight"><strong>Practical rule:</strong> target COGS is what is left after everyone else has been paid and the business still has a worthwhile margin.</div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#money-you-do-not-keep">Start with the money you do not keep</a></li>
+              <li><a class="text-link-inline" href="#simple-model">A simple way to think about it</a></li>
+              <li><a class="text-link-inline" href="#margin-markup">Margin and markup are not the same</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: one RRP, three routes</a></li>
+              <li><a class="text-link-inline" href="#design-teams">Why this matters for design teams</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes when working back from RRP</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Practical next steps</a></li>
+            </ol>
+
+            <h2 id="money-you-do-not-keep">Start with the money you do not keep</h2>
+            <table>
+              <thead><tr><th>Cost layer</th><th>Typical examples</th><th>Why it matters</th></tr></thead>
+              <tbody>
+                <tr><td>Tax and channel take</td><td>VAT, marketplace fees, retailer margin</td><td>This can remove a large share of the top line before operations even start</td></tr>
+                <tr><td>Operational selling cost</td><td>Warehousing, pick and pack, secondary packaging, outbound logistics</td><td>These costs rise with every unit sold</td></tr>
+                <tr><td>Commercial cost</td><td>Site and payment fees, paid acquisition, trade spend, account support</td><td>These are often split across teams and missed in the product economics</td></tr>
+                <tr><td>Business margin</td><td>The profit needed to fund growth, overhead, and future product work</td><td>If nothing is left here, the product is not commercially healthy</td></tr>
+              </tbody>
+            </table>
+
+            <h2 id="simple-model">A simple way to think about it</h2>
+            <ol>
+              <li>Remove VAT if the RRP includes it. UK consumer prices normally do, and the standard rate is 20%, so divide by 1.2.</li>
+              <li>Remove the route-to-market share you do not keep.</li>
+              <li>Remove the hidden selling and <a class="glossary-term" href="../knowledge/glossary.html#term-fulfilment" data-definition="Storing, picking, packing and delivering orders to customers, done yourself or by a third party such as a marketplace." aria-label="fulfilment: Storing, picking, packing and delivering orders to customers, done yourself or by a third party such as a marketplace. (glossary)">fulfilment</a> costs attached to that route.</li>
+              <li>Remove the margin the business needs to keep.</li>
+              <li>What remains is the maximum landed COGS the product can afford.</li>
+            </ol>
+
+            <h2 id="margin-markup">Margin and markup are not the same</h2>
+            <div class="formula-block">Margin = (price - cost) / price. Markup = (price - cost) / cost.</div>
+            <p>
+              A product that costs GBP50 and sells for GBP100 has a 50% margin but a 100% <a class="glossary-term" href="../knowledge/glossary.html#term-markup" data-definition="Profit as a share of cost: (price minus cost) divided by cost." aria-label="markup: Profit as a share of cost: (price minus cost) divided by cost. (glossary)">markup</a>. Suppliers and retailers sometimes talk in different terms,
+              so confirm which one is meant before agreeing a number. Confusing the two is one of the quickest ways to set a cost target that is far too generous.
+            </p>
+
+            <h2 id="example">Worked example: one RRP, three routes</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative figures only. A home product has an RRP of GBP180 including VAT, so the net retail price is GBP150. The business wants to keep 30% of the revenue it actually receives
+                as margin to cover overhead and future development. Fees and costs below are plausible assumptions, not quotes. The marketplace commission here is charged on the VAT-inclusive price; the Target COGS tool applies its fee to the price before VAT, which leaves slightly more.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Direct to consumer</th>
+                  <th>Marketplace</th>
+                  <th>Retailer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Net of VAT</td>
+                  <td>GBP150.00</td>
+                  <td>GBP150.00</td>
+                  <td>GBP150.00</td>
+                </tr>
+                <tr>
+                  <td>Channel take</td>
+                  <td>None</td>
+                  <td>15% commission on GBP180: GBP27.00</td>
+                  <td>45% retailer margin: GBP67.50</td>
+                </tr>
+                <tr>
+                  <td>Revenue to the business</td>
+                  <td>GBP150.00</td>
+                  <td>GBP123.00</td>
+                  <td>GBP82.50</td>
+                </tr>
+                <tr>
+                  <td>Selling costs</td>
+                  <td>GBP43.00 (payment fees, fulfilment, returns, acquisition)</td>
+                  <td>GBP27.50 (fulfilment, advertising, returns)</td>
+                  <td>GBP8.13 (<a class="text-link-inline" href="retail-ready-packaging-and-barcodes.html">retail-ready packaging</a>, inbound freight, promotional support)</td>
+                </tr>
+                <tr>
+                  <td>Required margin at 30%</td>
+                  <td>GBP45.00</td>
+                  <td>GBP36.90</td>
+                  <td>GBP24.75</td>
+                </tr>
+                <tr>
+                  <td>Target landed COGS</td>
+                  <td>GBP62.00</td>
+                  <td>GBP58.60</td>
+                  <td>GBP49.62</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The same GBP180 product can afford about GBP62 of <a class="glossary-term" href="../knowledge/glossary.html#term-landed-cost" data-definition="The total cost of getting a product from the supplier to your warehouse ready to sell." aria-label="landed cost: The total cost of getting a product from the supplier to your warehouse ready to sell. (glossary)">landed cost</a> when sold direct, but under GBP50 through retail.
+              If the product is engineered to the direct-sales target and later needs to go into retail, it may need <a class="text-link-inline" href="reducing-the-cost-of-an-existing-product.html">cost-down</a> work or redesign because the original cost target was based on the wrong commercial model.
+              Note too that direct sales only support the higher figure if acquisition cost stays under control. If paid acquisition doubles, the direct target falls sharply.
+            </p>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 226" width="100%" role="img" aria-labelledby="tc-fig-title tc-fig-desc">
+                <title id="tc-fig-title">How a £150 net price splits by route to market, leaving the target landed COGS</title>
+                <desc id="tc-fig-desc">Three stacked bars drawn to scale from the worked example, each the £150 net price of a £180 product. Direct to consumer: £62.00 target COGS, £45.00 margin, £43.00 selling costs, no channel take. Marketplace: £58.60, £36.90, £27.50 and £27.00 commission. Retailer: £49.62, £24.75, £8.13 and £67.50 retailer margin.</desc>
+                <rect x="20" y="6" width="14" height="14" rx="2" class="gd-fill-teal"/>
+                <text x="40" y="18" class="gd-t">Target landed COGS</text>
+                <rect x="190" y="6" width="14" height="14" rx="2" class="gd-fill-indigo"/>
+                <text x="210" y="18" class="gd-t">30% margin</text>
+                <rect x="20" y="28" width="14" height="14" rx="2" class="gd-box"/>
+                <text x="40" y="40" class="gd-t">Selling costs</text>
+                <rect x="190" y="28" width="14" height="14" rx="2" class="gd-ghost"/>
+                <text x="210" y="40" class="gd-t">Channel take</text>
+                <text x="20" y="80" class="gd-t"><tspan class="gd-v gd-tt">£62.00</tspan> to make and land: direct to consumer</text>
+                <rect x="20" y="87" width="124" height="18" class="gd-fill-teal gd-seg"/>
+                <rect x="144" y="87" width="90" height="18" class="gd-fill-indigo gd-seg"/>
+                <rect x="234" y="87" width="86" height="18" class="gd-box"/>
+                <text x="20" y="136" class="gd-t"><tspan class="gd-v gd-tt">£58.60</tspan> to make and land: marketplace</text>
+                <rect x="20" y="143" width="117.2" height="18" class="gd-fill-teal gd-seg"/>
+                <rect x="137.2" y="143" width="73.8" height="18" class="gd-fill-indigo gd-seg"/>
+                <rect x="211" y="143" width="55" height="18" class="gd-box"/>
+                <rect x="266" y="143" width="54" height="18" class="gd-ghost"/>
+                <text x="20" y="192" class="gd-t"><tspan class="gd-v gd-tt">£49.62</tspan> to make and land: retailer</text>
+                <rect x="20" y="199" width="99.2" height="18" class="gd-fill-teal gd-seg"/>
+                <rect x="119.2" y="199" width="49.5" height="18" class="gd-fill-indigo gd-seg"/>
+                <rect x="168.7" y="199" width="16.3" height="18" class="gd-box"/>
+                <rect x="185" y="199" width="135" height="18" class="gd-ghost"/>
+              </svg>
+              <figcaption>Illustrative figures from the table above, bars drawn to scale. The retailer's share is the largest single slice, so the same product has about £12 less to spend on making it than when sold direct.</figcaption>
+            </figure>
+
+            <div class="pull-quote">
+              <p>Design to the cost target of the most demanding route you realistically expect to use, not the most generous one.</p>
+            </div>
+
+            <h2 id="design-teams">Why this matters for design teams</h2>
+            <ul>
+              <li>It sets a clearer brief for <a class="glossary-term" href="../knowledge/glossary.html#term-cost-down" data-definition="Lowering the cost of making a product that is already in production, for example by removing parts, operations or unneeded precision. Each change needs validating before it reaches production." aria-label="cost-down: Lowering the cost of making a product that is already in production, for example by removing parts, operations or unneeded precision. Each change needs validating before it reaches production. (glossary)">cost-down</a> and design-for-manufacture work.</li>
+              <li>It shows whether the route-to-market idea and the product architecture fit each other.</li>
+              <li>It helps avoid late commercial surprises that force rushed redesign.</li>
+              <li>It gives founders and engineers a shared number to design toward.</li>
+            </ul>
+            <p>
+              A target COGS can then be split into a budget for each major sub-assembly: enclosure, electronics, packaging, assembly labour. That turns a commercial number into engineering decisions
+              about <a class="glossary-term" href="../knowledge/glossary.html#term-part-count" data-definition="The number of separate parts in a product. Each one adds tooling or set-up, stock, handling and assembly time, so reducing it is a core aim of design for assembly." aria-label="part count: The number of separate parts in a product. Each one adds tooling or set-up, stock, handling and assembly time, so reducing it is a core aim of design for assembly. (glossary)">part count</a>, materials, finishes and supplier choice. The guide to <a class="text-link-inline" href="how-to-estimate-manufacturing-cost.html">estimating manufacturing cost</a> shows how to build the bottom-up figure to compare against it.
+            </p>
+
+            <h2 id="mistakes">Common mistakes when working back from RRP</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Forgetting VAT.</strong>
+                Treating a VAT-inclusive RRP as revenue overstates what the business receives by a sixth at the standard rate.
+              </div>
+              <div>
+                <strong>Comparing against ex-works price.</strong>
+                Target COGS should be compared with landed cost: factory price plus freight, insurance, duty and packaging.
+              </div>
+              <div>
+                <strong>Confusing margin and markup.</strong>
+                A 50% markup is only a 33% margin. Mixing them up can hide a large gap.
+              </div>
+              <div>
+                <strong>Leaving out acquisition cost for direct sales.</strong>
+                Direct sales keep more of the price, but advertising and returns can absorb much of that advantage.
+              </div>
+              <div>
+                <strong>Setting the target once.</strong>
+                Fees, freight and channel terms change. Revisit the target at each major design review.
+              </div>
+            </div>
+
+            <h2 id="next-steps">Practical next steps</h2>
+            <ol>
+              <li>Agree the realistic RRP range with evidence from comparable products.</li>
+              <li>Decide which routes to market are likely in the first two years, and which is the most demanding.</li>
+              <li>Work back to target landed COGS for each route using the <a class="text-link-inline" href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a> tool.</li>
+              <li>Compare the target with a bottom-up estimate from the <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>.</li>
+              <li>If the gap is large, decide early whether to change the specification, the price or the route. The guide to <a class="text-link-inline" href="route-to-market-hardware-product.html">how route to market shapes product design and cost</a> covers that choice in more depth.</li>
+            </ol>
+            <p>
+              The <a class="text-link-inline" href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a> tool works backwards from RRP to the COGS ceiling for <a class="glossary-term" href="../knowledge/glossary.html#term-direct-to-consumer-dtc" data-definition="Selling directly to end customers, usually through your own website, without a retailer." aria-label="DTC: Selling directly to end customers, usually through your own website, without a retailer. (glossary)">DTC</a>, marketplace, and retailer routes.
+              The <a class="text-link-inline" href="../tools/revenue-margin-simulator.html">Launch Margin Planner</a> then shows what those assumptions mean at annual launch level once route mix and overhead are included.
+              Once the cost target is agreed, the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a> helps carry it into a staged development and launch plan.
+            </p>
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Work back from RRP</h3>
+                <p>Use the route tool to compare what each sales path leaves available for COGS.</p>
+                <a class="button button-primary" href="../tools/route-to-market-simulator.html" data-analytics-event="article_cta_click" data-analytics-label="target_cogs_article_to_route_tool">Open Target COGS Tool</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Stress-test the launch model</h3>
+                <p>Use the launch planner if you want to see how route mix and annual overhead change the picture.</p>
+                <a class="button button-secondary" href="../tools/revenue-margin-simulator.html" data-analytics-event="article_cta_click" data-analytics-label="target_cogs_article_to_margin_tool">Open Launch Margin Planner</a>
+              </div>
+            </div>
+          </article>
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="route-to-market-and-margins.html">Route to market and margins: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div><p class="aside-title">Related tools</p><div class="aside-list"><div class="aside-item"><a class="text-link" href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a></div><div class="aside-item"><a class="text-link" href="../tools/revenue-margin-simulator.html">Launch Margin Planner</a></div><div class="aside-item"><a class="text-link" href="../tools/hardware-business-case-builder.html">Hardware Business Case Builder</a></div></div></div>
+            <div><p class="aside-title">Typical questions</p><div class="tag-row"><span>Target COGS calculator</span><span>How to work back from RRP</span><span>Retail price to factory cost</span></div></div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>How do you calculate target COGS from RRP?</h3>
+                <p>Remove VAT from the RRP, then subtract the channel's share, the selling and fulfilment costs for that route, and the margin the business needs to keep. The remainder is the maximum landed cost the product can carry. Repeat it for each route you expect to use.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between margin and markup?</h3>
+                <p>Margin is profit as a percentage of the selling price. Markup is profit as a percentage of cost. A product that costs GBP50 and sells for GBP100 has a 50% margin and a 100% markup.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What percentage of RRP should COGS be?</h3>
+                <p>It depends on the route, category and selling costs, so there is no single answer. A common rule of thumb for consumer products sold through retail is an RRP of roughly three to five times landed cost. Direct sales can support a higher share, provided acquisition and fulfilment costs are included.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should target COGS include freight and duty?</h3>
+                <p>Yes. Compare the target with landed cost, which includes the factory price plus freight, insurance, import duty and packaging. Comparing against the ex-works factory price makes the product look cheaper than it really is.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does RRP include VAT in the UK?</h3>
+                <p>Prices shown to UK consumers normally include VAT, which is 20% at the standard rate. Some products qualify for reduced or zero rates, so check the rate for your category before working back to a cost target.</p>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="retail-and-distributor-margins-explained.html">Retail and distributor margins</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="how-to-price-a-physical-product.html">How to price a physical product</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">Author</p>
+            <h2>Andrew Hunter</h2>
+            <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to inform early decisions, then validate against project-specific data, supplier input, and production constraints.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144"><p class="footer-copy">Commercial writing for product teams building physical products.</p></div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div><h3>Continue reading</h3><a href="../tools/route-to-market-simulator.html">Target COGS Tool</a><a href="../tools/hardware-business-case-builder.html">Business Case Builder</a></div>
+        <div><h3>Contact</h3><a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a><a href="../privacy/index.html">Privacy</a></div>
+      </div>
+    </footer>
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

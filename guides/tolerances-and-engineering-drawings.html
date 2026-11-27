@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Tolerances and Engineering Drawings | Orion Design</title>
+    <meta
+      name="description"
+      content="Tolerances and engineering drawings explained: general vs specific tolerances, process cost, fits, datums, stack-ups and what a drawing needs for a quote."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/tolerances-and-engineering-drawings.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Tolerances and engineering drawings: the basics | Orion Design">
+    <meta
+      property="og:description"
+      content="Tolerances and engineering drawings explained: general vs specific tolerances, process cost, fits, datums, stack-ups and what a drawing needs for a quote."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/tolerances-and-engineering-drawings.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-tolerances-and-engineering-drawings.jpg">
+    <meta property="og:image:alt" content="Tolerances and engineering drawings guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tolerances and engineering drawings: the basics | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Tolerances and engineering drawings explained: general vs specific tolerances, process cost, fits, datums, stack-ups and what a drawing needs for a quote."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-tolerances-and-engineering-drawings.jpg">
+    <meta name="twitter:image:alt" content="Tolerances and engineering drawings guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-tolerances-and-engineering-drawings.jpg",
+        "headline": "Tolerances and engineering drawings: the basics",
+        "description": "Tolerances and engineering drawings explained: general vs specific tolerances, process cost, fits, datums, stack-ups and what a drawing needs for a quote.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-26",
+        "dateModified": "2026-11-26",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/tolerances-and-engineering-drawings.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Engineering tolerances"
+          },
+          {
+            "@type": "Thing",
+            "name": "Engineering drawings"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Tolerances and engineering drawings",
+                "item": "https://oriondesign.xyz/guides/tolerances-and-engineering-drawings.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a tolerance on an engineering drawing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The amount a dimension may vary from its nominal size and still be acceptable, for example 20 ± 0.1 mm. Every dimension has one, either written next to it or covered by the general tolerance in the title block."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a general tolerance?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A tolerance stated once in the title block, often by reference to a standard such as ISO 2768, that applies to every dimension without its own tolerance. It keeps the drawing readable and leaves specific callouts for the features that matter."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why do tight tolerances cost more?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Holding a tighter tolerance than the process naturally gives means slower cutting, extra operations, more inspection and more rejected parts, or a different process altogether. Cost rises much faster than precision."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a datum?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The feature, usually a face, hole or axis, that a drawing declares as the reference that measurements start from. Datums are normally the features that locate the part in the assembly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need a drawing if I send a 3D model?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For a rough budget price, a 3D model with material, finish and volumes may be enough. For a firm quote or production, send a drawing too: it shows the critical dimensions, tolerances, datums, finish and revision that a model alone does not."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Tolerances and engineering drawings</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders and engineers preparing parts for prototype or production quotes</p>
+            <h1>Tolerances and engineering drawings: the basics</h1>
+            <p>
+              What a tolerance is, why every dimension has one, how tolerances drive cost, what fits and datums mean, how tolerances add up across an assembly, and what a drawing must show before a supplier can quote it properly.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A tolerance is the amount a dimension is allowed to vary and still be acceptable. Every dimension has one, either written next to it or set by the general tolerance in the title block.</h2>
+              <p>
+                Keep most dimensions on a sensible general tolerance and call out tighter tolerances only on the few features that control fit, function or safety, measured from clearly stated datums.
+                Tighter tolerances cost more to make and inspect, so a drawing for a quote should show material, finish, critical dimensions and their tolerances, revision and quantities, and nothing tighter than the product needs.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#what">What a tolerance is and why every dimension has one</a></li>
+              <li><a class="text-link-inline" href="#general">General tolerances vs specific callouts</a></li>
+              <li><a class="text-link-inline" href="#process">Tolerances, processes and cost</a></li>
+              <li><a class="text-link-inline" href="#fits">Fits: clearance, transition and interference</a></li>
+              <li><a class="text-link-inline" href="#datums">Datums: where measurement starts</a></li>
+              <li><a class="text-link-inline" href="#geometric">Geometric tolerancing in concept</a></li>
+              <li><a class="text-link-inline" href="#stackups">Tolerance stack-ups</a></li>
+              <li><a class="text-link-inline" href="#quote">What a drawing for a quote must show</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a sliding insert in a housing</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#rules">Decision rules</a></li>
+            </ol>
+
+            <h2 id="what">What a tolerance is and why every dimension has one</h2>
+            <p>
+              No process makes two parts exactly the same: tools wear, plastics shrink as they cool and sheet springs back after bending.
+              A tolerance accepts that and states how far a dimension may move from its nominal (intended) size before the part stops working or stops fitting.
+            </p>
+            <p>
+              A dimension written as 20 ± 0.1 mm means any part measuring between 19.9 and 20.1 mm is acceptable. Tolerances can also be one-sided, such as 20 +0.1/−0, or written as two limits.
+              The total allowed variation, here 0.2 mm, is the <a class="glossary-term" href="../knowledge/glossary.html#term-tolerance-band" data-definition="The total range a dimension may vary within, from its lower limit to its upper limit. How the bands of two mating parts sit relative to each other decides the fit." aria-label="tolerance band: The total range a dimension may vary within, from its lower limit to its upper limit. How the bands of two mating parts sit relative to each other decides the fit. (glossary)">tolerance band</a>. A dimension without a tolerance is not exact; the supplier simply has to guess, and two suppliers may guess differently.
+            </p>
+
+            <h2 id="general">General tolerances vs specific callouts</h2>
+            <p>
+              Rather than writing a tolerance next to every dimension, most drawings state a <strong>general tolerance</strong> in the <a class="glossary-term" href="../knowledge/glossary.html#term-title-block" data-definition="The box of information in the corner of an engineering drawing, giving details such as the part name and number, revision, material, scale and general tolerance." aria-label="title block: The box of information in the corner of an engineering drawing, giving details such as the part name and number, revision, material, scale and general tolerance. (glossary)">title block</a>, the box of information in the corner of the sheet.
+              It applies to every dimension that has no tolerance of its own. Many drawings do this by referring to a recognised standard such as <a class="glossary-term" href="../knowledge/glossary.html#term-iso-2768" data-definition="An international standard for general tolerances, often quoted on drawings for dimensions that have no individual tolerance." aria-label="ISO 2768: An international standard for general tolerances, often quoted on drawings for dimensions that have no individual tolerance. (glossary)">ISO 2768</a>, which sets <a class="glossary-term" href="../knowledge/glossary.html#term-general-tolerance" data-definition="The tolerance that applies to every dimension on a drawing that has none of its own, usually stated in the title block or by reference to a standard such as ISO 2768." aria-label="general tolerances: The tolerance that applies to every dimension on a drawing that has none of its own, usually stated in the title block or by reference to a standard such as ISO 2768. (glossary)">general tolerances</a> by size range in a few classes from fine to coarse.
+            </p>
+            <p>
+              <strong>Specific callouts</strong> are then added only where the general tolerance is not good enough: a bearing bore, a sealing face, a hole pattern that must line up with another part.
+              A good drawing has few of these, and each one should be traceable to a reason. If you cannot say why a dimension needs a tight tolerance, it probably does not.
+            </p>
+
+            <h2 id="process">Tolerances, processes and cost</h2>
+            <p>
+              Each manufacturing process holds some dimensions easily and others only with extra effort. Asking for more than a process naturally gives means slower cutting, extra operations, more inspection, more rejected parts, or a change of process altogether.
+              The comparison below is qualitative and consistent with the process guides on this site; always confirm what a particular supplier can hold.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Process</th>
+                  <th>What it holds well</th>
+                  <th>Where tight tolerances get expensive</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="text-link-inline" href="cnc-machining-design-rules.html">CNC machining</a></td>
+                  <td>Generally the tightest of common processes; features cut in the same set-up hold well relative to each other</td>
+                  <td>Tight callouts mean slower cutting, more inspection and sometimes extra operations; features on different sides add set-up variation</td>
+                </tr>
+                <tr>
+                  <td><a class="text-link-inline" href="sheet-metal-design-basics.html">Sheet metal</a></td>
+                  <td>Features cut in the same flat blank, such as holes in one face</td>
+                  <td>Dimensions across bends are looser, because each bend adds variation; machining-level tolerances on bent features are not economic</td>
+                </tr>
+                <tr>
+                  <td><a class="text-link-inline" href="injection-moulding-dfm-checklist.html">Injection moulding</a></td>
+                  <td>Very repeatable once the tool and process are settled</td>
+                  <td>Plastics shrink and can warp, so tight tolerances raise tool and inspection cost and may need tool adjustment after trials</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              cost rises much faster than precision. Halving a tolerance that the process already holds comfortably may cost little; halving one that is already near the process limit can mean a different process or full inspection of every part.
+            </div>
+
+            <h2 id="fits">Fits: clearance, transition and interference</h2>
+            <p>
+              Where one part goes into another, such as a shaft in a hole or a pin in a slot, what matters is how the two tolerance bands relate. There are three kinds of fit:
+            </p>
+            <ul>
+              <li><strong>Clearance fit:</strong> the largest shaft is always smaller than the smallest hole, so there is always a gap. Used for parts that slide, rotate or must assemble by hand.</li>
+              <li><strong>Interference fit:</strong> the smallest shaft is always larger than the largest hole, so the parts must be pressed or shrunk together. Used for parts that must stay put without fasteners, such as bearings or dowels.</li>
+              <li><strong>Transition fit:</strong> the bands overlap, so some pairs have a small gap and some a slight press. Used for accurate location where parts still need to come apart.</li>
+            </ul>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 262" width="100%" role="img" aria-labelledby="tol-fig-title tol-fig-desc">
+                <title id="tol-fig-title">Clearance, transition and interference fits shown as tolerance bands</title>
+                <desc id="tol-fig-desc">Three rows compare a hole size range with a shaft size range along a size axis, with the nominal size marked by a dashed line. In a clearance fit the whole shaft range sits below the hole range, so there is always a gap. In a transition fit the two ranges overlap, so there may be a small gap or a slight press. In an interference fit the whole shaft range sits above the hole range, so the parts must be pressed together.</desc>
+                <defs><marker id="tol-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <rect x="8" y="8" width="16" height="12" rx="2" class="gd-box-indigo"/>
+                <text x="30" y="19" class="gd-m">Hole size range</text>
+                <rect x="8" y="27" width="16" height="12" rx="2" class="gd-box-teal"/>
+                <text x="30" y="38" class="gd-m">Shaft size range</text>
+                <line x1="230" y1="40" x2="230" y2="226" class="gd-line gd-dash"/>
+                <text x="230" y="30" text-anchor="middle" class="gd-m">nominal</text>
+                <text x="8" y="66" class="gd-h">Clearance</text>
+                <text x="8" y="84" class="gd-m">always a gap</text>
+                <rect x="230" y="50" width="56" height="16" rx="3" class="gd-box-indigo"/>
+                <rect x="170" y="72" width="40" height="16" rx="3" class="gd-box-teal"/>
+                <text x="8" y="132" class="gd-h">Transition</text>
+                <text x="8" y="150" class="gd-m">gap or slight press</text>
+                <rect x="230" y="116" width="56" height="16" rx="3" class="gd-box-indigo"/>
+                <rect x="214" y="138" width="40" height="16" rx="3" class="gd-box-teal"/>
+                <text x="8" y="198" class="gd-h">Interference</text>
+                <text x="8" y="216" class="gd-m">always a press</text>
+                <rect x="230" y="182" width="56" height="16" rx="3" class="gd-box-indigo"/>
+                <rect x="290" y="204" width="40" height="16" rx="3" class="gd-box-teal"/>
+                <line x1="150" y1="240" x2="330" y2="240" class="gd-axis" marker-end="url(#tol-arrow)"/>
+                <text x="150" y="256" class="gd-m">smaller</text>
+                <text x="330" y="256" text-anchor="end" class="gd-m">larger size</text>
+              </svg>
+              <figcaption>The fit depends on where the two tolerance bands sit relative to each other, not on the nominal sizes alone.</figcaption>
+            </figure>
+            <p>
+              For round parts, the ISO system of limits and fits (ISO 286) gives standard hole and shaft codes for each kind of fit, so you can choose a recognised fit rather than inventing limits.
+            </p>
+
+            <h2 id="datums">Datums: where measurement starts</h2>
+            <p>
+              A dimension is a distance between two things, so every measurement has to start somewhere. A <strong>datum</strong> is the feature, usually a face, edge, hole or axis, that the drawing declares as the reference.
+              <a class="glossary-term" href="../knowledge/glossary.html#term-datum" data-definition="A feature, such as a face, edge, hole or axis, that a drawing declares as the reference from which measurements start. Datums are usually the features that locate the part in an assembly." aria-label="Datums: A feature, such as a face, edge, hole or axis, that a drawing declares as the reference from which measurements start. Datums are usually the features that locate the part in an assembly. (glossary)">Datums</a> are normally the features that locate the part in the assembly: the face it sits on, the hole a pin goes through.
+            </p>
+            <p>
+              Without stated datums, the supplier and the inspector may measure from different faces and get different answers, both right by their own reading.
+              Dimensioning critical features from the same datum also stops tolerances accumulating along a chain of dimensions.
+            </p>
+
+            <h2 id="geometric">Geometric tolerancing in concept</h2>
+            <p>
+              Plus-or-minus tolerances control size and distance, but not shape or orientation. A plate can measure correctly in thickness everywhere and still be bowed; a hole can be the right diameter and still be in the wrong place.
+              <a class="glossary-term" href="../knowledge/glossary.html#term-geometric-dimensioning-and-tolerancing-gdandt" data-definition="A system of drawing symbols that controls the shape, orientation and location of features, such as the flatness of a face or the position of a hole, measured from datums. It complements plus-or-minus size tolerances." aria-label="Geometric dimensioning and tolerancing: A system of drawing symbols that controls the shape, orientation and location of features, such as the flatness of a face or the position of a hole, measured from datums. It complements plus-or-minus size tolerances. (glossary)">Geometric dimensioning and tolerancing</a> (often called GD&amp;T, defined in ISO 1101 and ASME Y14.5) adds controls for this, written in a small frame on the drawing that refers to datums.
+            </p>
+            <ul>
+              <li><strong>Flatness</strong> limits how far a surface may deviate from a perfect plane, which matters for <a class="text-link-inline" href="sealing-and-waterproofing-an-enclosure.html">sealing faces</a> and mounting surfaces.</li>
+              <li><strong>Position</strong> defines a zone, measured from the datums, within which the centre of a hole or pin must lie. It suits hole patterns that must line up with another part better than chains of ± dimensions do.</li>
+            </ul>
+            <p>
+              You do not need every symbol to start; know that shape, orientation and location can be controlled separately from size, and ask for that control only where a function depends on it.
+            </p>
+
+            <h2 id="stackups">Tolerance stack-ups</h2>
+            <p>
+              In an assembly, tolerances add up. A gap between a lid and a housing depends on several dimensions on several parts, and the gap varies by the combined variation of all of them.
+              A <strong>worst-case</strong> stack-up adds every tolerance, assuming every part is at its limit at the same time; it guarantees assembly but can demand tight, expensive tolerances on long chains.
+              An <strong>RSS</strong> (<a class="glossary-term" href="../knowledge/glossary.html#term-root-sum-of-squares-rss" data-definition="A statistical way of combining tolerances in a stack-up that assumes each varies randomly and independently. It predicts the range most assemblies will fall in, which is narrower than a worst-case analysis." aria-label="root sum of squares: A statistical way of combining tolerances in a stack-up that assumes each varies randomly and independently. It predicts the range most assemblies will fall in, which is narrower than a worst-case analysis. (glossary)">root sum of squares</a>) stack-up assumes independent, random, centred variation, so it predicts a narrower range that most assemblies will fall within. Use worst case for safety-critical fits, short chains and low volumes; RSS suits longer chains from stable processes in reasonable volumes, and many engineers check both.
+              The formulas are on the <a class="text-link-inline" href="../knowledge/engineering-estimation-formulas.html">engineering estimation formulas</a> page, and the
+              <a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a> works through both for up to six dimensions.
+            </p>
+
+            <h2 id="quote">What a drawing for a quote must show</h2>
+            <p>A 3D model shows the shape; the drawing tells the supplier what matters. For a firm quote, each part drawing should include:</p>
+            <ol>
+              <li><strong>Material</strong>, specific enough to buy (grade, not just "aluminium" or "plastic").</li>
+              <li><strong>Finish</strong>: <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">surface finish</a>, coating, colour or texture, and which faces are cosmetic.</li>
+              <li><strong>Critical dimensions</strong>, clearly marked, with their tolerances and datums.</li>
+              <li><strong>General tolerance</strong> in the title block for everything else.</li>
+              <li><strong>Revision</strong> letter or number, matching the 3D file name.</li>
+              <li><strong>Quantities</strong>, either on the drawing or in the request, including prototype and production batch sizes.</li>
+            </ol>
+            <p>
+              Send the drawing as a PDF alongside a neutral 3D file such as <a class="glossary-term" href="../knowledge/glossary.html#term-step-file" data-definition="A neutral 3D CAD file format that most CAD systems can open, commonly used to share part models with suppliers." aria-label="STEP: A neutral 3D CAD file format that most CAD systems can open, commonly used to share part models with suppliers. (glossary)">STEP</a>. <a class="text-link-inline" href="must-have-documents-before-talking-to-a-manufacturer.html">The documents to prepare before talking to a manufacturer</a> covers the rest of the pack, and the
+              <a class="text-link-inline" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a> helps you assemble a request for quotation that suppliers can compare like for like.
+            </p>
+
+            <h2 id="example">Worked example: a sliding insert in a housing</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example, using the default figures in the Tolerance Stack-up Calculator. A removable insert slides into a pocket in a machined housing. The pocket is 60 ± 0.15 mm long and the insert is 59.4 ± 0.15 mm.
+                The insert must slide in by hand without rattling, which the team defines as a gap of 0.2 to 1.0 mm.
+              </p>
+            </div>
+            <p>
+              The nominal gap is 60 − 59.4 = 0.6 mm. Worst case, it is 0.6 ± 0.30 mm, so 0.30 to 0.90 mm, inside the required range. RSS gives about 0.6 ± 0.21 mm, roughly 0.39 to 0.81 mm.
+              If both lengths had instead been left on a looser tolerance of, say, ± 0.3 mm each (an illustrative figure), the worst-case gap would be 0.0 to 1.2 mm: some inserts would jam and some would rattle.
+            </p>
+            <p>The useful decision is which dimensions earn a callout:</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>In the gap chain?</th>
+                  <th>Tolerance decision</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pocket length</td>
+                  <td>Yes</td>
+                  <td>Specific callout, ± 0.15 mm, measured from the pocket end wall as datum</td>
+                </tr>
+                <tr>
+                  <td>Insert length</td>
+                  <td>Yes</td>
+                  <td>Specific callout, ± 0.15 mm</td>
+                </tr>
+                <tr>
+                  <td>Housing outside size and wall thickness</td>
+                  <td>No</td>
+                  <td>General tolerance</td>
+                </tr>
+                <tr>
+                  <td>Chamfers, finger recess, label area</td>
+                  <td>No</td>
+                  <td>General tolerance; mark the label face as cosmetic</td>
+                </tr>
+                <tr>
+                  <td>Mounting holes in the housing base</td>
+                  <td>No, but they must line up with another part</td>
+                  <td>Positional tolerance from the base datums, not a tight ± on every hole</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Two callouts and one positional control cover what the function needs; everything else stays on the general tolerance.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Tolerancing everything tightly.</strong>
+                It feels safe, but it raises machining, tooling and inspection cost on features that do not matter, and it hides the few that do.
+              </div>
+              <div>
+                <strong>No datums.</strong>
+                Without a stated reference, the supplier and the inspector can measure the same part differently and disagree about whether it passes.
+              </div>
+              <div>
+                <strong>Missing material or finish.</strong>
+                Suppliers either guess, which makes quotes hard to compare, or come back with questions, which delays them.
+              </div>
+              <div>
+                <strong>Sending CAD only, with no drawing.</strong>
+                A 3D model shows nominal geometry but not which features are critical, what the tolerances are, or which faces are cosmetic. Suppliers then quote to their own assumptions.
+              </div>
+            </div>
+
+            <h2 id="rules">Decision rules</h2>
+            <ul>
+              <li><strong>Start from a general tolerance</strong> that the chosen process holds comfortably, and state it in the title block.</li>
+              <li><strong>Add a specific callout</strong> only where you can name the fit, function or safety reason for it.</li>
+              <li><strong>Choose datums</strong> from the features that locate the part in the assembly, and dimension critical features from them.</li>
+              <li><strong>Use geometric controls</strong> such as flatness or position where shape or location matters more than size.</li>
+              <li><strong>Check every critical gap</strong> with a stack-up, worst case first for short or safety-critical chains.</li>
+              <li><strong>Ask the supplier</strong> which callouts drive their price.</li>
+            </ul>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>List the fits and gaps your product depends on, and the dimensions in each chain.</li>
+              <li>Check each chain with the <a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a>.</li>
+              <li>Prepare drawings and a quote request with the <a class="text-link-inline" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a>.</li>
+              <li>See where this sits in the wider picture in the <a class="text-link-inline" href="manufacturing-and-cost.html">manufacturing and cost hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Check a critical fit</h3>
+                <p>Add up the tolerances in a chain, worst case and RSS.</p>
+                <a class="button button-primary" href="../tools/tolerance-stack-up.html" data-analytics-event="article_cta_click" data-analytics-label="tol_guide_to_stackup">Open Tolerance Stack-up Calculator</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Prepare a quote request</h3>
+                <p>Bring drawings, materials, finishes and quantities into one pack.</p>
+                <a class="button button-secondary" href="../tools/rfq-pack-builder.html" data-analytics-event="article_cta_click" data-analytics-label="tol_guide_to_rfq">Open RFQ Pack Builder</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/dfm-checker.html">Injection Moulding DFM Checker</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="cnc-machining-design-rules.html">CNC machining design rules</a></div>
+                <div class="aside-item"><a class="text-link" href="sheet-metal-design-basics.html">Sheet metal design basics</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="quality-control-and-first-article-inspection.html">Quality control and first-article inspection</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Tolerances</span>
+                <span>Drawings</span>
+                <span>Fits</span>
+                <span>Datums</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is a tolerance on an engineering drawing?</h3>
+                <p>The amount a dimension may vary from its nominal size and still be acceptable, for example 20 ± 0.1 mm. Every dimension has one, either written next to it or covered by the general tolerance in the title block.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is a general tolerance?</h3>
+                <p>A tolerance stated once in the title block, often by reference to a standard such as ISO 2768, that applies to every dimension without its own tolerance. It keeps the drawing readable and leaves specific callouts for the features that matter.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why do tight tolerances cost more?</h3>
+                <p>Holding a tighter tolerance than the process naturally gives means slower cutting, extra operations, more inspection and more rejected parts, or a different process altogether. Cost rises much faster than precision.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is a datum?</h3>
+                <p>The feature, usually a face, hole or axis, that a drawing declares as the reference that measurements start from. Datums are normally the features that locate the part in the assembly.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need a drawing if I send a 3D model?</h3>
+                <p>For a rough budget price, a 3D model with material, finish and volumes may be enough. For a firm quote or production, send a drawing too: it shows the critical dimensions, tolerances, datums, finish and revision that a model alone does not.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a>
+          <a href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

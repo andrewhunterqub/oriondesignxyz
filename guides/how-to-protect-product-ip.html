@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Protect Product IP Before Manufacturing | Orion Design</title>
+    <meta
+      name="description"
+      content="Protect product IP before manufacturing conversations with practical steps for NDAs, staged disclosure, file control, supplier checks, and ownership."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/how-to-protect-product-ip.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="How to Protect Product IP Before Talking to Manufacturers">
+    <meta
+      property="og:description"
+      content="Protect product IP before manufacturing conversations with practical steps for NDAs, staged disclosure, file control, supplier checks, and ownership."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/how-to-protect-product-ip.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-how-to-protect-product-ip.jpg">
+    <meta property="og:image:alt" content="Guide to protecting product IP before talking to manufacturers">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Protect Product IP Before Talking to Manufacturers">
+    <meta
+      name="twitter:description"
+      content="Protect product IP before manufacturing conversations with practical steps for NDAs, staged disclosure, file control, supplier checks, and ownership."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-how-to-protect-product-ip.jpg">
+    <meta name="twitter:image:alt" content="Guide to protecting product IP before talking to manufacturers">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-how-to-protect-product-ip.jpg",
+        "headline": "How to Protect Product IP Before Talking to Manufacturers",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-26",
+        "articleSection": "IP and supplier readiness",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/how-to-protect-product-ip.html",
+        "datePublished": "2026-03-13"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Protect product IP",
+                "item": "https://oriondesign.xyz/guides/how-to-protect-product-ip.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is an NDA enough to protect product IP?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. An NDA helps set confidentiality expectations, but strong protection also depends on staged disclosure, file control, supplier due diligence, and explicit ownership terms."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should you send a manufacturer first?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Start with the minimum information needed for the current discussion: product scope, high-level visuals or geometry, target volumes, and the specific questions you need answered."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do hardware teams usually leak IP by accident?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "They send full CAD packs too early, lose revision control, assume ownership is obvious when external design work is added, and share sensitive detail without a clear commercial purpose."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "@id": "https://oriondesign.xyz/guides/how-to-protect-product-ip.html#howto-1",
+            "name": "How to share product information with suppliers in a safe order",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "text": "Define what is confidential and what can be shared more freely."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "text": "Prepare a clean summary pack for first conversations: scope, stage, target volumes, and the questions you need answered."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "text": "Use an NDA where it is appropriate for the sensitivity and stage of discussion."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "text": "Release deeper files in stages as the conversation becomes more serious and more specific."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "text": "Track exactly which version of which files went to which party."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 6,
+                "text": "Make ownership explicit if the supplier, contractor, or consultant is contributing design work."
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Protect product IP</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders about to share designs with manufacturers or partners</p>
+            <h1>How to protect product IP before talking to manufacturers</h1>
+            <p>
+              Protecting product IP is not just a legal document exercise. It is a practical operating discipline:
+              decide what is sensitive, disclose it in stages, control the files properly, and make ownership explicit before work starts.
+            </p>
+          </div>
+          <div class="metric-strip">
+            <div class="metric-pill">
+              <strong>Topic</strong>
+              <span>IP and supplier readiness</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Audience</strong>
+              <span>Founders and hardware teams</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Tool</strong>
+              <span>NDA Generator</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Use it for</strong>
+              <span>Early supplier conversations</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>An NDA helps, but IP protection is a system rather than a single document.</h2>
+              <div class="formula-block">IP protection = staged disclosure + file control + supplier due diligence + clear ownership + appropriate agreements</div>
+              <p>
+                The risk is usually not one dramatic act of theft. It is a series of avoidable habits:
+                sending too much too early, sharing uncontrolled files, and leaving ownership vague when outside parties contribute design work.
+              </p>
+            </div>
+
+            <p>
+              If any part of the product might be patentable, decide on filing before you share it outside a confidential circle: in general an invention must be new when the <a class="glossary-term" href="../knowledge/glossary.html#term-patent" data-definition="A registered right that protects how a new invention works, for a limited time, in return for public disclosure." aria-label="patent: A registered right that protects how a new invention works, for a limited time, in return for public disclosure. (glossary)">patent</a> application is filed,
+              and public disclosure first can prevent a valid patent. This guide is general information, not legal advice; have agreements reviewed by a solicitor, and take patent and design questions to a registered patent attorney.
+              <a class="text-link-inline" href="design-registration-vs-patents.html">Design registration vs patents</a> explains the options.
+            </p>
+
+            <p>
+              Early supplier conversations are necessary. They are often how teams learn what is manufacturable, what looks expensive, and what needs to change.
+              But “talk to manufacturers” should not mean “email the whole design pack and hope for the best.” The goal is to share enough information
+              to get useful feedback while keeping control of what actually matters.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              only release the information needed for the current decision. If the supplier does not need the full pack yet, do not send the full pack yet.
+            </div>
+
+            <h2>What usually needs protecting</h2>
+            <ul>
+              <li>product architecture, CAD, drawings, and toleranced details</li>
+              <li><a class="glossary-term" href="../knowledge/glossary.html#term-firmware" data-definition="The software built into a product's electronics that controls how the hardware behaves." aria-label="firmware: The software built into a product's electronics that controls how the hardware behaves. (glossary)">firmware</a>, electronics choices, and test methods</li>
+              <li><a class="glossary-term" href="../knowledge/glossary.html#term-bill-of-materials-bom" data-definition="The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly." aria-label="BOM: The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly. (glossary)">BOM</a> structure, supplier relationships, and costing assumptions</li>
+              <li>commercial plans, customer data, pricing logic, and launch timing</li>
+              <li>know-how that sits in process detail rather than in a patent filing</li>
+            </ul>
+
+            <h2>What an NDA does and does not do</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>NDA helps with</th>
+                  <th>NDA does not fix</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Setting confidentiality expectations early</td>
+                  <td>Over-sharing information the supplier does not need</td>
+                </tr>
+                <tr>
+                  <td>Defining the basic scope of confidential material</td>
+                  <td>Poor file control or weak revision discipline</td>
+                </tr>
+                <tr>
+                  <td>Supporting a professional conversation with a new partner</td>
+                  <td>Unclear ownership of design work created during development</td>
+                </tr>
+                <tr>
+                  <td>Making disclosure feel structured rather than casual</td>
+                  <td>Choosing the wrong supplier or asking the wrong questions</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>The common ways teams leak IP by accident</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Full file packs go out too early.</strong>
+                A supplier asked for a rough feasibility comment does not usually need every CAD model, drawing, and sourcing note.
+              </div>
+              <div>
+                <strong>Revision control is poor.</strong>
+                Once multiple versions are circulating, teams lose track of who has what and what the current truth actually is.
+              </div>
+              <div>
+                <strong>Ownership of contributed design work is assumed, not written down.</strong>
+                If a supplier changes the design, tooling, or process, the contract must be clear about what belongs to whom.
+              </div>
+            </div>
+
+            <h2>Worked example: the difference between careless and controlled disclosure</h2>
+            <div class="worked-example">
+              <p>
+                A startup wants feedback on a plastic enclosure. In the careless version, it emails the full CAD assembly, internal layouts,
+                BOM notes, and commercial forecast to several suppliers at once. In the controlled version, it first sends a short scope note,
+                external renders, key dimensions, target volume, and the specific questions it needs answered. Only after the shortlist is clearer,
+                and confidentiality has been addressed, does the team release the deeper geometry and cost-sensitive detail. The second approach tends to produce better conversations,
+                not slower ones, because the supplier receives a clearer brief and the team stays in control.
+              </p>
+            </div>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 448" width="100%" role="img" aria-labelledby="ip-fig-title ip-fig-desc">
+                <title id="ip-fig-title">Careless and controlled disclosure of a product design to suppliers</title>
+                <desc id="ip-fig-desc">Careless disclosure sends the full CAD assembly, internal layouts, BOM notes and commercial forecast to several suppliers at once. Controlled disclosure works in stages: first a short pack with a scope note, external renders, key dimensions, target volume and the questions to answer; then, once the shortlist is clearer and confidentiality has been addressed, the deeper geometry and cost-sensitive detail, with versions tracked by party; and, if the supplier contributes design work, ownership written down.</desc>
+                <defs><marker id="ip-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <text x="20" y="18" class="gd-h">Careless: everything at once</text>
+                <rect x="20" y="28" width="312" height="74" rx="10" class="gd-box-magenta"/>
+                <text x="34" y="50" class="gd-t">Full CAD assembly, internal layouts,</text>
+                <text x="34" y="69" class="gd-t">BOM notes, commercial forecast</text>
+                <text x="34" y="90" class="gd-v gd-tm">emailed to several suppliers</text>
+                <text x="20" y="134" class="gd-h">Controlled: in stages</text>
+                <line x1="22" y1="146" x2="22" y2="438" class="gd-arrow" marker-end="url(#ip-arrow)"/>
+                <text x="0" y="0" transform="translate(13 292) rotate(-90)" text-anchor="middle" class="gd-m">More detail at each step</text>
+                <rect x="36" y="144" width="296" height="92" rx="10" class="gd-box-teal"/>
+                <text x="50" y="165" class="gd-h">1. Short summary pack</text>
+                <text x="50" y="185" class="gd-m">Scope note, external renders,</text>
+                <text x="50" y="203" class="gd-m">key dimensions, target volume,</text>
+                <text x="50" y="221" class="gd-m">the questions to answer</text>
+                <rect x="56" y="246" width="276" height="44" rx="8" class="gd-ghost"/>
+                <text x="68" y="265" class="gd-v">Shortlist clearer,</text>
+                <text x="68" y="282" class="gd-v">confidentiality addressed</text>
+                <rect x="36" y="300" width="296" height="74" rx="10" class="gd-box-indigo"/>
+                <text x="50" y="321" class="gd-h">2. Deeper files</text>
+                <text x="50" y="341" class="gd-m">Geometry, cost-sensitive detail;</text>
+                <text x="50" y="359" class="gd-m">versions tracked by party</text>
+                <rect x="36" y="384" width="296" height="56" rx="10" class="gd-box"/>
+                <text x="50" y="405" class="gd-h">3. Ownership in writing</text>
+                <text x="50" y="425" class="gd-m">If the supplier adds design work</text>
+              </svg>
+              <figcaption>The controlled route still starts the conversation early, but each supplier only sees what the current decision needs, and the sensitive detail goes out once there is a shortlist and confidentiality in place.</figcaption>
+            </figure>
+
+            <h2>A practical release sequence before supplier engagement</h2>
+            <ol data-howto="How to share product information with suppliers in a safe order">
+              <li>Define what is confidential and what can be shared more freely.</li>
+              <li>Prepare a clean summary pack for first conversations: scope, stage, target volumes, and the questions you need answered.</li>
+              <li>Use an <a class="glossary-term" href="../knowledge/glossary.html#term-nda" data-definition="Non-disclosure agreement: a contract that keeps shared information confidential." aria-label="NDA: Non-disclosure agreement: a contract that keeps shared information confidential. (glossary)">NDA</a> where it is appropriate for the sensitivity and stage of discussion.</li>
+              <li>Release deeper files in stages as the conversation becomes more serious and more specific.</li>
+              <li>Track exactly which version of which files went to which party.</li>
+              <li>Make ownership explicit if the supplier, contractor, or consultant is contributing design work.</li>
+            </ol>
+
+            <div class="pull-quote">
+              <p>
+                Good <a class="glossary-term" href="../knowledge/glossary.html#term-intellectual-property-ip" data-definition="Creations such as inventions, designs, brands and original written or drawn work that the law can protect, through patents, design rights, trade marks and copyright." aria-label="IP: Creations such as inventions, designs, brands and original written or drawn work that the law can protect, through patents, design rights, trade marks and copyright. (glossary)">IP</a> protection does not block supplier conversations. It makes those conversations more intentional, more professional, and easier to manage.
+              </p>
+            </div>
+
+            <h2>When the supplier is doing design work too</h2>
+            <p>
+              The risk increases once external parties are not just quoting manufacture but actively changing geometry, optimising tools, selecting components,
+              or contributing engineering detail. At that point, confidentiality is only one part of the job. The agreement also needs to state
+              who owns the resulting design changes, tooling data, manufacturing know-how, and any project-specific deliverables created during the engagement.
+              <a class="text-link-inline" href="supply-agreements-with-a-manufacturer.html">Supply agreements with a manufacturer</a> covers this alongside the other terms to agree before production.
+            </p>
+
+            <h2>Protecting IP still requires a good document pack</h2>
+            <p>
+              Strong IP discipline and strong supplier preparation sit together. If you need help deciding what belongs in the first supplier pack,
+              read
+              <a class="text-link-inline" href="must-have-documents-before-talking-to-a-manufacturer.html">Must-have documents before talking to a manufacturer</a>.
+              The best conversations happen when the brief is clear and the disclosure is deliberate.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Generate a cleaner NDA draft</h3>
+                <p>Use the NDA Generator as a structured starting point for one-way or mutual confidentiality discussions.</p>
+                <a
+                  class="button button-primary"
+                  href="../tools/nda-generator.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="ip_article_to_nda_tool"
+                >
+                  Open NDA Generator
+                </a>
+              </div>
+              <div class="article-action-card">
+                <h3>Prepare the supplier pack next</h3>
+                <p>Once confidentiality is framed properly, tighten the files, scope notes, and open questions you send to suppliers.</p>
+                <div class="cta-row">
+                  <a
+                    class="button button-secondary"
+                    href="must-have-documents-before-talking-to-a-manufacturer.html"
+                    data-analytics-event="article_cta_click"
+                    data-analytics-label="ip_article_to_documents_guide"
+                  >
+                    Read Document Guide
+                  </a>
+                  <a
+                    class="button button-secondary"
+                    href="../tools/product-cost-estimator.html"
+                    data-analytics-event="article_cta_click"
+                    data-analytics-label="ip_article_to_cost_tool"
+                  >
+                    Open Cost Tool
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="callout-banner">
+              <h2>Need help preparing a supplier conversation without over-sharing?</h2>
+              <p>
+                Orion Design can help frame the technical pack, decide what to share at each stage, and make the manufacturer conversation clearer before sensitive detail goes out. Legal agreements and IP filings still need a solicitor or patent attorney.
+              </p>
+              <div class="cta-row">
+                <a
+                  class="button button-primary"
+                  href="../contact/index.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="ip_article_to_contact"
+                >
+                  Start a project conversation
+                </a>
+                <a class="button button-secondary" href="../guides/index.html">Browse more guides</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="ip-partners-and-compliance.html">IP, partners and compliance: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related tools</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/nda-generator.html">NDA Generator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="freedom-to-operate-explained.html">Freedom to operate explained</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use this article for</p>
+              <div class="tag-row">
+                <span>Protect product IP</span>
+                <span>NDA for manufacturers</span>
+                <span>Supplier confidentiality</span>
+              </div>
+            </div>
+            <div class="notice-card">
+              <p class="aside-title">Review prompt</p>
+              <p>If you cannot explain why each file is being shared, you are probably sharing too much too early.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Is an NDA enough to protect product IP?</h3>
+                <p>No. An NDA helps set confidentiality expectations, but strong protection also depends on staged disclosure, file control, supplier due diligence, and explicit ownership terms.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should you send a manufacturer first?</h3>
+                <p>Start with the minimum information needed for the current discussion: product scope, high-level visuals or geometry, target volumes, and the specific questions you need answered.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do hardware teams usually leak IP by accident?</h3>
+                <p>They send full CAD packs too early, lose <a class="text-link-inline" href="bills-of-materials-and-revision-control.html">revision control</a>, assume ownership is obvious when external design work is added, and share sensitive detail without a clear commercial purpose.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">Author</p>
+            <h2>Andrew Hunter</h2>
+            <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to improve early supplier discipline, then have the final legal and commercial arrangements reviewed for your specific project and jurisdiction.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/nda-generator.html">NDA Generator</a>
+          <a href="must-have-documents-before-talking-to-a-manufacturer.html">Document readiness</a>
+          <a href="../tools/product-cost-estimator.html">Product cost</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

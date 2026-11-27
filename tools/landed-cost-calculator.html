@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Landed Cost Calculator: Freight, Duty and VAT | Orion Design</title>
+    <meta
+      name="description"
+      content="Work out the landed cost per unit of imported products: supplier price, freight, insurance, UK import duty, import VAT, clearance and delivery, in one calculation."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/landed-cost-calculator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Landed Cost Calculator for imported products | Orion Design">
+    <meta
+      property="og:description"
+      content="Work out the landed cost per unit of imported products: supplier price, freight, insurance, UK import duty, import VAT, clearance and delivery, in one calculation."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/landed-cost-calculator.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-landed-cost-calculator.jpg">
+    <meta property="og:image:alt" content="Landed cost calculator for imported products from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Landed Cost Calculator for imported products | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Work out the landed cost per unit of imported products: supplier price, freight, insurance, UK import duty, import VAT, clearance and delivery, in one calculation."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-landed-cost-calculator.jpg">
+    <meta name="twitter:image:alt" content="Landed cost calculator for imported products from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-landed-cost-calculator.jpg",
+        "name": "Landed Cost Calculator",
+        "url": "https://oriondesign.xyz/tools/landed-cost-calculator.html",
+        "description": "Calculate the landed cost per unit of an imported product from supplier price, freight, insurance, UK import duty, import VAT, clearance and delivery.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Landed Cost Calculator",
+                "item": "https://oriondesign.xyz/tools/landed-cost-calculator.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What should I enter if my supplier quotes a delivered price?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Enter the delivered price as the supplier price and put 0 for freight, insurance and any other costs the quote already covers. If the quote is DDP (delivered duty paid), set the duty rate and the import VAT rate to 0 as well, because under DDP the supplier normally pays the import duty and taxes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where do I find the duty rate for my product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Find the commodity code for the product and look up its rate for the country of origin on the UK Trade Tariff on GOV.UK. Rates vary widely between codes, and a trade agreement can reduce the rate if the goods meet the rules of origin."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is import VAT shown separately?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "VAT-registered businesses can normally reclaim import VAT, often by accounting for it on their VAT return, so it is not a cost to them, though it can affect cash. If you are not VAT-registered, choose that option and the VAT is included in the landed cost."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I reduce landed cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Larger or less frequent shipments spread fixed charges, sea freight is usually cheaper than air for non-urgent goods, smaller and lighter packaging reduces freight, and checking for trade-agreement preferences can reduce duty. Each option has trade-offs in cash tied up and lead time."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is this calculator suitable for customs declarations?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It is a planning tool for estimating unit cost. Customs declarations must follow HMRC rules on classification and valuation; use a customs broker or the official guidance for real shipments."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Landed Cost Calculator</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Landed Cost Calculator</h1>
+            <p>
+              Work out what an imported product really costs by the time it reaches your warehouse: the supplier price plus freight, insurance,
+              UK import duty, clearance and delivery, with import VAT shown separately. Enter the costs you pay; put 0 for anything the supplier's price already includes.
+              It is a planning estimate, not tax or customs advice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Landed cost worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"landedUnits":"1000","landedUnitPrice":"6","landedPackaging":"0","landedOrigin":"0","landedFreight":"700","landedInsurance":"60","landedDutyRate":"4","landedClearance":"120","landedDelivery":"180","landedOther":"0"}'>Sea freight, shared container</button>
+              <button class="preset-button" type="button" data-tool-preset='{"landedUnits":"200","landedUnitPrice":"18","landedPackaging":"0.5","landedOrigin":"80","landedFreight":"950","landedInsurance":"40","landedDutyRate":"2.7","landedClearance":"95","landedDelivery":"60","landedOther":"150"}'>Small batch by air</button>
+              <button class="preset-button" type="button" data-tool-preset='{"landedUnits":"8000","landedUnitPrice":"4.2","landedPackaging":"0.3","landedOrigin":"650","landedFreight":"3200","landedInsurance":"220","landedDutyRate":"4","landedClearance":"260","landedDelivery":"650","landedOther":"450"}'>Full container, ex works</button>
+            </div>
+            <form class="tool-form" id="landedForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="landedUnits">Units in the shipment</label>
+                  <input id="landedUnits" type="number" min="1" value="1000" step="1">
+                </div>
+                <div class="field-group">
+                  <label for="landedUnitPrice">Supplier price per unit (£)</label>
+                  <input id="landedUnitPrice" type="number" min="0" value="6" step="0.01">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="landedPackaging">Packaging per unit, if not included (£)</label>
+                  <input id="landedPackaging" type="number" min="0" value="0" step="0.01">
+                </div>
+                <div class="field-group">
+                  <label for="landedOrigin">Origin charges for the shipment (£)</label>
+                  <input id="landedOrigin" type="number" min="0" value="0" step="1">
+                  <p class="helper-text">Export clearance and transport to the port, if you buy ex works</p>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="landedFreight">International freight for the shipment (£)</label>
+                  <input id="landedFreight" type="number" min="0" value="700" step="1">
+                </div>
+                <div class="field-group">
+                  <label for="landedInsurance">Insurance for the shipment (£)</label>
+                  <input id="landedInsurance" type="number" min="0" value="60" step="1">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="landedDutyRate">Import duty rate (%)</label>
+                  <input id="landedDutyRate" type="number" min="0" value="4" step="0.1">
+                  <p class="helper-text">From the UK Trade Tariff for your commodity code</p>
+                </div>
+                <div class="field-group">
+                  <label for="landedClearance">Customs clearance and port charges (£)</label>
+                  <input id="landedClearance" type="number" min="0" value="120" step="1">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="landedDelivery">UK delivery to your warehouse (£)</label>
+                  <input id="landedDelivery" type="number" min="0" value="180" step="1">
+                </div>
+                <div class="field-group">
+                  <label for="landedOther">Other per-shipment costs (£)</label>
+                  <input id="landedOther" type="number" min="0" value="0" step="1">
+                  <p class="helper-text">For example pre-shipment inspection</p>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="landedVatStatus">Import VAT</label>
+                  <select id="landedVatStatus">
+                    <option value="registered" selected>VAT-registered: reclaimable</option>
+                    <option value="unregistered">Not VAT-registered: a cost</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="landedVatRate">Import VAT rate (%)</label>
+                  <input id="landedVatRate" type="number" min="0" value="20" step="0.5">
+                </div>
+              </div>
+              <button class="button button-primary" type="submit">Calculate landed cost</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="landedSummary"></div>
+            <div class="landed-bar" id="landedBar" role="img" aria-label="Share of landed cost by category"></div>
+            <div class="comparison-list" id="landedBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#landedCopy"
+                  data-copy-feedback="#landedCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="landedCopy" class="copy-output" readonly></textarea>
+              <div id="landedCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="landed_cost_calculator_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Landed cost is the supplier price plus everything it costs to get the goods into your warehouse.</h2>
+              <div class="formula-block">Customs value = goods + packaging + origin charges + freight + insurance
+Duty = customs value × duty rate
+Landed cost = customs value + duty + clearance + delivery + other (+ import VAT if not reclaimable)</div>
+              <p>Use the landed cost per unit, not the factory price, in margins, pricing and break-even. Import VAT is normally reclaimable for VAT-registered businesses, so it affects cash rather than cost.</p>
+            </div>
+
+            <h2>How the calculation works</h2>
+            <p>
+              In the UK, duty is normally charged on the customs value, which is the price paid plus the cost of transport and insurance to the UK border.
+              The calculator adds goods, packaging, origin charges, freight and insurance to get that value, applies your duty rate, then adds the costs after the border:
+              customs clearance and port charges, delivery to your warehouse and anything else per shipment. Import VAT is calculated on the customs value plus duty.
+              This is a simplified planning model: some costs after the border can also count towards the VAT value, and special procedures can change the figures, so confirm with a customs broker for real shipments.
+            </p>
+            <h2>How to read your result</h2>
+            <ul>
+              <li><strong>Modest uplift (up to about 15 per cent):</strong> the import costs are a small part of the unit cost. Still use the landed figure in your margins.</li>
+              <li><strong>Noticeable uplift (about 15 to 35 per cent):</strong> import costs matter. Check whether a different shipment size, delivery terms or freight mode would help, and confirm the duty rate.</li>
+              <li><strong>Large uplift (above about 35 per cent):</strong> getting the goods here is a big part of the cost. Common causes are small shipments carrying fixed charges, air freight for heavy or bulky goods, or high duty. Compare with a nearer supplier on a landed basis.</li>
+            </ul>
+            <p>
+              These bands are a rule of thumb for interpreting the result, not industry benchmarks. Find your commodity code and duty rate on the
+              <a class="text-link-inline" href="https://www.gov.uk/trade-tariff" rel="noopener">UK Trade Tariff</a>, and read
+              <a class="text-link-inline" href="../guides/landed-cost-freight-duty-vat.html">landed cost explained</a> for the method in full.
+              Save your result to your <a href="product-plan-builder.html">product plan</a> so the landed cost sits alongside your margins and cash flow.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/packaging-design-for-shipping.html">Packaging design for shipping</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/uk-vs-overseas-manufacturing.html">UK vs overseas manufacturing</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/minimum-order-quantities-and-cash.html">Minimum order quantities and cash</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/landed-cost-freight-duty-vat.html">Landed cost explained: freight, duty and VAT</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/how-to-find-and-brief-a-manufacturer.html">How to find and brief a manufacturer</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="product-cost-estimator.html">Product Cost Estimator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="route-to-market-simulator.html">Target COGS by Route to Market</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/manufacturing-and-cost.html">Manufacturing and cost: overview</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Landed cost</span>
+                <span>Import duty</span>
+                <span>Supplier comparison</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What should I enter if my supplier quotes a delivered price?</h3>
+                <p>Enter the delivered price as the supplier price and put 0 for freight, insurance and any other costs the quote already covers. If the quote is DDP (delivered duty paid), set the duty rate and the import VAT rate to 0 as well, because under DDP the supplier normally pays the import duty and taxes.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Where do I find the duty rate for my product?</h3>
+                <p>Find the commodity code for the product and look up its rate for the country of origin on the UK Trade Tariff on GOV.UK. Rates vary widely between codes, and a trade agreement can reduce the rate if the goods meet the rules of origin.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why is import VAT shown separately?</h3>
+                <p>VAT-registered businesses can normally reclaim import VAT, often by accounting for it on their VAT return, so it is not a cost to them, though it can affect cash. If you are not VAT-registered, choose that option and the VAT is included in the landed cost.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How can I reduce landed cost?</h3>
+                <p>Larger or less frequent shipments spread fixed charges, sea freight is usually cheaper than air for non-urgent goods, smaller and lighter packaging reduces freight, and checking for trade-agreement preferences can reduce duty. Each option has trade-offs in cash tied up and lead time.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is this calculator suitable for customs declarations?</h3>
+                <p>No. It is a planning tool for estimating unit cost. Customs declarations must follow HMRC rules on classification and valuation; use a customs broker or the official guidance for real shipments.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="cashflow-projection.html">Cashflow Projection</a>
+          <a href="../guides/financial-break-even-for-hardware-products.html">Break-even guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/landed-cost-calculator.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- qa:self-styled: standalone demo page with its own <style> block. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <title>Logo Animation | Orion Design</title>
+    <meta name="description" content="Animated Orion Design logo mark: the O and D form a planet, then a product launches up the D and swings into orbit.">
+    <link rel="canonical" href="https://oriondesign.xyz/brand/logo-animation.html">
+    <style>
+      :root {
+        --space-blue: #1f2a44;
+        --soft-bg: #f4f6f8;
+        --muted: #667085;
+        --border: #e5e8ec;
+        --font-sans: "Century Gothic", Arial, Helvetica, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: #222;
+        background: #fff;
+      }
+      main { max-width: 1100px; margin: 0 auto; padding: 48px 16px 80px; }
+      h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 8px; }
+      p.lede { color: var(--muted); max-width: 60ch; line-height: 1.6; margin: 0 0 32px; }
+      .grid { display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      @media (max-width: 680px) { .grid { grid-template-columns: 1fr; } }
+      .stage {
+        position: relative;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        min-height: 360px;
+        display: grid;
+        place-items: center;
+        padding: 40px 16px 64px;
+        overflow: hidden;
+      }
+      .stage.dark {
+        background: radial-gradient(circle at 50% 40%, #26345a, #0d1224 70%);
+        border-color: #0d1224;
+      }
+      .stage.light { background: var(--soft-bg); }
+      .stage.wide { grid-column: 1 / -1; min-height: 260px; }
+      .stage-label {
+        position: absolute; left: 20px; bottom: 16px;
+        font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+      }
+      .dark .stage-label { color: #9aa6c4; }
+      button.replay {
+        position: absolute; right: 16px; bottom: 12px;
+        font: inherit; font-size: 0.85rem;
+        border: 1px solid currentColor; border-radius: 999px;
+        background: transparent; color: var(--space-blue);
+        padding: 6px 14px; cursor: pointer;
+      }
+      .dark button.replay { color: #e8ecf6; }
+      .demo-mark { width: min(240px, 60vw); }
+      .demo-lockup { font-size: clamp(14px, 3.2vw, 26px); }
+      code { background: var(--soft-bg); padding: 2px 6px; border-radius: 6px; }
+      pre { background: var(--soft-bg); padding: 16px; border-radius: 14px; overflow-x: auto; font-size: 0.9rem; }
+    </style>
+    <script src="../orion-logo-animation.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <main id="main" tabindex="-1">
+      <h1>Logo animation</h1>
+      <p class="lede">
+        The mark forms like a planet, a light ignites at the foot of the D, launches up the spine and
+        swings into orbit — closing the loop into the O. Click any logo or press Replay to run it again.
+      </p>
+
+      <div class="grid">
+        <div class="stage light">
+          <orion-logo-animation id="a" class="demo-mark"></orion-logo-animation>
+          <span class="stage-label">Light</span>
+          <button type="button" class="replay" data-for="a">Replay</button>
+        </div>
+        <div class="stage dark">
+          <orion-logo-animation id="b" theme="dark" class="demo-mark"></orion-logo-animation>
+          <span class="stage-label">Dark</span>
+          <button type="button" class="replay" data-for="b">Replay</button>
+        </div>
+        <div class="stage light wide">
+          <orion-logo-animation id="c" wordmark class="demo-lockup"></orion-logo-animation>
+          <span class="stage-label">Lockup</span>
+          <button type="button" class="replay" data-for="c">Replay</button>
+        </div>
+      </div>
+
+      <h2>Using it on the site</h2>
+<pre>&lt;script src="/orion-logo-animation.js" defer&gt;&lt;/script&gt;
+
+&lt;orion-logo-animation style="width:160px"&gt;&lt;/orion-logo-animation&gt;
+&lt;orion-logo-animation theme="dark" replay="hover"&gt;&lt;/orion-logo-animation&gt;
+&lt;orion-logo-animation wordmark orbit="off"&gt;&lt;/orion-logo-animation&gt;</pre>
+      <p>
+        Options: <code>trigger</code> (view / load / manual), <code>replay</code> (click / hover / none),
+        <code>orbit</code> (on / off), <code>theme</code> (light / dark), <code>wordmark</code>.
+        Visitors with reduced motion turned on see the finished logo without animation.
+      </p>
+    </main>
+    <script>
+      document.querySelectorAll("button.replay").forEach(function (b) {
+        b.addEventListener("click", function () {
+          document.getElementById(b.dataset.for).play();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Enclosure Temperature Rise Estimator: ΔT = P × Rθ | Orion Design</title>
+    <meta
+      name="description"
+      content="Estimate how hot a component gets inside an enclosure: thermal resistances in series, ΔT = P × Rθ, margin to your target, maximum power and the lid area needed."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/temperature-rise-estimator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Enclosure Temperature Rise Estimator | Orion Design">
+    <meta
+      property="og:description"
+      content="Estimate how hot a component gets inside an enclosure: thermal resistances in series, ΔT = P × Rθ, margin to your target, maximum power and the lid area needed."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/temperature-rise-estimator.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-temperature-rise-estimator.jpg">
+    <meta property="og:image:alt" content="Enclosure temperature rise estimator from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Enclosure Temperature Rise Estimator | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Estimate how hot a component gets inside an enclosure: thermal resistances in series, ΔT = P × Rθ, margin to your target, maximum power and the lid area needed."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-temperature-rise-estimator.jpg">
+    <meta name="twitter:image:alt" content="Enclosure temperature rise estimator from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-temperature-rise-estimator.jpg",
+        "name": "Enclosure Temperature Rise Estimator",
+        "url": "https://oriondesign.xyz/tools/temperature-rise-estimator.html",
+        "description": "First estimate of a component's temperature inside an enclosure from its power and a single chain of thermal resistances to the outside air: ΔT = P × Rθ, margin to target, maximum power and the surface area needed.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Enclosure Temperature Rise Estimator",
+                "item": "https://oriondesign.xyz/tools/temperature-rise-estimator.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Where does the default h of 10 W/m²·°C come from?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It is the rough combined convection and radiation figure engineers often use for a surface in still air, as in the guide's worked example. The real value depends on the surface's orientation, size and finish and on any air movement. Once you have a prototype, measure the power and the surface and air temperatures, and use h = P ÷ (A × (T_surface − T_ambient)) in place of the default."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What thermal resistance should I use for the pad?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Take it from the pad maker's datasheet for your thickness, compression and contact area, and allow something for the contact surfaces either side. The 1 °C/W default is the illustrative figure from the guide, not a value for any particular pad."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why might a measured temperature differ from the estimate?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The estimate assumes one heat path, a lid at an even temperature, steady state and no sunshine. Heat leaking through the walls makes reality slightly cooler; a hot spot on the lid, a dark finish in sun or a higher real power makes it hotter. Use the estimate to choose a direction, then confirm with thermocouples."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this tell me whether the outside is safe to touch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It gives a rough outer surface temperature, but the touch limits depend on the material, how long the surface is touched and the type of product, and they come from your product's applicable safety standard. Check the measured surface temperature against that standard."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Enclosure Temperature Rise Estimator</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Enclosure Temperature Rise Estimator</h1>
+            <p>
+              Estimate how hot your hottest component will get inside the housing. Enter its power, your worst-case ambient temperature and the
+              thermal resistances along the path to the outside air, and see the temperature rise, the margin to your target, the most power the
+              design can take and the surface area it needs. It uses the same method as the guide to
+              <a class="text-link-inline" href="../guides/managing-heat-in-a-product-enclosure.html">managing heat in a product enclosure</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Temperature rise worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"heatPower":"2","heatAmbient":"40","heatTarget":"65","heatRjc":"0","heatRpad":"1","heatRextra":"0","heatAreaMode":"dims","heatLength":"100","heatWidth":"100","heatArea":"0.01","heatH":"10"}'>Sealed sensor, aluminium lid</button>
+              <button class="preset-button" type="button" data-tool-preset='{"heatPower":"5","heatAmbient":"25","heatTarget":"85","heatRjc":"2","heatRpad":"0.5","heatRextra":"0","heatAreaMode":"dims","heatLength":"150","heatWidth":"200","heatArea":"0.03","heatH":"10"}'>Indoor hub, metal top panel</button>
+              <button class="preset-button" type="button" data-tool-preset='{"heatPower":"3","heatAmbient":"35","heatTarget":"60","heatRjc":"0","heatRpad":"2","heatRextra":"1.5","heatAreaMode":"area","heatLength":"70","heatWidth":"70","heatArea":"0.005","heatH":"8"}'>Small box, too little area</button>
+            </div>
+            <form class="tool-form" id="heatForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="heatPower">Power dissipated, P (W)</label>
+                  <input id="heatPower" type="number" min="0" step="0.01" value="2" aria-describedby="heatPowerHint">
+                  <p class="helper-text" id="heatPowerHint">In the worst realistic mode, such as charging while transmitting</p>
+                </div>
+                <div class="field-group">
+                  <label for="heatAmbient">Worst-case ambient (°C)</label>
+                  <input id="heatAmbient" type="number" min="-50" step="0.5" value="40" aria-describedby="heatAmbientHint">
+                  <p class="helper-text" id="heatAmbientHint">The hottest air the product must work in</p>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="heatTarget">Component temperature target (°C)</label>
+                  <input id="heatTarget" type="number" min="-50" step="0.5" value="65" aria-describedby="heatTargetHint">
+                  <p class="helper-text" id="heatTargetHint">From the component's datasheet rating, less the margin you have chosen</p>
+                </div>
+                <div class="field-group">
+                  <label for="heatRjc">Component-to-case Rθ (°C/W, optional)</label>
+                  <input id="heatRjc" type="number" min="0" step="0.01" value="0" aria-describedby="heatRjcHint">
+                  <p class="helper-text" id="heatRjcHint">From the datasheet if your target is a junction temperature; leave at 0 if it is the case temperature</p>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="heatRpad">Pad and contact Rθ (°C/W)</label>
+                  <input id="heatRpad" type="number" min="0" step="0.01" value="1" aria-describedby="heatRpadHint">
+                  <p class="helper-text" id="heatRpadHint">From the pad datasheet for your thickness and area, plus the contact surfaces</p>
+                </div>
+                <div class="field-group">
+                  <label for="heatRextra">Extra path Rθ (°C/W, optional)</label>
+                  <input id="heatRextra" type="number" min="0" step="0.01" value="0" aria-describedby="heatRextraHint">
+                  <p class="helper-text" id="heatRextraHint">Another step in the chain, such as a heat spreader or bracket; 0 if none</p>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="heatAreaMode">Surface to air: enter the area as</label>
+                  <select id="heatAreaMode" aria-describedby="heatAreaModeHint">
+                    <option value="dims" selected>Length × width (mm)</option>
+                    <option value="area">Area (m²)</option>
+                  </select>
+                  <p class="helper-text" id="heatAreaModeHint">The outer surface that hands the heat to the air, such as the lid</p>
+                </div>
+                <div class="field-group" id="heatAreaGroup" hidden>
+                  <label for="heatArea">Surface area, A (m²)</label>
+                  <input id="heatArea" type="number" min="0" step="0.0001" value="0.01" aria-describedby="heatAreaHint">
+                  <p class="helper-text" id="heatAreaHint">0.01 m² is 100 × 100 mm</p>
+                </div>
+              </div>
+
+              <div class="input-grid" id="heatDimsGroup">
+                <div class="field-group">
+                  <label for="heatLength">Surface length (mm)</label>
+                  <input id="heatLength" type="number" min="0" step="1" value="100">
+                </div>
+                <div class="field-group">
+                  <label for="heatWidth">Surface width (mm)</label>
+                  <input id="heatWidth" type="number" min="0" step="1" value="100">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="heatH">Combined convection and radiation coefficient, h (W/m²·°C)</label>
+                  <input id="heatH" type="number" min="0" step="0.1" value="10" aria-describedby="heatHHint">
+                  <p class="helper-text" id="heatHHint">10 is a rough still-air figure for a first estimate. Replace it with better data or your own test results.</p>
+                </div>
+              </div>
+
+              <button class="button button-primary" type="submit">Estimate temperature</button>
+            </form>
+            <p class="helper-text">
+              Steady state, one heat path in series. A first estimate to see whether you are clear or need a change; confirm it with thermocouples on a prototype.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="heatSummary"></div>
+            <div class="dfm-checks" id="heatStatus" aria-live="polite"></div>
+            <div class="comparison-list" id="heatBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#heatCopy"
+                  data-copy-feedback="#heatCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="heatCopy" class="copy-output" readonly></textarea>
+              <div id="heatCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want a second opinion on a hot product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="temperature_rise_estimator_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>The component's temperature is the ambient plus its power multiplied by the total thermal resistance of the path out.</h2>
+              <p>Each step from the component to the outside air resists the flow of heat, and the steps add together. The last step, from the outer surface to the air, is often the largest, so a bigger or metal surface usually helps most. Compare the result with your target, then confirm it by test.</p>
+            </div>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 440 300" width="100%" role="img" aria-labelledby="heat-fig-title heat-fig-desc">
+                <title id="heat-fig-title">The heat path as thermal resistances in series</title>
+                <desc id="heat-fig-desc">A vertical chain. At the top is the component at its temperature. Heat flows down through four resistances in turn: component to case, the pad and contact surfaces, an optional extra path such as a heat spreader, and the outer surface to the air, which is one divided by h times A. At the bottom is the outside air at the ambient temperature. The total resistance is the sum of the four, and the temperature rise is the power times that total.</desc>
+                <defs><marker id="heat-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <rect class="gd-box-indigo" x="20" y="10" width="250" height="34" rx="6"></rect>
+                <text class="gd-v" x="145" y="32" text-anchor="middle">Component, T_comp</text>
+                <rect class="gd-box" x="20" y="62" width="250" height="34" rx="6"></rect>
+                <text class="gd-t" x="145" y="84" text-anchor="middle">Component to case (optional)</text>
+                <rect class="gd-box" x="20" y="114" width="250" height="34" rx="6"></rect>
+                <text class="gd-t" x="145" y="136" text-anchor="middle">Pad and contact surfaces</text>
+                <rect class="gd-box gd-dash" x="20" y="166" width="250" height="34" rx="6"></rect>
+                <text class="gd-t" x="145" y="188" text-anchor="middle">Extra path, e.g. spreader</text>
+                <rect class="gd-box-teal" x="20" y="218" width="250" height="34" rx="6"></rect>
+                <text class="gd-t" x="145" y="240" text-anchor="middle">Surface to air: 1 ÷ (h × A)</text>
+                <text class="gd-v" x="145" y="290" text-anchor="middle">Outside air, T_ambient</text>
+                <line class="gd-arrow" x1="300" y1="20" x2="300" y2="276" marker-end="url(#heat-arrow)"></line>
+                <text class="gd-t" x="312" y="130">Heat flow,</text>
+                <text class="gd-t" x="312" y="150">P watts</text>
+                <text class="gd-m" x="312" y="190">Rθ = sum of</text>
+                <text class="gd-m" x="312" y="208">the four steps</text>
+              </svg>
+              <figcaption>Each box is one thermal resistance in °C/W. They are in series, so they add, and every watt passes through all of them.</figcaption>
+            </figure>
+
+            <h2 id="method">How this works</h2>
+            <p>
+              The tool follows the method in <a class="text-link-inline" href="../guides/managing-heat-in-a-product-enclosure.html#estimates">simple first estimates</a>:
+              once the product has settled, all the power going in leaves as heat, and the temperature rise is that power multiplied by the thermal resistance of the path.
+              Resistances in a chain add together. Lengths entered in millimetres are converted to metres for the area.
+            </p>
+            <div class="formula-block">Area (from mm):  A = length × width ÷ 1,000,000
+Surface to air:  R_surface = 1 ÷ (h × A)
+Internal steps:  R_int = R_comp-case + R_pad + R_extra
+Total:           Rθ = R_int + R_surface
+Rise:            ΔT = P × Rθ
+Component:       T_comp = T_ambient + ΔT
+Allowed rise:    ΔT_allowed = T_target − T_ambient
+Margin:          T_target − T_comp
+Maximum power:   P_max = ΔT_allowed ÷ Rθ
+Area needed:     R_allowed = ΔT_allowed ÷ P − R_int
+                 A_needed = 1 ÷ (h × R_allowed)
+Outer surface:   T_surface ≈ T_ambient + P × R_surface</div>
+            <p>
+              <strong>Worked example from the guide.</strong> A 2 W board in a sealed housing, 40 °C ambient and a 65 °C target. An aluminium lid of 0.1 × 0.1 = 0.01 m²
+              with h ≈ 10 W/m²·°C gives 1 ÷ (10 × 0.01) = 10 °C/W. Add the pad and contact surfaces at about 1 °C/W: Rθ ≈ 11 °C/W.
+              ΔT = 2 × 11 = 22 °C, so the component reaches about 40 + 22 = 62 °C, just under the target. These are the tool's default inputs.
+            </p>
+            <p>
+              The status compares the rise with the rise your target allows (target minus ambient): up to 80% of it passes, 80–100% is marginal,
+              and above 100% is over the target. The guide's example uses 22 of 25 °C (88%), so it shows as marginal: under the target, but with little room.
+              If the internal resistances alone use up the allowed rise, no surface area can meet the target and the tool says so.
+            </p>
+
+            <h2>Assumptions and limits</h2>
+            <ul>
+              <li><strong>Steady state.</strong> The product has run long enough for every temperature to stop rising. Warm-up takes time, so short bursts of power run cooler than this estimate, but a long burst will reach it.</li>
+              <li><strong>A single path.</strong> All the heat is assumed to flow through one chain of resistances. In reality some also leaves through the walls, the base and the cable, so the real temperature should be slightly lower. If another path matters, the estimate becomes pessimistic.</li>
+              <li><strong>The lid is uniform in temperature.</strong> The whole surface is treated as being at one temperature. A plastic or thin surface leaves a hot spot over the component and sheds less heat than its area suggests; metal spreads heat far better.</li>
+              <li><strong>Solar gain is not included.</strong> Sunshine on the housing can add more heat than the electronics produce. For outdoor products, the result applies to shade only; choose the colour and test in sun.</li>
+              <li><strong>h is a rough figure.</strong> The real combined coefficient depends on orientation, size, finish, nearby surfaces and any air movement. Replace the default with better data, or work it out from a test.</li>
+              <li><strong>Touch temperature is a separate check.</strong> The outer surface temperature shown is an estimate only. The limits for how hot a surface may get come from your product's applicable safety standard, which you can identify through <a class="text-link-inline" href="../guides/product-certification-basics.html">product certification basics</a>. This tool does not quote them.</li>
+              <li><strong>Confirm by test.</strong> Measure a prototype with thermocouples on the hottest parts and the housing above them, at your highest ambient and heaviest realistic load, until the readings stop rising.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <ul>
+              <li><strong>Pass:</strong> the rise uses no more than 80% of what your target allows. Check the outer surface against the touch limits in your safety standard, and confirm by test.</li>
+              <li><strong>Marginal:</strong> under the target, but small changes in power, pad thickness or ambient could push it over. Improve the largest resistance first, then test.</li>
+              <li><strong>Over target:</strong> the component is likely to run too hot. The maximum power and the surface area needed show how far you are from a working design.</li>
+            </ul>
+            <p>
+              The largest resistance in the chain dominates. If it is the surface to air, add area, ribs or fins, or move to a metal lid; if it is the pad, bridge the gap with a
+              thinner or better pad. The guide to <a class="text-link-inline" href="../guides/managing-heat-in-a-product-enclosure.html">managing heat in a product enclosure</a> covers
+              venting versus sealing, heat spreaders and testing, and <a class="text-link-inline" href="../guides/product-testing-and-validation-plans.html">product testing and validation plans</a>
+              shows where the temperature test fits. Save your result to your <a href="product-plan-builder.html">product plan</a>.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/managing-heat-in-a-product-enclosure.html">Managing heat in a product enclosure</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/electronics-in-a-physical-product.html">Electronics in a physical product</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/sealing-and-waterproofing-an-enclosure.html">Sealing and waterproofing an enclosure</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/choosing-metals-for-a-product.html">Choosing metals for a product</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/product-certification-basics.html">Product certification basics</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/development-and-prototyping.html">Development and prototyping: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="test-plan-builder.html">Product Test Plan Builder</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="certification-readiness.html">Certification Readiness Checklist</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Thermal management</span>
+                <span>Enclosure design</span>
+                <span>Design review</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Where does the default h of 10 W/m²·°C come from?</h3>
+                <p>It is the rough combined convection and radiation figure engineers often use for a surface in still air, as in the guide's worked example. The real value depends on the surface's orientation, size and finish and on any air movement. Once you have a prototype, measure the power and the surface and air temperatures, and use h = P ÷ (A × (T_surface − T_ambient)) in place of the default.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What thermal resistance should I use for the pad?</h3>
+                <p>Take it from the pad maker's datasheet for your thickness, compression and contact area, and allow something for the contact surfaces either side. The 1 °C/W default is the illustrative figure from the guide, not a value for any particular pad.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why might a measured temperature differ from the estimate?</h3>
+                <p>The estimate assumes one heat path, a lid at an even temperature, steady state and no sunshine. Heat leaking through the walls makes reality slightly cooler; a hot spot on the lid, a dark finish in sun or a higher real power makes it hotter. Use the estimate to choose a direction, then confirm with thermocouples.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does this tell me whether the outside is safe to touch?</h3>
+                <p>No. It gives a rough outer surface temperature, but the touch limits depend on the material, how long the surface is touched and the type of product, and they come from your product's applicable safety standard. Check the measured surface temperature against that standard.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>First estimate, confirmed by test</h2>
+            <p>This calculator adds the thermal resistances you enter in series and applies ΔT = P × Rθ, the same method as the heat management guide. Use it to see early whether you have a problem and which step to improve, then confirm the design by measuring a prototype.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator was created by Orion Design using the standard steady-state thermal resistance method. Thermal resistances must come from your component and pad datasheets, and h from better data or your own tests.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Practical engineering tools and product-development guidance from concept to manufacture.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related tools</h3>
+          <a href="test-plan-builder.html">Product Test Plan Builder</a>
+          <a href="material-selector.html">Plastic Material Selector</a>
+          <a href="certification-readiness.html">Certification Readiness Checklist</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/temperature-rise-estimator.js" defer></script>
+  </body>
+</html>

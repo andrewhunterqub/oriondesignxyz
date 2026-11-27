@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Assembly and Work Instructions | Orion Design</title>
+    <meta
+      name="description"
+      content="How to write work instructions for production assembly: what each step needs, writing for the bench, fixtures, error-proofing and revision control."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/assembly-and-work-instructions.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Assembly instructions and work instructions for production | Orion Design">
+    <meta
+      property="og:description"
+      content="How to write work instructions for production assembly: what each step needs, writing for the bench, fixtures, error-proofing and revision control."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/assembly-and-work-instructions.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-assembly-and-work-instructions.jpg">
+    <meta property="og:image:alt" content="Assembly instructions and work instructions for production guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Assembly instructions and work instructions for production | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to write work instructions for production assembly: what each step needs, writing for the bench, fixtures, error-proofing and revision control."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-assembly-and-work-instructions.jpg">
+    <meta name="twitter:image:alt" content="Assembly instructions and work instructions for production guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-assembly-and-work-instructions.jpg",
+        "headline": "Assembly instructions and work instructions for production",
+        "description": "How to write work instructions for production assembly: what each step needs, writing for the bench, fixtures, error-proofing and revision control.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/assembly-and-work-instructions.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Work instructions"
+          },
+          {
+            "@type": "Thing",
+            "name": "Production assembly"
+          },
+          {
+            "@type": "Thing",
+            "name": "Error-proofing"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Assembly and work instructions",
+                "item": "https://oriondesign.xyz/guides/assembly-and-work-instructions.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Who should write the work instructions, me or the manufacturer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually both. You supply the design intent: the assembly drawing, BOM, critical features, settings and the order that matters. The manufacturer often writes the line version in their own format. You approve it and keep a copy at the same revision."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between a work instruction and an assembly drawing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "An assembly drawing defines what the finished assembly is, with its parts and key dimensions. A work instruction tells an operator how to build it, step by step, with the tools, settings and checks for each step."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need work instructions for a small batch I assemble myself?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A simple version, yes. Even a few illustrated steps with the checks keep units consistent, help anyone who helps you, and become the starting point when you hand assembly to a supplier later."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does poka-yoke mean?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It is a Japanese term for error-proofing: arranging the design, fixture or process so a mistake cannot be made, or is caught straight away. Asymmetric parts that only fit one way and keyed connectors are common examples."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should work instructions be finalised?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Draft them before the pilot run, prove them during it, and release the updated version before volume production. After that, change them only through the same change process as the drawings and BOM."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Assembly and work instructions</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders and engineers handing a product to a factory who want every unit built the same way</p>
+            <h1>Assembly instructions and work instructions for production</h1>
+            <p>
+              Why written build instructions still matter when a contract manufacturer does the assembly, what a good work instruction contains, how to write it for the person at the bench, and how to build, error-proof and control it from the pilot run onwards.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A work instruction is a short, illustrated, step-by-step sheet that tells an operator exactly how to build one stage of your product, with the parts, tools, settings and checks for each step.</h2>
+              <p>
+                Even when a contract manufacturer assembles the product, you should own or approve the instructions, because they fix how the product is built, what is checked and what the quote was based on.
+                Give each instruction a document number and revision tied to the bill of materials, keep to one action per step, show rather than tell, prove the instructions during the pilot run, and change them only through the same change process as the design.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#why">Why written instructions matter</a></li>
+              <li><a class="text-link-inline" href="#types">Work instructions, assembly drawings and user instructions</a></li>
+              <li><a class="text-link-inline" href="#contents">What a good work instruction contains</a></li>
+              <li><a class="text-link-inline" href="#bench">Writing for the person at the bench</a></li>
+              <li><a class="text-link-inline" href="#pilot">Building them from the pilot run</a></li>
+              <li><a class="text-link-inline" href="#fixtures">Fixtures and jigs</a></li>
+              <li><a class="text-link-inline" href="#error-proofing">Error-proofing the design</a></li>
+              <li><a class="text-link-inline" href="#revisions">Keeping instructions under revision control</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a small enclosure</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+            </ol>
+
+            <h2 id="why">Why written instructions matter</h2>
+            <p>
+              It is tempting to assume that once a <a class="glossary-term" href="../knowledge/glossary.html#term-contract-manufacturer" data-definition="A company that sources parts, assembles, tests and packs a product to the customer's design." aria-label="contract manufacturer: A company that sources parts, assembles, tests and packs a product to the customer's design. (glossary)">contract manufacturer</a> has your drawings and a sample, how they assemble the product is their business. In practice, assembly decides much of how well it works, how long it lasts and what it costs. Written instructions are how you keep control without standing at the line.
+            </p>
+            <ul>
+              <li><strong>Consistency.</strong> Without written steps, each operator and shift develops its own method, and small differences, such as screw order or <a class="text-link-inline" href="cables-wiring-and-connectors-inside-a-product.html">cable routing</a>, become variation you cannot explain later.</li>
+              <li><strong>Training.</strong> Factories move people between lines. A clear instruction lets someone new build the product correctly on their first day.</li>
+              <li><strong>Quality.</strong> The instruction is where checks happen. If a critical feature is not checked at the step where it can go wrong, the first chance to find it may be your customer.</li>
+              <li><strong>Cost quotes.</strong> A supplier prices assembly from the steps they expect. Agreeing the instruction gives you a basis to compare and question quotes.</li>
+              <li><strong>Changes.</strong> A controlled instruction is how a design change reaches the bench, rather than a new part sitting beside the old one with nobody told which to use.</li>
+            </ul>
+            <p>
+              The manufacturer will often write the final, line-specific version in their own format. That is fine. What matters is that you supply the design intent, approve what they write and keep a copy at the same revision.
+            </p>
+
+            <h2 id="types">Work instructions, assembly drawings and user instructions</h2>
+            <p>Three different documents are often called "assembly instructions". They have different readers and should not be merged.</p>
+            <ul>
+              <li><strong>Assembly drawing.</strong> An <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">engineering drawing</a> of the finished assembly, usually with an exploded view and a parts list or balloon references to the <a class="text-link-inline" href="bills-of-materials-and-revision-control.html">bill of materials</a>. It defines <em>what</em> the assembly is, not the order of work or the checks.</li>
+              <li><strong>Work instruction.</strong> A step-by-step guide for one station or stage of production, written for the operator. It defines <em>how</em> the assembly is built and checked, in sequence.</li>
+              <li><strong>End-user instructions.</strong> The manual or quick-start card for your customer. That is separate work with its own safety and legal content, outside the scope of this guide.</li>
+            </ul>
+            <p>
+              The <a class="glossary-term" href="../knowledge/glossary.html#term-work-instructions" data-definition="Illustrated, step-by-step instructions for each assembly or test station, written so an operator new to the product can build it correctly at normal speed." aria-label="work instruction: Illustrated, step-by-step instructions for each assembly or test station, written so an operator new to the product can build it correctly at normal speed. (glossary)">work instruction</a> refers to the assembly drawing and <a class="glossary-term" href="../knowledge/glossary.html#term-bill-of-materials-bom" data-definition="The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly." aria-label="BOM: The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly. (glossary)">BOM</a>; it never replaces them. If they disagree, the released drawing and BOM win, and the instruction must be corrected.
+            </p>
+
+            <h2 id="contents">What a good work instruction contains</h2>
+            <p>
+              Each instruction usually covers one station or one sub-assembly, with a header and a short sequence of steps. A useful one includes:
+            </p>
+            <ul>
+              <li><strong>Document number and revision.</strong> Its own number, a <a class="glossary-term" href="../knowledge/glossary.html#term-revision" data-definition="A recorded version of a part, drawing or bill of materials, usually marked with a letter such as Rev B. Each change raises the revision, so everyone can tell exactly which version they are working from." aria-label="revision letter: A recorded version of a part, drawing or bill of materials, usually marked with a letter such as Rev B. Each change raises the revision, so everyone can tell exactly which version they are working from. (glossary)">revision letter</a>, a date and an approval, plus the BOM and assembly drawing revisions it applies to. An operator should be able to see at a glance that the sheet matches the parts in front of them.</li>
+              <li><strong>Parts and quantities for each step.</strong> Part number, name and quantity, taken from the BOM rather than retyped from memory. Listing parts per step, not just at the top, stops a small part being forgotten.</li>
+              <li><strong>Tools and fixtures.</strong> Which driver, bit, press, fixture or test lead is used, identified by name or number so the right one is picked up.</li>
+              <li><strong>Torques and settings.</strong> Screw torques, press forces, adhesive quantities and cure times, heat-staking or welding settings. These come from the design, the fastener or adhesive supplier, or trials, so write them on the instruction as placeholders such as "[torque from drawing]" until the released value is confirmed, never as a guess.</li>
+              <li><strong>One action per step.</strong> "Fit the lid" and "drive the four screws" are two steps. Combined steps hide errors and make it impossible to see which one went wrong.</li>
+              <li><strong>Photos or exploded views.</strong> At least one picture per step, with the part being added highlighted and its orientation obvious.</li>
+              <li><strong>Critical-to-quality checks.</strong> The <a class="text-link-inline" href="quality-control-and-first-article-inspection.html">critical-to-quality features</a> that can go wrong at this step, with a clear pass or fail criterion: "<a class="text-link-inline" href="sealing-and-waterproofing-an-enclosure.html">gasket</a> visible all round, no folds", not "check <a class="glossary-term" href="../knowledge/glossary.html#term-gasket" data-definition="A soft rubber or foam seal squeezed between two parts so it fills the small gaps between them. It needs a stiff flange and even, controlled compression to seal reliably." aria-label="gasket: A soft rubber or foam seal squeezed between two parts so it fills the small gaps between them. It needs a stiff flange and even, controlled compression to seal reliably. (glossary)">gasket</a>".</li>
+              <li><strong>Handling and ESD notes.</strong> Where a step involves bare <a class="text-link-inline" href="electronics-in-a-physical-product.html">circuit boards</a>, sensitive components, <a class="glossary-term" href="../knowledge/glossary.html#term-cosmetic-face" data-definition="A face of a part that people will see or touch, marked on the drawing so that suppliers keep marks, defects and support or contact points off it and finish it to the agreed standard." aria-label="cosmetic surfaces: A face of a part that people will see or touch, marked on the drawing so that suppliers keep marks, defects and support or contact points off it and finish it to the agreed standard. (glossary)">cosmetic surfaces</a> or sharp edges, say what precautions apply, such as using the factory's static-safe workstation, wearing gloves, or holding a board by its edges. Keep these general and let the manufacturer's own procedures supply the detail.</li>
+            </ul>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 404" width="100%" role="img" aria-labelledby="wi-fig-title wi-fig-desc">
+                <title id="wi-fig-title">Anatomy of one work-instruction step</title>
+                <desc id="wi-fig-desc">A single work-instruction sheet. At the top, a header with the document number and revision, WI-104 Rev B, and the step number, step 3 of 5. Below it, a picture area showing an exploded view of a lid being lowered onto a base. Under the picture, five labelled rows: action, a single verb such as fit the lid; parts, with part numbers and quantities from the BOM; tool and setting, such as a driver at the torque from the design; check, a pass or fail criterion such as lid flush all round; and notes, for handling and ESD precautions.</desc>
+                <defs><marker id="wi-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <rect x="8" y="8" width="324" height="388" rx="12" class="gd-box"/>
+                <text x="22" y="34" class="gd-v">WI-104 Rev B</text>
+                <text x="318" y="34" text-anchor="end" class="gd-m">Step 3 of 5</text>
+                <line x1="22" y1="46" x2="318" y2="46" class="gd-line"/>
+                <rect x="22" y="58" width="296" height="124" rx="8" class="gd-box-indigo"/>
+                <rect x="112" y="72" width="116" height="18" rx="4" class="gd-box-teal"/>
+                <line x1="170" y1="96" x2="170" y2="122" class="gd-arrow" marker-end="url(#wi-arrow)"/>
+                <rect x="100" y="128" width="140" height="30" rx="4" class="gd-box"/>
+                <text x="170" y="174" text-anchor="middle" class="gd-m">Photo or exploded view</text>
+                <circle cx="30" cy="206" r="6" class="gd-fill-teal"/>
+                <text x="44" y="211" class="gd-h">Action</text>
+                <text x="44" y="229" class="gd-m">One verb: fit the lid</text>
+                <circle cx="30" cy="246" r="6" class="gd-fill-teal"/>
+                <text x="44" y="251" class="gd-h">Parts</text>
+                <text x="44" y="269" class="gd-m">Part numbers and quantities from BOM</text>
+                <circle cx="30" cy="286" r="6" class="gd-fill-indigo"/>
+                <text x="44" y="291" class="gd-h">Tool and setting</text>
+                <text x="44" y="309" class="gd-m">Driver at [torque from design]</text>
+                <circle cx="30" cy="326" r="6" class="gd-fill-magenta"/>
+                <text x="44" y="331" class="gd-h">Check</text>
+                <text x="44" y="349" class="gd-m">Pass/fail: lid flush all round</text>
+                <circle cx="30" cy="366" r="6" class="gd-fill-indigo"/>
+                <text x="44" y="371" class="gd-h">Notes</text>
+                <text x="44" y="389" class="gd-m">Handling and ESD precautions</text>
+              </svg>
+              <figcaption>One step, one action. The header ties the sheet to a released revision, the picture carries most of the meaning, and the check gives a clear pass or fail before the operator moves on.</figcaption>
+            </figure>
+
+            <h2 id="bench">Writing for the person at the bench</h2>
+            <p>
+              The reader is an operator building the product many times a shift, glancing at a screen or sheet above the bench, possibly in a second language. Write for that person, not for an engineer reviewing the document.
+            </p>
+            <ul>
+              <li><strong>Start each step with a plain verb:</strong> place, push, fit, drive, route, check. Avoid vague words such as "secure" or "assemble", which can mean several different things.</li>
+              <li><strong>Put pictures before words.</strong> A clear photo with an arrow or a highlighted part often does most of the work, and the text confirms it. Show the correct result, and for steps that often go wrong, a photo of the wrong result marked as such.</li>
+              <li><strong>Keep the text short.</strong> A step that needs a paragraph is usually two or three steps.</li>
+              <li><strong>Use the same name for the same part everywhere</strong>, matching the BOM. "Lid", "cover" and "top housing" on one sheet suggests three parts.</li>
+              <li><strong>Plan for translation when the factory is overseas.</strong> Short, literal sentences translate more reliably than idiomatic ones. Ask the manufacturer to translate, have someone you trust check it, and keep both versions at the same revision. Pictures and part numbers travel better than any wording.</li>
+            </ul>
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              give the draft instruction and a kit of parts to someone who has never seen the product. Watch, without helping. Every hesitation, question or wrong move marks a step to rewrite or a picture to add.
+            </div>
+
+            <h2 id="pilot">Building them from the pilot run</h2>
+            <p>
+              Draft the instructions from the CAD model and your prototype builds, but treat that draft as a hypothesis. The <a class="text-link-inline" href="planning-a-pilot-production-run.html">pilot production run</a> is where it is tested: real operators, real fixtures and parts from production suppliers, at production rate.
+            </p>
+            <ul>
+              <li><strong>Watch where operators hesitate, improvise or ask.</strong> Each of those is an unclear step, a missing picture or a design feature that is harder to assemble than it looked.</li>
+              <li><strong>Record defects by step.</strong> If a defect keeps appearing at one step, the instruction, the fixture or the design at that step needs attention.</li>
+              <li><strong>Time each step and each station.</strong> Compare the observed times with the figures your costing assumed, such as a concept-stage estimate from the <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a>; <a class="text-link-inline" href="assembly-time-estimate.html">estimating assembly time</a> explains how that estimate is built. Update the inputs it shares with the line, such as seconds per join and check time, so your unit cost reflects what the line actually does.</li>
+              <li><strong>Update and re-release.</strong> Revise the instructions from what you observed and release them at a new revision before volume production, so the <a class="glossary-term" href="../knowledge/glossary.html#term-ramp-up" data-definition="The period after a successful pilot run when production builds up from first batches to full volume, while any remaining actions are closed." aria-label="ramp-up: The period after a successful pilot run when production builds up from first batches to full volume, while any remaining actions are closed. (glossary)">ramp-up</a> starts from the proven version.</li>
+            </ul>
+
+            <h2 id="fixtures">Fixtures and jigs</h2>
+            <p>
+              A fixture or jig is a holder that locates parts in the right position while they are assembled, glued, pressed or tested. It can be as simple as a 3D-printed nest that holds a housing upside down, or as involved as a powered press with a part-specific tool.
+            </p>
+            <p>
+              Fixtures make assembly faster and more repeatable because the operator no longer judges alignment by eye, and they act as a check: a part that will not sit in its nest is probably wrong or the wrong way round. Name each fixture in the instruction and treat a change to it like a change to the instruction. Some <a class="text-link-inline" href="joining-methods-for-product-design.html">joining methods</a>, such as adhesives with a cure time or <a class="glossary-term" href="../knowledge/glossary.html#term-ultrasonic-welding" data-definition="Joining two plastic parts by pressing them together and vibrating them at high frequency until the interface melts and fuses. The joint is quick, strong and can seal, but cannot be undone." aria-label="ultrasonic welding: Joining two plastic parts by pressing them together and vibrating them at high frequency until the interface melts and fuses. The joint is quick, strong and can seal, but cannot be undone. (glossary)">ultrasonic welding</a>, cannot be done consistently without one, so discuss fixtures with the manufacturer when you choose the joint, not after the pilot.
+            </p>
+
+            <h2 id="error-proofing">Error-proofing the design</h2>
+            <p>
+              Error-proofing, often called by its Japanese name <strong>poka-yoke</strong>, means arranging things so that the wrong action is impossible, or at least immediately obvious. A warning in a work instruction depends on someone reading and remembering it every time. A feature in the design that prevents the mistake works on every unit, on every shift.
+            </p>
+            <p>The best place to error-proof is the design itself, while it is still easy to change:</p>
+            <ul>
+              <li><strong>Asymmetric features.</strong> If a part must go one way, give it a tab, notch or offset hole so it only fits that way. If orientation does not matter, make it fully symmetrical so there is nothing to get wrong.</li>
+              <li><strong>Keyed connectors.</strong> Use cable connectors that only fit one way, and avoid two identical connectors on one board unless they are keyed or coloured differently.</li>
+              <li><strong>Locating features.</strong> Pins, ribs and slots that guide a part into place make correct alignment the easy path.</li>
+              <li><strong>Visible confirmation.</strong> A snap fit that clicks, a connector latch you can see, a window that shows a gasket in its groove: features that tell the operator the step is done.</li>
+            </ul>
+            <p>
+              Where the design cannot prevent an error, the fixture or a test can catch it: a nest that only accepts the correct orientation, or an end-of-line test that detects a missing part. The instruction is the last line of defence, not the first.
+            </p>
+
+            <h2 id="revisions">Keeping instructions under revision control</h2>
+            <p>
+              Work instructions are controlled documents, exactly like drawings. Give each one a number and revision, and list it against the assembly it builds, so the BOM, drawings and instructions move together. When a part changes revision, check every instruction that uses it as part of the same <a class="text-link-inline" href="bills-of-materials-and-revision-control.html">change process</a>; the <a class="text-link-inline" href="../tools/change-request-builder.html">Change Request Builder</a> can help you record which documents a change affects.
+            </p>
+            <p>
+              Ask how the factory makes sure only the current revision is on the line and old printed copies are removed. When you <a class="text-link-inline" href="how-to-find-and-brief-a-manufacturer.html">brief a manufacturer</a>, say who will write and approve the instructions and how changes will be handled, so it is agreed before the quote rather than argued over after.
+            </p>
+
+            <h2 id="example">Worked example: a small enclosure</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A small battery-powered sensor has a moulded base and lid, a circuit board, a battery with a short lead, a gasket and four screws. The steps below are part of work instruction WI-104 at revision B, applying to the assembly at the matching BOM revision. Part numbers are invented for the example, and the torque is a placeholder to be filled from the released drawing.
+              </p>
+            </div>
+            <table class="wt-table">
+              <caption class="visually-hidden">Illustrative work instruction WI-104 revision B: action, parts, tool and check for each of four steps</caption>
+              <tbody>
+                <tr>
+                  <th scope="rowgroup" colspan="2">Step 1</th>
+                </tr>
+                <tr>
+                  <th scope="row">Action</th>
+                  <td>Place the board on the four locating pins, connector towards the cut-out</td>
+                </tr>
+                <tr>
+                  <th scope="row">Parts</th>
+                  <td>Base 100 ×1, board 300 ×1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tool</th>
+                  <td>Fixture F1; static-safe bench</td>
+                </tr>
+                <tr>
+                  <th scope="row">Check</th>
+                  <td>Board flat on all four pins; connector lines up with the cut-out</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th scope="rowgroup" colspan="2">Step 2</th>
+                </tr>
+                <tr>
+                  <th scope="row">Action</th>
+                  <td>Push the battery lead into the board connector until it clicks</td>
+                </tr>
+                <tr>
+                  <th scope="row">Parts</th>
+                  <td>Battery 310 ×1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tool</th>
+                  <td>None</td>
+                </tr>
+                <tr>
+                  <th scope="row">Check</th>
+                  <td>Critical: latch fully engaged; lead clear of the screw bosses</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th scope="rowgroup" colspan="2">Step 3</th>
+                </tr>
+                <tr>
+                  <th scope="row">Action</th>
+                  <td>Fit the lid, tab end first, and press down until flush</td>
+                </tr>
+                <tr>
+                  <th scope="row">Parts</th>
+                  <td>Lid 101 ×1, with gasket 120 fitted</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tool</th>
+                  <td>Fixture F1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Check</th>
+                  <td>Critical: gasket not pinched; lid flush all round</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th scope="rowgroup" colspan="2">Step 4</th>
+                </tr>
+                <tr>
+                  <th scope="row">Action</th>
+                  <td>Drive the four screws in the order shown</td>
+                </tr>
+                <tr>
+                  <th scope="row">Parts</th>
+                  <td>Screw 210 ×4</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tool</th>
+                  <td>Driver set to [torque from drawing]</td>
+                </tr>
+                <tr>
+                  <th scope="row">Check</th>
+                  <td>All four screws seated; no cracked bosses</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              On the real sheet, each row would have a photo with the new part highlighted. During the pilot, step 2 was slowest because operators could not easily see whether the latch had engaged. The team added photos of a latched and an unlatched connector, logged a design action for a connector with a more visible latch, fed the observed times into the assembly estimate, and released WI-104 at revision C.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Leaving it all to the factory.</strong>
+                If you never see the instructions, you cannot know which checks are made or what the quote assumed. Supply the design intent and approve the result.
+              </div>
+              <div>
+                <strong>Several actions in one step.</strong>
+                Long steps are skimmed and partly done. One action, one picture, one check.
+              </div>
+              <div>
+                <strong>Vague checks.</strong>
+                "Check assembly" gives no pass or fail. Say what to look at and what good looks like.
+              </div>
+              <div>
+                <strong>Guessed settings.</strong>
+                Torques and cure times typed in from habit can crack bosses or leave joints weak. Take them from the design and confirm them in trials.
+              </div>
+              <div>
+                <strong>Instructions that drift from the BOM.</strong>
+                A part changes and the instruction does not. Keep both under the same change process and revision.
+              </div>
+              <div>
+                <strong>Relying on the instruction to prevent errors.</strong>
+                If a part can be fitted the wrong way, sooner or later it will be. Fix it in the design or the fixture where you can.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Draft a work instruction for your main assembly from the CAD model and your last prototype build, one action per step.</li>
+              <li>Look for any part that could fit the wrong way and ask whether the design can prevent it.</li>
+              <li>Plan to prove the instructions and time each station during your <a class="text-link-inline" href="planning-a-pilot-production-run.html">pilot run</a>, and agree the inspection checks with your supplier using <a class="text-link-inline" href="quality-control-and-first-article-inspection.html">quality control and first-article inspection</a>.</li>
+              <li>See where this sits in the wider journey in the <a class="text-link-inline" href="manufacturing-and-cost.html">manufacturing and cost hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Check the assembly time</h3>
+                <p>Compare your step times with a concept-stage estimate.</p>
+                <a class="button button-primary" href="../tools/assembly-time.html" data-analytics-event="article_cta_click" data-analytics-label="work_instructions_guide_to_assembly_time">Open Assembly Time Estimator</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Record a change</h3>
+                <p>List which parts, drawings and instructions a change affects.</p>
+                <a class="button button-secondary" href="../tools/change-request-builder.html" data-analytics-event="article_cta_click" data-analytics-label="work_instructions_guide_to_change_request">Open Change Request Builder</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/assembly-time.html">Assembly Time Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/change-request-builder.html">Change Request Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="planning-a-pilot-production-run.html">Planning a pilot production run</a></div>
+                <div class="aside-item"><a class="text-link" href="quality-control-and-first-article-inspection.html">Quality control and first-article inspection</a></div>
+                <div class="aside-item"><a class="text-link" href="bills-of-materials-and-revision-control.html">Bills of materials and revision control</a></div>
+                <div class="aside-item"><a class="text-link" href="assembly-time-estimate.html">Estimating assembly time</a></div>
+                <div class="aside-item"><a class="text-link" href="joining-methods-for-product-design.html">Joining methods</a></div>
+                <div class="aside-item"><a class="text-link" href="how-to-find-and-brief-a-manufacturer.html">Finding and briefing a manufacturer</a></div>
+                <div class="aside-item"><a class="text-link" href="mould-tool-trials-and-sample-approval.html">Mould tool trials and sample approval</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Work instructions</span>
+                <span>Assembly</span>
+                <span>Poka-yoke</span>
+                <span>Fixtures</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Who should write the work instructions, me or the manufacturer?</h3>
+                <p>Usually both. You supply the design intent: the assembly drawing, BOM, critical features, settings and the order that matters. The manufacturer often writes the line version in their own format. You approve it and keep a copy at the same revision.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between a work instruction and an assembly drawing?</h3>
+                <p>An assembly drawing defines what the finished assembly is, with its parts and key dimensions. A work instruction tells an operator how to build it, step by step, with the tools, settings and checks for each step.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need work instructions for a small batch I assemble myself?</h3>
+                <p>A simple version, yes. Even a few illustrated steps with the checks keep units consistent, help anyone who helps you, and become the starting point when you hand assembly to a supplier later.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What does poka-yoke mean?</h3>
+                <p>It is a Japanese term for error-proofing: arranging the design, fixture or process so a mistake cannot be made, or is caught straight away. Asymmetric parts that only fit one way and keyed connectors are common examples.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should work instructions be finalised?</h3>
+                <p>Draft them before the pilot run, prove them during it, and release the updated version before volume production. After that, change them only through the same change process as the drawings and BOM.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Orion Design guides" href="https://oriondesign.xyz/feed.xml">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Product Development Guides for Hardware Teams | Orion Design</title>
+    <meta
+      name="description"
+      content="Practical product development guides for hardware teams covering concept choice, manufacturing, sustainability, route to market, and launch planning."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Product Development Guides for Hardware Teams | Orion Design">
+    <meta
+      property="og:description"
+      content="Practical product development guides for hardware teams covering concept choice, manufacturing, sustainability, route to market, and launch planning."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides.jpg">
+    <meta property="og:image:alt" content="Orion Design product development guides, tools, and engineering resources">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Product Development Guides for Hardware Teams | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Practical product development guides for hardware teams covering concept choice, manufacturing, sustainability, route to market, and launch planning."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product development guides, tools, and engineering resources">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "image": "https://oriondesign.xyz/images/social/og/guides.jpg",
+        "name": "Orion Design Guides",
+        "url": "https://oriondesign.xyz/guides/",
+        "description": "Practical product development guides for hardware teams covering concept choice, manufacturing, sustainability, route to market, and launch planning.",
+        "about": [
+          "Product development guides",
+          "Hardware startup guidance",
+          "Manufacturing decisions",
+          "Route to market planning"
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <span aria-current="page">Guides</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guides</span>
+            <h1>Product development guides for teams moving from idea to launch.</h1>
+            <p>
+              Browse the guides by the decision you are trying to make: whether the concept deserves momentum,
+              how it should be engineered, what manufacturing route makes sense, and whether the commercial model is strong enough to back.
+            </p>
+            <p class="helper-text"><a class="text-link-inline" href="../whats-new/">What's new and corrections</a> lists recently added guides and any material changes.</p>
+            <p>New to the site? Follow a <a class="text-link-inline" href="learning-paths.html">learning path</a> for founders, engineers, spin-outs or students.</p>
+            <button class="search-launch" type="button" data-search-open>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span>Search guides, tools and the glossary</span>
+            </button>
+            <p>New guides are added regularly. <a class="text-link-inline" href="../feed.xml">Subscribe to the guides by RSS</a>.</p>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <strong data-count="guide-pages">92</strong>
+              <span>guides and hub pages linked to live tools</span>
+            </div>
+            <div class="stat">
+              <strong>07</strong>
+              <span>hubs, from opportunity and concept to IP, partners and compliance</span>
+            </div>
+            <div class="stat">
+              <strong>01</strong>
+              <span>ready-to-launch roadmap if you want the work in sequence</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container new-since-wrap">
+        <aside class="new-since" data-new-since hidden aria-labelledby="new-since-title"></aside>
+      </div>
+
+      <section class="section" aria-labelledby="start-here-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">New to product development?</p>
+            <h2 id="start-here-title">Start here: five reads that explain most of the journey.</h2>
+            <p>Each guide stands on its own, but these five in order give a clear picture of how a physical product gets from idea to manufacture, and where the money goes.</p>
+          </div>
+          <ol class="start-path">
+            <li><a href="../idea-to-manufacture/index.html"><strong>The whole journey</strong><span>Idea to manufacture: seven stages, timescales and pitfalls.</span></a></li>
+            <li><a href="how-to-validate-a-product-idea.html"><strong>Check the idea</strong><span>How to validate a product idea before you build it.</span></a></li>
+            <li><a href="prototyping-vs-production-startup-guide.html"><strong>Prototype with purpose</strong><span>Prototyping vs production: what each stage is for.</span></a></li>
+            <li><a href="how-to-estimate-manufacturing-cost.html"><strong>Understand unit cost</strong><span>How to estimate manufacturing cost for a hardware product.</span></a></li>
+            <li><a href="calculating-hardware-startup-cash-flow.html"><strong>Plan the cash</strong><span>Calculating hardware start-up cash flow.</span></a></li>
+          </ol>
+          <p class="start-path-more">Prefer a route for your role (founder, engineer, spin-out, student)? See <a class="text-link-inline" href="learning-paths.html">learning paths</a>.</p>
+          <nav class="section-jump" aria-label="Guides by hub">
+            <p class="plan-label">Or jump to a hub</p>
+            <a href="#section-opportunity"><span>1</span> Opportunity and concept</a>
+            <a href="#section-development"><span>2</span> Development and prototyping</a>
+            <a href="#section-manufacturing"><span>3</span> Manufacturing and cost</a>
+            <a href="#section-sustainability"><span>4</span> Sustainability and product life</a>
+            <a href="#section-market"><span>5</span> Route to market and margins</a>
+            <a href="#section-funding"><span>6</span> Funding and cash</a>
+            <a href="#section-ip"><span>7</span> IP, partners and compliance</a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="section" id="section-opportunity" aria-labelledby="section-opportunity-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Hub 1 of 7</p>
+            <h2 id="section-opportunity-title">Opportunity and concept</h2>
+            <p>Check the problem is real, choose a concept with reasons, and test whether the business could work. Start with the overview, then go deeper.</p>
+          </div>
+          <div class="card-grid">
+            <article class="content-card reveal">
+              <span class="card-kicker">Start here · Hub guide</span>
+              <h2>Opportunity and concept: test the idea and choose what to build</h2>
+              <p>Prove the problem, gather evidence, check what exists, write measurable requirements and choose a concept, before development money is committed.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/opportunity-and-concept.html">Read hub guide</a>
+                <a class="button button-secondary" href="../tools/product-purpose.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Research</span>
+              <h2>Customer discovery for hardware</h2>
+              <p>Who to talk to, interview questions that give evidence, observing real use, and turning conversations into decisions.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/customer-discovery-for-hardware.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-purpose.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Requirements</span>
+              <h2>How to write a product requirements document</h2>
+              <p>What to include, how to write specific and testable requirements, an example, and how to keep the document useful.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/how-to-write-a-product-requirements-document.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-purpose.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Research</span>
+              <h2>Competitor and patent landscape review</h2>
+              <p>Map what already exists: competitors, alternatives, reviews and teardowns, and the patents and designs around your idea.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/competitor-and-patent-landscape-review.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/pugh-concept-selector.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Idea validation</span>
+              <h2>How to validate a product idea before you build it</h2>
+              <p>Use customer pain, buyer clarity, willingness to pay, and delivery realism to decide whether the opportunity deserves momentum.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/how-to-validate-a-product-idea.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-purpose.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Concept selection</span>
+              <h2>How engineers choose between concepts</h2>
+              <p>Bring structure to concept debates with weighted criteria, clearer trade-offs, and a more defensible comparison method.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/how-engineers-choose-between-concepts.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/pugh-concept-selector.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Business case</span>
+              <h2>Building a hardware business case</h2>
+              <p>Connect reachable demand, conversion assumptions, overhead, and payback timing before scale decisions are made on instinct.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/building-a-hardware-business-case.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/hardware-business-case-builder.html">Open tool</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="section-development" aria-labelledby="section-development-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Hub 2 of 7</p>
+            <h2 id="section-development-title">Development and prototyping</h2>
+            <p>Plan the development sequence, use prototypes to answer questions, and work well with designers. Start with the overview, then go deeper.</p>
+          </div>
+          <div class="card-grid">
+            <article class="content-card reveal">
+              <span class="card-kicker">Start here · Hub guide</span>
+              <h2>Development and prototyping: from idea to production-ready design</h2>
+              <p>The stages of hardware development, which prototype answers which question, how many rounds to plan, testing and design freeze, with a worked example.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/development-and-prototyping.html">Read hub guide</a>
+                <a class="button button-secondary" href="../tools/prototype-strategy-tool.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Testing</span>
+              <h2>Product testing and validation plans</h2>
+              <p>Verification and validation, what a test plan contains, the main types of test, and which tests belong at each stage.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/product-testing-and-validation-plans.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Prototyping</span>
+              <h2>How many prototypes do you need?</h2>
+              <p>Plan by question, not by count: typical rounds from rough models to pre-production samples, what drives the number, and budgeting.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/how-many-prototypes-do-you-need.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/prototype-strategy-tool.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Prototyping</span>
+              <h2>Looks-like vs works-like prototypes</h2>
+              <p>What each answers, when to build them separately and when to combine them, typical methods, how to brief them and common mistakes.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/looks-like-vs-works-like-prototypes.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/prototype-strategy-tool.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Prototyping</span>
+              <h2>Choosing a 3D printing process for prototypes</h2>
+              <p>FDM, SLA, SLS, MJF and metal printing compared, choosing by the question a prototype must answer, design tips, files, quotes and when to move on.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/choosing-a-3d-printing-process.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/prototype-strategy-tool.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Prototyping</span>
+              <h2>Usability testing a prototype</h2>
+              <p>What to test at each prototype stage, who to recruit, running task-based sessions without leading, and turning findings into prioritised changes.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/usability-testing-a-prototype.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Design reviews</span>
+              <h2>Running a design review</h2>
+              <p>Reviews from concept selection to pilot production, who attends, preparing, a simple agenda, and recording decisions and actions with owners.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/running-a-design-review.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/ready-for-tooling.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Design roles</span>
+              <h2>Industrial design vs engineering design: who does what</h2>
+              <p>What industrial designers, design engineers, electronics engineers and manufacturers each focus on, who you need at each stage and how to avoid hand-off failures.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/industrial-design-vs-engineering-design.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-design-process-map.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Electronics</span>
+              <h2>Electronics in a physical product: what to plan early</h2>
+              <p>Designing the board and enclosure together, batteries, heat, EMC and antennas, test access, supply risk and what to hand to an electronics partner.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/electronics-in-a-physical-product.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Electronics</span>
+              <h2>Managing heat in a product enclosure</h2>
+              <p>Where heat comes from, how it moves, venting vs sealing, heat sinks and fans, simple temperature-rise estimates and testing a prototype.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/managing-heat-in-a-product-enclosure.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Testing</span>
+              <h2>Designing a product to survive drops and impacts</h2>
+              <p>Why dropped products crack or come apart inside, the design fixes, setting a realistic drop requirement and testing prototypes on faces, edges and corners.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/designing-for-drops-and-impacts.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Detail design</span>
+              <h2>Designing buttons, switches and controls</h2>
+              <p>Choosing tactile switches, keypads, membranes, touch or rotary controls, then getting travel, sealing, graphics, switch life and feel right.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/designing-buttons-switches-and-controls.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/tolerance-stack-up.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Electronics</span>
+              <h2>Cables, wiring and connectors inside a product</h2>
+              <p>Cutting the number of internal wires, then routing, clipping and strain-relieving the rest, choosing connectors, harness drawings and testing.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/cables-wiring-and-connectors-inside-a-product.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Development planning</span>
+              <h2>Mapping the product design process</h2>
+              <p>Turn a vague stage-gate idea into a realistic development map shaped by complexity, novelty, regulation, and launch pressure.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/mapping-the-product-design-process.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-design-process-map.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Prototype strategy</span>
+              <h2>Prototyping vs production: a startup guide</h2>
+              <p>Choose 3D printing, CNC, vacuum casting, bridge tooling, or pilot production based on what the next build must prove.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/prototyping-vs-production-startup-guide.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/prototype-strategy-tool.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Assembly</span>
+              <h2>Estimating assembly time during design</h2>
+              <p>See how part count, joins, reorientation, and quality checks drive recurring labour long before production engineering is complete.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/assembly-time-estimate.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/assembly-time.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Working with partners</span>
+              <h2>Working with a product design consultancy</h2>
+              <p>Consultancy, freelancer or in-house; how to brief and choose a partner; engagement models; IP ownership and files.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/working-with-a-product-design-consultancy.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/timeline-planner.html">Open tool</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="section-manufacturing" aria-labelledby="section-manufacturing-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Hub 3 of 7</p>
+            <h2 id="section-manufacturing-title">Manufacturing and cost</h2>
+            <p>How products are made, what drives unit cost, and when tooling becomes worthwhile. Start with the overview, then go deeper.</p>
+          </div>
+          <div class="card-grid">
+            <article class="content-card reveal">
+              <span class="card-kicker">Start here · Hub guide</span>
+              <h2>Manufacturing and cost: how products are made and what drives the price</h2>
+              <p>Processes compared, how volume changes cost, the drivers of unit cost, tooling decisions and a worked example, with a path through every manufacturing guide and tool.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/manufacturing-and-cost.html">Read hub guide</a>
+                <a class="button button-secondary" href="../tools/product-cost-estimator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Reference</span>
+              <h2>Manufacturing processes compared</h2>
+              <p>Eight common processes side by side: volumes, tooling, unit cost, lead time and design constraints, and how to choose.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/manufacturing-processes-compared.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/manufacturing-payoff.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Reference</span>
+              <h2>Printable product development checklists</h2>
+              <p>Six free checklists: ready for a manufacturer, ready for tooling, certification, moulded part review, quote requests and launch.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/product-development-checklists.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/ready-for-manufacturer.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Packaging</span>
+              <h2>Packaging design for shipping</h2>
+              <p>Map the journey, design the layers, fit cartons and pallets, test before production, and meet packaging responsibilities.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/packaging-design-for-shipping.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Sourcing</span>
+              <h2>UK vs overseas manufacturing</h2>
+              <p>Landed cost rather than factory price, cash and lead times, quality and changes, Northern Ireland trade, and a staged approach.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/uk-vs-overseas-manufacturing.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/landed-cost-calculator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Quality</span>
+              <h2>Quality control and first-article inspection</h2>
+              <p>Specifications, golden samples, first-article inspection, production checks and AQL sampling, and what to do when things go wrong.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/quality-control-and-first-article-inspection.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Manufacturing processes</span>
+              <h2>Injection moulding explained</h2>
+              <p>How the process works, aluminium vs steel tools, cavities and runners, the steps from quote to production, lead times and what drives cost.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/injection-moulding-explained.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/production-strategy-planner.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Manufacturing processes</span>
+              <h2>Overmoulding and two-shot moulding explained</h2>
+              <p>Overmoulding, two-shot and insert moulding, soft grips and seals, bonding and interlocks, shut-offs, tooling trade-offs and prototyping.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/overmoulding-and-two-shot-moulding.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/dfm-checker.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Manufacturing processes</span>
+              <h2>Die casting explained</h2>
+              <p>Hot- and cold-chamber machines, aluminium and zinc alloys, design rules, porosity and machining, finishes, die trials and when a die pays back.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/die-casting-explained.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/manufacturing-payoff.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Manufacturing processes</span>
+              <h2>Aluminium extrusions for product enclosures</h2>
+              <p>Standard and custom profiles, wall and radius rules, screw ports and PCB slots, end caps and sealing, machining, alloys and finishes.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/aluminium-extrusions-for-product-enclosures.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/rfq-pack-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Manufacturing processes</span>
+              <h2>Choosing how to make an enclosure</h2>
+              <p>The questions that decide it, eight routes from off-the-shelf boxes to moulding and die casting, how they compare, and scaling up.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/choosing-how-to-make-an-enclosure.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/manufacturing-payoff.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Design for manufacture</span>
+              <h2>Injection moulding DFM checklist</h2>
+              <p>Walls, draft, ribs, bosses, corners and undercuts: the features to check before tooling quotes, with typical starting values and diagrams.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/injection-moulding-dfm-checklist.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/manufacturing-payoff.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Print to production</span>
+              <h2>From 3D-printed prototype to moulded part</h2>
+              <p>What has to change before a printed part can be moulded: draft, even walls, ribs and bosses, undercuts, tool marks, fits and moulding grades.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/from-3d-printed-prototype-to-moulded-part.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/dfm-checker.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Manufacturing economics</span>
+              <h2>When does injection moulding become cheaper?</h2>
+              <p>Look beyond the break-even line and consider design stability, demand certainty, and the cost of tooling too early.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/injection-mould-break-even.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/manufacturing-payoff.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Design for manufacture</span>
+              <h2>Sheet metal design basics</h2>
+              <p>Bend radii, flanges, holes near bends, reliefs, materials, joining and tolerances for laser-cut and folded parts.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/sheet-metal-design-basics.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/rfq-pack-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">CNC</span>
+              <h2>CNC machining design rules</h2>
+              <p>Corner radii, pocket depth, walls, holes and threads, set-ups, tolerances and finishes for parts that are quick to machine.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/cnc-machining-design-rules.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/dfm-checker.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Drawings</span>
+              <h2>Tolerances and engineering drawings: the basics</h2>
+              <p>General vs specific tolerances, process cost, fits, datums, stack-ups and what a drawing must show before a supplier can quote it.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/tolerances-and-engineering-drawings.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/tolerance-stack-up.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Documentation</span>
+              <h2>Bills of materials and revision control</h2>
+              <p>BOM columns, engineering vs manufacturing BOMs, simple part numbers, revision letters, a light change process and sending suppliers the right files.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/bills-of-materials-and-revision-control.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/bom-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Assembly</span>
+              <h2>Joining methods: screws, snap fits, adhesives and welding</h2>
+              <p>Screws and inserts, snap fits, staking, ultrasonic welding, adhesives and metal joins compared on strength, repair, assembly time and tooling.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/joining-methods-for-product-design.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/assembly-time.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Assembly</span>
+              <h2>Designing snap fits and living hinges</h2>
+              <p>Cantilever, annular and torsional snaps, the root strain check, angles, undercuts, testing on prints and polypropylene living hinges.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/designing-snap-fits-and-living-hinges.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/dfm-checker.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Materials</span>
+              <h2>Choosing materials for plastic products</h2>
+              <p>Requirements first, then PP, ABS, PC, PC/ABS, nylon, acetal and more compared, with grades, a worked example and recycling.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/choosing-plastic-materials.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-cost-estimator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Materials</span>
+              <h2>Choosing metals for a product</h2>
+              <p>Aluminium, mild steel, 304 and 316 stainless, brass, zinc and titanium compared, with process, corrosion, finishes and a worked example.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/choosing-metals-for-a-product.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-cost-estimator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Product costing</span>
+              <h2>How to estimate manufacturing cost for a hardware product</h2>
+              <p>Build a credible bottom-up cost structure before pricing, break-even, and route-to-market models start relying on it.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/how-to-estimate-manufacturing-cost.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-cost-estimator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Import costs</span>
+              <h2>Landed cost explained: freight, duty and import VAT</h2>
+              <p>What it costs to get a product from the factory to your warehouse, how UK duty and import VAT are worked out, and an illustrative calculation.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/landed-cost-freight-duty-vat.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-cost-estimator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Sourcing</span>
+              <h2>Getting and comparing manufacturing quotes</h2>
+              <p>What to send, how many suppliers to ask, and how to compare quotes on landed cost, tooling ownership, payment timing and cash needed.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/comparing-manufacturing-quotes.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/rfq-pack-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Finishes</span>
+              <h2>Surface finishes for plastic and metal parts</h2>
+              <p>Moulded texture, paint, printing, anodising, powder coating, plating and passivation, with masking, build-up on fits and how to specify a finish.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/surface-finishes-for-plastic-and-metal-parts.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/rfq-pack-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Sealing</span>
+              <h2>Sealing and waterproofing an enclosure</h2>
+              <p>Gaskets, O-rings, labyrinths, cable glands and vents, what makes a seal work, IP ratings in plain terms, and keeping sealed products repairable.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/sealing-and-waterproofing-an-enclosure.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Cost reduction</span>
+              <h2>Reducing the cost of an existing product</h2>
+              <p>Value engineering for a product in production: where cost hides, cost-down ideas, protecting function and certification, and ranking changes by payback.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/reducing-the-cost-of-an-existing-product.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-cost-estimator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Tool trials</span>
+              <h2>Mould tool trials and sample approval</h2>
+              <p>T0 and T1 samples, what to ask the toolmaker for, reading moulding defects, steel-safe changes and who pays, and signing off approved samples.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/mould-tool-trials-and-sample-approval.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/ready-for-tooling.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Pilot run</span>
+              <h2>Planning a pilot production run</h2>
+              <p>What a pilot run proves, where it sits after first-article approval, what to measure, go/no-go criteria and feeding the results into cost and cash.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/planning-a-pilot-production-run.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/ready-for-tooling.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Assembly</span>
+              <h2>Assembly instructions and work instructions for production</h2>
+              <p>What a good work instruction contains, writing for the bench, proving it in the pilot run, fixtures, error-proofing and revision control.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/assembly-and-work-instructions.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/assembly-time.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Scale-up strategy</span>
+              <h2>The risk-progressive manufacturing strategy</h2>
+              <p>Stage prototype, bridge, and scale production deliberately so tooling, suppliers, and demand can mature together.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/risk-progressive-manufacturing-strategy.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/production-strategy-planner.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">After launch</span>
+              <h2>After launch: returns, feedback and design changes</h2>
+              <p>Collecting and logging returns, reviews and complaints, finding root causes, putting safety first, and making controlled, re-tested design changes.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/after-launch-returns-feedback-and-design-changes.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html">Open tool</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="section-sustainability" aria-labelledby="section-sustainability-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Hub 4 of 7</p>
+            <h2 id="section-sustainability-title">Sustainability and product life</h2>
+            <p>Where environmental impact comes from, and the design choices that change it most. Start with the overview, then go deeper.</p>
+          </div>
+          <div class="card-grid">
+            <article class="content-card reveal">
+              <span class="card-kicker">Start here · Hub guide</span>
+              <h2>Sustainability and product life: where impact comes from and how design reduces it</h2>
+              <p>The life cycle, which stage dominates for your product, design levers, why lifetime matters, footprints and LCA, and UK producer responsibility and claims rules.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/sustainability-and-product-life.html">Read hub guide</a>
+                <a class="button button-secondary" href="../tools/carbon-footprint.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Materials</span>
+              <h2>Choosing lower-carbon materials</h2>
+              <p>Compare parts, not kilograms: reduce mass, use recycled content and better sources, and check durability and end of life.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/choosing-lower-carbon-materials.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/material-selector.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Measurement</span>
+              <h2>Product carbon footprint vs LCA</h2>
+              <p>What each measures, the standards behind them, boundaries, and when a design-stage estimate is enough.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/product-carbon-footprint-vs-lca.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/carbon-footprint.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Legitimacy</span>
+              <h2>The most sustainable product is the one you never make.</h2>
+              <p>Use product legitimacy, customer value, and system impact to decide whether the product deserves development effort at all.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/sustainable-product-design.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-purpose.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Lifetime</span>
+              <h2>Why product lifetime matters more than recycling</h2>
+              <p>Understand why durability, repairability, and use-phase performance often matter more than end-of-life claims on their own.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/why-product-lifetime-matters-more-than-recycling.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-lifecycle-explorer.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Product life</span>
+              <h2>Design for repair and disassembly</h2>
+              <p>Find the parts that fail first, make them reachable and replaceable, support repair after sale, and separate materials at the end of life.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/design-for-repair-and-disassembly.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-lifecycle-explorer.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Regulation</span>
+              <h2>Right to repair and ecodesign rules</h2>
+              <p>What repair and ecodesign rules cover, how Great Britain, Northern Ireland and the EU differ, and what designers should plan for.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/right-to-repair-and-ecodesign-rules.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/certification-readiness.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Carbon footprint</span>
+              <h2>Estimating product carbon footprint during design</h2>
+              <p>Build a credible early estimate using materials, process, transport, and use-phase assumptions while data is still incomplete.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/estimating-product-carbon-footprint-during-design.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/carbon-footprint.html">Open tool</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="section-market" aria-labelledby="section-market-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Hub 5 of 7</p>
+            <h2 id="section-market-title">Route to market and margins</h2>
+            <p>How sales channels shape price, target cost, margin and break-even. Start with the overview, then go deeper.</p>
+          </div>
+          <div class="card-grid">
+            <article class="content-card reveal">
+              <span class="card-kicker">Start here · Hub guide</span>
+              <h2>Route to market and margins: how channels shape price, cost and cash</h2>
+              <p>Compare sales routes, follow a retail price down to the target cost, and connect margins, payment terms and break-even before the product is engineered.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/route-to-market-and-margins.html">Read hub guide</a>
+                <a class="button button-secondary" href="../tools/route-to-market-simulator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Marketplaces</span>
+              <h2>Selling on marketplaces</h2>
+              <p>Fees, fulfilment options, listings and reviews, pricing across channels, and the responsibilities that stay with you.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/selling-on-marketplaces.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/route-to-market-simulator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Margins</span>
+              <h2>Retail and distributor margins explained</h2>
+              <p>Margin vs markup, working back from the shelf price, a worked example, and the trade terms that change what you keep.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/retail-and-distributor-margins-explained.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/pricing-ladder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Retail packaging</span>
+              <h2>Retail-ready packaging and barcodes: the basics</h2>
+              <p>What retailers ask for: a barcode for each variant, outer cases and case quantities, on-pack information, shelf display, and how print and minimum orders affect cash.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/retail-ready-packaging-and-barcodes.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/timeline-planner.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Route to market</span>
+              <h2>Why route to market matters for product margins</h2>
+              <p>Compare DTC, marketplace, and retailer routes with the hidden costs that quietly decide what COGS your product can really support.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/route-to-market-hardware-product.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/route-to-market-simulator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Target costing</span>
+              <h2>How to turn RRP into target COGS</h2>
+              <p>Work backwards from retail price and include VAT, fulfilment, packaging, fees, and channel costs before setting the product cost target.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/hardware-revenue-margin-planning.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/revenue-margin-simulator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Pricing</span>
+              <h2>How to price a physical product</h2>
+              <p>Value, competitors and costs; the price floor once every margin and VAT is included; and how to test the price before committing.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/how-to-price-a-physical-product.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/pricing-ladder.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Break-even</span>
+              <h2>Financial break-even for hardware products</h2>
+              <p>Use contribution margin and fixed-cost recovery correctly, and understand where break-even analysis stops being enough on its own.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/financial-break-even-for-hardware-products.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/break-even-calculator.html">Open tool</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="section-funding" aria-labelledby="section-funding-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Hub 6 of 7</p>
+            <h2 id="section-funding-title">Funding and cash</h2>
+            <p>What it costs to reach launch, when cash runs tight, how to fund it and what investors look for. Start with the overview, then go deeper.</p>
+          </div>
+          <div class="card-grid">
+            <article class="content-card reveal">
+              <span class="card-kicker">Start here · Hub guide</span>
+              <h2>Funding and cash: how much a hardware product needs and how to fund it</h2>
+              <p>Find the real requirement from the cash low point, compare funding sources, stage funding to milestones and plan working capital, with official UK and NI links.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/funding-and-cash.html">Read hub guide</a>
+                <a class="button button-secondary" href="../tools/cashflow-projection.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Crowdfunding</span>
+              <h2>Crowdfunding a hardware product</h2>
+              <p>When to launch, setting a goal that covers delivering every reward, funding models, fulfilment and cash after the campaign.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/crowdfunding-a-hardware-product.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/crowdfunding-planner.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Cash</span>
+              <h2>Minimum order quantities and cash</h2>
+              <p>Why suppliers set MOQs, the full cash needed for a first order, how to weigh unit price against stock, and how to negotiate and fund it.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/minimum-order-quantities-and-cash.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/cashflow-projection.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Startup budget</span>
+              <h2>How much does it cost to develop a hardware product?</h2>
+              <p>Estimate engineering, prototypes, tooling, compliance, first inventory, launch work, and contingency before the funding target is set.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/estimating-hardware-development-costs.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/startup-cost-planner.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Cashflow</span>
+              <h2>Calculating hardware startup cash flow</h2>
+              <p>Understand how inventory timing, payment delay, and fixed overhead can create a runway problem even when demand is growing.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/calculating-hardware-startup-cash-flow.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/cashflow-projection.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Financial model</span>
+              <h2>Building a hardware financial model</h2>
+              <p>Connect landed cost, net price by route, volume, tooling, working capital and monthly cash to find break-even, the cash low point and the funding need.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/building-a-hardware-financial-model.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/break-even-calculator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Funding</span>
+              <h2>Funding routes for hardware start-ups in the UK and Northern Ireland</h2>
+              <p>Grants, R&amp;D tax relief, Invest NI, start-up loans, crowdfunding and angels: what each needs, how long it takes and how to combine them.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/funding-routes-uk-northern-ireland.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/cashflow-projection.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Investor view</span>
+              <h2>Hardware investor metrics that actually matter</h2>
+              <p>Focus on the metrics that show whether the business is becoming healthier, not just larger: gross margin, CAC, payback, and runway.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/hardware-investor-metrics.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/investor-metrics-kpis.html">Open tool</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="section-ip" aria-labelledby="section-ip-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Hub 7 of 7</p>
+            <h2 id="section-ip-title">IP, partners and compliance</h2>
+            <p>Protect the idea, prepare for manufacturers and suppliers, and meet product rules. Start with the overview, then go deeper.</p>
+          </div>
+          <div class="card-grid">
+            <article class="content-card reveal">
+              <span class="card-kicker">Start here · Hub guide</span>
+              <h2>IP, partners and compliance: protect the product and meet the rules</h2>
+              <p>Patents, designs, trade marks and NDAs, contracts with designers and manufacturers, UKCA, CE and UKNI marking, and product safety duties, with official links.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/ip-partners-and-compliance.html">Read hub guide</a>
+                <a class="button button-secondary" href="../tools/nda-generator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">IP</span>
+              <h2>Design registration vs patents</h2>
+              <p>What patents and registered designs each protect, how they compare, unregistered rights, and why timing and disclosure matter.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/design-registration-vs-patents.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/nda-generator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">IP</span>
+              <h2>Freedom to operate explained</h2>
+              <p>Checking you can make and sell your product without infringing others' rights: informal searches, formal opinions and what to do if you find a problem.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/freedom-to-operate-explained.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/ready-for-tooling.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">IP</span>
+              <h2>Trade marks and product names: the basics</h2>
+              <p>What a trade mark protects, how to check a product name before packaging and tooling, registration in general terms, and ™ vs ®.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/trade-marks-and-product-names.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/ready-for-tooling.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Safety</span>
+              <h2>Product liability basics</h2>
+              <p>Who can be liable when a product causes harm, the kinds of defect, and practical steps from design to insurance that reduce the risk.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/product-liability-basics.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/certification-readiness.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Suppliers</span>
+              <h2>How to find and brief a manufacturer</h2>
+              <p>Types of manufacturer, where to find them, what to check and send, and how to compare quotes on landed cost, UK or overseas.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/how-to-find-and-brief-a-manufacturer.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/product-cost-estimator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Suppliers</span>
+              <h2>Supply agreements with a manufacturer: what to cover</h2>
+              <p>Why to agree terms before tooling and the first order, and what to cover: specification, quality, tooling, IP, orders, payment, changes, liability and exit.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/supply-agreements-with-a-manufacturer.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/ready-for-tooling.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Document prep</span>
+              <h2>Must-have documents before talking to a manufacturer</h2>
+              <p>Prepare NDAs, scope notes, drawings, BOMs, and prototype evidence so suppliers can respond with useful feedback instead of generic caution.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/must-have-documents-before-talking-to-a-manufacturer.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/nda-generator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">IP protection</span>
+              <h2>How to protect product IP before talking to manufacturers</h2>
+              <p>Use staged disclosure, stronger file control, and clearer ownership terms so supplier conversations stay productive without over-sharing.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/how-to-protect-product-ip.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/nda-generator.html">Open tool</a>
+              </div>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-kicker">Compliance</span>
+              <h2>Product certification basics: UKCA, CE, safety and EMC</h2>
+              <p>Which regulations apply, how conformity is shown and documented, the GB and NI marking rules, and how to plan testing into development.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="../guides/product-certification-basics.html">Read guide</a>
+                <a class="button button-secondary" href="../tools/startup-cost-planner.html">Open tool</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container callout-banner">
+          <h2>Need the guides arranged as a sequence?</h2>
+          <p>
+            If you would rather work through the questions in order, use the ready-to-launch roadmap.
+            If you already know the decision you need to test, go straight to the tool library.
+          </p>
+          <div class="cta-row">
+            <a class="button button-primary" href="../ready-to-launch/index.html">Open the roadmap</a>
+            <a class="button button-secondary" href="../tools/index.html">Browse tools</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Guides for the decisions that shape product quality, manufacturability, and launch viability.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Start Here</h3>
+          <a href="../ready-to-launch/index.html">Ready to Launch</a>
+          <a href="../guides/how-to-validate-a-product-idea.html">Validate the idea</a>
+          <a href="../guides/injection-mould-break-even.html">Plan manufacture</a>
+          <a href="../guides/hardware-revenue-margin-planning.html">Set target COGS</a>
+        </div>
+        <div>
+          <h3>Pages</h3>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a href="../knowledge/index.html">Knowledge Base</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

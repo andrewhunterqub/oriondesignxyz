@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Running a Design Review | Orion Design</title>
+    <meta
+      name="description"
+      content="How to run a product design review: what each stage review is for, who attends, how to prepare, a simple agenda, and recording decisions and actions."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/running-a-design-review.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Running a design review | Orion Design">
+    <meta
+      property="og:description"
+      content="How to run a product design review: what each stage review is for, who attends, how to prepare, a simple agenda, and recording decisions and actions."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/running-a-design-review.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-running-a-design-review.jpg">
+    <meta property="og:image:alt" content="Running a design review guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Running a design review | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to run a product design review: what each stage review is for, who attends, how to prepare, a simple agenda, and recording decisions and actions."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-running-a-design-review.jpg">
+    <meta name="twitter:image:alt" content="Running a design review guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-running-a-design-review.jpg",
+        "headline": "Running a design review: catching problems while they are cheap to fix",
+        "description": "How to run a product design review: what each stage review is for, who attends, how to prepare, a simple agenda, and recording decisions and actions.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Development and prototyping",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/running-a-design-review.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Design review"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design freeze"
+          },
+          {
+            "@type": "Thing",
+            "name": "Product development process"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Running a design review",
+                "item": "https://oriondesign.xyz/guides/running-a-design-review.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How long should a design review take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For a simple product, an hour to ninety minutes is usually enough if the material was circulated beforehand. If a review regularly runs much longer, split it by subsystem or hold a separate session for the supplier."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need a formal design review if I am a small team?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, though it can be light. Even a two-person team benefits from stopping before a big commitment, asking someone independent to look, and writing down the decision and actions. The formality should match the cost of getting it wrong."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between a design review and design freeze?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Design freeze is a decision that the design will stop changing except through a controlled change process. A design review is the meeting where that decision, and others like it, is made on the evidence available."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should the manufacturer be at the design review?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For DFM, pre-tooling and pre-production reviews, yes, because they know what their process can do. For concept and early reviews it is optional, though an early conversation about manufacturing often saves rework later."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if the review finds a serious problem late in the project?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Record it honestly, work out what fixing it would cost now against the cost of fixing it after launch, and decide. Delaying a commitment such as tooling is almost always cheaper than changing the product after it has been made."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Running a design review</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders, designers and engineers who need a design review to end in decisions, not just slides</p>
+            <h1>Running a design review: catching problems while they are cheap to fix</h1>
+            <p>
+              What a design review is for, which reviews to hold from concept selection to pilot production, who should be in the room, how to prepare, a simple agenda, and how to record decisions and actions so they actually get done.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A design review is a short, structured meeting where the right people check a design against its requirements and risks, then decide whether it is ready to move to the next stage.</h2>
+              <p>
+                Hold one at each major commitment: choosing a concept, freezing the design, agreeing manufacturability with the supplier, ordering tooling and approving pilot production.
+                Circulate the requirements, risk list, open issues, drawings and prototypes beforehand, include at least one person who did not do the design, and finish with a recorded decision and a list of actions, each with an owner and a date.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#purpose">What a design review is for</a></li>
+              <li><a class="text-link-inline" href="#stages">Reviews at each stage</a></li>
+              <li><a class="text-link-inline" href="#who">Who should attend</a></li>
+              <li><a class="text-link-inline" href="#prepare">Preparing the review</a></li>
+              <li><a class="text-link-inline" href="#agenda">A simple agenda</a></li>
+              <li><a class="text-link-inline" href="#record">Recording decisions and actions</a></li>
+              <li><a class="text-link-inline" href="#checklists">Using checklists</a></li>
+              <li><a class="text-link-inline" href="#remote">Remote reviews and how often to hold them</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a design-freeze review</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+            </ol>
+
+            <h2 id="purpose">What a design review is for</h2>
+            <p>
+              Every change to a product gets more expensive the further the project goes. Moving a screw boss on a CAD model takes minutes; moving it after a steel mould has been cut can mean weeks of rework and a large bill.
+              A <a class="glossary-term" href="../knowledge/glossary.html#term-design-review" data-definition="A short, structured meeting where the right people check a design against its requirements and risks, then decide whether it is ready to move to the next stage: proceed, proceed once named actions are closed, or rework." aria-label="design review: A short, structured meeting where the right people check a design against its requirements and risks, then decide whether it is ready to move to the next stage: proceed, proceed once named actions are closed, or rework. (glossary)">design review</a> exists to find problems at the point where they are still cheap to fix, by putting the design in front of people who will look at it differently from the person who drew it.
+            </p>
+            <p>
+              The second purpose matters just as much: a review is where the project <strong>decides</strong>. The outcome should be one of three things: proceed, proceed once named actions are closed, or go back and rework.
+              A meeting that ends with "looks good, thanks everyone" has not done its job, however polished the slides were.
+            </p>
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              if nobody could change their mind as a result of the meeting, it is a presentation, not a review. Spend the time on the open questions and risks, not on what is already settled.
+            </div>
+
+            <h2 id="stages">Reviews at each stage</h2>
+            <p>
+              Reviews belong at the points where the project commits time or money that is hard to get back. Most physical products need five, though small projects can combine some of them.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 300" width="100%" role="img" aria-labelledby="dr-fig-title dr-fig-desc">
+                <title id="dr-fig-title">Design reviews placed along the development timeline</title>
+                <desc id="dr-fig-desc">A vertical timeline with five review points in order. Concept selection: choose one concept to develop. Design freeze: requirements met, design locked. DFM review: agree manufacturability with the supplier. Pre-tooling: final check before cutting steel. Pre-production: approve the pilot run and ramp-up.</desc>
+                <line x1="30" y1="24" x2="30" y2="276" class="gd-line"/>
+                <circle cx="30" cy="30" r="9" class="gd-fill-teal"/>
+                <text x="52" y="28" class="gd-h">1 Concept selection</text>
+                <text x="52" y="46" class="gd-m">Choose one concept to develop</text>
+                <circle cx="30" cy="90" r="9" class="gd-fill-teal"/>
+                <text x="52" y="88" class="gd-h">2 Design freeze</text>
+                <text x="52" y="106" class="gd-m">Requirements met, design locked</text>
+                <circle cx="30" cy="150" r="9" class="gd-fill-indigo"/>
+                <text x="52" y="148" class="gd-h">3 DFM review</text>
+                <text x="52" y="166" class="gd-m">Agree manufacturability with supplier</text>
+                <circle cx="30" cy="210" r="9" class="gd-fill-indigo"/>
+                <text x="52" y="208" class="gd-h">4 Pre-tooling</text>
+                <text x="52" y="226" class="gd-m">Final check before cutting steel</text>
+                <circle cx="30" cy="270" r="9" class="gd-fill-magenta"/>
+                <text x="52" y="268" class="gd-h">5 Pre-production</text>
+                <text x="52" y="286" class="gd-m">Approve pilot run and ramp-up</text>
+              </svg>
+              <figcaption>Each review sits just before a commitment that is costly to reverse. The cost of a change found at the review rises at every step down the timeline.</figcaption>
+            </figure>
+            <table>
+              <thead>
+                <tr>
+                  <th>Review</th>
+                  <th>Main question</th>
+                  <th>Useful inputs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-concept-selection" data-definition="Choosing between design concepts using structured criteria rather than preference." aria-label="Concept selection: Choosing between design concepts using structured criteria rather than preference. (glossary)">Concept selection</a></td>
+                  <td>Which concept should we develop, and why?</td>
+                  <td>Concept sketches or rough models, weighted criteria, a <a class="text-link-inline" href="how-engineers-choose-between-concepts.html">structured comparison</a> such as the <a class="text-link-inline" href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a></td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-design-freeze" data-definition="The point at which a design is fixed and further changes go through change control." aria-label="Design freeze: The point at which a design is fixed and further changes go through change control. (glossary)">Design freeze</a></td>
+                  <td>Does the integrated design meet its requirements well enough to stop changing it?</td>
+                  <td>The <a class="text-link-inline" href="how-to-write-a-product-requirements-document.html">requirements document</a>, test results against the <a class="text-link-inline" href="product-testing-and-validation-plans.html">test plan</a>, risk list, <a class="glossary-term" href="../knowledge/glossary.html#term-engineering-prototype" data-definition="A prototype that integrates form and function to check the design against its specification." aria-label="integrated prototypes: A prototype that integrates form and function to check the design against its specification. (glossary)">integrated prototypes</a></td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-design-for-manufacture-dfm" data-definition="Designing parts so they can be made reliably and economically by the chosen process." aria-label="DFM: Designing parts so they can be made reliably and economically by the chosen process. (glossary)">DFM</a> review with the supplier</td>
+                  <td>Can each part be made reliably by the chosen process and supplier?</td>
+                  <td>3D models, drawings with <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances</a>, the <a class="text-link-inline" href="injection-moulding-dfm-checklist.html">DFM checklist</a> or <a class="text-link-inline" href="../tools/dfm-checker.html">DFM Checker</a>, the supplier's own feedback</td>
+                </tr>
+                <tr>
+                  <td>Pre-tooling</td>
+                  <td>Is everything closed that would be expensive to change once steel is cut?</td>
+                  <td>Final released data, closed DFM actions, the <a class="text-link-inline" href="../tools/ready-for-tooling.html">Ready for Tooling self-check</a></td>
+                </tr>
+                <tr>
+                  <td>Pre-production or pilot</td>
+                  <td>Is the process ready for a pilot, and did the pilot prove it?</td>
+                  <td>First-article results, pilot plan and go/no-go criteria from <a class="text-link-inline" href="planning-a-pilot-production-run.html">planning a pilot production run</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Smaller, informal reviews between these points are useful too, for example a quick check of a prototype round before ordering parts. Keep the five above as the formal gates.
+            </p>
+
+            <h2 id="who">Who should attend</h2>
+            <p>Keep the group small enough to talk, usually three to six people. Each person should be there for a reason:</p>
+            <ul>
+              <li><strong>The designer or design engineer</strong> who can explain the choices made and answer detailed questions.</li>
+              <li><strong>Another engineer</strong> who knows the relevant discipline, such as mechanical, electronics or materials.</li>
+              <li><strong>Someone independent</strong> who did not work on the design. Fresh eyes find the assumptions the team stopped noticing.</li>
+              <li><strong>The supplier or manufacturer</strong> for DFM, pre-tooling and pre-production reviews, because they know what their process can and cannot do.</li>
+              <li><strong>The person who owns the requirements</strong>, often the founder or product owner, who can decide whether a shortfall is acceptable.</li>
+            </ul>
+            <p>
+              Name a chair who keeps time and makes sure a decision is reached, and a note-taker who is not the person presenting.
+            </p>
+
+            <h2 id="prepare">Preparing the review</h2>
+            <p>Send the material at least a few working days ahead, so people come with questions rather than reading for the first time in the meeting:</p>
+            <ul>
+              <li><strong>Requirements:</strong> the current version, with each one marked as met, not yet met or not yet tested.</li>
+              <li><strong>Risk list:</strong> the main technical, user, cost and supply risks, with what has been done about each.</li>
+              <li><strong>Open issues:</strong> known problems and actions carried over from the last review.</li>
+              <li><strong>Models and prototypes:</strong> CAD files or viewer links, and physical prototypes people can handle on the day.</li>
+              <li><strong>Drawings:</strong> current drawings for parts that are being released or quoted.</li>
+            </ul>
+            <p>
+              Ask reviewers to send written comments before the meeting where they can. The meeting can then concentrate on the points that need discussion.
+            </p>
+
+            <h2 id="agenda">A simple agenda</h2>
+            <p>An hour to ninety minutes is enough for most stage reviews of a simple product. A plain structure works well:</p>
+            <ol>
+              <li><strong>Purpose and decision needed</strong> (a few minutes): what stage this is and what the group must decide.</li>
+              <li><strong>Actions from last time</strong>: closed, open or dropped, with reasons.</li>
+              <li><strong>Requirements status</strong>: concentrate on anything not met or not tested.</li>
+              <li><strong>Risks and open issues</strong>: the bulk of the time, worked through in order of importance.</li>
+              <li><strong>Hands-on time</strong> with prototypes or models, if not already covered.</li>
+              <li><strong>Decision</strong>: proceed, proceed with conditions, or rework.</li>
+              <li><strong>Actions</strong>: read back each one with its owner and date before people leave.</li>
+            </ol>
+
+            <h2 id="record">Recording decisions and actions</h2>
+            <p>
+              The record is what turns a conversation into progress. Write it during the meeting, circulate it the same day, and keep it with the project files so later reviews can refer back to it. It needs only a few parts:
+            </p>
+            <ul>
+              <li><strong>The decision</strong> in one sentence, with any conditions attached.</li>
+              <li><strong>Findings</strong>: each problem raised, written as an observation, with its agreed severity.</li>
+              <li><strong>Actions</strong>: what will be done, by whom and by when. One named owner per action, not a team.</li>
+              <li><strong>Decisions not to act</strong>: issues the group accepted, and why, so the same debate does not restart next month.</li>
+            </ul>
+            <p>
+              Settled findings that change what the product must do belong in the requirements document, so they are checked again at the next review rather than remembered.
+            </p>
+
+            <h2 id="checklists">Using checklists</h2>
+            <p>
+              A checklist makes sure the obvious things are looked at every time, especially by a tired team close to a deadline: wall thicknesses, fastener access, labelling, battery safety, packaging, test access.
+              Use one as a prompt during preparation, not as the agenda itself, and add to it when a problem slips through. The <a class="text-link-inline" href="product-development-checklists.html">product development checklists</a> give a starting point for each stage.
+            </p>
+
+            <h2 id="remote">Remote reviews and how often to hold them</h2>
+            <p>
+              Remote reviews work well for drawings, CAD and documents, and make it easier to include an <a class="text-link-inline" href="uk-vs-overseas-manufacturing.html">overseas supplier</a>. Share the model live so people can ask for a section or a different view, and post prototypes to key reviewers ahead of time, or hold a short in-person session for the physical parts.
+              Physical products still benefit from being handled; if you are working with Orion Design, reviews can be held in person in Belfast or remotely.
+            </p>
+            <p>
+              As for frequency, hold the formal reviews at each stage gate and short informal ones whenever the design changes significantly. Far more projects suffer from too few reviews, held too late, than from too many.
+            </p>
+
+            <h2 id="example">Worked example: a design-freeze review</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A two-person start-up is developing a small, rechargeable desk lamp with a moulded plastic body, a weighted base and a touch dimmer. They have three integrated prototypes and want to freeze the design before asking their supplier for <a class="text-link-inline" href="comparing-manufacturing-quotes.html">tooling quotes</a>.
+                The review includes the founder (who owns the requirements), the design engineer, an independent electronics engineer and, for the last half hour, the supplier's tooling engineer by video call.
+              </p>
+              <p>
+                Agenda: purpose and decision needed; actions from the previous prototype review; requirements status; risks and open issues; handling the prototypes; decision and actions.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Finding</th>
+                  <th>Severity</th>
+                  <th>Decision and action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>The base housing has no draft on two internal ribs; the supplier says the part will stick in the mould</td>
+                  <td>Must fix before tooling</td>
+                  <td>Add draft to the ribs and re-check against the DFM checklist. Owner: design engineer, before the quote request</td>
+                </tr>
+                <tr>
+                  <td>The touch dimmer misfires on one prototype when the charging cable is plugged in</td>
+                  <td>Must understand before freeze</td>
+                  <td>Freeze the enclosure but not the <a class="text-link-inline" href="electronics-in-a-physical-product.html">circuit board</a>; investigate and retest on all three units. Owner: electronics engineer, within two weeks</td>
+                </tr>
+                <tr>
+                  <td>The founder would prefer a slightly warmer colour finish</td>
+                  <td>Preference; no effect on tooling</td>
+                  <td>Accepted as a later colour decision, recorded so it is not reopened at the next review</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The decision recorded was "freeze the enclosure design once the rib draft is added; freeze the electronics after the dimmer retest". Two weeks later a short follow-up review closed both actions, and the requirements document gained a new line on dimmer behaviour while charging.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Treating the review as a presentation.</strong>
+                A rehearsed walk-through of what went well leaves no time for the risks. Send the material in advance and spend the meeting on the open questions.
+              </div>
+              <div>
+                <strong>No decision recorded.</strong>
+                Without a written decision, people leave with different ideas about what was agreed. End every review with a one-sentence decision.
+              </div>
+              <div>
+                <strong>The wrong people in the room.</strong>
+                A review made up only of the people who did the design will confirm it. Include someone independent, the requirements owner and, where relevant, the supplier.
+              </div>
+              <div>
+                <strong>Reviewing too late.</strong>
+                A first review held after the tooling order is placed can only find expensive problems. Review at concept and design freeze, not just before production.
+              </div>
+              <div>
+                <strong>No follow-up on actions.</strong>
+                Actions without owners and dates quietly expire. Start every review by checking the previous actions.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Mark your next commitment point, such as design freeze or tooling, and schedule a review just before it.</li>
+              <li>Bring your requirements up to date and mark each one as met, not met or not tested.</li>
+              <li>Before any tooling review, work through the <a class="text-link-inline" href="../tools/ready-for-tooling.html">Ready for Tooling self-check</a>.</li>
+              <li>See where reviews sit in the wider journey in the <a class="text-link-inline" href="development-and-prototyping.html">development and prototyping hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Check tooling readiness</h3>
+                <p>Find the open items to close before your pre-tooling review.</p>
+                <a class="button button-primary" href="../tools/ready-for-tooling.html" data-analytics-event="article_cta_click" data-analytics-label="design_review_guide_to_tooling">Open Ready for Tooling</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Plan the evidence</h3>
+                <p>Decide which tests each prototype must pass before the next review.</p>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html" data-analytics-event="article_cta_click" data-analytics-label="design_review_guide_to_test_plan">Open Product Test Plan Builder</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/ready-for-tooling.html">Ready for Tooling self-check</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/dfm-checker.html">DFM Checker</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Product Test Plan Builder</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="product-development-checklists.html">Product development checklists</a></div>
+                <div class="aside-item"><a class="text-link" href="how-to-write-a-product-requirements-document.html">Writing a product requirements document</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="planning-a-pilot-production-run.html">Planning a pilot production run</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Design review</span>
+                <span>Design freeze</span>
+                <span>Stage gates</span>
+                <span>DFM review</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>How long should a design review take?</h3>
+                <p>For a simple product, an hour to ninety minutes is usually enough if the material was circulated beforehand. If a review regularly runs much longer, split it by subsystem or hold a separate session for the supplier.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need a formal design review if I am a small team?</h3>
+                <p>Yes, though it can be light. Even a two-person team benefits from stopping before a big commitment, asking someone independent to look, and writing down the decision and actions. The formality should match the cost of getting it wrong.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between a design review and design freeze?</h3>
+                <p>Design freeze is a decision that the design will stop changing except through a controlled change process. A design review is the meeting where that decision, and others like it, is made on the evidence available.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should the manufacturer be at the design review?</h3>
+                <p>For DFM, pre-tooling and pre-production reviews, yes, because they know what their process can do. For concept and early reviews it is optional, though an early conversation about manufacturing often saves rework later.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What if the review finds a serious problem late in the project?</h3>
+                <p>Record it honestly, work out what fixing it would cost now against the cost of fixing it after launch, and decide. Delaying a commitment such as tooling is almost always cheaper than changing the product after it has been made.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

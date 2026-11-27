@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Hardware Business Case Builder | Orion Design</title>
+    <meta
+      name="description"
+      content="Connect market size, conversion, pricing, cost, and operating assumptions into a simple hardware business case."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/hardware-business-case-builder.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Hardware Business Case Builder | Orion Design">
+    <meta
+      property="og:description"
+      content="Connect market size, conversion, pricing, cost, and operating assumptions into a simple hardware business case."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/hardware-business-case-builder.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-hardware-business-case-builder.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hardware Business Case Builder | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Connect market size, conversion, pricing, cost, and operating assumptions into a simple hardware business case."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-hardware-business-case-builder.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-hardware-business-case-builder.jpg",
+        "name": "Hardware Business Case Builder",
+        "url": "https://oriondesign.xyz/tools/hardware-business-case-builder.html",
+        "description": "Connect market size, conversion, pricing, cost, and operating assumptions into a simple hardware business case.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Hardware Business Case Builder",
+                "item": "https://oriondesign.xyz/tools/hardware-business-case-builder.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I estimate addressable market units?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Start from the number of people or organisations who have the problem and could buy the product in a year, not the total population or the whole category. Count bottom-up where you can, for example households with a specific appliance or labs running a specific test, rather than relying on broad market-size headlines."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a realistic reachable share for a new product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For a new brand, the share of a market you can actually reach through your chosen channels and budget is usually small, often in the low single figures. If the case only works at a high share, treat that as a warning sign rather than a target."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should development spend include tooling?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Include design and engineering, prototypes, injection mould tooling, certification and other one-off costs needed before you can sell. The payback figure then shows how long gross contribution takes to recover that investment once overheads are covered."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is this enough for an investor pitch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It is a screening model, not a financial forecast. It is useful for deciding whether an idea deserves deeper work and for framing the conversation, but investors will expect a monthly model with cash, ramp-up and evidence behind each assumption."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Hardware Business Case Builder</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Live tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Hardware Business Case Builder</h1>
+            <p>
+              Build a fast commercial view of a hardware concept by linking market size, reachable share,
+              conversion, price, unit cost, development spend, and annual operating cost.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Business case worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"marketUnits":"3000000","reachableShare":"2","conversionRate":"10","businessPrice":"29","businessCogs":"13","developmentSpend":"45000","annualOpex":"60000"}'>Kitchen gadget, DTC</button>
+              <button class="preset-button" type="button" data-tool-preset='{"marketUnits":"1500000","reachableShare":"3","conversionRate":"15","businessPrice":"82","businessCogs":"44","developmentSpend":"180000","annualOpex":"180000"}'>Smart home, retail</button>
+              <button class="preset-button" type="button" data-tool-preset='{"marketUnits":"20000","reachableShare":"10","conversionRate":"20","businessPrice":"1200","businessCogs":"430","developmentSpend":"250000","annualOpex":"200000"}'>B2B instrument</button>
+            </div>
+            <form class="tool-form" id="business-case-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="marketUnits">Addressable market units per year</label>
+                  <input id="marketUnits" type="number" min="100" step="100" value="500000">
+                </div>
+                <div class="field-group">
+                  <label for="reachableShare">Reachable market share (%)</label>
+                  <input id="reachableShare" type="number" min="0.1" max="100" step="0.1" value="2.5">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="conversionRate">Conversion from reachable market (%)</label>
+                  <input id="conversionRate" type="number" min="0.1" max="100" step="0.1" value="18">
+                </div>
+                <div class="field-group">
+                  <label for="businessPrice">Selling price per unit (GBP)</label>
+                  <input id="businessPrice" type="number" min="1" step="1" value="145">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="businessCogs">Unit COGS (GBP)</label>
+                  <input id="businessCogs" type="number" min="1" step="1" value="58">
+                </div>
+                <div class="field-group">
+                  <label for="developmentSpend">Development and tooling spend (GBP)</label>
+                  <input id="developmentSpend" type="number" min="0" step="1000" value="180000">
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="annualOpex">Annual operating cost (GBP)</label>
+                <input id="annualOpex" type="number" min="0" step="1000" value="260000">
+              </div>
+
+              <button class="button button-primary" type="submit">Build business case</button>
+            </form>
+            <p class="helper-text">
+              This is a directional planning model for screening opportunities and framing investor or internal discussions.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell chart-shell-small">
+              <canvas id="businessCaseChart" role="img" aria-label="Business case funnel chart"></canvas>
+            </div>
+            <div class="result-grid" id="businessCaseSummary"></div>
+            <div class="recommendation-card" id="businessCaseRecommendation"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#businessCaseCopy"
+                  data-copy-feedback="#businessCaseCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="businessCaseCopy" class="copy-output" readonly></textarea>
+              <div id="businessCaseCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="hardware_business_case_builder_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <h2>What a fast business case should answer</h2>
+            <p>
+              A concept does not need a full spreadsheet model before it deserves scrutiny. It does need a clear answer to whether
+              the reachable volume and unit economics can support the planned spend.
+            </p>
+            <ul>
+              <li>How much of the market can the team realistically reach?</li>
+              <li>What share of that reachable audience converts into sales?</li>
+              <li>How long would it take gross contribution to recover development spend?</li>
+            </ul>
+            <h2 id="method">Method and assumptions</h2>
+            <div class="formula-block">Units sold = market units × reachable share × conversion rate
+Revenue = units sold × price
+Gross profit = units sold × (price − COGS)
+Annual contribution = gross profit − annual operating costs
+Year-one result = annual contribution − development spend
+Break-even units = (development spend + annual operating costs) ÷ (price − COGS)
+Payback (months) = development spend ÷ annual contribution × 12</div>
+            <p><strong>Assumptions</strong></p>
+            <ul>
+              <li>Sales happen at one price and COGS in a steady first year.</li>
+              <li>Development spend is a one-off cost recovered from annual contribution.</li>
+            </ul>
+            <p><strong>Limits</strong></p>
+            <ul>
+              <li>Market size, reach and conversion are your assumptions; small changes move the result a lot, so test ranges.</li>
+              <li>Timing, cash flow, financing, tax and price erosion are not included; see the <a class="text-link-inline" href="cashflow-projection.html">Cash Flow Projection</a>.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <p>
+              Read the recommendation card first, then look at how much the result depends on the two percentages: reachable share and conversion.
+            </p>
+            <ul>
+              <li><strong>Promising:</strong> the case shows positive contribution and development spend is repaid within roughly one to two years, using share and conversion figures you can point to evidence for, such as pre-orders, pilot customers or comparable products.</li>
+              <li><strong>Borderline:</strong> payback stretches beyond two years, or the case only turns positive when reachable share or conversion is nudged upwards. The opportunity may still be worth pursuing, but it needs stronger evidence or a leaner cost base.</li>
+              <li><strong>Weak:</strong> the tool shows a contribution gap, so gross profit does not cover annual operating cost. Revisit price, unit cost, the size of the team behind the product, or whether a narrower first market would be easier to win.</li>
+            </ul>
+            <p>
+              Whatever the outcome, run a cautious version with half the share and conversion you first entered. If the case still holds, it is far easier to defend to investors or a board. Save your result to your <a href="product-plan-builder.html">product plan</a> so the business case sits alongside your cost, margin and cashflow work.
+            </p>
+            <p>
+              If the decision depends on a large development or tooling spend, it can help to have someone challenge the assumptions before you commit. You can <a href="../contact/index.html">get in touch with Andrew</a> if that would be useful.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/building-a-hardware-business-case.html">Building a Hardware Business Case</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/hardware-investor-metrics.html">Hardware Investor Metrics That Actually Matter</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/opportunity-and-concept.html">Opportunity and concept: overview</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Opportunity screening</span>
+                <span>Internal buy-in</span>
+                <span>Investor preparation</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>How do I estimate addressable market units?</h3>
+                <p>Start from the number of people or organisations who have the problem and could buy the product in a year, not the total population or the whole category. Count bottom-up where you can, for example households with a specific appliance or labs running a specific test, rather than relying on broad market-size headlines.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is a realistic reachable share for a new product?</h3>
+                <p>For a new brand, the share of a market you can actually reach through your chosen channels and budget is usually small, often in the low single figures. If the case only works at a high share, treat that as a warning sign rather than a target.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should development spend include tooling?</h3>
+                <p>Yes. Include design and engineering, prototypes, injection mould tooling, certification and other one-off costs needed before you can sell. The payback figure then shows how long gross contribution takes to recover that investment once overheads are covered.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is this enough for an investor pitch?</h3>
+                <p>It is a screening model, not a financial forecast. It is useful for deciding whether an idea deserves deeper work and for framing the conversation, but investors will expect a monthly model with cash, ramp-up and evidence behind each assumption.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early engineering or commercial estimate. It is most useful for comparing options, surfacing trade-offs, and deciding what needs deeper validation next.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Use the result as an early decision aid, then confirm the numbers with suppliers, manufacturing partners, and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="revenue-margin-simulator.html">Launch Margin Planner</a>
+          <a href="investor-metrics-kpis.html">Investor Metrics</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/hardware-business-case-builder.js" defer></script>
+  </body>
+</html>

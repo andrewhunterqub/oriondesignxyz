@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Building a Hardware Business Case | Orion Design</title>
+    <meta name="description" content="How to build a hardware business case using addressable market, reachable demand, conversion, unit economics, and payback assumptions.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/building-a-hardware-business-case.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Building a Hardware Business Case">
+    <meta property="og:description" content="How to build a hardware business case using addressable market, reachable demand, conversion, unit economics, and payback assumptions.">
+    <meta property="og:url" content="https://oriondesign.xyz/guides/building-a-hardware-business-case.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-building-a-hardware-business-case.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Building a Hardware Business Case">
+    <meta name="twitter:description" content="How to build a hardware business case using addressable market, reachable demand, conversion, unit economics, and payback assumptions.">
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-building-a-hardware-business-case.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-building-a-hardware-business-case.jpg",
+        "headline": "Building a Hardware Business Case",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-24",
+        "articleSection": "Commercial planning",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/building-a-hardware-business-case.html",
+        "datePublished": "2026-03-12"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Hardware business case",
+                "item": "https://oriondesign.xyz/guides/building-a-hardware-business-case.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What should a hardware business case include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "At minimum: the reachable market, expected conversion into unit sales, net price after channel costs, landed unit cost and gross margin, upfront development and tooling spend, annual operating cost, and the resulting payback period. It should also show conservative, expected and optimistic scenarios so readers can see how fragile the outcome is."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between addressable and reachable market?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The addressable market is everyone who could plausibly need the product. The reachable market is the smaller group you can realistically access in the next few years with your channels, geography, budget and certification. Business cases should be built on the reachable market."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long should payback be for a hardware product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no universal figure, but shorter is safer because hardware has upfront tooling and certification costs and a finite product life. Many early teams look for payback within two to three years of launch. If payback stretches beyond the expected life of the product, the case needs rethinking."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How accurate does an early business case need to be?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It does not need to be precise, but it does need to be honest and explainable. Ranges are fine at the start. What matters is that each assumption has a stated source and that the team knows which assumption moves the result most."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What gross margin should a hardware business case assume?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use the margin your actual unit cost and channel prices produce, not a target. As a rough guide, many consumer hardware businesses aim for gross margins of around 40 to 60 per cent on direct sales, and less on wholesale. If the case only works at a margin well above that range, check the cost and price assumptions."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home"><picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../guides/index.html">Guides</a><span>/</span><span aria-current="page">Hardware business case</span></nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 24 November 2026 <span aria-hidden="true">·</span> For founders and product teams testing whether a product can pay back its development</p>
+            <h1>Building a hardware business case.</h1>
+            <p>A credible hardware business case connects market reach, conversion, unit economics, development spend, and payback timing. It should make the opportunity easier to challenge, not easier to oversell.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A hardware business case shows whether enough reachable buyers will pay a price that recovers development spend in an acceptable time.</h2>
+              <div class="formula-block">Payback (years) = upfront investment / (annual gross profit - annual operating cost)</div>
+              <p>
+                Build it from reachable market, realistic conversion, unit price and gross margin, then compare the profit that produces with the development,
+                tooling and operating cost it has to carry. If payback only looks acceptable when every assumption is optimistic, the case is not yet robust.
+              </p>
+            </div>
+
+            <p>Early business cases go wrong when they confuse the total market with the reachable market. Hardware businesses do not monetise market size directly. They monetise the portion they can actually reach, convert, and serve.</p>
+            <p>
+              A good <a class="glossary-term" href="../knowledge/glossary.html#term-business-case" data-definition="A structured argument that a product is worth developing, bringing together market, price, cost, investment and risk." aria-label="business case: A structured argument that a product is worth developing, bringing together market, price, cost, investment and risk. (glossary)">business case</a> is not a sales document. It is a structured argument that the team, an investor or a board can challenge line by line.
+              Its job is to make the important assumptions visible, show which ones the outcome depends on most, and point to the evidence that would make them stronger.
+            </p>
+            <div class="article-highlight"><strong>Decision test:</strong> if the business case only works when market share, conversion, and pricing all lean optimistic at the same time, the opportunity is not yet robust enough.</div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#first-pass-model">What belongs in the first-pass model</a></li>
+              <li><a class="text-link-inline" href="#reachable-market">Addressable market versus reachable market</a></li>
+              <li><a class="text-link-inline" href="#payback">Why payback matters</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a connected air-quality monitor</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes in hardware business cases</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Practical next steps</a></li>
+            </ol>
+
+            <h2 id="first-pass-model">What belongs in the first-pass model</h2>
+            <ul>
+              <li><strong>Addressable market and the smaller reachable segment:</strong> who could buy, and who you can realistically get in front of with your channels and budget.</li>
+              <li><strong>Conversion:</strong> the share of that reachable audience that becomes actual unit sales each year.</li>
+              <li><strong>Unit price and gross-profit quality:</strong> the <a class="glossary-term" href="../knowledge/glossary.html#term-net-price" data-definition="The price after VAT, discounts and channel deductions: what the business actually receives." aria-label="net price: The price after VAT, discounts and channel deductions: what the business actually receives. (glossary)">net price</a> you receive after channel deductions, minus landed unit cost.</li>
+              <li><strong>Development and tooling spend:</strong> design, prototypes, tooling, certification and launch work that must be recovered.</li>
+              <li><strong>Annual operating cost:</strong> people, marketing, support, warehousing and overhead that the product has to carry every year.</li>
+            </ul>
+            <p>
+              Keep the first pass small. Five or six well-argued inputs are more useful than a fifty-tab spreadsheet that nobody can explain.
+              Detail can be added once the shape of the opportunity has survived a first challenge.
+            </p>
+
+            <h2 id="reachable-market">Addressable market versus reachable market</h2>
+            <p>
+              The addressable market is everyone who could plausibly need the product. The reachable market is the part you can actually access in the next two or three years,
+              given your channels, geography, sales capacity, certification and price point. For most early hardware businesses the reachable segment is a small fraction of the headline figure.
+            </p>
+            <p>
+              That is not a weakness. A narrow, well-understood segment with a clear reason to buy is easier to convert than a vast, vague one.
+              The risk lies in multiplying a large market by a small percentage and treating the result as demand. That number has no evidence behind it.
+              Build demand upwards from the channels you will use and the conversion rates you can defend.
+            </p>
+
+            <h2 id="payback">Why payback matters</h2>
+            <p>A large market story can still hide a poor payback profile. If it takes too long for the product to recover development and operating spend, the risk profile remains weak even if the eventual upside looks attractive.</p>
+            <p>
+              Payback also connects the business case to cash. A product that recovers its investment in two years needs much less funding, and carries far less risk,
+              than one that needs six. Hardware product lives are finite, so a long payback can mean the product is superseded before it has earned its keep.
+            </p>
+
+            <h2 id="example">Worked example: a connected air-quality monitor</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative figures only. A small team is planning a connected air-quality monitor for small offices. They assume an addressable market of 400,000 organisations,
+                of which 10% (40,000) are reachable through their chosen channels. They expect 6% of that reachable group to buy each year, giving 2,400 units.
+              </p>
+              <p>
+                The net price received is GBP180 and landed unit cost is GBP81, so <a class="glossary-term" href="../knowledge/glossary.html#term-gross-margin" data-definition="Revenue minus the cost of goods sold, often expressed as a percentage of revenue." aria-label="gross margin: Revenue minus the cost of goods sold, often expressed as a percentage of revenue. (glossary)">gross margin</a> is 55% and gross profit is GBP99 per unit. Annual gross profit is 2,400 x GBP99 = GBP237,600.
+                The product carries GBP140,000 of annual operating cost, leaving GBP97,600 a year towards the GBP210,000 upfront investment in development, tooling and certification.
+                Payback is GBP210,000 / GBP97,600, or roughly 26 months.
+              </p>
+            </div>
+            <p>That looks reasonable, until conversion is tested. The same model with conversion moved up and down tells a very different story.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Scenario</th>
+                  <th>Annual conversion</th>
+                  <th>Units per year</th>
+                  <th>Profit after operating cost</th>
+                  <th>Payback</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Conservative</td>
+                  <td>4%</td>
+                  <td>1,600</td>
+                  <td>GBP18,400</td>
+                  <td>Over 11 years</td>
+                </tr>
+                <tr>
+                  <td>Expected</td>
+                  <td>6%</td>
+                  <td>2,400</td>
+                  <td>GBP97,600</td>
+                  <td>About 26 months</td>
+                </tr>
+                <tr>
+                  <td>Optimistic</td>
+                  <td>8%</td>
+                  <td>3,200</td>
+                  <td>GBP176,800</td>
+                  <td>About 14 months</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The lesson is not that the product is good or bad. It is that conversion is the assumption that decides the case, so it is where the team should spend its next round of evidence-gathering:
+              pilot customers, pre-orders, distributor conversations or a small paid test.
+            </p>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 248" width="100%" role="img" aria-labelledby="bc-fig-title bc-fig-desc">
+                <title id="bc-fig-title">Payback on a £210,000 upfront investment at three conversion rates</title>
+                <desc id="bc-fig-desc">Three bars drawn to scale from the scenario table, showing payback time on £210,000 of development, tooling and certification. Optimistic, 8% conversion: 3,200 units and £176,800 a year after operating cost, payback in about 14 months. Expected, 6%: 2,400 units and £97,600 a year, about 26 months. Conservative, 4%: 1,600 units and £18,400 a year, over 11 years.</desc>
+                <line x1="320" y1="40" x2="320" y2="200" class="gd-grid"/>
+                <line x1="270" y1="40" x2="270" y2="200" class="gd-grid"/>
+                <line x1="220" y1="40" x2="220" y2="200" class="gd-grid"/>
+                <line x1="170" y1="40" x2="170" y2="200" class="gd-grid"/>
+                <line x1="120" y1="40" x2="120" y2="200" class="gd-grid"/>
+                <line x1="70" y1="40" x2="70" y2="200" class="gd-grid"/>
+                <text x="20" y="20" class="gd-t"><tspan class="gd-v gd-tm">Over 11 years</tspan> at 4%</text>
+                <text x="20" y="37" class="gd-m">1,600 units, £18,400 a year left</text>
+                <rect x="20" y="44" width="285.3" height="16" rx="3" class="gd-fill-magenta"/>
+                <text x="20" y="86" class="gd-t"><tspan class="gd-v">About 26 months</tspan> at 6%</text>
+                <text x="20" y="103" class="gd-m">2,400 units, £97,600 a year left</text>
+                <rect x="20" y="110" width="53.8" height="16" rx="3" class="gd-fill-indigo"/>
+                <text x="20" y="152" class="gd-t"><tspan class="gd-v">About 14 months</tspan> at 8%</text>
+                <text x="20" y="169" class="gd-m">3,200 units, £176,800 a year left</text>
+                <rect x="20" y="176" width="29.7" height="16" rx="3" class="gd-fill-indigo"/>
+                <line x1="20" y1="200" x2="320" y2="200" class="gd-axis"/>
+                <text x="20" y="218" text-anchor="middle" class="gd-m">0</text>
+                <text x="70" y="218" text-anchor="middle" class="gd-m">2</text>
+                <text x="120" y="218" text-anchor="middle" class="gd-m">4</text>
+                <text x="170" y="218" text-anchor="middle" class="gd-m">6</text>
+                <text x="220" y="218" text-anchor="middle" class="gd-m">8</text>
+                <text x="270" y="218" text-anchor="middle" class="gd-m">10</text>
+                <text x="320" y="218" text-anchor="middle" class="gd-m">12</text>
+                <text x="170" y="238" text-anchor="middle" class="gd-m">Payback, years</text>
+              </svg>
+              <figcaption>Illustrative figures from the table above, bars drawn to scale. Two points of conversion either side of the expected 6% move payback from about 14 months to over 11 years, so conversion is the assumption to test first.</figcaption>
+            </figure>
+
+            <div class="pull-quote">
+              <p>A useful business case tells you which assumption to test next. A weak one only tells you the answer you hoped for.</p>
+            </div>
+
+            <h2 id="mistakes">Common mistakes in hardware business cases</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Top-down demand.</strong>
+                Taking a percentage of a large market instead of building demand from channels, conversion and sales capacity.
+              </div>
+              <div>
+                <strong>Using retail price as revenue.</strong>
+                Revenue should be what the business actually receives after VAT, retailer margin or marketplace fees, not the price on the shelf.
+              </div>
+              <div>
+                <strong>Gross margin based on factory price.</strong>
+                Unit cost should be landed cost, including freight, duty, packaging and an allowance for scrap and returns.
+              </div>
+              <div>
+                <strong>Forgetting the operating cost.</strong>
+                A product can have healthy unit economics and still fail to pay back if support, marketing and overhead are left out.
+              </div>
+              <div>
+                <strong>One scenario only.</strong>
+                A single forecast hides fragility. Always show conservative, expected and optimistic cases side by side.
+              </div>
+            </div>
+
+            <h2 id="next-steps">Practical next steps</h2>
+            <ol>
+              <li>Write down the reachable segment and the channels that reach it, in one sentence each.</li>
+              <li>Estimate net price per channel and landed unit cost, even if the cost is a range.</li>
+              <li>List the upfront investment as cost blocks rather than a single figure.</li>
+              <li>Run three conversion scenarios and note which one the business can survive.</li>
+              <li>Identify the single assumption that moves payback most, and plan how to test it before committing to tooling.</li>
+            </ol>
+            <p>
+              The <a class="text-link-inline" href="../tools/hardware-business-case-builder.html">Hardware Business Case Builder</a> helps structure that first-pass model so the discussion becomes about evidence and assumptions rather than enthusiasm.
+              When the case needs monthly detail on margin, stock and cash, <a class="text-link-inline" href="building-a-hardware-financial-model.html">building a hardware financial model</a> shows how to extend it.
+              For the upfront investment line, the guide to <a class="text-link-inline" href="estimating-hardware-development-costs.html">estimating hardware development costs</a> breaks the budget into blocks you can defend.
+              If the problem itself still needs proving, start with <a class="text-link-inline" href="how-to-validate-a-product-idea.html">how to validate a product idea</a>.
+              Once the case holds up, the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a> turns it into a staged plan for development, manufacture and launch.
+            </p>
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Build the opportunity model</h3>
+                <p>Test reachable share, conversion, pricing, and operating cost in one quick business-case view.</p>
+                <a class="button button-primary" href="../tools/hardware-business-case-builder.html" data-analytics-event="article_cta_click" data-analytics-label="business_case_article_to_builder">Open Business Case Builder</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Move into investor-facing metrics</h3>
+                <p>Once the opportunity looks credible, translate it into the KPI view investors and boards will want to see. The <a class="text-link-inline" href="hardware-investor-metrics.html">hardware investor metrics guide</a> explains which numbers matter.</p>
+                <a class="button button-secondary" href="../tools/investor-metrics-kpis.html" data-analytics-event="article_cta_click" data-analytics-label="business_case_article_to_investor_kpis">Open Investor Metrics Tool</a>
+              </div>
+            </div>
+          </article>
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="funding-and-cash.html">Funding and cash: the hub guide</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="opportunity-and-concept.html">Opportunity and concept: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div><p class="aside-title">Related tools</p><div class="aside-list"><div class="aside-item"><a class="text-link" href="../tools/hardware-business-case-builder.html">Hardware Business Case Builder</a></div><div class="aside-item"><a class="text-link" href="../tools/investor-metrics-kpis.html">Investor Metrics and KPIs</a></div><div class="aside-item"><a class="text-link" href="../tools/revenue-margin-simulator.html">Launch Margin Planner</a></div></div></div>
+            <div><p class="aside-title">Typical questions</p><div class="tag-row"><span>Hardware business case</span><span>Business case calculator for hardware</span><span>Product payback model</span></div></div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What should a hardware business case include?</h3>
+                <p>At minimum: the reachable market, expected conversion into unit sales, net price after channel costs, landed unit cost and gross margin, upfront development and tooling spend, annual operating cost, and the resulting payback period. It should also show conservative, expected and optimistic scenarios so readers can see how fragile the outcome is.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between addressable and reachable market?</h3>
+                <p>The addressable market is everyone who could plausibly need the product. The reachable market is the smaller group you can realistically access in the next few years with your channels, geography, budget and certification. Business cases should be built on the reachable market.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How long should payback be for a hardware product?</h3>
+                <p>There is no universal figure, but shorter is safer because hardware has upfront tooling and certification costs and a finite product life. Many early teams look for payback within two to three years of launch. If payback stretches beyond the expected life of the product, the case needs rethinking.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How accurate does an early business case need to be?</h3>
+                <p>It does not need to be precise, but it does need to be honest and explainable. Ranges are fine at the start. What matters is that each assumption has a stated source and that the team knows which assumption moves the result most.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What gross margin should a hardware business case assume?</h3>
+                <p>Use the margin your actual unit cost and channel prices produce, not a target. As a rough guide, many consumer hardware businesses aim for gross margins of around 40 to 60 per cent on direct sales, and less on wholesale. If the case only works at a margin well above that range, check the cost and price assumptions.</p>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="how-to-price-a-physical-product.html">How to price a physical product</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="customer-discovery-for-hardware.html">Customer discovery for hardware</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">Author</p>
+            <h2>Andrew Hunter</h2>
+            <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to inform early decisions, then validate against project-specific data, supplier input, and production constraints.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144"><p class="footer-copy">Commercial writing for engineering-led product businesses.</p></div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div><h3>Continue reading</h3><a href="../tools/hardware-business-case-builder.html">Business Case Builder</a><a href="../tools/investor-metrics-kpis.html">Investor Metrics and KPIs</a></div>
+        <div><h3>Contact</h3><a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a><a href="../privacy/index.html">Privacy</a></div>
+      </div>
+    </footer>
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

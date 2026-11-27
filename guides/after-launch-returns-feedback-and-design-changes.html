@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>After Launch: Returns, Feedback and Changes | Orion Design</title>
+    <meta
+      name="description"
+      content="How to handle returns, reviews and complaints after launch: log them, find the root cause, decide what to change and control design changes safely."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/after-launch-returns-feedback-and-design-changes.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="After launch: returns, feedback and design changes | Orion Design">
+    <meta
+      property="og:description"
+      content="How to handle returns, reviews and complaints after launch: log them, find the root cause, decide what to change and control design changes safely."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/after-launch-returns-feedback-and-design-changes.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-after-launch-returns-feedback-and-design-changes.jpg">
+    <meta property="og:image:alt" content="After launch: returns, feedback and design changes guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="After launch: returns, feedback and design changes | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to handle returns, reviews and complaints after launch: log them, find the root cause, decide what to change and control design changes safely."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-after-launch-returns-feedback-and-design-changes.jpg">
+    <meta name="twitter:image:alt" content="After launch: returns, feedback and design changes guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-after-launch-returns-feedback-and-design-changes.jpg",
+        "headline": "After launch: returns, feedback and design changes",
+        "description": "How to handle returns, reviews and complaints after launch: log them, find the root cause, decide what to change and control design changes safely.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/after-launch-returns-feedback-and-design-changes.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Product returns"
+          },
+          {
+            "@type": "Thing",
+            "name": "Root cause analysis"
+          },
+          {
+            "@type": "Thing",
+            "name": "Engineering change control"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "After launch: returns, feedback and design changes",
+                "item": "https://oriondesign.xyz/guides/after-launch-returns-feedback-and-design-changes.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What should I do with returned products?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Log each one with its reason, batch and how it was used, and keep faulty units for inspection where you can. Returned parts often show the cause of a problem far more clearly than a written description."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is root cause analysis?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Working back from a reported symptom to the underlying reason it happened, by reproducing the problem, inspecting failed parts, asking why repeatedly and checking test, inspection and supplier records. The aim is a cause you can change and control."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should I do if a complaint suggests a safety problem?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Escalate it immediately, hold suspect stock and investigate. You may have obligations to act, so check the GOV.UK guidance on product safety for manufacturers and take advice from a solicitor and your insurer."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is change control?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A simple process for making design changes on purpose and on the record: a new revision letter, updated drawings and bill of materials, written confirmation from suppliers, re-validation and a note of which batch the change applies from."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does a design change affect my product certification?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It can. Changes to materials, components, construction or labelling may require a review of your technical file and test evidence. Check with whoever maintains it, or your test house, before the change ships."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">After launch: returns, feedback and design changes</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders and small teams whose product is on sale and who want to learn from returns, reviews and complaints without losing control of the design</p>
+            <h1>After launch: returns, feedback and design changes</h1>
+            <p>
+              How to collect and record what customers tell you once a product is on sale, find the real cause of a problem, decide what to change, and make design changes in a controlled way that protects safety, quality and certification.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Collect every return, review and complaint in one log, find the root cause before you change anything, treat safety issues first, and make each fix a controlled, re-tested design change.</h2>
+              <p>
+                Customers are now running the largest test your product will ever have. Record each report with the failure, the batch or date and how the product was used, so patterns show up.
+                Reproduce and inspect the problem until you understand why it happened, then change the design, the process or the instructions through a revision that is recorded, shared with suppliers and validated before it ships.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#why">Why the work continues after launch</a></li>
+              <li><a class="text-link-inline" href="#channels">Setting up feedback channels</a></li>
+              <li><a class="text-link-inline" href="#log">Logging and classifying returns and complaints</a></li>
+              <li><a class="text-link-inline" href="#root-cause">Finding the root cause</a></li>
+              <li><a class="text-link-inline" href="#decide">Deciding what to change</a></li>
+              <li><a class="text-link-inline" href="#change-control">Controlling the change</a></li>
+              <li><a class="text-link-inline" href="#customers">Communicating with customers</a></li>
+              <li><a class="text-link-inline" href="#learn">Using what you learn</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a cracked clip</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#rules">Decision rules</a></li>
+            </ol>
+
+            <h2 id="why">Why the work continues after launch</h2>
+            <p>
+              However thorough your testing, customers will use the product in ways, places and quantities you could not fully reproduce. Some problems only appear after weeks of use, in a particular climate, or in one production batch. Others are not faults at all, but confusion about how the product works.
+            </p>
+            <p>
+              The first months on sale are the best chance to catch these while volumes are still small and fixes are cheaper. That only works if feedback reaches the people who can act on it, in a form they can use.
+            </p>
+
+            <h2 id="channels">Setting up feedback channels</h2>
+            <p>Decide where feedback will arrive and who reads it, before launch if you can. The usual channels are:</p>
+            <ul>
+              <li><strong>Reviews</strong> on your own site and on marketplaces. Read the low ratings in full; the detail is in the text, not the stars.</li>
+              <li><strong>Support emails, messages and calls.</strong> Use one shared inbox or form so nothing sits in one person's account.</li>
+              <li><strong>Returns.</strong> Ask for a reason with every return, and ask for faulty units back where it is practical, because a physical part tells you far more than a description.</li>
+              <li><strong>Retailer and distributor feedback.</strong> Retailers often see returns and complaints you never hear about. Ask them to pass on reasons and, where possible, the returned units. <a class="text-link-inline" href="selling-on-marketplaces.html">Selling on marketplaces</a> covers how those channels work.</li>
+              <li><strong>Your own production data.</strong> End-of-line test failures and inspection rejects are early warnings of the same problems.</li>
+            </ul>
+            <p>
+              Make it easy for customers to tell you something went wrong: a contact route on the packaging and in the instructions, and a short form that asks the right questions.
+            </p>
+
+            <h2 id="log">Logging and classifying returns and complaints</h2>
+            <p>
+              Put every report in one log, even a simple shared spreadsheet. One complaint is an anecdote; ten with the same failure from the same batch is a pattern you can act on. Record at least:
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>What to record</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Date and source</td>
+                  <td>When it arrived and through which channel</td>
+                </tr>
+                <tr>
+                  <td>Product and batch</td>
+                  <td>Model, revision, batch or serial number, purchase date</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-failure-mode" data-definition="The way in which a product or part fails, such as cracking, wearing, leaking or not switching on. Recording failures by mode makes patterns and their causes easier to spot." aria-label="Failure mode: The way in which a product or part fails, such as cracking, wearing, leaking or not switching on. Recording failures by mode makes patterns and their causes easier to spot. (glossary)">Failure mode</a></td>
+                  <td>What happened, in a few standard categories (broken, not working, cosmetic, missing part, confusing, other)</td>
+                </tr>
+                <tr>
+                  <td>How it was used</td>
+                  <td>Where, how often, how long before it failed, anything unusual</td>
+                </tr>
+                <tr>
+                  <td>Safety flag</td>
+                  <td>Yes or no: could this cause injury, fire, burns, shock or damage?</td>
+                </tr>
+                <tr>
+                  <td>Unit returned?</td>
+                  <td>Whether you have the part, and where it is</td>
+                </tr>
+                <tr>
+                  <td>Status</td>
+                  <td>Open, investigating, cause found, change made, closed</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Batch numbers make the log far more useful, which is why <a class="text-link-inline" href="product-liability-basics.html">product liability basics</a> recommends making products traceable. Keep the failure categories few and consistent so you can count them. Review the log on a regular rhythm, not just when something feels wrong.
+            </p>
+
+            <h2 id="root-cause">Finding the root cause</h2>
+            <p>
+              The reported symptom is rarely the cause. "The clip broke" could come from a weak design, the wrong material, a moulding fault, an assembly error, damage in transit or a use you did not expect. Each needs a different fix. Work through it in plain steps:
+            </p>
+            <ol>
+              <li><strong>Reproduce it.</strong> Try to make the failure happen on purpose, on a good unit, under the conditions the customer described.</li>
+              <li><strong>Inspect returned units.</strong> Look at where and how a part broke, compare dimensions and material against the drawing, and compare returned units with stock from the same and other batches.</li>
+              <li><strong>Ask "why" repeatedly.</strong> The clip broke. Why? It was overstressed. Why? The wall was thinner than drawn. Why? The tool had worn. Stop when you reach something you can change and control.</li>
+              <li><strong>Check your records.</strong> Compare against the original test results and your <a class="text-link-inline" href="product-testing-and-validation-plans.html">test plan</a>: was this condition ever tested? Check supplier records, <a class="glossary-term" href="../knowledge/glossary.html#term-material-certificate" data-definition="A document from a material supplier confirming the grade, batch and key properties of the material supplied. It helps trace and check what went into a part." aria-label="material certificates: A document from a material supplier confirming the grade, batch and key properties of the material supplied. It helps trace and check what went into a part. (glossary)">material certificates</a> and <a class="text-link-inline" href="quality-control-and-first-article-inspection.html">first-article and batch inspection</a> reports for anything that changed.</li>
+            </ol>
+            <p>
+              Be honest about what you do not know yet. If the cause is unclear, say so in the log and keep investigating, rather than settling on the most convenient explanation.
+            </p>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 330" width="100%" role="img" aria-labelledby="al-fig-title al-fig-desc">
+                <title id="al-fig-title">The after-launch loop: feedback, log, root cause, change, re-validate</title>
+                <desc id="al-fig-desc">Five steps in a loop. 1 Feedback: reviews, support, returns and retailers. 2 Log and classify: failure mode, batch and how it was used. 3 Root cause: reproduce, inspect and ask why. 4 Decide and change: safety first, through a controlled revision. 5 Re-validate and release: retest, tell suppliers and keep tracking. An arrow returns from step 5 to step 1, because feedback on the changed product continues.</desc>
+                <defs><marker id="al-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <rect x="8" y="8" width="280" height="50" rx="10" class="gd-box-indigo"/>
+                <text x="20" y="28" class="gd-h">1 Feedback</text>
+                <text x="20" y="48" class="gd-m">Reviews, support, returns, retail</text>
+                <rect x="8" y="76" width="280" height="50" rx="10" class="gd-box-teal"/>
+                <text x="20" y="96" class="gd-h">2 Log and classify</text>
+                <text x="20" y="116" class="gd-m">Failure mode, batch, how used</text>
+                <rect x="8" y="144" width="280" height="50" rx="10" class="gd-box-teal"/>
+                <text x="20" y="164" class="gd-h">3 Root cause</text>
+                <text x="20" y="184" class="gd-m">Reproduce, inspect, ask why</text>
+                <rect x="8" y="212" width="280" height="50" rx="10" class="gd-box-magenta"/>
+                <text x="20" y="232" class="gd-h">4 Decide and change</text>
+                <text x="20" y="252" class="gd-m">Safety first; controlled revision</text>
+                <rect x="8" y="280" width="280" height="50" rx="10" class="gd-box-indigo"/>
+                <text x="20" y="300" class="gd-h">5 Re-validate and release</text>
+                <text x="20" y="320" class="gd-m">Retest, tell suppliers, keep tracking</text>
+                <line x1="148" y1="59" x2="148" y2="73" class="gd-arrow" marker-end="url(#al-arrow)"/>
+                <line x1="148" y1="127" x2="148" y2="141" class="gd-arrow" marker-end="url(#al-arrow)"/>
+                <line x1="148" y1="195" x2="148" y2="209" class="gd-arrow" marker-end="url(#al-arrow)"/>
+                <line x1="148" y1="263" x2="148" y2="277" class="gd-arrow" marker-end="url(#al-arrow)"/>
+                <path d="M290,305 H322 V33 H294" class="gd-arrow" marker-end="url(#al-arrow)"/>
+              </svg>
+              <figcaption>Each change goes back into the loop: feedback on the revised product is how you confirm the fix worked.</figcaption>
+            </figure>
+
+            <h2 id="decide">Deciding what to change</h2>
+            <p>
+              <strong>Safety comes first, every time.</strong> Any report that suggests a risk of injury, fire, burns, shock or damage to property should be escalated immediately, not queued with cosmetic issues. Stop shipping suspect stock while you investigate, as the <a class="text-link-inline" href="quality-control-and-first-article-inspection.html">quality control guide</a> describes. You may have obligations to act, and <a class="text-link-inline" href="product-liability-basics.html">product liability basics</a> notes that you should plan how you would handle complaints, incidents and, if needed, a recall. Check the GOV.UK guidance on <a class="text-link-inline" href="https://www.gov.uk/guidance/product-safety-for-manufacturers" rel="noopener">product safety for manufacturers</a>, and take professional advice from a solicitor and your insurer for your situation.
+            </p>
+            <p>For everything else, weigh four things together:</p>
+            <ul>
+              <li><strong>Severity:</strong> does it stop the product working, shorten its life, or only annoy?</li>
+              <li><strong>Frequency:</strong> how many reports, and is the count growing or tied to one batch?</li>
+              <li><strong>Cost:</strong> the one-off cost of the fix against the cost of returns, replacements, support time and lost reputation if you leave it.</li>
+              <li><strong>Type of fix:</strong> not every problem needs a design change. The cause may be a process or supplier issue, packaging, or instructions that need rewriting.</li>
+            </ul>
+            <p>
+              Severe and frequent problems go to the top. Rare, minor ones may be best saved for the next version, recorded so they are not forgotten.
+            </p>
+
+            <h2 id="change-control">Controlling the change</h2>
+            <p>
+              A change made informally, by a phone call to the factory, is how products drift and problems become impossible to trace. Treat every change as a small, recorded project:
+            </p>
+            <ul>
+              <li><strong>Raise the revision.</strong> Give the changed part a new <a class="glossary-term" href="../knowledge/glossary.html#term-revision" data-definition="A recorded version of a part, drawing or bill of materials, usually marked with a letter such as Rev B. Each change raises the revision, so everyone can tell exactly which version they are working from." aria-label="revision letter: A recorded version of a part, drawing or bill of materials, usually marked with a letter such as Rev B. Each change raises the revision, so everyone can tell exactly which version they are working from. (glossary)">revision letter</a> (for example, Rev B to Rev C) and record what changed, why, who approved it and from which batch or date it applies.</li>
+              <li><strong>Update the documents.</strong> Update the drawing, 3D model and <a class="glossary-term" href="../knowledge/glossary.html#term-bill-of-materials-bom" data-definition="The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly." aria-label="bill of materials: The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly. (glossary)">bill of materials</a> together, so suppliers never work from mixed versions. <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">Tolerances and engineering drawings</a> explains how drawings carry this information.</li>
+              <li><strong>Tell suppliers in writing.</strong> Send the new revision, ask for confirmation, agree what happens to existing stock and work in progress, and get any tool modification or new price quoted on the same basis as before, as in <a class="text-link-inline" href="comparing-manufacturing-quotes.html">comparing manufacturing quotes</a>.</li>
+              <li><strong>Re-validate.</strong> Repeat the tests the change could affect, on parts made by the production process, and run a first-article inspection on the first revised parts.</li>
+              <li><strong>Check certification.</strong> In general terms, <a class="text-link-inline" href="product-certification-basics.html">product certification basics</a> notes that design changes and component changes can require a review of your <a class="glossary-term" href="../knowledge/glossary.html#term-technical-file" data-definition="The documentation that supports a product's conformity: design, risk assessment, standards and test reports." aria-label="technical file: The documentation that supports a product's conformity: design, risk assessment, standards and test reports. (glossary)">technical file</a> and test evidence. Ask whoever maintains it, or your test house, before the change ships.</li>
+            </ul>
+            <p>
+              The same discipline applies to <a class="glossary-term" href="../knowledge/glossary.html#term-cost-down" data-definition="Lowering the cost of making a product that is already in production, for example by removing parts, operations or unneeded precision. Each change needs validating before it reaches production." aria-label="cost-down: Lowering the cost of making a product that is already in production, for example by removing parts, operations or unneeded precision. Each change needs validating before it reaches production. (glossary)">cost-down</a> changes; <a class="text-link-inline" href="reducing-the-cost-of-an-existing-product.html">reducing the cost of an existing product</a> covers those.
+            </p>
+
+            <h2 id="customers">Communicating with customers</h2>
+            <p>
+              Reply to each complaint promptly, thank the customer, and explain what happens next: a replacement, a refund or a request to return the unit for investigation. Avoid guessing at causes in public before you know them.
+            </p>
+            <p>
+              When a fix is in place, say so where it helps: a reply to a review, a note on the product page, or improved instructions. Customers generally respond better to a clear, honest account than to silence. For anything safety-related, follow the advice you have taken on what to say and to whom.
+            </p>
+
+            <h2 id="learn">Using what you learn</h2>
+            <p>The log is a record of how your product really behaves. Use it for:</p>
+            <ul>
+              <li><strong>The next version.</strong> Turn recurring issues into requirements and tests, so the next product is designed and checked against them from the start.</li>
+              <li><strong>Repair and spares.</strong> Parts that fail most often are the ones to make easy to replace and to stock as spares. <a class="text-link-inline" href="design-for-repair-and-disassembly.html">Design for repair and disassembly</a> shows how.</li>
+              <li><strong>Longer product life.</strong> Fixing the causes of early failure keeps products in use for longer, which is often the biggest environmental gain available; see <a class="text-link-inline" href="why-product-lifetime-matters-more-than-recycling.html">why product lifetime matters more than recycling</a>.</li>
+            </ul>
+
+            <h2 id="example">Worked example: a cracked clip</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example only. A small company sells a plastic desk organiser with a snap-on lid. A few weeks after launch, several reviews mention that a clip on the lid cracked, and some units come back through a retailer.
+              </p>
+              <p>
+                <strong>Log.</strong> The team records each report. Most cracked clips come from one batch, and several customers say the crack appeared after opening and closing the lid many times, not on first use.
+              </p>
+              <p>
+                <strong>Root cause.</strong> They reproduce the crack by cycling the lid on stock units from that batch, and fail to reproduce it on units from earlier batches. Inspecting returned lids shows the cracks start at a sharp inside corner at the root of the clip. Asking why: the clip cracks because stress concentrates at the corner; the corner is sharper on the newer batch because the <a class="glossary-term" href="../knowledge/glossary.html#term-moulder" data-definition="A company that runs injection-moulding machines to make parts from a mould tool. It may also make the tool, or work with a separate toolmaker." aria-label="moulder: A company that runs injection-moulding machines to make parts from a mould tool. It may also make the tool, or work with a separate toolmaker. (glossary)">moulder</a> repaired the tool and the radius was not reinstated; nobody noticed because the radius was not marked as a critical feature on the drawing, and the original test plan only checked a modest number of opening cycles.
+              </p>
+              <p>
+                <strong>Change.</strong> The team issues Rev C of the lid drawing, marks the corner radius as a critical feature with an inspection check, and slightly enlarges the radius to give more margin. The moulder confirms in writing, corrects the tool and supplies first-article parts. The test plan gains a longer opening-cycle test, which the revised lids pass. Suspect stock from the affected batch is held and inspected.
+              </p>
+              <p>
+                <strong>Customers and spares.</strong> Affected customers are offered a replacement lid, and the lid becomes a spare part sold separately. The log is watched over the following batches to confirm the reports stop.
+              </p>
+            </div>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Fixing symptoms, not causes.</strong>
+                Thickening a broken part without understanding why it broke can move the failure elsewhere, add cost, or miss a process fault that will return.
+              </div>
+              <div>
+                <strong>Uncontrolled changes.</strong>
+                Changes agreed by phone, with no revision or record, make it impossible to tell which customers have which version or to trace a later problem.
+              </div>
+              <div>
+                <strong>Ignoring small signals.</strong>
+                A handful of similar reports can be the start of a larger problem, especially if they come from one batch. Log them and look for patterns early.
+              </div>
+              <div>
+                <strong>Changing the design without re-testing.</strong>
+                A fix for one problem can create another. Repeat the relevant tests on production-process parts before the change ships.
+              </div>
+              <div>
+                <strong>Treating safety reports like any other.</strong>
+                Anything that could cause harm needs immediate escalation and professional advice, not a place in the queue.
+              </div>
+            </div>
+
+            <h2 id="rules">Decision rules</h2>
+            <ul>
+              <li><strong>One log</strong> for every channel, with batch, failure mode and how the product was used.</li>
+              <li><strong>Safety first:</strong> escalate immediately, hold suspect stock and take advice.</li>
+              <li><strong>No fix without a cause</strong> that you have reproduced or confirmed on returned units.</li>
+              <li><strong>Every change is a revision,</strong> shared with suppliers in writing and re-validated before it ships.</li>
+              <li><strong>Check certification</strong> whenever a change touches materials, components, construction or labelling.</li>
+              <li><strong>Close the loop</strong> by watching the log after the change, and feed lessons into the next version.</li>
+            </ul>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Set up a single feedback log with the fields above, and a regular time to review it.</li>
+              <li>Make sure every product and box carries a batch or serial number.</li>
+              <li>Plan the tests a change will need in the <a class="text-link-inline" href="../tools/test-plan-builder.html">Test Plan Builder</a>.</li>
+              <li>Check whether a change touches your compliance evidence with <a class="text-link-inline" href="../tools/certification-readiness.html">Certification Readiness</a>.</li>
+              <li>See where this sits in the wider picture in the <a class="text-link-inline" href="manufacturing-and-cost.html">manufacturing and cost hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Plan the re-validation</h3>
+                <p>Choose the tests a design change needs before it reaches production.</p>
+                <a class="button button-primary" href="../tools/test-plan-builder.html" data-analytics-event="article_cta_click" data-analytics-label="afterlaunch_guide_to_test_plan">Open Test Plan Builder</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Check compliance impact</h3>
+                <p>See which regulations and evidence a change could touch.</p>
+                <a class="button button-secondary" href="../tools/certification-readiness.html" data-analytics-event="article_cta_click" data-analytics-label="afterlaunch_guide_to_certification">Open Certification Readiness</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Test Plan Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/certification-readiness.html">Certification Readiness</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/change-request-builder.html">Change Request Builder</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="quality-control-and-first-article-inspection.html">Quality control and first-article inspection</a></div>
+                <div class="aside-item"><a class="text-link" href="product-liability-basics.html">Product liability basics</a></div>
+                <div class="aside-item"><a class="text-link" href="product-certification-basics.html">Product certification basics</a></div>
+                <div class="aside-item"><a class="text-link" href="design-for-repair-and-disassembly.html">Design for repair and disassembly</a></div>
+                <div class="aside-item"><a class="text-link" href="product-testing-and-validation-plans.html">Testing and validation plans</a></div>
+                <div class="aside-item"><a class="text-link" href="bills-of-materials-and-revision-control.html">Bills of materials and revision control</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Returns</span>
+                <span>Root cause</span>
+                <span>Change control</span>
+                <span>Customer feedback</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What should I do with returned products?</h3>
+                <p>Log each one with its reason, batch and how it was used, and keep faulty units for inspection where you can. Returned parts often show the cause of a problem far more clearly than a written description.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is root cause analysis?</h3>
+                <p>Working back from a reported symptom to the underlying reason it happened, by reproducing the problem, inspecting failed parts, asking why repeatedly and checking test, inspection and supplier records. The aim is a cause you can change and control.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should I do if a complaint suggests a safety problem?</h3>
+                <p>Escalate it immediately, hold suspect stock and investigate. You may have obligations to act, so check the GOV.UK guidance on product safety for manufacturers and take advice from a solicitor and your insurer.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is change control?</h3>
+                <p>A simple process for making design changes on purpose and on the record: a new revision letter, updated drawings and bill of materials, written confirmation from suppliers, re-validation and a note of which batch the change applies from.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does a design change affect my product certification?</h3>
+                <p>It can. Changes to materials, components, construction or labelling may require a review of your technical file and test evidence. Check with whoever maintains it, or your test house, before the change ships.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/test-plan-builder.html">Test Plan Builder</a>
+          <a href="../tools/certification-readiness.html">Certification Readiness</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

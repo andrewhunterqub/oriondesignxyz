@@ -1,0 +1,37 @@
+[
+  {
+    "date": "2026-11-26",
+    "pages": [["Product certification basics", "/guides/product-certification-basics.html"], ["IP, partners and compliance", "/guides/ip-partners-and-compliance.html"]],
+    "change": "Product safety in Northern Ireland: the guides now say that the EU General Product Safety Regulation has applied in Northern Ireland since 13 December 2024. They previously described the older UK-wide rules as applying everywhere."
+  },
+  {
+    "date": "2026-11-26",
+    "pages": [["Landed cost: freight, duty and VAT", "/guides/landed-cost-freight-duty-vat.html"], ["UK vs overseas manufacturing", "/guides/uk-vs-overseas-manufacturing.html"]],
+    "change": "Import VAT: corrected to say it is normally reclaimable by VAT-registered businesses, so it affects cash flow rather than cost, and no longer counts towards the UK and overseas cost comparison for them."
+  },
+  {
+    "date": "2026-11-26",
+    "pages": [["Funding routes in the UK and Northern Ireland", "/guides/funding-routes-uk-northern-ireland.html"]],
+    "change": "R&D tax relief: eligibility wording narrowed so it no longer suggests most product development qualifies; the guide points to official guidance and advice."
+  },
+  {
+    "date": "2026-11-26",
+    "pages": [["Design registration vs patents", "/guides/design-registration-vs-patents.html"], ["How to protect product IP", "/guides/how-to-protect-product-ip.html"]],
+    "change": "Added a clear warning to disclose an invention publicly only after filing, and a note that the guides are not legal advice."
+  },
+  {
+    "date": "2026-11-26",
+    "pages": [["Route to market and margins", "/guides/route-to-market-and-margins.html"]],
+    "change": "Corrected an example about confusing margin and markup that overstated the effect on target cost."
+  },
+  {
+    "date": "2026-11-26",
+    "pages": [["Injection moulding explained", "/guides/injection-moulding-explained.html"], ["Injection moulding DFM checklist", "/guides/injection-moulding-dfm-checklist.html"]],
+    "change": "Worked example unit cost corrected from £0.34 to £0.33, and rib thickness guidance made consistent at about 40 to 60 per cent of the wall thickness."
+  },
+  {
+    "date": "2026-11-26",
+    "pages": [["Tool pages", "/tools/"]],
+    "change": "Privacy answers on tool pages corrected: your inputs are kept in your own browser's storage so they are there when you return; they are not sent to Orion Design."
+  }
+]

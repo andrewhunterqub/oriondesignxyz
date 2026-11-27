@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Cables, Wiring and Connectors in a Product | Orion Design</title>
+    <meta
+      name="description"
+      content="How to plan wiring inside a product: fewer cables, routing and strain relief, choosing connectors, harness drawings, testing, and avoiding drop failures."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/cables-wiring-and-connectors-inside-a-product.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Cables, wiring and connectors inside a product | Orion Design">
+    <meta
+      property="og:description"
+      content="How to plan wiring inside a product: fewer cables, routing and strain relief, choosing connectors, harness drawings, testing, and avoiding drop failures."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/cables-wiring-and-connectors-inside-a-product.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-cables-wiring-and-connectors-inside-a-product.jpg">
+    <meta property="og:image:alt" content="Cables, wiring and connectors inside a product guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cables, wiring and connectors inside a product | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to plan wiring inside a product: fewer cables, routing and strain relief, choosing connectors, harness drawings, testing, and avoiding drop failures."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-cables-wiring-and-connectors-inside-a-product.jpg">
+    <meta name="twitter:image:alt" content="Cables, wiring and connectors inside a product guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-cables-wiring-and-connectors-inside-a-product.jpg",
+        "headline": "Cables, wiring and connectors inside a product",
+        "description": "How to plan wiring inside a product: fewer cables, routing and strain relief, choosing connectors, harness drawings, testing, and avoiding drop failures.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Development and prototyping",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/cables-wiring-and-connectors-inside-a-product.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Wiring harness"
+          },
+          {
+            "@type": "Thing",
+            "name": "Electrical connector"
+          },
+          {
+            "@type": "Thing",
+            "name": "Strain relief"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Cables, wiring and connectors",
+                "item": "https://oriondesign.xyz/guides/cables-wiring-and-connectors-inside-a-product.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Should I use a connector or solder wires straight to the board?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A connector makes assembly, testing and repair easier and lets the cable be replaced on its own. Soldering directly can suit a part that will never be removed, but the wire must then be fixed to the housing or board close to the joint so the joint never carries the load."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When is it worth buying a made-up harness?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually once you are past the first prototypes and the product has more than a single simple lead, uses crimped terminals or needs every unit to be identical. A harness supplier has the tooling and test equipment to make and check each one consistently, working from your harness drawing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do internal cables affect EMC?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "They can. Cables can pick up and give off interference, and long or loosely routed cables make results harder to repeat from unit to unit. Keep cables short, give them a fixed route and discuss the layout with your electronics partner before pre-compliance testing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I stop a connector coming loose in a drop?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use a latching connector rather than one held by friction, fix the cable to the housing close to the connector so it cannot tug on it, support the board under the connector, and stop heavy parts such as batteries from moving. Then confirm it by opening units after drop tests."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should a harness drawing include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The length of each wire or branch with a tolerance, the connector and terminal part numbers at each end, a pin-out table showing which wire runs from which pin to which, wire size and colour, and any labels, sleeving or ties, plus its own part number and revision."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Cables, wiring and connectors</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders and engineers whose product has a board, battery, motor or display wired together inside a housing</p>
+            <h1>Cables, wiring and connectors inside a product</h1>
+            <p>
+              Why internal wiring causes so many assembly faults and field failures, how to design out wires in the first place, and how to route, retain, connect, document and test the ones that remain, so they survive assembly, drops and years of use.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Use as few internal wires as you can, and treat every one that remains as a designed part with a defined route, a fixing and a connector that cannot work loose.</h2>
+              <p>
+                Put parts on the main board or join boards directly where you can. Give the remaining cables moulded routes and clips, keep them clear of sharp edges, screws, moving and hot parts, and make sure any pull is taken by the housing, not a solder joint.
+                Choose latching, keyed connectors rated from the datasheet, document each harness with a drawing and a part number on the bill of materials, and check every unit for continuity and pin-out in production.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#why">Why internal wiring causes problems</a></li>
+              <li><a class="text-link-inline" href="#fewer">Fewer wires first</a></li>
+              <li><a class="text-link-inline" href="#routing">Routing and retention</a></li>
+              <li><a class="text-link-inline" href="#connectors">Choosing connectors</a></li>
+              <li><a class="text-link-inline" href="#harnesses">Harnesses and harness drawings</a></li>
+              <li><a class="text-link-inline" href="#mains">Mains wiring</a></li>
+              <li><a class="text-link-inline" href="#testing">Testing wiring and connectors</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a battery lead that fails after drops</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+            </ol>
+
+            <h2 id="why">Why internal wiring causes problems</h2>
+            <p>
+              On a CAD model a cable is often left out or drawn at the end. In the product it is a flexible part that is fitted by hand and goes wherever it is pushed, which makes wiring a common source of assembly faults and field failures:
+            </p>
+            <ul>
+              <li><strong>Assembly time and errors.</strong> Each cable is another manual step and another chance to use the wrong socket, leave a plug half-seated or route the wire wrongly. <a class="text-link-inline" href="assembly-time-estimate.html">Estimating assembly time</a> shows how these steps add up.</li>
+              <li><strong>Pinched or chafed wires.</strong> A wire trapped in a seam, crushed by a screw boss or rubbing on a sharp edge can work for months before the insulation wears through.</li>
+              <li><strong>Connectors working loose.</strong> Drops and vibration shake a friction-held plug until the contact becomes intermittent, one of the hardest faults to find.</li>
+              <li><strong>Solder joints taking cable loads.</strong> A solder joint makes an electrical connection; it is not meant to hold a load. If a tug on the cable or a heavy part pulls on it, it can crack over time.</li>
+              <li><strong>Heat near cables.</strong> Insulation ages faster beside motors, chargers, power parts and heaters. <a class="text-link-inline" href="managing-heat-in-a-product-enclosure.html">Managing heat in a product enclosure</a> covers finding the hot spots.</li>
+              <li><strong>EMC.</strong> Cables can pick up and give off interference, and loose or inconsistent routes make results hard to repeat. Treat this as a design input, as <a class="text-link-inline" href="electronics-in-a-physical-product.html#emc">electronics in a physical product</a> explains, and take layout advice from your electronics partner.</li>
+              <li><strong>Service and repair.</strong> Cables and connectors wear and break at stress points, and wires that are glued down, too short or buried make repair harder. See <a class="text-link-inline" href="design-for-repair-and-disassembly.html">design for repair and disassembly</a>.</li>
+            </ul>
+
+            <h2 id="fewer">Fewer wires first</h2>
+            <p>The most reliable cable is the one you do not need. Before designing routes, try to remove wires:</p>
+            <ul>
+              <li><strong>Put components on the main board.</strong> Buttons, LEDs, sensors and ports mounted on the board need no wiring, provided the board and housing are laid out together so each part meets its opening.</li>
+              <li><strong>Board-to-board connectors.</strong> Two boards joined directly, stacked or at right angles, need no cable and locate each other. The housing must still hold both boards so the connector does not carry the load.</li>
+              <li><strong>Flexible printed circuits (FPC).</strong> A thin, flat flexible circuit can link boards at different angles or on moving parts, and is the same in every unit. It needs a defined bend shape, no sharp creases and care at assembly, because its connectors are small and easy to fit at an angle.</li>
+            </ul>
+
+            <h2 id="routing">Routing and retention</h2>
+            <p>
+              Each cable should have one route, the same in every unit, designed into the housing rather than left to the person at the bench.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 250" width="100%" role="img" aria-labelledby="cab-fig-title cab-fig-desc">
+                <title id="cab-fig-title">A cable routed inside a housing from a board connector to an exit in the wall</title>
+                <desc id="cab-fig-desc">A simplified view inside a product housing. A latching connector sits on the circuit board near the bottom. The cable rises from the connector with a small loop of slack, the service loop, then runs up and along the top of the housing through two clips moulded into the housing. It leaves through the side wall at a grommet with strain relief, so a pull on the outside cable is taken by the housing rather than by the connector.</desc>
+                <rect x="12" y="44" width="218" height="180" rx="10" class="gd-box"/>
+                <rect x="28" y="184" width="134" height="12" rx="2" class="gd-box-teal"/>
+                <rect x="120" y="168" width="26" height="16" rx="2" class="gd-fill-indigo"/>
+                <path d="M133,168 L133,150 C133,116 88,116 88,140 C88,162 118,160 118,130 L118,86 Q118,74 130,74 L330,74" class="gd-curve gd-stroke-indigo"/>
+                <rect x="156" y="65" width="8" height="18" rx="1" class="gd-fill-teal"/>
+                <rect x="192" y="65" width="8" height="18" rx="1" class="gd-fill-teal"/>
+                <rect x="223" y="62" width="14" height="24" rx="2" class="gd-fill-magenta"/>
+                <line x1="160" y1="65" x2="172" y2="34" class="gd-line"/>
+                <line x1="196" y1="65" x2="188" y2="34" class="gd-line"/>
+                <text x="140" y="26" class="gd-m">Moulded clips</text>
+                <line x1="237" y1="84" x2="246" y2="100" class="gd-line"/>
+                <text x="244" y="114" class="gd-m">Grommet and</text>
+                <text x="244" y="130" class="gd-m">strain relief</text>
+                <line x1="88" y1="134" x2="70" y2="114" class="gd-line"/>
+                <text x="24" y="106" class="gd-m">Service loop</text>
+                <line x1="146" y1="176" x2="240" y2="176" class="gd-line"/>
+                <text x="244" y="172" class="gd-m">Latching</text>
+                <text x="244" y="188" class="gd-m">connector</text>
+                <text x="32" y="214" class="gd-m">Circuit board</text>
+              </svg>
+              <figcaption>The cable has one fixed route. Moulded clips hold it, a small loop of slack lets the board be lifted out for service, and the grommet and strain relief at the wall take any outside pull before it reaches the connector.</figcaption>
+            </figure>
+            <ul>
+              <li><strong>Moulded channels and clips.</strong> Ribs, slots and small hooks in the housing hold a cable at no extra part cost and show the operator the route. Check them against the <a class="text-link-inline" href="injection-moulding-dfm-checklist.html">injection moulding DFM checklist</a>.</li>
+              <li><strong>Cable ties and tie mounts.</strong> Where clips are not practical, a tie through a moulded slot or onto a mount fixes the bundle. Show its position on the <a class="glossary-term" href="../knowledge/glossary.html#term-work-instructions" data-definition="Illustrated, step-by-step instructions for each assembly or test station, written so an operator new to the product can build it correctly at normal speed." aria-label="work instruction: Illustrated, step-by-step instructions for each assembly or test station, written so an operator new to the product can build it correctly at normal speed. (glossary)">work instruction</a> and say how it is trimmed, so no sharp end is left.</li>
+              <li><strong>Clear of hazards.</strong> Keep routes away from sharp moulded or <a class="text-link-inline" href="sheet-metal-design-basics.html">sheet metal</a> edges, screw points, anything that moves (hinges, fans, button stems) and hot parts. Where a wire must pass one, add a rib, sleeve or cover.</li>
+              <li><strong>Service loops.</strong> A little controlled slack lets a board be lifted out and unplugged without straining the cable. Clip the loop so it cannot wander into a seam.</li>
+              <li><strong>Strain relief.</strong> Wherever a cable leaves the product or the board, a pull should be taken by the housing or a clamp, not the connector or a solder joint: a moulded clamp, a tie to a mount, a wrap round a post, or an <a class="text-link-inline" href="overmoulding-and-two-shot-moulding.html">overmoulded</a> boot on an external lead. Inside, fix the cable close to the connector.</li>
+              <li><strong>Grommets and glands at sealed walls.</strong> A <a class="glossary-term" href="../knowledge/glossary.html#term-grommet" data-definition="A fitting in a hole through a wall that protects a cable from the edge of the hole. Where the product must be sealed, a cable gland or a sealed connector keeps water out." aria-label="grommet: A fitting in a hole through a wall that protects a cable from the edge of the hole. Where the product must be sealed, a cable gland or a sealed connector keeps water out. (glossary)">grommet</a> protects a cable from the hole edge; in a sealed product a <a class="glossary-term" href="../knowledge/glossary.html#term-cable-gland" data-definition="A fitting that clamps a seal around a cable where it passes through the wall of a housing, so water and dust cannot follow the cable in. It suits round cables of a known diameter." aria-label="cable gland: A fitting that clamps a seal around a cable where it passes through the wall of a housing, so water and dust cannot follow the cable in. It suits round cables of a known diameter. (glossary)">cable gland</a> or sealed connector keeps water out. <a class="text-link-inline" href="sealing-and-waterproofing-an-enclosure.html#cables-vents">Sealing and waterproofing an enclosure</a> explains the options.</li>
+            </ul>
+            <p>
+              Wires are often pinched in the last few millimetres as a lid is pressed home over a cable that has lifted from its clip. A rib guarding the seam helps prevent this.
+            </p>
+
+            <h2 id="connectors">Choosing connectors</h2>
+            <p>Your electronics partner will propose specific parts. Settle these general points with them, because each affects the mechanical design and assembly:</p>
+            <ul>
+              <li><strong>Locking or latching, not just friction.</strong> A latch that clicks into place resists drops and vibration far better than contact pressure alone, and one the operator can see confirms the step is done.</li>
+              <li><strong>Keyed and polarised.</strong> A keyed connector only fits one way round. Where several sit on one board, vary the size, pin count or keying so each plug fits only its own socket. The <a class="text-link-inline" href="assembly-and-work-instructions.html#error-proofing">error-proofing section of the work instructions guide</a> explains why preventing the mistake beats a warning.</li>
+              <li><strong>Current rating and mating cycles from the datasheet.</strong> Take the contact current rating, and how many times the connector can be plugged and unplugged, from the manufacturer's datasheet, not from a similar-looking part. Ratings can change with temperature and with how many contacts carry current, so check the conditions stated.</li>
+              <li><strong>The same connector in prototype and production.</strong> If prototypes use whatever is on the bench, the production part changes the size, latch, access and route late, and the prototypes tell you little about assembly or reliability. Choose the production family by the first <a class="glossary-term" href="../knowledge/glossary.html#term-engineering-prototype" data-definition="A prototype that integrates form and function to check the design against its specification." aria-label="integrated prototype: A prototype that integrates form and function to check the design against its specification. (glossary)">integrated prototype</a>.</li>
+            </ul>
+
+            <h2 id="harnesses">Harnesses and harness drawings</h2>
+            <p>
+              A harness is a made-up set of wires cut to length with connectors, terminals and any sleeving fitted. For production, buying made-up <a class="glossary-term" href="../knowledge/glossary.html#term-wiring-harness" data-definition="A made-up set of wires cut to length with connectors, terminals and any sleeving fitted, built by the supplier to a harness drawing. Each harness gets its own part number and revision on the bill of materials." aria-label="harnesses: A made-up set of wires cut to length with connectors, terminals and any sleeving fitted, built by the supplier to a harness drawing. Each harness gets its own part number and revision on the bill of materials. (glossary)">harnesses</a> from a specialist is usually worthwhile once there is more than one simple lead, crimped terminals are involved or every unit must be identical, because the supplier has the crimp tooling and test equipment to do it consistently.
+            </p>
+            <p>The harness drawing is what the supplier builds to. It usually shows:</p>
+            <ul>
+              <li><strong>Lengths</strong> of each wire or branch between defined points, with a tolerance.</li>
+              <li><strong>Connectors and pin-out:</strong> connector and terminal part numbers at each end, and a table of which wire runs from which pin to which, with wire size and colour.</li>
+              <li><strong>Labels</strong> and other details such as sleeving, ties or tape, and where they go.</li>
+            </ul>
+            <p>
+              Give each harness its own part number and revision, list it on the <a class="glossary-term" href="../knowledge/glossary.html#term-bill-of-materials-bom" data-definition="The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly." aria-label="bill of materials: The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly. (glossary)">bill of materials</a> under its assembly, and change it through the same process as other parts; see <a class="text-link-inline" href="bills-of-materials-and-revision-control.html">bills of materials and revision control</a>. A new connector that will not mate with the old one means a new part number, not just a new revision.
+            </p>
+
+            <h2 id="mains">Mains wiring</h2>
+            <p>
+              Mains-powered products have specific safety requirements for internal wiring, insulation and separation between mains and low-voltage parts. They come from the safety standard that applies to the product and affect routing, fixings and connector choice from the start. Identify that standard at the requirements stage, as <a class="text-link-inline" href="product-certification-basics.html">product certification basics</a> explains, and involve a qualified engineer and a test laboratory. A pre-certified external power supply keeps mains wiring out of the product altogether.
+            </p>
+
+            <h2 id="testing">Testing wiring and connectors</h2>
+            <ul>
+              <li><strong>Continuity and pin-out checks in production.</strong> Every harness should be checked for continuity and correct <a class="glossary-term" href="../knowledge/glossary.html#term-pin-out" data-definition="The record of which wire runs from which pin to which at each connector, usually given as a table on the harness drawing. Every harness should be checked for continuity and correct pin-out in production." aria-label="pin-out: The record of which wire runs from which pin to which at each connector, usually given as a table on the harness drawing. Every harness should be checked for continuity and correct pin-out in production. (glossary)">pin-out</a>, usually by the harness supplier on a fixture. An end-of-line functional test on the assembled product catches connectors left unplugged or half-seated. Write both into your <a class="text-link-inline" href="product-testing-and-validation-plans.html">test plan</a>.</li>
+              <li><strong>Pull tests on strain relief.</strong> Pull external cables, and cables near their connectors, in each likely direction, and check that the housing or clamp takes the load and nothing moves at the joint. Take the force from the applicable standard where there is one, otherwise from realistic use.</li>
+              <li><strong>Drops and vibration.</strong> After each test, open the unit and check every connector is fully seated, every cable is in its clips and nothing is pinched. <a class="text-link-inline" href="designing-for-drops-and-impacts.html#testing">Designing for drops and impacts</a> explains why loose heavy parts and unsupported connectors are common drop failures.</li>
+            </ul>
+
+            <h2 id="example">Worked example: a battery lead that fails after drops</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A small handheld product has a rechargeable battery pack whose short lead ends in a friction-fit connector, plugged into a socket at the edge of the main board. The board is screwed down at its corners and the battery sits in a pocket with some clearance.
+              </p>
+              <p>
+                After a few corner drops, several prototypes stop working; some recover when tapped, which points to an intermittent connection. Opening them shows the connector partly unseated on some, and a cracked solder joint at the socket on others.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Finding</th>
+                  <th>Cause</th>
+                  <th>Change made</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Connector partly unseated</td>
+                  <td>Friction-only connector; the moving battery tugs on the lead</td>
+                  <td>A latching, keyed connector, used from the next prototype on</td>
+                </tr>
+                <tr>
+                  <td>Cracked solder joints at the socket</td>
+                  <td>Connector at an unsupported board edge; the lead's load goes straight into the joints</td>
+                  <td>A housing rib under the board at the connector, and a clip holding the lead next to it so the housing takes any pull</td>
+                </tr>
+                <tr>
+                  <td>Lead taut between battery and board</td>
+                  <td>Length set from CAD with no slack</td>
+                  <td>A slightly longer lead in a moulded channel, with its length defined on a harness drawing</td>
+                </tr>
+                <tr>
+                  <td>Battery free to move</td>
+                  <td>Clearance in the pocket</td>
+                  <td>Ribs locating the battery on all sides and a pad under the cover</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The revised design is drop-tested on several units, each opened after every drop, and the lead is pull-tested near the connector. The work instruction gains a check that the latch is engaged and the lead is in its clip, and the battery lead gets its own BOM line with a part number and revision.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Leaving cables out of the CAD.</strong>
+                Nobody checks a route, length or clearance that is not modelled. Model the main cables as parts.
+              </div>
+              <div>
+                <strong>Letting solder joints carry loads.</strong>
+                A joint holding a wire or heavy part in place will eventually crack. Make the housing take the load.
+              </div>
+              <div>
+                <strong>Friction-only connectors in products that get dropped.</strong>
+                Use latching connectors wherever drops or vibration are likely.
+              </div>
+              <div>
+                <strong>Identical connectors side by side.</strong>
+                Sockets that accept the same plug will be swapped sooner or later. Key them differently.
+              </div>
+              <div>
+                <strong>Harnesses with no drawing or part number.</strong>
+                Lengths and pin-outs then drift between batches and suppliers.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>List every cable and ask whether moving a part onto the board, or joining boards directly, would remove it; model the rest in CAD with their routes and clips.</li>
+              <li>Confirm each connector's latch, keying, current rating and mating cycles from its datasheet with your electronics partner.</li>
+              <li>Give each harness a drawing, a part number and a revision, and cost it in the <a class="text-link-inline" href="../tools/bom-builder.html">BOM Cost Builder</a>.</li>
+              <li>Add continuity checks, pull tests and post-drop inspection to your plan with the <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a>.</li>
+              <li>See where this work sits in the wider journey in the <a class="text-link-inline" href="development-and-prototyping.html">development and prototyping hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Plan the tests</h3>
+                <p>Add continuity, pull and post-drop checks to each prototype round.</p>
+                <a class="button button-primary" href="../tools/test-plan-builder.html" data-analytics-event="article_cta_click" data-analytics-label="wiring_guide_to_test_plan">Open Product Test Plan Builder</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Count the assembly steps</h3>
+                <p>See how cable connections add to assembly time.</p>
+                <a class="button button-secondary" href="../tools/assembly-time.html" data-analytics-event="article_cta_click" data-analytics-label="wiring_guide_to_assembly_time">Open Assembly Time Estimator</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Product Test Plan Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/assembly-time.html">Assembly Time Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/bom-builder.html">BOM Cost Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/certification-readiness.html">Certification Readiness Checklist</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="electronics-in-a-physical-product.html">Electronics in a physical product</a></div>
+                <div class="aside-item"><a class="text-link" href="designing-for-drops-and-impacts.html">Designing for drops and impacts</a></div>
+                <div class="aside-item"><a class="text-link" href="sealing-and-waterproofing-an-enclosure.html">Sealing and waterproofing an enclosure</a></div>
+                <div class="aside-item"><a class="text-link" href="assembly-and-work-instructions.html">Assembly and work instructions</a></div>
+                <div class="aside-item"><a class="text-link" href="bills-of-materials-and-revision-control.html">Bills of materials and revision control</a></div>
+                <div class="aside-item"><a class="text-link" href="managing-heat-in-a-product-enclosure.html">Managing heat in a product enclosure</a></div>
+                <div class="aside-item"><a class="text-link" href="designing-buttons-switches-and-controls.html">Designing buttons, switches and controls</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Wiring</span>
+                <span>Connectors</span>
+                <span>Harnesses</span>
+                <span>Strain relief</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Should I use a connector or solder wires straight to the board?</h3>
+                <p>A connector makes assembly, testing and repair easier and lets the cable be replaced on its own. Soldering directly can suit a part that will never be removed, but the wire must then be fixed to the housing or board close to the joint so the joint never carries the load.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When is it worth buying a made-up harness?</h3>
+                <p>Usually once you are past the first prototypes and the product has more than a single simple lead, uses crimped terminals or needs every unit to be identical. A harness supplier has the tooling and test equipment to make and check each one consistently, working from your harness drawing.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do internal cables affect EMC?</h3>
+                <p>They can. Cables can pick up and give off interference, and long or loosely routed cables make results harder to repeat from unit to unit. Keep cables short, give them a fixed route and discuss the layout with your electronics partner before pre-compliance testing.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do I stop a connector coming loose in a drop?</h3>
+                <p>Use a latching connector rather than one held by friction, fix the cable to the housing close to the connector so it cannot tug on it, support the board under the connector, and stop heavy parts such as batteries from moving. Then confirm it by opening units after drop tests.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should a harness drawing include?</h3>
+                <p>The length of each wire or branch with a tolerance, the connector and terminal part numbers at each end, a pin-out table showing which wire runs from which pin to which, wire size and colour, and any labels, sleeving or ties, plus its own part number and revision.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

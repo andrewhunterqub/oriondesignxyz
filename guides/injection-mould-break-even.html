@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>When Does Injection Moulding Become Cheaper? | Orion Design</title>
+    <meta
+      name="description"
+      content="A practical guide to break-even volume between 3D printing, CNC machining, vacuum casting, and injection moulding, with decision rules for timing tooling."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/injection-mould-break-even.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="When Does Injection Moulding Become Cheaper?">
+    <meta
+      property="og:description"
+      content="A practical guide to break-even volume between 3D printing, CNC machining, vacuum casting, and injection moulding, with decision rules for timing tooling."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/injection-mould-break-even.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-injection-mould-break-even.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="When Does Injection Moulding Become Cheaper?">
+    <meta
+      name="twitter:description"
+      content="A practical guide to break-even volume between 3D printing, CNC machining, vacuum casting, and injection moulding, with decision rules for timing tooling."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-injection-mould-break-even.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-injection-mould-break-even.jpg",
+        "headline": "When Does Injection Moulding Become Cheaper?",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-09-10",
+        "articleSection": "Manufacturing systems",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/injection-mould-break-even.html",
+        "datePublished": "2026-03-12"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Injection mould break-even",
+                "item": "https://oriondesign.xyz/guides/injection-mould-break-even.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "When does injection moulding become cheaper than 3D printing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "When the tooling investment has been diluted enough that the lower unit cost outweighs the zero-tooling advantage of additive manufacturing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is break-even volume the only factor that matters?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Demand confidence, design maturity, lead-time tolerance, and the risk of rework after tooling can matter just as much."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should teams check before committing to tooling?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Check forecast confidence, product stability, quality requirements, bridge-production options, and whether the cash position can absorb tooling lead time and change risk."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Injection mould break-even</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 10 September 2026 <span aria-hidden="true">·</span> For teams deciding when injection moulding tooling is worth paying for</p>
+            <h1>When does injection moulding become cheaper?</h1>
+            <p>
+              Teams often ask for a single magic volume where tooling suddenly becomes the right answer. In practice the decision sits at the intersection
+              of setup cost, unit cost, demand confidence, design stability, and how painful a late change would be.
+            </p>
+          </div>
+          <div class="metric-strip">
+            <div class="metric-pill">
+              <strong>Topic</strong>
+              <span>Break-even volume</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Audience</strong>
+              <span>Hardware teams and founders</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Tool</strong>
+              <span>Manufacturing Payoff Visualiser</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Use it for</strong>
+              <span>Timing tooling decisions</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Injection moulding becomes cheaper when lower unit cost outweighs tooling cost.</h2>
+              <div class="formula-block">Break-even volume = tooling cost / (prototype unit cost - moulded unit cost)</div>
+              <p>Example: GBP6,500 / (GBP18 - GBP0.70) = roughly 376 units. That figure is only useful if the design and forecast are stable enough to trust.</p>
+            </div>
+
+            <p>
+              Break-even volume is the point where a process with a higher upfront investment but lower recurring unit cost overtakes a process that is cheap to start but expensive to repeat.
+              <a class="glossary-term" href="../knowledge/glossary.html#term-injection-moulding" data-definition="Making plastic parts by injecting molten plastic into a machined metal tool, cooling it and ejecting the part." aria-label="Injection moulding: Making plastic parts by injecting molten plastic into a machined metal tool, cooling it and ejecting the part. (glossary)">Injection moulding</a> usually wins late, not early. That does not make it wrong. It makes it timing-sensitive.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              if the design is still moving, forecast confidence is weak, or the first production volume is unclear, it is usually safer to stay with additive,
+              machining, or bridge tooling until the product proves it deserves a mould.
+            </div>
+
+            <h2>The wrong question teams often ask</h2>
+            <p>
+              “When is moulding cheaper?” sounds precise, but it hides the real issue: “When is moulding safer and more profitable than the alternatives?”
+              Cost alone is not enough. A route that looks cheapest at 20,000 units can still be the wrong move if you only sell 4,000, change the geometry twice,
+              or need to ship <a class="text-link-inline" href="planning-a-pilot-production-run.html">pilot builds</a> before tooling is ready.
+            </p>
+
+            <div class="pull-quote">
+              <p>
+                Break-even is not a number to memorise. It is a timing decision about when your confidence in the product becomes strong enough to justify commitment.
+              </p>
+            </div>
+
+            <h2>Example calculation</h2>
+            <div class="worked-example">
+              <p>
+                Assume 3D printing costs GBP18 per part with no tooling, while injection moulding costs GBP0.70 per part with a GBP6,500 tool.
+                The cost gap per part is GBP17.30. On paper, the moulded route starts to win at roughly 376 units.
+              </p>
+              <p>
+                That sounds early, but only if the design is stable, the forecast is credible, and the first few hundred parts will not be scrapped by engineering changes.
+              </p>
+            </div>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 262" width="100%" role="img" aria-labelledby="be-fig-title be-fig-desc">
+                <title id="be-fig-title">Total cost against units made: 3D printing versus injection moulding</title>
+                <desc id="be-fig-desc">Line chart using the example figures. 3D printing starts at zero and rises steeply at £18 a part. Injection moulding starts at £6,500 for the tool and rises slowly at £0.70 a part. The lines cross at roughly 376 units; beyond that, moulding has the lower total cost.</desc>
+                <line x1="50" y1="200" x2="324" y2="200" class="gd-axis"/>
+                <line x1="50" y1="14" x2="50" y2="200" class="gd-axis"/>
+                <text x="187" y="250" text-anchor="middle" class="gd-m">Units made</text>
+                <text x="0" y="0" transform="translate(30 107) rotate(-90)" text-anchor="middle" class="gd-m">Total cost</text>
+                <line x1="195" y1="106" x2="195" y2="200" class="gd-line gd-dash"/>
+                <path d="M50,200 L320,25.5" class="gd-curve gd-stroke-magenta gd-dash"/>
+                <path d="M50,110 L320,103.2" class="gd-curve gd-stroke-indigo"/>
+                <circle cx="50" cy="110" r="5" class="gd-fill-indigo"/>
+                <circle cx="195" cy="106.4" r="6" class="gd-fill-teal"/>
+                <text x="60" y="32" class="gd-v gd-tm">3D printing</text>
+                <text x="60" y="50" class="gd-t">£18 a part, no tool</text>
+                <text x="206" y="150" class="gd-v gd-ti">Moulding</text>
+                <text x="206" y="168" class="gd-t">£6,500 tool</text>
+                <text x="206" y="186" class="gd-t">+ £0.70 a part</text>
+                <text x="195" y="220" text-anchor="middle" class="gd-v gd-tt">≈ 376 units</text>              </svg>
+              <figcaption>Example figures from the calculation above. The mould starts £6,500 behind but adds only £0.70 a part, so it overtakes 3D printing at roughly 376 units, provided the design and forecast hold.</figcaption>
+            </figure>
+
+            <h2>What each manufacturing route is buying you</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Process</th>
+                  <th>What you gain</th>
+                  <th>What you give up</th>
+                  <th>Typical trigger to move on</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>3D printing</td>
+                  <td>Speed, flexibility, almost no setup commitment</td>
+                  <td>High unit cost, weaker cosmetic and process repeatability</td>
+                  <td>When learning slows and recurring unit cost starts to dominate</td>
+                </tr>
+                <tr>
+                  <td><a class="text-link-inline" href="cnc-machining-design-rules.html">CNC machining</a></td>
+                  <td>Durable parts, predictable quality, useful functional prototypes</td>
+                  <td>Moderate cost and slower repetition at higher quantities</td>
+                  <td>When volume grows beyond the point where machining remains economical</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-vacuum-casting" data-definition="Casting polyurethane resin into silicone moulds under vacuum to make small batches of production-like parts." aria-label="Vacuum casting: Casting polyurethane resin into silicone moulds under vacuum to make small batches of production-like parts. (glossary)">Vacuum casting</a></td>
+                  <td>Bridge-volume flexibility and better appearance than many prototype routes</td>
+                  <td>Limited life and not the final production process</td>
+                  <td>When demand and geometry justify real production tooling</td>
+                </tr>
+                <tr>
+                  <td>Injection moulding</td>
+                  <td>Lowest recurring cost and repeatable scale production</td>
+                  <td>High upfront commitment and painful late-stage changes</td>
+                  <td>When both demand and product architecture are genuinely stable</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>Five questions to answer before cutting steel</h2>
+            <ol>
+              <li>How strong is the forecast, and who owns that confidence?</li>
+              <li>What is the cost of one major geometry change after tooling starts?</li>
+              <li>Can a bridge process carry the first launch or pilot batch more safely?</li>
+              <li>Are the quality and finish requirements already stable enough to tool against?</li>
+              <li>Does the team have enough cash and lead-time tolerance to absorb tooling delays?</li>
+            </ol>
+
+            <h2>Common decision traps</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Trap 1: believing the spreadsheet too early.</strong>
+                A break-even line is only as good as the demand and cost assumptions behind it.
+              </div>
+              <div>
+                <strong>Trap 2: ignoring bridge production.</strong>
+                Many teams do not need to choose between prototype and final tooling immediately. Bridge routes often buy better evidence.
+              </div>
+              <div>
+                <strong>Trap 3: underestimating the cost of change.</strong>
+                A late design change can erase the unit-cost advantage that justified tooling in the first place.
+              </div>
+            </div>
+
+            <h2>Interactive tool</h2>
+            <p>
+              The <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a> is most useful when you compare several scenarios instead of chasing a single answer.
+              Run at least three cases:
+            </p>
+            <ul>
+              <li>a conservative demand scenario</li>
+              <li>your expected case</li>
+              <li>an optimistic case with a more stable design and better process efficiency</li>
+            </ul>
+            <p>
+              Then compare the cost curves against what you know about launch timing, cash, and engineering maturity. That is where the real decision sits.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Run the manufacturing model</h3>
+                <p>Compare setup and unit-cost curves directly, then stress-test the demand assumption behind your tooling decision.</p>
+                <a
+                  class="button button-primary"
+                  href="../tools/manufacturing-payoff.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="injection_article_to_manufacturing_tool"
+                >
+                  Open Manufacturing Payoff
+                </a>
+              </div>
+              <div class="article-action-card">
+                <h3>Plan the route after break-even</h3>
+                <p>Use the production-planning tool to decide whether prototype, bridge, or scale production is the right next commitment.</p>
+                <a
+                  class="button button-secondary"
+                  href="../tools/production-strategy-planner.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="injection_article_to_production_planner"
+                >
+                  Open Production Strategy Planner
+                </a>
+              </div>
+            </div>
+
+            <div class="callout-banner">
+              <h2>If the break-even is close, the risk model matters more than the spreadsheet.</h2>
+              <p>
+                Orion Design can help structure the transition from prototype route to scaled manufacture so tooling decisions match demand, quality, and cash reality.
+              </p>
+              <div class="cta-row">
+                <a
+                  class="button button-primary"
+                  href="../contact/index.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="injection_article_to_contact"
+                >
+                  Discuss a live project
+                </a>
+                <a class="button button-secondary" href="../tools/index.html">Explore all tools</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/production-strategy-planner.html">Production Strategy Planner</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/assembly-time.html">Assembly Time Estimator</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="manufacturing-processes-compared.html">Manufacturing processes compared</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="how-many-prototypes-do-you-need.html">How many prototypes do you need?</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This article answers</p>
+              <div class="tag-row">
+                <span>Injection mould break-even</span>
+                <span>3D printing vs moulding</span>
+                <span>Manufacturing cost curve</span>
+              </div>
+            </div>
+            <div class="notice-card">
+              <p class="aside-title">Next step</p>
+              <p>Run the tool with conservative, expected, and optimistic volumes. The spread between those cases tells you how risky tooling really is.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>When does injection moulding become cheaper than 3D printing?</h3>
+                <p>When the tooling investment has been diluted enough that the lower unit cost outweighs the zero-tooling advantage of additive manufacturing.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is break-even volume the only factor that matters?</h3>
+                <p>No. Demand confidence, design maturity, lead-time tolerance, and the risk of rework after tooling can matter just as much.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should teams check before committing to tooling?</h3>
+                <p>Check forecast confidence, product stability, quality requirements, bridge-production options, and whether the cash position can absorb tooling lead time and change risk.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">Author</p>
+            <h2>Andrew Hunter</h2>
+            <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to inform early decisions, then validate against project-specific data, supplier input, and production constraints.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tool-led engineering content for smarter manufacturing decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/manufacturing-payoff.html">Manufacturing Payoff</a>
+          <a href="../tools/production-strategy-planner.html">Production Strategy Planner</a>
+          <a href="assembly-time-estimate.html">Assembly Time article</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

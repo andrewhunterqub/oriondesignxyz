@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Choosing Between Concepts: Pugh Decision Matrix | Orion Design</title>
+    <meta
+      name="description"
+      content="How engineers choose between design concepts with a weighted decision matrix (the Pugh method): criteria, weights, scoring, a worked example and common mistakes."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/how-engineers-choose-between-concepts.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Choosing Between Concepts: Pugh Decision Matrix">
+    <meta
+      property="og:description"
+      content="How engineers choose between design concepts with a weighted decision matrix (the Pugh method): criteria, weights, scoring, a worked example and common mistakes."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/how-engineers-choose-between-concepts.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-how-engineers-choose-between-concepts.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Choosing Between Concepts: Pugh Decision Matrix">
+    <meta
+      name="twitter:description"
+      content="How engineers choose between design concepts with a weighted decision matrix (the Pugh method): criteria, weights, scoring, a worked example and common mistakes."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-how-engineers-choose-between-concepts.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-how-engineers-choose-between-concepts.jpg",
+        "headline": "Choosing Between Concepts: Pugh Decision Matrix",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-24",
+        "articleSection": "Concept development",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/how-engineers-choose-between-concepts.html",
+        "datePublished": "2026-03-12"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Choosing between concepts",
+                "item": "https://oriondesign.xyz/guides/how-engineers-choose-between-concepts.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a Pugh matrix in product design?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Pugh matrix compares several design concepts against a reference concept, called the datum, across a fixed set of criteria. Each concept is marked better, the same or worse than the datum for each criterion. It is a fast way to screen out weak options and spot strengths worth combining before more detailed scoring."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many concepts should you compare in a selection matrix?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Screening can handle a wider set, but detailed weighted scoring works best with around two to four serious concepts. Beyond that, the scoring takes longer than the insight it produces. Use quick screening to cut the list down first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you choose weights for concept selection criteria?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Agree the weights before scoring, based on what the project genuinely needs to succeed, and make sure they add up to 100%. A useful check is to ask which criterion you would sacrifice first if forced. Then test whether reasonable changes to the weights change the winner."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between concept screening and concept scoring?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Screening uses simple better, same or worse judgements against a reference to narrow a long list quickly. Scoring uses weighted numerical ratings on a short list to compare finalists in more detail. Most teams screen first and score second."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should you do if two concepts score almost the same?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Treat a close result as a sign that the evidence is not yet strong enough to separate them. Identify the criteria driving the difference and run a quick test, prototype or supplier enquiry to firm up those scores. Look for a hybrid that keeps the strengths of both."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Choosing between concepts</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 24 November 2026 <span aria-hidden="true">·</span> For design teams choosing which concept to develop</p>
+            <h1>How engineers choose between concepts.</h1>
+            <p>
+              Good concept selection is not about defending a favourite idea. It is about comparing options against the same criteria,
+              surfacing the real trade-offs, and deciding what needs to be de-risked next.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Engineers choose between concepts by scoring each option against the same agreed, weighted criteria, then testing the assumptions behind the leader.</h2>
+              <div class="formula-block">Concept decision = agreed criteria + honest weights + evidence-based scores + a plan to de-risk the leading option</div>
+              <p>
+                A Pugh matrix or weighted scoring matrix makes the trade-offs visible. It does not make the decision for you: its real output is a shortlist
+                and a clear view of what still needs to be proven before more design effort is committed.
+              </p>
+            </div>
+
+            <p>
+              Teams rarely struggle because they have no ideas. They struggle because several ideas remain plausible at the same time and each stakeholder is weighting success differently.
+              The founder may be thinking about the customer, the engineer about technical risk, and the investor about unit cost. That is when a structured concept-selection matrix becomes useful.
+            </p>
+            <div class="article-highlight">
+              <strong>Better question:</strong>
+              not “which concept wins?” but “which concept is strongest under the criteria we actually agree matter, and what evidence would change that answer?”
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#in-practice">How concept selection works in practice</a></li>
+              <li><a class="text-link-inline" href="#decision-matrix">What a strong decision matrix includes</a></li>
+              <li><a class="text-link-inline" href="#criteria">Typical criteria for a physical product</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: three concepts for a rechargeable bike light (illustrative)</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common concept-selection mistakes</a></li>
+              <li><a class="text-link-inline" href="#after-the-matrix">What to do after the matrix</a></li>
+              <li><a class="text-link-inline" href="#weighted-comparison">Use weighted comparison to improve decision quality</a></li>
+            </ol>
+
+            <h2 id="in-practice">How concept selection works in practice</h2>
+            <p>
+              Most engineering teams use two passes. The first is <strong>concept screening</strong>, often done with a <a class="glossary-term" href="../knowledge/glossary.html#term-pugh-matrix" data-definition="A concept-selection method that scores options against a reference design, criterion by criterion." aria-label="Pugh matrix: A concept-selection method that scores options against a reference design, criterion by criterion. (glossary)">Pugh matrix</a>: one concept, or an existing product,
+              is chosen as the reference (the datum), and every other concept is marked better (+), the same (0) or worse (−) against each criterion.
+              Screening is quick and is good at removing weak options and spotting strengths that could be combined.
+            </p>
+            <p>
+              The second pass is <strong>concept scoring</strong>. The remaining two to four concepts are rated on a scale, typically 1 to 5, and each criterion carries a weight
+              that reflects its importance to the project. Multiplying scores by weights gives a total that is easier to discuss, as long as everyone remembers that the precision is only as good as the inputs.
+            </p>
+
+            <h2 id="decision-matrix">What a strong decision matrix includes</h2>
+            <ul>
+              <li>stable criteria used across every concept, agreed before anyone scores</li>
+              <li>weights that reflect the real project priorities and add up to 100%</li>
+              <li>scores grounded in evidence such as tests, quotes, user sessions or calculations, not just preference</li>
+              <li>a note of the confidence behind each score, so weak evidence is visible</li>
+              <li>a follow-up view of what the matrix does not yet know</li>
+            </ul>
+
+            <h2 id="criteria">Typical criteria for a physical product</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Criterion</th>
+                  <th>What it asks</th>
+                  <th>Evidence that supports a score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>User value</td>
+                  <td>How well does the concept solve the problem the customer actually has?</td>
+                  <td>User interviews, rough prototype trials, observed workarounds</td>
+                </tr>
+                <tr>
+                  <td>Technical feasibility</td>
+                  <td>Can it be made to work reliably with known technology?</td>
+                  <td>Calculations, rig tests, supplier data sheets</td>
+                </tr>
+                <tr>
+                  <td>Manufacturability</td>
+                  <td>Can it be made repeatably with sensible processes and tolerances?</td>
+                  <td>Early <a class="glossary-term" href="../knowledge/glossary.html#term-design-for-manufacture-dfm" data-definition="Designing parts so they can be made reliably and economically by the chosen process." aria-label="DFM: Designing parts so they can be made reliably and economically by the chosen process. (glossary)">DFM</a> review, supplier conversations, <a class="glossary-term" href="../knowledge/glossary.html#term-part-count" data-definition="The number of separate parts in a product. Each one adds tooling or set-up, stock, handling and assembly time, so reducing it is a core aim of design for assembly." aria-label="part count: The number of separate parts in a product. Each one adds tooling or set-up, stock, handling and assembly time, so reducing it is a core aim of design for assembly. (glossary)">part count</a></td>
+                </tr>
+                <tr>
+                  <td>Unit cost</td>
+                  <td>Does the likely cost leave room for the target selling price?</td>
+                  <td>Rough <a class="glossary-term" href="../knowledge/glossary.html#term-bill-of-materials-bom" data-definition="The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly." aria-label="BOM: The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly. (glossary)">BOM</a>, process estimates, indicative quotes</td>
+                </tr>
+                <tr>
+                  <td>Development risk</td>
+                  <td>How many unknowns stand between the concept and a working product?</td>
+                  <td>Count of unproven functions, dependence on new suppliers or technology</td>
+                </tr>
+                <tr>
+                  <td>Compliance</td>
+                  <td>What standards or approvals will it need?</td>
+                  <td>Initial regulatory screen for safety, <a class="glossary-term" href="../knowledge/glossary.html#term-electromagnetic-compatibility-emc" data-definition="The ability of electrical equipment to work without causing or suffering unacceptable electromagnetic interference." aria-label="EMC: The ability of electrical equipment to work without causing or suffering unacceptable electromagnetic interference. (glossary)">EMC</a>, radio or <a class="glossary-term" href="../knowledge/glossary.html#term-food-contact-materials" data-definition="Materials and parts intended to touch food or drink, such as containers, utensils and appliance parts. They need grades and evidence suited to that use, so check the rules early." aria-label="food contact: Materials and parts intended to touch food or drink, such as containers, utensils and appliance parts. They need grades and evidence suited to that use, so check the rules early. (glossary)">food contact</a></td>
+                </tr>
+                <tr>
+                  <td>Lifetime and repair</td>
+                  <td>Will it last, and can it be serviced when parts wear?</td>
+                  <td>Wear-part analysis, fastening strategy, battery access</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Five to seven criteria is usually enough. More than that and the weights become thin, the scoring slows down, and criteria start to overlap.
+            </p>
+
+            <h2 id="example">Worked example: three concepts for a rechargeable bike light (illustrative)</h2>
+            <div class="worked-example">
+              <p>
+                Imagine a startup with three concepts for a clip-on rechargeable rear bike light. Concept A is a sealed one-piece moulded housing with a built-in battery.
+                Concept B uses a two-part housing with a user-replaceable battery. Concept C puts a bought-in LED and battery module inside a simple custom shell.
+                The figures below are illustrative, not data from a real project.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Criterion (weight)</th>
+                  <th>A: sealed housing</th>
+                  <th>B: replaceable battery</th>
+                  <th>C: bought-in module</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>User value (30%)</td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>Manufacturability (20%)</td>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Unit cost (20%)</td>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>Development risk (15%)</td>
+                  <td>3</td>
+                  <td>3</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>Lifetime and repair (15%)</td>
+                  <td>2</td>
+                  <td>5</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td><strong>Weighted total</strong></td>
+                  <td><strong>3.55</strong></td>
+                  <td><strong>3.60</strong></td>
+                  <td><strong>3.75</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              On paper Concept C leads. But the totals sit within 0.2 of each other, which is well inside the uncertainty of the scores. A quick sensitivity check makes the point:
+              raise user value to 40% and drop unit cost to 10%, and Concept B moves to the top with 3.70 while A and C tie on 3.55.
+              The matrix is telling the team that the decision hinges on how much customers value brightness, mounting and battery life against price.
+            </p>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 290" width="100%" role="img" aria-labelledby="cs-fig-title cs-fig-desc">
+                <title id="cs-fig-title">Weighted totals for three bike-light concepts, before and after a change of weights</title>
+                <desc id="cs-fig-desc">Slope chart of the weighted totals from the worked example. With the base weights, Concept C leads on 3.75, B scores 3.60 and A 3.55. Raising user value to 40% and cutting unit cost to 10% puts B on top with 3.70, while A and C tie on 3.55.</desc>
+                <text x="120" y="18" text-anchor="middle" class="gd-h">Base weights</text>
+                <text x="240" y="18" text-anchor="middle" class="gd-h">User value 40%</text>
+                <text x="240" y="36" text-anchor="middle" class="gd-m">unit cost 10%</text>
+                <line x1="54" y1="206.9" x2="320" y2="206.9" class="gd-grid"/>
+                <text x="48" y="211.9" text-anchor="end" class="gd-m">3.50</text>
+                <line x1="54" y1="156.6" x2="320" y2="156.6" class="gd-grid"/>
+                <text x="48" y="161.6" text-anchor="end" class="gd-m">3.60</text>
+                <line x1="54" y1="106.3" x2="320" y2="106.3" class="gd-grid"/>
+                <text x="48" y="111.3" text-anchor="end" class="gd-m">3.70</text>
+                <line x1="54" y1="56" x2="320" y2="56" class="gd-grid"/>
+                <text x="48" y="61" text-anchor="end" class="gd-m">3.80</text>
+                <line x1="120" y1="181.7" x2="240" y2="181.7" class="gd-curve gd-stroke-indigo"/>
+                <line x1="120" y1="156.6" x2="240" y2="106.3" class="gd-curve gd-stroke-magenta"/>
+                <line x1="120" y1="81.1" x2="240" y2="181.7" class="gd-curve gd-stroke-teal"/>
+                <circle cx="120" cy="181.7" r="6" class="gd-fill-indigo"/>
+                <circle cx="240" cy="181.7" r="6" class="gd-fill-indigo"/>
+                <text x="108" y="186.7" text-anchor="end" class="gd-v gd-ti">A 3.55</text>
+                <circle cx="120" cy="156.6" r="6" class="gd-fill-magenta"/>
+                <circle cx="240" cy="106.3" r="6" class="gd-fill-magenta"/>
+                <text x="108" y="161.6" text-anchor="end" class="gd-v gd-tm">B 3.60</text>
+                <circle cx="120" cy="81.1" r="6" class="gd-fill-teal"/>
+                <circle cx="240" cy="181.7" r="6" class="gd-fill-teal"/>
+                <text x="108" y="86.1" text-anchor="end" class="gd-v gd-tt">C 3.75</text>
+                <text x="252" y="111.3" class="gd-v gd-tm">B 3.70</text>
+                <text x="252" y="186.7" class="gd-v">A, C 3.55</text>
+                <text x="20" y="262" class="gd-t">All three totals sit within 0.2, inside</text>
+                <text x="20" y="280" class="gd-t">the uncertainty of the scores.</text>
+              </svg>
+              <figcaption>Illustrative scores from the table above. One reasonable change of weights reverses the order, so the matrix points to a test of what customers value rather than to a winner.</figcaption>
+            </figure>
+
+            <p>
+              One concept might lead on customer value but lag on manufacturability. Another may be technically safer but commercially weaker.
+              The right response is often to identify the best de-risking experiment, not to declare the discussion over. Here, that might be a short <a class="text-link-inline" href="usability-testing-a-prototype.html">user test</a>
+              with rough prototypes of B and C, plus an indicative quote for the bought-in module at the expected volumes.
+            </p>
+
+            <h2 id="mistakes">Common concept-selection mistakes</h2>
+            <div class="article-summary-list">
+              <div><strong>Changing the criteria mid-discussion.</strong> That usually means the team is trying to defend a preferred solution after the fact.</div>
+              <div><strong>Weighting everything highly.</strong> If every criterion is critical, none of them are helping make the decision.</div>
+              <div><strong>Scoring as a group from the start.</strong> The loudest voice anchors everyone else. Score individually first, then discuss the differences.</div>
+              <div><strong>Double counting.</strong> Criteria such as “part count” and “assembly cost” often measure the same thing and quietly inflate one concept.</div>
+              <div><strong>Ignoring hybrids.</strong> The best answer is often a combination, such as the low-risk electronics of one concept inside the better housing of another.</div>
+              <div><strong>Treating the output as final truth.</strong> The matrix should guide the next test, not replace engineering judgement.</div>
+            </div>
+
+            <div class="pull-quote">
+              <p>
+                A concept matrix is most useful when it shows the team where it disagrees. The disagreement is usually where the next experiment belongs.
+              </p>
+            </div>
+
+            <h2 id="after-the-matrix">What to do after the matrix</h2>
+            <ol>
+              <li>Name the leading concept and a credible runner-up, so there is a fallback if testing goes badly.</li>
+              <li>List the assumptions behind the leader’s highest scores, starting with the ones that carry the most weight.</li>
+              <li>Design the cheapest test that could prove each assumption wrong: a rough prototype, a calculation, a <a class="text-link-inline" href="comparing-manufacturing-quotes.html">supplier quote</a> or a user session.</li>
+              <li>Set a date to rescore with the new evidence, using the same criteria and weights.</li>
+              <li>Record the decision and the reasoning, so later design changes can be traced back to it.</li>
+            </ol>
+            <p>
+              If the problem itself is still uncertain, step back before scoring concepts. The guide on
+              <a class="text-link-inline" href="how-to-validate-a-product-idea.html">how to validate a product idea</a> covers the evidence to collect first.
+            </p>
+
+            <h2 id="weighted-comparison">Use weighted comparison to improve decision quality</h2>
+            <p>
+              The <a class="text-link-inline" href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a> gives the team a visible way to compare concepts and adjust weights to see how robust the result is.
+              Pair it with the <a class="text-link-inline" href="../tools/product-design-process-map.html">Product Design Process Map</a> if the chosen concept still needs structured development gates,
+              and read <a class="text-link-inline" href="mapping-the-product-design-process.html">Mapping the product design process</a> for how <a class="glossary-term" href="../knowledge/glossary.html#term-concept-selection" data-definition="Choosing between design concepts using structured criteria rather than preference." aria-label="concept selection: Choosing between design concepts using structured criteria rather than preference. (glossary)">concept selection</a> fits the wider project.
+              Once a direction is settled, the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a> can turn it into a staged plan with costs and milestones.
+            </p>
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Compare concepts transparently</h3>
+                <p>Run a weighted matrix so value, feasibility, manufacturability, and commercial logic are compared in one place.</p>
+                <a class="button button-primary" href="../tools/pugh-concept-selector.html" data-analytics-event="article_cta_click" data-analytics-label="concept_article_to_pugh_tool">Open Pugh Concept Selector</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Map the next stage after selection</h3>
+                <p>Use the process map if the winning concept now needs clearer planning rather than more debate.</p>
+                <a class="button button-secondary" href="../tools/product-design-process-map.html" data-analytics-event="article_cta_click" data-analytics-label="concept_article_to_process_map">Open Product Design Process Map</a>
+              </div>
+            </div>
+          </article>
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="opportunity-and-concept.html">Opportunity and concept: the hub guide</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related tools</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-design-process-map.html">Product Design Process Map</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-purpose.html">Product Purpose Framework</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Typical questions</p>
+              <div class="tag-row">
+                <span>Pugh matrix example</span>
+                <span>Choose between product concepts</span>
+                <span>Concept selection matrix</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is a Pugh matrix in product design?</h3>
+                <p>A Pugh matrix compares several design concepts against a reference concept, called the datum, across a fixed set of criteria. Each concept is marked better, the same or worse than the datum for each criterion. It is a fast way to screen out weak options and spot strengths worth combining before more detailed scoring.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How many concepts should you compare in a selection matrix?</h3>
+                <p>Screening can handle a wider set, but detailed weighted scoring works best with around two to four serious concepts. Beyond that, the scoring takes longer than the insight it produces. Use quick screening to cut the list down first.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do you choose weights for concept selection criteria?</h3>
+                <p>Agree the weights before scoring, based on what the project genuinely needs to succeed, and make sure they add up to 100%. A useful check is to ask which criterion you would sacrifice first if forced. Then test whether reasonable changes to the weights change the winner.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between concept screening and concept scoring?</h3>
+                <p>Screening uses simple better, same or worse judgements against a reference to narrow a long list quickly. Scoring uses weighted numerical ratings on a short list to compare finalists in more detail. Most teams screen first and score second.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should you do if two concepts score almost the same?</h3>
+                <p>Treat a close result as a sign that the evidence is not yet strong enough to separate them. Identify the criteria driving the difference and run a quick test, prototype or supplier enquiry to firm up those scores. Look for a hybrid that keeps the strengths of both.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">Author</p>
+            <h2>Andrew Hunter</h2>
+            <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to inform early decisions, then validate against project-specific data, supplier input, and production constraints.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports concept decisions before effort gets locked in.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a>
+          <a href="../tools/product-design-process-map.html">Product Design Process Map</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

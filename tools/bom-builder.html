@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Bill of Materials (BOM) Cost Builder | Orion Design</title>
+    <meta
+      name="description"
+      content="Build a simple bill of materials, roll up the cost per product by category, and send the totals straight into the Product Cost Estimator."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/bom-builder.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Bill of Materials Cost Builder | Orion Design">
+    <meta
+      property="og:description"
+      content="Build a simple bill of materials, roll up the cost per product by category, and send the totals straight into the Product Cost Estimator."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/bom-builder.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-bom-builder.jpg">
+    <meta property="og:image:alt" content="Bill of materials cost builder from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bill of Materials Cost Builder | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Build a simple bill of materials, roll up the cost per product by category, and send the totals straight into the Product Cost Estimator."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-bom-builder.jpg">
+    <meta name="twitter:image:alt" content="Bill of materials cost builder from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-bom-builder.jpg",
+        "name": "Bill of Materials Cost Builder",
+        "url": "https://oriondesign.xyz/tools/bom-builder.html",
+        "description": "Roll up a product bill of materials into cost per product by category and pass the totals to the Product Cost Estimator.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Bill of Materials Cost Builder",
+                "item": "https://oriondesign.xyz/tools/bom-builder.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a bill of materials?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A structured list of every part, material and quantity needed to make one product. It is used for costing, purchasing, stock control and assembly, and it is one of the first documents a manufacturer will ask for."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is the BOM cost the same as the product's unit cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The BOM cost covers parts and materials. The full unit cost adds assembly labour, scrap, testing, freight and duty, and a share of overhead and tooling. Use the Product Cost Estimator to add those."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What goes in the processing category?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The cost of turning raw material into a made part, such as moulding, machining, cutting, bending or finishing, when you are quoted for it separately from the material. If a supplier quotes a made part as one price, enter it as bought-in."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why are only ten lines available?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The tool is for quick roll-ups. Group small items, such as all fasteners or all labels, into one line. For a full BOM with hundreds of lines, use a spreadsheet or product data system and bring the category totals here."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are part names saved in the share link?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, if you use the Copy link to this result button: the link carries any part names, categories, quantities and costs you have changed from the example, so anyone you send it to will see them. The address in your browser bar carries only the numbers and categories. Part names are also included in the copied summary and in the result you save to your product plan."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Bill of Materials Cost Builder</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Bill of Materials Cost Builder</h1>
+            <p>
+              List the parts in your product with their quantities and unit costs, see the cost per product by category, and send the totals straight into the
+              Product Cost Estimator to add assembly, scrap and overhead. Up to ten lines; group small items, such as fasteners, into one line.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="BOM builder worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"bomName1":"Enclosure top","bomCat1":"material","bomQty1":"1","bomCost1":"0.45","bomName2":"Enclosure base","bomCat2":"material","bomQty2":"1","bomCost2":"0.52","bomName3":"Moulding both enclosure parts","bomCat3":"process","bomQty3":"2","bomCost3":"0.3","bomName4":"Circuit board, assembled","bomCat4":"bought","bomQty4":"1","bomCost4":"6.8","bomName5":"Rechargeable battery","bomCat5":"bought","bomQty5":"1","bomCost5":"2.1","bomName6":"Screws","bomCat6":"bought","bomQty6":"4","bomCost6":"0.03","bomName7":"Rubber feet","bomCat7":"bought","bomQty7":"4","bomCost7":"0.05","bomName8":"Retail box and insert","bomCat8":"packaging","bomQty8":"1","bomCost8":"0.95","bomName9":"","bomCat9":"material","bomQty9":"0","bomCost9":"0","bomName10":"","bomCat10":"material","bomQty10":"0","bomCost10":"0"}'>Small electronic gadget</button>
+              <button class="preset-button" type="button" data-tool-preset='{"bomName1":"Moulded handle","bomCat1":"material","bomQty1":"1","bomCost1":"0.38","bomName2":"Handle moulding","bomCat2":"process","bomQty2":"1","bomCost2":"0.22","bomName3":"Stainless steel head","bomCat3":"bought","bomQty3":"1","bomCost3":"1.45","bomName4":"Rivets","bomCat4":"bought","bomQty4":"2","bomCost4":"0.04","bomName5":"Hang-tag card","bomCat5":"packaging","bomQty5":"1","bomCost5":"0.12","bomName6":"","bomCat6":"material","bomQty6":"0","bomCost6":"0","bomName7":"","bomCat7":"material","bomQty7":"0","bomCost7":"0","bomName8":"","bomCat8":"material","bomQty8":"0","bomCost8":"0","bomName9":"","bomCat9":"material","bomQty9":"0","bomCost9":"0","bomName10":"","bomCat10":"material","bomQty10":"0","bomCost10":"0"}'>Kitchen utensil</button>
+              <button class="preset-button" type="button" data-tool-preset='{"bomName1":"Steel sheet","bomCat1":"material","bomQty1":"1","bomCost1":"3.2","bomName2":"Laser cut and fold","bomCat2":"process","bomQty2":"1","bomCost2":"4.5","bomName3":"Powder coat","bomCat3":"process","bomQty3":"1","bomCost3":"2.8","bomName4":"Hinges","bomCat4":"bought","bomQty4":"2","bomCost4":"0.9","bomName5":"Latch","bomCat5":"bought","bomQty5":"1","bomCost5":"1.6","bomName6":"Cable glands","bomCat6":"bought","bomQty6":"2","bomCost6":"0.55","bomName7":"Carton","bomCat7":"packaging","bomQty7":"1","bomCost7":"1.1","bomName8":"","bomCat8":"material","bomQty8":"0","bomCost8":"0","bomName9":"","bomCat9":"material","bomQty9":"0","bomCost9":"0","bomName10":"","bomCat10":"material","bomQty10":"0","bomCost10":"0"}'>Sheet-metal enclosure</button>
+            </div>
+            <form class="tool-form" id="bomForm">
+              <table class="tool-table bom-table">
+                <thead>
+                  <tr>
+                    <th>Part</th>
+                    <th>Category</th>
+                    <th>Qty</th>
+                    <th>Unit cost (£)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input id="bomName1" type="text" value="Enclosure top" aria-label="Line 1 part name" placeholder="Part name"></td>
+                    <td><select id="bomCat1" aria-label="Line 1 cost category"><option value="material" selected>Material</option><option value="process">Processing</option><option value="bought">Bought-in</option><option value="packaging">Packaging</option></select></td>
+                    <td><input id="bomQty1" type="number" min="0" step="1" value="1" aria-label="Line 1 quantity per product"></td>
+                    <td><input id="bomCost1" type="number" min="0" step="0.01" value="0.45" aria-label="Line 1 unit cost in pounds"></td>
+                  </tr>
+                  <tr>
+                    <td><input id="bomName2" type="text" value="Enclosure base" aria-label="Line 2 part name" placeholder="Part name"></td>
+                    <td><select id="bomCat2" aria-label="Line 2 cost category"><option value="material" selected>Material</option><option value="process">Processing</option><option value="bought">Bought-in</option><option value="packaging">Packaging</option></select></td>
+                    <td><input id="bomQty2" type="number" min="0" step="1" value="1" aria-label="Line 2 quantity per product"></td>
+                    <td><input id="bomCost2" type="number" min="0" step="0.01" value="0.52" aria-label="Line 2 unit cost in pounds"></td>
+                  </tr>
+                  <tr>
+                    <td><input id="bomName3" type="text" value="Moulding both enclosure parts" aria-label="Line 3 part name" placeholder="Part name"></td>
+                    <td><select id="bomCat3" aria-label="Line 3 cost category"><option value="material">Material</option><option value="process" selected>Processing</option><option value="bought">Bought-in</option><option value="packaging">Packaging</option></select></td>
+                    <td><input id="bomQty3" type="number" min="0" step="1" value="2" aria-label="Line 3 quantity per product"></td>
+                    <td><input id="bomCost3" type="number" min="0" step="0.01" value="0.3" aria-label="Line 3 unit cost in pounds"></td>
+                  </tr>
+                  <tr>
+                    <td><input id="bomName4" type="text" value="Circuit board, assembled" aria-label="Line 4 part name" placeholder="Part name"></td>
+                    <td><select id="bomCat4" aria-label="Line 4 cost category"><option value="material">Material</option><option value="process">Processing</option><option value="bought" selected>Bought-in</option><option value="packaging">Packaging</option></select></td>
+                    <td><input id="bomQty4" type="number" min="0" step="1" value="1" aria-label="Line 4 quantity per product"></td>
+                    <td><input id="bomCost4" type="number" min="0" step="0.01" value="6.8" aria-label="Line 4 unit cost in pounds"></td>
+                  </tr>
+                  <tr>
+                    <td><input id="bomName5" type="text" value="Rechargeable battery" aria-label="Line 5 part name" placeholder="Part name"></td>
+                    <td><select id="bomCat5" aria-label="Line 5 cost category"><option value="material">Material</option><option value="process">Processing</option><option value="bought" selected>Bought-in</option><option value="packaging">Packaging</option></select></td>
+                    <td><input id="bomQty5" type="number" min="0" step="1" value="1" aria-label="Line 5 quantity per product"></td>
+                    <td><input id="bomCost5" type="number" min="0" step="0.01" value="2.1" aria-label="Line 5 unit cost in pounds"></td>
+                  </tr>
+                  <tr>
+                    <td><input id="bomName6" type="text" value="Screws" aria-label="Line 6 part name" placeholder="Part name"></td>
+                    <td><select id="bomCat6" aria-label="Line 6 cost category"><option value="material">Material</option><option value="process">Processing</option><option value="bought" selected>Bought-in</option><option value="packaging">Packaging</option></select></td>
+                    <td><input id="bomQty6" type="number" min="0" step="1" value="4" aria-label="Line 6 quantity per product"></td>
+                    <td><input id="bomCost6" type="number" min="0" step="0.01" value="0.03" aria-label="Line 6 unit cost in pounds"></td>
+                  </tr>
+                  <tr>
+                    <td><input id="bomName7" type="text" value="Rubber feet" aria-label="Line 7 part name" placeholder="Part name"></td>
+                    <td><select id="bomCat7" aria-label="Line 7 cost category"><option value="material">Material</option><option value="process">Processing</option><option value="bought" selected>Bought-in</option><option value="packaging">Packaging</option></select></td>
+                    <td><input id="bomQty7" type="number" min="0" step="1" value="4" aria-label="Line 7 quantity per product"></td>
+                    <td><input id="bomCost7" type="number" min="0" step="0.01" value="0.05" aria-label="Line 7 unit cost in pounds"></td>
+                  </tr>
+                  <tr>
+                    <td><input id="bomName8" type="text" value="Retail box and insert" aria-label="Line 8 part name" placeholder="Part name"></td>
+                    <td><select id="bomCat8" aria-label="Line 8 cost category"><option value="material">Material</option><option value="process">Processing</option><option value="bought">Bought-in</option><option value="packaging" selected>Packaging</option></select></td>
+                    <td><input id="bomQty8" type="number" min="0" step="1" value="1" aria-label="Line 8 quantity per product"></td>
+                    <td><input id="bomCost8" type="number" min="0" step="0.01" value="0.95" aria-label="Line 8 unit cost in pounds"></td>
+                  </tr>
+                  <tr>
+                    <td><input id="bomName9" type="text" value="" aria-label="Line 9 part name" placeholder="Part name"></td>
+                    <td><select id="bomCat9" aria-label="Line 9 cost category"><option value="material" selected>Material</option><option value="process">Processing</option><option value="bought">Bought-in</option><option value="packaging">Packaging</option></select></td>
+                    <td><input id="bomQty9" type="number" min="0" step="1" value="0" aria-label="Line 9 quantity per product"></td>
+                    <td><input id="bomCost9" type="number" min="0" step="0.01" value="0" aria-label="Line 9 unit cost in pounds"></td>
+                  </tr>
+                  <tr>
+                    <td><input id="bomName10" type="text" value="" aria-label="Line 10 part name" placeholder="Part name"></td>
+                    <td><select id="bomCat10" aria-label="Line 10 cost category"><option value="material" selected>Material</option><option value="process">Processing</option><option value="bought">Bought-in</option><option value="packaging">Packaging</option></select></td>
+                    <td><input id="bomQty10" type="number" min="0" step="1" value="0" aria-label="Line 10 quantity per product"></td>
+                    <td><input id="bomCost10" type="number" min="0" step="0.01" value="0" aria-label="Line 10 unit cost in pounds"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="helper-text">Material and processing are for parts you have made (for example the plastic and the moulding cost); bought-in covers ready-made components. Use unit costs for your expected order quantity.</p>
+              <button class="button button-primary" type="submit">Update roll-up</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="bomSummary"></div>
+            <div class="comparison-list" id="bomBreakdown"></div>
+            <p><a class="button button-secondary" id="bomToEstimator" href="product-cost-estimator.html">Use these costs in the Product Cost Estimator</a></p>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#bomCopy"
+                  data-copy-feedback="#bomCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="bomCopy" class="copy-output" readonly></textarea>
+              <div id="bomCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help finding cost savings?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="bom_builder_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A bill of materials lists every part and quantity in a product; rolling up its costs gives the parts cost per unit.</h2>
+              <div class="formula-block">Line cost = quantity per product × unit cost
+BOM cost = Σ line costs (grouped as material, processing, bought-in and packaging)</div>
+              <p>The BOM cost is not the full unit cost: assembly labour, scrap, freight and overhead come on top. The link to the Product Cost Estimator carries the four category totals across so you can add those.</p>
+            </div>
+
+            <h2>Building a useful BOM</h2>
+            <ul>
+              <li><strong>List every part,</strong> including fasteners, labels, adhesives, cables and packaging.</li>
+              <li><strong>Use costs for your real order quantity.</strong> A quote for 100 parts and one for 10,000 can differ many times over.</li>
+              <li><strong>Mark where each figure came from</strong> (quote, estimate or guess) in your own records, and firm up the biggest lines first.</li>
+              <li><strong>Separate made and bought parts.</strong> Made parts have material and processing costs, and usually tooling; bought parts have a supplier price.</li>
+            </ul>
+            <h2>How to read your result</h2>
+            <p>
+              Look first at the largest lines: a few parts often make up most of the cost, so that is where design changes, alternative suppliers or volume pricing make the biggest difference.
+              If bought-in components dominate, supplier choice and order quantity matter most; if made parts dominate, design for manufacture and the manufacturing route matter most
+              (see the <a class="text-link-inline" href="../guides/manufacturing-and-cost.html">Manufacturing and cost hub</a> and the <a class="text-link-inline" href="dfm-checker.html">DFM checker</a>).
+            </p>
+            <p>
+              Then open the totals in the <a class="text-link-inline" href="product-cost-estimator.html">Product Cost Estimator</a> to complete the unit cost, and add freight and duty with the
+              <a class="text-link-inline" href="landed-cost-calculator.html">Landed Cost Calculator</a> if parts are imported. Save your BOM to your <a href="product-plan-builder.html">product plan</a>.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/how-to-estimate-manufacturing-cost.html">How to estimate manufacturing cost</a></div>
+                <div class="aside-item"><a class="text-link" href="product-cost-estimator.html">Product Cost Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="landed-cost-calculator.html">Landed Cost Calculator</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/manufacturing-and-cost.html">Manufacturing and cost hub</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Bill of materials</span>
+                <span>Cost roll-up</span>
+                <span>Cost-down</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is a bill of materials?</h3>
+                <p>A structured list of every part, material and quantity needed to make one product. It is used for costing, purchasing, stock control and assembly, and it is one of the first documents a manufacturer will ask for.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is the BOM cost the same as the product's unit cost?</h3>
+                <p>No. The BOM cost covers parts and materials. The full unit cost adds assembly labour, scrap, testing, freight and duty, and a share of overhead and tooling. Use the Product Cost Estimator to add those.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What goes in the processing category?</h3>
+                <p>The cost of turning raw material into a made part, such as moulding, machining, cutting, bending or finishing, when you are quoted for it separately from the material. If a supplier quotes a made part as one price, enter it as bought-in.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why are only ten lines available?</h3>
+                <p>The tool is for quick roll-ups. Group small items, such as all fasteners or all labels, into one line. For a full BOM with hundreds of lines, use a spreadsheet or product data system and bring the category totals here.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Are part names saved in the share link?</h3>
+                <p>Yes, if you use the Copy link to this result button: the link carries any part names, categories, quantities and costs you have changed from the example, so anyone you send it to will see them. The address in your browser bar carries only the numbers and categories. Part names are also included in the copied summary and in the result you save to your product plan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="cashflow-projection.html">Cashflow Projection</a>
+          <a href="../guides/financial-break-even-for-hardware-products.html">Break-even guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/bom-builder.js" defer></script>
+  </body>
+</html>

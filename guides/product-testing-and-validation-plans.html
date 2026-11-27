@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Product Testing and Validation Plans | Orion Design</title>
+    <meta
+      name="description"
+      content="How to plan product testing: verification vs validation, what a test plan contains, types of test, testing at each prototype stage, pre-compliance and common mistakes."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/product-testing-and-validation-plans.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Product testing and validation plans | Orion Design">
+    <meta
+      property="og:description"
+      content="How to plan product testing: verification vs validation, what a test plan contains, types of test, testing at each prototype stage, pre-compliance and common mistakes."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/product-testing-and-validation-plans.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-product-testing-and-validation-plans.jpg">
+    <meta property="og:image:alt" content="Product testing and validation plans guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Product testing and validation plans | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to plan product testing: verification vs validation, what a test plan contains, types of test, testing at each prototype stage, pre-compliance and common mistakes."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-product-testing-and-validation-plans.jpg">
+    <meta name="twitter:image:alt" content="Product testing and validation plans guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-product-testing-and-validation-plans.jpg",
+        "headline": "Product testing and validation plans: proving a product works",
+        "description": "How to plan product testing: verification vs validation, what a test plan contains, types of test, testing at each prototype stage, pre-compliance and common mistakes.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-25",
+        "articleSection": "Development and prototyping",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/product-testing-and-validation-plans.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Product testing"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design verification and validation"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Product testing and validation plans",
+                "item": "https://oriondesign.xyz/guides/product-testing-and-validation-plans.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the difference between verification and validation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Verification checks that the product meets its specified requirements. Validation checks that it meets users' real needs in real use. A product can pass verification and still fail validation if the requirements were wrong."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should a product test plan include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For each test: the requirement or question, the method, the number and build stage of samples, pass criteria agreed in advance, who will do it and where, and the timing and cost."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should testing start?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "As soon as there is something to test. Early prototypes test the riskiest functions and user reactions; later stages add fuller performance, durability, usability and compliance testing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is pre-compliance testing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Informal testing against the requirements of a regulation or standard before formal certification testing, so problems are found and fixed before paying for accredited lab tests."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many units should I test?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Enough to be confident the result is not luck, which depends on the test, the risk and the variation between units. Safety-critical tests usually need more units than quick engineering checks."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Product testing and validation plans</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 25 November 2026 <span aria-hidden="true">·</span> For product teams planning tests from first prototype to production</p>
+            <h1>Product testing and validation plans: proving a product works</h1>
+            <p>
+              How to plan testing for a physical product: the difference between verification and validation, what goes into a test plan, the main types of test, and which tests belong at each stage from early prototypes to production.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Verification checks you built the product right; validation checks you built the right product. A good test plan covers both, linked to your requirements.</h2>
+              <p>
+                Turn each requirement into a test with a method, a sample size and a pass or fail criterion. Plan which tests happen at which prototype stage, from quick engineering checks on early models
+                to formal testing on production-representative units. Include user testing, durability and life tests, transit tests and any certification testing, and record results so decisions can be traced.
+              </p>
+            </div>
+
+            <h2>Verification and validation</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Verification</th>
+                  <th>Validation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Question</td>
+                  <td>Does the product meet its requirements?</td>
+                  <td>Does the product meet users' real needs in real use?</td>
+                </tr>
+                <tr>
+                  <td>Examples</td>
+                  <td>Dimensions, strength, battery life, drop tests, temperature, electrical safety</td>
+                  <td>User trials, in-home or field testing, usability sessions</td>
+                </tr>
+                <tr>
+                  <td>Based on</td>
+                  <td>The <a class="text-link-inline" href="how-to-write-a-product-requirements-document.html">product requirements document</a></td>
+                  <td>The user, problem and use environment</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>A product can pass every <a class="glossary-term" href="../knowledge/glossary.html#term-verification" data-definition="Checking that a product meets its specified requirements, through tests, inspection and analysis." aria-label="verification: Checking that a product meets its specified requirements, through tests, inspection and analysis. (glossary)">verification</a> test and still fail validation, if the requirements were wrong. That is why both matter.</p>
+
+            <h2>What a test plan contains</h2>
+            <ul>
+              <li><strong>Requirement or question</strong> being tested, with its ID.</li>
+              <li><strong>Method:</strong> how the test is done, ideally to a named standard or a written procedure.</li>
+              <li><strong>Samples:</strong> how many units, made how, at which build stage.</li>
+              <li><strong>Pass criteria:</strong> agreed before testing, not after seeing the results.</li>
+              <li><strong>Who and where:</strong> in-house, at a supplier or at an accredited test lab.</li>
+              <li><strong>Timing and cost:</strong> so tests fit the schedule and budget.</li>
+            </ul>
+
+            <h2>Types of test to consider</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Functional</td>
+                  <td>Does every feature work as specified?</td>
+                </tr>
+                <tr>
+                  <td>Performance</td>
+                  <td>Capacity, speed, accuracy, battery life</td>
+                </tr>
+                <tr>
+                  <td>Durability and life</td>
+                  <td>Cycle tests on buttons, hinges and latches; wear; fatigue</td>
+                </tr>
+                <tr>
+                  <td>Environmental</td>
+                  <td>Temperature, humidity, water and dust, UV</td>
+                </tr>
+                <tr>
+                  <td>Mechanical abuse</td>
+                  <td>Drops, impacts, crush and misuse</td>
+                </tr>
+                <tr>
+                  <td>Transit</td>
+                  <td>Packaged drop, vibration and compression; see <a class="text-link-inline" href="packaging-design-for-shipping.html">packaging design for shipping</a></td>
+                </tr>
+                <tr>
+                  <td>Usability</td>
+                  <td>Can target users set up, use, clean and maintain it without help?</td>
+                </tr>
+                <tr>
+                  <td>Compliance</td>
+                  <td>Safety, <a class="glossary-term" href="../knowledge/glossary.html#term-electromagnetic-compatibility-emc" data-definition="The ability of electrical equipment to work without causing or suffering unacceptable electromagnetic interference." aria-label="EMC: The ability of electrical equipment to work without causing or suffering unacceptable electromagnetic interference. (glossary)">EMC</a> and other tests for the regulations that apply; see <a class="text-link-inline" href="product-certification-basics.html">product certification basics</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <p>For setting drop heights and orientations and designing the product to pass, see <a class="text-link-inline" href="designing-for-drops-and-impacts.html">designing a product to survive drops and impacts</a>.</p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              run informal pre-compliance and abuse tests on prototypes before booking formal certification testing. Failing at an accredited lab costs time and money that an early check could have saved.
+            </div>
+
+            <h2>Test at the right stage</h2>
+            <ol>
+              <li><strong>Early prototypes:</strong> quick checks of the riskiest functions and user reactions.</li>
+              <li><strong>Integrated prototypes:</strong> fuller functional, performance, durability and <a class="text-link-inline" href="usability-testing-a-prototype.html">usability tests</a>.</li>
+              <li><strong>Pre-production samples:</strong> repeat key tests on units made with production processes, plus formal compliance testing.</li>
+              <li><strong>Production:</strong> ongoing checks; see <a class="text-link-inline" href="quality-control-and-first-article-inspection.html">quality control and first-article inspection</a>.</li>
+            </ol>
+            <p>See <a class="text-link-inline" href="how-many-prototypes-do-you-need.html">how many prototypes do you need?</a> for planning the rounds.</p>
+
+            <h2>Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Testing without pass criteria.</strong>
+                Results become a matter of opinion.
+              </div>
+              <div>
+                <strong>Testing one unit.</strong>
+                One pass may be luck; test enough units to be confident, especially for safety.
+              </div>
+              <div>
+                <strong>Testing only in the lab.</strong>
+                Real users and real environments reveal problems lab tests miss.
+              </div>
+              <div>
+                <strong>Not retesting after changes.</strong>
+                A design or supplier change can undo earlier results.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>List requirements and risks, then build the plan with the <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a>.</li>
+              <li>Check compliance testing needs with <a class="text-link-inline" href="../tools/certification-readiness.html">Certification Readiness</a>.</li>
+              <li>Add test time to your schedule with the <a class="text-link-inline" href="../tools/timeline-planner.html">Timeline Planner</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Build a test plan</h3>
+                <p>Turn requirements and risks into a structured plan.</p>
+                <a class="button button-primary" href="../tools/test-plan-builder.html" data-analytics-event="article_cta_click" data-analytics-label="testing_guide_to_test_plan">Open Product Test Plan Builder</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Check certification readiness</h3>
+                <p>See what is needed before formal testing.</p>
+                <a class="button button-secondary" href="../tools/certification-readiness.html" data-analytics-event="article_cta_click" data-analytics-label="testing_guide_to_cert">Open Certification Readiness</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Product Test Plan Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/certification-readiness.html">Certification Readiness</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/timeline-planner.html">Timeline Planner</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="how-to-write-a-product-requirements-document.html">Write a product requirements document</a></div>
+                <div class="aside-item"><a class="text-link" href="how-many-prototypes-do-you-need.html">How many prototypes do you need?</a></div>
+                <div class="aside-item"><a class="text-link" href="product-certification-basics.html">Product certification basics</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Testing</span>
+                <span>Verification</span>
+                <span>Validation</span>
+                <span>Durability</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is the difference between verification and validation?</h3>
+                <p>Verification checks that the product meets its specified requirements. Validation checks that it meets users' real needs in real use. A product can pass verification and still fail validation if the requirements were wrong.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should a product test plan include?</h3>
+                <p>For each test: the requirement or question, the method, the number and build stage of samples, pass criteria agreed in advance, who will do it and where, and the timing and cost.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should testing start?</h3>
+                <p>As soon as there is something to test. Early prototypes test the riskiest functions and user reactions; later stages add fuller performance, durability, usability and compliance testing.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is pre-compliance testing?</h3>
+                <p>Informal testing against the requirements of a regulation or standard before formal certification testing, so problems are found and fixed before paying for accredited lab tests.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How many units should I test?</h3>
+                <p>Enough to be confident the result is not luck, which depends on the test, the risk and the variation between units. Safety-critical tests usually need more units than quick engineering checks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

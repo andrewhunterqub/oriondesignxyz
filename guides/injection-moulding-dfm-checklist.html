@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Injection Moulding DFM Checklist | Orion Design</title>
+    <meta
+      name="description"
+      content="A practical design-for-manufacture checklist for injection-moulded plastic parts: wall thickness, draft, ribs, bosses, corners, undercuts, marks and tolerances."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/injection-moulding-dfm-checklist.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Injection moulding DFM checklist for plastic parts | Orion Design">
+    <meta
+      property="og:description"
+      content="A practical design-for-manufacture checklist for injection-moulded plastic parts: wall thickness, draft, ribs, bosses, corners, undercuts, marks and tolerances."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/injection-moulding-dfm-checklist.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-injection-moulding-dfm-checklist.jpg">
+    <meta property="og:image:alt" content="Injection moulding DFM checklist guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Injection moulding DFM checklist for plastic parts | Orion Design">
+    <meta
+      name="twitter:description"
+      content="A practical design-for-manufacture checklist for injection-moulded plastic parts: wall thickness, draft, ribs, bosses, corners, undercuts, marks and tolerances."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-injection-moulding-dfm-checklist.jpg">
+    <meta name="twitter:image:alt" content="Injection moulding DFM checklist guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-injection-moulding-dfm-checklist.jpg",
+        "headline": "DFM checklist for injection-moulded parts: walls, draft, ribs, bosses and undercuts",
+        "description": "A practical design-for-manufacture checklist for injection-moulded plastic parts: wall thickness, draft, ribs, bosses, corners, undercuts, marks and tolerances.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-26",
+        "articleSection": "Design for manufacture",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/injection-moulding-dfm-checklist.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Injection moulding"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design for manufacture"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Injection moulding DFM checklist",
+                "item": "https://oriondesign.xyz/guides/injection-moulding-dfm-checklist.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What wall thickness should an injection-moulded part have?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "As uniform as possible, at the thinnest value that meets the strength and filling requirements. Many small and medium parts fall somewhere around 1 to 4 mm, but the right figure depends on the material, the part size and the flow length, so check the material datasheet and ask your moulder."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much draft angle does an injection-moulded part need?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A common starting point is at least 0.5 to 1 degree on faces parallel to the direction the tool opens, with more for deep features and textured surfaces. Textured surfaces can need several degrees; the texture supplier will usually state a minimum."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How thick should ribs be on a plastic part?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Typically about 40 to 60 per cent of the wall they join, up to about three times the wall thickness tall, with draft and a small radius at the base. Thicker ribs tend to cause sink marks on the opposite face."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is an undercut in injection moulding?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Any feature that stops the part being pulled straight out of the tool, such as a side hole, a clip or an internal groove. Undercuts need side actions, lifters or flexible ejection, which add cost, so they are worth designing out where possible."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What causes sink marks on moulded parts?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Thick sections, such as solid bosses or heavy ribs, cool more slowly than the surrounding wall and shrink as they do, pulling the surface inwards. Keeping walls even and coring out thick features is the usual cure."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Injection moulding DFM checklist</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For engineers, designers and founders preparing plastic parts for injection moulding</p>
+            <h1>DFM checklist for injection-moulded parts: walls, draft, ribs, bosses and undercuts</h1>
+            <p>
+              Use this checklist on your CAD model before asking for <a class="text-link-inline" href="comparing-manufacturing-quotes.html">tooling quotes</a>. It covers the features that most often cause sink marks, warping, sticking parts and expensive tooling, with typical starting values and the reason behind each rule.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Keep walls even, add draft, size ribs and bosses to the wall, round the corners, avoid undercuts, and agree cosmetic faces with the moulder.</h2>
+              <p>
+                Most injection-moulding problems, such as sink marks, warping, parts sticking in the tool and expensive side actions, come from a short list of design features.
+                Checking those features before the tool is cut is one of the cheapest ways to reduce tooling cost, cycle time and rejected parts.
+                The figures below are widely used starting points; the material datasheet and your moulder's design-for-manufacture review have the final say.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#why-dfm">Why design for manufacture matters most in moulding</a></li>
+              <li><a class="text-link-inline" href="#checklist">The checklist</a></li>
+              <li><a class="text-link-inline" href="#walls-draft">Walls and draft</a></li>
+              <li><a class="text-link-inline" href="#ribs-bosses">Ribs and bosses</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: reviewing an enclosure lid</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Next steps</a></li>
+            </ol>
+
+            <h2 id="why-dfm">Why design for manufacture matters most in moulding</h2>
+            <p>
+              An injection-mould tool is machined from aluminium or steel to the exact shape of the part. Once it is cut, adding material to the part is usually easy (the <a class="glossary-term" href="../knowledge/glossary.html#term-toolmaker" data-definition="The company or specialist that designs and makes mould tools, and reviews part designs for mouldability before the tool is cut." aria-label="toolmaker: The company or specialist that designs and makes mould tools, and reviews part designs for mouldability before the tool is cut. (glossary)">toolmaker</a> removes steel),
+              but removing material from the part can mean welding and re-machining the tool, or making a new insert. Features that need moving tool parts, such as undercuts,
+              add cost to every tool and complexity to every cycle. That is why the checks below are worth doing on the CAD model, not on the first samples. If your part started as a 3D print, <a class="text-link-inline" href="from-3d-printed-prototype-to-moulded-part.html">from 3D-printed prototype to moulded part</a> walks through the changes in order.
+            </p>
+
+            <h2 id="checklist">The checklist</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Typical starting point</th>
+                  <th>Why it matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Wall thickness</td>
+                  <td>As uniform as possible; commonly around 1 to 4 mm for many small and medium parts, depending on material and size; blend changes gradually rather than in steps</td>
+                  <td>Thick and uneven sections cool unevenly, causing sink marks, voids, warping and long cycle times</td>
+                </tr>
+                <tr>
+                  <td>Draft</td>
+                  <td>On every face parallel to the direction the tool opens: commonly at least 0.5 to 1 degree, more for deep features and textured surfaces</td>
+                  <td>Without draft, parts drag and stick on ejection, scuffing <a class="glossary-term" href="../knowledge/glossary.html#term-cosmetic-face" data-definition="A face of a part that people will see or touch, marked on the drawing so that suppliers keep marks, defects and support or contact points off it and finish it to the agreed standard." aria-label="cosmetic faces: A face of a part that people will see or touch, marked on the drawing so that suppliers keep marks, defects and support or contact points off it and finish it to the agreed standard. (glossary)">cosmetic faces</a></td>
+                </tr>
+                <tr>
+                  <td>Ribs</td>
+                  <td>Thickness about 40 to 60 per cent of the adjoining wall; height up to about 3 times the wall; spaced at least about 2 wall thicknesses apart; drafted</td>
+                  <td>Ribs add stiffness without thick sections; too thick and they sink the opposite face</td>
+                </tr>
+                <tr>
+                  <td>Bosses</td>
+                  <td>Outside diameter around twice the hole; boss wall thinner than the main wall; supported by <a class="glossary-term" href="../knowledge/glossary.html#term-gusset" data-definition="A triangular rib that supports a boss or wall in a moulded part." aria-label="gusset: A triangular rib that supports a boss or wall in a moulded part. (glossary)">gusset</a> ribs or joined to nearby walls; cored from below</td>
+                  <td>Solid bosses cause sink and voids; unsupported bosses crack when screws are driven</td>
+                </tr>
+                <tr>
+                  <td>Corners</td>
+                  <td>Inside radius at least about half the wall; outside radius about inside radius plus the wall</td>
+                  <td>Sharp corners concentrate stress, restrict flow and are harder to fill and eject</td>
+                </tr>
+                <tr>
+                  <td>Undercuts</td>
+                  <td>Avoid where possible; otherwise use side actions, lifters, flexible bump-offs, or a pass-through core redesign</td>
+                  <td>Anything that stops the part pulling straight out needs moving tool parts, which add cost and maintenance</td>
+                </tr>
+                <tr>
+                  <td>Holes and slots</td>
+                  <td>Prefer through holes; keep blind holes shallow relative to their diameter; keep holes away from edges</td>
+                  <td>Long slender core pins deflect and break; holes near edges weaken the part</td>
+                </tr>
+                <tr>
+                  <td>Text, logos and texture</td>
+                  <td>Raised lettering on the part (engraved into the tool) is easier to make and change; add extra draft for texture (see <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">surface finishes</a>)</td>
+                  <td>Engraving can be added to a tool later; texture without enough draft scrapes on ejection</td>
+                </tr>
+                <tr>
+                  <td>Gates, ejector pins, <a class="glossary-term" href="../knowledge/glossary.html#term-parting-line" data-definition="The line where the two halves of a mould meet; it can leave a visible mark on the part." aria-label="parting line: The line where the two halves of a mould meet; it can leave a visible mark on the part. (glossary)">parting line</a></td>
+                  <td>Agree their positions with the <a class="glossary-term" href="../knowledge/glossary.html#term-moulder" data-definition="A company that runs injection-moulding machines to make parts from a mould tool. It may also make the tool, or work with a separate toolmaker." aria-label="moulder: A company that runs injection-moulding machines to make parts from a mould tool. It may also make the tool, or work with a separate toolmaker. (glossary)">moulder</a>, away from cosmetic faces</td>
+                  <td>All leave visible marks; moving them after the tool is cut is costly</td>
+                </tr>
+                <tr>
+                  <td>Tolerances and flatness</td>
+                  <td>Tight tolerances only where the function needs them; add ribs or curvature to large flat areas</td>
+                  <td>Plastics shrink and can warp; unnecessary tight tolerances raise tool and inspection cost (check critical fits with the <a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a>)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 id="walls-draft">Walls and draft</h2>
+            <p>
+              Even wall thickness is the most important single rule. The plastic in a thick section stays molten longest, and as it cools it shrinks and pulls the surface inwards (a <a class="glossary-term" href="../knowledge/glossary.html#term-sink-mark" data-definition="A shallow depression on a moulded surface caused by a thick section shrinking as it cools." aria-label="sink mark: A shallow depression on a moulded surface caused by a thick section shrinking as it cools. (glossary)">sink mark</a>)
+              or leaves an internal void. The fix is almost always to core the thick feature out so that it is made of walls close to the nominal thickness.
+            </p>
+            <figure class="article-figure article-figure-narrow">
+              <svg viewBox="0 0 440 390" role="img" aria-labelledby="dfm-walls-title dfm-walls-desc">
+                <title id="dfm-walls-title">Thick sections cause sink marks and voids; even, cored-out walls with draft avoid them</title>
+                <desc id="dfm-walls-desc">Top: a plate with a solid thick block underneath. The top surface dips above the block (a sink mark) and there is a void inside the block. Bottom: the same feature cored out so every wall is about the same thickness, with walls tapered slightly in the direction the part is ejected from the tool.</desc>
+                <text x="8" y="22" class="dfm-head dfm-bad">Avoid: thick, uneven section</text>
+                <path d="M40,60 H180 Q220,72 260,60 H400 V76 H262 V160 H178 V76 H40 Z" class="dfm-part"/>
+                <ellipse cx="220" cy="118" rx="14" ry="9" class="dfm-void"/>
+                <path d="M300,40 L232,64" class="dfm-leader"/>
+                <text x="304" y="40" class="dfm-label">sink mark</text>
+                <path d="M300,128 L236,120" class="dfm-leader"/>
+                <text x="304" y="132" class="dfm-label">void</text>
+                <text x="8" y="190" class="dfm-label">The thick core cools last and shrinks, pulling the surface in.</text>
+                <text x="8" y="232" class="dfm-head dfm-good">Better: even walls, cored out, with draft</text>
+                <path d="M40,262 H400 V278 H254 L250,352 H238 L234,278 H206 L202,352 H190 L186,278 H40 Z" class="dfm-part"/>
+                <path d="M330,350 V300" class="dfm-arrow" marker-end="url(#dfm-arrow)"/>
+                <text x="338" y="330" class="dfm-label">ejection</text>
+                <path d="M270,300 L246,316" class="dfm-leader"/>
+                <text x="274" y="300" class="dfm-label">draft on walls</text>
+                <text x="8" y="382" class="dfm-label">Each wall is close to the nominal thickness, so the part cools evenly.</text>
+                <defs><marker id="dfm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="flow-head"/></marker></defs>
+              </svg>
+              <figcaption>Cross-sections, not to scale. Coring out thick features keeps walls even, shortens cooling time and removes the cause of sink marks and voids.</figcaption>
+            </figure>
+            <p>
+              Draft is the slight taper on faces that run in the direction the tool opens. It lets the part release cleanly. The amount needed rises with depth and surface texture:
+              a textured cosmetic surface can need several degrees, and the texture supplier will usually specify a minimum. Add draft in CAD from the start;
+              retrofitting it changes every dimension that depends on those faces.
+            </p>
+
+            <h3>Try it: draft and undercuts</h3>
+            <figure class="article-figure article-figure-narrow ixm-figure" id="ixm-draft">
+              <svg viewBox="0 0 440 418" role="img" aria-labelledby="ixm-draft-title ixm-draft-desc">
+                <title id="ixm-draft-title">Cross-section of a moulded part being ejected from a two-part tool</title>
+                <desc id="ixm-draft-desc">The fixed half of the tool, with the cavity that forms the outside of the part, has opened away at the top. Below, ejector pins push the part up off the core on the moving half. The part's walls are tapered by the draft angle, so a gap opens between the part and the core as soon as it moves. The angle is drawn steeper than real so it can be seen. Not to scale.</desc>
+                <defs><marker id="ixm-draft-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ixm-arrowhead"/></marker></defs>
+                <text x="70" y="22" class="ixm-label ixm-label-strong">Fixed half (cavity side)</text>
+                <path data-ixm="cavity" class="ixm-tool" d="M70,30 H370 V140 H330 L308.7,40 H131.3 L110,140 H70 Z"/>
+                <path data-ixm="core" class="ixm-tool" d="M70,390 V320 H122 L140.7,232 H299.3 L318,320 H370 V390 Z"/>
+                <rect x="112" y="280" width="8" height="110" class="ixm-pin"/>
+                <rect x="320" y="280" width="8" height="110" class="ixm-pin"/>
+                <path data-ixm="part" class="ixm-part" d="M110,280 L131.3,180 H308.7 L330,280 H318 L299.3,192 H140.7 L122,280 Z"/>
+                <path data-ixm="scuff" class="ixm-scuff ixm-off" d="M122,232 V280 M318,232 V280"/>
+                <path data-ixm="clash" class="ixm-clash ixm-off" d="M311.6,250 L297.6,256 L301.4,268 L315.4,268 Z"/>
+                <path data-ixm="ref" class="ixm-ref" d="M110,280 V180"/>
+                <text x="102" y="236" class="ixm-label" text-anchor="end">draft</text>
+                <text x="220" y="217" class="ixm-label" text-anchor="middle">moulded part</text>
+                <path d="M405,224 V164" class="ixm-arrow" marker-end="url(#ixm-draft-arrow)"/>
+                <text x="396" y="200" class="ixm-label" text-anchor="end">eject</text>
+                <path data-ixm="clash-leader" d="M368,258 L312,260" class="ixm-leader ixm-off"/>
+                <text data-ixm="clash-label" x="436" y="252" class="ixm-label ixm-svg-bad ixm-off" text-anchor="end"><tspan x="436">catch hits</tspan><tspan x="436" dy="1.2em">the core</tspan></text>
+                <path d="M74,304 L111,301" class="ixm-leader"/>
+                <text x="8" y="298" class="ixm-label">ejector</text>
+                <text x="8" y="318" class="ixm-label">pin</text>
+                <text data-ixm="status" x="8" y="166" class="ixm-svg-status ixm-svg-good">Draft 1.5°: the part releases cleanly</text>
+                <text x="70" y="410" class="ixm-label ixm-label-strong">Moving half (core side)</text>
+              </svg>
+              <div class="ixm-controls" hidden>
+                <div class="ixm-field">
+                  <label for="ixm-draft-angle">Draft angle</label>
+                  <input type="range" id="ixm-draft-angle" class="ixm-range" min="0" max="3" step="0.5" value="1.5">
+                  <output class="ixm-draft-value" for="ixm-draft-angle">1.5°</output>
+                </div>
+                <div class="ixm-check">
+                  <input type="checkbox" id="ixm-undercut" class="ixm-undercut">
+                  <label for="ixm-undercut">Add an undercut (e.g. a snap catch)</label>
+                </div>
+              </div>
+              <p class="ixm-live" aria-live="polite">At 1.5° a small gap opens as soon as the part moves, so it releases cleanly. Around 1° to 2° is a common starting point for many plastics; deep or textured faces usually need more.</p>
+              <figcaption>Cross-section, not to scale; the draft angle is drawn eight times steeper than real so it can be seen. With no draft the walls rub on the core all the way out. An undercut, such as a snap catch, locks the part on the core and needs a side action, a lifter or a design change.</figcaption>
+            </figure>
+
+            <h2 id="ribs-bosses">Ribs and bosses</h2>
+            <p>
+              Ribs and bosses are how moulded parts get stiffness and fixing points without thick walls. Their proportions are a balance: thick enough to fill and to do their job,
+              thin enough not to cause sink marks on the visible face opposite them.
+            </p>
+            <figure class="article-figure article-figure-narrow">
+              <svg viewBox="0 0 440 300" role="img" aria-labelledby="dfm-ribs-title dfm-ribs-desc">
+                <title id="dfm-ribs-title">Typical starting proportions for ribs and bosses</title>
+                <desc id="dfm-ribs-desc">A wall of thickness t with a rib about 40 to 60 per cent of t thick and no more than about three t tall, with a small radius at its base. Next to it, a screw boss whose outside diameter is about twice the hole diameter, supported by gusset ribs and joined to the wall, with a wall thinner than the main wall.</desc>
+                <rect x="20" y="230" width="400" height="24" class="dfm-part"/>
+                <text x="26" y="276" class="dfm-label">wall thickness t</text>
+                <path d="M92,230 L95,152 H107 L110,230 Z" class="dfm-part"/>
+                <path d="M88,230 Q92,226 92,222 M114,230 Q110,226 110,222" class="dfm-leader"/>
+                <path d="M120,152 H150 M120,230 H150 M140,152 V230" class="dfm-dim"/>
+                <text x="146" y="196" class="dfm-label">≤ about 3t</text>
+                <text x="56" y="140" class="dfm-label">rib about 0.4–0.6t</text>
+                <path d="M300,230 L302,140 H318 V230 Z M342,230 V140 H358 L360,230 Z" class="dfm-part"/>
+                <path d="M262,230 L300,170 V230 Z M398,230 L360,170 V230 Z" class="dfm-part dfm-gusset"/>
+                <path d="M318,140 V230 M342,140 V230" class="dfm-hole"/>
+                <text x="306" y="128" class="dfm-label">hole d</text>
+                <path d="M300,110 H360" class="dfm-dim"/>
+                <text x="276" y="102" class="dfm-label">outer ≈ 2d</text>
+                <text x="236" y="166" class="dfm-label">gusset</text>
+                <text x="232" y="284" class="dfm-label">boss wall thinner than t</text>
+              </svg>
+              <figcaption>Typical starting proportions only; your moulder and the material datasheet may recommend different values. Thin ribs and bosses avoid sink marks on the opposite face.</figcaption>
+            </figure>
+            <p>
+              For screw bosses, follow the screw manufacturer's recommendations for hole size in your chosen plastic: <a class="glossary-term" href="../knowledge/glossary.html#term-thread-forming-screw" data-definition="A screw designed to form its own thread in a plain hole in a plastic part, with no insert or tapping. The thread wears each time it is removed, so it suits joints opened occasionally." aria-label="thread-forming screws: A screw designed to form its own thread in a plain hole in a plastic part, with no insert or tapping. The thread wears each time it is removed, so it suits joints opened occasionally. (glossary)">thread-forming screws</a> for plastics are designed for specific hole diameters,
+              and the right hole matters more for joint strength than the boss's outside size. Heat-set or moulded-in inserts are an alternative where the joint is opened often; <a class="text-link-inline" href="joining-methods-for-product-design.html">joining methods compared</a> sets screws and inserts against snap fits, welding and adhesives.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              if a feature needs a side action, ask whether it can be redesigned. A snap-fit hook can often be moulded straight-pull by putting a hole in the wall behind it, so a core passes through and forms the hook's underside.
+            </div>
+
+            <h2 id="example">Worked example: reviewing an enclosure lid</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A start-up sends a moulder its CAD for a two-part plastic enclosure. The lid has 4 mm walls, four solid screw bosses 9 mm across,
+                no draft on its 25 mm side walls, sharp internal corners, and two side-facing clips that would each need a <a class="glossary-term" href="../knowledge/glossary.html#term-side-action" data-definition="A moving part of a mould tool that forms an undercut and slides out before the part is ejected." aria-label="side action: A moving part of a mould tool that forms an undercut and slides out before the part is ejected. (glossary)">side action</a>.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Issue found</th>
+                  <th>Change made</th>
+                  <th>Effect</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Walls thicker than the part needs</td>
+                  <td>Reduced to a uniform 2.5 mm, with three internal ribs for stiffness</td>
+                  <td>Less material, shorter cooling time, no sink marks</td>
+                </tr>
+                <tr>
+                  <td>Solid screw bosses</td>
+                  <td>Cored bosses joined to the side walls with gussets</td>
+                  <td>No sink on the outer face; stronger under screw torque</td>
+                </tr>
+                <tr>
+                  <td>No draft on side walls</td>
+                  <td>1 degree on smooth faces, more on the textured top</td>
+                  <td>Clean ejection, no drag marks</td>
+                </tr>
+                <tr>
+                  <td>Sharp internal corners</td>
+                  <td>Radii added, sized to the wall thickness</td>
+                  <td>Better flow, lower stress at the corners</td>
+                </tr>
+                <tr>
+                  <td>Two clips needing side actions</td>
+                  <td>Redesigned as straight-pull snaps with pass-through cores</td>
+                  <td>Simpler, cheaper tool with fewer moving parts</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              None of these changes alters what the lid does, but together they make the tool simpler, the cycle shorter and the parts more consistent. That is typical of a good DFM review.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Designing as if the part will be machined.</strong>
+                Solid blocks and sharp internal corners that are easy to machine make poor moulded parts.
+              </div>
+              <div>
+                <strong>Adding draft at the end.</strong>
+                It ripples through every mating dimension; design it in from the start.
+              </div>
+              <div>
+                <strong>Using one wall thickness rule for every plastic.</strong>
+                Materials flow and shrink differently; check the datasheet and ask the moulder.
+              </div>
+              <div>
+                <strong>Ignoring where the tool will leave marks.</strong>
+                Gate, ejector and parting-line marks end up on the cosmetic face unless they are agreed.
+              </div>
+              <div>
+                <strong>Skipping the moulder's DFM report.</strong>
+                Most toolmakers provide one, often with a mould-flow simulation; read it before approving the tool.
+              </div>
+            </div>
+
+            <h2 id="next-steps">Next steps</h2>
+            <ol>
+              <li>Run through the checklist on your CAD model, or enter the key dimensions in the <a class="text-link-inline" href="../tools/dfm-checker.html">Injection Moulding DFM Checker</a>, and fix what you can before quoting.</li>
+              <li>Ask shortlisted moulders for a DFM review and, for complex parts, a mould-flow analysis.</li>
+              <li>Check whether a tool is justified yet with the <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a> and <a class="text-link-inline" href="injection-mould-break-even.html">when injection moulding becomes cheaper</a>.</li>
+              <li>Estimate the part cost with the <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>.</li>
+              <li>Prepare drawings and requirements with <a class="text-link-inline" href="must-have-documents-before-talking-to-a-manufacturer.html">the documents to prepare before talking to a manufacturer</a>.</li>
+            </ol>
+            <p>
+              For the wider picture of processes, tooling and cost, see the <a class="text-link-inline" href="manufacturing-and-cost.html">Manufacturing and cost hub</a>.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Check your part</h3>
+                <p>Enter wall, draft, rib, boss and corner dimensions for instant feedback.</p>
+                <a class="button button-primary" href="../tools/dfm-checker.html" data-analytics-event="article_cta_click" data-analytics-label="dfm_guide_to_checker">Open DFM Checker</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Estimate the part cost</h3>
+                <p>Material, cycle time, tooling share and overhead in one estimate.</p>
+                <a class="button button-secondary" href="../tools/product-cost-estimator.html" data-analytics-event="article_cta_click" data-analytics-label="dfm_guide_to_cost">Open Product Cost Estimator</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/dfm-checker.html">Injection Moulding DFM Checker</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/production-strategy-planner.html">Production Strategy Planner</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="choosing-plastic-materials.html">Choosing plastic materials</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-explained.html">Injection moulding explained</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-mould-break-even.html">When injection moulding becomes cheaper</a></div>
+                <div class="aside-item"><a class="text-link" href="must-have-documents-before-talking-to-a-manufacturer.html">Documents for manufacturers</a></div>
+                <div class="aside-item"><a class="text-link" href="assembly-time-estimate.html">Estimating assembly time</a></div>
+                <div class="aside-item"><a class="text-link" href="product-development-checklists.html">Printable checklists</a></div>
+                <div class="aside-item"><a class="text-link" href="cnc-machining-design-rules.html">CNC machining design rules</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Injection moulding</span>
+                <span>DFM</span>
+                <span>Wall thickness</span>
+                <span>Draft</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What wall thickness should an injection-moulded part have?</h3>
+                <p>As uniform as possible, at the thinnest value that meets the strength and filling requirements. Many small and medium parts fall somewhere around 1 to 4 mm, but the right figure depends on the material, the part size and the flow length, so check the material datasheet and ask your moulder.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How much draft angle does an injection-moulded part need?</h3>
+                <p>A common starting point is at least 0.5 to 1 degree on faces parallel to the direction the tool opens, with more for deep features and textured surfaces. Textured surfaces can need several degrees; the texture supplier will usually state a minimum.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How thick should ribs be on a plastic part?</h3>
+                <p>Typically about 40 to 60 per cent of the wall they join, up to about three times the wall thickness tall, with draft and a small radius at the base. Thicker ribs tend to cause sink marks on the opposite face.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is an undercut in injection moulding?</h3>
+                <p>Any feature that stops the part being pulled straight out of the tool, such as a side hole, a clip or an internal groove. Undercuts need side actions, lifters or flexible ejection, which add cost, so they are worth designing out where possible.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What causes sink marks on moulded parts?</h3>
+                <p>Thick sections, such as solid bosses or heavy ribs, cool more slowly than the surrounding wall and shrink as they do, pulling the surface inwards. Keeping walls even and coring out thick features is the usual cure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/diagrams-moulding.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Production Strategy Planner | Orion Design</title>
+    <meta
+      name="description"
+      content="Plan prototype, bridge, and scale-up routes using product stability, demand, capex, and quality assumptions."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/production-strategy-planner.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Production Strategy Planner | Orion Design">
+    <meta
+      property="og:description"
+      content="Plan prototype, bridge, and scale-up routes using product stability, demand, capex, and quality assumptions."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/production-strategy-planner.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-production-strategy-planner.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Production Strategy Planner | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Plan prototype, bridge, and scale-up routes using product stability, demand, capex, and quality assumptions."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-production-strategy-planner.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-production-strategy-planner.jpg",
+        "name": "Production Strategy Planner",
+        "url": "https://oriondesign.xyz/tools/production-strategy-planner.html",
+        "description": "Plan prototype, bridge, and scale-up routes using product stability, demand, capex, and quality assumptions.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Production Strategy Planner",
+                "item": "https://oriondesign.xyz/tools/production-strategy-planner.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is bridge production?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Bridge production is a stepping stone between prototypes and full-scale manufacturing. It typically uses lower-cost tooling, such as aluminium moulds, or low-volume processes such as vacuum casting, to make sellable units while demand and design are still being proven."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When is it worth paying for hard production tooling?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "When the design is stable, demand is reasonably certain, and the volume is high enough for lower unit costs to repay the tooling. If any of those are still uncertain, a staged approach usually carries less risk, even if each unit costs a little more for a while."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who owns the tooling once I have paid for it?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "That depends on the agreement with your manufacturer, so it should be written down before the tool is made. Make sure the terms cover ownership, maintenance, storage and whether you can move the tool to another supplier."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I change the design after tooling is made?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Small changes are often possible, particularly ones that remove steel from the mould, but they cost time and money. Larger changes may need new tool inserts or a new tool, which is why it pays to freeze the design and test it thoroughly first."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Production Strategy Planner</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Live tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Production Strategy Planner</h1>
+            <p>
+              Stage prototype, bridge, and scale-up choices using expected volume, product stability,
+              capex, quality criticality, and lead-time tolerance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Production strategy worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"forecastVolume":"1500","capexBudget":"25000","demandCertainty":"low","productStability":"medium","qualityCriticality":"standard","leadTolerance":"12"}'>Crowdfunded gadget</button>
+              <button class="preset-button" type="button" data-tool-preset='{"forecastVolume":"40000","capexBudget":"180000","demandCertainty":"high","productStability":"high","qualityCriticality":"standard","leadTolerance":"16"}'>Moulded housewares range</button>
+              <button class="preset-button" type="button" data-tool-preset='{"forecastVolume":"800","capexBudget":"40000","demandCertainty":"medium","productStability":"medium","qualityCriticality":"high","leadTolerance":"6"}'>Laboratory instrument</button>
+            </div>
+            <form class="tool-form" id="production-strategy-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="forecastVolume">Year-one forecast units</label>
+                  <input id="forecastVolume" type="number" min="1" step="1" value="12000">
+                </div>
+                <div class="field-group">
+                  <label for="capexBudget">Available tooling / process capex (GBP)</label>
+                  <input id="capexBudget" type="number" min="0" step="1000" value="90000">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="demandCertainty">Demand certainty</label>
+                  <select id="demandCertainty">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="productStability">Product stability</label>
+                  <select id="productStability">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="qualityCriticality">Quality criticality</label>
+                  <select id="qualityCriticality">
+                    <option value="standard">Standard</option>
+                    <option value="elevated" selected>Elevated</option>
+                    <option value="high">High</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="leadTolerance">Tooling lead-time tolerance (weeks)</label>
+                  <input id="leadTolerance" type="number" min="1" step="1" value="10">
+                </div>
+              </div>
+
+              <button class="button button-primary" type="submit">Plan production strategy</button>
+            </form>
+            <p class="helper-text">
+              Use the recommendation as a phase-planning aid. It is most helpful when teams are deciding how aggressively to commit to tooling.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="productionStrategySummary"></div>
+            <div class="recommendation-card" id="productionStrategyRecommendation"></div>
+            <div class="stage-grid" id="productionStrategyStages"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#productionStrategyCopy"
+                  data-copy-feedback="#productionStrategyCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="productionStrategyCopy" class="copy-output" readonly></textarea>
+              <div id="productionStrategyCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="production_strategy_planner_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <h2>Why production strategy needs staging</h2>
+            <p>
+              Going straight to full tooling can be sensible, but only when demand, geometry, and quality requirements are stable enough to justify the commitment.
+              Most teams benefit from a deliberate transition through prototype and bridge phases.
+            </p>
+            <ul>
+              <li>Prototype routes optimise learning speed.</li>
+              <li>Bridge routes buy time while demand and design settle.</li>
+              <li>Scale routes only pay off when the product is ready to repeat.</li>
+            </ul>
+
+            <h2 id="method">Method and assumptions</h2>
+            <div class="formula-block">Transition risk score = demand certainty (low 2, medium 1, high 0) + product stability (low 2, medium 1, high 0) + quality criticality (high 2, elevated 1, standard 0) + 1 if the lead-time tolerance is 8 weeks or less
+Risk: 5 or more high · 3–4 managed · 0–2 favourable</div>
+            <p><strong>Assumptions</strong></p>
+            <ul>
+              <li>Prototype route: 3D printing and rapid CNC while the design is still changing; rapid tooling and CNC validation once it is stable.</li>
+              <li>Bridge route: soft tooling or a bridge cell at about 8,000 units a year or more, or where quality is critical; otherwise machined and fabricated low-volume builds.</li>
+              <li>Scale route: hard tooling at about 20,000 units or more with a stable design and a capital budget of at least £150,000; bridge production with selective tooling from about 6,000 units and £60,000; otherwise stay low-volume.</li>
+            </ul>
+            <p><strong>Limits</strong></p>
+            <ul>
+              <li>The thresholds are rules of thumb to start a discussion, not quotes; real break points depend on the part, material, process and supplier.</li>
+              <li>Compare actual quotes with the <a class="text-link-inline" href="manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <p>
+              The planner gives three things: a risk profile based on how certain demand is, how settled the design is, how critical quality is
+              and how much tooling lead time you can absorb; a scale-up posture that says whether committing to production tooling looks
+              justified; and a suggested route for each of the prototype, bridge and scale phases.
+            </p>
+            <ul>
+              <li><strong>Commitment window is favourable:</strong> demand and design are settled enough that tooling is a reasonable next step. Get firm quotes, agree tool ownership and maintenance terms, and confirm the design is frozen before cutting steel.</li>
+              <li><strong>Managed risk:</strong> the most common result. A bridge phase, such as soft tooling or a short low-volume run, lets you sell, gather feedback and fix issues before spending on hard tooling.</li>
+              <li><strong>High transition risk:</strong> several factors are uncertain at once. Spending heavily on tooling now could lock in a design or volume that turns out to be wrong. Focus on reducing the biggest uncertainty first, whether that is demand evidence, design changes or quality requirements.</li>
+            </ul>
+            <p>
+              Remember that tooling lead times are often several weeks to a few months, and modifications add more, so a short lead-time tolerance
+              narrows your options. Save your result to your <a href="product-plan-builder.html">product plan</a> so the phased route ties into your
+              budget and launch date. If you are weighing up a significant tooling spend, a <a href="../contact/index.html">second opinion from Andrew</a>
+              before committing can save expensive changes later.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/manufacturing-processes-compared.html">Manufacturing processes compared</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/uk-vs-overseas-manufacturing.html">UK vs overseas manufacturing</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/risk-progressive-manufacturing-strategy.html">The Risk-Progressive Manufacturing Strategy</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/injection-mould-break-even.html">When Does Injection Moulding Become Cheaper?</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/manufacturing-and-cost.html">Manufacturing and cost: overview</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Scale-up planning</span>
+                <span>Tooling timing</span>
+                <span>Risk staging</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is bridge production?</h3>
+                <p>Bridge production is a stepping stone between prototypes and full-scale manufacturing. It typically uses lower-cost tooling, such as aluminium moulds, or low-volume processes such as vacuum casting, to make sellable units while demand and design are still being proven.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When is it worth paying for hard production tooling?</h3>
+                <p>When the design is stable, demand is reasonably certain, and the volume is high enough for lower unit costs to repay the tooling. If any of those are still uncertain, a staged approach usually carries less risk, even if each unit costs a little more for a while.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Who owns the tooling once I have paid for it?</h3>
+                <p>That depends on the agreement with your manufacturer, so it should be written down before the tool is made. Make sure the terms cover ownership, maintenance, storage and whether you can move the tool to another supplier.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I change the design after tooling is made?</h3>
+                <p>Small changes are often possible, particularly ones that remove steel from the mould, but they cost time and money. Larger changes may need new tool inserts or a new tool, which is why it pays to freeze the design and test it thoroughly first.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early engineering or commercial estimate. It is most useful for comparing options, surfacing trade-offs, and deciding what needs deeper validation next.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Use the result as an early decision aid, then confirm the numbers with suppliers, manufacturing partners, and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="manufacturing-payoff.html">Manufacturing Payoff</a>
+          <a href="route-to-market-simulator.html">Target COGS by Route</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/production-strategy-planner.js" defer></script>
+  </body>
+</html>

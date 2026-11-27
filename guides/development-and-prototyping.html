@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Product Development and Prototyping Explained | Orion Design</title>
+    <meta
+      name="description"
+      content="The stages of hardware development, the prototypes each needs, how many rounds to plan, testing and design freeze, with a worked example and links to Orion tools."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/development-and-prototyping.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Development and prototyping for hardware products | Orion Design">
+    <meta
+      property="og:description"
+      content="The stages of hardware development, the prototypes each needs, how many rounds to plan, testing and design freeze, with a worked example and links to Orion tools."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/development-and-prototyping.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-development-and-prototyping.jpg">
+    <meta property="og:image:alt" content="Development and prototyping hub guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Development and prototyping for hardware products | Orion Design">
+    <meta
+      name="twitter:description"
+      content="The stages of hardware development, the prototypes each needs, how many rounds to plan, testing and design freeze, with a worked example and links to Orion tools."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-development-and-prototyping.jpg">
+    <meta name="twitter:image:alt" content="Development and prototyping hub guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-development-and-prototyping.jpg",
+        "headline": "Development and prototyping: how a hardware product gets from idea to production-ready",
+        "description": "The stages of hardware development, the prototypes each needs, how many rounds to plan, testing and design freeze, with a worked example and links to Orion tools.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-26",
+        "articleSection": "Development and prototyping",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/development-and-prototyping.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Product development process"
+          },
+          {
+            "@type": "Thing",
+            "name": "Prototyping"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design verification"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Development and prototyping",
+                "item": "https://oriondesign.xyz/guides/development-and-prototyping.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What are the stages of hardware product development?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most products pass through defining requirements, concept development, proof of principle, looks-like and works-like prototypes, engineering prototypes, design verification and pilot production. Electronics teams often call the last three EVT, DVT and PVT. Each stage answers one main question before money is committed to the next."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between a looks-like and a works-like prototype?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A looks-like prototype shows the size, shape, finish and feel of the product but may not function. A works-like prototype proves the product functions but may look nothing like the final design. Building them separately is faster and cheaper than trying to make one model do both jobs early on."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many prototypes does a hardware product need?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Many products need two or three rounds before production-intent parts, and complex or regulated products often need more. Plan rounds around the questions that must be answered rather than a fixed number, and allow for at least one unplanned round."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should a design be frozen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "When testing on production-intent parts shows the requirements are met with some margin, and before committing to production tooling and formal certification. After the freeze, changes should go through a simple change-control step because they affect tools, suppliers and test reports."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does hardware product development take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It varies widely with complexity, regulation and how quickly decisions are made. A simple mechanical product can move from concept to production in months, while connected, medical or safety-critical products commonly take considerably longer. Map your own stages and rounds to get an estimate you can defend."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Development and prototyping</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Hub guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders, engineers and spin-out teams planning how to take a product from concept to production-ready design</p>
+            <h1>Development and prototyping: how a hardware product gets from idea to production-ready</h1>
+            <p>
+              This is the starting point for everything on Orion Design about developing a physical product: <a class="text-link-inline" href="../idea-to-manufacture/">the stages most products pass through</a>, which prototype answers which question, how many rounds to plan, and how testing and design freeze keep the project under control. Each section links to a deeper guide or a free tool.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Product development is a sequence of questions, each answered by the cheapest build that can answer it.</h2>
+              <p>
+                A hardware product typically moves from requirements and concepts, through proof-of-principle, looks-like and works-like prototypes,
+                to engineering prototypes, design verification and a pilot production run. Plan each prototype round around the specific risk it must retire,
+                expect to go round the loop more than once, and keep the expensive commitments, such as production tooling and certification, until the design has stopped moving.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#stages">The stages of hardware development</a></li>
+              <li><a class="text-link-inline" href="#prototypes">Types of prototype and what each is for</a></li>
+              <li><a class="text-link-inline" href="#rounds">How many prototype rounds to plan</a></li>
+              <li><a class="text-link-inline" href="#testing">Testing and validation</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: planning the rounds for a handheld device</a></li>
+              <li><a class="text-link-inline" href="#records">Keeping the design under control</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#path">A step-by-step path through this hub</a></li>
+            </ol>
+
+            <h2 id="stages">The stages of hardware development</h2>
+            <p>
+              Different companies use different names, but most physical products pass through the same stages. Electronics teams often call the last three
+              <a class="glossary-term" href="../knowledge/glossary.html#term-evt-dvt-and-pvt" data-definition="Engineering, design and production validation testing: the last three development stages, as named in many electronics teams." aria-label="EVT, DVT and PVT: Engineering, design and production validation testing: the last three development stages, as named in many electronics teams. (glossary)">EVT, DVT and PVT</a> (engineering, design and production validation test). What matters is not the label but the question each stage answers
+              and the evidence it leaves behind.
+            </p>
+            <figure class="article-figure article-figure-narrow">
+              <svg viewBox="0 0 440 526" role="img" aria-labelledby="dev-fig-title dev-fig-desc">
+                <title id="dev-fig-title">Seven stages of hardware product development, with an iteration loop</title>
+                <desc id="dev-fig-desc">Define, concept, proof of principle, looks-like and works-like, engineering prototype, design verification and pilot production, each with the question it answers. An arrow from design verification back to concept shows that failed tests send the team back round the loop.</desc>
+                <defs><marker id="dev-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="flow-head"/></marker></defs>
+                <rect x="6" y="8" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="32" class="flow-title">1. Define</text>
+                <text x="22" y="53" class="flow-q">What must the product do, for whom?</text><path d="M179.0,68 L179.0,78" class="flow-arrow" marker-end="url(#dev-arrow)"/>
+                <rect x="6" y="82" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="106" class="flow-title">2. Concept</text>
+                <text x="22" y="127" class="flow-q">Which direction is worth developing?</text><path d="M179.0,142 L179.0,152" class="flow-arrow" marker-end="url(#dev-arrow)"/>
+                <rect x="6" y="156" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="180" class="flow-title">3. Proof of principle</text>
+                <text x="22" y="201" class="flow-q">Does the core function work at all?</text><path d="M179.0,216 L179.0,226" class="flow-arrow" marker-end="url(#dev-arrow)"/>
+                <rect x="6" y="230" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="254" class="flow-title">4. Looks-like and works-like</text>
+                <text x="22" y="275" class="flow-q">Will people want it and can they use it?</text><path d="M179.0,290 L179.0,300" class="flow-arrow" marker-end="url(#dev-arrow)"/>
+                <rect x="6" y="304" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="328" class="flow-title">5. Engineering prototype</text>
+                <text x="22" y="349" class="flow-q">Does the integrated design meet the spec?</text><path d="M179.0,364 L179.0,374" class="flow-arrow" marker-end="url(#dev-arrow)"/>
+                <rect x="6" y="378" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="402" class="flow-title">6. Design verification</text>
+                <text x="22" y="423" class="flow-q">Do production-intent parts pass the tests?</text><path d="M179.0,438 L179.0,448" class="flow-arrow" marker-end="url(#dev-arrow)"/>
+                <rect x="6" y="452" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="476" class="flow-title">7. Pilot production</text>
+                <text x="22" y="497" class="flow-q">Can it be made repeatably at quality?</text>
+                <path d="M356,407.0 H378 V111.0 H360" class="flow-loop" marker-end="url(#dev-arrow)"/>
+                <text x="386" y="251.0" class="flow-loop-label">learn</text>
+                <text x="386" y="269.0" class="flow-loop-label">and</text>
+                <text x="386" y="287.0" class="flow-loop-label">iterate</text>
+              </svg>
+              <figcaption>Each stage exists to answer one question. When a test says no, the team goes back round the loop, which is far cheaper before tooling than after it.</figcaption>
+            </figure>
+            <table>
+              <thead>
+                <tr>
+                  <th>Stage</th>
+                  <th>Main outputs</th>
+                  <th>Typical builds</th>
+                  <th>Ready to move on when…</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1. Define</td>
+                  <td>User needs, a requirements list with measurable targets, constraints (cost, size, regulation)</td>
+                  <td>Sketches, cardboard or foam models</td>
+                  <td>The team agrees what "good" looks like and how it will be measured</td>
+                </tr>
+                <tr>
+                  <td>2. Concept</td>
+                  <td>Several distinct directions, a scored comparison, a chosen concept</td>
+                  <td>Quick mock-ups, simple rigs</td>
+                  <td>One direction clearly beats the others against the requirements</td>
+                </tr>
+                <tr>
+                  <td>3. <a class="glossary-term" href="../knowledge/glossary.html#term-proof-of-principle" data-definition="An early build that tests whether a product's core idea works." aria-label="Proof of principle: An early build that tests whether a product's core idea works. (glossary)">Proof of principle</a></td>
+                  <td>Evidence that the core mechanism, sensor or process works</td>
+                  <td>Bench rigs, breadboards, off-the-shelf parts</td>
+                  <td>The riskiest technical question has a convincing yes</td>
+                </tr>
+                <tr>
+                  <td>4. Looks-like and works-like</td>
+                  <td>User feedback on form and use; a functional model of the system</td>
+                  <td>Appearance models; separate functional prototypes</td>
+                  <td>Users understand and want it; the system works end to end</td>
+                </tr>
+                <tr>
+                  <td>5. <a class="glossary-term" href="../knowledge/glossary.html#term-engineering-prototype" data-definition="A prototype that integrates form and function to check the design against its specification." aria-label="Engineering prototype: A prototype that integrates form and function to check the design against its specification. (glossary)">Engineering prototype</a></td>
+                  <td>An integrated design that combines form and function; detailed CAD</td>
+                  <td>3D-printed, CNC or vacuum-cast parts with real components</td>
+                  <td>It meets the specification on the bench and in early user trials</td>
+                </tr>
+                <tr>
+                  <td>6. <a class="glossary-term" href="../knowledge/glossary.html#term-design-verification" data-definition="Testing production-intent parts against the requirements before committing to production." aria-label="Design verification: Testing production-intent parts against the requirements before committing to production. (glossary)">Design verification</a></td>
+                  <td>Test reports against requirements; pre-compliance results; <a class="glossary-term" href="../knowledge/glossary.html#term-design-freeze" data-definition="The point at which a design is fixed and further changes go through change control." aria-label="design freeze: The point at which a design is fixed and further changes go through change control. (glossary)">design freeze</a></td>
+                  <td>Production-intent parts, sometimes from <a class="glossary-term" href="../knowledge/glossary.html#term-bridge-tooling" data-definition="Lower-cost, faster tooling used to make early production parts while demand and design settle, before committing to full production tooling." aria-label="bridge tooling: Lower-cost, faster tooling used to make early production parts while demand and design settle, before committing to full production tooling. (glossary)">bridge tooling</a></td>
+                  <td>Tests pass with margin and the design is frozen under <a class="text-link-inline" href="bills-of-materials-and-revision-control.html">change control</a></td>
+                </tr>
+                <tr>
+                  <td>7. <a class="glossary-term" href="../knowledge/glossary.html#term-pilot-production" data-definition="A small production run on the real process to prove it can make the product repeatably." aria-label="Pilot production: A small production run on the real process to prove it can make the product repeatably. (glossary)">Pilot production</a></td>
+                  <td>Production process, <a class="text-link-inline" href="assembly-and-work-instructions.html">work instructions</a>, inspection plan, first-article reports</td>
+                  <td>Parts from production tools, assembled on the real line</td>
+                  <td>The factory can build it repeatably at the quality and cost planned</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The <a class="text-link-inline" href="../tools/product-design-process-map.html">Product Design Process Map</a> lets you place your own product on these stages,
+              and <a class="text-link-inline" href="mapping-the-product-design-process.html">mapping the product design process</a> explains how to plan the work in each.
+            </p>
+
+            <h2 id="prototypes">Types of prototype and what each is for</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Prototype</th>
+                  <th>Question it answers</th>
+                  <th>Common methods</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Proof of principle</td>
+                  <td>Does the core idea work?</td>
+                  <td>Bench rigs, <a class="glossary-term" href="../knowledge/glossary.html#term-development-board" data-definition="An off-the-shelf circuit board carrying a processor, radio or sensors with easy connections, used to prove electronics and firmware before a custom board is designed." aria-label="development boards: An off-the-shelf circuit board carrying a processor, radio or sensors with easy connections, used to prove electronics and firmware before a custom board is designed. (glossary)">development boards</a>, modified existing products</td>
+                </tr>
+                <tr>
+                  <td>Looks-like</td>
+                  <td>Is the size, shape, feel and appearance right?</td>
+                  <td>SLA printing, CNC, painted and finished models</td>
+                </tr>
+                <tr>
+                  <td>Works-like</td>
+                  <td>Does the full system function?</td>
+                  <td>Functional parts in a rough housing, wired-up electronics</td>
+                </tr>
+                <tr>
+                  <td>Engineering (alpha)</td>
+                  <td>Does the integrated design meet the specification?</td>
+                  <td>Printed, machined or vacuum-cast parts with production-intent components</td>
+                </tr>
+                <tr>
+                  <td>Field trial (beta)</td>
+                  <td>What happens in real use, over time?</td>
+                  <td>Small batch for trusted users, often vacuum-cast or bridge-tooled</td>
+                </tr>
+                <tr>
+                  <td>Pre-production</td>
+                  <td>Do production parts and processes give the right result?</td>
+                  <td>Parts from production or bridge tools, built on the intended line</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Separating looks-like from works-like is one of the most useful habits in early development: each can be built quickly and cheaply
+              when it does not have to do the other's job; <a class="text-link-inline" href="looks-like-vs-works-like-prototypes.html">looks-like vs works-like prototypes</a> explains when to combine them. The <a class="text-link-inline" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>
+              suggests the build method for each question, and <a class="text-link-inline" href="prototyping-vs-production-startup-guide.html">prototyping versus production</a>
+              compares the processes in detail.
+            </p>
+
+            <h2 id="rounds">How many prototype rounds to plan</h2>
+            <p>
+              Many products need two or three rounds between first concept and production-intent parts, and complex, connected or safety-critical products often need more.
+              Rather than fixing a number, list the questions that must be answered before tooling and group them into rounds:
+            </p>
+            <ul>
+              <li><strong>Answer the riskiest question first.</strong> If the product fails because the core function does not work, nothing else matters.</li>
+              <li><strong>One round, one purpose.</strong> A round that tries to prove function, appearance and manufacturability at once usually proves none of them well.</li>
+              <li><strong>Use the cheapest build that can answer the question.</strong> A rig on a bench can settle a mechanism long before a housing exists.</li>
+              <li><strong>Plan for at least one surprise.</strong> Budget time and money for a round you cannot yet name; one is often needed.</li>
+            </ul>
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              write down, before each build, the question it answers and the result that would change your plan. If you cannot, the build is probably not needed yet.
+            </div>
+
+            <h2 id="testing">Testing and validation</h2>
+            <p>
+              Testing turns prototypes into evidence. A simple test plan lists each requirement, how it will be tested, the pass criterion and the result; the <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a> gives you a starting list.
+              Typical areas include function and performance, user testing, durability and life cycles, drop and impact, temperature and humidity,
+              and, for products that need it, pre-compliance checks for electrical safety and electromagnetic compatibility before formal certification.
+            </p>
+            <p>
+              Pre-compliance testing is worth doing early for any electrical product: problems found at a test house after tooling are among the most expensive to fix.
+              For which rules apply to your product, start from official guidance such as GOV.UK's
+              <a class="text-link-inline" href="https://www.gov.uk/guidance/using-the-ukca-marking" rel="noopener">guidance on UKCA marking</a>, and take specialist advice for regulated categories. <a class="text-link-inline" href="product-certification-basics.html">Product certification basics</a> explains the process.
+            </p>
+
+            <h2 id="example">Worked example: planning the rounds for a handheld device</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A start-up is developing a rechargeable handheld device with a sensor, a small display and a two-part plastic housing.
+                Instead of commissioning "a prototype", the team lists its open questions and plans four rounds.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Round</th>
+                  <th>Question</th>
+                  <th>Build</th>
+                  <th>Decision it unlocks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Can the sensor give a stable reading in real conditions?</td>
+                  <td>Development board and sensor on a bench rig</td>
+                  <td>Choose the sensor and electronics architecture</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Is the size and grip right; can users read the display?</td>
+                  <td>Three printed looks-like models; a works-like unit in a rough box</td>
+                  <td>Fix the form, display size and button layout</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Does the integrated design fit, work, charge and survive a drop?</td>
+                  <td>Five engineering prototypes with printed housings and a custom circuit board</td>
+                  <td>Release the design for production-intent detailing</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Do production-intent parts pass the tests and pre-compliance checks?</td>
+                  <td>Twenty vacuum-cast units for testing and a short field trial</td>
+                  <td>Freeze the design and commit to tooling</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Each round is small and has a single job. If round 3 shows the housing cracks in a drop test, the fix costs a reprint rather than a tool modification.
+              The plan also gives the team a clear point, after round 4, at which committing to tooling is justified. Because the product contains a custom circuit board, the board and housing were developed side by side;
+              <a class="text-link-inline" href="electronics-in-a-physical-product.html">electronics in a physical product</a> covers what to plan early.
+            </p>
+
+            <h2 id="records">Keeping the design under control</h2>
+            <p>
+              As prototypes multiply, keep a light but disciplined record: a requirements list with test results against it, a revision number on every part and drawing,
+              and a short change log saying what changed and why. At design freeze, any further change should go through a simple change-control step,
+              because from that point changes ripple into tooling, suppliers, test reports and cost.
+            </p>
+            <p>
+              The same records are what a manufacturer will ask for. See <a class="text-link-inline" href="must-have-documents-before-talking-to-a-manufacturer.html">the documents to prepare before talking to a manufacturer</a>.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Building a beautiful prototype too early.</strong>
+                High-finish models are slow and expensive, and teams become reluctant to change them.
+              </div>
+              <div>
+                <strong>Testing to confirm rather than to learn.</strong>
+                A test that cannot fail tells you nothing. Set pass criteria before you see the result.
+              </div>
+              <div>
+                <strong>Skipping design for manufacture until the end.</strong>
+                Wall thickness, draft, part count and assembly should shape the engineering prototype, not be retrofitted after it.
+              </div>
+              <div>
+                <strong>Leaving compliance to the end.</strong>
+                Early pre-compliance checks are much cheaper than redesign after a failed formal test.
+              </div>
+              <div>
+                <strong>No written record of why decisions were made.</strong>
+                Six months later nobody remembers why a material or dimension was chosen, and the same question gets answered again.
+              </div>
+            </div>
+
+            <h2 id="path">A step-by-step path through this hub</h2>
+            <ol>
+              <li><strong>Check the idea is worth developing</strong> with <a class="text-link-inline" href="how-to-validate-a-product-idea.html">how to validate a product idea</a> and the <a class="text-link-inline" href="../tools/product-purpose.html">Product Purpose Framework</a>.</li>
+              <li><strong>Choose a concept</strong> with <a class="text-link-inline" href="how-engineers-choose-between-concepts.html">how engineers choose between concepts</a> and the <a class="text-link-inline" href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a>.</li>
+              <li><strong>Map the stages for your product</strong> with the <a class="text-link-inline" href="../tools/product-design-process-map.html">Product Design Process Map</a> and <a class="text-link-inline" href="mapping-the-product-design-process.html">its guide</a>, then estimate the timeline with the <a class="text-link-inline" href="../tools/timeline-planner.html">Timeline Planner</a>.</li>
+              <li><strong>Plan the prototype rounds</strong> with the <a class="text-link-inline" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a> and <a class="text-link-inline" href="prototyping-vs-production-startup-guide.html">prototyping versus production</a>.</li>
+              <li><strong>Design for assembly</strong> with the <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a> and <a class="text-link-inline" href="assembly-time-estimate.html">its guide</a>.</li>
+              <li><strong>Budget the development</strong> with <a class="text-link-inline" href="estimating-hardware-development-costs.html">how much it costs to develop a hardware product</a> and the <a class="text-link-inline" href="../tools/startup-cost-planner.html">Startup Cost Planner</a>.</li>
+              <li><strong>Move on to manufacture</strong> with the <a class="text-link-inline" href="manufacturing-and-cost.html">Manufacturing and cost hub</a>.</li>
+            </ol>
+            <p>
+              Save results as you go to the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a>, and use the
+              <a class="text-link-inline" href="../ready-to-launch/index.html">Ready-to-Launch roadmap</a> to see the whole journey on one page.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Plan your prototype rounds</h3>
+                <p>Match each open question to the cheapest build that can answer it.</p>
+                <a class="button button-primary" href="../tools/prototype-strategy-tool.html" data-analytics-event="article_cta_click" data-analytics-label="dev_hub_to_prototype_tool">Open Prototype Strategy Tool</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Map the whole process</h3>
+                <p>See where your product is, what comes next and what each stage should produce.</p>
+                <a class="button button-secondary" href="../tools/product-design-process-map.html" data-analytics-event="article_cta_click" data-analytics-label="dev_hub_to_process_map">Open Product Design Process Map</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Tools in this hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Product Test Plan Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/timeline-planner.html">Product Development Timeline Planner</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-design-process-map.html">Product Design Process Map</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/assembly-time.html">Assembly Time Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/temperature-rise-estimator.html">Enclosure Temperature Rise Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/bracket-deflection-calculator.html">Bracket Deflection Calculator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Guides in this hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="product-testing-and-validation-plans.html">Product testing and validation plans</a></div>
+                <div class="aside-item"><a class="text-link" href="how-many-prototypes-do-you-need.html">How many prototypes do you need?</a></div>
+                <div class="aside-item"><a class="text-link" href="looks-like-vs-works-like-prototypes.html">Looks-like vs works-like prototypes</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-a-3d-printing-process.html">Choosing a 3D printing process</a></div>
+                <div class="aside-item"><a class="text-link" href="usability-testing-a-prototype.html">Usability testing a prototype</a></div>
+                <div class="aside-item"><a class="text-link" href="running-a-design-review.html">Running a design review</a></div>
+                <div class="aside-item"><a class="text-link" href="electronics-in-a-physical-product.html">Electronics in a physical product</a></div>
+                <div class="aside-item"><a class="text-link" href="managing-heat-in-a-product-enclosure.html">Managing heat in an enclosure</a></div>
+                <div class="aside-item"><a class="text-link" href="designing-for-drops-and-impacts.html">Designing for drops and impacts</a></div>
+                <div class="aside-item"><a class="text-link" href="designing-buttons-switches-and-controls.html">Designing buttons, switches and controls</a></div>
+                <div class="aside-item"><a class="text-link" href="cables-wiring-and-connectors-inside-a-product.html">Cables, wiring and connectors</a></div>
+                <div class="aside-item"><a class="text-link" href="working-with-a-product-design-consultancy.html">Working with a design consultancy</a></div>
+                <div class="aside-item"><a class="text-link" href="industrial-design-vs-engineering-design.html">Industrial design vs engineering design</a></div>
+                <div class="aside-item"><a class="text-link" href="mapping-the-product-design-process.html">Mapping the product design process</a></div>
+                <div class="aside-item"><a class="text-link" href="prototyping-vs-production-startup-guide.html">Prototyping vs production</a></div>
+                <div class="aside-item"><a class="text-link" href="how-engineers-choose-between-concepts.html">Choosing between concepts</a></div>
+                <div class="aside-item"><a class="text-link" href="assembly-time-estimate.html">Estimating assembly time</a></div>
+                <div class="aside-item"><a class="text-link" href="estimating-hardware-development-costs.html">Hardware development costs</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This hub answers</p>
+              <div class="tag-row">
+                <span>Development stages</span>
+                <span>Prototypes</span>
+                <span>Testing</span>
+                <span>Design freeze</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What are the stages of hardware product development?</h3>
+                <p>Most products pass through defining requirements, concept development, proof of principle, looks-like and works-like prototypes, engineering prototypes, design verification and pilot production. Electronics teams often call the last three EVT, DVT and PVT. Each stage answers one main question before money is committed to the next.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between a looks-like and a works-like prototype?</h3>
+                <p>A looks-like prototype shows the size, shape, finish and feel of the product but may not function. A works-like prototype proves the product functions but may look nothing like the final design. Building them separately is faster and cheaper than trying to make one model do both jobs early on.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How many prototypes does a hardware product need?</h3>
+                <p>Many products need two or three rounds before production-intent parts, and complex or regulated products often need more. Plan rounds around the questions that must be answered rather than a fixed number, and allow for at least one unplanned round.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should a design be frozen?</h3>
+                <p>When testing on production-intent parts shows the requirements are met with some margin, and before committing to production tooling and formal certification. After the freeze, changes should go through a simple change-control step because they affect tools, suppliers and test reports.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How long does hardware product development take?</h3>
+                <p>It varies widely with complexity, regulation and how quickly decisions are made. A simple mechanical product can move from concept to production in months, while connected, medical or safety-critical products commonly take considerably longer. Map your own stages and rounds to get an estimate you can defend.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

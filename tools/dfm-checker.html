@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Injection Moulding DFM Checker for Plastic Parts | Orion Design</title>
+    <meta
+      name="description"
+      content="Check a plastic part's wall thickness, draft, ribs, bosses, corner radii and undercuts against common injection moulding guidance, with an explanation for each result."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/dfm-checker.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Injection Moulding DFM Checker | Orion Design">
+    <meta
+      property="og:description"
+      content="Check a plastic part's wall thickness, draft, ribs, bosses, corner radii and undercuts against common injection moulding guidance, with an explanation for each result."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/dfm-checker.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-dfm-checker.jpg">
+    <meta property="og:image:alt" content="Injection moulding DFM checker from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Injection Moulding DFM Checker | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Check a plastic part's wall thickness, draft, ribs, bosses, corner radii and undercuts against common injection moulding guidance, with an explanation for each result."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-dfm-checker.jpg">
+    <meta name="twitter:image:alt" content="Injection moulding DFM checker from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-dfm-checker.jpg",
+        "name": "Injection Moulding DFM Checker",
+        "url": "https://oriondesign.xyz/tools/dfm-checker.html",
+        "description": "Rule-based design-for-manufacture feedback on wall thickness, draft, ribs, bosses, corner radii and undercuts for injection-moulded plastic parts.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Injection Moulding DFM Checker",
+                "item": "https://oriondesign.xyz/tools/dfm-checker.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can this checker replace a moulder's DFM review?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It catches common problems early, but a moulder's review considers the specific tool, gate positions, material grade, flow length and cosmetic requirements, and may include a mould-flow simulation. Use the checker to arrive with a better design."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where do the material wall thickness ranges come from?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "They are indicative ranges of the kind commonly quoted for unfilled grades. The right wall for your part depends on its size, flow length and grade, so check the material supplier's datasheet and ask your moulder."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What counts as an undercut?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Any feature that stops the part being pulled straight out of the tool in the opening direction: side holes, clips and hooks facing sideways, internal grooves and threads, for example. Each usually needs a side action, lifter or other moving part."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does the checker treat textured surfaces differently?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Texture creates tiny undercuts in the surface, so textured faces need more draft to release without scuffing. Texture suppliers usually specify a minimum draft for each texture depth."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should I measure as the thickest section?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The thickest solid area of plastic, such as the base of a solid boss, a junction where several walls meet, or a thickened edge. Measuring the diameter of the largest circle that fits inside the section is a practical way to find it."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Injection Moulding DFM Checker</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Injection Moulding DFM Checker</h1>
+            <p>
+              Enter the key dimensions of a plastic part and get instant feedback on wall thickness, draft, ribs, bosses, corner radii and undercuts,
+              based on common design-for-manufacture guidance. Use it on the CAD model before asking for <a class="text-link-inline" href="../guides/comparing-manufacturing-quotes.html">tooling quotes</a>. Leave rib or boss fields at 0 if the part has none.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="DFM checker worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"dfmMaterial":"abs","dfmWall":"4","dfmThickest":"9","dfmDraft":"0","dfmTexture":"no","dfmRib":"3","dfmRibHeight":"10","dfmBossHole":"2.5","dfmBossOd":"9","dfmRadius":"0","dfmUndercuts":"2"}'>Enclosure lid, first draft</button>
+              <button class="preset-button" type="button" data-tool-preset='{"dfmMaterial":"abs","dfmWall":"2.5","dfmThickest":"3","dfmDraft":"1","dfmTexture":"no","dfmRib":"1.25","dfmRibHeight":"7","dfmBossHole":"2.5","dfmBossOd":"5","dfmRadius":"1.5","dfmUndercuts":"0"}'>Enclosure lid, after review</button>
+              <button class="preset-button" type="button" data-tool-preset='{"dfmMaterial":"pp","dfmWall":"2","dfmThickest":"3.2","dfmDraft":"2","dfmTexture":"yes","dfmRib":"1.2","dfmRibHeight":"5","dfmBossHole":"3","dfmBossOd":"6","dfmRadius":"1","dfmUndercuts":"1"}'>Textured PP housing</button>
+            </div>
+            <form class="tool-form" id="dfmForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="dfmMaterial">Material</label>
+                  <select id="dfmMaterial">
+                    <option value="abs" selected>ABS</option>
+                    <option value="pcabs">PC/ABS</option>
+                    <option value="pc">Polycarbonate (PC)</option>
+                    <option value="pp">Polypropylene (PP)</option>
+                    <option value="pe">Polyethylene (HDPE)</option>
+                    <option value="pa">Nylon (PA6 / PA66)</option>
+                    <option value="pom">Acetal (POM)</option>
+                    <option value="pmma">Acrylic (PMMA)</option>
+                    <option value="tpe">TPE</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="dfmWall">Nominal wall thickness (mm)</label>
+                  <input id="dfmWall" type="number" min="0" value="2.5" step="0.05">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="dfmThickest">Thickest section (mm)</label>
+                  <input id="dfmThickest" type="number" min="0" value="3" step="0.05">
+                  <p class="helper-text">The thickest solid area, such as a boss base or a junction</p>
+                </div>
+                <div class="field-group">
+                  <label for="dfmDraft">Draft angle (degrees)</label>
+                  <input id="dfmDraft" type="number" min="0" value="1" step="0.25">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="dfmTexture">Textured surface?</label>
+                  <select id="dfmTexture">
+                    <option value="no" selected>No, smooth or polished</option>
+                    <option value="yes">Yes, textured</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="dfmRadius">Smallest inside corner radius (mm)</label>
+                  <input id="dfmRadius" type="number" min="0" value="1" step="0.05">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="dfmRib">Rib thickness at the base (mm)</label>
+                  <input id="dfmRib" type="number" min="0" value="1.25" step="0.05">
+                </div>
+                <div class="field-group">
+                  <label for="dfmRibHeight">Tallest rib height (mm)</label>
+                  <input id="dfmRibHeight" type="number" min="0" value="7" step="0.5">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="dfmBossHole">Screw boss hole diameter (mm)</label>
+                  <input id="dfmBossHole" type="number" min="0" value="2.5" step="0.05">
+                </div>
+                <div class="field-group">
+                  <label for="dfmBossOd">Screw boss outside diameter (mm)</label>
+                  <input id="dfmBossOd" type="number" min="0" value="5" step="0.05">
+                </div>
+              </div>
+                <div class="field-group">
+                  <label for="dfmUndercuts">Number of undercuts</label>
+                  <input id="dfmUndercuts" type="number" min="0" value="0" step="1">
+                  <p class="helper-text">Features that stop the part pulling straight out of the tool, such as side holes or clips</p>
+                </div>
+              <button class="button button-primary" type="submit">Check the design</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="dfmSummary"></div>
+            <div class="dfm-checks" id="dfmChecks"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#dfmCopy"
+                  data-copy-feedback="#dfmCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="dfmCopy" class="copy-output" readonly></textarea>
+              <div id="dfmCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want a second opinion on the design?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="dfm_checker_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Most moulding problems come from a few features: uneven walls, missing draft, thick ribs and bosses, sharp corners and undercuts.</h2>
+              <p>This checker compares your values with common rules of thumb and explains each result. It is a first pass, not a substitute for the moulder's DFM review or a mould-flow analysis.</p>
+            </div>
+
+            <h2>The rules it uses</h2>
+            <ul>
+              <li><strong>Wall thickness:</strong> compared with an indicative range for the chosen material, for unfilled grades.</li>
+              <li><strong>Uniformity:</strong> thickest section up to about 1.25 times the nominal wall is treated as uniform; beyond about 1.75 times, sink and voids become likely.</li>
+              <li><strong>Draft:</strong> at least about 1 degree for smooth faces and about 3 degrees for textured faces as a starting point; 0.5 to 1 degree on a smooth face is flagged to check, as it can suit shallow features.</li>
+              <li><strong>Ribs:</strong> about 40 to 60 per cent of the wall thick, and up to about three times the wall tall.</li>
+              <li><strong>Bosses:</strong> outside diameter around twice the hole, with a boss wall no more than about 60 per cent of the main wall.</li>
+              <li><strong>Inside corners:</strong> radius at least about half the wall.</li>
+              <li><strong>Undercuts:</strong> each one usually needs a moving part in the tool.</li>
+            </ul>
+            <h2>How to read your result</h2>
+            <ul>
+              <li><strong>OK:</strong> the feature follows common guidance. It may still need adjusting for your material grade, flow length or cosmetic requirements.</li>
+              <li><strong>Check:</strong> not necessarily wrong, but worth discussing with the moulder before the tool is designed.</li>
+              <li><strong>Fix:</strong> likely to cause sink marks, warping, sticking, cracking or extra tool cost. Change it on the CAD model now, while it is cheap.</li>
+            </ul>
+            <p>
+              The thresholds are rules of thumb collected from common practice, not limits from a standard. Different materials, grades and part sizes justify different values,
+              so always confirm with the material datasheet and your moulder. The <a class="text-link-inline" href="../guides/injection-moulding-dfm-checklist.html">injection moulding DFM checklist</a>
+              explains each rule with diagrams, and <a class="text-link-inline" href="../guides/choosing-plastic-materials.html">choosing plastic materials</a> helps with the material.
+              Save your result to your <a href="product-plan-builder.html">product plan</a> to bring it to the supplier conversation.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/cnc-machining-design-rules.html">CNC machining design rules</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/injection-moulding-explained.html">Injection moulding explained</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/choosing-plastic-materials.html">Choosing plastic materials</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/development-and-prototyping.html">Development and prototyping: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/sheet-metal-design-basics.html">Sheet metal design basics: bends, holes, reliefs, materials and tolerances</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>DFM</span>
+                <span>Injection moulding</span>
+                <span>Design review</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Can this checker replace a moulder's DFM review?</h3>
+                <p>No. It catches common problems early, but a moulder's review considers the specific tool, gate positions, material grade, flow length and cosmetic requirements, and may include a mould-flow simulation. Use the checker to arrive with a better design.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Where do the material wall thickness ranges come from?</h3>
+                <p>They are indicative ranges of the kind commonly quoted for unfilled grades. The right wall for your part depends on its size, flow length and grade, so check the material supplier's datasheet and ask your moulder.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What counts as an undercut?</h3>
+                <p>Any feature that stops the part being pulled straight out of the tool in the opening direction: side holes, clips and hooks facing sideways, internal grooves and threads, for example. Each usually needs a side action, lifter or other moving part.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why does the checker treat textured surfaces differently?</h3>
+                <p>Texture creates tiny undercuts in the surface, so textured faces need more draft to release without scuffing. Texture suppliers usually specify a minimum draft for each texture depth.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should I measure as the thickest section?</h3>
+                <p>The thickest solid area of plastic, such as the base of a solid boss, a junction where several walls meet, or a thickened edge. Measuring the diameter of the largest circle that fits inside the section is a practical way to find it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="cashflow-projection.html">Cashflow Projection</a>
+          <a href="../guides/financial-break-even-for-hardware-products.html">Break-even guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/dfm-checker.js" defer></script>
+  </body>
+</html>

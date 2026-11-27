@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Engineering Estimation Formulas | Orion Design</title>
+    <meta
+      name="description"
+      content="Hardware estimating formulas with worked examples: unit cost, landed cost, tooling break-even, assembly time, margin vs markup, target COGS, runway and stack-up."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/knowledge/engineering-estimation-formulas.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Engineering Estimation Formulas">
+    <meta
+      property="og:description"
+      content="Unit cost, landed cost, tooling break-even, assembly time, margin vs markup, target COGS, break-even, runway and tolerance stack-up formulas, with worked examples."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/knowledge/engineering-estimation-formulas.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/knowledge-engineering-estimation-formulas.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Engineering Estimation Formulas">
+    <meta
+      name="twitter:description"
+      content="Unit cost, landed cost, tooling break-even, assembly time, margin vs markup, target COGS, break-even, runway and tolerance stack-up formulas, with worked examples."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/knowledge-engineering-estimation-formulas.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "image": "https://oriondesign.xyz/images/social/og/knowledge-engineering-estimation-formulas.jpg",
+        "headline": "Engineering Estimation Formulas",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-26",
+        "mainEntityOfPage": "https://oriondesign.xyz/knowledge/engineering-estimation-formulas.html"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Knowledge Base",
+                "item": "https://oriondesign.xyz/knowledge/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Engineering Estimation Formulas",
+                "item": "https://oriondesign.xyz/knowledge/engineering-estimation-formulas.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the formula for injection mould break-even volume?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tooling cost ÷ (prototype unit cost − moulded unit cost), when the alternative has no setup cost; otherwise subtract its setup cost from the tooling cost first. A £6,500 tool making £0.70 parts against £18 printed parts breaks even at about 376 units."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between margin and markup?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Margin is profit as a share of the selling price; markup is profit as a share of the cost. £50 cost and a £100 price is a 50% margin but a 100% markup."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I work out target COGS from a retail price?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Remove VAT and the channel's share to find the price you receive, then take away hidden selling costs and the margin the business needs. What is left is the most the product can cost to make and land."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should I use worst-case or RSS tolerance stack-up?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Worst case for safety-critical fits, short chains, low volumes or off-centre processes; RSS for longer chains from stable processes in reasonable volumes. Many engineers check both."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How accurate are these estimating formulas?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Only as good as their inputs. Use them for early comparisons, then replace assumed figures with supplier quotes, test results and real sales data."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Knowledge Base</a>
+            <span>/</span>
+            <span aria-current="page">Engineering Estimation Formulas</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Reference page</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders, engineers and product teams estimating cost, price, volume and cash</p>
+            <h1>Engineering estimation formulas.</h1>
+            <p>
+              The formulas behind Orion's free tools and guides in one place, each with its terms, a short worked example, the usual mistake,
+              and the tool that calculates it for you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Use a formula to frame the decision, then check it against supplier quotes and real project figures.</h2>
+              <p>
+                These formulas are for early estimates: comparing options on the same assumptions and finding which input matters most. Each matches the calculation in the linked Orion tool,
+                so you can check a result by hand. Worked examples use illustrative figures from the guides and tool defaults, not quotes or benchmarks.
+              </p>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Question and formula</th>
+                  <th>Tool</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>What does one unit really cost?</strong><br><a class="text-link-inline" href="#unit-cost">COGS and unit cost</a>, <a class="text-link-inline" href="#landed-cost">landed cost</a></td>
+                  <td><a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></td>
+                </tr>
+                <tr>
+                  <td><strong>When is tooling worth it?</strong><br><a class="text-link-inline" href="#crossover">Crossover volume</a></td>
+                  <td><a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a></td>
+                </tr>
+                <tr>
+                  <td><strong>How much labour is in the build?</strong><br><a class="text-link-inline" href="#assembly-time">Assembly time</a></td>
+                  <td><a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a></td>
+                </tr>
+                <tr>
+                  <td><strong>What price, and what can it cost?</strong><br><a class="text-link-inline" href="#margin-markup">Margin and markup</a>, <a class="text-link-inline" href="#target-cogs">target COGS</a></td>
+                  <td><a class="text-link-inline" href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a></td>
+                </tr>
+                <tr>
+                  <td><strong>How many must we sell?</strong><br><a class="text-link-inline" href="#break-even">Contribution and break-even</a></td>
+                  <td><a class="text-link-inline" href="../tools/break-even-calculator.html">Break-even Calculator</a></td>
+                </tr>
+                <tr>
+                  <td><strong>How much money, for how long?</strong><br><a class="text-link-inline" href="#contingency">Contingency</a>, <a class="text-link-inline" href="#cash">cash and runway</a></td>
+                  <td><a class="text-link-inline" href="../tools/cashflow-projection.html">Cashflow Projection Tool</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Will the parts fit?</strong><br><a class="text-link-inline" href="#tolerance">Tolerance stack-up</a></td>
+                  <td><a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 id="unit-cost">Unit cost: COGS and the cost to the business</h2>
+            <div class="formula-block">Direct cost = materials + process + bought-in parts + packaging + labour
+Labour = build minutes ÷ 60 × hourly rate
+Scrap allowance = direct cost × scrap rate
+Overhead = (direct cost + scrap) × overhead rate
+COGS = direct cost + scrap + overhead
+Unit cost to the business = COGS + (tooling ÷ units the tooling will make) + landed-cost additions per unit</div>
+            <p>
+              <strong>Terms:</strong> process is machine rate × cycle time ÷ parts per cycle, plus finishing; the labour rate is fully loaded; overhead is applied after scrap.
+              Tooling sits outside COGS so you can see how it changes with volume.
+            </p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures from the <a class="text-link-inline" href="../guides/how-to-estimate-manufacturing-cost.html">manufacturing cost guide</a>: £4.80 material, £2.40 process, £5.50 bought-in parts,
+                £4.80 labour (12 minutes at £24 an hour) and £1.20 packaging make £18.70 direct. A 6% scrap allowance (£1.12) gives £19.82 and a 14% overhead (£2.77) gives a COGS of £22.59
+                (the tool, which does not round between steps, shows £22.60). £12,000 of tooling over 10,000 units adds £1.20 and freight, insurance, clearance and duty add £1.60, so the unit cost is £25.39.
+                At 2,000 units the same tool adds £6.00 and the unit cost becomes £30.19.
+              </p>
+            </div>
+            <p><strong>Common mistake:</strong> pricing from material, process and bought-in parts alone (£12.70 here), which is about half the real figure.</p>
+
+            <h2 id="landed-cost">Landed cost</h2>
+            <div class="formula-block">Customs value = goods + packaging + origin charges + freight + insurance
+Duty = customs value × duty rate
+Import VAT = (customs value + duty) × VAT rate
+Landed cost = customs value + duty + clearance + delivery + other (+ import VAT if you cannot reclaim it)</div>
+            <p>
+              <strong>Terms:</strong> the duty rate comes from the product's commodity code and country of origin on the UK Trade Tariff; the customs value usually includes transport and insurance to the UK border.
+              The import VAT line is simplified, as some costs after the border can also count towards it.
+            </p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures from the <a class="text-link-inline" href="../guides/landed-cost-freight-duty-vat.html">landed cost guide</a>: 1,000 units at £6.00 FOB is £6,000; freight and insurance of £760 make a customs value of £6,760;
+                duty at an assumed 4% is £270.40; clearance and delivery add £300. Landed cost is £7,330.40, about £7.33 a unit, 22% above the factory price. Import VAT of £1,406.08 is reclaimable by a VAT-registered business.
+              </p>
+            </div>
+            <p><strong>Common mistake:</strong> comparing suppliers on factory price when their quotes use different Incoterms. Calculate it with the <a class="text-link-inline" href="../tools/landed-cost-calculator.html">Landed Cost Calculator</a>.</p>
+
+            <h2 id="crossover">Crossover volume: when tooling pays back</h2>
+            <div class="formula-block">Total cost of a route = setup or tooling cost + unit cost × quantity
+Crossover volume between routes A and B = (setup B − setup A) ÷ (unit cost A − unit cost B)
+With no setup cost for A: break-even volume = tooling cost ÷ (prototype unit cost − moulded unit cost)</div>
+            <p>
+              <strong>Terms:</strong> route A is cheap to start but dear per part (3D printing, CNC, vacuum casting); route B, usually injection moulding, has the higher setup and lower unit cost
+              and is cheaper in total above the crossover. The third line is the form used in the <a class="text-link-inline" href="../guides/injection-mould-break-even.html">injection mould break-even guide</a>.
+            </p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures (the <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a> defaults): a £6,500 mould making parts at £0.70 against 3D printing at £18 with no setup
+                crosses over at £6,500 ÷ £17.30 ≈ 376 units. But vacuum casting at £950 setup and £4.20 a part only gives way to moulding at (£6,500 − £950) ÷ (£4.20 − £0.70) ≈ 1,586 units.
+              </p>
+            </div>
+            <p>
+              <strong>Common mistake:</strong> calculating break-even against the most expensive alternative only. The straight-line model is also a simplification: silicone moulds for vacuum casting
+              wear out after a limited number of parts, as the <a class="text-link-inline" href="../guides/manufacturing-processes-compared.html">processes comparison</a> shows, and design changes can mean tool modifications.
+            </p>
+
+            <h2 id="assembly-time">Assembly time and labour cost</h2>
+            <div class="formula-block">Assembly time ≈ (parts × handling time) + (joins × fastening time) + (reorientations × turn time) + inspection time
+Labour cost per unit = total seconds ÷ 3,600 × hourly labour rate</div>
+            <p>
+              <strong>Terms:</strong> the <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a> assumes 7, 12 or 18 seconds to handle and insert each part (simple, moderate or complex)
+              and 6 seconds per reorientation; you set the time per fastener and the inspection time. These are planning assumptions, not measured times.
+            </p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures (the tool's defaults): 12 moderate parts × 12 s = 144 s; 8 fasteners × 14 s = 112 s; 5 reorientations × 6 s = 30 s; plus 20 s of inspection gives 306 seconds, about 5.1 minutes.
+                At £28 an hour that is 306 ÷ 3,600 × £28 ≈ £2.38 of labour per unit. The <a class="text-link-inline" href="../guides/assembly-time-estimate.html">assembly time guide</a> compares two concepts using its own, lower step times.
+              </p>
+            </div>
+            <p><strong>Common mistake:</strong> comparing concepts with different time assumptions. The absolute figure is rough; the difference between concepts on the same assumptions is the useful part.</p>
+
+            <h2 id="margin-markup">Margin, markup and the price for a margin</h2>
+            <div class="formula-block">Margin = (price − cost) ÷ price
+Markup = (price − cost) ÷ cost
+Markup = margin ÷ (1 − margin)
+Price needed for a margin m = cost ÷ (1 − m)
+Shelf price = each price in the chain ÷ (1 − that partner's margin), then × (1 + VAT rate)</div>
+            <p><strong>Terms:</strong> margin is a share of the selling price; markup is a share of the cost. Retailers and distributors usually talk in margin.</p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures: a product costing £50 that sells for £100 has a 50% margin but a 100% markup, and a 50% markup is only a 33% margin.
+                With the <a class="text-link-inline" href="../tools/pricing-ladder.html">Pricing Ladder</a> defaults, an £8.00 landed cost at a 50% brand margin is £16.00 to the retailer; a 45% retailer margin makes £29.09 before VAT, and 20% VAT makes a shelf price of £34.91, about 4.4 times landed cost.
+              </p>
+            </div>
+            <p>
+              <strong>Common mistake:</strong> adding a percentage to cost when the buyer means margin. A "40% markup" leaves far less room than a 40% margin needs. See
+              <a class="text-link-inline" href="../guides/retail-and-distributor-margins-explained.html">retail and distributor margins explained</a>.
+            </p>
+
+            <h2 id="target-cogs">Target COGS from retail price</h2>
+            <div class="formula-block">Price before VAT = RRP ÷ (1 + VAT rate)
+Retained price = price before VAT × (1 − channel's share)
+Target COGS = retained price − hidden selling costs − (retained price × target margin)</div>
+            <p>
+              <strong>Terms:</strong> the channel's share is the retailer's margin or the marketplace fee (zero when you sell direct); hidden selling costs are fulfilment, payment fees, returns, marketing and retail support;
+              the target margin is the share of the retained price the business needs to keep.
+            </p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures from the <a class="text-link-inline" href="../guides/hardware-revenue-margin-planning.html">revenue and margin guide</a>: a £180 RRP is £150 before 20% VAT. Sold direct with £43 of selling costs and a 30% target margin (£45),
+                target COGS is £150 − £43 − £45 = £62. Through a retailer keeping 45%, the retained price is £82.50; less £8.13 of costs and £24.75 of margin, target COGS is £49.62.
+              </p>
+            </div>
+            <p>
+              <strong>Common mistake:</strong> working from the RRP without removing VAT and the channel's share first. Check, too, whether a marketplace charges its fee on the price including or excluding VAT:
+              the guide's example charges 15% on the VAT-inclusive £180, while the <a class="text-link-inline" href="../tools/route-to-market-simulator.html">Target COGS tool</a> applies the fee to the price before VAT,
+              which gives a slightly higher retained price (£127.50 rather than £123.00).
+            </p>
+
+            <h2 id="break-even">Contribution, break-even and margin of safety</h2>
+            <div class="formula-block">Contribution per unit = net selling price − variable cost per unit
+Break-even units = fixed costs ÷ contribution per unit (round up)
+Contribution margin ratio = contribution per unit ÷ net selling price
+Break-even revenue = fixed costs ÷ contribution margin ratio
+Margin of safety = (forecast units − break-even units) ÷ forecast units</div>
+            <p>
+              <strong>Terms:</strong> the net selling price is what you receive after VAT and channel deductions; variable cost is everything that rises with each unit (landed COGS, fulfilment, payment fees);
+              fixed costs are what must be recovered regardless of volume, such as development, tooling and certification.
+            </p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures from the <a class="text-link-inline" href="../guides/financial-break-even-for-hardware-products.html">break-even guide</a>: £65,000 of fixed cost, a £49 net price and £22 of variable cost give £27 of contribution.
+                Break-even is 65,000 ÷ 27 = 2,407.4, so 2,408 units, or about £118,000 of revenue; the contribution margin ratio is about 55%. Against a forecast of 3,500 units the margin of safety is about 31%.
+              </p>
+            </div>
+            <p>
+              <strong>Common mistake:</strong> using the shelf price. Sold through a retailer keeping 40%, the same product nets £29.40, contribution falls to £7.40 and break-even rises to about 8,784 units.
+              Run your own figures in the <a class="text-link-inline" href="../tools/break-even-calculator.html">Break-even Calculator</a>.
+            </p>
+
+            <h2 id="contingency">Development budget and contingency</h2>
+            <div class="formula-block">Subtotal = engineering + prototypes + tooling + compliance + first inventory + launch work
+Contingency = subtotal × contingency rate
+Pre-launch requirement = subtotal + contingency</div>
+            <p>
+              <strong>Terms:</strong> a common working range for contingency is 15 to 25 per cent of the subtotal: more for new technology, regulated products or a first-time team, less for a simple product on a proven architecture.
+              The <a class="text-link-inline" href="../tools/startup-cost-planner.html">Startup Cost Planner</a> also shows a suggested funding target 10% above the total, as a buffer for delays.
+            </p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures from the <a class="text-link-inline" href="../guides/estimating-hardware-development-costs.html">development cost guide</a>: a subtotal of £148,000 with 20% contingency (£29,600) needs £177,600 before launch.
+              </p>
+            </div>
+            <p><strong>Common mistake:</strong> trimming contingency to make the budget look affordable. It does not remove the risk; release it as risks close instead.</p>
+
+            <h2 id="cash">Cash flow, runway and acquisition payback</h2>
+            <div class="formula-block">Closing cash = opening cash + cash received − cash paid
+Net burn = monthly operating spend − monthly gross profit
+Runway (months) = cash in the bank ÷ net burn
+CAC = sales and marketing spend ÷ new customers
+CAC payback (orders) = CAC ÷ gross profit per order after fulfilment</div>
+            <p>
+              <strong>Terms:</strong> cash is counted when it moves, not when a sale is booked, so payment delays and stock bought in advance both matter, and runway should include committed stock orders.
+            </p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures from the <a class="text-link-inline" href="../guides/hardware-investor-metrics.html">investor metrics guide</a>: £18,000 of marketing brings 600 customers, so CAC is £30; each order leaves £54 after landed COGS and fulfilment,
+                so CAC is recovered within the first order. Net burn of £30,600 against £420,000 in the bank gives about 13.7 months of runway.
+                In the <a class="text-link-inline" href="../guides/calculating-hardware-startup-cash-flow.html">cash flow guide</a>, £27 of contribution a unit means about 352 units a month just to cover £9,500 of overhead.
+              </p>
+            </div>
+            <p>
+              <strong>Common mistake:</strong> reading profit as cash. The <a class="text-link-inline" href="../tools/investor-metrics-kpis.html">Investor Metrics tool</a> divides CAC by gross profit per unit,
+              so include fulfilment in unit COGS there to match the guide's stricter definition. Model the months in the <a class="text-link-inline" href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>.
+            </p>
+
+            <h2 id="tolerance">Tolerance stack-up: worst case and RSS</h2>
+            <div class="formula-block">Nominal gap = Σ dimensions that open the gap − Σ dimensions that close it
+Worst case = nominal ± Σ tolerances
+RSS (statistical) = nominal ± √(Σ tolerance²)</div>
+            <p>
+              <strong>Terms:</strong> each dimension in the chain has a nominal size and a symmetric ± tolerance (convert +0.2/−0 to the mid-point ± 0.1). Worst case assumes every part is at its limit at once;
+              RSS (root sum of squares) assumes independent, random, centred variation.
+            </p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures (the <a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a> default): a 60.00 ± 0.15 mm opening holds a 59.40 ± 0.15 mm lid, so the nominal gap is 0.60 mm.
+                Worst case is 0.60 ± 0.30, a 0.30 to 0.90 mm gap; RSS is 0.60 ± √(0.15² + 0.15²) ≈ ± 0.21, about 0.39 to 0.81 mm. With four parts at ± 0.10 each, worst case is ± 0.40 but RSS only ± 0.20.
+              </p>
+            </div>
+            <p>
+              <strong>Common mistake:</strong> relying on RSS for a short chain, a low volume or a safety-critical fit. Its "most assemblies" prediction holds only when processes are well centred, so many engineers check both.
+              See <a class="text-link-inline" href="../guides/cnc-machining-design-rules.html">CNC machining design rules</a> for what tolerances cost.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              change one input at a time and watch which one moves the answer most. That input is where a supplier quote, a test or a customer conversation is worth the most.
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">On this page</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="#unit-cost">Unit cost and COGS</a></div>
+                <div class="aside-item"><a class="text-link" href="#landed-cost">Landed cost</a></div>
+                <div class="aside-item"><a class="text-link" href="#crossover">Tooling crossover volume</a></div>
+                <div class="aside-item"><a class="text-link" href="#assembly-time">Assembly time</a></div>
+                <div class="aside-item"><a class="text-link" href="#margin-markup">Margin and markup</a></div>
+                <div class="aside-item"><a class="text-link" href="#target-cogs">Target COGS</a></div>
+                <div class="aside-item"><a class="text-link" href="#break-even">Break-even</a></div>
+                <div class="aside-item"><a class="text-link" href="#contingency">Contingency</a></div>
+                <div class="aside-item"><a class="text-link" href="#cash">Cash and runway</a></div>
+                <div class="aside-item"><a class="text-link" href="#tolerance">Tolerance stack-up</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Part of the knowledge base</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="index.html">Knowledge base home</a></div>
+                <div class="aside-item"><a class="text-link" href="glossary.html">Glossary of terms</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/manufacturing-and-cost.html">Manufacturing and cost hub</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/route-to-market-and-margins.html">Route to market and margins hub</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/funding-and-cash.html">Funding and cash hub</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This page answers</p>
+              <div class="tag-row">
+                <span>Break-even volume formula</span>
+                <span>Margin vs markup</span>
+                <span>Target COGS formula</span>
+                <span>RSS tolerance stack-up</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is the formula for injection mould break-even volume?</h3>
+                <p>Tooling cost ÷ (prototype unit cost − moulded unit cost), when the alternative has no setup cost; otherwise subtract its setup cost from the tooling cost first. A £6,500 tool making £0.70 parts against £18 printed parts breaks even at about 376 units.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between margin and markup?</h3>
+                <p>Margin is profit as a share of the selling price; markup is profit as a share of the cost. £50 cost and a £100 price is a 50% margin but a 100% markup.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do I work out target COGS from a retail price?</h3>
+                <p>Remove VAT and the channel's share to find the price you receive, then take away hidden selling costs and the margin the business needs. What is left is the most the product can cost to make and land.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should I use worst-case or RSS tolerance stack-up?</h3>
+                <p>Worst case for safety-critical fits, short chains, low volumes or off-centre processes; RSS for longer chains from stable processes in reasonable volumes. Many engineers check both.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How accurate are these estimating formulas?</h3>
+                <p>Only as good as their inputs. Use them for early comparisons, then replace assumed figures with supplier quotes, test results and real sales data.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">Author</p>
+            <h2>Andrew Hunter</h2>
+            <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This reference page was created by Orion Design as part of a human-first engineering knowledge resource for product teams. The formulas match the calculations in Orion's free tools. Use them to guide early decisions, then validate with project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">A human-first engineering knowledge resource for hardware teams, founders, and manufacturing decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Reference pages</h3>
+          <a href="index.html">Knowledge Base</a>
+          <a href="../guides/injection-mould-break-even.html">Injection Mould Guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

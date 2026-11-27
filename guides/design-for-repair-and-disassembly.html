@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Design for Repair and Disassembly | Orion Design</title>
+    <meta
+      name="description"
+      content="How to design physical products for repair and disassembly: finding likely failures, reversible fixings, modular parts, spare parts, end of life and the trade-offs."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/design-for-repair-and-disassembly.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Design for repair and disassembly | Orion Design">
+    <meta
+      property="og:description"
+      content="How to design physical products for repair and disassembly: finding likely failures, reversible fixings, modular parts, spare parts, end of life and the trade-offs."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/design-for-repair-and-disassembly.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-design-for-repair-and-disassembly.jpg">
+    <meta property="og:image:alt" content="Design for repair and disassembly guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Design for repair and disassembly | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to design physical products for repair and disassembly: finding likely failures, reversible fixings, modular parts, spare parts, end of life and the trade-offs."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-design-for-repair-and-disassembly.jpg">
+    <meta name="twitter:image:alt" content="Design for repair and disassembly guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-design-for-repair-and-disassembly.jpg",
+        "headline": "Design for repair and disassembly: making products that last longer",
+        "description": "How to design physical products for repair and disassembly: finding likely failures, reversible fixings, modular parts, spare parts, end of life and the trade-offs.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-25",
+        "articleSection": "Sustainability and product life",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/design-for-repair-and-disassembly.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Design for repair"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design for disassembly"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Design for repair and disassembly",
+                "item": "https://oriondesign.xyz/guides/design-for-repair-and-disassembly.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is design for repair?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Designing a product so the parts most likely to fail can be reached, removed and replaced with ordinary tools, and supporting that with spare parts and repair information. It extends product life and reduces waste."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which parts should be easy to replace?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The ones that fail or wear first: typically batteries, buttons and switches, hinges and latches, seals, cables and connectors, cosmetic covers and consumables. Use field returns and life testing to decide."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does design for repair cost more?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It can add parts or assembly time, for example screws instead of glue. Targeted at the failures that actually happen, the cost is often modest, and can be offset by lower warranty costs and a longer-lasting reputation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is design for repair required by law?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For some product categories, ecodesign rules include repair-related requirements such as spare-part availability and repair information, and these are expanding. Requirements differ by category and between Great Britain, Northern Ireland and the EU, so check current guidance."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do repair and recycling relate?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Repair keeps the product in use, which usually saves far more than recycling at the end of life. Designing for disassembly helps both: it makes repair easier and lets materials be separated for recycling."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Design for repair and disassembly</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 25 November 2026 <span aria-hidden="true">·</span> For designers and engineers who want products to last longer and be easier to repair</p>
+            <h1>Design for repair and disassembly: making products that last longer</h1>
+            <p>
+              A practical approach to repairable products: find the parts that will fail first, design so they can be reached and replaced, support repair after sale, and plan for separating materials at the end of life, while managing the trade-offs with cost, sealing and safety.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Design so the parts most likely to fail can be reached, removed and replaced with ordinary tools, and so materials can be separated at the end of life.</h2>
+              <p>
+                Identify which parts wear out or fail first, such as batteries, buttons, seals, hinges and cables, and make those easy to access. Prefer screws and clips to glue,
+                use standard fasteners and few tool types, make spare parts and repair information available, and avoid permanently joining different materials.
+                A longer, repairable life usually does more for a product's environmental impact than recyclable materials alone.
+              </p>
+            </div>
+
+            <h2>Why repairability matters</h2>
+            <p>
+              The impact of making a product is spent once, so every extra year of use spreads it further. Products that cannot be opened or repaired are often replaced for the sake of one failed part.
+              Repairability also reduces <a class="glossary-term" href="../knowledge/glossary.html#term-warranty" data-definition="A promise that a product, or a supplier's work, will meet an agreed standard for a stated time, with what happens if it does not, such as repair or replacement. A brand may give one to its customers, and a supplier may give one to the brand on the parts it makes." aria-label="warranty: A promise that a product, or a supplier's work, will meet an agreed standard for a stated time, with what happens if it does not, such as repair or replacement. A brand may give one to its customers, and a supplier may give one to the brand on the parts it makes. (glossary)">warranty</a> costs, supports a reputation for quality, and is increasingly expected by customers and regulators. See
+              <a class="text-link-inline" href="why-product-lifetime-matters-more-than-recycling.html">why product lifetime matters more than recycling</a>.
+            </p>
+
+            <h2>Step 1: find the parts that will fail first</h2>
+            <p>Before choosing fixings, list the likely failure points. Typical candidates:</p>
+            <ul>
+              <li><strong>Batteries</strong> lose capacity with charge cycles and age.</li>
+              <li><strong>Moving parts:</strong> buttons, switches, hinges, latches, motors and bearings.</li>
+              <li><strong>Seals and gaskets</strong> harden and crack over time; <a class="text-link-inline" href="sealing-and-waterproofing-an-enclosure.html">sealing an enclosure</a> with replaceable <a class="glossary-term" href="../knowledge/glossary.html#term-o-ring" data-definition="A moulded rubber ring that sits in a groove and seals when squeezed between two parts. Because the groove controls the squeeze, it is one of the most dependable seals, and standard sizes are widely available." aria-label="O-rings: A moulded rubber ring that sits in a groove and seals when squeezed between two parts. Because the groove controls the squeeze, it is one of the most dependable seals, and standard sizes are widely available. (glossary)">O-rings</a> or <a class="glossary-term" href="../knowledge/glossary.html#term-gasket" data-definition="A soft rubber or foam seal squeezed between two parts so it fills the small gaps between them. It needs a stiff flange and even, controlled compression to seal reliably." aria-label="gaskets: A soft rubber or foam seal squeezed between two parts so it fills the small gaps between them. It needs a stiff flange and even, controlled compression to seal reliably. (glossary)">gaskets</a> keeps them serviceable.</li>
+              <li><strong>Cables and connectors</strong> flex, wear and break at stress points.</li>
+              <li><strong>Cosmetic surfaces</strong> that scratch, such as lenses, screens and covers.</li>
+              <li><strong>Consumables</strong> such as filters, blades and brushes.</li>
+            </ul>
+            <p>Field returns from similar products (see <a class="text-link-inline" href="after-launch-returns-feedback-and-design-changes.html">after launch: returns, feedback and design changes</a> for how to log them), accelerated life tests and your own <a class="text-link-inline" href="running-a-design-review.html">design reviews</a> show which matter most. Plan these in your <a class="text-link-inline" href="../tools/test-plan-builder.html">test plan</a>.</p>
+
+            <h2>Step 2: design for access and disassembly</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Principle</th>
+                  <th>In practice</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Reversible fixings</td>
+                  <td>Screws, clips and snap fits that can be undone, rather than adhesives and welds, for parts that may need replacing</td>
+                </tr>
+                <tr>
+                  <td>Few, common tools</td>
+                  <td>Standard screw heads and as few different types and sizes as possible</td>
+                </tr>
+                <tr>
+                  <td>Short disassembly paths</td>
+                  <td>The parts that fail first should come out first, without removing everything else</td>
+                </tr>
+                <tr>
+                  <td>Modular sub-assemblies</td>
+                  <td>Group parts into modules that can be swapped as a unit, such as a battery pack or a switch module</td>
+                </tr>
+                <tr>
+                  <td>Connectors, not solder</td>
+                  <td>Plug-in connections for parts likely to be replaced</td>
+                </tr>
+                <tr>
+                  <td>Clear and robust</td>
+                  <td>Fixings and clips that survive being opened more than once, with features that guide reassembly</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              for each likely failure, count the steps and tools needed to replace it. If replacing the most common failure needs more than a few steps or a special tool, look for a better design.
+            </div>
+
+            <h2>Step 3: support repair after sale</h2>
+            <ul>
+              <li><strong>Spare parts</strong> for the common failures, available for a reasonable period after the product goes off sale.</li>
+              <li><strong>Repair information:</strong> exploded views, part numbers and short guides, for professional repairers and, where safe, users.</li>
+              <li><strong>Software and firmware</strong> that does not block genuine replacement parts without a safety reason.</li>
+            </ul>
+
+            <h2>Step 4: design for end of life</h2>
+            <ul>
+              <li>Avoid permanently joining different materials, such as over-moulding incompatible plastics or bonding metal to plastic, where separation matters. <a class="text-link-inline" href="joining-methods-for-product-design.html">Joining methods compared</a> shows which joints can be undone.</li>
+              <li>Mark plastic parts with their material, and use fewer material types overall.</li>
+              <li>Make batteries easy to remove; battery and electrical producer responsibilities may apply (see the <a class="text-link-inline" href="sustainability-and-product-life.html">Sustainability and product life hub</a>).</li>
+            </ul>
+
+            <h2>Trade-offs to manage</h2>
+            <p>
+              Repairable designs can conflict with other goals: screws add parts and <a class="glossary-term" href="../knowledge/glossary.html#term-assembly-time" data-definition="The labour time needed to put a product together, which drives assembly cost on every unit." aria-label="assembly time: The labour time needed to put a product together, which drives assembly cost on every unit. (glossary)">assembly time</a>, opening a product can affect water resistance or safety, and modularity can add size and cost.
+              The answer is rarely all or nothing; target repairability at the failures that actually happen, and check the assembly effect with the
+              <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a>. Where sealing or safety rule out user repair, make professional repair practical instead.
+            </p>
+
+            <h2>Regulation</h2>
+            <p>
+              Repairability requirements are growing, especially for energy-related products under <a class="glossary-term" href="../knowledge/glossary.html#term-ecodesign" data-definition="Requirements for the environmental performance of products, such as energy-related products, over their life." aria-label="ecodesign: Requirements for the environmental performance of products, such as energy-related products, over their life. (glossary)">ecodesign</a> rules, which can include spare-part availability and repair information.
+              Requirements differ by product category and between Great Britain, Northern Ireland and the EU, so check current guidance on
+              <a class="text-link-inline" href="https://www.gov.uk/guidance/placing-energy-related-products-on-the-uk-market" rel="noopener">energy-related products</a> for your category, and see the <a class="text-link-inline" href="right-to-repair-and-ecodesign-rules.html">right to repair and ecodesign rules</a> overview.
+            </p>
+
+            <h2>Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Gluing everything for a slimmer product.</strong>
+                It often ends the product's life at the first battery or button failure.
+              </div>
+              <div>
+                <strong>Making the wrong parts repairable.</strong>
+                Focus on what actually fails, not what is easiest to make removable.
+              </div>
+              <div>
+                <strong>One-time clips.</strong>
+                Clips that break when opened turn a repair into a replacement.
+              </div>
+              <div>
+                <strong>No spare parts plan.</strong>
+                A repairable design without available parts is not repairable in practice.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>List likely failure points and their repair steps.</li>
+              <li>Compare lifetime and repair scenarios with the <a class="text-link-inline" href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a>.</li>
+              <li>Estimate the footprint effect with the <a class="text-link-inline" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a>.</li>
+              <li>Add life and durability tests with the <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Explore lifetime and repair</h3>
+                <p>See how a longer, repairable life changes the picture.</p>
+                <a class="button button-primary" href="../tools/product-lifecycle-explorer.html" data-analytics-event="article_cta_click" data-analytics-label="repair_guide_to_lifecycle">Open Product Lifecycle Explorer</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Check the assembly effect</h3>
+                <p>Make sure repairable fixings do not add too much assembly time.</p>
+                <a class="button button-secondary" href="../tools/assembly-time.html" data-analytics-event="article_cta_click" data-analytics-label="repair_guide_to_assembly">Open Assembly Time Estimator</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="sustainability-and-product-life.html">Sustainability and product life: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/assembly-time.html">Assembly Time Estimator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="why-product-lifetime-matters-more-than-recycling.html">Why lifetime matters</a></div>
+                <div class="aside-item"><a class="text-link" href="sustainable-product-design.html">The most sustainable product</a></div>
+                <div class="aside-item"><a class="text-link" href="assembly-time-estimate.html">Estimating assembly time</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Repair</span>
+                <span>Disassembly</span>
+                <span>Durability</span>
+                <span>End of life</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is design for repair?</h3>
+                <p>Designing a product so the parts most likely to fail can be reached, removed and replaced with ordinary tools, and supporting that with spare parts and repair information. It extends product life and reduces waste.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Which parts should be easy to replace?</h3>
+                <p>The ones that fail or wear first: typically batteries, buttons and switches, hinges and latches, seals, cables and connectors, cosmetic covers and consumables. Use field returns and life testing to decide.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does design for repair cost more?</h3>
+                <p>It can add parts or assembly time, for example screws instead of glue. Targeted at the failures that actually happen, the cost is often modest, and can be offset by lower warranty costs and a longer-lasting reputation.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is design for repair required by law?</h3>
+                <p>For some product categories, ecodesign rules include repair-related requirements such as spare-part availability and repair information, and these are expanding. Requirements differ by category and between Great Britain, Northern Ireland and the EU, so check current guidance.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do repair and recycling relate?</h3>
+                <p>Repair keeps the product in use, which usually saves far more than recycling at the end of life. Designing for disassembly helps both: it makes repair easier and lets materials be separated for recycling.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

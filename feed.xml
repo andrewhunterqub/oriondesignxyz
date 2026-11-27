@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Orion Design guides</title>
+    <link>https://oriondesign.xyz/guides/</link>
+    <atom:link href="https://oriondesign.xyz/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Practical guides on product design, prototyping, manufacturing, cost, sustainability and launching physical products, from Andrew Hunter at Orion Design, Belfast.</description>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 27 Nov 2026 09:00:00 GMT</lastBuildDate>
+    <item>
+      <title>After launch: returns, feedback and design changes</title>
+      <link>https://oriondesign.xyz/guides/after-launch-returns-feedback-and-design-changes.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/after-launch-returns-feedback-and-design-changes.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to handle returns, reviews and complaints after launch: log them, find the root cause, decide what to change and control design changes safely.</description>
+    </item>
+    <item>
+      <title>Aluminium extrusions for product enclosures: profiles, end caps and finishing</title>
+      <link>https://oriondesign.xyz/guides/aluminium-extrusions-for-product-enclosures.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/aluminium-extrusions-for-product-enclosures.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to use aluminium extrusions for product enclosures: standard and custom profiles, profile design rules, end caps and sealing, machining and alloys.</description>
+    </item>
+    <item>
+      <title>Assembly instructions and work instructions for production</title>
+      <link>https://oriondesign.xyz/guides/assembly-and-work-instructions.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/assembly-and-work-instructions.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to write work instructions for production assembly: what each step needs, writing for the bench, fixtures, error-proofing and revision control.</description>
+    </item>
+    <item>
+      <title>Bills of materials and revision control: making sure everyone builds the same product</title>
+      <link>https://oriondesign.xyz/guides/bills-of-materials-and-revision-control.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/bills-of-materials-and-revision-control.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to build a bill of materials, number parts, control revisions and design changes, and send suppliers the right files, with an illustrative example.</description>
+    </item>
+    <item>
+      <title>Cables, wiring and connectors inside a product</title>
+      <link>https://oriondesign.xyz/guides/cables-wiring-and-connectors-inside-a-product.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/cables-wiring-and-connectors-inside-a-product.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to plan wiring inside a product: fewer cables, routing and strain relief, choosing connectors, harness drawings, testing, and avoiding drop failures.</description>
+    </item>
+    <item>
+      <title>Choosing how to make an enclosure: matching the route to your volume and design</title>
+      <link>https://oriondesign.xyz/guides/choosing-how-to-make-an-enclosure.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/choosing-how-to-make-an-enclosure.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to choose a manufacturing route for a product enclosure, from off-the-shelf boxes and 3D printing to extrusion, die casting and injection moulding.</description>
+    </item>
+    <item>
+      <title>Choosing metals for a product: common alloys, trade-offs and how to decide</title>
+      <link>https://oriondesign.xyz/guides/choosing-metals-for-a-product.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/choosing-metals-for-a-product.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to choose a metal for a product part: aluminium, mild steel, stainless, brass, zinc and titanium compared, with process, corrosion and finish advice.</description>
+    </item>
+    <item>
+      <title>Designing a product to survive drops and impacts</title>
+      <link>https://oriondesign.xyz/guides/designing-for-drops-and-impacts.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/designing-for-drops-and-impacts.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to design a product that survives being dropped: why housings crack and parts come loose, the design fixes, setting a drop requirement and testing.</description>
+    </item>
+    <item>
+      <title>Designing buttons, switches and controls: controls that feel right and keep working</title>
+      <link>https://oriondesign.xyz/guides/designing-buttons-switches-and-controls.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/designing-buttons-switches-and-controls.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to design buttons, switches and controls for a product: choosing a switch type, actuator travel and stack-ups, sealing, graphics, life and testing.</description>
+    </item>
+    <item>
+      <title>Designing snap fits and living hinges: flexible features that last</title>
+      <link>https://oriondesign.xyz/guides/designing-snap-fits-and-living-hinges.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/designing-snap-fits-and-living-hinges.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to design snap fits and living hinges in moulded plastic: cantilever strain, root radius, angles, undercuts, testing prints and polypropylene hinges.</description>
+    </item>
+    <item>
+      <title>Die casting explained: the process, alloys, design rules and when it pays</title>
+      <link>https://oriondesign.xyz/guides/die-casting-explained.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/die-casting-explained.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How die casting works: hot- and cold-chamber machines, common alloys, design rules, finishing, die trials, and when it beats machining or moulding.</description>
+    </item>
+    <item>
+      <title>From 3D-printed prototype to injection-moulded part: what has to change</title>
+      <link>https://oriondesign.xyz/guides/from-3d-printed-prototype-to-moulded-part.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/from-3d-printed-prototype-to-moulded-part.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>What has to change when a 3D-printed prototype becomes an injection-moulded part: draft, even walls, ribs, bosses, undercuts, marks, tolerances and materials.</description>
+    </item>
+    <item>
+      <title>Managing heat in a product enclosure: giving heat a path out</title>
+      <link>https://oriondesign.xyz/guides/managing-heat-in-a-product-enclosure.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/managing-heat-in-a-product-enclosure.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to manage heat in a product enclosure: where heat comes from, how it moves, venting vs sealing, simple temperature estimates and thermal testing.</description>
+    </item>
+    <item>
+      <title>Mould tool trials and sample approval: from first shots to signed-off parts</title>
+      <link>https://oriondesign.xyz/guides/mould-tool-trials-and-sample-approval.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/mould-tool-trials-and-sample-approval.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How mould tool trials work: T0 and T1 samples, what to ask the toolmaker for, reading moulding defects, tool changes and signing off approved samples.</description>
+    </item>
+    <item>
+      <title>Overmoulding and two-shot moulding explained</title>
+      <link>https://oriondesign.xyz/guides/overmoulding-and-two-shot-moulding.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/overmoulding-and-two-shot-moulding.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>What overmoulding, two-shot and insert moulding are, when to use them, bonding and interlocks, design rules, tooling trade-offs and how to prototype.</description>
+    </item>
+    <item>
+      <title>Planning a pilot production run</title>
+      <link>https://oriondesign.xyz/guides/planning-a-pilot-production-run.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/planning-a-pilot-production-run.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to plan a pilot production run: what it proves, where it sits after first-article approval, what to measure, go/no-go criteria and using the results.</description>
+    </item>
+    <item>
+      <title>Retail-ready packaging and barcodes: the basics</title>
+      <link>https://oriondesign.xyz/guides/retail-ready-packaging-and-barcodes.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/retail-ready-packaging-and-barcodes.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>What retailers ask for in packaging: a barcode for each variant, outer case details, on-pack information, shelf display, print, tooling and cash timing.</description>
+    </item>
+    <item>
+      <title>Running a design review: catching problems while they are cheap to fix</title>
+      <link>https://oriondesign.xyz/guides/running-a-design-review.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/running-a-design-review.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to run a product design review: what each stage review is for, who attends, how to prepare, a simple agenda, and recording decisions and actions.</description>
+    </item>
+    <item>
+      <title>Supply agreements with a manufacturer: what to cover</title>
+      <link>https://oriondesign.xyz/guides/supply-agreements-with-a-manufacturer.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/supply-agreements-with-a-manufacturer.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>What a supply agreement with a manufacturer should cover: specification, quality, tooling ownership, IP, pricing, orders, payment, liability and exit.</description>
+    </item>
+    <item>
+      <title>Trade marks and product names: the basics</title>
+      <link>https://oriondesign.xyz/guides/trade-marks-and-product-names.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/trade-marks-and-product-names.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 GMT</pubDate>
+      <description>What a trade mark protects, how to check a product name before packaging and tooling, registration in general terms, TM vs ®, and what to do if someone objects.</description>
+    </item>
+    <item>
+      <title>Building a hardware financial model</title>
+      <link>https://oriondesign.xyz/guides/building-a-hardware-financial-model.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/building-a-hardware-financial-model.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to build a financial model for a hardware product: unit cost, price and channel margin, volume, tooling, working capital, cash low point and scenarios.</description>
+    </item>
+    <item>
+      <title>Choosing a 3D printing process for prototypes: FDM, SLA, SLS, MJF and metal</title>
+      <link>https://oriondesign.xyz/guides/choosing-a-3d-printing-process.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/choosing-a-3d-printing-process.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to choose a 3D printing process for prototypes: FDM, SLA, SLS, MJF and metal compared, choosing by question, design tips, file preparation and quotes.</description>
+    </item>
+    <item>
+      <title>Electronics in a physical product: what to plan early</title>
+      <link>https://oriondesign.xyz/guides/electronics-in-a-physical-product.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/electronics-in-a-physical-product.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to plan electronics in a physical product: PCB and enclosure together, batteries, heat, EMC and antennas, test access, supply risk and what to hand over.</description>
+    </item>
+    <item>
+      <title>Getting and comparing manufacturing quotes</title>
+      <link>https://oriondesign.xyz/guides/comparing-manufacturing-quotes.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/comparing-manufacturing-quotes.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to get manufacturing quotes you can compare: what to send, how many suppliers to ask, tooling, MOQs, lead times, payment terms, landed cost and red flags.</description>
+    </item>
+    <item>
+      <title>Industrial design vs engineering design: who does what</title>
+      <link>https://oriondesign.xyz/guides/industrial-design-vs-engineering-design.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/industrial-design-vs-engineering-design.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Industrial design vs engineering design explained: who handles form, ergonomics and CMF, who handles mechanisms, DFM and tolerances, and who you need when.</description>
+    </item>
+    <item>
+      <title>Joining methods: screws, snap fits, adhesives and welding</title>
+      <link>https://oriondesign.xyz/guides/joining-methods-for-product-design.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/joining-methods-for-product-design.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Screws, inserts, snap fits, staking, ultrasonic welding, adhesives and metal joins compared on strength, repair, assembly time, tooling and recycling.</description>
+    </item>
+    <item>
+      <title>Looks-like vs works-like prototypes: what each is for and when to combine them</title>
+      <link>https://oriondesign.xyz/guides/looks-like-vs-works-like-prototypes.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/looks-like-vs-works-like-prototypes.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Looks-like vs works-like prototypes: what each answers, when to build them separately or combine them, typical methods, how to brief them and common mistakes.</description>
+    </item>
+    <item>
+      <title>Reducing the cost of an existing product</title>
+      <link>https://oriondesign.xyz/guides/reducing-the-cost-of-an-existing-product.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/reducing-the-cost-of-an-existing-product.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to cut the cost of a product already in production: find where cost hides, choose cost-down changes, protect function and certification, and prioritise.</description>
+    </item>
+    <item>
+      <title>Sealing and waterproofing an enclosure: gaskets, O-rings and IP ratings</title>
+      <link>https://oriondesign.xyz/guides/sealing-and-waterproofing-an-enclosure.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/sealing-and-waterproofing-an-enclosure.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to seal a product enclosure against water and dust: gaskets, O-rings, cable glands, vents, what IP ratings mean, and sealing versus repairability.</description>
+    </item>
+    <item>
+      <title>Surface finishes for plastic and metal parts</title>
+      <link>https://oriondesign.xyz/guides/surface-finishes-for-plastic-and-metal-parts.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/surface-finishes-for-plastic-and-metal-parts.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Surface finishes for plastic and metal parts explained: moulded texture, paint, printing, anodising, powder coating and plating, and how to specify them.</description>
+    </item>
+    <item>
+      <title>Tolerances and engineering drawings: the basics</title>
+      <link>https://oriondesign.xyz/guides/tolerances-and-engineering-drawings.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/tolerances-and-engineering-drawings.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Tolerances and engineering drawings explained: general vs specific tolerances, process cost, fits, datums, stack-ups and what a drawing needs for a quote.</description>
+    </item>
+    <item>
+      <title>Usability testing a prototype: how to find out whether people can actually use it</title>
+      <link>https://oriondesign.xyz/guides/usability-testing-a-prototype.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/usability-testing-a-prototype.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to usability test a product prototype: what to test at each stage, who to recruit, task-based sessions, observing without leading and prioritising fixes.</description>
+    </item>
+    <item>
+      <title>Choosing lower-carbon materials: less material, better material, longer life</title>
+      <link>https://oriondesign.xyz/guides/choosing-lower-carbon-materials.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/choosing-lower-carbon-materials.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to choose lower-carbon materials for a product: compare parts not kilograms, reduce mass, recycled content, sourcing, durability, trade-offs and data sources.</description>
+    </item>
+    <item>
+      <title>Choosing materials for plastic products: common polymers, trade-offs and how to decide</title>
+      <link>https://oriondesign.xyz/guides/choosing-plastic-materials.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/choosing-plastic-materials.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to choose a plastic for a product: requirements first, common polymers compared (PP, ABS, PC, nylon, acetal and more), grades, a worked example and recycling.</description>
+    </item>
+    <item>
+      <title>CNC machining design rules: designing parts that are quick to machine</title>
+      <link>https://oriondesign.xyz/guides/cnc-machining-design-rules.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/cnc-machining-design-rules.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>CNC machining design rules for product designers: corner radii, pocket depth, walls, holes and threads, set-ups, tolerances, finishes and materials, with typical ranges.</description>
+    </item>
+    <item>
+      <title>Competitor and patent landscape review: mapping what already exists</title>
+      <link>https://oriondesign.xyz/guides/competitor-and-patent-landscape-review.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/competitor-and-patent-landscape-review.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to review competitors and the patent landscape before developing a product: finding alternatives, teardowns, reviews, patent and design searches and decisions.</description>
+    </item>
+    <item>
+      <title>Crowdfunding a hardware product: funding a first run and delivering it</title>
+      <link>https://oriondesign.xyz/guides/crowdfunding-a-hardware-product.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/crowdfunding-a-hardware-product.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to crowdfund a hardware product: when to launch, setting the goal from full delivery costs, funding models, fulfilment, cash after the campaign and mistakes.</description>
+    </item>
+    <item>
+      <title>Customer discovery for hardware: learning what matters before you design</title>
+      <link>https://oriondesign.xyz/guides/customer-discovery-for-hardware.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/customer-discovery-for-hardware.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Customer discovery for physical products: who to talk to, interview questions that give evidence, what to avoid, observing real use and making sense of findings.</description>
+    </item>
+    <item>
+      <title>Design for repair and disassembly: making products that last longer</title>
+      <link>https://oriondesign.xyz/guides/design-for-repair-and-disassembly.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/design-for-repair-and-disassembly.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to design physical products for repair and disassembly: finding likely failures, reversible fixings, modular parts, spare parts, end of life and the trade-offs.</description>
+    </item>
+    <item>
+      <title>Design registration vs patents: protecting how a product looks and works</title>
+      <link>https://oriondesign.xyz/guides/design-registration-vs-patents.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/design-registration-vs-patents.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Design registration vs patents for physical products: what each protects, tests, cost and process, unregistered rights, timing and disclosure, with official links.</description>
+    </item>
+    <item>
+      <title>Development and prototyping: how a hardware product gets from idea to production-ready</title>
+      <link>https://oriondesign.xyz/guides/development-and-prototyping.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/development-and-prototyping.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>The stages of hardware development, the prototypes each needs, how many rounds to plan, testing and design freeze, with a worked example and links to Orion tools.</description>
+    </item>
+    <item>
+      <title>DFM checklist for injection-moulded parts: walls, draft, ribs, bosses and undercuts</title>
+      <link>https://oriondesign.xyz/guides/injection-moulding-dfm-checklist.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/injection-moulding-dfm-checklist.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>A practical design-for-manufacture checklist for injection-moulded plastic parts: wall thickness, draft, ribs, bosses, corners, undercuts, marks and tolerances.</description>
+    </item>
+    <item>
+      <title>Freedom to operate explained: checking you can make and sell your product</title>
+      <link>https://oriondesign.xyz/guides/freedom-to-operate-explained.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/freedom-to-operate-explained.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Freedom to operate explained for product developers: how it differs from patentability, what can block you, an early informal check, formal opinions and next steps.</description>
+    </item>
+    <item>
+      <title>Funding and cash: how much a hardware product needs, and where the money can come from</title>
+      <link>https://oriondesign.xyz/guides/funding-and-cash.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/funding-and-cash.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to find the real funding requirement from a cash forecast, compare funding sources, stage funding to milestones and manage working capital, with official UK links.</description>
+    </item>
+    <item>
+      <title>Funding routes for hardware start-ups in the UK and Northern Ireland</title>
+      <link>https://oriondesign.xyz/guides/funding-routes-uk-northern-ireland.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/funding-routes-uk-northern-ireland.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to choose and apply for grants, research and development tax relief, Invest NI support, start-up loans, crowdfunding and angel investment, with official links.</description>
+    </item>
+    <item>
+      <title>How many prototypes do you need? Planning prototype rounds</title>
+      <link>https://oriondesign.xyz/guides/how-many-prototypes-do-you-need.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/how-many-prototypes-do-you-need.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How many prototypes a physical product needs: planning by question, typical rounds from rough models to pre-production, what drives the number, budget and mistakes.</description>
+    </item>
+    <item>
+      <title>How to find and brief a manufacturer, in the UK or overseas</title>
+      <link>https://oriondesign.xyz/guides/how-to-find-and-brief-a-manufacturer.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/how-to-find-and-brief-a-manufacturer.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>The types of manufacturer, where to find them, how to shortlist and brief them, how to compare quotes on landed cost with Incoterms, and UK vs overseas trade-offs.</description>
+    </item>
+    <item>
+      <title>How to price a physical product: value, competitors, margins and testing</title>
+      <link>https://oriondesign.xyz/guides/how-to-price-a-physical-product.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/how-to-price-a-physical-product.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to price a physical product: value-based, competitor and cost-plus thinking, the price floor from margins and VAT, a worked example and how to test the price.</description>
+    </item>
+    <item>
+      <title>How to write a product requirements document for a physical product</title>
+      <link>https://oriondesign.xyz/guides/how-to-write-a-product-requirements-document.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/how-to-write-a-product-requirements-document.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to write a product requirements document for a physical product: what to include, writing testable requirements, an example, keeping it up to date and mistakes.</description>
+    </item>
+    <item>
+      <title>Injection moulding explained: the process, tooling types, lead times and cost drivers</title>
+      <link>https://oriondesign.xyz/guides/injection-moulding-explained.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/injection-moulding-explained.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How injection moulding works, the main tooling choices, the steps from quote to production, typical lead-time ranges, and what drives tool and part cost.</description>
+    </item>
+    <item>
+      <title>IP, partners and compliance: protecting a product, working with partners and meeting the rules</title>
+      <link>https://oriondesign.xyz/guides/ip-partners-and-compliance.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/ip-partners-and-compliance.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Patents, designs, trade marks and NDAs; contracts with designers and manufacturers; UKCA, CE and UKNI marking; and product safety duties, with official UK links.</description>
+    </item>
+    <item>
+      <title>Landed cost explained: freight, duty and import VAT for physical products</title>
+      <link>https://oriondesign.xyz/guides/landed-cost-freight-duty-vat.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/landed-cost-freight-duty-vat.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>What landed cost includes, how UK import duty and import VAT are worked out, an illustrative factory-to-warehouse calculation, and the mistakes that inflate margins.</description>
+    </item>
+    <item>
+      <title>Learning paths: guided routes through product development for founders, engineers, spin-outs and students</title>
+      <link>https://oriondesign.xyz/guides/learning-paths.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/learning-paths.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Curated step-by-step paths through Orion Design's guides and free tools for first-time founders, engineers and designers, university spin-outs, and students.</description>
+    </item>
+    <item>
+      <title>Manufacturing and cost: how physical products are made, and what drives the price</title>
+      <link>https://oriondesign.xyz/guides/manufacturing-and-cost.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/manufacturing-and-cost.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How manufacturing processes, unit cost, tooling and volume fit together for a hardware product, with decision rules, a worked example and links to every Orion cost tool.</description>
+    </item>
+    <item>
+      <title>Manufacturing processes compared: volumes, tooling, cost and constraints</title>
+      <link>https://oriondesign.xyz/guides/manufacturing-processes-compared.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/manufacturing-processes-compared.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>A reference comparison of manufacturing processes for physical products: typical volumes, tooling, unit cost, lead time and design constraints, with how to choose.</description>
+    </item>
+    <item>
+      <title>Minimum order quantities and cash: planning your first production order</title>
+      <link>https://oriondesign.xyz/guides/minimum-order-quantities-and-cash.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/minimum-order-quantities-and-cash.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How minimum order quantities affect cash in a hardware start-up: why suppliers set MOQs, the full cash outlay, a worked example, negotiating and funding the order.</description>
+    </item>
+    <item>
+      <title>Opportunity and concept: how to test a product idea and choose what to build</title>
+      <link>https://oriondesign.xyz/guides/opportunity-and-concept.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/opportunity-and-concept.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to prove the problem, gather evidence, check competitors and patents, write measurable requirements and choose a concept, with links to free Orion tools.</description>
+    </item>
+    <item>
+      <title>Packaging design for shipping: protecting products from factory to customer</title>
+      <link>https://oriondesign.xyz/guides/packaging-design-for-shipping.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/packaging-design-for-shipping.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Packaging design for shipping physical products: mapping the journey, packaging layers, carton and pallet fit, transit testing, sustainability, EPR duties and cost.</description>
+    </item>
+    <item>
+      <title>Printable product development checklists</title>
+      <link>https://oriondesign.xyz/guides/product-development-checklists.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/product-development-checklists.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Free printable checklists for product development: ready for a manufacturer, ready for tooling, certification, moulded part review, quote requests and launch.</description>
+    </item>
+    <item>
+      <title>Product carbon footprint vs LCA: what each measures and when to use it</title>
+      <link>https://oriondesign.xyz/guides/product-carbon-footprint-vs-lca.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/product-carbon-footprint-vs-lca.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Product carbon footprint vs life cycle assessment: what each measures, standards, boundaries, when a design-stage estimate is enough and when to do a formal study.</description>
+    </item>
+    <item>
+      <title>Product certification basics for hardware start-ups: UKCA, CE, safety and EMC</title>
+      <link>https://oriondesign.xyz/guides/product-certification-basics.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/product-certification-basics.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Which UK product regulations apply, how conformity is shown, UKCA, CE and UKNI marking, and how to plan certification into development, with official links.</description>
+    </item>
+    <item>
+      <title>Product liability basics: what product developers should know</title>
+      <link>https://oriondesign.xyz/guides/product-liability-basics.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/product-liability-basics.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Product liability basics for UK product developers: who can be liable, design, manufacturing and warning defects, reducing risk, insurance and official sources.</description>
+    </item>
+    <item>
+      <title>Product testing and validation plans: proving a product works</title>
+      <link>https://oriondesign.xyz/guides/product-testing-and-validation-plans.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/product-testing-and-validation-plans.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to plan product testing: verification vs validation, what a test plan contains, types of test, testing at each prototype stage, pre-compliance and common mistakes.</description>
+    </item>
+    <item>
+      <title>Quality control and first-article inspection for new products</title>
+      <link>https://oriondesign.xyz/guides/quality-control-and-first-article-inspection.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/quality-control-and-first-article-inspection.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How to plan quality control for a manufactured product: specifications, golden samples, first-article inspection, production checks, AQL sampling and fixing problems.</description>
+    </item>
+    <item>
+      <title>Retail and distributor margins explained: from shelf price to what you receive</title>
+      <link>https://oriondesign.xyz/guides/retail-and-distributor-margins-explained.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/retail-and-distributor-margins-explained.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Retail and distributor margins explained: margin vs markup, working back from the shelf price, a worked example, trade terms, promotions and common mistakes.</description>
+    </item>
+    <item>
+      <title>Right to repair and ecodesign rules: an overview for product designers</title>
+      <link>https://oriondesign.xyz/guides/right-to-repair-and-ecodesign-rules.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/right-to-repair-and-ecodesign-rules.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>An overview of right to repair and ecodesign rules for product designers: what they cover, Great Britain, the EU and Northern Ireland, and what to plan for.</description>
+    </item>
+    <item>
+      <title>Route to market and margins: how sales channels shape price, cost and cash</title>
+      <link>https://oriondesign.xyz/guides/route-to-market-and-margins.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/route-to-market-and-margins.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How direct, marketplace, retail, distributor, B2B and crowdfunding routes change what you keep, when you are paid and what your product can cost to make.</description>
+    </item>
+    <item>
+      <title>Selling on marketplaces: fees, fulfilment, listings and responsibilities</title>
+      <link>https://oriondesign.xyz/guides/selling-on-marketplaces.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/selling-on-marketplaces.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Selling a physical product on online marketplaces: fees, fulfilment options, listings and reviews, pricing across channels, compliance and consumer rules.</description>
+    </item>
+    <item>
+      <title>Sheet metal design basics: bends, holes, reliefs, materials and tolerances</title>
+      <link>https://oriondesign.xyz/guides/sheet-metal-design-basics.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/sheet-metal-design-basics.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>How sheet-metal parts are cut and bent, design rules of thumb for bend radii, flanges, holes and reliefs, material choices, joining and the mistakes that add cost.</description>
+    </item>
+    <item>
+      <title>Sustainability and product life: where a product's impact comes from and how design reduces it</title>
+      <link>https://oriondesign.xyz/guides/sustainability-and-product-life.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/sustainability-and-product-life.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>The product life cycle, which stage dominates, design levers, why lifetime matters, footprints vs LCA, and UK producer responsibility and green claims rules.</description>
+    </item>
+    <item>
+      <title>UK vs overseas manufacturing: choosing where to make your product</title>
+      <link>https://oriondesign.xyz/guides/uk-vs-overseas-manufacturing.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/uk-vs-overseas-manufacturing.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>UK vs overseas manufacturing for a new product: landed cost, lead times, minimum orders, quality, design changes, Northern Ireland trade and a staged approach.</description>
+    </item>
+    <item>
+      <title>Working with a product design consultancy: what to expect and how to brief one</title>
+      <link>https://oriondesign.xyz/guides/working-with-a-product-design-consultancy.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/working-with-a-product-design-consultancy.html</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+      <description>When to use a product design consultancy, freelancer or in-house team, how to brief and choose one, engagement models, IP ownership and how to work well together.</description>
+    </item>
+    <item>
+      <title>Calculating hardware startup cash flow</title>
+      <link>https://oriondesign.xyz/guides/calculating-hardware-startup-cash-flow.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/calculating-hardware-startup-cash-flow.html</guid>
+      <pubDate>Fri, 13 Mar 2026 09:00:00 GMT</pubDate>
+      <description>A practical guide to hardware startup cash flow, covering opening cash, upfront spend, inventory timing, payment delay, overhead, and runway.</description>
+    </item>
+    <item>
+      <title>Financial break-even for hardware products</title>
+      <link>https://oriondesign.xyz/guides/financial-break-even-for-hardware-products.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/financial-break-even-for-hardware-products.html</guid>
+      <pubDate>Fri, 13 Mar 2026 09:00:00 GMT</pubDate>
+      <description>A practical guide to financial break-even for hardware products, including fixed costs, contribution margin, sales volume, and the limits of break-even analysis.</description>
+    </item>
+    <item>
+      <title>How much does it cost to develop a hardware product?</title>
+      <link>https://oriondesign.xyz/guides/estimating-hardware-development-costs.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/estimating-hardware-development-costs.html</guid>
+      <pubDate>Fri, 13 Mar 2026 09:00:00 GMT</pubDate>
+      <description>What it costs to develop a hardware product: the six cost blocks (engineering, prototypes, tooling, certification, inventory, launch), contingency and a worked example.</description>
+    </item>
+    <item>
+      <title>How to estimate manufacturing cost for a hardware product</title>
+      <link>https://oriondesign.xyz/guides/how-to-estimate-manufacturing-cost.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/how-to-estimate-manufacturing-cost.html</guid>
+      <pubDate>Fri, 13 Mar 2026 09:00:00 GMT</pubDate>
+      <description>How to estimate manufacturing cost for a hardware product: materials, process, bought-in parts, assembly labour, packaging, scrap and overhead, with a worked example.</description>
+    </item>
+    <item>
+      <title>How to protect product IP before talking to manufacturers</title>
+      <link>https://oriondesign.xyz/guides/how-to-protect-product-ip.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/how-to-protect-product-ip.html</guid>
+      <pubDate>Fri, 13 Mar 2026 09:00:00 GMT</pubDate>
+      <description>Protect product IP before manufacturing conversations with practical steps for NDAs, staged disclosure, file control, supplier checks, and ownership.</description>
+    </item>
+    <item>
+      <title>How to validate a product idea before you build it</title>
+      <link>https://oriondesign.xyz/guides/how-to-validate-a-product-idea.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/how-to-validate-a-product-idea.html</guid>
+      <pubDate>Fri, 13 Mar 2026 09:00:00 GMT</pubDate>
+      <description>Validate a product idea before development with checks for customer pain, evidence, willingness to pay, feasibility, and the next questions to answer.</description>
+    </item>
+    <item>
+      <title>Must-have documents before talking to a manufacturer</title>
+      <link>https://oriondesign.xyz/guides/must-have-documents-before-talking-to-a-manufacturer.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/must-have-documents-before-talking-to-a-manufacturer.html</guid>
+      <pubDate>Fri, 13 Mar 2026 09:00:00 GMT</pubDate>
+      <description>A practical guide to the documents hardware teams should prepare before talking to a manufacturer, including NDAs, drawings, BOMs, prototypes, and scope notes.</description>
+    </item>
+    <item>
+      <title>Prototyping vs production: a startup guide</title>
+      <link>https://oriondesign.xyz/guides/prototyping-vs-production-startup-guide.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/prototyping-vs-production-startup-guide.html</guid>
+      <pubDate>Fri, 13 Mar 2026 09:00:00 GMT</pubDate>
+      <description>A practical guide to choosing prototype methods for hardware products, covering 3D printing, CNC, vacuum casting, bridge tooling, and pilot production.</description>
+    </item>
+    <item>
+      <title>Building a hardware business case.</title>
+      <link>https://oriondesign.xyz/guides/building-a-hardware-business-case.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/building-a-hardware-business-case.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>How to build a hardware business case using addressable market, reachable demand, conversion, unit economics, and payback assumptions.</description>
+    </item>
+    <item>
+      <title>Estimating assembly time during design.</title>
+      <link>https://oriondesign.xyz/guides/assembly-time-estimate.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/assembly-time-estimate.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>How engineers estimate assembly time during design using part count, joining effort, handling complexity, inspection time, and batch economics.</description>
+    </item>
+    <item>
+      <title>Estimating product carbon footprint during design.</title>
+      <link>https://oriondesign.xyz/guides/estimating-product-carbon-footprint-during-design.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/estimating-product-carbon-footprint-during-design.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>How to estimate product carbon footprint during design using material, process, transport, use-phase energy, and lifetime assumptions.</description>
+    </item>
+    <item>
+      <title>Hardware investor metrics that actually matter.</title>
+      <link>https://oriondesign.xyz/guides/hardware-investor-metrics.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/hardware-investor-metrics.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>The hardware investor metrics that matter most in early-stage product businesses: revenue, gross margin, CAC, payback, and runway.</description>
+    </item>
+    <item>
+      <title>How engineers choose between concepts.</title>
+      <link>https://oriondesign.xyz/guides/how-engineers-choose-between-concepts.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/how-engineers-choose-between-concepts.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>How engineers choose between design concepts with a weighted decision matrix (the Pugh method): criteria, weights, scoring, a worked example and common mistakes.</description>
+    </item>
+    <item>
+      <title>How route to market shapes product design and cost.</title>
+      <link>https://oriondesign.xyz/guides/route-to-market-hardware-product.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/route-to-market-hardware-product.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>Choose the sales route before the design is locked: how direct, marketplace and retail routes change the cost a product can carry, and what that means for design.</description>
+    </item>
+    <item>
+      <title>How to turn RRP into target COGS.</title>
+      <link>https://oriondesign.xyz/guides/hardware-revenue-margin-planning.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/hardware-revenue-margin-planning.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>How to turn retail price into target COGS by accounting for VAT, hidden selling costs, route-to-market fees, and the margin the business needs to keep.</description>
+    </item>
+    <item>
+      <title>Mapping the product design process.</title>
+      <link>https://oriondesign.xyz/guides/mapping-the-product-design-process.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/mapping-the-product-design-process.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>How to map the product design process using stage, complexity, regulation, manufacturing novelty, and launch pressure.</description>
+    </item>
+    <item>
+      <title>The most sustainable product is the one you never make.</title>
+      <link>https://oriondesign.xyz/guides/sustainable-product-design.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/sustainable-product-design.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>A practical guide to sustainable product design, balancing customer value, environmental impact, commercial viability, and engineering feasibility.</description>
+    </item>
+    <item>
+      <title>The risk-progressive manufacturing strategy.</title>
+      <link>https://oriondesign.xyz/guides/risk-progressive-manufacturing-strategy.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/risk-progressive-manufacturing-strategy.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>Why product teams should use a risk-progressive manufacturing strategy that moves through prototype, bridge, and scale-up deliberately.</description>
+    </item>
+    <item>
+      <title>When does injection moulding become cheaper?</title>
+      <link>https://oriondesign.xyz/guides/injection-mould-break-even.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/injection-mould-break-even.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>A practical guide to break-even volume between 3D printing, CNC machining, vacuum casting, and injection moulding, with decision rules for timing tooling.</description>
+    </item>
+    <item>
+      <title>Why product lifetime matters more than recycling.</title>
+      <link>https://oriondesign.xyz/guides/why-product-lifetime-matters-more-than-recycling.html</link>
+      <guid isPermaLink="true">https://oriondesign.xyz/guides/why-product-lifetime-matters-more-than-recycling.html</guid>
+      <pubDate>Thu, 12 Mar 2026 09:00:00 GMT</pubDate>
+      <description>Why product lifetime, repairability, and use-phase behaviour often matter more than recycling when evaluating lifecycle impact.</description>
+    </item>
+  </channel>
+</rss>

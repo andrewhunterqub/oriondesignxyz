@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Investor Metrics and KPIs | Orion Design</title>
+    <meta
+      name="description"
+      content="Summarise monthly revenue, gross margin, CAC, runway, and payback signals for a hardware business."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/investor-metrics-kpis.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Investor Metrics and KPIs | Orion Design">
+    <meta
+      property="og:description"
+      content="Summarise monthly revenue, gross margin, CAC, runway, and payback signals for a hardware business."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/investor-metrics-kpis.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-investor-metrics-kpis.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Investor Metrics and KPIs | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Summarise monthly revenue, gross margin, CAC, runway, and payback signals for a hardware business."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-investor-metrics-kpis.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-investor-metrics-kpis.jpg",
+        "name": "Investor Metrics and KPIs",
+        "url": "https://oriondesign.xyz/tools/investor-metrics-kpis.html",
+        "description": "Summarise monthly revenue, gross margin, CAC, runway, and payback signals for a hardware business.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Investor Metrics and KPIs",
+                "item": "https://oriondesign.xyz/tools/investor-metrics-kpis.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What gross margin do investors expect from a hardware product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no fixed rule, but many hardware investors look for gross margins of roughly 40% or more at scale, particularly for direct sales; this tool treats about 45% or more as healthy. Lower margins can work with very high volumes or strong recurring revenue, but they leave less room for mistakes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between operating burn and net burn?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Operating burn is what the business spends each month on salaries, rent, development and marketing. Net burn subtracts the gross profit from sales, so it shows how quickly cash is actually falling. Runway in this tool is based on net burn."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How is CAC calculated here?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Customer acquisition cost is your monthly acquisition spend divided by the customers it produces, which the tool estimates from qualified leads multiplied by the conversion rate. If some sales come through retail without direct marketing spend, the figure will overstate or understate CAC, so treat it as a guide."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How often should I update these figures?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Monthly is a sensible rhythm once you are selling, and at least before every board meeting or investor conversation. The trend over several months usually tells a stronger story than any single snapshot."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Investor Metrics and KPIs</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Live tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Investor Metrics and KPIs</h1>
+            <p>
+              Turn monthly sales, cost, lead, and cash assumptions into the core metrics investors and boards usually ask for first.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Investor metrics worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"monthlyUnits":"500","averageSellingPrice":"29","investorUnitCogs":"13","monthlyBurn":"15000","cashBalance":"120000","marketingSpend":"5000","qualifiedLeads":"5000","leadConversion":"10"}'>Kitchen gadget, DTC</button>
+              <button class="preset-button" type="button" data-tool-preset='{"monthlyUnits":"600","averageSellingPrice":"82","investorUnitCogs":"44","monthlyBurn":"70000","cashBalance":"600000","marketingSpend":"15000","qualifiedLeads":"2000","leadConversion":"8"}'>Smart home, retail</button>
+              <button class="preset-button" type="button" data-tool-preset='{"monthlyUnits":"30","averageSellingPrice":"1200","investorUnitCogs":"430","monthlyBurn":"60000","cashBalance":"500000","marketingSpend":"12000","qualifiedLeads":"120","leadConversion":"25"}'>B2B instrument</button>
+            </div>
+            <form class="tool-form" id="investor-metrics-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="monthlyUnits">Monthly units sold</label>
+                  <input id="monthlyUnits" type="number" min="1" step="1" value="650">
+                </div>
+                <div class="field-group">
+                  <label for="averageSellingPrice">Average selling price (GBP)</label>
+                  <input id="averageSellingPrice" type="number" min="1" step="1" value="175">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="investorUnitCogs">Unit COGS (GBP)</label>
+                  <input id="investorUnitCogs" type="number" min="1" step="1" value="72">
+                </div>
+                <div class="field-group">
+                  <label for="monthlyBurn">Monthly operating burn (GBP)</label>
+                  <input id="monthlyBurn" type="number" min="0" step="1000" value="80000">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="cashBalance">Cash balance (GBP)</label>
+                  <input id="cashBalance" type="number" min="0" step="1000" value="550000">
+                </div>
+                <div class="field-group">
+                  <label for="marketingSpend">Monthly acquisition spend (GBP)</label>
+                  <input id="marketingSpend" type="number" min="0" step="1000" value="25000">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="qualifiedLeads">Qualified leads per month</label>
+                  <input id="qualifiedLeads" type="number" min="1" step="1" value="1400">
+                </div>
+                <div class="field-group">
+                  <label for="leadConversion">Lead-to-sale conversion (%)</label>
+                  <input id="leadConversion" type="number" min="0.1" max="100" step="0.1" value="14">
+                </div>
+              </div>
+
+              <button class="button button-primary" type="submit">Calculate KPIs</button>
+            </form>
+            <p class="helper-text">
+              The tool is deliberately simple. It is most useful for identifying whether the business story is getting stronger or weaker.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell chart-shell-small">
+              <canvas id="investorMetricsChart" role="img" aria-label="Investor metrics chart"></canvas>
+            </div>
+            <div class="result-grid" id="investorMetricsSummary"></div>
+            <div class="recommendation-card" id="investorMetricsRecommendation"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#investorMetricsCopy"
+                  data-copy-feedback="#investorMetricsCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="investorMetricsCopy" class="copy-output" readonly></textarea>
+              <div id="investorMetricsCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="investor_metrics_kpis_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <h2>Which signals matter most</h2>
+            <p>
+              Investors do not just look for revenue growth. They look for whether growth is buying time, strengthening margin,
+              and creating a repeatable acquisition engine.
+            </p>
+            <ul>
+              <li>Runway shows how much time remains to prove the model.</li>
+              <li>CAC and payback show how efficiently demand becomes revenue.</li>
+              <li>Gross margin determines whether scale improves the business or just amplifies weakness.</li>
+            </ul>
+            <h2 id="method">Method and assumptions</h2>
+            <div class="formula-block">Monthly revenue = units × average selling price
+Gross margin = (price − unit COGS) ÷ price
+Customers acquired = qualified leads × conversion rate
+CAC = marketing spend ÷ customers acquired
+CAC payback (orders) = CAC ÷ gross profit per unit
+Net burn = monthly burn − monthly gross profit
+Runway (months) = cash balance ÷ net burn</div>
+            <p><strong>Assumptions</strong></p>
+            <ul>
+              <li>One unit per order and one average price and COGS.</li>
+              <li>Monthly burn is the total operating spend you enter; gross profit from sales offsets it.</li>
+            </ul>
+            <p><strong>Limits</strong></p>
+            <ul>
+              <li>It is a snapshot of one month, not a forecast; growth, seasonality and repeat purchases are not modelled.</li>
+              <li>Investors may define these metrics differently; state your definitions when you share them.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <p>
+              Look at the three signals together: gross margin, runway and how many orders it takes to recover the cost of acquiring a customer.
+            </p>
+            <ul>
+              <li><strong>Healthy:</strong> gross margin is around 45% or more, runway is twelve months or longer, and acquisition cost is recovered within the first order. That combination suggests growth is buying time rather than burning it.</li>
+              <li><strong>Borderline:</strong> margin sits somewhere in the 30% to 45% range, runway is between roughly six and twelve months, or it takes more than one order to recover acquisition cost. The business may work, but you need a clear plan for which number improves next and how.</li>
+              <li><strong>Concerning:</strong> margin is below about 30%, runway is under six months, or acquisition cost is never recovered because gross profit per unit is too small. Prioritise <a class="text-link-inline" href="../guides/reducing-the-cost-of-an-existing-product.html">cost reduction</a>, pricing or a fundraise before spending more on growth.</li>
+            </ul>
+            <p>
+              Most hardware products are bought once, so recovering acquisition cost on the first order matters more than it does for subscription businesses. If you sell consumables or services alongside the device, note that separately, as this tool does not include repeat revenue. Save your result to your <a href="product-plan-builder.html">product plan</a> to track how these metrics change as your costs and channels firm up.
+            </p>
+            <p>
+              If you are preparing for a fundraise and the margin story depends on cost reductions not yet designed in, a second opinion on the product cost can help. You can <a href="../contact/index.html">get in touch with Andrew</a> to discuss it.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/hardware-investor-metrics.html">Hardware Investor Metrics That Actually Matter</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/building-a-hardware-business-case.html">Building a Hardware Business Case</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/funding-and-cash.html">Funding and cash: overview</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Board updates</span>
+                <span>Fundraising prep</span>
+                <span>Commercial discipline</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What gross margin do investors expect from a hardware product?</h3>
+                <p>There is no fixed rule, but many hardware investors look for gross margins of roughly 40% or more at scale, particularly for direct sales; this tool treats about 45% or more as healthy. Lower margins can work with very high volumes or strong recurring revenue, but they leave less room for mistakes.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between operating burn and net burn?</h3>
+                <p>Operating burn is what the business spends each month on salaries, rent, development and marketing. Net burn subtracts the gross profit from sales, so it shows how quickly cash is actually falling. Runway in this tool is based on net burn.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How is CAC calculated here?</h3>
+                <p>Customer acquisition cost is your monthly acquisition spend divided by the customers it produces, which the tool estimates from qualified leads multiplied by the conversion rate. If some sales come through retail without direct marketing spend, the figure will overstate or understate CAC, so treat it as a guide.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How often should I update these figures?</h3>
+                <p>Monthly is a sensible rhythm once you are selling, and at least before every board meeting or investor conversation. The trend over several months usually tells a stronger story than any single snapshot.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early engineering or commercial estimate. It is most useful for comparing options, surfacing trade-offs, and deciding what needs deeper validation next.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Use the result as an early decision aid, then confirm the numbers with suppliers, manufacturing partners, and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="hardware-business-case-builder.html">Business Case Builder</a>
+          <a href="revenue-margin-simulator.html">Launch Margin Planner</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/investor-metrics-kpis.js" defer></script>
+  </body>
+</html>

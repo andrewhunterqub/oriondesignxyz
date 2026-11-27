@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Sustainable Product Design and Product Life | Orion Design</title>
+    <meta
+      name="description"
+      content="The product life cycle, which stage dominates, design levers, why lifetime matters, footprints vs LCA, and UK producer responsibility and green claims rules."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/sustainability-and-product-life.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Sustainability and product life for hardware products | Orion Design">
+    <meta
+      property="og:description"
+      content="The product life cycle, which stage dominates, design levers, why lifetime matters, footprints vs LCA, and UK producer responsibility and green claims rules."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/sustainability-and-product-life.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-sustainability-and-product-life.jpg">
+    <meta property="og:image:alt" content="Sustainability and product life hub guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sustainability and product life for hardware products | Orion Design">
+    <meta
+      name="twitter:description"
+      content="The product life cycle, which stage dominates, design levers, why lifetime matters, footprints vs LCA, and UK producer responsibility and green claims rules."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-sustainability-and-product-life.jpg">
+    <meta name="twitter:image:alt" content="Sustainability and product life hub guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-sustainability-and-product-life.jpg",
+        "headline": "Sustainability and product life: where a product's impact comes from and how design reduces it",
+        "description": "The product life cycle, which stage dominates, design levers, why lifetime matters, footprints vs LCA, and UK producer responsibility and green claims rules.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-26",
+        "articleSection": "Sustainability and product life",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/sustainability-and-product-life.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Life cycle assessment"
+          },
+          {
+            "@type": "Thing",
+            "name": "Product carbon footprint"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design for repair"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Sustainability and product life",
+                "item": "https://oriondesign.xyz/guides/sustainability-and-product-life.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the most effective way to make a product more sustainable?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on where the product's impact comes from. For products that do not use energy, using less material and making the product last longer usually help most. For energy-using products, efficiency in use often matters most. A quick screening estimate shows which applies before you start optimising."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is recycled material always the better choice?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Often, but not always. Recycled material usually has a lower footprint, but only helps if it meets the requirement: a recycled part that fails early can cause more impact than it saves. Check strength, durability and availability, and avoid mixing materials in ways that block recycling later."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between a carbon footprint and a life cycle assessment?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A carbon footprint estimates greenhouse gas emissions only. A life cycle assessment follows a standard method such as ISO 14040 and 14044 and covers several environmental impacts across the product's life. A screening footprint is ideal during design; a full LCA is needed for robust published figures."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I have legal responsibilities for my product's end of life?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Possibly. In the UK, producers and importers of electrical and electronic equipment, batteries and packaging can have producer responsibility obligations (some schemes apply only above size or tonnage thresholds), and energy-related products can face ecodesign requirements. Check the official GOV.UK guidance for your product and take advice if unsure."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I make environmental claims about my product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Only make claims that are truthful, specific and backed by evidence you can share, as set out in the Competition and Markets Authority's Green Claims Code. Avoid vague terms such as eco-friendly unless you can substantiate exactly what they mean."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Sustainability and product life</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Hub guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For designers, engineers and founders who want to reduce a physical product's environmental impact in ways that are real and defensible</p>
+            <h1>Sustainability and product life: where a product's impact comes from and how design reduces it</h1>
+            <p>
+              This is the starting point for everything on Orion Design about the environmental side of physical products: where impact comes from across the life cycle, which design decisions reduce it most, how to estimate it early, and the UK rules on producer responsibility and environmental claims. Each section links to a deeper guide, a free tool or an official source.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>The biggest environmental levers are decided in design: whether the product is needed, how much material it uses, how much energy it consumes, and how long it lasts.</h2>
+              <div class="formula-block">Impact per year of use ≈ (materials + manufacture + distribution + end-of-life impact) ÷ years in service + yearly use-phase impact</div>
+              <p>
+                For products that do not use energy, materials and manufacture usually dominate, so lighter, simpler and longer-lasting designs help most.
+                For energy-using products, the use phase often dominates, so efficiency matters most. Recycling helps at the end of life but cannot recover the impact of making the product.
+                Make a rough estimate early, while the design can still change, and make only the claims you can back with evidence.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#lifecycle">The product life cycle</a></li>
+              <li><a class="text-link-inline" href="#dominates">Which stage dominates for your product</a></li>
+              <li><a class="text-link-inline" href="#levers">Design levers that reduce impact</a></li>
+              <li><a class="text-link-inline" href="#lifetime">Why lifetime matters so much</a></li>
+              <li><a class="text-link-inline" href="#measure">Estimating impact: footprints and LCA</a></li>
+              <li><a class="text-link-inline" href="#rules">Producer responsibility, regulation and claims</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#path">A step-by-step path through this hub</a></li>
+            </ol>
+
+            <h2 id="lifecycle">The product life cycle</h2>
+            <p>
+              Every physical product has an impact at each stage of its life. Looking at the whole life cycle stops one improvement simply moving the impact somewhere else:
+              a lighter material that needs replacing twice as often, or a recyclable part that makes the product impossible to repair.
+            </p>
+            <figure class="article-figure article-figure-narrow">
+              <svg viewBox="0 0 440 378" role="img" aria-labelledby="sus-title sus-desc">
+                <title id="sus-title">The five life-cycle stages of a physical product</title>
+                <desc id="sus-desc">Raw materials, manufacture, distribution, use and end of life, each with the design question that most affects its impact.</desc>
+                <defs><marker id="sus-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="flow-head"/></marker></defs>
+                <rect x="6" y="8" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="32" class="flow-title">1. Raw materials</text>
+                <text x="22" y="53" class="flow-q">How much material, and which?</text><path d="M179.0,68 L179.0,78" class="flow-arrow" marker-end="url(#sus-arrow)"/>
+                <rect x="6" y="82" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="106" class="flow-title">2. Manufacture</text>
+                <text x="22" y="127" class="flow-q">Which processes, how much scrap and energy?</text><path d="M179.0,142 L179.0,152" class="flow-arrow" marker-end="url(#sus-arrow)"/>
+                <rect x="6" y="156" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="180" class="flow-title">3. Distribution</text>
+                <text x="22" y="201" class="flow-q">How far, by what mode, in what packaging?</text><path d="M179.0,216 L179.0,226" class="flow-arrow" marker-end="url(#sus-arrow)"/>
+                <rect x="6" y="230" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="254" class="flow-title">4. Use</text>
+                <text x="22" y="275" class="flow-q">Does it use energy or consumables, for how long?</text><path d="M179.0,290 L179.0,300" class="flow-arrow" marker-end="url(#sus-arrow)"/>
+                <rect x="6" y="304" width="346" height="58" rx="10" class="flow-box"/>
+                <text x="22" y="328" class="flow-title">5. End of life</text>
+                <text x="22" y="349" class="flow-q">Can it be repaired, reused, or separated and recycled?</text>
+              </svg>
+              <figcaption>Design decisions set the impact at every stage. Which stage dominates depends on the product, so estimate before optimising.</figcaption>
+            </figure>
+
+            <h2 id="dominates">Which stage dominates for your product</h2>
+            <p>The pattern below is a general guide, not a rule; a screening estimate for your own product is the only reliable way to know where to focus.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Product type</th>
+                  <th>Stage that often dominates</th>
+                  <th>Where to focus first</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Passive products: furniture, tools, accessories, housewares</td>
+                  <td>Materials and manufacture</td>
+                  <td>Material quantity and type, durability, repairability</td>
+                </tr>
+                <tr>
+                  <td>Energy-using products: appliances, heaters, powered equipment</td>
+                  <td>Use (energy over the product's life)</td>
+                  <td>Efficiency in typical use, standby power, controls, lifetime</td>
+                </tr>
+                <tr>
+                  <td>Electronics with short replacement cycles</td>
+                  <td>Manufacture, especially electronic components</td>
+                  <td>Longevity, upgradeability, battery replacement, repair</td>
+                </tr>
+                <tr>
+                  <td>Products with consumables (cartridges, filters, refills)</td>
+                  <td>Consumables over the product's life</td>
+                  <td>Consumable design, refill and return systems</td>
+                </tr>
+                <tr>
+                  <td>Light, bulky or air-freighted goods</td>
+                  <td>Distribution can become significant</td>
+                  <td>Packaging volume, flat-packing, shipping mode</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 id="levers">Design levers that reduce impact</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Lever</th>
+                  <th>What it means in practice</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Question the need</td>
+                  <td>Could an existing product, a service or a smaller product meet the need? See <a class="text-link-inline" href="sustainable-product-design.html">the most sustainable product is the one you never make</a>.</td>
+                </tr>
+                <tr>
+                  <td>Use less material</td>
+                  <td>Right-size walls and sections, remove parts, avoid over-engineering for rare loads</td>
+                </tr>
+                <tr>
+                  <td>Choose materials deliberately</td>
+                  <td>Prefer lower-impact and recycled materials where they meet the requirement; avoid mixing materials that cannot be separated</td>
+                </tr>
+                <tr>
+                  <td>Design for durability</td>
+                  <td>Test against real use, protect the parts that wear, avoid fragile features that end the product's life early</td>
+                </tr>
+                <tr>
+                  <td>Design for repair</td>
+                  <td>Screws instead of glue, accessible wear parts and batteries, spare parts and repair information (see <a class="text-link-inline" href="design-for-repair-and-disassembly.html">design for repair and disassembly</a>)</td>
+                </tr>
+                <tr>
+                  <td>Reduce energy in use</td>
+                  <td>Efficient components, low standby power, sensible defaults and controls</td>
+                </tr>
+                <tr>
+                  <td>Design for end of life</td>
+                  <td>Easy disassembly, marked plastics, fewer material types, take-back where practical</td>
+                </tr>
+                <tr>
+                  <td>Right-size packaging</td>
+                  <td>Less volume and material, recyclable packaging, protection matched to the real shipping route</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              many sustainability improvements also cut cost: less material, fewer parts, smaller packaging and fewer returns. Look for those first; they are the easiest to justify.
+            </div>
+
+            <h2 id="lifetime">Why lifetime matters so much</h2>
+            <p>
+              The impact of making a product is spent once, however long it lasts. Spreading it over more years of use is often the most effective improvement available.
+            </p>
+            <div class="worked-example">
+              <p>
+                Illustrative figures only. Product A has a manufacturing footprint of 20 kg CO₂e and typically lasts 3 years: about 6.7 kg CO₂e per year of use.
+                Product B uses more robust materials and a replaceable battery, with a footprint of 26 kg CO₂e, but typically lasts 8 years: about 3.3 kg CO₂e per year.
+                The "heavier" product has roughly half the impact per year of service.
+              </p>
+            </div>
+            <p>
+              <a class="text-link-inline" href="why-product-lifetime-matters-more-than-recycling.html">Why product lifetime matters more than recycling</a> explains this in depth,
+              and the <a class="text-link-inline" href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a> compares lifetime, repair and end-of-life options for your product.
+            </p>
+
+            <h2 id="measure">Estimating impact: footprints and LCA</h2>
+            <p>
+              A <strong>screening estimate</strong> uses typical emission factors for materials, processes and transport to find the biggest contributors quickly. It is ideal during design,
+              when the aim is to compare options rather than publish a number. A full <strong>life cycle assessment (LCA)</strong> follows a recognised method such as ISO 14040 and ISO 14044,
+              covers several impact categories rather than carbon alone, and is needed if you want to publish robust figures or claims. The
+              <a class="text-link-inline" href="https://ghgprotocol.org/product-standard" rel="noopener">GHG Protocol Product Standard</a> is a widely used method for product carbon footprints.
+            </p>
+            <p>
+              The <a class="text-link-inline" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a> gives a screening estimate, and
+              <a class="text-link-inline" href="estimating-product-carbon-footprint-during-design.html">estimating product carbon footprint during design</a> explains how to use one well.
+            </p>
+
+            <h2 id="rules">Producer responsibility, regulation and claims</h2>
+            <p>
+              Depending on the product, UK producers and importers can have legal responsibilities for the product's end of life, its packaging and its energy performance.
+              These are overviews to check against; take advice for your specific product.
+            </p>
+            <ul>
+              <li><strong>Electrical and electronic equipment:</strong> <a class="text-link-inline" href="https://www.gov.uk/electricalwaste-producer-supplier-responsibilities" rel="noopener">WEEE producer and distributor responsibilities</a>.</li>
+              <li><strong>Batteries:</strong> <a class="text-link-inline" href="https://www.gov.uk/guidance/waste-batteries-producer-responsibility" rel="noopener">waste batteries producer responsibility</a>.</li>
+              <li><strong>Packaging:</strong> <a class="text-link-inline" href="https://www.gov.uk/guidance/extended-producer-responsibility-for-packaging-who-is-affected-and-what-to-do" rel="noopener">extended producer responsibility for packaging</a>.</li>
+              <li><strong>Energy-related products:</strong> <a class="text-link-inline" href="https://www.gov.uk/guidance/placing-energy-related-products-on-the-uk-market" rel="noopener">ecodesign and energy labelling requirements</a>.</li>
+              <li><strong>Environmental claims:</strong> the Competition and Markets Authority's <a class="text-link-inline" href="https://www.gov.uk/government/publications/green-claims-code-making-environmental-claims" rel="noopener">Green Claims Code</a> sets out how to make claims that are truthful, clear and substantiated.</li>
+            </ul>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Optimising the visible thing instead of the big thing.</strong>
+                Recycled packaging matters less than energy in use for an appliance, or lifetime for a durable product.
+              </div>
+              <div>
+                <strong>Making the product harder to repair to make it greener.</strong>
+                Glued, sealed designs can be lighter but shorten the product's life.
+              </div>
+              <div>
+                <strong>Estimating impact after the design is fixed.</strong>
+                A footprint that can no longer change the design is a report, not a design tool.
+              </div>
+              <div>
+                <strong>Claims without evidence.</strong>
+                "Eco-friendly" and "sustainable" without substantiation risk misleading customers and breaching consumer law.
+              </div>
+              <div>
+                <strong>Ignoring producer responsibility costs.</strong>
+                Compliance schemes and fees for electrical products, batteries and packaging belong in the cost model.
+              </div>
+            </div>
+
+            <h2 id="path">A step-by-step path through this hub</h2>
+            <ol>
+              <li><strong>Question the need</strong> with <a class="text-link-inline" href="sustainable-product-design.html">the most sustainable product is the one you never make</a>.</li>
+              <li><strong>Estimate the footprint</strong> with the <a class="text-link-inline" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a> and <a class="text-link-inline" href="estimating-product-carbon-footprint-during-design.html">its guide</a>.</li>
+              <li><strong>Compare lifetime, repair and end-of-life options</strong> with the <a class="text-link-inline" href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a> and <a class="text-link-inline" href="why-product-lifetime-matters-more-than-recycling.html">why lifetime matters</a>.</li>
+              <li><strong>Build the improvements into manufacture</strong> through the <a class="text-link-inline" href="manufacturing-and-cost.html">Manufacturing and cost hub</a>.</li>
+            </ol>
+            <p>
+              Save results to the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a>, where they form the sustainability section of your plan.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Estimate the footprint</h3>
+                <p>Find which materials, processes and stages contribute most.</p>
+                <a class="button button-primary" href="../tools/carbon-footprint.html" data-analytics-event="article_cta_click" data-analytics-label="sus_hub_to_carbon">Open Carbon Footprint Estimator</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Explore lifetime and repair</h3>
+                <p>Compare how lifetime, repair and end of life change the picture.</p>
+                <a class="button button-secondary" href="../tools/product-lifecycle-explorer.html" data-analytics-event="article_cta_click" data-analytics-label="sus_hub_to_lifecycle">Open Product Lifecycle Explorer</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Tools in this hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Guides in this hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="right-to-repair-and-ecodesign-rules.html">Right to repair and ecodesign rules</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-lower-carbon-materials.html">Choosing lower-carbon materials</a></div>
+                <div class="aside-item"><a class="text-link" href="product-carbon-footprint-vs-lca.html">Product carbon footprint vs LCA</a></div>
+                <div class="aside-item"><a class="text-link" href="packaging-design-for-shipping.html">Packaging design for shipping</a></div>
+                <div class="aside-item"><a class="text-link" href="design-for-repair-and-disassembly.html">Design for repair and disassembly</a></div>
+                <div class="aside-item"><a class="text-link" href="sustainable-product-design.html">The most sustainable product</a></div>
+                <div class="aside-item"><a class="text-link" href="why-product-lifetime-matters-more-than-recycling.html">Why lifetime matters</a></div>
+                <div class="aside-item"><a class="text-link" href="estimating-product-carbon-footprint-during-design.html">Estimating carbon footprint</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This hub answers</p>
+              <div class="tag-row">
+                <span>Life cycle</span>
+                <span>Carbon footprint</span>
+                <span>Repair</span>
+                <span>Producer responsibility</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is the most effective way to make a product more sustainable?</h3>
+                <p>It depends on where the product's impact comes from. For products that do not use energy, using less material and making the product last longer usually help most. For energy-using products, efficiency in use often matters most. A quick screening estimate shows which applies before you start optimising.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is recycled material always the better choice?</h3>
+                <p>Often, but not always. Recycled material usually has a lower footprint, but only helps if it meets the requirement: a recycled part that fails early can cause more impact than it saves. Check strength, durability and availability, and avoid mixing materials in ways that block recycling later.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between a carbon footprint and a life cycle assessment?</h3>
+                <p>A carbon footprint estimates greenhouse gas emissions only. A life cycle assessment follows a standard method such as ISO 14040 and 14044 and covers several environmental impacts across the product's life. A screening footprint is ideal during design; a full LCA is needed for robust published figures.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I have legal responsibilities for my product's end of life?</h3>
+                <p>Possibly. In the UK, producers and importers of electrical and electronic equipment, batteries and packaging can have producer responsibility obligations (some schemes apply only above size or tonnage thresholds), and energy-related products can face ecodesign requirements. Check the official GOV.UK guidance for your product and take advice if unsure.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How can I make environmental claims about my product?</h3>
+                <p>Only make claims that are truthful, specific and backed by evidence you can share, as set out in the Competition and Markets Authority's Green Claims Code. Avoid vague terms such as eco-friendly unless you can substantiate exactly what they mean.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

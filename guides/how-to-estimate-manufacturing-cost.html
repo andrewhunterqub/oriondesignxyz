@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>How to Estimate Manufacturing Cost | Orion Design</title>
+    <meta
+      name="description"
+      content="How to estimate manufacturing cost for a hardware product: materials, process, bought-in parts, assembly labour, packaging, scrap and overhead, with a worked example."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/how-to-estimate-manufacturing-cost.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="How to Estimate Manufacturing Cost for a Hardware Product">
+    <meta
+      property="og:description"
+      content="How to estimate manufacturing cost for a hardware product: materials, process, bought-in parts, assembly labour, packaging, scrap and overhead, with a worked example."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/how-to-estimate-manufacturing-cost.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-how-to-estimate-manufacturing-cost.jpg">
+    <meta property="og:image:alt" content="Guide to estimating manufacturing cost for a hardware product">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Estimate Manufacturing Cost for a Hardware Product">
+    <meta
+      name="twitter:description"
+      content="How to estimate manufacturing cost for a hardware product: materials, process, bought-in parts, assembly labour, packaging, scrap and overhead, with a worked example."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-how-to-estimate-manufacturing-cost.jpg">
+    <meta name="twitter:image:alt" content="Guide to estimating manufacturing cost for a hardware product">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-how-to-estimate-manufacturing-cost.jpg",
+        "headline": "How to Estimate Manufacturing Cost for a Hardware Product",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-25",
+        "articleSection": "Manufacturing economics",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/how-to-estimate-manufacturing-cost.html",
+        "datePublished": "2026-03-13"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Manufacturing cost guide",
+                "item": "https://oriondesign.xyz/guides/how-to-estimate-manufacturing-cost.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is usually missing from an early manufacturing cost estimate?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Bought-in parts, packaging, scrap, labour burden, and overhead are among the most common omissions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should retail price be set before product cost is understood?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Product cost should be understood well enough first that the margin model and route-to-market discussion are based on something credible."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you calculate the cost per unit of a product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Add the cost of materials, bought-in parts, processing, assembly labour and packaging for one unit, add a scrap allowance and an overhead loading, then add tooling divided by the units it will make and any freight and duty per unit. Always state the order volume the figure applies to."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should tooling cost be included in the unit cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Keep it as a separate line next to COGS. Divide the tooling cost by a realistic number of units the tool will make, and check the result at a lower volume too, because tooling is paid for up front whether or not the units sell."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How accurate does an early manufacturing cost estimate need to be?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Accurate enough to make decisions, not to quote from. At concept stage it is sensible to treat the total as uncertain by perhaps a third either way and to show a low and high case. The range should narrow as the design freezes and supplier quotes replace assumptions."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "@id": "https://oriondesign.xyz/guides/how-to-estimate-manufacturing-cost.html#howto-1",
+            "name": "How to estimate manufacturing cost for a hardware product",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "text": "Fix the volume and the version. State the order quantity and the configuration you are costing. Prices for 500 units and 10,000 units can be very different.",
+                "name": "Fix the volume and the version"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "text": "Build a bill of materials. List every part, including fasteners, labels, adhesives and packaging, with quantity per product. The BOM Cost Builder gives a structure to start from.",
+                "name": "Build a bill of materials"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "text": "Cost each made part. Material is mass × price per kilogram, plus an allowance for runners, offcuts or swarf. Process cost is usually machine rate × cycle time ÷ parts per cycle, plus any finishing.",
+                "name": "Cost each made part"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "text": "Price bought-in parts at your volume. Use distributor price breaks or supplier quotes for the quantity you will actually order, and note any minimum order quantities.",
+                "name": "Price bought-in parts at your volume"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "text": "Estimate assembly, test and pack time. Multiply minutes per unit by a fully loaded labour rate. The Assembly Time Estimator helps break the build into steps.",
+                "name": "Estimate assembly, test and pack time"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 6,
+                "text": "Add packaging, scrap and overhead. Apply scrap as a percentage of direct cost, then overhead as a loading, and state both assumptions.",
+                "name": "Add packaging, scrap and overhead"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 7,
+                "text": "Add tooling and landed cost. Spread tooling over a realistic volume and add freight and duty per unit.",
+                "name": "Add tooling and landed cost"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 8,
+                "text": "Run a low and high case. A single number hides uncertainty. A range shows where to spend effort firming up quotes.",
+                "name": "Run a low and high case"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Manufacturing cost guide</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 25 November 2026 <span aria-hidden="true">·</span> For founders, engineers and product leads setting a first realistic cost target</p>
+            <h1>How to estimate manufacturing cost for a hardware product</h1>
+            <p>
+              Early cost work is rarely about finding the exact number. It is about building a cost structure that is accurate enough
+              to guide the product architecture, route to market, and target price before expensive assumptions spread through the project.
+            </p>
+          </div>
+          <div class="metric-strip">
+            <div class="metric-pill">
+              <strong>Topic</strong>
+              <span>Bottom-up product costing</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Audience</strong>
+              <span>Founders, engineers, and product leads</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Tool</strong>
+              <span>Product Cost Estimator</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Use it for</strong>
+              <span>Setting a first realistic COGS target</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Manufacturing cost is more than materials and process.</h2>
+              <div class="formula-block">COGS = materials + bought-in parts + process + labour + packaging + scrap + overhead</div>
+              <p>
+                To estimate it, build the cost bottom-up from the bill of materials at the volume you expect to order, add assembly time, packaging, a scrap allowance and overhead,
+                then spread tooling over the units it will make and add freight and duty to get a landed cost.
+                If one of those terms is missing, the estimate is probably too low and the commercial model built on top of it will be fragile.
+              </p>
+            </div>
+
+            <p>
+              Many early hardware cost estimates look neat because they are incomplete. The team prices the obvious physical part,
+              then mistakes that for a product cost. A working estimate needs to include the recurring cost of making the product repeatedly, not just the raw geometry.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              cost the product at the level you expect to build and ship it, not the level you first imagine it in CAD.
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#seven-blocks">The seven blocks that usually matter first</a></li>
+              <li><a class="text-link-inline" href="#tooling-landed-cost">Two more lines: tooling and landed cost</a></li>
+              <li><a class="text-link-inline" href="#method">A step-by-step method</a></li>
+              <li><a class="text-link-inline" href="#allowances">Typical allowances and how to treat them</a></li>
+              <li><a class="text-link-inline" href="#example">A simple worked example</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes: where teams usually under-price the product</a></li>
+              <li><a class="text-link-inline" href="#before-pricing">Why this matters before pricing</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Next steps</a></li>
+            </ol>
+
+            <h2 id="seven-blocks">The seven blocks that usually matter first</h2>
+            <ol>
+              <li><strong>Raw materials:</strong> resin, metal, fabric, or other base material directly consumed.</li>
+              <li><strong>Bought-in parts:</strong> electronics, fasteners, seals, inserts, packaging inserts, and other purchased components.</li>
+              <li><strong>Process cost:</strong> moulding, machining, printing, cutting, finishing, or external conversion work.</li>
+              <li><strong>Assembly labour:</strong> manual assembly, test steps, inspection, and packing effort.</li>
+              <li><strong>Packaging:</strong> <a class="text-link-inline" href="retail-ready-packaging-and-barcodes.html">retail packaging</a>, shipping cartons, instructions, labels, and secondary packing.</li>
+              <li><strong>Scrap and rework:</strong> process losses, cosmetic rejects, yield loss, or damaged components.</li>
+              <li><strong>Overhead:</strong> factory burden, quality support, management time, and operating costs absorbed into production.</li>
+            </ol>
+
+            <h2 id="tooling-landed-cost">Two more lines: tooling and landed cost</h2>
+            <p>
+              The seven blocks give the recurring cost of building one unit. Two further lines decide what each unit really costs the business.
+            </p>
+            <ul>
+              <li>
+                <strong>Tooling amortisation.</strong> Moulds, press tools, fixtures and test jigs are one-off costs, but they exist only to make the product.
+                Dividing the tooling cost by the number of units you expect it to produce gives a per-unit figure to carry alongside <a class="glossary-term" href="../knowledge/glossary.html#term-cogs" data-definition="Cost of goods sold: the direct cost of making and delivering each unit sold." aria-label="COGS: Cost of goods sold: the direct cost of making and delivering each unit sold. (glossary)">COGS</a>. Keep it as a separate line so you can see how it changes with volume.
+              </li>
+              <li>
+                <strong>Landed cost.</strong> A price quoted ex-works or free on board stops at the factory or the port. Freight, insurance, customs clearance, import duty and delivery to your warehouse all come on top.
+                For a VAT-registered business, <a class="glossary-term" href="../knowledge/glossary.html#term-import-vat" data-definition="VAT charged on imported goods, normally reclaimable by VAT-registered businesses." aria-label="import VAT: VAT charged on imported goods, normally reclaimable by VAT-registered businesses. (glossary)">import VAT</a> is usually reclaimable and so is normally left out of unit cost, but check this with your accountant.
+                <a class="text-link-inline" href="landed-cost-freight-duty-vat.html">Landed cost: freight, duty and import VAT</a> covers this in detail.
+              </li>
+            </ul>
+            <div class="formula-block">Unit cost to the business = COGS + (tooling ÷ units the tooling will make) + landed-cost additions per unit</div>
+            <p>
+              Development, certification and design fees are also real costs, but they are not usually part of unit cost. Plan them separately as project costs; the guide to
+              <a class="text-link-inline" href="estimating-hardware-development-costs.html">estimating hardware development costs</a> covers them.
+            </p>
+
+            <h2 id="method">A step-by-step method</h2>
+            <ol data-howto="How to estimate manufacturing cost for a hardware product">
+              <li><strong>Fix the volume and the version.</strong> State the order quantity and the configuration you are costing. Prices for 500 units and 10,000 units can be very different.</li>
+              <li><strong>Build a bill of materials.</strong> List every part, including fasteners, labels, adhesives and packaging, with quantity per product. The <a class="text-link-inline" href="../tools/bom-builder.html">BOM Cost Builder</a> gives a structure to start from.</li>
+              <li><strong>Cost each made part.</strong> Material is mass × price per kilogram, plus an allowance for runners, offcuts or swarf. Process cost is usually machine rate × <a class="glossary-term" href="../knowledge/glossary.html#term-cycle-time" data-definition="The time taken to make one shot or one part on a machine, a key driver of part cost." aria-label="cycle time: The time taken to make one shot or one part on a machine, a key driver of part cost. (glossary)">cycle time</a> ÷ parts per cycle, plus any finishing.</li>
+              <li><strong>Price bought-in parts at your volume.</strong> Use distributor <a class="glossary-term" href="../knowledge/glossary.html#term-price-break" data-definition="A quantity at which a supplier's unit price steps down. Asking every supplier for the same price breaks makes their quotes comparable." aria-label="price breaks: A quantity at which a supplier's unit price steps down. Asking every supplier for the same price breaks makes their quotes comparable. (glossary)">price breaks</a> or supplier quotes for the quantity you will actually order, and note any minimum order quantities.</li>
+              <li><strong>Estimate assembly, test and pack time.</strong> Multiply minutes per unit by a fully loaded labour rate. The <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a> helps break the build into steps.</li>
+              <li><strong>Add packaging, scrap and overhead.</strong> Apply scrap as a percentage of direct cost, then overhead as a loading, and state both assumptions.</li>
+              <li><strong>Add tooling and landed cost.</strong> Spread tooling over a realistic volume and add freight and duty per unit.</li>
+              <li><strong>Run a low and high case.</strong> A single number hides uncertainty. A range shows where to spend effort firming up quotes.</li>
+            </ol>
+
+            <h2 id="allowances">Typical allowances and how to treat them</h2>
+            <p>The figures below are broad, hedged starting points for an early model, not benchmarks. Replace them with supplier figures as soon as you have them.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Line</th>
+                  <th>Early-model starting point</th>
+                  <th>What moves it</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Scrap and rework</td>
+                  <td>Often a few per cent for a mature process; more for new processes, cosmetic parts or first runs</td>
+                  <td>Process maturity, cosmetic standard, tolerance demands, handling damage</td>
+                </tr>
+                <tr>
+                  <td>Overhead</td>
+                  <td>A percentage loading, commonly in the tens of per cent, or already built into a supplier's rate</td>
+                  <td>Whether you build in-house or buy finished units; check quotes so overhead is not counted twice</td>
+                </tr>
+                <tr>
+                  <td>Material waste</td>
+                  <td>A small allowance for runners and purging in moulding; more for machining from solid</td>
+                  <td>Process route, hot or cold runners, part nesting</td>
+                </tr>
+                <tr>
+                  <td>Bought-in parts</td>
+                  <td>Distributor price at your order quantity</td>
+                  <td>Volume, lead time, minimum order quantities, currency</td>
+                </tr>
+                <tr>
+                  <td>Overall estimate accuracy</td>
+                  <td>At concept stage, treat the total as uncertain by perhaps a third either way</td>
+                  <td>Narrows as the design freezes and real quotes replace assumptions</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 id="example">A simple worked example</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative figures only. Imagine a small consumer device with £4.80 of material, £2.40 of process cost, £5.50 of bought-in parts,
+                £4.80 of labour (12 minutes at an assumed fully loaded rate of £24 an hour), and £1.20 of packaging. Before scrap or overhead, the direct build cost is £18.70.
+              </p>
+              <p>
+                Add a 6% scrap allowance (£1.12) to reach £19.82, then a 14% overhead loading on that (£2.77), and the fully loaded COGS becomes £22.59.
+                That is the figure the commercial model should be tested against, not the £12 to £15 number that a partial estimate of material, process and bought-in parts (£12.70) might suggest.
+              </p>
+              <p>
+                Now add the lines that sit outside COGS. An assumed £12,000 of tooling spread over a planned 10,000 units adds £1.20, giving £23.79.
+                If the product is made overseas and freight, insurance, clearance and duty together add an assumed £1.60 per unit, the landed unit cost is £25.39, roughly double the partial estimate.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Line</th>
+                  <th>Per unit</th>
+                  <th>Running total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Material + process + bought-in parts</td>
+                  <td>£12.70</td>
+                  <td>£12.70</td>
+                </tr>
+                <tr>
+                  <td>Labour + packaging</td>
+                  <td>£6.00</td>
+                  <td>£18.70</td>
+                </tr>
+                <tr>
+                  <td>Scrap allowance (6%)</td>
+                  <td>£1.12</td>
+                  <td>£19.82</td>
+                </tr>
+                <tr>
+                  <td>Overhead (14%)</td>
+                  <td>£2.77</td>
+                  <td>£22.59 (COGS)</td>
+                </tr>
+                <tr>
+                  <td>Tooling (£12,000 ÷ 10,000 units)</td>
+                  <td>£1.20</td>
+                  <td>£23.79</td>
+                </tr>
+                <tr>
+                  <td>Freight, insurance, clearance and duty</td>
+                  <td>£1.60</td>
+                  <td>£25.39 (landed)</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 326" width="100%" role="img" aria-labelledby="mc-fig-title mc-fig-desc">
+                <title id="mc-fig-title">Cost waterfall from a partial estimate of £12.70 to a landed unit cost of £25.39</title>
+                <desc id="mc-fig-desc">A waterfall drawn to scale from the worked example. Material, process and bought-in parts: £12.70. Add labour and packaging, £6.00; a 6% scrap allowance, £1.12; and a 14% overhead loading, £2.77, to reach a COGS of £22.59. Add tooling of £12,000 spread over 10,000 units, £1.20, and freight, insurance, clearance and duty, £1.60, to reach a landed unit cost of £25.39, roughly double the partial estimate.</desc>
+                <text x="20" y="19" class="gd-t">Material, process, bought-in</text>
+                <text x="320" y="19" text-anchor="end" class="gd-v">£12.70</text>
+                <rect x="20" y="25" width="150.06" height="14" class="gd-fill-teal-soft"/>
+                <text x="20" y="59" class="gd-t">Labour and packaging</text>
+                <text x="320" y="59" text-anchor="end" class="gd-v">+£6.00</text>
+                <rect x="170.06" y="65" width="70.9" height="14" class="gd-fill-teal"/>
+                <text x="20" y="99" class="gd-t">Scrap allowance (6%)</text>
+                <text x="320" y="99" text-anchor="end" class="gd-v">+£1.12</text>
+                <rect x="240.96" y="105" width="13.23" height="14" class="gd-fill-teal"/>
+                <text x="20" y="139" class="gd-t">Overhead (14%)</text>
+                <text x="320" y="139" text-anchor="end" class="gd-v">+£2.77</text>
+                <rect x="254.19" y="145" width="32.73" height="14" class="gd-fill-teal"/>
+                <text x="20" y="179" class="gd-v gd-ti">COGS</text>
+                <text x="320" y="179" text-anchor="end" class="gd-v gd-ti">£22.59</text>
+                <rect x="20" y="185" width="266.92" height="14" class="gd-fill-indigo"/>
+                <text x="20" y="219" class="gd-t">Tooling: £12,000 ÷ 10,000</text>
+                <text x="320" y="219" text-anchor="end" class="gd-v">+£1.20</text>
+                <rect x="286.92" y="225" width="14.18" height="14" class="gd-fill-teal"/>
+                <text x="20" y="259" class="gd-t">Freight, duty and clearance</text>
+                <text x="320" y="259" text-anchor="end" class="gd-v">+£1.60</text>
+                <rect x="301.1" y="265" width="18.9" height="14" class="gd-fill-teal"/>
+                <text x="20" y="299" class="gd-v gd-ti">Landed unit cost</text>
+                <text x="320" y="299" text-anchor="end" class="gd-v gd-ti">£25.39</text>
+                <rect x="20" y="305" width="300" height="14" class="gd-fill-indigo"/>
+              </svg>
+              <figcaption>Illustrative figures from the worked example, drawn to scale. Each line the partial estimate leaves out adds to the unit cost, and the landed cost ends up roughly double the £12.70 that material, process and bought-in parts alone suggest.</figcaption>
+            </figure>
+            <p>Two quick sensitivity checks show where the effort should go:</p>
+            <ul>
+              <li><strong>Volume:</strong> if only 2,000 units sell, the same tool adds £6.00 a unit instead of £1.20, and the <a class="glossary-term" href="../knowledge/glossary.html#term-landed-cost" data-definition="The total cost of getting a product from the supplier to your warehouse ready to sell." aria-label="landed cost: The total cost of getting a product from the supplier to your warehouse ready to sell. (glossary)">landed cost</a> rises to £30.19.</li>
+              <li><strong>Assembly time:</strong> cutting the build from 12 to 8 minutes saves £1.60 of labour, or about £1.93 once scrap and overhead are applied, which is around £19,300 over 10,000 units.</li>
+            </ul>
+
+            <h2 id="mistakes">Common mistakes: where teams usually under-price the product</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Bought-in parts are missing.</strong>
+                The estimate focuses on the moulded or machined enclosure and forgets the electronics, fasteners, inserts, or accessories.
+              </div>
+              <div>
+                <strong>Assembly is treated as free.</strong>
+                Even a short manual build time compounds quickly at scale, especially when reorientation, test, or inspection are required.
+              </div>
+              <div>
+                <strong>Scrap is set to zero.</strong>
+                Real processes waste material, parts, or labour. Early models should acknowledge that instead of pretending perfect yield.
+              </div>
+              <div>
+                <strong>Packaging is added too late.</strong>
+                Secondary packaging, instructions, labels, and pack-out often arrive after the selling price has already been discussed.
+              </div>
+              <div>
+                <strong>Tooling is left out or spread too thinly.</strong>
+                Amortising a tool over a volume you have not yet sold makes the unit cost look better than the cash position will feel.
+              </div>
+              <div>
+                <strong>Prices from different volumes are mixed.</strong>
+                Using a 10,000-unit component price with a 500-unit first order understates what the first batch will cost.
+              </div>
+              <div>
+                <strong>Ex-works prices are treated as landed.</strong>
+                Freight, duty and clearance can add a noticeable share to the unit cost, especially for bulky or low-value products.
+              </div>
+              <div>
+                <strong>Currency is fixed.</strong>
+                If parts or assembly are bought in another currency, test the estimate at a less favourable exchange rate.
+              </div>
+            </div>
+
+            <h2 id="before-pricing">Why this matters before pricing</h2>
+            <p>
+              Route-to-market decisions, gross-margin targets, and retail pricing all depend on a credible product cost.
+              If the cost model is weak, the <a class="glossary-term" href="../knowledge/glossary.html#term-business-case" data-definition="A structured argument that a product is worth developing, bringing together market, price, cost, investment and risk." aria-label="business case: A structured argument that a product is worth developing, bringing together market, price, cost, investment and risk. (glossary)">business case</a> will only look healthy because the wrong number is holding it up.
+            </p>
+
+            <p>The best sequence is usually:</p>
+            <ol>
+              <li>estimate the build cost bottom-up</li>
+              <li>check break-even and cash-flow pressure</li>
+              <li>work backwards from the <a class="glossary-term" href="../knowledge/glossary.html#term-route-to-market" data-definition="How a product reaches customers: direct, marketplaces, retailers, distributors or business sales." aria-label="route to market: How a product reaches customers: direct, marketplaces, retailers, distributors or business sales. (glossary)">route to market</a> into target COGS</li>
+            </ol>
+            <p>
+              <a class="text-link-inline" href="how-to-price-a-physical-product.html">How to price a physical product</a> picks up from here, and
+              <a class="text-link-inline" href="injection-mould-break-even.html">when injection moulding becomes cheaper</a> helps decide whether tooling is justified at your volume.
+            </p>
+
+            <h2 id="next-steps">Next steps</h2>
+            <ol>
+              <li>List every part in the <a class="text-link-inline" href="../tools/bom-builder.html">BOM Cost Builder</a>, including packaging and fasteners.</li>
+              <li>Turn it into a loaded unit cost with the <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>, stating your scrap and overhead assumptions.</li>
+              <li>Estimate build time with the <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a> if labour is more than a small share of the total.</li>
+              <li>Check whether tooling pays back at your volume with the <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>.</li>
+              <li>Add freight and duty with the <a class="text-link-inline" href="../tools/landed-cost-calculator.html">Landed Cost Calculator</a> if you are importing.</li>
+              <li>Replace the largest assumptions with supplier quotes first; <a class="text-link-inline" href="how-to-find-and-brief-a-manufacturer.html">how to find and brief a manufacturer</a> explains how to ask for comparable quotes.</li>
+              <li>If the product is already in production and costs too much, use the breakdown to rank changes with <a class="text-link-inline" href="reducing-the-cost-of-an-existing-product.html">reducing the cost of an existing product</a>.</li>
+            </ol>
+            <p>For the wider picture of processes and cost, see the <a class="text-link-inline" href="manufacturing-and-cost.html">Manufacturing and cost hub</a>.</p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Build the cost estimate</h3>
+                <p>Model the cost per unit using materials, labour, packaging, scrap, and overhead in one place.</p>
+                <a
+                  class="button button-primary"
+                  href="../tools/product-cost-estimator.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="cost_article_to_cost_tool"
+                >
+                  Open Product Cost Estimator
+                </a>
+              </div>
+              <div class="article-action-card">
+                <h3>Test commercial viability next</h3>
+                <p>Once the cost looks credible, use break-even and route-to-market tools to see what the business model can support.</p>
+                <a
+                  class="button button-secondary"
+                  href="../tools/break-even-calculator.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="cost_article_to_break_even_tool"
+                >
+                  Open Break-even Calculator
+                </a>
+              </div>
+            </div>
+
+            <div class="callout-banner">
+              <h2>If the estimate is still vague, do not treat the margin model as truth.</h2>
+              <p>
+                Orion Design can help teams connect product architecture, process choice, and route to market so the first serious cost model is useful enough to make decisions from.
+              </p>
+              <div class="cta-row">
+                <a
+                  class="button button-primary"
+                  href="../contact/index.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="cost_article_to_contact"
+                >
+                  Discuss a live project
+                </a>
+                <a class="button button-secondary" href="../tools/index.html">Explore all tools</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/bom-builder.html">Bill of Materials Cost Builder</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/break-even-calculator.html">Break-even Calculator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="landed-cost-freight-duty-vat.html">Landed cost: freight, duty and import VAT</a></div>
+                <div class="aside-item"><a class="text-link" href="assembly-time-estimate.html">Estimating assembly time during design</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-mould-break-even.html">When injection moulding becomes cheaper</a></div>
+                <div class="aside-item"><a class="text-link" href="how-to-price-a-physical-product.html">How to price a physical product</a></div>
+                <div class="aside-item"><a class="text-link" href="manufacturing-processes-compared.html">Manufacturing processes compared</a></div>
+                <div class="aside-item"><a class="text-link" href="minimum-order-quantities-and-cash.html">Minimum order quantities and cash</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This article answers</p>
+              <div class="tag-row">
+                <span>Manufacturing cost estimate</span>
+                <span>Hardware COGS</span>
+                <span>Bottom-up costing</span>
+              </div>
+            </div>
+            <div class="notice-card">
+              <p class="aside-title">Next step</p>
+              <p>If the number still changes wildly between scenarios, the project probably needs more design or supplier clarity before pricing discussions become meaningful.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is usually missing from an early manufacturing cost estimate?</h3>
+                <p>Bought-in parts, packaging, scrap, labour burden, and overhead are among the most common omissions.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should retail price be set before product cost is understood?</h3>
+                <p>No. Product cost should be understood well enough first that the margin model and route-to-market discussion are based on something credible.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do you calculate the cost per unit of a product?</h3>
+                <p>Add the cost of materials, bought-in parts, processing, assembly labour and packaging for one unit, add a scrap allowance and an overhead loading, then add tooling divided by the units it will make and any freight and duty per unit. Always state the order volume the figure applies to.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should tooling cost be included in the unit cost?</h3>
+                <p>Keep it as a separate line next to COGS. Divide the tooling cost by a realistic number of units the tool will make, and check the result at a lower volume too, because tooling is paid for up front whether or not the units sell.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How accurate does an early manufacturing cost estimate need to be?</h3>
+                <p>Accurate enough to make decisions, not to quote from. At concept stage it is sensible to treat the total as uncertain by perhaps a third either way and to show a low and high case. The range should narrow as the design freezes and supplier quotes replace assumptions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">Author</p>
+            <h2>Andrew Hunter</h2>
+            <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to improve an early estimate, then confirm assumptions with suppliers and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="../tools/break-even-calculator.html">Break-even Calculator</a>
+          <a href="hardware-revenue-margin-planning.html">How to turn RRP into target COGS</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

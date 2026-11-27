@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Startup Cost Planner for Hardware Products | Orion Design</title>
+    <meta
+      name="description"
+      content="Estimate pre-launch hardware startup costs across design engineering, prototypes, tooling, compliance, first inventory, launch work, and contingency."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/startup-cost-planner.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Startup Cost Planner for Hardware Products | Orion Design">
+    <meta
+      property="og:description"
+      content="Estimate pre-launch hardware startup costs across design engineering, prototypes, tooling, compliance, first inventory, launch work, and contingency."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/startup-cost-planner.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-startup-cost-planner.jpg">
+    <meta property="og:image:alt" content="Startup cost planner for hardware products from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Startup Cost Planner for Hardware Products | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Estimate pre-launch hardware startup costs across design engineering, prototypes, tooling, compliance, first inventory, launch work, and contingency."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-startup-cost-planner.jpg">
+    <meta name="twitter:image:alt" content="Startup cost planner for hardware products from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-startup-cost-planner.jpg",
+        "name": "Startup Cost Planner",
+        "url": "https://oriondesign.xyz/tools/startup-cost-planner.html",
+        "description": "Estimate pre-launch hardware startup costs across design engineering, prototypes, tooling, compliance, first inventory, launch work, and contingency.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Startup Cost Planner",
+                "item": "https://oriondesign.xyz/tools/startup-cost-planner.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Should contingency be removed to make the budget look better?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. A lower contingency does not remove risk. It usually just hides it until the project is harder to change."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is this the same as a cashflow forecast?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. This estimates pre-launch budget. Cashflow also needs timing, payment delay, stock purchases, overhead, and sales ramp assumptions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much contingency should a hardware budget include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Early in development, a contingency of roughly 15–25% is common, with more for novel technology, regulated products or first-time teams. Reduce it as risks are retired by testing and supplier quotes, rather than removing it to make the plan look cheaper."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which costs do first-time founders most often forget?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Certification and testing, tooling modifications after first samples, packaging design and print, freight and import duty, first inventory and minimum order quantities, insurance, returns and warranty, and the time it takes to get there. Each one is small enough to overlook and large enough to matter."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need all of this money before launch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not necessarily all at once. Costs fall at different times: design and prototypes first, then tooling and certification, then inventory. Use the Cashflow Projection Tool to see when cash is needed, which helps plan funding in stages."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Startup Cost Planner</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Startup Cost Planner</h1>
+            <p>
+              Estimate the capital a hardware product needs before launch by combining design engineering, prototypes,
+              tooling, compliance, first inventory, launch work, and contingency in one plan.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Startup cost presets">
+              <button class="preset-button" type="button" data-tool-preset='{"designEngineering":"12000","prototypeBuilds":"8000","toolingCost":"0","complianceCost":"3000","firstInventory":"0","launchCosts":"4000","monthsToLaunch":"4","contingencyRate":"20"}'>Early prototype</button>
+              <button class="preset-button" type="button" data-tool-preset='{"designEngineering":"28000","prototypeBuilds":"14000","toolingCost":"18000","complianceCost":"9000","firstInventory":"12000","launchCosts":"8000","monthsToLaunch":"8","contingencyRate":"18"}'>Bridge production</button>
+              <button class="preset-button" type="button" data-tool-preset='{"designEngineering":"45000","prototypeBuilds":"22000","toolingCost":"65000","complianceCost":"18000","firstInventory":"38000","launchCosts":"28000","monthsToLaunch":"12","contingencyRate":"15"}'>Retail launch</button>
+            </div>
+            <form class="tool-form" id="startupCostForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="designEngineering">Design and engineering</label>
+                  <input id="designEngineering" type="number" min="0" value="28000" step="500">
+                </div>
+                <div class="field-group">
+                  <label for="prototypeBuilds">Prototype builds and test rigs</label>
+                  <input id="prototypeBuilds" type="number" min="0" value="14000" step="500">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="toolingCost">Tooling and production setup</label>
+                  <input id="toolingCost" type="number" min="0" value="22000" step="500">
+                </div>
+                <div class="field-group">
+                  <label for="complianceCost">Compliance and certification</label>
+                  <input id="complianceCost" type="number" min="0" value="9000" step="500">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="firstInventory">First inventory and packaging</label>
+                  <input id="firstInventory" type="number" min="0" value="18000" step="500">
+                </div>
+                <div class="field-group">
+                  <label for="launchCosts">Launch assets and go-to-market work</label>
+                  <input id="launchCosts" type="number" min="0" value="12000" step="500">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="monthsToLaunch">Months to launch</label>
+                  <input id="monthsToLaunch" type="number" min="1" value="9" step="1">
+                </div>
+                <div class="field-group">
+                  <label for="contingencyRate">Contingency (%)</label>
+                  <input id="contingencyRate" type="number" min="0" value="15" step="1">
+                </div>
+              </div>
+              <button class="button button-primary" type="submit">Estimate startup cost</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell chart-shell-small">
+              <canvas id="startupCostChart" role="img" aria-label="Startup cost breakdown chart"></canvas>
+            </div>
+            <div class="result-grid" id="startupCostSummary"></div>
+            <div class="comparison-list" id="startupCostBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#startupCostCopy"
+                  data-copy-feedback="#startupCostCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="startupCostCopy" class="copy-output" readonly></textarea>
+              <div id="startupCostCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="startup_cost_planner_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">When to use this</p>
+              <h2>Use the startup cost planner before the funding target or launch budget hardens.</h2>
+              <p>
+                The planner is most useful when a product has moved beyond a loose idea but the team has not yet committed to tooling,
+                compliance spend, first inventory, or launch activity. It turns scattered cost assumptions into one pre-launch budget.
+              </p>
+            </div>
+
+            <h2>What the result means</h2>
+            <p>
+              The headline budget combines development, prototypes, tooling, compliance, first stock, launch work, and contingency.
+              The monthly burn figure spreads that budget across the months to launch, which helps reveal whether the planned pace is realistic.
+            </p>
+
+            <div class="worked-example">
+              <p>
+                If the result looks uncomfortable, do not only reduce contingency. Look for staged decisions: a smaller prototype build,
+                delayed tooling, a narrower launch, or a supplier conversation that can replace guesswork with real numbers.
+              </p>
+            </div>
+
+            <h2>What to do next</h2>
+            <ul>
+              <li>Check whether the biggest cost category is based on evidence or optimism.</li>
+              <li>Separate costs needed to learn from costs needed to launch.</li>
+              <li>Use the cashflow tool after this to see whether the launch plan creates a runway problem.</li>
+              <li>Bring uncertain line items into supplier, compliance, or product design conversations early.</li>
+            </ul>
+            <h2>How to read your result</h2>
+            <p>
+              Compare the total budget with the cash you have or can realistically raise, and the monthly burn with what your team can sustain.
+            </p>
+            <ul>
+              <li><strong>Comfortable:</strong> the budget, including contingency, fits within the funds you have or have firm commitments for, with a buffer left over for delays. Contingency of around 15% to 25% is a common starting point for a first hardware product.</li>
+              <li><strong>Borderline:</strong> the total only fits if contingency is trimmed or if every <a class="text-link-inline" href="../guides/comparing-manufacturing-quotes.html">supplier quote</a> comes in at the low end. Plan staged decisions so you can pause before the largest spend, usually tooling and first inventory.</li>
+              <li><strong>Worrying:</strong> the budget is well beyond available funding, or the monthly burn is higher than the business can sustain for the months to launch. Look at a narrower first product, a lower-volume manufacturing route, or a funding round timed before the major commitments.</li>
+            </ul>
+            <p>
+              Hardware projects often take longer than planned, so if the timeline is tight, test what an extra few months of burn would add before treating the figure as final. Save your result to your <a href="product-plan-builder.html">product plan</a> to build up a complete picture of cost, cash and launch timing.
+            </p>
+            <p>
+              If tooling or compliance make up a large share of the total and you have not yet had quotes, it can be worth a second opinion before you set a funding target. You can <a href="../contact/index.html">get in touch with Andrew</a> if that would help.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/minimum-order-quantities-and-cash.html">Minimum order quantities and cash</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/estimating-hardware-development-costs.html">How much does it cost to develop a hardware product?</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="cashflow-projection.html">Cashflow Projection Tool</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="hardware-business-case-builder.html">Hardware Business Case Builder</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/funding-and-cash.html">Funding and cash: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/funding-routes-uk-northern-ireland.html">Funding routes for hardware start-ups in the UK and Northern Ireland</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Funding target</span>
+                <span>Pre-launch budget</span>
+                <span>Contingency planning</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Should contingency be removed to make the budget look better?</h3>
+                <p>No. A lower contingency does not remove risk. It usually just hides it until the project is harder to change.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is this the same as a cashflow forecast?</h3>
+                <p>No. This estimates pre-launch budget. Cashflow also needs timing, payment delay, stock purchases, overhead, and sales ramp assumptions.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How much contingency should a hardware budget include?</h3>
+                <p>Early in development, a contingency of roughly 15–25% is common, with more for novel technology, regulated products or first-time teams. Reduce it as risks are retired by testing and supplier quotes, rather than removing it to make the plan look cheaper.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Which costs do first-time founders most often forget?</h3>
+                <p>Certification and testing, tooling modifications after first samples, <a class="text-link-inline" href="../guides/packaging-design-for-shipping.html">packaging design and print</a>, freight and import duty, first inventory and minimum order quantities, insurance, returns and warranty, and the time it takes to get there. Each one is small enough to overlook and large enough to matter.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need all of this money before launch?</h3>
+                <p>Not necessarily all at once. Costs fall at different times: design and prototypes first, then tooling and certification, then inventory. Use the <a class="text-link-inline" href="cashflow-projection.html">Cashflow Projection Tool</a> to see when cash is needed, which helps plan funding in stages.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early budget model. Use it to compare scenarios and decide which costs need deeper validation next.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Confirm budget assumptions with suppliers, compliance specialists, manufacturers, and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="break-even-calculator.html">Break-even Calculator</a>
+          <a href="../guides/estimating-hardware-development-costs.html">Development cost guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/startup-cost-planner.js" defer></script>
+  </body>
+</html>

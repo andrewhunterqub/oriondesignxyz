@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Assembly Time Estimator | Orion Design</title>
+    <meta
+      name="description"
+      content="Estimate manual assembly time and labour cost during product development using part count, fastening, handling, and quality checks."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/assembly-time.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Assembly Time Estimator | Orion Design">
+    <meta
+      property="og:description"
+      content="Estimate manual assembly time and labour cost during product development using part count, fastening, handling, and quality checks."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/assembly-time.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-assembly-time.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Assembly Time Estimator | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Estimate manual assembly time and labour cost during product development using part count, fastening, handling, and quality checks."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-assembly-time.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-assembly-time.jpg",
+        "name": "Assembly Time Estimator",
+        "url": "https://oriondesign.xyz/tools/assembly-time.html",
+        "description": "Estimate manual assembly time and labour cost during product development using part count, fastening, handling, and quality checks.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Assembly Time Estimator",
+                "item": "https://oriondesign.xyz/tools/assembly-time.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do you estimate assembly time during design?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Break the task into handling, joining, reorientation, and checking so design decisions can be compared before final process engineering."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What increases manual assembly cost fastest?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Repeated joins, awkward part handling, and designs that force operators to keep turning the product all add recurring labour quickly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can this replace a formal DFA study?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It is deliberately lightweight. Use it to narrow concepts, then follow with a detailed DFA review once geometry and process are more stable."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I reduce assembly time in my design?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Reduce part count first, then make the remaining parts easy to handle and fit: self-locating features, a single assembly direction, fewer loose fasteners, and parts that cannot be fitted the wrong way round. Snap fits can save time but need careful design if the product must be serviced or repaired."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is fewer parts always better?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually for assembly time, but not always overall. Combining parts can make tooling more complex, make repair harder, or force a compromise in material choice. Weigh assembly savings against tooling cost, serviceability and sustainability before merging parts."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Assembly Time Estimator</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Live tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Assembly Time Estimator</h1>
+            <p>
+              Estimate manual assembly time during concept development. Use it to compare architectures, part-count changes,
+              fastening strategies, and labour-rate sensitivity before detailed process planning exists.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Assembly time worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"partCount":"9","batchSize":"500","handlingComplexity":"simple","labourRate":"26","fastenerCount":"4","fastenerTime":"8","reorientationCount":"2","qaSeconds":"15"}'>Handheld torch</button>
+              <button class="preset-button" type="button" data-tool-preset='{"partCount":"24","batchSize":"300","handlingComplexity":"moderate","labourRate":"28","fastenerCount":"14","fastenerTime":"12","reorientationCount":"6","qaSeconds":"45"}'>Desk lamp</button>
+              <button class="preset-button" type="button" data-tool-preset='{"partCount":"38","batchSize":"100","handlingComplexity":"complex","labourRate":"32","fastenerCount":"30","fastenerTime":"15","reorientationCount":"9","qaSeconds":"120"}'>Sheet-metal control box</button>
+            </div>
+            <form class="tool-form" id="assembly-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="partCount">Part count</label>
+                  <input id="partCount" type="number" min="1" value="12">
+                </div>
+                <div class="field-group">
+                  <label for="batchSize">Batch size</label>
+                  <input id="batchSize" type="number" min="1" value="250">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="handlingComplexity">Handling complexity</label>
+                  <select id="handlingComplexity">
+                    <option value="simple">Simple</option>
+                    <option value="moderate" selected>Moderate</option>
+                    <option value="complex">Complex</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="labourRate">Labour rate per hour (GBP)</label>
+                  <input id="labourRate" type="number" min="1" step="0.5" value="28">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="fastenerCount">Fastener or join count</label>
+                  <input id="fastenerCount" type="number" min="0" value="8">
+                </div>
+                <div class="field-group">
+                  <label for="fastenerTime">Seconds per join</label>
+                  <input id="fastenerTime" type="number" min="0" step="1" value="14">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="reorientationCount">Reorientation count</label>
+                  <input id="reorientationCount" type="number" min="0" value="5">
+                </div>
+                <div class="field-group">
+                  <label for="qaSeconds">QA/check time per unit (seconds)</label>
+                  <input id="qaSeconds" type="number" min="0" step="1" value="20">
+                </div>
+              </div>
+
+              <button class="button button-primary" type="submit">Estimate assembly time</button>
+            </form>
+            <p class="helper-text">
+              Intended for concept-stage comparison. Use it to identify where design simplification could remove labour before detailed industrial engineering.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell">
+              <canvas id="assemblyChart" role="img" aria-label="Assembly time breakdown chart"></canvas>
+            </div>
+            <div class="result-grid" id="assemblySummary"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#assemblyCopy"
+                  data-copy-feedback="#assemblyCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="assemblyCopy" class="copy-output" readonly></textarea>
+              <div id="assemblyCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="assembly_time_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <h2>Worked example</h2>
+            <div class="worked-example">
+              <p>
+                A 12-part product with 8 joins, moderate handling, and 20 seconds of QA time often lands near the point where small part-count reductions
+                create meaningful labour savings. Removing two joins and one orientation step can cut recurring assembly effort more than teams expect.
+              </p>
+            </div>
+
+            <h2>How to use the estimate</h2>
+            <p>
+              This tool is most useful when comparing concepts, not validating final takt time. If one direction uses fewer components,
+              easier location features, or less repeated fastening, the delta in labour usually matters more than the absolute number.
+            </p>
+            <ul>
+              <li>Use part count as a proxy for handling events.</li>
+              <li>Treat joins as repeated manual effort that scales directly with labour cost.</li>
+              <li>Use reorientation count to capture awkward fixture or operator movement.</li>
+              <li>Add QA time to reflect inspection and confirmation effort that often gets forgotten.</li>
+            </ul>
+
+            <h2 id="method">Method and assumptions</h2>
+            <div class="formula-block">Handling time = part count × seconds per part (7 simple, 12 moderate, 18 complex)
+Joining time = fasteners × seconds per fastener
+Reorientation time = reorientations × 6 seconds
+Total seconds = handling + joining + reorientation + inspection
+Labour cost per unit = total seconds ÷ 3,600 × hourly labour rate</div>
+            <p><strong>Assumptions</strong></p>
+            <ul>
+              <li>Handling times per part are fixed allowances for manual assembly by a trained operator, chosen by the complexity setting.</li>
+              <li>Each reorientation of the assembly takes about 6 seconds.</li>
+              <li>The labour rate is the fully loaded rate you enter.</li>
+            </ul>
+            <p><strong>Limits</strong></p>
+            <ul>
+              <li>It does not include learning curves, fixtures, line balancing, rework or automation.</li>
+              <li>Real times depend on part design, access, tooling and operator skill; time a prototype build to calibrate.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <p>
+              The first figure is the estimated hands-on time to build one unit. The second turns that into labour cost per unit at your
+              chosen rate, and the third shows what that adds up to across the batch. The chart shows where the time goes, which is usually
+              more useful than the total itself.
+            </p>
+            <ul>
+              <li><strong>Comfortable:</strong> simple handheld or housewares products typically land at around one to three minutes. If yours does, assembly is unlikely to be your main cost problem.</li>
+              <li><strong>Worth a look:</strong> small electromechanical products with wiring, a <a class="text-link-inline" href="../guides/electronics-in-a-physical-product.html">PCB</a> and several fastened joints often sit somewhere between three and ten minutes. Check whether joining or reorientation dominates the chart, because those are the easiest to design out.</li>
+              <li><strong>Worrying:</strong> if labour cost per unit is a large share of your target unit cost, or one slice of the chart is far bigger than the others, the design probably needs simplifying before tooling is committed.</li>
+            </ul>
+            <p>
+              Common next steps are combining parts, swapping screws for <a class="text-link-inline" href="../guides/joining-methods-for-product-design.html">snap fits</a> or self-locating features, and arranging the build so
+              everything goes in from one direction. Re-run the estimate after each change to see which one moves the number most.
+              Save your result to your <a href="product-plan-builder.html">product plan</a> so the labour assumption sits alongside your
+              cost and pricing work. If the estimate is high and the fix is not obvious, a short <a href="../contact/index.html">conversation with Andrew</a>
+              can help you see where the design could be simplified.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/assembly-time-estimate.html">Estimating Assembly Time During Design</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/injection-mould-break-even.html">When Does Injection Moulding Become Cheaper?</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/development-and-prototyping.html">Development and prototyping: overview</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>DFA direction</span>
+                <span>Concept comparison</span>
+                <span>Labour-cost framing</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>How do you estimate assembly time during design?</h3>
+                <p>Break the task into handling, joining, reorientation, and checking so design decisions can be compared before final process engineering.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What increases manual assembly cost fastest?</h3>
+                <p>Repeated joins, awkward part handling, and designs that force operators to keep turning the product all add recurring labour quickly.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can this replace a formal DFA study?</h3>
+                <p>No. It is deliberately lightweight. Use it to narrow concepts, then follow with a detailed DFA review once geometry and process are more stable.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How can I reduce assembly time in my design?</h3>
+                <p>Reduce part count first, then make the remaining parts easy to handle and fit: self-locating features, a single assembly direction, fewer loose fasteners, and parts that cannot be fitted the wrong way round. Snap fits can save time but need careful design if the product must be serviced or repaired.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is fewer parts always better?</h3>
+                <p>Usually for assembly time, but not always overall. Combining parts can make tooling more complex, make repair harder, or force a compromise in material choice. Weigh assembly savings against tooling cost, serviceability and sustainability before merging parts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early engineering or commercial estimate. It is most useful for comparing options, surfacing trade-offs, and deciding what needs deeper validation next.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Use the result as an early decision aid, then confirm the numbers with suppliers, manufacturing partners, and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Practical engineering tools and product-development guidance from concept to manufacture.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related tools</h3>
+          <a href="manufacturing-payoff.html">Manufacturing Payoff</a>
+          <a href="product-purpose.html">Product Purpose</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/assembly-time.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,770 @@
+[
+ {
+  "type": "Guide",
+  "title": "Overmoulding and Two-Shot Moulding",
+  "path": "/guides/overmoulding-and-two-shot-moulding.html",
+  "added": "2026-11-27T06:40:04.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Choosing How to Make an Enclosure",
+  "path": "/guides/choosing-how-to-make-an-enclosure.html",
+  "added": "2026-11-27T06:03:44.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Aluminium Extrusions for Product Enclosures",
+  "path": "/guides/aluminium-extrusions-for-product-enclosures.html",
+  "added": "2026-11-27T05:34:31.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Die Casting Explained: Process and Design",
+  "path": "/guides/die-casting-explained.html",
+  "added": "2026-11-27T05:14:00.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Cables, Wiring and Connectors in a Product",
+  "path": "/guides/cables-wiring-and-connectors-inside-a-product.html",
+  "added": "2026-11-27T04:54:22.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Bracket Deflection Calculator: Beam Bending and Stress",
+  "path": "/tools/bracket-deflection-calculator.html",
+  "added": "2026-11-27T04:44:52.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Designing Buttons, Switches and Controls",
+  "path": "/guides/designing-buttons-switches-and-controls.html",
+  "added": "2026-11-27T04:38:09.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Designing a Product to Survive Drops",
+  "path": "/guides/designing-for-drops-and-impacts.html",
+  "added": "2026-11-27T04:19:24.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Enclosure Temperature Rise Estimator: ΔT = P × Rθ",
+  "path": "/tools/temperature-rise-estimator.html",
+  "added": "2026-11-27T03:56:14.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Assembly and Work Instructions",
+  "path": "/guides/assembly-and-work-instructions.html",
+  "added": "2026-11-27T03:54:20.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Managing Heat in a Product Enclosure",
+  "path": "/guides/managing-heat-in-a-product-enclosure.html",
+  "added": "2026-11-27T03:29:55.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Change Request Builder: Engineering Change Request",
+  "path": "/tools/change-request-builder.html",
+  "added": "2026-11-27T03:25:37.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Mould Tool Trials and Sample Approval",
+  "path": "/guides/mould-tool-trials-and-sample-approval.html",
+  "added": "2026-11-27T03:23:14.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Designing Snap Fits and Living Hinges",
+  "path": "/guides/designing-snap-fits-and-living-hinges.html",
+  "added": "2026-11-27T02:22:08.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Bills of Materials and Revision Control",
+  "path": "/guides/bills-of-materials-and-revision-control.html",
+  "added": "2026-11-27T02:18:48.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Snap-fit Calculator: Cantilever Strain and Forces",
+  "path": "/tools/snap-fit-calculator.html",
+  "added": "2026-11-27T02:14:43.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Choosing Metals for a Product",
+  "path": "/guides/choosing-metals-for-a-product.html",
+  "added": "2026-11-27T02:11:38.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Running a Design Review",
+  "path": "/guides/running-a-design-review.html",
+  "added": "2026-11-27T01:48:17.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Supply Agreements with a Manufacturer",
+  "path": "/guides/supply-agreements-with-a-manufacturer.html",
+  "added": "2026-11-27T01:15:02.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Trade Marks and Product Names: The Basics",
+  "path": "/guides/trade-marks-and-product-names.html",
+  "added": "2026-11-27T01:14:33.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Retail-Ready Packaging and Barcodes",
+  "path": "/guides/retail-ready-packaging-and-barcodes.html",
+  "added": "2026-11-27T00:38:02.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "3D-Printed Prototype to Moulded Part",
+  "path": "/guides/from-3d-printed-prototype-to-moulded-part.html",
+  "added": "2026-11-27T00:37:13.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Planning a Pilot Production Run",
+  "path": "/guides/planning-a-pilot-production-run.html",
+  "added": "2026-11-27T00:15:36.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "After Launch: Returns, Feedback and Changes",
+  "path": "/guides/after-launch-returns-feedback-and-design-changes.html",
+  "added": "2026-11-27T00:14:53.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Industrial Design vs Engineering Design",
+  "path": "/guides/industrial-design-vs-engineering-design.html",
+  "added": "2026-11-26T23:59:32.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Reducing the Cost of an Existing Product",
+  "path": "/guides/reducing-the-cost-of-an-existing-product.html",
+  "added": "2026-11-26T23:53:20.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Sealing and Waterproofing an Enclosure",
+  "path": "/guides/sealing-and-waterproofing-an-enclosure.html",
+  "added": "2026-11-26T23:34:24.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Usability Testing a Prototype",
+  "path": "/guides/usability-testing-a-prototype.html",
+  "added": "2026-11-26T23:33:11.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Surface Finishes for Plastic and Metal Parts",
+  "path": "/guides/surface-finishes-for-plastic-and-metal-parts.html",
+  "added": "2026-11-26T23:06:18.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Joining Methods: Screws, Snap Fits, Welding",
+  "path": "/guides/joining-methods-for-product-design.html",
+  "added": "2026-11-26T22:54:50.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Choosing a 3D Printing Process",
+  "path": "/guides/choosing-a-3d-printing-process.html",
+  "added": "2026-11-26T22:52:25.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Tolerances and Engineering Drawings",
+  "path": "/guides/tolerances-and-engineering-drawings.html",
+  "added": "2026-11-26T22:33:29.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Getting and Comparing Manufacturing Quotes",
+  "path": "/guides/comparing-manufacturing-quotes.html",
+  "added": "2026-11-26T22:32:15.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Planning Electronics in a Physical Product",
+  "path": "/guides/electronics-in-a-physical-product.html",
+  "added": "2026-11-26T22:31:02.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Looks-Like vs Works-Like Prototypes",
+  "path": "/guides/looks-like-vs-works-like-prototypes.html",
+  "added": "2026-11-26T18:08:51.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Building a Hardware Financial Model",
+  "path": "/guides/building-a-hardware-financial-model.html",
+  "added": "2026-11-26T18:07:33.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Printable Product Development Checklists",
+  "path": "/guides/product-development-checklists.html",
+  "added": "2026-11-26T02:53:52.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Manufacturing Processes Compared",
+  "path": "/guides/manufacturing-processes-compared.html",
+  "added": "2026-11-26T02:51:00.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Right to Repair and Ecodesign Rules",
+  "path": "/guides/right-to-repair-and-ecodesign-rules.html",
+  "added": "2026-11-26T01:54:15.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Selling a Physical Product on Marketplaces",
+  "path": "/guides/selling-on-marketplaces.html",
+  "added": "2026-11-26T01:51:19.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Choosing Lower-carbon Materials for Products",
+  "path": "/guides/choosing-lower-carbon-materials.html",
+  "added": "2026-11-26T01:48:34.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Product Carbon Footprint vs LCA",
+  "path": "/guides/product-carbon-footprint-vs-lca.html",
+  "added": "2026-11-26T01:46:01.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Crowdfunding a Hardware Product",
+  "path": "/guides/crowdfunding-a-hardware-product.html",
+  "added": "2026-11-26T01:43:27.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Retail and Distributor Margins Explained",
+  "path": "/guides/retail-and-distributor-margins-explained.html",
+  "added": "2026-11-26T01:40:49.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Customer Discovery for Hardware Products",
+  "path": "/guides/customer-discovery-for-hardware.html",
+  "added": "2026-11-25T22:40:30.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Product Liability Basics for Product Developers",
+  "path": "/guides/product-liability-basics.html",
+  "added": "2026-11-25T21:46:53.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Competitor and Patent Landscape Review",
+  "path": "/guides/competitor-and-patent-landscape-review.html",
+  "added": "2026-11-25T21:44:21.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Freedom to Operate Explained",
+  "path": "/guides/freedom-to-operate-explained.html",
+  "added": "2026-11-25T20:45:03.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Product Testing and Validation Plans",
+  "path": "/guides/product-testing-and-validation-plans.html",
+  "added": "2026-11-25T20:42:32.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Packaging Design for Shipping",
+  "path": "/guides/packaging-design-for-shipping.html",
+  "added": "2026-11-25T20:40:10.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "How Many Prototypes Do You Need?",
+  "path": "/guides/how-many-prototypes-do-you-need.html",
+  "added": "2026-11-25T19:48:27.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "UK vs Overseas Manufacturing",
+  "path": "/guides/uk-vs-overseas-manufacturing.html",
+  "added": "2026-11-25T19:44:30.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "CNC Machining Design Rules",
+  "path": "/guides/cnc-machining-design-rules.html",
+  "added": "2026-11-25T19:40:19.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Design Registration vs Patents",
+  "path": "/guides/design-registration-vs-patents.html",
+  "added": "2026-11-25T18:48:45.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Minimum Order Quantities and Cash",
+  "path": "/guides/minimum-order-quantities-and-cash.html",
+  "added": "2026-11-25T18:45:54.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "How to Write a Product Requirements Document",
+  "path": "/guides/how-to-write-a-product-requirements-document.html",
+  "added": "2026-11-25T18:43:35.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Quality Control and First-Article Inspection",
+  "path": "/guides/quality-control-and-first-article-inspection.html",
+  "added": "2026-11-25T18:41:14.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Design for Repair and Disassembly",
+  "path": "/guides/design-for-repair-and-disassembly.html",
+  "added": "2026-11-25T17:46:26.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Sheet Metal Design Basics: Bends and Holes",
+  "path": "/guides/sheet-metal-design-basics.html",
+  "added": "2026-11-25T17:44:37.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "How to Price a Physical Product",
+  "path": "/guides/how-to-price-a-physical-product.html",
+  "added": "2026-11-25T17:42:25.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Working With a Product Design Consultancy",
+  "path": "/guides/working-with-a-product-design-consultancy.html",
+  "added": "2026-11-25T17:40:22.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Product Test Plan Builder for Hardware",
+  "path": "/tools/test-plan-builder.html",
+  "added": "2026-11-25T17:13:46.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Crowdfunding Planner for Hardware Products",
+  "path": "/tools/crowdfunding-planner.html",
+  "added": "2026-11-25T17:09:13.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Pricing Ladder: From Landed Cost to Shelf Price",
+  "path": "/tools/pricing-ladder.html",
+  "added": "2026-11-25T17:06:52.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Learning Paths for Product Development",
+  "path": "/guides/learning-paths.html",
+  "added": "2026-11-25T16:56:22.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Am I Ready to Commit to Tooling? Self-check",
+  "path": "/tools/ready-for-tooling.html",
+  "added": "2026-11-25T16:54:38.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Am I Ready to Talk to a Manufacturer? Self-check",
+  "path": "/tools/ready-for-manufacturer.html",
+  "added": "2026-11-25T16:54:38.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Certification Readiness Checklist (UKCA and CE)",
+  "path": "/tools/certification-readiness.html",
+  "added": "2026-11-25T16:54:38.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "RFQ Pack Builder: Request for Quotation Template",
+  "path": "/tools/rfq-pack-builder.html",
+  "added": "2026-11-25T16:51:55.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Bill of Materials (BOM) Cost Builder",
+  "path": "/tools/bom-builder.html",
+  "added": "2026-11-25T16:49:16.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Product Development Timeline Planner",
+  "path": "/tools/timeline-planner.html",
+  "added": "2026-11-25T16:46:35.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Plastic Material Selector for Product Design",
+  "path": "/tools/material-selector.html",
+  "added": "2026-11-25T16:43:48.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Tolerance Stack-up Calculator: Worst Case and RSS",
+  "path": "/tools/tolerance-stack-up.html",
+  "added": "2026-11-25T16:39:19.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Hardware Start-up Funding in the UK and NI",
+  "path": "/guides/funding-routes-uk-northern-ireland.html",
+  "added": "2026-11-25T16:36:27.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Injection Moulding DFM Checker for Plastic Parts",
+  "path": "/tools/dfm-checker.html",
+  "added": "2026-11-25T16:26:02.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Product Certification Basics: UKCA, CE and Safety",
+  "path": "/guides/product-certification-basics.html",
+  "added": "2026-11-25T16:22:42.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Landed Cost Calculator: Freight, Duty and VAT",
+  "path": "/tools/landed-cost-calculator.html",
+  "added": "2026-11-25T16:19:32.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Landed Cost: Freight, Duty and Import VAT",
+  "path": "/guides/landed-cost-freight-duty-vat.html",
+  "added": "2026-11-25T16:16:02.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "How to Find and Brief a Manufacturer",
+  "path": "/guides/how-to-find-and-brief-a-manufacturer.html",
+  "added": "2026-11-25T16:11:45.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Choosing Plastic Materials for Products",
+  "path": "/guides/choosing-plastic-materials.html",
+  "added": "2026-11-25T16:09:17.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Injection Moulding Explained: Process and Cost",
+  "path": "/guides/injection-moulding-explained.html",
+  "added": "2026-11-25T16:06:40.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Injection Moulding DFM Checklist",
+  "path": "/guides/injection-moulding-dfm-checklist.html",
+  "added": "2026-11-25T16:04:29.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Product IP, Partners and Compliance Explained",
+  "path": "/guides/ip-partners-and-compliance.html",
+  "added": "2026-11-25T16:01:21.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Sustainable Product Design and Product Life",
+  "path": "/guides/sustainability-and-product-life.html",
+  "added": "2026-11-25T15:58:50.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Funding and Cash for Hardware Start-ups",
+  "path": "/guides/funding-and-cash.html",
+  "added": "2026-11-25T15:56:30.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Route to Market and Margins for Hardware Products",
+  "path": "/guides/route-to-market-and-margins.html",
+  "added": "2026-11-25T15:53:40.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Product Opportunity and Concept: Where to Start",
+  "path": "/guides/opportunity-and-concept.html",
+  "added": "2026-11-25T15:50:56.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Product Development and Prototyping Explained",
+  "path": "/guides/development-and-prototyping.html",
+  "added": "2026-11-25T15:48:21.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Manufacturing and Cost for Hardware Products",
+  "path": "/guides/manufacturing-and-cost.html",
+  "added": "2026-11-25T15:44:52.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Product Plan Builder for Hardware Products",
+  "path": "/tools/product-plan-builder.html",
+  "added": "2026-11-24T15:51:36.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Break-even Calculator for Hardware Products",
+  "path": "/tools/break-even-calculator.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Calculating Hardware Startup Cash Flow",
+  "path": "/guides/calculating-hardware-startup-cash-flow.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Cashflow Projection Tool for Hardware Startups",
+  "path": "/tools/cashflow-projection.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Documents Before Talking to a Manufacturer",
+  "path": "/guides/must-have-documents-before-talking-to-a-manufacturer.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Financial Break-even for Hardware Products",
+  "path": "/guides/financial-break-even-for-hardware-products.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Free NDA Generator for Product Discussions",
+  "path": "/tools/nda-generator.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "How Much Does It Cost to Develop a Hardware Product?",
+  "path": "/guides/estimating-hardware-development-costs.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "How to Estimate Manufacturing Cost",
+  "path": "/guides/how-to-estimate-manufacturing-cost.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "How to Validate a Product Idea",
+  "path": "/guides/how-to-validate-a-product-idea.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Product Cost Estimator for Hardware",
+  "path": "/tools/product-cost-estimator.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Protect Product IP Before Manufacturing",
+  "path": "/guides/how-to-protect-product-ip.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Prototype Strategy Tool for Hardware Teams",
+  "path": "/tools/prototype-strategy-tool.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Prototyping vs Production: A Startup Guide",
+  "path": "/guides/prototyping-vs-production-startup-guide.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Startup Cost Planner for Hardware Products",
+  "path": "/tools/startup-cost-planner.html",
+  "added": "2026-03-13T15:33:39.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Building a Hardware Business Case",
+  "path": "/guides/building-a-hardware-business-case.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Carbon Footprint Estimator",
+  "path": "/tools/carbon-footprint.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Choosing Between Concepts: Pugh Decision Matrix",
+  "path": "/guides/how-engineers-choose-between-concepts.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Estimating Product Carbon Footprint During Design",
+  "path": "/guides/estimating-product-carbon-footprint-during-design.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Hardware Business Case Builder",
+  "path": "/tools/hardware-business-case-builder.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Hardware Investor Metrics That Actually Matter",
+  "path": "/guides/hardware-investor-metrics.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "How Route to Market Shapes Product Design and Cost",
+  "path": "/guides/route-to-market-hardware-product.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "How to Turn RRP into Target COGS",
+  "path": "/guides/hardware-revenue-margin-planning.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Investor Metrics and KPIs",
+  "path": "/tools/investor-metrics-kpis.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Launch Margin Planner",
+  "path": "/tools/revenue-margin-simulator.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Mapping the Product Design Process",
+  "path": "/guides/mapping-the-product-design-process.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Product Design Process Map",
+  "path": "/tools/product-design-process-map.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Product Lifecycle Explorer",
+  "path": "/tools/product-lifecycle-explorer.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Production Strategy Planner",
+  "path": "/tools/production-strategy-planner.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Pugh Concept Selector",
+  "path": "/tools/pugh-concept-selector.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Target COGS by Route to Market",
+  "path": "/tools/route-to-market-simulator.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "The Risk-Progressive Manufacturing Strategy",
+  "path": "/guides/risk-progressive-manufacturing-strategy.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Why Product Lifetime Matters More Than Recycling",
+  "path": "/guides/why-product-lifetime-matters-more-than-recycling.html",
+  "added": "2026-03-12T11:08:20.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Assembly Time Estimator",
+  "path": "/tools/assembly-time.html",
+  "added": "2026-03-12T09:37:22.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Estimating Assembly Time During Design",
+  "path": "/guides/assembly-time-estimate.html",
+  "added": "2026-03-12T09:37:22.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "Sustainable Product Design: A Practical Guide",
+  "path": "/guides/sustainable-product-design.html",
+  "added": "2026-03-12T09:37:22.000Z"
+ },
+ {
+  "type": "Guide",
+  "title": "When Does Injection Moulding Become Cheaper?",
+  "path": "/guides/injection-mould-break-even.html",
+  "added": "2026-03-12T09:37:22.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Manufacturing Payoff Visualiser",
+  "path": "/tools/manufacturing-payoff.html",
+  "added": "2026-03-11T16:55:14.000Z"
+ },
+ {
+  "type": "Tool",
+  "title": "Product Purpose Framework: Idea Review Tool",
+  "path": "/tools/product-purpose.html",
+  "added": "2026-03-11T16:55:14.000Z"
+ }
+]

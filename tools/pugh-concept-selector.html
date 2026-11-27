@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Pugh Concept Selector | Orion Design</title>
+    <meta
+      name="description"
+      content="Compare product concepts using weighted engineering criteria and a simple Pugh-style selection matrix."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/pugh-concept-selector.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Pugh Concept Selector | Orion Design">
+    <meta
+      property="og:description"
+      content="Compare product concepts using weighted engineering criteria and a simple Pugh-style selection matrix."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/pugh-concept-selector.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-pugh-concept-selector.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pugh Concept Selector | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Compare product concepts using weighted engineering criteria and a simple Pugh-style selection matrix."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-pugh-concept-selector.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-pugh-concept-selector.jpg",
+        "name": "Pugh Concept Selector",
+        "url": "https://oriondesign.xyz/tools/pugh-concept-selector.html",
+        "description": "Compare product concepts using weighted engineering criteria and a simple Pugh-style selection matrix.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Pugh Concept Selector",
+                "item": "https://oriondesign.xyz/tools/pugh-concept-selector.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a Pugh concept selector?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A structured comparison matrix that scores concepts against the same criteria so teams can make design trade-offs transparently."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should you use a concept selection matrix?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use it when several options remain plausible and the project needs a shared rationale for prioritising which concept to carry forward."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I choose the criteria and weights?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Draw criteria from the product requirements: what the product must do, cost, manufacturability, reliability, user experience and sustainability. Five to eight criteria is usually enough. Agree the weights as a team before scoring any concept, so the weighting is not bent to favour a preferred idea."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should I do if two concepts score almost the same?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Treat it as a tie rather than a win. Look at which criteria separate them, test the uncertainty behind those scores with a quick prototype or calculation, or combine the strongest features of both into a new concept and score that."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does the highest score mean the concept is the right one?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It means it best fits the criteria and weights you chose, based on what you know now. Check how sensitive the result is to small weight changes, and remember the matrix structures a decision rather than making it for you."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Pugh Concept Selector</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Live tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Pugh Concept Selector</h1>
+            <p>
+              Compare three concept directions against the same weighted engineering criteria. This keeps early-stage
+              decisions explicit instead of burying them in meeting notes and opinions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Concept selection worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"conceptAName":"Aluminium tube","conceptBName":"Moulded clamshell","conceptCName":"Overmoulded grip","weightValue":"5","scoreAValue":"4","scoreBValue":"3","scoreCValue":"5","weightFeasibility":"4","scoreAFeasibility":"5","scoreBFeasibility":"5","scoreCFeasibility":"4","weightManufacturing":"4","scoreAManufacturing":"3","scoreBManufacturing":"5","scoreCManufacturing":"3","weightSustainability":"3","scoreASustainability":"4","scoreBSustainability":"3","scoreCSustainability":"2","weightCommercial":"4","scoreACommercial":"3","scoreBCommercial":"5","scoreCCommercial":"4"}'>Torch housing options</button>
+              <button class="preset-button" type="button" data-tool-preset='{"conceptAName":"Friction hinge","conceptBName":"Spring-balanced arm","conceptCName":"Gooseneck","weightValue":"4","scoreAValue":"3","scoreBValue":"5","scoreCValue":"3","weightFeasibility":"5","scoreAFeasibility":"5","scoreBFeasibility":"3","scoreCFeasibility":"5","weightManufacturing":"4","scoreAManufacturing":"5","scoreBManufacturing":"2","scoreCManufacturing":"4","weightSustainability":"2","scoreASustainability":"4","scoreBSustainability":"3","scoreCSustainability":"3","weightCommercial":"3","scoreACommercial":"4","scoreBCommercial":"4","scoreCCommercial":"3"}'>Desk lamp arms</button>
+              <button class="preset-button" type="button" data-tool-preset='{"conceptAName":"Screwed lid","conceptBName":"Hinged door","conceptCName":"Snap-fit cover","weightValue":"3","scoreAValue":"3","scoreBValue":"4","scoreCValue":"4","weightFeasibility":"4","scoreAFeasibility":"5","scoreBFeasibility":"4","scoreCFeasibility":"3","weightManufacturing":"5","scoreAManufacturing":"4","scoreBManufacturing":"3","scoreCManufacturing":"4","weightSustainability":"3","scoreASustainability":"4","scoreBSustainability":"3","scoreCSustainability":"4","weightCommercial":"4","scoreACommercial":"4","scoreBCommercial":"4","scoreCCommercial":"5"}'>Enclosure lid fixings</button>
+            </div>
+            <form class="tool-form" id="pugh-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="conceptAName">Concept A name</label>
+                  <input id="conceptAName" type="text" value="Concept A">
+                </div>
+                <div class="field-group">
+                  <label for="conceptBName">Concept B name</label>
+                  <input id="conceptBName" type="text" value="Concept B">
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="conceptCName">Concept C name</label>
+                <input id="conceptCName" type="text" value="Concept C">
+              </div>
+
+              <table class="tool-table">
+                <thead>
+                  <tr>
+                    <th>Criterion</th>
+                    <th>Weight</th>
+                    <th>Concept A</th>
+                    <th>Concept B</th>
+                    <th>Concept C</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Customer value</td>
+                    <td><input aria-label="Customer value weight (1 to 5)" id="weightValue" type="number" min="1" max="5" value="5"></td>
+                    <td><input aria-label="Customer value score for Concept A (1 to 5)" id="scoreAValue" type="number" min="1" max="5" value="4"></td>
+                    <td><input aria-label="Customer value score for Concept B (1 to 5)" id="scoreBValue" type="number" min="1" max="5" value="5"></td>
+                    <td><input aria-label="Customer value score for Concept C (1 to 5)" id="scoreCValue" type="number" min="1" max="5" value="3"></td>
+                  </tr>
+                  <tr>
+                    <td>Technical feasibility</td>
+                    <td><input aria-label="Technical feasibility weight (1 to 5)" id="weightFeasibility" type="number" min="1" max="5" value="5"></td>
+                    <td><input aria-label="Technical feasibility score for Concept A (1 to 5)" id="scoreAFeasibility" type="number" min="1" max="5" value="4"></td>
+                    <td><input aria-label="Technical feasibility score for Concept B (1 to 5)" id="scoreBFeasibility" type="number" min="1" max="5" value="3"></td>
+                    <td><input aria-label="Technical feasibility score for Concept C (1 to 5)" id="scoreCFeasibility" type="number" min="1" max="5" value="4"></td>
+                  </tr>
+                  <tr>
+                    <td>Manufacturability</td>
+                    <td><input aria-label="Manufacturability weight (1 to 5)" id="weightManufacturing" type="number" min="1" max="5" value="4"></td>
+                    <td><input aria-label="Manufacturability score for Concept A (1 to 5)" id="scoreAManufacturing" type="number" min="1" max="5" value="3"></td>
+                    <td><input aria-label="Manufacturability score for Concept B (1 to 5)" id="scoreBManufacturing" type="number" min="1" max="5" value="4"></td>
+                    <td><input aria-label="Manufacturability score for Concept C (1 to 5)" id="scoreCManufacturing" type="number" min="1" max="5" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Sustainability</td>
+                    <td><input aria-label="Sustainability weight (1 to 5)" id="weightSustainability" type="number" min="1" max="5" value="3"></td>
+                    <td><input aria-label="Sustainability score for Concept A (1 to 5)" id="scoreASustainability" type="number" min="1" max="5" value="3"></td>
+                    <td><input aria-label="Sustainability score for Concept B (1 to 5)" id="scoreBSustainability" type="number" min="1" max="5" value="4"></td>
+                    <td><input aria-label="Sustainability score for Concept C (1 to 5)" id="scoreCSustainability" type="number" min="1" max="5" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Commercial attractiveness</td>
+                    <td><input aria-label="Commercial attractiveness weight (1 to 5)" id="weightCommercial" type="number" min="1" max="5" value="4"></td>
+                    <td><input aria-label="Commercial attractiveness score for Concept A (1 to 5)" id="scoreACommercial" type="number" min="1" max="5" value="4"></td>
+                    <td><input aria-label="Commercial attractiveness score for Concept B (1 to 5)" id="scoreBCommercial" type="number" min="1" max="5" value="3"></td>
+                    <td><input aria-label="Commercial attractiveness score for Concept C (1 to 5)" id="scoreCCommercial" type="number" min="1" max="5" value="3"></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <button class="button button-primary" type="submit">Compare concepts</button>
+            </form>
+            <p class="helper-text">
+              Scores are intentionally simple. Use the matrix to structure debate, then challenge any criterion where the weighting itself looks wrong.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell chart-shell-small">
+              <canvas id="pughChart" role="img" aria-label="Pugh concept scores chart"></canvas>
+            </div>
+            <div class="result-grid" id="pughSummary"></div>
+            <div class="recommendation-card" id="pughRecommendation"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#pughCopy"
+                  data-copy-feedback="#pughCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="pughCopy" class="copy-output" readonly></textarea>
+              <div id="pughCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="pugh_concept_selector_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <h2>Why this tool matters</h2>
+            <p>
+              Teams often jump between feasibility, user need, cost, and sustainability without a common structure.
+              A weighted matrix forces the discussion into the open so trade-offs are visible and contestable.
+            </p>
+            <div class="worked-example">
+              <p>
+                If one concept scores well on value but weakly on manufacturability, the right response may be to derisk the concept rather than discard it.
+                The matrix should guide questions, not shut them down.
+              </p>
+            </div>
+            <h2>Use it well</h2>
+            <ul>
+              <li>Keep criteria stable across all concepts.</li>
+              <li>Weight only the factors that actually matter to the decision.</li>
+              <li>Use the result to identify the next de-risking step, not just a winner.</li>
+            </ul>
+
+            <h2 id="method">Method and assumptions</h2>
+            <div class="formula-block">Weighted score for each concept = Σ (criterion weight × concept score)
+Weights and scores are 1 to 5</div>
+            <p><strong>Assumptions</strong></p>
+            <ul>
+              <li>Each criterion's weight reflects its importance to this product; all concepts are scored against the same criteria.</li>
+              <li>The gap between the top two concepts indicates how clear the choice is.</li>
+            </ul>
+            <p><strong>Limits</strong></p>
+            <ul>
+              <li>Scores are judgements; a small lead can come from scoring noise, so test the result by changing weights.</li>
+              <li>Use it to structure a discussion and record the reasoning, not to make the decision automatically.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <p>
+              Each concept's score is the sum of its ratings multiplied by the weight of each criterion. With five criteria scored and weighted
+              from 1 to 5, the highest possible score is 125. The results show the leading concept, its score, and how far ahead it is of
+              second place. The recommendation card flags whether that lead looks clear or close.
+            </p>
+            <ul>
+              <li><strong>Clear lead:</strong> a gap of 8 points or more is treated as a clear lead here. Carry the leader forward, but look at its lowest-scoring criterion, because that is usually your next de-risking task.</li>
+              <li><strong>Close decision:</strong> a small gap means the answer depends on the weights. Try nudging the most debated weight up or down by one. If the winner changes, the matrix is telling you that the team has not yet agreed what matters most.</li>
+              <li><strong>Worrying:</strong> if every concept scores low, or the leader has a 1 or 2 on customer value or technical feasibility, the right move may be to generate better concepts rather than pick the least weak one.</li>
+            </ul>
+            <p>
+              A quick prototype or a supplier conversation often settles a close call faster than more debate. Save your result to your
+              <a href="product-plan-builder.html">product plan</a> so the reasoning behind the chosen concept is easy to revisit later.
+              If the decision carries significant tooling or engineering risk, an <a href="../contact/index.html">independent view from Andrew</a>
+              can help before you commit.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/competitor-and-patent-landscape-review.html">Competitor and patent landscape review</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/how-to-write-a-product-requirements-document.html">How to write a product requirements document</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/how-engineers-choose-between-concepts.html">How Engineers Choose Between Concepts</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="product-design-process-map.html">Product Design Process Map</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/opportunity-and-concept.html">Opportunity and concept: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/how-to-validate-a-product-idea.html">How to validate a product idea before you build it</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Concept narrowing</span>
+                <span>Decision framing</span>
+                <span>Weighted trade-offs</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is a Pugh concept selector?</h3>
+                <p>A structured comparison matrix that scores concepts against the same criteria so teams can make design trade-offs transparently.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should you use a concept selection matrix?</h3>
+                <p>Use it when several options remain plausible and the project needs a shared rationale for prioritising which concept to carry forward.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do I choose the criteria and weights?</h3>
+                <p>Draw criteria from the product requirements: what the product must do, cost, manufacturability, reliability, user experience and sustainability. Five to eight criteria is usually enough. Agree the weights as a team before scoring any concept, so the weighting is not bent to favour a preferred idea.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should I do if two concepts score almost the same?</h3>
+                <p>Treat it as a tie rather than a win. Look at which criteria separate them, test the uncertainty behind those scores with a quick prototype or calculation, or combine the strongest features of both into a new concept and score that.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does the highest score mean the concept is the right one?</h3>
+                <p>It means it best fits the criteria and weights you chose, based on what you know now. Check how sensitive the result is to small weight changes, and remember the matrix structures a decision rather than making it for you.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early engineering or commercial estimate. It is most useful for comparing options, surfacing trade-offs, and deciding what needs deeper validation next.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Use the result as an early decision aid, then confirm the numbers with suppliers, manufacturing partners, and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-purpose.html">Product Purpose</a>
+          <a href="product-design-process-map.html">Design Process Map</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/pugh-concept-selector.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Pricing Ladder: From Landed Cost to Shelf Price | Orion Design</title>
+    <meta
+      name="description"
+      content="See the shelf price a product needs once you, a distributor and the retailer each take a margin and VAT is added, and compare it with your target price."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/pricing-ladder.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Pricing Ladder | Orion Design">
+    <meta
+      property="og:description"
+      content="See the shelf price a product needs once you, a distributor and the retailer each take a margin and VAT is added, and compare it with your target price."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/pricing-ladder.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-pricing-ladder.jpg">
+    <meta property="og:image:alt" content="Pricing ladder tool from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pricing Ladder | Orion Design">
+    <meta
+      name="twitter:description"
+      content="See the shelf price a product needs once you, a distributor and the retailer each take a margin and VAT is added, and compare it with your target price."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-pricing-ladder.jpg">
+    <meta name="twitter:image:alt" content="Pricing ladder tool from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-pricing-ladder.jpg",
+        "name": "Pricing Ladder",
+        "url": "https://oriondesign.xyz/tools/pricing-ladder.html",
+        "description": "Build the price ladder from landed cost through brand, distributor and retailer margins and VAT to the shelf price.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Pricing Ladder",
+                "item": "https://oriondesign.xyz/tools/pricing-ladder.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a pricing ladder?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The sequence of prices a product passes through on its way to the customer: your selling price, any distributor's price, the retailer's price and the shelf price with VAT. Each step adds that seller's margin."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is the shelf price so many times the cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Because margins compound. If you, a distributor and a retailer each need a healthy margin on their own selling price, and VAT is added at the end, the shelf price is commonly several times the landed cost."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should I use margin or markup?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "This tool uses margin, as a share of the selling price, because that is how retailers and distributors usually state their terms. A 50% margin is the same as a 100% markup. Always confirm which one a partner means."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does the ladder include selling costs such as fulfilment and returns?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No; it shows the price chain only. Your margin needs to cover your selling costs and overheads. Target COGS by Route to Market includes those selling costs explicitly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What VAT rate should I use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The UK standard rate is 20%, which applies to most products; some goods have reduced or zero rates. Check GOV.UK for your product, and use 0 if you are pricing for business customers who see prices without VAT."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Pricing Ladder</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Pricing Ladder</h1>
+            <p>
+              Follow a product's price up the chain: from what it costs you, through your margin, a distributor's and a retailer's, to the shelf price with VAT.
+              Compare the result with what you hope to sell it for. Use Target COGS by Route to Market to work the other way, from a shelf price down to a target cost.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Pricing ladder worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"ladderLanded":"8","ladderBrandMargin":"50","ladderDistMargin":"0","ladderRetailMargin":"45","ladderVat":"20","ladderTarget":"39.99"}'>Direct to retailer</button>
+              <button class="preset-button" type="button" data-tool-preset='{"ladderLanded":"8","ladderBrandMargin":"40","ladderDistMargin":"30","ladderRetailMargin":"45","ladderVat":"20","ladderTarget":"39.99"}'>Through a distributor</button>
+              <button class="preset-button" type="button" data-tool-preset='{"ladderLanded":"22","ladderBrandMargin":"45","ladderDistMargin":"0","ladderRetailMargin":"40","ladderVat":"20","ladderTarget":"99"}'>Premium gadget</button>
+            </div>
+            <form class="tool-form" id="ladderForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ladderLanded">Landed cost per unit (£)</label>
+                  <input id="ladderLanded" type="number" min="0" step="0.01" value="8">
+                </div>
+                <div class="field-group">
+                  <label for="ladderBrandMargin">Your margin (%)</label>
+                  <input id="ladderBrandMargin" type="number" min="0" max="95" step="1" value="50">
+                  <p class="helper-text">As a share of your selling price</p>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ladderDistMargin">Distributor margin (%, 0 if none)</label>
+                  <input id="ladderDistMargin" type="number" min="0" max="95" step="1" value="0">
+                </div>
+                <div class="field-group">
+                  <label for="ladderRetailMargin">Retailer margin (%)</label>
+                  <input id="ladderRetailMargin" type="number" min="0" max="95" step="1" value="45">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ladderVat">VAT (%)</label>
+                  <input id="ladderVat" type="number" min="0" step="0.5" value="20">
+                </div>
+                <div class="field-group">
+                  <label for="ladderTarget">Target shelf price inc. VAT (£, 0 for none)</label>
+                  <input id="ladderTarget" type="number" min="0" step="0.01" value="39.99">
+                </div>
+              </div>
+              <button class="button button-primary" type="submit">Build the ladder</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="ladderSummary"></div>
+            <div class="ladder-steps" id="ladderSteps"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#ladderCopy"
+                  data-copy-feedback="#ladderCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="ladderCopy" class="copy-output" readonly></textarea>
+              <div id="ladderCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want a second opinion on pricing?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="pricing_ladder_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Each seller in the chain adds its margin on top of the price it paid, so the shelf price is often several times the landed cost.</h2>
+              <div class="formula-block">Price needed for a margin m = cost ÷ (1 − m)
+Your price = landed cost ÷ (1 − your margin)
+Distributor's price = your price ÷ (1 − distributor margin)
+Retail price before VAT = previous price ÷ (1 − retailer margin)
+Shelf price = retail price before VAT × (1 + VAT rate)</div>
+              <p>Margins here are shares of each seller's selling price, the way retailers and distributors usually quote them. A 50% margin doubles the price; a 45% margin multiplies it by about 1.8.</p>
+            </div>
+            <h2>How to read your result</h2>
+            <ul>
+              <li><strong>Shelf price at or below target:</strong> the chain works at that price. Check it still covers promotions, returns and marketing.</li>
+              <li><strong>Close to the target:</strong> little room for discounts or cost increases; test a pessimistic landed cost.</li>
+              <li><strong>Above the target:</strong> reduce landed cost, shorten the chain (for example sell to retailers directly), accept a lower margin, or reposition the product at a higher price.</li>
+            </ul>
+            <p>
+              The multiple of landed cost is a quick sense check when comparing channels. For the reverse calculation and selling costs such as fulfilment and returns, use
+              <a class="text-link-inline" href="route-to-market-simulator.html">Target COGS by Route to Market</a>; for the full picture, read
+              <a class="text-link-inline" href="../guides/route-to-market-and-margins.html">Route to market and margins</a>. Save your ladder to your <a href="product-plan-builder.html">product plan</a>.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/retail-and-distributor-margins-explained.html">Retail and distributor margins explained</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/how-to-price-a-physical-product.html">How to price a physical product</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/route-to-market-and-margins.html">Route to market and margins</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/hardware-revenue-margin-planning.html">How to turn RRP into target COGS</a></div>
+                <div class="aside-item"><a class="text-link" href="route-to-market-simulator.html">Target COGS by Route to Market</a></div>
+                <div class="aside-item"><a class="text-link" href="landed-cost-calculator.html">Landed Cost Calculator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Pricing</span>
+                <span>Margins</span>
+                <span>Retail</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is a pricing ladder?</h3>
+                <p>The sequence of prices a product passes through on its way to the customer: your selling price, any distributor's price, the retailer's price and the shelf price with VAT. Each step adds that seller's margin.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why is the shelf price so many times the cost?</h3>
+                <p>Because margins compound. If you, a distributor and a retailer each need a healthy margin on their own selling price, and VAT is added at the end, the shelf price is commonly several times the landed cost.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should I use margin or markup?</h3>
+                <p>This tool uses margin, as a share of the selling price, because that is how retailers and distributors usually state their terms. A 50% margin is the same as a 100% markup. Always confirm which one a partner means.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does the ladder include selling costs such as fulfilment and returns?</h3>
+                <p>No; it shows the price chain only. Your margin needs to cover your selling costs and overheads. Target COGS by Route to Market includes those selling costs explicitly.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What VAT rate should I use?</h3>
+                <p>The UK standard rate is 20%, which applies to most products; some goods have reduced or zero rates. Check GOV.UK for your product, and use 0 if you are pricing for business customers who see prices without VAT.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="cashflow-projection.html">Cashflow Projection</a>
+          <a href="../guides/financial-break-even-for-hardware-products.html">Break-even guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/pricing-ladder.js" defer></script>
+  </body>
+</html>

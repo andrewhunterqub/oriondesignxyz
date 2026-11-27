@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Product Lifecycle Explorer | Orion Design</title>
+    <meta
+      name="description"
+      content="Explore how lifetime, repairability, energy use, and end-of-life strategy shape the lifecycle performance of a product."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/product-lifecycle-explorer.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Product Lifecycle Explorer | Orion Design">
+    <meta
+      property="og:description"
+      content="Explore how lifetime, repairability, energy use, and end-of-life strategy shape the lifecycle performance of a product."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/product-lifecycle-explorer.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-product-lifecycle-explorer.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Product Lifecycle Explorer | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Explore how lifetime, repairability, energy use, and end-of-life strategy shape the lifecycle performance of a product."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-product-lifecycle-explorer.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-product-lifecycle-explorer.jpg",
+        "name": "Product Lifecycle Explorer",
+        "url": "https://oriondesign.xyz/tools/product-lifecycle-explorer.html",
+        "description": "Explore how lifetime, repairability, energy use, and end-of-life strategy shape the lifecycle performance of a product.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Product Lifecycle Explorer",
+                "item": "https://oriondesign.xyz/tools/product-lifecycle-explorer.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What does circularity mean for a physical product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It describes how well a product keeps its materials and value in use. That covers lasting a long time, being repairable and upgradeable, using recycled material, and being easy to take apart and recover at the end of life."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is a longer product life always better?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually, because the impact of making the product is spread over more years of use. The exception is a product that uses a lot of energy, where replacing it with a much more efficient design can sometimes be the better choice."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I make a product easier to repair?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use screws or clips rather than glue where parts may need to come apart, make batteries and wear parts replaceable, and keep fasteners to a small number of common types. Supplying spare parts and simple repair guidance helps just as much as the design itself."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does adding recycled material reduce quality?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not necessarily, but it can change how a material behaves and looks. Recycled plastics may vary in colour and strength between batches, so test them early and specify an acceptable range with your supplier rather than switching late in development."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Product Lifecycle Explorer</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Live tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Product Lifecycle Explorer</h1>
+            <p>
+              Explore how durability, repairability, energy use, and end-of-life strategy shape the overall lifecycle performance of a product.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Product lifecycle worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"lifecycleYears":"3","repairability":"1","upgradeability":"1","recycledMaterial":"5","annualLifecycleEnergy":"1.5","takeBackScheme":"no","recoveryRate":"20"}'>Wireless earbuds</button>
+              <button class="preset-button" type="button" data-tool-preset='{"lifecycleYears":"6","repairability":"2","upgradeability":"1","recycledMaterial":"15","annualLifecycleEnergy":"120","takeBackScheme":"no","recoveryRate":"60"}'>Electric kettle</button>
+              <button class="preset-button" type="button" data-tool-preset='{"lifecycleYears":"12","repairability":"5","upgradeability":"4","recycledMaterial":"40","annualLifecycleEnergy":"10","takeBackScheme":"yes","recoveryRate":"75"}'>Repairable desk lamp</button>
+            </div>
+            <form class="tool-form" id="lifecycle-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="lifecycleYears">Expected lifetime (years)</label>
+                  <input id="lifecycleYears" type="number" min="1" step="1" value="6">
+                </div>
+                <div class="field-group">
+                  <label for="repairability">Repairability (1-5)</label>
+                  <input id="repairability" type="number" min="1" max="5" step="1" value="3">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="upgradeability">Upgradeability (1-5)</label>
+                  <input id="upgradeability" type="number" min="1" max="5" step="1" value="2">
+                </div>
+                <div class="field-group">
+                  <label for="recycledMaterial">Recycled material content (%)</label>
+                  <input id="recycledMaterial" type="number" min="0" max="100" step="1" value="20">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="annualLifecycleEnergy">Annual use-phase energy (kWh)</label>
+                  <input id="annualLifecycleEnergy" type="number" min="0" step="0.1" value="12">
+                </div>
+                <div class="field-group">
+                  <label for="takeBackScheme">Take-back scheme</label>
+                  <select id="takeBackScheme">
+                    <option value="no">No</option>
+                    <option value="yes" selected>Yes</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="recoveryRate">Material recovery potential (%)</label>
+                <input id="recoveryRate" type="number" min="0" max="100" step="1" value="55">
+              </div>
+
+              <button class="button button-primary" type="submit">Explore lifecycle performance</button>
+            </form>
+            <p class="helper-text">
+              The aim is to reveal leverage points. Small improvements in lifetime or energy can be more powerful than small improvements in recycling alone.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell chart-shell-small">
+              <canvas id="lifecycleChart" role="img" aria-label="Lifecycle leverage chart"></canvas>
+            </div>
+            <div class="result-grid" id="lifecycleSummary"></div>
+            <div class="comparison-list" id="lifecycleBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#lifecycleCopy"
+                  data-copy-feedback="#lifecycleCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="lifecycleCopy" class="copy-output" readonly></textarea>
+              <div id="lifecycleCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="product_lifecycle_explorer_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <h2>What lifecycle thinking changes</h2>
+            <p>
+              Lifecycle performance is not only a materials question. Product lifetime, in-use energy, repair access,
+              and recovery design can all shift the total impact and business resilience of a product.
+            </p>
+            <ul>
+              <li>Longer life spreads embodied impact across more years of service.</li>
+              <li>High use-phase energy can dominate total impact even for lightweight products.</li>
+              <li>Repairability and recovery create options at the end of the first ownership cycle.</li>
+            </ul>
+
+            <h2 id="method">Method and assumptions</h2>
+            <div class="formula-block">Longevity = min(100, years × 10 + repairability × 6 + upgradeability × 4)
+Repair = repairability × 20 · Upgrade = upgradeability × 20
+Materials = min(100, recycled % × 0.9 + 10 with take-back)
+Recovery = min(100, recovery % × 0.8 + 15 with take-back)
+Circularity = 0.3 longevity + 0.2 repair + 0.15 upgrade + 0.15 materials + 0.2 recovery
+Use-phase CO₂e = annual kWh × years × 0.193</div>
+            <p><strong>Assumptions</strong></p>
+            <ul>
+              <li>Repairability and upgradeability are your 1–5 ratings.</li>
+              <li>The weighting favours a long, repairable life, reflecting that lifetime usually matters more than recycling.</li>
+              <li>Use-phase electricity uses a fixed grid factor of 0.193 kg CO₂e per kWh, close to a recent UK grid average; official factors are updated each year.</li>
+            </ul>
+            <p><strong>Limits</strong></p>
+            <ul>
+              <li>The scores are a structured comparison for design discussions, not a recognised circularity metric or certification.</li>
+              <li>Real impacts depend on materials, use and end-of-life systems; see the <a class="text-link-inline" href="carbon-footprint.html">Carbon Footprint Estimator</a>.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <p>
+              The circularity score combines longevity, repair, upgrade, material content and recovery into a single figure out of 100.
+              The dominant driver names the factor most likely to shape the product's overall impact, and the use-phase carbon signal
+              estimates the emissions from electricity used over the product's life. The radar chart shows which of the five areas are
+              pulling the score up or down.
+            </p>
+            <ul>
+              <li><strong>Strong:</strong> as a rough guide on this tool's scale, a score above about 70 with no very weak point on the radar suggests a product designed to last and to be recovered. Check that the lifetime and repair claims can be backed up in testing and service planning.</li>
+              <li><strong>Middling:</strong> scores between about 40 and 70 are typical of conventional products. The weakest point on the radar is usually the cheapest place to improve, often by making the battery or a wear part replaceable.</li>
+              <li><strong>Worrying:</strong> a score below about 40, or a dominant driver of short product life, means the product is likely to be replaced rather than repaired. If use-phase energy dominates, efficiency gains will matter far more than recycled content.</li>
+            </ul>
+            <p>
+              Try changing one input at a time to see which lever moves the result most, then focus design effort there. Save your result to your
+              <a href="product-plan-builder.html">product plan</a> so lifecycle goals are recorded before the design is fixed. If you want to design
+              for repair without adding cost or complexity, a <a href="../contact/index.html">conversation with Andrew</a> can help.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/why-product-lifetime-matters-more-than-recycling.html">Why Product Lifetime Matters More Than Recycling</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/estimating-product-carbon-footprint-during-design.html">Estimating Product Carbon Footprint During Design</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/sustainability-and-product-life.html">Sustainability and product life: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/design-for-repair-and-disassembly.html">Design for repair and disassembly: making products that last longer</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Lifecycle strategy</span>
+                <span>Design decisions</span>
+                <span>Circularity framing</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What does circularity mean for a physical product?</h3>
+                <p>It describes how well a product keeps its materials and value in use. That covers lasting a long time, being repairable and upgradeable, using recycled material, and being easy to take apart and recover at the end of life.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is a longer product life always better?</h3>
+                <p>Usually, because the impact of making the product is spread over more years of use. The exception is a product that uses a lot of energy, where replacing it with a much more efficient design can sometimes be the better choice.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How can I make a product easier to repair?</h3>
+                <p>Use screws or clips rather than glue where parts may need to come apart, make batteries and wear parts replaceable, and keep fasteners to a small number of common types. Supplying spare parts and simple repair guidance helps just as much as the design itself.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does adding recycled material reduce quality?</h3>
+                <p>Not necessarily, but it can change how a material behaves and looks. Recycled plastics may vary in colour and strength between batches, so test them early and specify an acceptable range with your supplier rather than switching late in development.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early engineering or commercial estimate. It is most useful for comparing options, surfacing trade-offs, and deciding what needs deeper validation next.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Use the result as an early decision aid, then confirm the numbers with suppliers, manufacturing partners, and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="carbon-footprint.html">Carbon Footprint</a>
+          <a href="product-purpose.html">Product Purpose</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/product-lifecycle-explorer.js" defer></script>
+  </body>
+</html>

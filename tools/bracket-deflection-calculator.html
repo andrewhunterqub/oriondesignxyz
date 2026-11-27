@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Bracket Deflection Calculator: Beam Bending and Stress | Orion Design</title>
+    <meta
+      name="description"
+      content="Estimate how far a bracket or beam bends and how stressed it is: cantilever or simply supported, rectangular, tube or round sections, with the formulas shown."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/bracket-deflection-calculator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Bracket Deflection Calculator | Orion Design">
+    <meta
+      property="og:description"
+      content="Estimate how far a bracket or beam bends and how stressed it is: cantilever or simply supported, rectangular, tube or round sections, with the formulas shown."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/bracket-deflection-calculator.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-bracket-deflection-calculator.jpg">
+    <meta property="og:image:alt" content="Bracket deflection calculator from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bracket Deflection Calculator | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Estimate how far a bracket or beam bends and how stressed it is: cantilever or simply supported, rectangular, tube or round sections, with the formulas shown."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-bracket-deflection-calculator.jpg">
+    <meta name="twitter:image:alt" content="Bracket deflection calculator from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-bracket-deflection-calculator.jpg",
+        "name": "Bracket Deflection Calculator",
+        "url": "https://oriondesign.xyz/tools/bracket-deflection-calculator.html",
+        "description": "First-estimate check of a simple bracket or beam using standard beam bending formulas: deflection against a limit, maximum bending stress against an allowable stress, safety factor and the thickness needed.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Bracket Deflection Calculator",
+                "item": "https://oriondesign.xyz/tools/bracket-deflection-calculator.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Which elastic modulus should I use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use the figure from the datasheet for your exact material. The buttons fill in typical textbook values only: about 69,000 MPa for aluminium alloys and about 200,000 MPa for steel. Plastics vary much more by grade, temperature and moisture, so the ABS figure is an example only, and a load that stays on needs the long-term (creep) modulus."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What deflection limit should I use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Set it from what the bracket must do: a gap that must not close, a display that must not visibly droop, or parts that must stay aligned. Expressing it as a fraction of the length, L ÷ n, scales it with the size of the part; the default of L ÷ 200 is an example, not a rule."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does my real bracket bend more than the estimate?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually because the root is not fully fixed. Screws, thin mounting walls and plastic bosses let the root rotate, which adds to the deflection at the tip. Holes and slots near the root, a softer material than expected and, for plastics, creep all add more. Measure a prototype to find out how much."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What safety factor should I aim for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on how well you know the loads and the material, and what happens if the part fails. The tool divides your allowable stress by the calculated stress; if you enter the yield strength, a factor of 1 means it is just starting to bend permanently. Shocks, drops and repeated loads need more margin, and fatigue needs its own check."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Bracket Deflection Calculator</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Bracket Deflection Calculator</h1>
+            <p>
+              Get a first estimate of how far a simple bracket, arm or beam will bend under load, and how hard the material is working.
+              Choose how it is held and loaded, enter its section and your material's figures, and see the deflection against your limit,
+              the bending stress against your allowable stress, the safety factor and the thickness you would need.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Bracket worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"bdCase":"cantilever-end","bdSection":"rect","bdLoadMode":"mass","bdMass":"2","bdForce":"19.62","bdLength":"80","bdWidth":"40","bdHeight":"2","bdModulus":"200000","bdLimitMode":"ratio","bdLimitRatio":"200","bdAllowStress":"100"}'>Wall bracket for a 2 kg sensor</button>
+              <button class="preset-button" type="button" data-tool-preset='{"bdCase":"simply-supported","bdSection":"rect-tube","bdLoadMode":"force","bdForce":"200","bdLength":"600","bdWidth":"25","bdHeight":"25","bdWall":"1.5","bdModulus":"69000","bdLimitMode":"ratio","bdLimitRatio":"300","bdAllowStress":"100"}'>Aluminium tube across a frame</button>
+              <button class="preset-button" type="button" data-tool-preset='{"bdCase":"cantilever-end","bdSection":"rect","bdLoadMode":"force","bdForce":"5","bdLength":"20","bdWidth":"10","bdHeight":"2","bdModulus":"2300","bdLimitMode":"mm","bdLimitMm":"0.5","bdAllowStress":"20"}'>Plastic mounting tab</button>
+            </div>
+            <form class="tool-form" id="bdForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="bdCase">How it is held and loaded</label>
+                  <select id="bdCase" aria-describedby="bdCaseHint">
+                    <option value="cantilever-end" selected>Cantilever, load at the free end</option>
+                    <option value="simply-supported">Supported at both ends, load in the centre</option>
+                    <option value="cantilever-udl">Cantilever, load spread evenly along it</option>
+                  </select>
+                  <p class="helper-text" id="bdCaseHint">A cantilever is fixed at one end only, like a wall bracket</p>
+                </div>
+                <div class="field-group">
+                  <label for="bdSection">Cross-section</label>
+                  <select id="bdSection" aria-describedby="bdSectionHint">
+                    <option value="rect" selected>Solid rectangle (flat bar or plate)</option>
+                    <option value="rect-tube">Rectangular or square tube</option>
+                    <option value="round">Round bar</option>
+                    <option value="round-tube">Round tube</option>
+                  </select>
+                  <p class="helper-text" id="bdSectionHint">The section is assumed the same along the whole length</p>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="bdLoadMode">Enter the load as</label>
+                  <select id="bdLoadMode" aria-describedby="bdLoadModeHint">
+                    <option value="force" selected>Force (N)</option>
+                    <option value="mass">Mass (kg), with g = 9.81 m/s²</option>
+                  </select>
+                  <p class="helper-text" id="bdLoadModeHint">Use whichever you know; the tool works in newtons</p>
+                </div>
+                <div class="field-group" id="bdForceGroup">
+                  <label for="bdForce">Load, F (N)</label>
+                  <input id="bdForce" type="number" min="0" step="0.01" value="20" aria-describedby="bdForceHint">
+                  <p class="helper-text" id="bdForceHint">For a spread load, the total load along the length. 10 N is about 1 kg.</p>
+                </div>
+                <div class="field-group" id="bdMassGroup" hidden>
+                  <label for="bdMass">Mass carried, m (kg)</label>
+                  <input id="bdMass" type="number" min="0" step="0.01" value="2" aria-describedby="bdMassHint">
+                  <p class="helper-text" id="bdMassHint">Converted to a force with F = m × 9.81. Allow extra for knocks and anyone leaning on it.</p>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="bdLength">Length, L (mm)</label>
+                  <input id="bdLength" type="number" min="0" step="0.1" value="100" aria-describedby="bdLengthHint">
+                  <p class="helper-text" id="bdLengthHint">Cantilever: from the fixed root to the load. Supported: the span between supports.</p>
+                </div>
+                <div class="field-group">
+                  <label for="bdModulus">Elastic modulus, E (MPa)</label>
+                  <input id="bdModulus" type="number" min="0" step="100" value="69000" aria-describedby="bdModulusHint">
+                  <p class="helper-text" id="bdModulusHint">Use the figure from your material's datasheet. The buttons below fill in typical textbook values.</p>
+                </div>
+              </div>
+
+              <div class="preset-row" role="group" aria-label="Typical textbook elastic modulus values">
+                <button class="preset-button" type="button" data-tool-preset='{"bdModulus":"69000"}'>Aluminium alloy: about 69,000 MPa</button>
+                <button class="preset-button" type="button" data-tool-preset='{"bdModulus":"200000"}'>Steel: about 200,000 MPa</button>
+                <button class="preset-button" type="button" data-tool-preset='{"bdModulus":"2300"}'>ABS, example only: about 2,300 MPa</button>
+              </div>
+              <p class="helper-text">
+                Typical textbook values, filled into the field above so you can edit them. Check the datasheet for your exact alloy or grade.
+                For plastics, use long-term (creep) modulus data for a load that stays on.
+              </p>
+
+              <div class="input-grid">
+                <div class="field-group" id="bdWidthGroup">
+                  <label for="bdWidth" id="bdWidthLabel">Width, b (mm)</label>
+                  <input id="bdWidth" type="number" min="0" step="0.1" value="30" aria-describedby="bdWidthHint">
+                  <p class="helper-text" id="bdWidthHint">Across the bracket, at right angles to the load</p>
+                </div>
+                <div class="field-group" id="bdHeightGroup">
+                  <label for="bdHeight" id="bdHeightLabel">Thickness, h (mm)</label>
+                  <input id="bdHeight" type="number" min="0" step="0.05" value="5" aria-describedby="bdHeightHint">
+                  <p class="helper-text" id="bdHeightHint">In the direction the load bends it</p>
+                </div>
+                <div class="field-group" id="bdDiameterGroup" hidden>
+                  <label for="bdDiameter" id="bdDiameterLabel">Diameter, d (mm)</label>
+                  <input id="bdDiameter" type="number" min="0" step="0.1" value="10">
+                </div>
+                <div class="field-group" id="bdWallGroup" hidden>
+                  <label for="bdWall">Wall thickness, t (mm)</label>
+                  <input id="bdWall" type="number" min="0" step="0.05" value="1.5" aria-describedby="bdWallHint">
+                  <p class="helper-text" id="bdWallHint">Must be less than half the smallest outside dimension</p>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="bdLimitMode">Deflection limit as</label>
+                  <select id="bdLimitMode" aria-describedby="bdLimitModeHint">
+                    <option value="ratio" selected>A fraction of the length, L ÷ n</option>
+                    <option value="mm">A distance (mm)</option>
+                  </select>
+                  <p class="helper-text" id="bdLimitModeHint">Your choice: how far it can move before it looks or works wrong</p>
+                </div>
+                <div class="field-group" id="bdLimitRatioGroup">
+                  <label for="bdLimitRatio">Limit, L ÷ n: enter n</label>
+                  <input id="bdLimitRatio" type="number" min="0" step="1" value="200" aria-describedby="bdLimitRatioHint">
+                  <p class="helper-text" id="bdLimitRatioHint">Example value: 200 allows 0.5 mm on a 100 mm bracket. A larger n is stiffer.</p>
+                </div>
+                <div class="field-group" id="bdLimitMmGroup" hidden>
+                  <label for="bdLimitMm">Allowable deflection (mm)</label>
+                  <input id="bdLimitMm" type="number" min="0" step="0.01" value="0.5" aria-describedby="bdLimitMmHint">
+                  <p class="helper-text" id="bdLimitMmHint">Set by the product, for example a gap that must not close</p>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="bdAllowStress">Yield or allowable stress (MPa), from your material's datasheet</label>
+                  <input id="bdAllowStress" type="number" min="0" step="0.1" value="100" aria-describedby="bdAllowStressHint">
+                  <p class="helper-text" id="bdAllowStressHint">Example value only: replace it with the yield strength for your exact alloy and temper, or your own allowable figure</p>
+                </div>
+              </div>
+
+              <button class="button button-primary" type="submit">Check bracket</button>
+            </form>
+            <p class="helper-text">
+              Straight beam with the same section along its length, small elastic deflections and a fully fixed root. A first estimate to size the part and compare options; confirm it by test or FEA.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="bdSummary"></div>
+            <div class="dfm-checks" id="bdStatus" aria-live="polite"></div>
+            <div class="comparison-list" id="bdBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#bdCopy"
+                  data-copy-feedback="#bdCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="bdCopy" class="copy-output" readonly></textarea>
+              <div id="bdCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want a second opinion on a bracket?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="bracket_deflection_calculator_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A bracket bends in proportion to the load and the cube of its length, and resists it with its stiffness, E × I.</h2>
+              <p>The material sets E and the shape of the section sets I, the second moment of area. Doubling the thickness of a flat bracket makes it eight times stiffer, while doubling its length makes it bend eight times as far. The stress check then tells you whether the material will spring back or take a permanent bend.</p>
+            </div>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 460 250" width="100%" role="img" aria-labelledby="bd-fig-title bd-fig-desc">
+                <title id="bd-fig-title">The two main load cases: a cantilever and a beam supported at both ends</title>
+                <desc id="bd-fig-desc">Top: a cantilever. A beam sticks out from a wall, fixed at the root. A load F pushes down at the free end, a length L from the wall, and a dashed outline shows the beam bent down by the deflection delta. The largest bending moment, F times L, is at the root. Bottom: a beam resting on a support at each end, a span L apart, with a load F pushing down in the centre. A dashed outline shows it sagging by delta in the middle, where the largest moment, F times L divided by 4, occurs.</desc>
+                <defs><marker id="bd-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <rect class="gd-box" x="20" y="14" width="30" height="86"></rect>
+                <path class="gd-ghost" d="M50,46 Q160,50 260,74 L260,84 Q160,60 50,56"></path>
+                <rect class="gd-box-indigo" x="50" y="46" width="210" height="10"></rect>
+                <line class="gd-arrow" x1="260" y1="10" x2="260" y2="42" marker-end="url(#bd-arrow)"></line>
+                <text class="gd-v" x="270" y="24">F</text>
+                <line class="gd-line gd-dash" x1="264" y1="56" x2="290" y2="56"></line>
+                <line class="gd-line gd-dash" x1="264" y1="84" x2="290" y2="84"></line>
+                <line class="gd-arrow" x1="282" y1="58" x2="282" y2="82" marker-start="url(#bd-arrow)" marker-end="url(#bd-arrow)"></line>
+                <text class="gd-v" x="296" y="76">δ</text>
+                <line class="gd-arrow" x1="50" y1="100" x2="260" y2="100" marker-start="url(#bd-arrow)" marker-end="url(#bd-arrow)"></line>
+                <text class="gd-v" x="155" y="118" text-anchor="middle">L</text>
+                <text class="gd-t" x="320" y="40">Cantilever</text>
+                <text class="gd-m" x="320" y="58">M_max = F × L,</text>
+                <text class="gd-m" x="320" y="74">at the root</text>
+
+                <path class="gd-ghost" d="M50,170 Q155,198 260,170 L260,180 Q155,208 50,180 Z"></path>
+                <rect class="gd-box-indigo" x="50" y="170" width="210" height="10"></rect>
+                <path class="gd-box" d="M50,180 L40,198 L60,198 Z"></path>
+                <path class="gd-box" d="M260,180 L250,198 L270,198 Z"></path>
+                <line class="gd-arrow" x1="155" y1="134" x2="155" y2="166" marker-end="url(#bd-arrow)"></line>
+                <text class="gd-v" x="165" y="148">F</text>
+                <line class="gd-arrow" x1="50" y1="218" x2="260" y2="218" marker-start="url(#bd-arrow)" marker-end="url(#bd-arrow)"></line>
+                <text class="gd-v" x="155" y="236" text-anchor="middle">L</text>
+                <text class="gd-t" x="320" y="164">Supported</text>
+                <text class="gd-t" x="320" y="182">at both ends</text>
+                <text class="gd-m" x="320" y="200">M_max = F × L ÷ 4,</text>
+                <text class="gd-m" x="320" y="216">at the centre</text>
+              </svg>
+              <figcaption>Dashed: the bent shape, exaggerated. A cantilever bends 16 times as far as the same beam supported at both ends over the same length.</figcaption>
+            </figure>
+
+            <h2 id="method">How this works</h2>
+            <p>
+              The tool uses the standard Euler–Bernoulli beam formulas for a straight, elastic beam with the same section along its length.
+              Units are millimetres, newtons and megapascals (N/mm²), so deflections come out in millimetres and stresses in megapascals.
+              A mass is turned into a force with g = 9.81 m/s². For the spread load, F is the total load along the length, so w = F ÷ L.
+            </p>
+            <div class="formula-block">Second moment of area, I, and distance to the outer fibre, c:
+  Solid rectangle:   I = b × h³ ÷ 12                        c = h ÷ 2
+  Rectangular tube:  I = (B × H³ − b × h³) ÷ 12             c = H ÷ 2
+                     inner sizes b = B − 2t, h = H − 2t
+  Round bar:         I = π × d⁴ ÷ 64                        c = d ÷ 2
+  Round tube:        I = π × (D⁴ − d⁴) ÷ 64, d = D − 2t     c = D ÷ 2
+
+Cantilever, end load:            δ = F × L³ ÷ (3 × E × I)     M_max = F × L
+Supported, centre load:          δ = F × L³ ÷ (48 × E × I)    M_max = F × L ÷ 4
+Cantilever, evenly spread load:  δ = w × L⁴ ÷ (8 × E × I)     M_max = w × L² ÷ 2
+
+Bending stress:          σ = M_max × c ÷ I
+Share of allowable:      σ ÷ σ_allow       Safety factor = σ_allow ÷ σ
+Deflection limit:        δ_limit = L ÷ n, or the distance you enter
+Thickness needed (solid rectangle, width b held):
+  for deflection:        h = ∛(12 × F × L³ ÷ (k × E × b × δ_limit)), k = 3, 48 or 8
+  for stress:            h = √(6 × M_max ÷ (b × σ_allow))</div>
+            <p>
+              <strong>The default example.</strong> An aluminium flat bar 30 mm wide and 5 mm thick, held as a cantilever 100 mm long with 20 N (about 2 kg) at the end.
+              I = 30 × 5³ ÷ 12 = 312.5 mm⁴. δ = 20 × 100³ ÷ (3 × 69,000 × 312.5) ≈ 0.31 mm, against an L ÷ 200 limit of 0.5 mm (62%).
+              M_max = 20 × 100 = 2,000 N·mm, so σ = 2,000 × 2.5 ÷ 312.5 = 16 MPa: 16% of the 100 MPa example allowable stress, a safety factor of 6.25.
+            </p>
+            <p>
+              The status takes the worse of the two checks, deflection against its limit and stress against the allowable stress: up to 80% passes,
+              80–100% is marginal, and above 100% is over. The safety factor is simply your allowable stress divided by the calculated stress,
+              so it is only as good as the allowable figure you enter.
+            </p>
+
+            <h2>Assumptions and limits</h2>
+            <ul>
+              <li><strong>Small deflections.</strong> The formulas hold while the deflection is small compared with the length. If the result is more than about a tenth of the length, treat it as a sign the part is far too flexible rather than as an accurate figure.</li>
+              <li><strong>Linear elastic behaviour.</strong> The material is assumed to spring back fully. Above the yield stress, metals take a permanent bend and the formulas no longer apply.</li>
+              <li><strong>A fully fixed root.</strong> The cantilever cases assume the root cannot rotate at all. Real joints are less stiff: screws, rivets, welds, thin walls and plastic bosses all let the root turn a little, so a real bracket usually bends more than the estimate, sometimes much more.</li>
+              <li><strong>Self-weight is ignored.</strong> Only the load you enter is counted. For long or heavy beams, add the beam's own weight as a spread load.</li>
+              <li><strong>No buckling, fatigue or stress concentrations.</strong> The tool does not check thin walls or flanges buckling, cracks growing under repeated or vibrating loads, or the higher local stress at holes, slots, notches and tight bends. Keep holes away from the root, and use generous bend and fillet radii, as in <a class="text-link-inline" href="../guides/sheet-metal-design-basics.html">sheet metal design basics</a>.</li>
+              <li><strong>Plastics creep.</strong> A plastic part under a load that stays on keeps bending slowly over time, and faster when warm. The short-term modulus on a datasheet will underestimate the deflection, so use long-term (creep) modulus data for your load, time and temperature.</li>
+              <li><strong>Confirm by test or FEA.</strong> This is a first estimate. Check the real part by loading a prototype and measuring it, or with a finite element analysis that includes the real joint and any holes.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <ul>
+              <li><strong>Pass:</strong> the deflection and the stress each use no more than 80% of your limits. Check the joint at the root, which is usually the weak point, and confirm by test.</li>
+              <li><strong>Marginal:</strong> within your limits, but small changes in thickness, material batch or a less rigid root could push it over. Thicken the section or shorten the length, then test.</li>
+              <li><strong>Over:</strong> the bracket is likely to bend too far or take a permanent set. The thickness needed shows how far a flat bracket is from working; for other sections, try a deeper section.</li>
+            </ul>
+            <p>
+              Depth in the direction of the load is the strongest lever: deflection falls with the cube of the thickness. Shortening the length helps almost as much.
+              A stiffer material helps only in proportion, which is why an aluminium part often needs thicker sections than a steel one, as
+              <a class="text-link-inline" href="../guides/choosing-metals-for-a-product.html">choosing metals for a product</a> explains. For a bent sheet part, a flange or return
+              along the edge adds depth cheaply. See <a class="text-link-inline" href="../guides/choosing-plastic-materials.html">choosing plastic materials</a> for plastic brackets,
+              <a class="text-link-inline" href="../guides/product-testing-and-validation-plans.html">product testing and validation plans</a> for where a load test fits, and the
+              <a class="text-link-inline" href="../guides/development-and-prototyping.html">development and prototyping hub</a> for the wider picture.
+              Save your result to your <a href="product-plan-builder.html">product plan</a>.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/choosing-metals-for-a-product.html">Choosing metals for a product</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/sheet-metal-design-basics.html">Sheet metal design basics</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/cnc-machining-design-rules.html">CNC machining design rules</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/choosing-plastic-materials.html">Choosing plastic materials</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/designing-for-drops-and-impacts.html">Designing a product to survive drops and impacts</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/development-and-prototyping.html">Development and prototyping: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="snap-fit-calculator.html">Snap-fit Calculator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="material-selector.html">Plastic Material Selector</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Brackets and beams</span>
+                <span>Stiffness</span>
+                <span>Design review</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Which elastic modulus should I use?</h3>
+                <p>Use the figure from the datasheet for your exact material. The buttons fill in typical textbook values only: about 69,000 MPa for aluminium alloys and about 200,000 MPa for steel. Plastics vary much more by grade, temperature and moisture, so the ABS figure is an example only, and a load that stays on needs the long-term (creep) modulus.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What deflection limit should I use?</h3>
+                <p>Set it from what the bracket must do: a gap that must not close, a display that must not visibly droop, or parts that must stay aligned. Expressing it as a fraction of the length, L ÷ n, scales it with the size of the part; the default of L ÷ 200 is an example, not a rule.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why does my real bracket bend more than the estimate?</h3>
+                <p>Usually because the root is not fully fixed. Screws, thin mounting walls and plastic bosses let the root rotate, which adds to the deflection at the tip. Holes and slots near the root, a softer material than expected and, for plastics, creep all add more. Measure a prototype to find out how much.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What safety factor should I aim for?</h3>
+                <p>It depends on how well you know the loads and the material, and what happens if the part fails. The tool divides your allowable stress by the calculated stress; if you enter the yield strength, a factor of 1 means it is just starting to bend permanently. Shocks, drops and repeated loads need more margin, and fatigue needs its own check.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>First estimate, confirmed by test</h2>
+            <p>This calculator applies the standard Euler–Bernoulli beam formulas to the load, length, section and material figures you enter. Use it to size a bracket and compare options early, then confirm the design by loading a prototype or with FEA.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator was created by Orion Design using the standard beam bending formulas found in engineering textbooks. The elastic modulus and allowable stress must come from the datasheet for the material, grade and conditions you will use.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Practical engineering tools and product-development guidance from concept to manufacture.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related tools</h3>
+          <a href="snap-fit-calculator.html">Snap-fit Calculator</a>
+          <a href="tolerance-stack-up.html">Tolerance Stack-up Calculator</a>
+          <a href="material-selector.html">Plastic Material Selector</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/bracket-deflection-calculator.js" defer></script>
+  </body>
+</html>

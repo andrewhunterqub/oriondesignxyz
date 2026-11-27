@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>CNC Machining Design Rules | Orion Design</title>
+    <meta
+      name="description"
+      content="CNC machining design rules for product designers: corner radii, pocket depth, walls, holes and threads, set-ups, tolerances, finishes and materials, with typical ranges."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/cnc-machining-design-rules.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="CNC machining design rules | Orion Design">
+    <meta
+      property="og:description"
+      content="CNC machining design rules for product designers: corner radii, pocket depth, walls, holes and threads, set-ups, tolerances, finishes and materials, with typical ranges."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/cnc-machining-design-rules.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-cnc-machining-design-rules.jpg">
+    <meta property="og:image:alt" content="CNC machining design rules guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CNC machining design rules | Orion Design">
+    <meta
+      name="twitter:description"
+      content="CNC machining design rules for product designers: corner radii, pocket depth, walls, holes and threads, set-ups, tolerances, finishes and materials, with typical ranges."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-cnc-machining-design-rules.jpg">
+    <meta name="twitter:image:alt" content="CNC machining design rules guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-cnc-machining-design-rules.jpg",
+        "headline": "CNC machining design rules: designing parts that are quick to machine",
+        "description": "CNC machining design rules for product designers: corner radii, pocket depth, walls, holes and threads, set-ups, tolerances, finishes and materials, with typical ranges.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-26",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/cnc-machining-design-rules.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "CNC machining"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design for manufacturing"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "CNC machining design rules",
+                "item": "https://oriondesign.xyz/guides/cnc-machining-design-rules.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Why do CNC parts need internal corner radii?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Milling cutters are round, so they leave a radius in every internal corner. Designing a radius slightly larger than the cutter lets the tool move smoothly and keeps cost down; truly sharp internal corners need extra processes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How deep can a CNC pocket be?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "As typical shop guidance, pockets up to about 3 to 4 times the cutter diameter are straightforward. Deeper pockets need longer tools that deflect, which slows machining and reduces accuracy. Check with your machinist."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What tolerance should I use for CNC parts?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use a general tolerance, for example to ISO 2768, for most features and call out tighter tolerances only on critical fits. Tighter tolerances add machining and inspection cost."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is CNC machining good for production?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It suits prototypes and low to medium volumes, precise metal parts and engineering plastics, as there is no tooling cost. At higher volumes, moulding, casting or sheet metal are often cheaper per part."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I reduce CNC machining cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use generous corner radii, shallow pockets, standard hole and thread sizes, fewer set-ups, a general tolerance and as-machined finishes where possible, and choose an easily machined material."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">CNC machining design rules</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For designers and engineers preparing machined parts for prototypes or production</p>
+            <h1>CNC machining design rules: designing parts that are quick to machine</h1>
+            <p>
+              Practical rules for designing CNC-machined parts: what round cutting tools mean for corners and pockets, sensible walls, holes and threads, fewer set-ups, and tolerances and finishes that control cost. Figures are typical shop guidance to confirm with your machinist.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Design CNC parts around round cutting tools: give internal corners a radius, keep pockets and holes shallow relative to their width, avoid very thin walls, and only tighten tolerances where they matter.</h2>
+              <p>
+                CNC machining removes material with rotating tools, so every internal corner has a radius, deep narrow features need long tools that deflect, and each extra set-up or special tool adds cost.
+                Use standard hole and thread sizes, minimise the number of sides that must be machined, and agree a general tolerance with a few tighter callouts on critical features.
+                The figures below are typical shop guidance, not fixed limits; confirm them with your machinist.
+              </p>
+            </div>
+
+            <h2>When CNC machining suits a product</h2>
+            <p>
+              CNC is ideal for prototypes, low to medium volumes, precise metal parts and parts in engineering plastics. There is no tooling cost, so it is often used before or instead of moulding or casting.
+              Unit cost stays relatively high as volumes grow; compare routes with the <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>.
+            </p>
+
+            <h2>Key design rules</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Typical guidance</th>
+                  <th>Why</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Internal corners</td>
+                  <td>Add a radius slightly larger than the cutter radius; larger is cheaper</td>
+                  <td>Round tools cannot cut sharp internal corners; a slightly larger radius lets the tool move smoothly</td>
+                </tr>
+                <tr>
+                  <td>Pocket depth</td>
+                  <td>Commonly up to about 3 to 4 times the cutter diameter</td>
+                  <td>Longer tools deflect and chatter, slowing cutting and hurting accuracy</td>
+                </tr>
+                <tr>
+                  <td>Wall thickness</td>
+                  <td>Avoid very thin walls; plastics need thicker walls than metals</td>
+                  <td>Thin walls vibrate and deform during cutting</td>
+                </tr>
+                <tr>
+                  <td>Holes</td>
+                  <td>Standard drill sizes; depth commonly up to about 4 times the diameter for easy drilling</td>
+                  <td>Standard drills are faster and cheaper than milling a custom size</td>
+                </tr>
+                <tr>
+                  <td>Threads</td>
+                  <td>Standard sizes; thread depth rarely needs to exceed about 1.5 to 2 times the diameter</td>
+                  <td>Extra depth adds little strength and raises the risk of tap breakage</td>
+                </tr>
+                <tr>
+                  <td>Text and fine detail</td>
+                  <td>Engraved rather than raised, with a simple, bold font</td>
+                  <td>Raised text needs material removed around it</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              if a feature could only be made with a very small or very long tool, change the feature. Small, long tools are slow, fragile and expensive to run.
+            </div>
+
+            <h2>Reduce set-ups</h2>
+            <p>
+              Each time a part has to be turned over or re-clamped, there is set-up time and a chance of misalignment. Where possible, put features on as few sides as possible,
+              align them with the main axes, and avoid undercuts that need special cutters. Parts that need features on many faces may need 5-axis machining, which costs more per hour.
+            </p>
+
+            <h2>Tolerances and finishes</h2>
+            <ul>
+              <li><strong>Use a general tolerance</strong>, for example to a recognised standard such as <a class="glossary-term" href="../knowledge/glossary.html#term-iso-2768" data-definition="An international standard for general tolerances, often quoted on drawings for dimensions that have no individual tolerance." aria-label="ISO 2768: An international standard for general tolerances, often quoted on drawings for dimensions that have no individual tolerance. (glossary)">ISO 2768</a>, and call out tighter tolerances only on critical features. <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">Tolerances and engineering drawings</a> explains <a class="glossary-term" href="../knowledge/glossary.html#term-general-tolerance" data-definition="The tolerance that applies to every dimension on a drawing that has none of its own, usually stated in the title block or by reference to a standard such as ISO 2768." aria-label="general tolerances: The tolerance that applies to every dimension on a drawing that has none of its own, usually stated in the title block or by reference to a standard such as ISO 2768. (glossary)">general tolerances</a>, fits and <a class="glossary-term" href="../knowledge/glossary.html#term-datum" data-definition="A feature, such as a face, edge, hole or axis, that a drawing declares as the reference from which measurements start. Datums are usually the features that locate the part in an assembly." aria-label="datums: A feature, such as a face, edge, hole or axis, that a drawing declares as the reference from which measurements start. Datums are usually the features that locate the part in an assembly. (glossary)">datums</a>.</li>
+              <li><strong>Tight tolerances cost more:</strong> slower cutting, more inspection and sometimes extra operations. Check how tolerances combine with the <a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a>.</li>
+              <li><strong>Specify surface finish only where it matters.</strong> As-machined is cheapest; <a class="glossary-term" href="../knowledge/glossary.html#term-bead-blasting" data-definition="Firing fine glass beads or similar media at a part to give an even matt texture that hides machining marks, often before anodising." aria-label="bead blasting: Firing fine glass beads or similar media at a part to give an even matt texture that hides machining marks, often before anodising. (glossary)">bead blasting</a>, <a class="glossary-term" href="../knowledge/glossary.html#term-anodising" data-definition="A process that grows a hard oxide layer out of the surface of a metal, usually aluminium. It can be clear or dyed, resists wear and corrosion, does not chip like paint and is electrically insulating." aria-label="anodising: A process that grows a hard oxide layer out of the surface of a metal, usually aluminium. It can be clear or dyed, resists wear and corrosion, does not chip like paint and is electrically insulating. (glossary)">anodising</a> and polishing add cost and can change dimensions. <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">Surface finishes for plastic and metal parts</a> compares the options.</li>
+            </ul>
+
+            <h2>Materials</h2>
+            <p>
+              Aluminium alloys are popular because they machine quickly and well. Steels and <a class="text-link-inline" href="choosing-metals-for-a-product.html">stainless steels</a> are stronger but slower to cut. Engineering plastics such as <a class="glossary-term" href="../knowledge/glossary.html#term-acetal-pom" data-definition="Polyoxymethylene: a stiff, low-friction engineering plastic used for gears, clips and mechanisms." aria-label="acetal: Polyoxymethylene: a stiff, low-friction engineering plastic used for gears, clips and mechanisms. (glossary)">acetal</a> and <a class="glossary-term" href="../knowledge/glossary.html#term-nylon-pa" data-definition="Polyamide: a strong, tough engineering plastic that absorbs moisture, often glass-filled for stiffness." aria-label="nylon: Polyamide: a strong, tough engineering plastic that absorbs moisture, often glass-filled for stiffness. (glossary)">nylon</a> machine well but
+              move with heat and moisture, so allow for that in tolerances. Material choice also affects finishes: anodising, for example, is mainly used on aluminium (and a few other metals such as titanium), not on steel. The
+              <a class="text-link-inline" href="../tools/material-selector.html">Material Selector</a> compares material properties.
+            </p>
+
+            <h2>Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Sharp internal corners.</strong>
+                They cannot be milled; the part comes back with radii or needs costly extra operations.
+              </div>
+              <div>
+                <strong>Tight tolerances everywhere.</strong>
+                They raise cost without improving the product.
+              </div>
+              <div>
+                <strong>Designing a moulded part, then machining it.</strong>
+                Thin ribs and deep pockets that suit moulding are slow to machine; design for the process you will use.
+              </div>
+              <div>
+                <strong>No drawing.</strong>
+                A 3D model alone does not say which features are critical, which threads are needed or what finish is expected.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Review the part with the <a class="text-link-inline" href="../tools/dfm-checker.html">DFM Checker</a>.</li>
+              <li>Check critical fits with the <a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a>.</li>
+              <li>Compare machining with moulding or casting at your volumes with the <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>.</li>
+              <li>Prepare drawings and quote requests with the <a class="text-link-inline" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Check the design</h3>
+                <p>Run through the main design-for-manufacture questions.</p>
+                <a class="button button-primary" href="../tools/dfm-checker.html" data-analytics-event="article_cta_click" data-analytics-label="cnc_guide_to_dfm">Open DFM Checker</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Compare processes</h3>
+                <p>See when tooling pays back against machining.</p>
+                <a class="button button-secondary" href="../tools/manufacturing-payoff.html" data-analytics-event="article_cta_click" data-analytics-label="cnc_guide_to_payoff">Open Manufacturing Payoff Visualiser</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/dfm-checker.html">DFM Checker</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="sheet-metal-design-basics.html">Sheet metal design basics</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="quality-control-and-first-article-inspection.html">Quality control and FAI</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>CNC</span>
+                <span>Machining</span>
+                <span>DFM</span>
+                <span>Tolerances</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Why do CNC parts need internal corner radii?</h3>
+                <p>Milling cutters are round, so they leave a radius in every internal corner. Designing a radius slightly larger than the cutter lets the tool move smoothly and keeps cost down; truly sharp internal corners need extra processes.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How deep can a CNC pocket be?</h3>
+                <p>As typical shop guidance, pockets up to about 3 to 4 times the cutter diameter are straightforward. Deeper pockets need longer tools that deflect, which slows machining and reduces accuracy. Check with your machinist.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What tolerance should I use for CNC parts?</h3>
+                <p>Use a general tolerance, for example to ISO 2768, for most features and call out tighter tolerances only on critical fits. Tighter tolerances add machining and inspection cost.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is CNC machining good for production?</h3>
+                <p>It suits prototypes and low to medium volumes, precise metal parts and engineering plastics, as there is no tooling cost. At higher volumes, moulding, casting or sheet metal are often cheaper per part.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How can I reduce CNC machining cost?</h3>
+                <p>Use generous corner radii, shallow pockets, standard hole and thread sizes, fewer set-ups, a general tolerance and as-machined finishes where possible, and choose an easily machined material.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

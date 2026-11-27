@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Target COGS by Route to Market | Orion Design</title>
+    <meta
+      name="description"
+      content="Calculate target COGS from retail price across direct, marketplace, and retailer routes, including warehousing, packaging, logistics, and fees."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/route-to-market-simulator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Target COGS by Route to Market | Orion Design">
+    <meta
+      property="og:description"
+      content="See what your product can afford to cost across DTC, marketplace, and retailer routes once margin targets and hidden costs are included."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/route-to-market-simulator.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-route-to-market-simulator.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Target COGS by Route to Market | Orion Design">
+    <meta
+      name="twitter:description"
+      content="See what your product can afford to cost across DTC, marketplace, and retailer routes once margin targets and hidden costs are included."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-route-to-market-simulator.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-route-to-market-simulator.jpg",
+        "name": "Target COGS by route to market.",
+        "url": "https://oriondesign.xyz/tools/route-to-market-simulator.html",
+        "description": "Calculate target COGS from retail price across direct, marketplace, and retailer routes, including warehousing, packaging, logistics, and fees.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Target COGS by Route to Market",
+                "item": "https://oriondesign.xyz/tools/route-to-market-simulator.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What retailer margin should I assume?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It varies by category and retailer, but margins of roughly 30% to 50% of the selling price excluding VAT are common for consumer products, and distributors may take a further share. Use the figure from a real conversation with a buyer as soon as you have one."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is the RRP entered including VAT?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Because that is the price customers see on the shelf or website. The tool removes VAT first, since VAT is collected on behalf of the tax authority and is not revenue for the business. For B2B products where customers reclaim VAT, you can still enter the gross price and the standard rate."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should DTC marketing really be counted per unit?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Direct sales avoid retailer margin, but customers still have to be found, and advertising often becomes one of the largest costs per sale. Dividing your planned marketing spend by the units it should generate gives a more honest comparison with retail."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I sell through several routes at once?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, and many hardware brands do. Use this tool to set a COGS target that works for the hardest route you plan to use, then use the Revenue and Margin Simulator to see the combined result of a mixed route plan."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Target COGS by Route to Market</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Live tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Target COGS by route to market.</h1>
+            <p>
+              Start with the retail price you think the market will bear, then see what the product can afford to cost
+              across direct-to-consumer, marketplace, and retailer routes once the hidden cost stack is included.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Route to market worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"marketListPrice":"35","vatRate":"20","targetMargin":"20","marketCogs":"8","warehouseCost":"0.5","secondaryPackaging":"0.5","dtcLogistics":"4","retailLogistics":"1","dtcSiteFees":"1.5","dtcMarketing":"5","marketplaceFee":"15","marketplaceCosts":"3","retailerMargin":"40","retailerCosts":"1"}'>Kitchen gadget, DTC</button>
+              <button class="preset-button" type="button" data-tool-preset='{"marketListPrice":"180","vatRate":"20","targetMargin":"20","marketCogs":"44","warehouseCost":"2.5","secondaryPackaging":"2","dtcLogistics":"7","retailLogistics":"2","dtcSiteFees":"4.5","dtcMarketing":"15","marketplaceFee":"15","marketplaceCosts":"8","retailerMargin":"45","retailerCosts":"4"}'>Smart home, retail</button>
+              <button class="preset-button" type="button" data-tool-preset='{"marketListPrice":"1440","vatRate":"20","targetMargin":"25","marketCogs":"430","warehouseCost":"8","secondaryPackaging":"12","dtcLogistics":"25","retailLogistics":"10","dtcSiteFees":"30","dtcMarketing":"150","marketplaceFee":"12","marketplaceCosts":"40","retailerMargin":"30","retailerCosts":"40"}'>B2B instrument</button>
+            </div>
+            <form class="tool-form" id="route-market-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="marketListPrice">Expected RRP incl. VAT (GBP)</label>
+                  <input id="marketListPrice" type="number" min="1" step="1" value="180">
+                </div>
+                <div class="field-group">
+                  <label for="vatRate">VAT rate (%)</label>
+                  <input id="vatRate" type="number" min="0" max="30" step="1" value="20">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="targetMargin">Target operating margin (%)</label>
+                  <input id="targetMargin" type="number" min="0" max="60" step="1" value="20">
+                </div>
+                <div class="field-group">
+                  <label for="marketCogs">Current or estimated COGS (GBP)</label>
+                  <input id="marketCogs" type="number" min="0" step="1" value="42">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="warehouseCost">Warehousing per unit (GBP)</label>
+                  <input id="warehouseCost" type="number" min="0" step="0.5" value="2.5">
+                </div>
+                <div class="field-group">
+                  <label for="secondaryPackaging">Secondary packaging per unit (GBP)</label>
+                  <input id="secondaryPackaging" type="number" min="0" step="0.1" value="1.8">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="dtcLogistics">DTC pick, pack, and delivery (GBP)</label>
+                  <input id="dtcLogistics" type="number" min="0" step="0.5" value="6.5">
+                </div>
+                <div class="field-group">
+                  <label for="retailLogistics">Retail inbound logistics (GBP)</label>
+                  <input id="retailLogistics" type="number" min="0" step="0.5" value="2">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="dtcSiteFees">DTC site, hosting, and payment fees (GBP)</label>
+                  <input id="dtcSiteFees" type="number" min="0" step="0.5" value="4">
+                </div>
+                <div class="field-group">
+                  <label for="dtcMarketing">DTC marketing per unit (GBP)</label>
+                  <input id="dtcMarketing" type="number" min="0" step="0.5" value="12">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="marketplaceFee">Marketplace fee (%)</label>
+                  <input id="marketplaceFee" type="number" min="0" max="40" step="1" value="15">
+                </div>
+                <div class="field-group">
+                  <label for="marketplaceCosts">Marketplace ads and fulfilment extras (GBP)</label>
+                  <input id="marketplaceCosts" type="number" min="0" step="0.5" value="7">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="retailerMargin">Retailer margin / wholesale discount (%)</label>
+                  <input id="retailerMargin" type="number" min="0" max="70" step="1" value="45">
+                </div>
+                <div class="field-group">
+                  <label for="retailerCosts">Retail trade spend and account costs (GBP)</label>
+                  <input id="retailerCosts" type="number" min="0" step="0.5" value="3">
+                </div>
+              </div>
+
+              <button class="button button-primary" type="submit">Calculate target COGS</button>
+            </form>
+            <p class="helper-text">
+              This tool shows the maximum COGS each route can support while still leaving the target operating margin in place.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell chart-shell-small">
+              <canvas id="routeMarketChart" role="img" aria-label="Target COGS by route to market"></canvas>
+            </div>
+            <div class="result-grid" id="routeMarketSummary"></div>
+            <div class="comparison-list" id="routeMarketBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#routeMarketCopy"
+                  data-copy-feedback="#routeMarketCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="routeMarketCopy" class="copy-output" readonly></textarea>
+              <div id="routeMarketCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="route_to_market_simulator_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>The best route is the one that leaves enough money for both COGS and margin after hidden selling costs.</h2>
+              <div class="formula-block">Target COGS = retained price after VAT and route deductions - hidden selling costs - required margin</div>
+              <p>Retailer routes usually create the hardest COGS ceiling because wholesale deductions remove the largest share of the RRP before logistics and account costs are counted.</p>
+            </div>
+
+            <h2>Why route to market changes what your product can cost</h2>
+            <p>
+              The same product can carry very different economics depending on whether it is sold direct, through a marketplace,
+              or through retail. The retail price may stay the same while the amount left for COGS changes dramatically.
+            </p>
+            <ul>
+              <li>DTC keeps more of the selling price, but you absorb warehousing, packaging, delivery, site fees, and customer acquisition.</li>
+              <li>Marketplace sales can look simpler, but marketplace fees and fulfilment extras can erode the margin quickly.</li>
+              <li>Retail can unlock scale, but wholesale pricing means the product usually needs to be designed to a much harder COGS target.</li>
+            </ul>
+            <h2>Example output</h2>
+            <div class="worked-example">
+              <p>
+                A product that feels healthy at a 180 GBP RRP might afford a very different COGS ceiling depending on whether the sale is direct,
+                through Amazon or Etsy, or through a retailer taking a standard margin.
+              </p>
+            </div>
+            <h2 id="method">Method and assumptions</h2>
+            <div class="formula-block">Price after VAT = RRP ÷ (1 + VAT rate)
+Kept per route = price after VAT × (1 − route fee or retailer margin)
+Target profit = kept × target operating margin
+Target COGS ceiling = kept − route costs − target profit</div>
+            <p><strong>Assumptions</strong></p>
+            <ul>
+              <li>Route costs (warehousing, packaging, logistics, fees, marketing) are per-unit figures you enter.</li>
+              <li>The target operating margin is taken as a share of the amount each route keeps.</li>
+              <li>The marketplace fee is applied to the price after VAT. Some marketplaces charge on the VAT-inclusive price, which leaves slightly less.</li>
+            </ul>
+            <p><strong>Limits</strong></p>
+            <ul>
+              <li>It shows a ceiling for unit cost, not a forecast of sales or profit.</li>
+              <li>It does not include fixed overheads, promotions, returns or payment terms; use the <a class="text-link-inline" href="revenue-margin-simulator.html">Launch Margin Planner</a> for those.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <p>
+              For each route, compare the maximum COGS the route can support with your current COGS. The gap between them is the clearest signal.
+            </p>
+            <ul>
+              <li><strong>Comfortable:</strong> your current COGS sits well below the ceiling for the route you plan to launch through, leaving room for cost increases, currency changes or a promotional price.</li>
+              <li><strong>Borderline:</strong> COGS is only just under the ceiling, or it works for direct sales but not for retail. That is common at early stages, but it means the product either needs <a class="text-link-inline" href="../guides/reducing-the-cost-of-an-existing-product.html">cost reduction</a> before retail or a launch plan that starts direct.</li>
+              <li><strong>Worrying:</strong> COGS is above the ceiling for every route you are considering. The price, the product cost or the target margin needs to change, and design decisions such as part count, materials and assembly method are usually the biggest lever.</li>
+            </ul>
+            <p>
+              As a rough cross-check, many teams planning a retail launch aim for a landed COGS of around a fifth to a third of the retail price including VAT, because retailer margin, VAT and selling costs take so much of the shelf price. Direct routes can carry a higher COGS, but only if marketing and fulfilment costs are counted honestly. Save your result to your <a href="product-plan-builder.html">product plan</a> to record the target COGS for each route alongside your cost estimate.
+            </p>
+            <p>
+              If there is a large gap between current COGS and the target, it is worth a design for manufacture review before tooling is committed. You can <a href="../contact/index.html">get in touch with Andrew</a> if you would like help working out where the cost could come from.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/selling-on-marketplaces.html">Selling on marketplaces</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/retail-and-distributor-margins-explained.html">Retail and distributor margins explained</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/route-to-market-hardware-product.html">How Route to Market Shapes Product Design and Cost</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/hardware-revenue-margin-planning.html">How to Turn RRP into Target COGS</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/route-to-market-and-margins.html">Route to market and margins: overview</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Target COGS</span>
+                <span>Retail pricing</span>
+                <span>Channel choice</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What retailer margin should I assume?</h3>
+                <p>It varies by category and retailer, but margins of roughly 30% to 50% of the selling price excluding VAT are common for consumer products, and distributors may take a further share. Use the figure from a real conversation with a buyer as soon as you have one.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why is the RRP entered including VAT?</h3>
+                <p>Because that is the price customers see on the shelf or website. The tool removes VAT first, since VAT is collected on behalf of the tax authority and is not revenue for the business. For B2B products where customers reclaim VAT, you can still enter the gross price and the standard rate.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should DTC marketing really be counted per unit?</h3>
+                <p>Yes. Direct sales avoid retailer margin, but customers still have to be found, and advertising often becomes one of the largest costs per sale. Dividing your planned marketing spend by the units it should generate gives a more honest comparison with retail.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I sell through several routes at once?</h3>
+                <p>Yes, and many hardware brands do. Use this tool to set a COGS target that works for the hardest route you plan to use, then use the Revenue and Margin Simulator to see the combined result of a mixed route plan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early engineering or commercial estimate. It is most useful for comparing options, surfacing trade-offs, and deciding what needs deeper validation next.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Use the result as an early decision aid, then confirm the numbers with suppliers, manufacturing partners, and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="revenue-margin-simulator.html">Launch Margin Planner</a>
+          <a href="hardware-business-case-builder.html">Business Case Builder</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/route-to-market-simulator.js" defer></script>
+  </body>
+</html>

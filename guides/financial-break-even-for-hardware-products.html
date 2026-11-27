@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Financial Break-even for Hardware Products | Orion Design</title>
+    <meta
+      name="description"
+      content="A practical guide to financial break-even for hardware products, including fixed costs, contribution margin, sales volume, and the limits of break-even analysis."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/financial-break-even-for-hardware-products.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Financial Break-even for Hardware Products">
+    <meta
+      property="og:description"
+      content="A practical guide to financial break-even for hardware products, including fixed costs, contribution margin, sales volume, and the limits of break-even analysis."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/financial-break-even-for-hardware-products.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-financial-break-even-for-hardware-products.jpg">
+    <meta property="og:image:alt" content="Guide to financial break-even for hardware products">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Financial Break-even for Hardware Products">
+    <meta
+      name="twitter:description"
+      content="A practical guide to financial break-even for hardware products, including fixed costs, contribution margin, sales volume, and the limits of break-even analysis."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-financial-break-even-for-hardware-products.jpg">
+    <meta name="twitter:image:alt" content="Guide to financial break-even for hardware products">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-financial-break-even-for-hardware-products.jpg",
+        "headline": "Financial Break-even for Hardware Products",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-24",
+        "articleSection": "Startup finance",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/financial-break-even-for-hardware-products.html",
+        "datePublished": "2026-03-13"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Financial break-even",
+                "item": "https://oriondesign.xyz/guides/financial-break-even-for-hardware-products.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do you calculate break-even for a product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Divide the fixed costs you need to recover by the contribution per unit, which is the net selling price minus the variable cost of each unit. Round up to the next whole unit. Multiply by the net price if you want the answer as revenue."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should tooling be included in break-even?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually yes, because tooling is a fixed cost the product has to recover and is often one of the largest. Some teams calculate an operating break-even without it as well, but they should state clearly which version they are using."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a good contribution margin for a hardware product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on the category and channel, but a product needs enough headroom that modest changes in price or cost do not multiply the break-even volume. If a small cost increase or a move into retail makes break-even several times harder, the margin is probably too thin."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between break-even and payback?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Break-even is a volume: the number of units needed to recover fixed cost. Payback is a time: how long it takes for profit to recover the investment. A product can have an achievable break-even volume and still a long payback if sales build slowly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does break-even analysis include VAT?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. In the UK, VAT collected on sales is passed to HMRC rather than kept by the business, so break-even should use the price net of VAT and of any retailer or marketplace share."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Financial break-even</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 24 November 2026 <span aria-hidden="true">·</span> For founders and product leads checking how many units must sell before profit</p>
+            <h1>Financial break-even for hardware products</h1>
+            <p>
+              Break-even analysis answers a very narrow question: how many units must be sold to recover fixed cost at the current contribution margin.
+              It becomes useful only when the product cost is credible and the team understands what fixed costs are actually being recovered.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Break-even happens when total contribution equals fixed cost.</h2>
+              <div class="formula-block">Break-even units = fixed costs / (selling price - variable cost)</div>
+              <p>
+                Subtract the variable cost of each unit from the net price you actually receive, then divide the fixed costs you need to recover by that contribution.
+                The trap is treating the result as a full business decision when it is really one checkpoint inside a wider model.
+              </p>
+            </div>
+
+            <p>
+              For hardware, the inputs need care. The selling price should be the <a class="glossary-term" href="../knowledge/glossary.html#term-net-price" data-definition="The price after VAT, discounts and channel deductions: what the business actually receives." aria-label="net price: The price after VAT, discounts and channel deductions: what the business actually receives. (glossary)">net price</a> the business receives after VAT and any retailer or marketplace share.
+              Variable cost should include everything that rises with each unit sold, not just the factory price. Get those two numbers right and break-even becomes a sharp test of whether the commercial model is viable.
+            </p>
+
+            <h2>Key definitions</h2>
+            <div class="formula-block">Contribution per unit = net selling price - variable cost per unit</div>
+            <div class="formula-block">Break-even revenue = fixed costs / contribution margin ratio, where the ratio = contribution per unit / net selling price</div>
+            <div class="formula-block">Margin of safety = (forecast units - break-even units) / forecast units</div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cost type</th>
+                  <th>Typical hardware examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Variable cost</td>
+                  <td>Components, assembly, packaging, inbound freight and duty, payment fees, pick and pack, outbound shipping, returns allowance, channel commission</td>
+                </tr>
+                <tr>
+                  <td>Fixed cost</td>
+                  <td>Tooling, design and engineering, certification, launch assets, and the overhead you choose to recover over the period being tested</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Be explicit about which fixed costs are in the calculation. A <strong>project break-even</strong> asks how many units recover the one-off investment in development, tooling and certification.
+              An <strong>operating break-even</strong> asks how many units a month cover recurring overhead. Both are useful, but mixing them without saying so makes the result hard to interpret.
+            </p>
+
+            <h2>What break-even is good at</h2>
+            <ul>
+              <li>testing whether the current contribution per unit is strong enough</li>
+              <li>showing whether the sales target is plausible at all</li>
+              <li>comparing how price or cost changes move the required volume</li>
+              <li>comparing routes to market on a like-for-like basis</li>
+            </ul>
+
+            <h2>What break-even is bad at</h2>
+            <ul>
+              <li>capturing payment timing and working-capital pressure</li>
+              <li>showing whether the first production run can be financed</li>
+              <li>including channel fees, returns, or route-to-market complexity unless those are already in variable cost</li>
+              <li>reflecting that unit cost usually falls as volume grows and changes when components are re-sourced</li>
+            </ul>
+
+            <h2>Worked example</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative figures only. Recover GBP65,000 of fixed cost with a GBP49 net sale price and GBP22 of variable cost. Contribution per unit is GBP27,
+                so break-even arrives at roughly 2,408 units, or about GBP118,000 of revenue. The contribution margin ratio is about 55%.
+              </p>
+              <p>
+                If the team forecasts 3,500 units in the first year, the margin of safety is about 31%: sales could fall by almost a third before the fixed cost is no longer recovered.
+                At 200 units a month, break-even takes roughly twelve months to reach.
+              </p>
+            </div>
+            <p>Now test the same product against the changes that commonly happen during development and launch.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Scenario</th>
+                  <th>Net price</th>
+                  <th>Variable cost</th>
+                  <th>Contribution</th>
+                  <th>Break-even units</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Base case, direct sales</td>
+                  <td>GBP49.00</td>
+                  <td>GBP22.00</td>
+                  <td>GBP27.00</td>
+                  <td>2,408</td>
+                </tr>
+                <tr>
+                  <td>Unit cost rises by GBP3</td>
+                  <td>GBP49.00</td>
+                  <td>GBP25.00</td>
+                  <td>GBP24.00</td>
+                  <td>2,709</td>
+                </tr>
+                <tr>
+                  <td>Price cut to GBP45</td>
+                  <td>GBP45.00</td>
+                  <td>GBP22.00</td>
+                  <td>GBP23.00</td>
+                  <td>2,827</td>
+                </tr>
+                <tr>
+                  <td>Sold through a retailer keeping 40%</td>
+                  <td>GBP29.40</td>
+                  <td>GBP22.00</td>
+                  <td>GBP7.40</td>
+                  <td>8,784</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The last row is the one that catches teams out. Retailer margins commonly sit somewhere between 30 and 50 per cent of the <a class="glossary-term" href="../knowledge/glossary.html#term-retail-price-rrp" data-definition="Recommended retail price: the price the end customer is expected to pay, usually including VAT in the UK." aria-label="retail price: Recommended retail price: the price the end customer is expected to pay, usually including VAT in the UK. (glossary)">retail price</a> before VAT,
+              so a product designed for direct sales can need more than three times the volume to break even once it moves into retail. That is a design and cost problem, not just a sales problem.
+            </p>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 293" width="100%" role="img" aria-labelledby="bep-fig-title bep-fig-desc">
+                <title id="bep-fig-title">Break-even units for the base case and three common changes</title>
+                <desc id="bep-fig-desc">Four bars drawn to scale from the scenario table, with £65,000 of fixed cost. Base case, direct sales: £27.00 contribution, 2,408 units. Unit cost up £3: £24.00, 2,709 units. Price cut to £45: £23.00, 2,827 units. Sold through a retailer keeping 40%: £7.40, 8,784 units. A dashed line marks the 3,500-unit first-year forecast; only the retail case lies beyond it.</desc>
+                <line x1="139.5" y1="239" x2="139.5" y2="262" class="gd-line gd-dash"/>
+                <line x1="139.5" y1="173" x2="139.5" y2="196" class="gd-line gd-dash"/>
+                <line x1="139.5" y1="107" x2="139.5" y2="130" class="gd-line gd-dash"/>
+                <line x1="139.5" y1="41" x2="139.5" y2="64" class="gd-line gd-dash"/>
+                <text x="20" y="20" class="gd-t"><tspan class="gd-v">2,408</tspan> units: base case, direct sales</text>
+                <text x="20" y="37" class="gd-m">£27.00 contribution a unit</text>
+                <rect x="20" y="43" width="82.2" height="16" rx="3" class="gd-fill-indigo"/>
+                <text x="20" y="86" class="gd-t"><tspan class="gd-v">2,709</tspan> units: unit cost up £3</text>
+                <text x="20" y="103" class="gd-m">£24.00 contribution a unit</text>
+                <rect x="20" y="109" width="92.5" height="16" rx="3" class="gd-fill-indigo"/>
+                <text x="20" y="152" class="gd-t"><tspan class="gd-v">2,827</tspan> units: price cut to £45</text>
+                <text x="20" y="169" class="gd-m">£23.00 contribution a unit</text>
+                <rect x="20" y="175" width="96.6" height="16" rx="3" class="gd-fill-indigo"/>
+                <text x="20" y="218" class="gd-t"><tspan class="gd-v gd-tm">8,784</tspan> units: retailer keeps 40%</text>
+                <text x="20" y="235" class="gd-m">£7.40 contribution a unit</text>
+                <rect x="20" y="241" width="300" height="16" rx="3" class="gd-fill-magenta"/>
+                <text x="139.5" y="283" text-anchor="middle" class="gd-m">3,500 forecast for year one</text>
+              </svg>
+              <figcaption>Illustrative figures from the table above, bars drawn to scale. Small cost and price changes move break-even by a few hundred units; a retailer's 40% share more than triples it, far past the 3,500-unit forecast.</figcaption>
+            </figure>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              if small changes in cost or price move the break-even point dramatically, the business model probably needs more margin headroom.
+            </div>
+
+            <h2>Common break-even mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Using RRP instead of net price.</strong>
+                VAT and channel share are not yours to keep, so they cannot contribute to fixed cost.
+              </div>
+              <div>
+                <strong>Factory price as variable cost.</strong>
+                Freight, duty, packaging, fulfilment, payment fees and returns all scale with volume and belong in the calculation.
+              </div>
+              <div>
+                <strong>Leaving tooling out.</strong>
+                Tooling is often the largest single fixed cost in a moulded product. If it is excluded, say so and check it separately.
+              </div>
+              <div>
+                <strong>Ignoring time.</strong>
+                Break-even volume means little without a realistic sales rate. Two thousand units in a year and two thousand units in four years are very different businesses.
+              </div>
+              <div>
+                <strong>Treating break-even as the goal.</strong>
+                Breaking even only recovers cost. The business still needs margin to fund the next product, stock growth and overhead.
+              </div>
+            </div>
+
+            <h2>Use break-even in the right order</h2>
+            <ol>
+              <li>estimate product cost bottom-up with the <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></li>
+              <li>check break-even volume with the <a class="text-link-inline" href="../tools/break-even-calculator.html">Break-even Calculator</a></li>
+              <li>test the result against each <a class="glossary-term" href="../knowledge/glossary.html#term-route-to-market" data-definition="How a product reaches customers: direct, marketplaces, retailers, distributors or business sales." aria-label="route to market: How a product reaches customers: direct, marketplaces, retailers, distributors or business sales. (glossary)">route to market</a> you are considering</li>
+              <li>model cashflow and route-to-market pressure, using <a class="text-link-inline" href="calculating-hardware-startup-cash-flow.html">calculating hardware startup cash flow</a></li>
+            </ol>
+            <p>
+              If tooling is a major part of the fixed cost, the guide to <a class="text-link-inline" href="injection-mould-break-even.html">when injection moulding becomes cheaper</a> covers the related question of when that investment is worth making.
+              <a class="text-link-inline" href="building-a-hardware-financial-model.html">Building a hardware financial model</a> shows how break-even connects to unit cost, <a class="glossary-term" href="../knowledge/glossary.html#term-working-capital" data-definition="Cash tied up between paying for stock and being paid for it." aria-label="working capital: Cash tied up between paying for stock and being paid for it. (glossary)">working capital</a> and the <a class="glossary-term" href="../knowledge/glossary.html#term-cash-low-point" data-definition="The lowest point of a business's cumulative cash forecast, which sets the minimum funding it needs." aria-label="cash low point: The lowest point of a business's cumulative cash forecast, which sets the minimum funding it needs. (glossary)">cash low point</a>.
+              To see where break-even sits alongside development stages and launch timing, the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a> brings those decisions into one plan.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Run the break-even model</h3>
+                <p>Calculate the contribution margin and the unit volume needed to recover fixed cost.</p>
+                <a
+                  class="button button-primary"
+                  href="../tools/break-even-calculator.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="break_even_article_to_tool"
+                >
+                  Open Break-even Calculator
+                </a>
+              </div>
+              <div class="article-action-card">
+                <h3>Check the cash timing too</h3>
+                <p>Use the cashflow tool if sales timing and working capital are more likely to break the plan than the margin itself.</p>
+                <a
+                  class="button button-secondary"
+                  href="../tools/cashflow-projection.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="break_even_article_to_cashflow"
+                >
+                  Open Cashflow Projection Tool
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="route-to-market-and-margins.html">Route to market and margins: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/break-even-calculator.html">Break-even Calculator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="retail-and-distributor-margins-explained.html">Retail and distributor margins</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="how-to-price-a-physical-product.html">How to price a physical product</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This article answers</p>
+              <div class="tag-row">
+                <span>Financial breakeven</span>
+                <span>Contribution margin</span>
+                <span>Volume target</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>How do you calculate break-even for a product?</h3>
+                <p>Divide the fixed costs you need to recover by the contribution per unit, which is the net selling price minus the variable cost of each unit. Round up to the next whole unit. Multiply by the net price if you want the answer as revenue.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should tooling be included in break-even?</h3>
+                <p>Usually yes, because tooling is a fixed cost the product has to recover and is often one of the largest. Some teams calculate an operating break-even without it as well, but they should state clearly which version they are using.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is a good contribution margin for a hardware product?</h3>
+                <p>It depends on the category and channel, but a product needs enough headroom that modest changes in price or cost do not multiply the break-even volume. If a small cost increase or a move into retail makes break-even several times harder, the margin is probably too thin.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between break-even and payback?</h3>
+                <p>Break-even is a volume: the number of units needed to recover fixed cost. Payback is a time: how long it takes for profit to recover the investment. A product can have an achievable break-even volume and still a long payback if sales build slowly.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does break-even analysis include VAT?</h3>
+                <p>No. In the UK, VAT collected on sales is passed to HMRC rather than kept by the business, so break-even should use the price net of VAT and of any retailer or marketplace share.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container knowledge-footer">
+          <div class="knowledge-meta">
+            <div class="author-card">
+              <p class="eyebrow">Author</p>
+              <h2>Andrew Hunter</h2>
+              <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+            </div>
+            <div class="citation-card">
+              <p class="eyebrow">Source and Attribution</p>
+              <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to structure early financial reasoning, then validate it inside a fuller cost, cashflow, and channel model.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/break-even-calculator.html">Break-even Calculator</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

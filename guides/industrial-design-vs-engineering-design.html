@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Industrial Design vs Engineering Design | Orion Design</title>
+    <meta
+      name="description"
+      content="Industrial design vs engineering design explained: who handles form, ergonomics and CMF, who handles mechanisms, DFM and tolerances, and who you need when."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/industrial-design-vs-engineering-design.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Industrial design vs engineering design | Orion Design">
+    <meta
+      property="og:description"
+      content="Industrial design vs engineering design explained: who handles form, ergonomics and CMF, who handles mechanisms, DFM and tolerances, and who you need when."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/industrial-design-vs-engineering-design.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-industrial-design-vs-engineering-design.jpg">
+    <meta property="og:image:alt" content="Industrial design vs engineering design guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Industrial design vs engineering design | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Industrial design vs engineering design explained: who handles form, ergonomics and CMF, who handles mechanisms, DFM and tolerances, and who you need when."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-industrial-design-vs-engineering-design.jpg">
+    <meta name="twitter:image:alt" content="Industrial design vs engineering design guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-industrial-design-vs-engineering-design.jpg",
+        "headline": "Industrial design vs engineering design: who does what",
+        "description": "Industrial design vs engineering design explained: who handles form, ergonomics and CMF, who handles mechanisms, DFM and tolerances, and who you need when.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-26",
+        "dateModified": "2026-11-26",
+        "articleSection": "Development and prototyping",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/industrial-design-vs-engineering-design.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Industrial design"
+          },
+          {
+            "@type": "Thing",
+            "name": "Engineering design"
+          },
+          {
+            "@type": "Thing",
+            "name": "Product development"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Industrial design vs engineering design",
+                "item": "https://oriondesign.xyz/guides/industrial-design-vs-engineering-design.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the difference between industrial design and engineering design?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Industrial design focuses on how a product looks, feels and is used: form, ergonomics, interaction, colour, material and finish, and brand. Engineering design focuses on how it works and is made: architecture, mechanisms, materials, tolerances and design for manufacture. Most products need both, and the work overlaps."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need an industrial designer and an engineer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most physical products need both kinds of skill, but not always two people. Some designers and engineers work across both, and the balance depends on the product: appearance-led consumer products lean on industrial design, while mechanism-heavy or technical products lean on engineering."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a product design engineer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A product design engineer usually works across industrial design and engineering: considering how a product is used and how it looks, while also designing the mechanical architecture, materials, tolerances and assembly so that it can be manufactured. The exact scope varies between people and companies."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who should I hire first?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Start with whoever addresses your biggest unknown. If the risk is whether people want and can use it, start with industrial design and user testing; if the risk is whether it can work or be made at the target cost, start with engineering. Bring the other in early rather than at the end."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can the manufacturer do the engineering design?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Some manufacturers offer design services, and their process knowledge is valuable. But their priorities are not always yours, and you may have less control over the design and its ownership. Keep requirements, key decisions and design files under your own control, and have suggested changes reviewed against your requirements."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Industrial design vs engineering design</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders and small teams working out what design and engineering help a physical product needs</p>
+            <h1>Industrial design vs engineering design: who does what</h1>
+            <p>
+              What industrial designers, product and mechanical design engineers, electronics and firmware engineers, and manufacturers each typically focus on, where the roles overlap, who you need at each stage of development, how to brief them so hand-offs do not fail, and what to ask when choosing help.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Industrial design shapes what a product is like to see, hold and use; engineering design makes it work reliably and makes it possible to manufacture.</h2>
+              <p>
+                Industrial designers usually lead on form, ergonomics, user experience, colour, material and finish (CMF) and brand. Product and mechanical design engineers lead on architecture, mechanisms, materials, tolerances, design for manufacture and production CAD, with electronics and firmware engineers alongside where the product needs them.
+                The roles overlap heavily, many people work across both, and most products need both kinds of thinking from the start, in different proportions at each stage.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#industrial">What industrial designers focus on</a></li>
+              <li><a class="text-link-inline" href="#engineering">What product and mechanical design engineers focus on</a></li>
+              <li><a class="text-link-inline" href="#electronics">Electronics and firmware engineers</a></li>
+              <li><a class="text-link-inline" href="#manufacturers">Manufacturers and toolmakers</a></li>
+              <li><a class="text-link-inline" href="#overlap">Where the roles overlap</a></li>
+              <li><a class="text-link-inline" href="#stages">Who you need at each stage</a></li>
+              <li><a class="text-link-inline" href="#handoffs">Briefing, and how hand-offs go wrong</a></li>
+              <li><a class="text-link-inline" href="#choosing">Questions to ask when choosing help</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a consumer gadget</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#rules">Decision rules</a></li>
+            </ol>
+
+            <h2 id="industrial">What industrial designers focus on</h2>
+            <p>
+              Industrial design is about the relationship between the product and the person using it. An industrial designer typically asks: what should this look and feel like, how will people understand it, and does it fit the brand and the setting it lives in?
+            </p>
+            <ul>
+              <li><strong>Form and proportion:</strong> the overall shape, how parts read together and how the product sits on a shelf, a desk or in a hand.</li>
+              <li><strong>User experience and interaction:</strong> how people pick it up, start it, understand controls and feedback, and recover from mistakes.</li>
+              <li><strong>Ergonomics:</strong> grip, reach, weight balance, forces and comfort across the range of intended users.</li>
+              <li><strong>CMF (colour, material and finish):</strong> the visible materials, colours, textures and <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">surface finishes</a>, and how they feel and age.</li>
+              <li><strong>Brand and product character:</strong> making the product recognisably part of a family and right for its price point and market.</li>
+            </ul>
+            <p>
+              Typical outputs are sketches, mood and <a class="glossary-term" href="../knowledge/glossary.html#term-colour-material-and-finish-cmf" data-definition="The visible colours, materials, textures and surface finishes chosen for a product, and how they look, feel and age. CMF is usually led by industrial design." aria-label="CMF: The visible colours, materials, textures and surface finishes chosen for a product, and how they look, feel and age. CMF is usually led by industrial design. (glossary)">CMF</a> boards, foam and looks-like models, renders and surface CAD that defines the visible shape.
+            </p>
+
+            <h2 id="engineering">What product and mechanical design engineers focus on</h2>
+            <p>
+              Engineering design is about making the product work, keeping it working and making it buildable at a sensible cost. A product or mechanical design engineer typically asks: how is it arranged inside, what holds it together, what will break, and how will it be made and assembled?
+            </p>
+            <ul>
+              <li><strong>Architecture:</strong> how the product is divided into parts and sub-assemblies, where components sit and how they connect.</li>
+              <li><strong>Mechanisms:</strong> hinges, latches, buttons, springs, seals and anything that moves or takes load.</li>
+              <li><strong>Materials:</strong> choosing grades for strength, stiffness, temperature, chemical resistance and cost, often from the shortlist the CMF work suggests.</li>
+              <li><strong>Design for manufacture and assembly (DFM/DFA):</strong> shaping parts for the chosen process, such as draft and wall thickness for <a class="text-link-inline" href="injection-moulding-dfm-checklist.html">injection moulding</a>, and reducing parts, fasteners and assembly steps.</li>
+              <li><strong>Tolerances:</strong> deciding how much each dimension may vary and checking parts still fit and function; see <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances and engineering drawings</a>.</li>
+              <li><strong>CAD for manufacture:</strong> solid models, drawings and data packs that suppliers can quote and make from.</li>
+            </ul>
+            <p>
+              Typical outputs are works-like prototypes, detailed CAD, engineering drawings, a <a class="glossary-term" href="../knowledge/glossary.html#term-bill-of-materials-bom" data-definition="The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly." aria-label="bill of materials: The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly. (glossary)">bill of materials</a>, calculations and test results.
+            </p>
+
+            <h2 id="electronics">Electronics and firmware engineers</h2>
+            <p>
+              If the product has a circuit board, battery, sensor, motor or radio, electronics engineers design the circuits and board layout, and <a class="glossary-term" href="../knowledge/glossary.html#term-firmware" data-definition="The software built into a product's electronics that controls how the hardware behaves." aria-label="firmware: The software built into a product's electronics that controls how the hardware behaves. (glossary)">firmware</a> engineers write the software that runs on it. Their work constrains the enclosure as much as the enclosure constrains them: board size and shape, battery space, heat, antenna placement and test access all need agreeing with the mechanical and industrial design early.
+              <a class="text-link-inline" href="electronics-in-a-physical-product.html">Electronics in a physical product</a> covers what to plan and what to hand over to an electronics partner.
+            </p>
+
+            <h2 id="manufacturers">Manufacturers and toolmakers</h2>
+            <p>
+              Manufacturers, toolmakers and other suppliers know their own processes in depth: what their machines and tools can hold, where defects tend to appear and what drives their cost. Their feedback on a design is valuable, especially before tooling. But a factory's job is usually to make what it is given. It may suggest changes that suit its process, which are not always the changes that suit your product, so someone on your side needs to judge them against your requirements.
+              <a class="text-link-inline" href="how-to-find-and-brief-a-manufacturer.html">How to find and brief a manufacturer</a> covers working with them.
+            </p>
+
+            <h2 id="overlap">Where the roles overlap</h2>
+            <p>
+              The boundary is blurred in practice. <a class="glossary-term" href="../knowledge/glossary.html#term-ergonomics" data-definition="Designing a product to fit the people who use it: grip, reach, weight, balance, forces and comfort across the range of intended users." aria-label="Ergonomics: Designing a product to fit the people who use it: grip, reach, weight, balance, forces and comfort across the range of intended users. (glossary)">Ergonomics</a>, materials, finishes, parting lines and the position of every button affect both appearance and engineering, so the best results come when both kinds of thinking happen together rather than in sequence.
+              Many industrial designers are comfortable with mechanisms and manufacturing, and many engineers have a strong eye for form and use. Job titles vary between companies and countries, so ask what someone actually does rather than relying on the title.
+            </p>
+            <p>
+              "Product design engineer" is a common name for someone who works across the two. Product design often focuses on form, user experience and appearance; product design engineering also covers how the product works and how it will be made: mechanical architecture, materials, tolerances, assembly, manufacturing route and cost. Orion Design works across both, with an emphasis on getting the product ready to manufacture.
+            </p>
+
+            <h2 id="stages">Who you need at each stage</h2>
+            <p>
+              Every discipline has some role throughout, but who leads tends to shift as the product moves from idea to production.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 360 290" width="100%" role="img" aria-labelledby="idvsed-fig-title idvsed-fig-desc">
+                <title id="idvsed-fig-title">Who typically leads and who supports at each development stage</title>
+                <desc id="idvsed-fig-desc">Four rows across three stages: concept, prototype and production. Industrial design leads at concept, supports during prototypes and supports at production. Product and mechanical design engineering supports at concept and leads during prototypes and production. Electronics and firmware, where needed, support at concept, lead during prototypes and support at production. Manufacturers and toolmakers have little role at concept, support during prototypes and lead at production.</desc>
+                <text x="65" y="20" text-anchor="middle" class="gd-h">Concept</text>
+                <text x="180" y="20" text-anchor="middle" class="gd-h">Prototype</text>
+                <text x="295" y="20" text-anchor="middle" class="gd-h">Production</text>
+                <text x="10" y="50" class="gd-t">Industrial design</text>
+                <rect x="10" y="58" width="110" height="18" rx="4" class="gd-fill-teal"/>
+                <rect x="125" y="58" width="110" height="18" rx="4" class="gd-fill-teal-soft"/>
+                <rect x="240" y="58" width="110" height="18" rx="4" class="gd-fill-teal-soft"/>
+                <text x="10" y="104" class="gd-t">Product and mechanical engineering</text>
+                <rect x="10" y="112" width="110" height="18" rx="4" class="gd-fill-teal-soft"/>
+                <rect x="125" y="112" width="110" height="18" rx="4" class="gd-fill-teal"/>
+                <rect x="240" y="112" width="110" height="18" rx="4" class="gd-fill-teal"/>
+                <text x="10" y="158" class="gd-t">Electronics and firmware (if needed)</text>
+                <rect x="10" y="166" width="110" height="18" rx="4" class="gd-fill-teal-soft"/>
+                <rect x="125" y="166" width="110" height="18" rx="4" class="gd-fill-teal"/>
+                <rect x="240" y="166" width="110" height="18" rx="4" class="gd-fill-teal-soft"/>
+                <text x="10" y="212" class="gd-t">Manufacturers and toolmakers</text>
+                <rect x="10" y="220" width="110" height="18" rx="4" class="gd-ghost"/>
+                <rect x="125" y="220" width="110" height="18" rx="4" class="gd-fill-teal-soft"/>
+                <rect x="240" y="220" width="110" height="18" rx="4" class="gd-fill-teal"/>
+                <rect x="10" y="262" width="14" height="14" rx="3" class="gd-fill-teal"/>
+                <text x="30" y="274" class="gd-m">Leads</text>
+                <rect x="90" y="262" width="14" height="14" rx="3" class="gd-fill-teal-soft"/>
+                <text x="110" y="274" class="gd-m">Supports</text>
+                <rect x="190" y="262" width="14" height="14" rx="3" class="gd-ghost"/>
+                <text x="210" y="274" class="gd-m">Little or no role</text>
+              </svg>
+              <figcaption>A typical pattern, not a rule: on a mechanism-heavy product engineering may lead from day one, and on a consumer product where appearance sells it, industrial design stays closely involved until production.</figcaption>
+            </figure>
+            <table>
+              <thead>
+                <tr>
+                  <th>Stage</th>
+                  <th>Main question</th>
+                  <th>Skills usually most needed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="text-link-inline" href="opportunity-and-concept.html">Opportunity and concept</a></td>
+                  <td>What should we build, for whom, and could it work?</td>
+                  <td>Industrial design for direction and use; engineering for feasibility, rough architecture and early cost</td>
+                </tr>
+                <tr>
+                  <td>Prototypes</td>
+                  <td>Does it work, can people use it, and does it look right?</td>
+                  <td>Separate or combined <a class="text-link-inline" href="looks-like-vs-works-like-prototypes.html">looks-like and works-like</a> builds; engineering and electronics leading, industrial design refining</td>
+                </tr>
+                <tr>
+                  <td>Detailed design and production</td>
+                  <td>Can it be made consistently, at the <a class="glossary-term" href="../knowledge/glossary.html#term-target-cost" data-definition="The most a product can cost to make and land while still meeting the business's margin at its price and route to market." aria-label="target cost: The most a product can cost to make and land while still meeting the business's margin at its price and route to market. (glossary)">target cost</a>?</td>
+                  <td>Engineering for <a class="glossary-term" href="../knowledge/glossary.html#term-design-for-manufacture-dfm" data-definition="Designing parts so they can be made reliably and economically by the chosen process." aria-label="DFM: Designing parts so they can be made reliably and economically by the chosen process. (glossary)">DFM</a>, tolerances and data packs; manufacturer and <a class="glossary-term" href="../knowledge/glossary.html#term-toolmaker" data-definition="The company or specialist that designs and makes mould tools, and reviews part designs for mouldability before the tool is cut." aria-label="toolmaker: The company or specialist that designs and makes mould tools, and reviews part designs for mouldability before the tool is cut. (glossary)">toolmaker</a> input; industrial design signing off CMF and appearance</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The <a class="text-link-inline" href="development-and-prototyping.html">development and prototyping hub</a> sets out the stages in more detail, and
+              <a class="text-link-inline" href="how-many-prototypes-do-you-need.html">how many prototypes do you need?</a> helps plan which questions each round should answer.
+            </p>
+
+            <h2 id="handoffs">Briefing, and how hand-offs go wrong</h2>
+            <p>
+              Most problems between disciplines are not about skill but about hand-offs: one person finishes a stage and passes it on, and the next discovers that something important was never agreed. Common failures include:
+            </p>
+            <ul>
+              <li>A beautiful shape that leaves no room for the battery, board or fixings, or cannot be moulded without costly tooling.</li>
+              <li>An engineered layout that changes the proportions or controls the users liked in testing, without anyone checking.</li>
+              <li>CMF choices that look right on a render but have no matching production finish or material grade.</li>
+              <li>CAD sent to a supplier without drawings, tolerances, materials or quantities, so quotes and parts vary.</li>
+            </ul>
+            <p>To avoid them:</p>
+            <ol>
+              <li><strong>Share one set of requirements.</strong> A <a class="text-link-inline" href="how-to-write-a-product-requirements-document.html">product requirements document</a> gives every discipline the same targets for use, appearance, function, cost and compliance.</li>
+              <li><strong>Overlap, do not relay.</strong> Bring engineering into concept reviews and industrial design into engineering reviews, even briefly.</li>
+              <li><strong>Agree who owns each decision,</strong> such as the visible surfaces, the internal layout and the final material, and how changes are approved.</li>
+              <li><strong>Hand over complete information,</strong> including CAD revisions, decisions made and open questions. <a class="text-link-inline" href="must-have-documents-before-talking-to-a-manufacturer.html">Must-have documents before talking to a manufacturer</a> lists what suppliers need.</li>
+            </ol>
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              if a change in one discipline would surprise someone in another, it needs a review, not just an updated file.
+            </div>
+
+            <h2 id="choosing">Questions to ask when choosing help</h2>
+            <p>
+              Whether you are looking at an industrial design studio, an engineering consultancy, a freelancer or someone who spans both, these questions help show what you would actually get:
+            </p>
+            <ul>
+              <li>Which parts of the work will you do yourselves, and which would you expect another discipline or supplier to do?</li>
+              <li>Can you show examples of work taken through to production, not just concepts or renders?</li>
+              <li>How do you work with electronics engineers and manufacturers, and who manages those hand-offs?</li>
+              <li>What will you hand over at the end of each stage, and in what file formats?</li>
+              <li>Who will actually do the work, and who makes design decisions day to day?</li>
+            </ul>
+            <p>
+              <a class="text-link-inline" href="working-with-a-product-design-consultancy.html">Working with a product design consultancy</a> covers briefing, engagement structures and intellectual property in more depth.
+            </p>
+
+            <h2 id="example">Worked example: a consumer gadget</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A founder has an idea for a small, rechargeable desk gadget that sits in view and is handled several times a day. It has a button, a light and a simple mechanism. Appearance matters because it will sell partly on how it looks in photographs.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Stage</th>
+                  <th>Skills the founder needs</th>
+                  <th>Why</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Concept</td>
+                  <td>Industrial design to explore form, size and interaction; a short engineering feasibility check of the mechanism, battery and likely processes</td>
+                  <td>So the favoured concept is one that can work and be made, not just one that looks good on paper</td>
+                </tr>
+                <tr>
+                  <td>Prototype</td>
+                  <td>Mechanical engineering for architecture and the mechanism; an electronics partner for the board, battery and charging; industrial design refining looks-like models and testing them with users</td>
+                  <td>Function and handling are tested in parallel, then combined in an <a class="glossary-term" href="../knowledge/glossary.html#term-engineering-prototype" data-definition="A prototype that integrates form and function to check the design against its specification." aria-label="integrated prototype: A prototype that integrates form and function to check the design against its specification. (glossary)">integrated prototype</a></td>
+                </tr>
+                <tr>
+                  <td>Production</td>
+                  <td>Engineering for DFM, tolerances and drawings; manufacturer and toolmaker reviews; industrial design approving colour and finish samples</td>
+                  <td>So the parts that come off the tool match the design that was tested and the look that was promised</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The founder could hire each skill separately, or work with someone who spans industrial design and engineering and brings in electronics and manufacturing partners as needed. Either way, one shared requirements document and regular joint reviews keep the disciplines pointing at the same product.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Polishing looks before the architecture works.</strong>
+                Detailed renders and CMF work on a shape that cannot fit the internals end up being redone. Prove the layout roughly before refining the surface.
+              </div>
+              <div>
+                <strong>Engineering a product nobody wants to use.</strong>
+                A product can be robust and cheap to make yet awkward to hold, confusing to start or unappealing on the shelf. Keep users and appearance in the reviews throughout.
+              </div>
+              <div>
+                <strong>Hand-offs without shared requirements.</strong>
+                Each discipline then optimises for its own idea of success, and the conflicts surface late, when changes are most expensive.
+              </div>
+              <div>
+                <strong>Assuming the factory will "sort out" design for manufacture.</strong>
+                A manufacturer may adjust parts to suit its process, but not necessarily your product, cost target or appearance. DFM decisions need an owner on your side before tooling.
+              </div>
+            </div>
+
+            <h2 id="rules">Decision rules</h2>
+            <ul>
+              <li><strong>If people will choose the product partly on how it looks or feels</strong>, involve industrial design from the start, not as a finishing step.</li>
+              <li><strong>If the product has moving parts, loads, seals or tight internal space</strong>, bring engineering in at concept, not after the shape is fixed.</li>
+              <li><strong>If it contains electronics</strong>, agree board size, battery and antenna space with the mechanical layout before the form is frozen.</li>
+              <li><strong>If two or more parties are involved</strong>, write down the requirements and who owns which decisions before work starts.</li>
+              <li><strong>Before tooling</strong>, have an engineer on your side review DFM, tolerances and the manufacturer's suggested changes.</li>
+            </ul>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Write or update your <a class="text-link-inline" href="how-to-write-a-product-requirements-document.html">product requirements document</a> so every discipline works to the same targets.</li>
+              <li>Map your stages and who is needed at each with the <a class="text-link-inline" href="../tools/product-design-process-map.html">Product Design Process Map</a>.</li>
+              <li>Plan the looks-like and works-like rounds with the <a class="text-link-inline" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Map the process</h3>
+                <p>See which stages your product needs and where each discipline comes in.</p>
+                <a class="button button-primary" href="../tools/product-design-process-map.html" data-analytics-event="article_cta_click" data-analytics-label="idvsed_guide_to_process_map">Open Product Design Process Map</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Plan your prototypes</h3>
+                <p>Match each question to a looks-like, works-like or integrated build.</p>
+                <a class="button button-secondary" href="../tools/prototype-strategy-tool.html" data-analytics-event="article_cta_click" data-analytics-label="idvsed_guide_to_proto">Open Prototype Strategy Tool</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/product-design-process-map.html">Product Design Process Map</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/dfm-checker.html">Injection Moulding DFM Checker</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="working-with-a-product-design-consultancy.html">Working with a design consultancy</a></div>
+                <div class="aside-item"><a class="text-link" href="looks-like-vs-works-like-prototypes.html">Looks-like vs works-like prototypes</a></div>
+                <div class="aside-item"><a class="text-link" href="electronics-in-a-physical-product.html">Electronics in a physical product</a></div>
+                <div class="aside-item"><a class="text-link" href="must-have-documents-before-talking-to-a-manufacturer.html">Documents for a manufacturer</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Industrial design</span>
+                <span>Engineering design</span>
+                <span>Design roles</span>
+                <span>Hand-offs</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is the difference between industrial design and engineering design?</h3>
+                <p>Industrial design focuses on how a product looks, feels and is used: form, ergonomics, interaction, colour, material and finish, and brand. Engineering design focuses on how it works and is made: architecture, mechanisms, materials, tolerances and design for manufacture. Most products need both, and the work overlaps.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need an industrial designer and an engineer?</h3>
+                <p>Most physical products need both kinds of skill, but not always two people. Some designers and engineers work across both, and the balance depends on the product: appearance-led consumer products lean on industrial design, while mechanism-heavy or technical products lean on engineering.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is a product design engineer?</h3>
+                <p>A product design engineer usually works across industrial design and engineering: considering how a product is used and how it looks, while also designing the mechanical architecture, materials, tolerances and assembly so that it can be manufactured. The exact scope varies between people and companies.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Who should I hire first?</h3>
+                <p>Start with whoever addresses your biggest unknown. If the risk is whether people want and can use it, start with industrial design and <a class="text-link-inline" href="usability-testing-a-prototype.html">user testing</a>; if the risk is whether it can work or be made at the target cost, start with engineering. Bring the other in early rather than at the end.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can the manufacturer do the engineering design?</h3>
+                <p>Some manufacturers offer design services, and their process knowledge is valuable. But their priorities are not always yours, and you may have less control over the design and its ownership. Keep requirements, key decisions and design files under your own control, and have suggested changes reviewed against your requirements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

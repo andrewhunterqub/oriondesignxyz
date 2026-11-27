@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Walkthrough: One Product from Idea to Manufacture | Orion Design</title>
+    <meta
+      name="description"
+      content="Follow one illustrative product, a rechargeable bike light, through all seven development stages and the free tools, with numbers that carry from stage to stage."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/walkthrough/">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Walkthrough: One Product from Idea to Manufacture | Orion Design">
+    <meta property="og:description" content="Follow one illustrative product, a rechargeable bike light, through all seven development stages and the free tools, with numbers that carry from stage to stage.">
+    <meta property="og:url" content="https://oriondesign.xyz/walkthrough/">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/walkthrough.jpg">
+    <meta property="og:image:alt" content="One illustrative product followed through the seven stages of product development">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Walkthrough: One Product from Idea to Manufacture | Orion Design">
+    <meta name="twitter:description" content="Follow one illustrative product, a rechargeable bike light, through all seven development stages and the free tools, with numbers that carry from stage to stage.">
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/walkthrough.jpg">
+    <meta name="twitter:image:alt" content="One illustrative product followed through the seven stages of product development">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/walkthrough.jpg",
+        "headline": "Walkthrough: one product from idea to manufacture",
+        "description": "Follow one illustrative product, a rechargeable bike light, through all seven development stages and the free tools, with numbers that carry from stage to stage.",
+        "author": { "@type": "Person", "name": "Andrew Hunter", "jobTitle": "Product Design Engineer", "url": "https://oriondesign.xyz/about/" },
+        "publisher": { "@type": "Organization", "name": "Orion Design", "url": "https://oriondesign.xyz/", "logo": { "@type": "ImageObject", "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png" } },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-25",
+        "mainEntityOfPage": "https://oriondesign.xyz/walkthrough/"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Walkthrough",
+                "item": "https://oriondesign.xyz/walkthrough/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is Project Lantern a real product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It is an illustrative product, and all the figures are invented for teaching. They are not data about any real product or client. The figures are chosen to be plausible so the connections between stages are realistic, but your own costs, prices and timescales will differ."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does the walkthrough use the retailer price rather than the website price?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Because it is the tightest limit. At £50 the retail route leaves room for a £16 unit cost, against £22 for direct sales. A product designed to the retail figure can be sold through either route; one designed to the direct figure cannot be sold through shops at a profit. See why route to market matters."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is the landed cost used instead of the factory price?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The factory price leaves out freight, insurance, duty, clearance and delivery to your warehouse. In this walkthrough they add £1.16 a unit, about 9%. Prices, margins, break-even and cash flow should all use the landed figure. The landed cost guide explains each part."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I open the tools with my own numbers instead?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Each button opens the tool with the walkthrough's inputs, and you can change any of them. Use \"Copy link to this result\" to keep or share your version, and \"Save to my product plan\" to collect results in the Product Plan Builder. Nothing is stored on a server."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <span aria-current="page">Walkthrough</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Worked example</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 25 November 2026 <span aria-hidden="true">·</span> For first-time founders who want to see how the stages and tools fit together</p>
+            <h1>Walkthrough: one product from idea to manufacture</h1>
+            <p>
+              This page follows one product, a rechargeable bike light, through all seven stages of development and through the free tools on this site.
+              Each number is carried forward: the target cost set in week three is the one the cost estimate is checked against, the unit cost in the
+              estimate is the one used in break-even, and the <a class="text-link-inline" href="../guides/comparing-manufacturing-quotes.html">tooling quote</a> is the one in the launch budget. Every tool button opens the tool already
+              filled in with the walkthrough's inputs, so you can see the same result and then change it.
+            </p>
+            <p class="wt-note"><strong>Please note:</strong> Project Lantern is an illustrative product; all figures are invented for teaching and are not data about any real product or client.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="summary-card">
+            <p class="eyebrow">The scenario in brief</p>
+            <h2>A £50 bike light that only works if it lands in the UK for about £14.</h2>
+            <p>
+              A two-person start-up plans a rechargeable front bike light: a moulded two-part plastic housing, an LED driver board, a lithium-ion battery
+              and USB-C charging. It will sell for £50 including VAT, about 40% direct from its own website and 60% through bike shops and other retailers,
+              with a first-year target of 5,000 units. A contract manufacturer overseas makes and assembles it, and it is shipped by sea to a UK warehouse.
+              The retail route sets the hardest limit, so the whole project is designed to a landed cost of about £14 per unit.
+            </p>
+            <p class="wt-note">An illustrative product; all figures are invented for teaching and are not data about any real product or client.</p>
+          </div>
+
+          <h2 class="wt-heading">Contents</h2>
+          <ul class="wt-list">
+            <li><a class="text-link-inline" href="#numbers">How the numbers carry from stage to stage</a></li>
+            <li><a class="text-link-inline" href="#stage-discover">1. Discover</a></li>
+            <li><a class="text-link-inline" href="#stage-define">2. Define</a></li>
+            <li><a class="text-link-inline" href="#stage-concept">3. Concept</a></li>
+            <li><a class="text-link-inline" href="#stage-prototype">4. Prototype</a></li>
+            <li><a class="text-link-inline" href="#stage-verify">5. Verify</a></li>
+            <li><a class="text-link-inline" href="#stage-industrialise">6. Industrialise</a></li>
+            <li><a class="text-link-inline" href="#stage-launch">7. Launch</a></li>
+            <li><a class="text-link-inline" href="#lessons">What the team learned</a></li>
+            <li><a class="text-link-inline" href="#decisions">The decisions that mattered most</a></li>
+            <li><a class="text-link-inline" href="#your-own-product">Run the same process with your own product</a></li>
+          </ul>
+
+          <h2 id="numbers" class="wt-heading">How the numbers carry from stage to stage</h2>
+          <p class="wt-intro">
+            This is the thread to follow. Each figure is produced by one tool and used as an input to the next, so a change early on shows up all the way
+            down the list.
+          </p>
+          <div class="table-scroll">
+            <table class="wt-table">
+              <caption class="visually-hidden">Key figures for Project Lantern, where each comes from and where it is used next</caption>
+              <thead>
+                <tr><th scope="col">Figure</th><th scope="col">Value</th><th scope="col">Produced in</th><th scope="col">Used next in</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Retail price, including VAT</td><td class="wt-num">£50</td><td>2. Define</td><td>Target cost, pricing ladder</td></tr>
+                <tr><td>Target cost ceiling (retail route)</td><td class="wt-num">£16</td><td>2. Define</td><td>Design-to-cost target of £14 landed</td></tr>
+                <tr><td>First cost estimate (concept)</td><td class="wt-num">£16.23</td><td>3. Concept</td><td><a class="text-link-inline" href="../guides/reducing-the-cost-of-an-existing-product.html">Cost-down</a> work in prototyping</td></tr>
+                <tr><td>Assembly time per unit</td><td class="wt-num">6.0 → 3.5 min</td><td>3. Concept, 4. Prototype</td><td>Labour line of the cost estimate</td></tr>
+                <tr><td>Bill of materials</td><td class="wt-num">£10.20</td><td>4. Prototype</td><td>Material, process, bought-in and packaging lines of the estimate</td></tr>
+                <tr><td>Injection mould tool</td><td class="wt-num">£14,000</td><td>5. Verify</td><td>Launch budget, manufacturing payoff, break-even</td></tr>
+                <tr><td>Ex-works unit cost</td><td class="wt-num">£12.83</td><td>6. Industrialise</td><td>Landed cost</td></tr>
+                <tr><td>Landed unit cost</td><td class="wt-num">£13.99</td><td>6. Industrialise</td><td>First stock order, pricing, break-even, cash flow</td></tr>
+                <tr><td>Pre-launch budget, with contingency</td><td class="wt-num">£100,050</td><td>5. Verify</td><td>Funding target and opening cash</td></tr>
+                <tr><td>Break-even on one-off costs</td><td class="wt-num">5,842 units</td><td>7. Launch</td><td>Year-two sales plan</td></tr>
+                <tr><td>Lowest cash in the first year</td><td class="wt-num">£16,692</td><td>7. Launch</td><td>Decision on how much buffer to keep</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="i2m-stages wt-stages">
+          <section class="i2m-stage wt-stage" id="stage-discover" aria-labelledby="stage-discover-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">1</span>
+              <div>
+                <h2 id="stage-discover-title">1. Discover</h2>
+                <p class="i2m-question">Is a better rechargeable bike light a problem worth solving?</p>
+              </div>
+            </div>
+            <p class="plan-label">Plan section 1: Opportunity and concept</p>
+            <p>
+              The founders spend five weeks talking to 30 commuters and two bike shop owners. The recurring complaints are lights that are stolen when
+              the bike is locked, mounts that crack in winter and batteries that die without warning. Shop owners add that they will not stock a light
+              they cannot sell for £50 or less. Before any design work, the team scores the idea on human value, impact, viability and feasibility.
+            </p>
+            <h3>What they decided</h3>
+            <ul>
+              <li>Focus on commuters: a light that clips off in seconds, survives winter and shows remaining charge.</li>
+              <li>Treat £50 as the price ceiling, because that is what the shops said they could sell.</li>
+              <li>Work on planet impact from the start, since it scored lowest: a replaceable battery and a long service life.</li>
+            </ul>
+            <h3>Key numbers at this point</h3>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Purpose score</p><p>28 out of 40 (human 8, planet 5, economy 7, technical 8)</p></div>
+              <div><p class="plan-label">Price ceiling from interviews</p><p>£50 including VAT</p></div>
+            </div>
+            <div class="article-highlight"><strong>What the tool shows:</strong> 28 out of 40, ranked 27th of 61 benchmark products, with planet impact the weakest score at 5 out of 10. The tool reads this as a mixed profile and suggests improving planet impact through material choice, fewer parts and a longer service life.</div>
+            <div class="wt-tools">
+              <p class="plan-label">Open this step in the tool</p>
+              <div class="cta-row">
+                <a class="button button-secondary" href="../tools/product-purpose.html#r&amp;human=8&amp;planet=5&amp;economy=7&amp;technical=8">Product Purpose Framework</a>
+              </div>
+            </div>
+            <div class="page-links">
+              <a href="../guides/how-to-validate-a-product-idea.html">How to validate a product idea</a>
+              <a href="../guides/opportunity-and-concept.html">Opportunity and concept hub</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage wt-stage" id="stage-define" aria-labelledby="stage-define-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">2</span>
+              <div>
+                <h2 id="stage-define-title">2. Define</h2>
+                <p class="i2m-question">What must it do, and what can it cost?</p>
+              </div>
+            </div>
+            <p class="plan-label">Plan section 5: Route to market and margins</p>
+            <p>
+              The team writes a short requirements document: 400 lumens, at least 3 hours on the high setting, rain resistance, a tool-free clip mount,
+              USB-C charging and a charge indicator. They then work back from the £50 price to what the product is allowed to cost through each sales route.
+              Their channel assumptions are £0.50 warehousing and £0.30 secondary packaging per unit; £3.50 delivery, £1.50 site and payment fees and
+              £6 marketing for each direct sale; and a 45% retailer margin with £0.50 inbound logistics and £1 of trade spend for each retail sale.
+              A marketplace is not planned for launch.
+            </p>
+            <h3>What they decided</h3>
+            <ul>
+              <li>The retail route is the tightest, so it sets the cost limit for the whole product.</li>
+              <li>Design to a landed cost of £14, leaving about £2 of headroom under the retail ceiling for price rises and promotions.</li>
+              <li>List the standards that apply now (electrical safety, EMC and battery transport rules) so certification is planned, not discovered.</li>
+            </ul>
+            <h3>Key numbers at this point</h3>
+            <div class="table-scroll">
+              <table class="wt-table">
+                <caption class="visually-hidden">Target cost by sales route at a £50 retail price and 20% operating margin</caption>
+                <thead><tr><th scope="col">Route</th><th scope="col">Revenue kept per unit</th><th scope="col">Hidden selling costs</th><th scope="col">Target cost ceiling</th></tr></thead>
+                <tbody>
+                  <tr><td>Direct (own website)</td><td class="wt-num">£42</td><td class="wt-num">£12</td><td class="wt-num">£22</td></tr>
+                  <tr><td>Retailer</td><td class="wt-num">£23</td><td class="wt-num">£2</td><td class="wt-num">£16</td></tr>
+                  <tr><td>Marketplace (for comparison)</td><td class="wt-num">£35</td><td class="wt-num">£7</td><td class="wt-num">£21</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="article-highlight"><strong>What the tool shows:</strong> £42 left after VAT; every route still supports a positive cost, and with a £14 unit cost the retailer route has only £2 of headroom, so the tool flags it as worth a closer look. That £2 is the whole safety margin for the project.</div>
+            <div class="wt-tools">
+              <p class="plan-label">Open this step in the tool</p>
+              <div class="cta-row">
+                <a class="button button-secondary" href="../tools/route-to-market-simulator.html#r&amp;marketListPrice=50&amp;marketCogs=14&amp;warehouseCost=0.5&amp;secondaryPackaging=0.3&amp;dtcLogistics=3.5&amp;retailLogistics=0.5&amp;dtcSiteFees=1.5&amp;dtcMarketing=6&amp;marketplaceCosts=3&amp;retailerCosts=1">Target COGS by Route to Market</a>
+              </div>
+            </div>
+            <div class="page-links">
+              <a href="../guides/route-to-market-hardware-product.html">Why route to market matters</a>
+              <a href="../guides/how-to-write-a-product-requirements-document.html">How to write a product requirements document</a>
+              <a href="../guides/route-to-market-and-margins.html">Route to market and margins hub</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage wt-stage" id="stage-concept" aria-labelledby="stage-concept-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">3</span>
+              <div>
+                <h2 id="stage-concept-title">3. Concept</h2>
+                <p class="i2m-question">Which design direction should they develop?</p>
+              </div>
+            </div>
+            <p class="plan-label">Plan sections 1 and 3: Opportunity, and manufacturing route and unit cost</p>
+            <p>
+              Three directions are sketched and roughly modelled: a two-part clip-on plastic housing, an aluminium tube body, and a light built into the
+              seatpost. They are scored against user value, feasibility, manufacturing, sustainability and commercial fit. The winner is then costed
+              straight away, before anyone becomes attached to it. The first layout has 18 parts, including a separate lens, a <a class="text-link-inline" href="../guides/sealing-and-waterproofing-an-enclosure.html">gasket</a> and six screws.
+            </p>
+            <h3>What they decided</h3>
+            <ul>
+              <li>Develop the two-part clip-on housing: it wins clearly on feasibility and commercial fit.</li>
+              <li>Accept that the first estimate is over target and make cost the main question for the prototype stage.</li>
+              <li>Attack assembly and part count first, because they are cheaper to change now than after tooling.</li>
+            </ul>
+            <h3>Key numbers at this point</h3>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Concept scores</p><p>Two-part housing 85, aluminium body 62, seatpost light 55</p></div>
+              <div><p class="plan-label">First unit cost estimate</p><p>£16.23 ex-works, against a £16 ceiling before shipping and duty</p></div>
+              <div><p class="plan-label">Assembly</p><p>18 parts, 6.0 minutes, £1.40 labour per unit at £14 an hour</p></div>
+              <div><p class="plan-label">Price used in the estimate</p><p>£22.90, what a retailer pays at a 45% margin</p></div>
+            </div>
+            <div class="article-highlight"><strong>What the tools show:</strong> the Pugh selector gives the two-part housing 85 points against 62, a lead of 23. The cost estimator gives £16.23 per unit and a gross margin of 29.1% at the retailer's price, which it flags as very thin; bought-in parts are the largest driver at £8.30. Once freight and duty are added (about 8% on this route), the concept would land at roughly £17.50, well over the £16 ceiling.</div>
+            <div class="wt-tools">
+              <p class="plan-label">Open this step in the tool</p>
+              <div class="cta-row">
+                <a class="button button-secondary" href="../tools/pugh-concept-selector.html#r&amp;conceptAName=Two-part+clip-on+housing&amp;conceptBName=Aluminium+tube+body&amp;conceptCName=Seatpost-integrated+light&amp;scoreBValue=4&amp;weightFeasibility=4&amp;scoreAFeasibility=5&amp;scoreCFeasibility=2&amp;scoreAManufacturing=4&amp;scoreBManufacturing=2&amp;scoreCManufacturing=2&amp;scoreBSustainability=4&amp;scoreCSustainability=3&amp;weightCommercial=5&amp;scoreBCommercial=2">Pugh Concept Selector</a>
+                <a class="button button-secondary" href="../tools/product-cost-estimator.html#r&amp;sellingPrice=22.9&amp;materialCost=1.6&amp;processCost=1.4&amp;boughtInCost=8.3&amp;packagingCost=1.1&amp;labourMinutes=6&amp;labourRate=14&amp;scrapRate=5&amp;overheadRate=12">Product Cost Estimator (concept)</a>
+                <a class="button button-secondary" href="../tools/assembly-time.html#r&amp;partCount=18&amp;batchSize=1000&amp;labourRate=14&amp;fastenerCount=6&amp;fastenerTime=12&amp;reorientationCount=7&amp;qaSeconds=30">Assembly Time Estimator (concept)</a>
+              </div>
+            </div>
+            <div class="page-links">
+              <a href="../guides/how-engineers-choose-between-concepts.html">How engineers choose between concepts</a>
+              <a href="../guides/how-to-estimate-manufacturing-cost.html">How to estimate manufacturing cost</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage wt-stage" id="stage-prototype" aria-labelledby="stage-prototype-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">4</span>
+              <div>
+                <h2 id="stage-prototype-title">4. Prototype</h2>
+                <p class="i2m-question">Does it work, and can it be made for less?</p>
+              </div>
+            </div>
+            <p class="plan-label">Plan section 2: Development and prototyping</p>
+            <p>
+              The first integrated build is 15 units with a budget of about £80 each, to test the clip mount, heat from the LED, battery life and water
+              resistance. In parallel the CAD is reworked for cost: the front housing becomes the lens by moulding it in clear material, <a class="text-link-inline" href="../guides/joining-methods-for-product-design.html">snap fits</a> replace
+              four of the six screws, and the gasket is replaced by a moulded-in seal around a single button. Two screws are kept on purpose so the battery
+              can be replaced, which answers the low planet score from stage 1.
+            </p>
+            <h3>What they decided</h3>
+            <ul>
+              <li>Machine the first prototype housings, as they need real fit and function more than appearance.</li>
+              <li>Cut the part count from 18 to 12 and the screws from six to two.</li>
+              <li>Build a line-by-line bill of materials so each cost can be quoted and challenged.</li>
+            </ul>
+            <h3>Key numbers at this point</h3>
+            <div class="table-scroll">
+              <table class="wt-table">
+                <caption class="visually-hidden">Bill of materials for Project Lantern per unit</caption>
+                <thead><tr><th scope="col">BOM category</th><th scope="col">Lines</th><th scope="col">Cost per unit</th></tr></thead>
+                <tbody>
+                  <tr><td>Material for moulded parts</td><td>Front housing and lens £0.55, rear housing £0.55</td><td class="wt-num">£1.10</td></tr>
+                  <tr><td>Processing</td><td>Moulding both housing parts, 2 × £0.45</td><td class="wt-num">£0.90</td></tr>
+                  <tr><td>Bought-in</td><td>LED driver board £3.90, battery £2.10, strap mount £0.70, USB-C cable £0.55, 2 screws £0.08, button seal £0.07</td><td class="wt-num">£7.40</td></tr>
+                  <tr><td>Packaging</td><td>Retail box and insert</td><td class="wt-num">£0.80</td></tr>
+                  <tr><th scope="row">Total</th><td>12 parts on 10 lines</td><td class="wt-num"><strong>£10.20</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="article-highlight"><strong>What the tools show:</strong> the Prototype Strategy Tool recommends CNC machining for this build (score 24.9, just ahead of 3D printing on 23.3, so a quote for one critical part from each would settle it). The revised design assembles in 3.5 minutes, £0.82 of labour, down from 6.0 minutes. The BOM Builder totals £10.20 per product, with the three largest lines making up 68% of it.</div>
+            <div class="wt-tools">
+              <p class="plan-label">Open this step in the tool</p>
+              <div class="cta-row">
+                <a class="button button-secondary" href="../tools/prototype-strategy-tool.html#r&amp;buildQuantity=15&amp;unitBudget=80&amp;functionalFidelity=5&amp;urgencyLevel=3&amp;toolingTolerance=1">Prototype Strategy Tool</a>
+                <a class="button button-secondary" href="../tools/assembly-time.html#r&amp;batchSize=1000&amp;labourRate=14&amp;fastenerCount=2&amp;fastenerTime=12&amp;reorientationCount=2&amp;qaSeconds=30">Assembly Time Estimator (revised)</a>
+                <a class="button button-secondary" href="../tools/bom-builder.html#r&amp;bomName1=Front+housing+and+lens&amp;bomCost1=0.55&amp;bomName2=Rear+housing&amp;bomCost2=0.55&amp;bomName3=Moulding+both+housing+parts&amp;bomCost3=0.45&amp;bomName4=LED+driver+board%2C+assembled&amp;bomCost4=3.9&amp;bomName5=Rechargeable+battery&amp;bomName6=Screws&amp;bomQty6=2&amp;bomCost6=0.04&amp;bomName7=Silicone+strap+mount&amp;bomQty7=1&amp;bomCost7=0.7&amp;bomName8=USB-C+cable&amp;bomCat8=bought&amp;bomCost8=0.55&amp;bomName9=Button+seal&amp;bomCat9=bought&amp;bomQty9=1&amp;bomCost9=0.07&amp;bomName10=Retail+box+and+insert&amp;bomCat10=packaging&amp;bomQty10=1&amp;bomCost10=0.8">Bill of Materials Cost Builder</a>
+              </div>
+            </div>
+            <div class="page-links">
+              <a href="../guides/how-many-prototypes-do-you-need.html">How many prototypes do you need?</a>
+              <a href="../guides/assembly-time-estimate.html">Estimating assembly time</a>
+              <a href="../guides/development-and-prototyping.html">Development and prototyping hub</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage wt-stage" id="stage-verify" aria-labelledby="stage-verify-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">5</span>
+              <div>
+                <h2 id="stage-verify-title">5. Verify</h2>
+                <p class="i2m-question">Is the design proven and ready to freeze?</p>
+              </div>
+            </div>
+            <p class="plan-label">Plan sections 2, 4 and 6: Development, sustainability, and funding</p>
+            <p>
+              Production-intent parts go through drop, rain, temperature and battery-life tests and an electrical pre-compliance check. Before freezing the
+              design, the housing is checked against moulding rules. The first pass, with 0.5° draft on a textured surface, 0.25 mm inside corners and two
+              undercuts, has three likely problems. After revision (3° draft, 1 mm radii, thinner ribs, smaller screw bosses and no undercuts) it passes
+              every check. Two moulders quote, and the team accepts £14,000 for a two-cavity production tool. With that quote in hand, the launch budget is
+              rebuilt, because the next stage spends most of it.
+            </p>
+            <h3>What they decided</h3>
+            <ul>
+              <li>Freeze the design only after the revised housing passes the DFM check and the moulder's own review.</li>
+              <li>Ship by sea rather than air: it is cheaper and, on these figures, keeps the footprint lower.</li>
+              <li>Budget for 14 months to launch, with 15% contingency on top.</li>
+            </ul>
+            <h3>Key numbers at this point</h3>
+            <div class="table-scroll">
+              <table class="wt-table">
+                <caption class="visually-hidden">Pre-launch budget for Project Lantern</caption>
+                <thead><tr><th scope="col">Pre-launch budget line</th><th scope="col">Amount</th></tr></thead>
+                <tbody>
+                  <tr><td>Design and engineering</td><td class="wt-num">£24,000</td></tr>
+                  <tr><td>Prototype builds and test rigs</td><td class="wt-num">£6,000</td></tr>
+                  <tr><td>Tooling (the quoted mould)</td><td class="wt-num">£14,000</td></tr>
+                  <tr><td>Compliance and certification</td><td class="wt-num">£7,000</td></tr>
+                  <tr><td>First inventory: 2,000 units at £13.99 landed, rounded</td><td class="wt-num">£28,000</td></tr>
+                  <tr><td>Launch assets and go-to-market work</td><td class="wt-num">£8,000</td></tr>
+                  <tr><td>Contingency at 15%</td><td class="wt-num">£13,050</td></tr>
+                  <tr><th scope="row">Pre-launch budget</th><td class="wt-num"><strong>£100,050</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="article-highlight"><strong>What the tools show:</strong> the DFM Checker moves from 2 passed, 4 worth a closer look and 3 likely problems on the <a class="text-link-inline" href="../tools/dfm-checker.html#r&amp;dfmMaterial=pcabs&amp;dfmWall=2&amp;dfmThickest=3.5&amp;dfmDraft=0.5&amp;dfmTexture=yes&amp;dfmRadius=0.25&amp;dfmRib=1.6&amp;dfmRibHeight=8&amp;dfmUndercuts=2">first pass</a> to 9 passed and none flagged on the revised part. The carbon estimate for the 90 g PC/ABS housing is 0.89 kg CO2e over four years, 0.51 kg of it before use; <a class="text-link-inline" href="../tools/carbon-footprint.html#r&amp;materialMass=0.09&amp;materialType=pcabs&amp;processType=injection&amp;recycledContent=0&amp;transportDistance=9500&amp;transportMode=air&amp;annualEnergy=0.5&amp;lifetimeYears=4">air freight</a> would raise it to 1.39 kg. The Startup Cost Planner gives £100,050 including £13,050 contingency, about £7,146 a month, and suggests a funding target of £110,055.</div>
+            <p class="wt-note">The carbon estimate covers the housing material, moulding, shipping and charging energy only. The <a class="text-link-inline" href="../guides/electronics-in-a-physical-product.html">circuit board</a> and battery are left out, so use it to compare options, not as a figure for the whole product.</p>
+            <div class="wt-tools">
+              <p class="plan-label">Open this step in the tool</p>
+              <div class="cta-row">
+                <a class="button button-secondary" href="../tools/dfm-checker.html#r&amp;dfmMaterial=pcabs&amp;dfmWall=2&amp;dfmThickest=2.4&amp;dfmDraft=3&amp;dfmTexture=yes&amp;dfmRib=1.2&amp;dfmRibHeight=6&amp;dfmBossHole=2.2&amp;dfmBossOd=4.6">DFM Checker (revised housing)</a>
+                <a class="button button-secondary" href="../tools/carbon-footprint.html#r&amp;materialMass=0.09&amp;materialType=pcabs&amp;processType=injection&amp;recycledContent=0&amp;transportDistance=9500&amp;transportMode=sea&amp;annualEnergy=0.5&amp;lifetimeYears=4">Carbon Footprint Estimator</a>
+                <a class="button button-secondary" href="../tools/startup-cost-planner.html#r&amp;designEngineering=24000&amp;prototypeBuilds=6000&amp;toolingCost=14000&amp;complianceCost=7000&amp;firstInventory=28000&amp;launchCosts=8000&amp;monthsToLaunch=14">Startup Cost Planner</a>
+              </div>
+            </div>
+            <div class="page-links">
+              <a href="../guides/injection-moulding-dfm-checklist.html">DFM checklist for injection-moulded parts</a>
+              <a href="../guides/product-certification-basics.html">Product certification basics</a>
+              <a href="../guides/estimating-hardware-development-costs.html">How much it costs to develop a hardware product</a>
+              <a href="../guides/sustainability-and-product-life.html">Sustainability and product life hub</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage wt-stage" id="stage-industrialise" aria-labelledby="stage-industrialise-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">6</span>
+              <div>
+                <h2 id="stage-industrialise-title">6. Industrialise</h2>
+                <p class="i2m-question">Can it be made reliably at the target cost?</p>
+              </div>
+            </div>
+            <p class="plan-label">Plan section 3: Manufacturing and cost</p>
+            <p>
+              The team checks that a £14,000 tool is the right call at 5,000 units a year, compared with keeping the housings on vacuum casting
+              (£2,400 set-up, £6.50 a set), <a class="text-link-inline" href="../guides/cnc-machining-design-rules.html">CNC machining</a> (£300, £11.00) or 3D printing (£16.00). The moulded housing set costs £2.00, which is the BOM's
+              £1.10 of material plus £0.90 of moulding. The unit cost is then rebuilt with the BOM totals and the revised assembly time, and finally the
+              cost of getting each shipment of 2,000 units to the UK warehouse is added: £150 origin charges, £1,000 sea freight, £40 insurance, 2.7% duty,
+              £150 clearance and £250 UK delivery.
+            </p>
+            <h3>What they decided</h3>
+            <ul>
+              <li>Commit to the production tool: at 5,000 units it is clearly cheaper than any soft-tooled route.</li>
+              <li>Use £13.99 landed, not the supplier's £12.83, in every price and cash calculation from here on.</li>
+              <li>Order 2,000 units first, which matches the £28,000 of first inventory in the budget.</li>
+            </ul>
+            <h3>Key numbers at this point</h3>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Housings, 5,000 sets</p><p>Moulding £24,000 against vacuum casting £34,900; the routes cross at about 2,600 sets</p></div>
+              <div><p class="plan-label">Ex-works unit cost</p><p>£12.83, down from £16.23 at concept</p></div>
+              <div><p class="plan-label">Landed unit cost</p><p>£13.99, about 9% above the supplier price</p></div>
+              <div><p class="plan-label">Against the target</p><p>£2.01 under the £16 retail ceiling, on the £14 design target</p></div>
+            </div>
+            <div class="formula-block">Crossover = (£14,000 − £2,400) ÷ (£6.50 − £2.00) ≈ 2,578 housing sets</div>
+            <div class="article-highlight"><strong>What the tools show:</strong> the Manufacturing Payoff Visualiser names injection moulding the cheapest route at 5,000 units, at £24,000 in total and £10,900 less than vacuum casting. The Product Cost Estimator gives £12.83 per unit fully loaded, with a gross margin of £10.07 (44%) at the £22.90 retailer price and £64,161 of production spend a year. The Landed Cost Calculator gives £13.99 per unit and £27,975 for the shipment, including £725 of duty.</div>
+            <div class="wt-tools">
+              <p class="plan-label">Open this step in the tool</p>
+              <div class="cta-row">
+                <a class="button button-secondary" href="../tools/manufacturing-payoff.html#r&amp;targetQuantity=5000&amp;maxQuantity=10000&amp;printingUnit=16&amp;cncSetup=300&amp;cncUnit=11&amp;vacuumSetup=2400&amp;vacuumUnit=6.5&amp;mouldSetup=14000&amp;mouldUnit=2">Manufacturing Payoff Visualiser</a>
+                <a class="button button-secondary" href="../tools/product-cost-estimator.html#r&amp;sellingPrice=22.9&amp;materialCost=1.1&amp;processCost=0.9&amp;boughtInCost=7.4&amp;packagingCost=0.8&amp;labourMinutes=3.5&amp;labourRate=14&amp;scrapRate=4&amp;overheadRate=12">Product Cost Estimator (final)</a>
+                <a class="button button-secondary" href="../tools/landed-cost-calculator.html#r&amp;landedUnits=2000&amp;landedUnitPrice=12.83&amp;landedOrigin=150&amp;landedFreight=1000&amp;landedInsurance=40&amp;landedDutyRate=2.7&amp;landedClearance=150&amp;landedDelivery=250">Landed Cost Calculator</a>
+              </div>
+            </div>
+            <div class="page-links">
+              <a href="../guides/injection-mould-break-even.html">When an injection mould pays for itself</a>
+              <a href="../guides/landed-cost-freight-duty-vat.html">Landed cost: freight, duty and VAT</a>
+              <a href="../guides/manufacturing-and-cost.html">Manufacturing and cost hub</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage wt-stage" id="stage-launch" aria-labelledby="stage-launch-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">7</span>
+              <div>
+                <h2 id="stage-launch-title">7. Launch</h2>
+                <p class="i2m-question">Does the price work for everyone, and does the cash last?</p>
+              </div>
+            </div>
+            <p class="plan-label">Plan sections 5 and 6: Route to market, and funding and cash</p>
+            <p>
+              With the landed cost fixed, the team checks that the retail chain still works at £50, works out what an average sale is really worth after
+              channel costs, and tests how long it takes to recover the one-off costs and whether cash lasts the first year. The funding raised matches the
+              planner's £110,055 target, so if the contingency is not spent, about £23,000 is left at launch (£10,005 of buffer plus £13,050 of contingency).
+              Running costs are kept to £2,500 a month in year one, with the founders taking no salary.
+            </p>
+            <div class="formula-block">Direct: £41.67 − £11.80 channel costs = £29.87 · Retail: £22.56 − £2.30 = £20.26 · Blend: 0.4 × £29.87 + 0.6 × £20.26 ≈ £24.10</div>
+            <h3>What they decided</h3>
+            <ul>
+              <li>Offer retailers a price that leaves the brand a 38% margin; at <a class="text-link-inline" href="../tools/pricing-ladder.html#r&amp;ladderLanded=13.99&amp;ladderBrandMargin=39&amp;ladderTarget=50">39%</a> the shelf price needed would be £50.04, just over the ceiling. The resulting £22.56 wholesale price is 36p below the £22.92 assumed at the define stage, and the blend below uses it.</li>
+              <li>Plan on £24.10 net revenue and £14.00 cost per unit (the £13.99 landed cost, rounded), so each sale contributes £10.10.</li>
+              <li>Treat the £59,000 of one-off costs (engineering, prototypes, tooling, compliance and launch) as a year-two recovery, and protect the contingency as working capital.</li>
+            </ul>
+            <h3>Key numbers at this point</h3>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Pricing ladder</p><p>£13.99 landed, £22.56 to the retailer, £49.23 on the shelf</p></div>
+              <div><p class="plan-label">Break-even</p><p>5,842 units against 5,000 in year one</p></div>
+              <div><p class="plan-label">First-year cash</p><p>Lowest £16,692 in month 2, closing £28,239</p></div>
+              <div><p class="plan-label">First-year sales</p><p>260 units in month 1, growing 8% a month: 4,935 units</p></div>
+            </div>
+            <div class="article-highlight"><strong>What the tools show:</strong> the Pricing Ladder needs a £49.23 shelf price, £0.77 under the £50 target. The Break-even Calculator puts break-even at 5,842 units, or £140,792 of revenue, and shows a £8,500 shortfall at 5,000 units, so the one-off costs are not recovered in year one. The Cashflow Projection Tool keeps cash positive all year, with the low point of £16,692 in month 2 and £28,239 at the end. A <a class="text-link-inline" href="../tools/cashflow-projection.html#r&amp;openingCash=10000&amp;upfrontSpend=0&amp;monthlyUnits=260&amp;monthlyGrowth=4&amp;sellingPriceCash=24.1&amp;cogsPerUnit=14&amp;monthlyOverhead=2500&amp;paymentDelay=2">harsher test</a>, with the contingency already spent (£10,000 opening cash), 4% growth and customers paying after two months, runs out of cash in month 2 and reaches −£2,669 in month 4.</div>
+            <p class="wt-note">The cash flow tool charges the £14.00 stock cost as each unit sells. The first 2,000 units were paid for in the launch budget, so this is cautious; in practice that money pays for the next production order, which has to be placed before the first batch runs out.</p>
+            <div class="wt-tools">
+              <p class="plan-label">Open this step in the tool</p>
+              <div class="cta-row">
+                <a class="button button-secondary" href="../tools/pricing-ladder.html#r&amp;ladderLanded=13.99&amp;ladderBrandMargin=38&amp;ladderTarget=50">Pricing Ladder</a>
+                <a class="button button-secondary" href="../tools/break-even-calculator.html#r&amp;fixedCosts=59000&amp;sellingPriceBreakEven=24.1&amp;variableCost=14&amp;targetUnits=5000&amp;chartMaxUnits=12000">Break-even Calculator</a>
+                <a class="button button-secondary" href="../tools/cashflow-projection.html#r&amp;openingCash=23000&amp;upfrontSpend=0&amp;monthlyUnits=260&amp;monthlyGrowth=8&amp;sellingPriceCash=24.1&amp;cogsPerUnit=14&amp;monthlyOverhead=2500">Cashflow Projection Tool</a>
+              </div>
+            </div>
+            <div class="page-links">
+              <a href="../guides/how-to-price-a-physical-product.html">How to price a physical product</a>
+              <a href="../guides/financial-break-even-for-hardware-products.html">Break-even for hardware products</a>
+              <a href="../guides/calculating-hardware-startup-cash-flow.html">Calculating hardware start-up cash flow</a>
+              <a href="../guides/funding-and-cash.html">Funding and cash hub</a>
+            </div>
+          </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <h2 id="lessons" class="wt-heading">What the team learned</h2>
+          <ul class="wt-list">
+            <li><strong>The sales route set the cost, not the factory.</strong> The retail route allowed £16 per unit at £50; direct sales allowed £22. Designing to the tighter figure from the start is what kept retail open.</li>
+            <li><strong>Costing the concept early paid off.</strong> The first estimate of £16.23 was over the ceiling before shipping. Because it was known at the concept stage, the fix was a CAD change, not a new tool.</li>
+            <li><strong>Assembly and part count were the cheapest savings.</strong> Going from 18 parts to 12 and from six screws to two cut assembly from 6.0 to 3.5 minutes. Combined with the BOM review, the unit cost fell from £16.23 to £12.83.</li>
+            <li><strong>Landed cost is the real unit cost.</strong> Freight, duty and delivery added £1.16 a unit. Using the supplier price instead would have overstated margin on every sale.</li>
+            <li><strong>Year one pays the running costs, not the development.</strong> Break-even on the £59,000 of one-off costs comes at 5,842 units, early in year two. Without the cost-down, at about £17.50 landed, it would need <a class="text-link-inline" href="../tools/break-even-calculator.html#r&amp;fixedCosts=59000&amp;sellingPriceBreakEven=24.1&amp;variableCost=17.5&amp;targetUnits=5000&amp;chartMaxUnits=12000">8,940 units</a>.</li>
+          </ul>
+
+          <h2 id="decisions" class="wt-heading">The decisions that mattered most</h2>
+          <div class="table-scroll">
+            <table class="wt-table">
+              <caption class="visually-hidden">The decisions that mattered most and what each one changed</caption>
+              <thead><tr><th scope="col">Decision</th><th scope="col">Stage</th><th scope="col">What it changed</th></tr></thead>
+              <tbody>
+                <tr><td>Design to the retail route's cost ceiling</td><td>2. Define</td><td>Set the £14 landed target that every later estimate was checked against</td></tr>
+                <tr><td>Cost the winning concept immediately</td><td>3. Concept</td><td>Found a £16.23 cost while it was still cheap to change</td></tr>
+                <tr><td>Merge the lens into the housing and replace screws with snap fits</td><td>4. Prototype</td><td>Part count 18 to 12, assembly 6.0 to 3.5 minutes</td></tr>
+                <tr><td>Fix the moulding issues before asking for tool quotes</td><td>5. Verify</td><td>Turned three likely problems into a clean DFM check and a firm £14,000 quote</td></tr>
+                <tr><td>Commit to a production tool</td><td>6. Industrialise</td><td>Saved £10,900 over vacuum casting at 5,000 units</td></tr>
+                <tr><td>Keep the contingency as working capital</td><td>7. Launch</td><td>Kept cash positive even with slower growth and late payment</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="your-own-product" class="wt-heading">Run the same process with your own product</h2>
+          <p class="wt-intro">Open the tools in this order, replace the walkthrough's figures with your own, and save each result to your <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a> with the "Save to my product plan" button. The plan collects them under the same seven sections used here, so the thread from target cost to cash is kept in one place.</p>
+          <div class="table-scroll">
+            <table class="wt-table">
+              <caption class="visually-hidden">Which tools to use for each section of the product plan</caption>
+              <thead><tr><th scope="col">Plan section</th><th scope="col">Tools used in this walkthrough</th><th scope="col">The number to carry forward</th></tr></thead>
+              <tbody>
+                <tr><td>1. Opportunity and concept</td><td><a class="text-link-inline" href="../tools/product-purpose.html">Product Purpose Framework</a>, <a class="text-link-inline" href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a></td><td>Price ceiling and chosen concept</td></tr>
+                <tr><td>2. Development and prototyping</td><td><a class="text-link-inline" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>, <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a>, <a class="text-link-inline" href="../tools/dfm-checker.html">DFM Checker</a></td><td>Assembly minutes per unit</td></tr>
+                <tr><td>3. Manufacturing and cost</td><td><a class="text-link-inline" href="../tools/bom-builder.html">BOM Builder</a>, <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>, <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff</a>, <a class="text-link-inline" href="../tools/landed-cost-calculator.html">Landed Cost Calculator</a></td><td>Tooling cost and landed unit cost</td></tr>
+                <tr><td>4. Sustainability and product life</td><td><a class="text-link-inline" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a></td><td>Which option has the lower footprint</td></tr>
+                <tr><td>5. Route to market and margins</td><td><a class="text-link-inline" href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a>, <a class="text-link-inline" href="../tools/pricing-ladder.html">Pricing Ladder</a>, <a class="text-link-inline" href="../tools/break-even-calculator.html">Break-even Calculator</a></td><td>Target cost ceiling and contribution per unit</td></tr>
+                <tr><td>6. Funding and cash</td><td><a class="text-link-inline" href="../tools/startup-cost-planner.html">Startup Cost Planner</a>, <a class="text-link-inline" href="../tools/cashflow-projection.html">Cashflow Projection Tool</a></td><td>Funding target and lowest cash point</td></tr>
+                <tr><td>7. IP, partners and compliance</td><td><a class="text-link-inline" href="../tools/certification-readiness.html">Certification Readiness Checklist</a>, <a class="text-link-inline" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a></td><td>What a manufacturer needs to quote</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="wt-note">Project Lantern is an illustrative product; all figures are invented for teaching and are not data about any real product or client. Your own figures, quotes and channel terms will differ, sometimes by a wide margin.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Is Project Lantern a real product?</h3>
+                <p>No. It is an illustrative product, and all the figures are invented for teaching. They are not data about any real product or client. The figures are chosen to be plausible so the connections between stages are realistic, but your own costs, prices and timescales will differ.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why does the walkthrough use the retailer price rather than the website price?</h3>
+                <p>Because it is the tightest limit. At £50 the retail route leaves room for a £16 unit cost, against £22 for direct sales. A product designed to the retail figure can be sold through either route; one designed to the direct figure cannot be sold through shops at a profit. See <a class="text-link-inline" href="../guides/route-to-market-hardware-product.html">why route to market matters</a>.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why is the landed cost used instead of the factory price?</h3>
+                <p>The factory price leaves out freight, insurance, duty, clearance and delivery to your warehouse. In this walkthrough they add £1.16 a unit, about 9%. Prices, margins, break-even and cash flow should all use the landed figure. The <a class="text-link-inline" href="../guides/landed-cost-freight-duty-vat.html">landed cost guide</a> explains each part.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I open the tools with my own numbers instead?</h3>
+                <p>Yes. Each button opens the tool with the walkthrough's inputs, and you can change any of them. Use "Copy link to this result" to keep or share your version, and "Save to my product plan" to collect results in the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a>. Nothing is stored on a server.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container callout-banner">
+          <h2>See the stages in more detail</h2>
+          <p>
+            The <a class="text-link-inline" href="../idea-to-manufacture/index.html">idea to manufacture overview</a> explains each stage in general terms,
+            and the <a class="text-link-inline" href="../guides/learning-paths.html">learning paths</a> suggest a reading order for your role. If you are working
+            through a real decision like the ones above and would like a second opinion, Andrew is happy to help.
+          </p>
+          <div class="cta-row">
+            <a class="button button-primary" href="../tools/product-plan-builder.html">Start your product plan</a>
+            <a class="button button-secondary" href="../contact/index.html">Ask Andrew</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">A phased route through product definition, engineering, manufacture, and launch planning.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Key Phases</h3>
+          <a href="../tools/product-purpose.html">Validate the idea</a>
+          <a href="../tools/pugh-concept-selector.html">Choose the concept</a>
+          <a href="../tools/manufacturing-payoff.html">Plan manufacture</a>
+          <a href="../tools/route-to-market-simulator.html">Set target COGS</a>
+        </div>
+        <div>
+          <h3>Pages</h3>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

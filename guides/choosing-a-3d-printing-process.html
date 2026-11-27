@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Choosing a 3D Printing Process | Orion Design</title>
+    <meta
+      name="description"
+      content="How to choose a 3D printing process for prototypes: FDM, SLA, SLS, MJF and metal compared, choosing by question, design tips, file preparation and quotes."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/choosing-a-3d-printing-process.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Choosing a 3D printing process for prototypes | Orion Design">
+    <meta
+      property="og:description"
+      content="How to choose a 3D printing process for prototypes: FDM, SLA, SLS, MJF and metal compared, choosing by question, design tips, file preparation and quotes."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/choosing-a-3d-printing-process.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-choosing-a-3d-printing-process.jpg">
+    <meta property="og:image:alt" content="Choosing a 3D printing process for prototypes guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Choosing a 3D printing process for prototypes | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to choose a 3D printing process for prototypes: FDM, SLA, SLS, MJF and metal compared, choosing by question, design tips, file preparation and quotes."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-choosing-a-3d-printing-process.jpg">
+    <meta name="twitter:image:alt" content="Choosing a 3D printing process for prototypes guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-choosing-a-3d-printing-process.jpg",
+        "headline": "Choosing a 3D printing process for prototypes: FDM, SLA, SLS, MJF and metal",
+        "description": "How to choose a 3D printing process for prototypes: FDM, SLA, SLS, MJF and metal compared, choosing by question, design tips, file preparation and quotes.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-26",
+        "dateModified": "2026-11-26",
+        "articleSection": "Development and prototyping",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/choosing-a-3d-printing-process.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "3D printing"
+          },
+          {
+            "@type": "Thing",
+            "name": "Prototyping"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Choosing a 3D printing process",
+                "item": "https://oriondesign.xyz/guides/choosing-a-3d-printing-process.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Which 3D printing process is best for prototypes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on the question the prototype must answer. FDM suits quick fit and form checks, SLA suits appearance and fine detail, SLS or MJF nylon suits tougher functional parts and small batches, and metal printing suits complex metal parts. Many products use several processes across their prototype rounds."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between FDM and SLA printing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "FDM lays down melted plastic filament, giving quick, low-cost parts with visible layer lines and weaker bonds between layers. SLA cures liquid resin with light, giving smoother surfaces and finer detail, but many resins are more brittle."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are SLS and MJF parts strong enough for functional testing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For many functional checks, yes. Powder bed nylon parts are tough and fairly even in strength in all directions, which suits clips, brackets and trial housings. They are still not your production material, so treat results as indicative and re-test critical features in production-intent parts."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What file format should I send to a 3D print bureau?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "STL is the common format for printing, exported at a fine enough resolution that curves are smooth. Send STEP as well where possible, state the units, and add notes on orientation, cosmetic faces, holes to be drilled and inserts to be fitted."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should I stop 3D printing and use another process?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "When the questions depend on the production material, finish or quantity. CNC machining suits real-material functional parts, vacuum casting suits tens of production-like parts, and bridge tooling suits hundreds to several thousand moulded parts once the design is stable."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Choosing a 3D printing process</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders and engineers ordering printed prototype parts</p>
+            <h1>Choosing a 3D printing process for prototypes: FDM, SLA, SLS, MJF and metal</h1>
+            <p>
+              What the main 3D printing processes are good and bad at, how to pick one by the question your prototype must answer, how to design and prepare parts for printing, and when to move on to machining, casting or tooling.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Choose the process by the question the prototype must answer: filament (FDM) for quick fit and form checks, resin (SLA) for appearance and fine detail, powder nylon (SLS or MJF) for tougher functional parts and small batches, and metal printing only for complex metal parts.</h2>
+              <p>
+                No printing process behaves exactly like a moulded or machined production part, so treat printed results on strength, stiffness and finish as indicative.
+                Most products use more than one process across their prototype rounds, and printing usually gives way to machining, vacuum casting or bridge tooling as the design settles.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#processes">The main processes in brief</a></li>
+              <li><a class="text-link-inline" href="#compare">How they compare</a></li>
+              <li><a class="text-link-inline" href="#question">Choosing by the question the prototype must answer</a></li>
+              <li><a class="text-link-inline" href="#design">Designing parts for printing</a></li>
+              <li><a class="text-link-inline" href="#files">Preparing files and asking for quotes</a></li>
+              <li><a class="text-link-inline" href="#move-on">When to move beyond printing</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: three rounds of a handheld product</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#rules">Decision rules</a></li>
+            </ol>
+
+            <h2 id="processes">The main processes in brief</h2>
+            <p>
+              "3D printing" covers several different processes. All build a part layer by layer, but their materials, surfaces and strength differ enough to change what a prototype can tell you.
+            </p>
+
+            <h3>FDM: filament printing</h3>
+            <p>
+              Fused deposition modelling (<a class="glossary-term" href="../knowledge/glossary.html#term-fdm" data-definition="Fused deposition modelling: 3D printing by extruding melted plastic filament layer by layer." aria-label="FDM: Fused deposition modelling: 3D printing by extruding melted plastic filament layer by layer. (glossary)">FDM</a>) melts a plastic filament and lays it down in lines, layer by layer. It is the process behind most desktop printers and usually the quickest, cheapest way to get a part in your hand.
+            </p>
+            <p>
+              <a class="glossary-term" href="../knowledge/glossary.html#term-layer-lines" data-definition="The visible ridges left on a 3D-printed part where each layer was built on the one below. They affect the look and feel of the part and, in FDM, where it is weakest." aria-label="Layer lines: The visible ridges left on a 3D-printed part where each layer was built on the one below. They affect the look and feel of the part and, in FDM, where it is weakest. (glossary)">Layer lines</a> are visible, fine detail is limited, and parts are <a class="glossary-term" href="../knowledge/glossary.html#term-anisotropy" data-definition="Having different properties in different directions. A 3D-printed part, especially one printed by FDM, is often weaker between its layers than along them." aria-label="anisotropic: Having different properties in different directions. A 3D-printed part, especially one printed by FDM, is often weaker between its layers than along them. (glossary)">anisotropic</a>: noticeably weaker between layers than along them, so a clip can snap along a layer line under a load it would otherwise carry. FDM is good for fit checks, form studies, jigs and early mechanism layouts.
+            </p>
+
+            <h3>SLA: resin printing</h3>
+            <p>
+              Stereolithography (<a class="glossary-term" href="../knowledge/glossary.html#term-sla" data-definition="Stereolithography: 3D printing that cures liquid resin with light, giving fine detail and smooth surfaces." aria-label="SLA: Stereolithography: 3D printing that cures liquid resin with light, giving fine detail and smooth surfaces. (glossary)">SLA</a>) and related resin processes cure a liquid photopolymer with light, layer by layer. They give fine detail, crisp edges and smooth surfaces that take paint well, which makes them a common choice for looks-like models, small detailed parts and masters for <a class="glossary-term" href="../knowledge/glossary.html#term-vacuum-casting" data-definition="Casting polyurethane resin into silicone moulds under vacuum to make small batches of production-like parts." aria-label="vacuum casting: Casting polyurethane resin into silicone moulds under vacuum to make small batches of production-like parts. (glossary)">vacuum casting</a>.
+            </p>
+            <p>
+              Many standard resins are more brittle than production plastics, and some soften, yellow or embrittle with heat and ultraviolet light. Tougher engineering resins exist but still do not behave quite like a moulded thermoplastic. Parts need washing, curing and support removal.
+            </p>
+
+            <h3>SLS and MJF: powder bed nylon</h3>
+            <p>
+              Selective laser sintering (<a class="glossary-term" href="../knowledge/glossary.html#term-sls" data-definition="Selective laser sintering: 3D printing that fuses nylon powder with a laser, producing strong functional parts." aria-label="SLS: Selective laser sintering: 3D printing that fuses nylon powder with a laser, producing strong functional parts. (glossary)">SLS</a>) and <a class="glossary-term" href="../knowledge/glossary.html#term-mjf" data-definition="Multi Jet Fusion: 3D printing that fuses fine plastic powder, usually nylon, layer by layer, giving tough functional parts without support structures." aria-label="Multi Jet Fusion: Multi Jet Fusion: 3D printing that fuses fine plastic powder, usually nylon, layer by layer, giving tough functional parts without support structures. (glossary)">Multi Jet Fusion</a> (MJF) fuse fine plastic powder, most commonly <a class="glossary-term" href="../knowledge/glossary.html#term-nylon-pa" data-definition="Polyamide: a strong, tough engineering plastic that absorbs moisture, often glass-filled for stiffness." aria-label="nylon: Polyamide: a strong, tough engineering plastic that absorbs moisture, often glass-filled for stiffness. (glossary)">nylon</a>, layer by layer. The surrounding unfused powder supports the part as it builds, so no support structures are needed and parts can be nested together in one build.
+            </p>
+            <p>
+              The result is tough nylon parts that suit functional prototypes, <a class="text-link-inline" href="joining-methods-for-product-design.html">snap fits</a> that must flex, trial housings and small batches. The surface is slightly grainy, often dyed or left grey or white, and fine detail is softer than resin.
+            </p>
+
+            <h3>Metal printing</h3>
+            <p>
+              Metal powder bed processes melt metal powder, typically steels, aluminium or titanium alloys, to build dense metal parts. They are specialist processes used for complex metal parts that would be hard or impossible to machine, such as internal channels or lightweight lattice structures.
+            </p>
+            <p>
+              Parts need supports and significant post-processing, often heat treatment, support removal and machining of critical faces. For most consumer product prototypes, a <a class="text-link-inline" href="cnc-machining-design-rules.html">machined part</a> is simpler and cheaper unless the geometry genuinely needs printing.
+            </p>
+
+            <h2 id="compare">How they compare</h2>
+            <p>These are qualitative, typical comparisons. Specific machines, materials and bureaus vary, so ask your supplier about the material they would actually use.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Process</th>
+                  <th>Surface</th>
+                  <th>Detail</th>
+                  <th>Strength</th>
+                  <th>Typical prototype use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>FDM (filament)</td>
+                  <td>Visible layer lines</td>
+                  <td>Moderate</td>
+                  <td>Reasonable along layers, weaker between them</td>
+                  <td>Fit and form checks, jigs, quick iterations</td>
+                </tr>
+                <tr>
+                  <td>SLA (resin)</td>
+                  <td>Smooth, paints well</td>
+                  <td>High</td>
+                  <td>Often brittle; varies by resin</td>
+                  <td>Looks-like models, small detailed parts, casting masters</td>
+                </tr>
+                <tr>
+                  <td>SLS and MJF (powder nylon)</td>
+                  <td>Slightly grainy, matt</td>
+                  <td>Good</td>
+                  <td>Tough and fairly even in all directions</td>
+                  <td>Functional prototypes, trial housings, small batches</td>
+                </tr>
+                <tr>
+                  <td>Metal printing</td>
+                  <td>Rough until finished</td>
+                  <td>Good</td>
+                  <td>High, after heat treatment</td>
+                  <td>Complex metal parts that are hard to machine</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <a class="text-link-inline" href="prototyping-vs-production-startup-guide.html">Prototyping vs production</a> places 3D printing alongside CNC machining, vacuum casting and tooling, where it is typically best for fast learning and geometry checks at quantities of one to tens.
+            </p>
+
+            <h2 id="question">Choosing by the question the prototype must answer</h2>
+            <p>
+              The most useful starting point is not the process but the question. A prototype that answers the wrong question well is still wasted.
+              <a class="text-link-inline" href="looks-like-vs-works-like-prototypes.html">Looks-like vs works-like prototypes</a> explains how to separate appearance questions from function questions; the printing process then follows.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 300" width="100%" role="img" aria-labelledby="tdp-fig-title tdp-fig-desc">
+                <title id="tdp-fig-title">Choosing a 3D printing process by the question the prototype must answer</title>
+                <desc id="tdp-fig-desc">Four questions each lead to a typical process. Does it fit and is the size right leads to FDM filament printing. Does it look and feel right leads to SLA resin printing. Does it work, flex or survive trials leads to SLS or MJF nylon. Does a complex metal part work leads to metal printing.</desc>
+                <rect x="8" y="8" width="324" height="40" rx="10" class="gd-box"/>
+                <text x="170" y="33" text-anchor="middle" class="gd-h">What must this prototype answer?</text>
+                <rect x="8" y="62" width="324" height="52" rx="10" class="gd-box-indigo"/>
+                <text x="20" y="84" class="gd-h">Does it fit? Is the size right?</text>
+                <text x="20" y="103" class="gd-m">FDM filament: quick and cheap</text>
+                <rect x="8" y="122" width="324" height="52" rx="10" class="gd-box-magenta"/>
+                <text x="20" y="144" class="gd-h">Does it look and feel right?</text>
+                <text x="20" y="163" class="gd-m">SLA resin: smooth, fine detail</text>
+                <rect x="8" y="182" width="324" height="52" rx="10" class="gd-box-teal"/>
+                <text x="20" y="204" class="gd-h">Does it work, flex or survive trials?</text>
+                <text x="20" y="223" class="gd-m">SLS or MJF nylon: tough, no supports</text>
+                <rect x="8" y="242" width="324" height="52" rx="10" class="gd-box"/>
+                <text x="20" y="264" class="gd-h">Does a complex metal part work?</text>
+                <text x="20" y="283" class="gd-m">Metal printing, or consider machining</text>
+              </svg>
+              <figcaption>Typical starting points, not rules. If a question depends on the production material, no printing process may be close enough.</figcaption>
+            </figure>
+            <ul>
+              <li><strong>"Does it fit, and is the size right?"</strong> FDM is usually enough; speed matters more than finish.</li>
+              <li><strong>"Does it look and feel right?"</strong> SLA gives surfaces that can be sanded and painted to represent the final finish for user sessions and photography.</li>
+              <li><strong>"Does it work, flex or survive handling?"</strong> SLS or MJF nylon is the usual printed choice for clips, hinges, brackets and trial housings, with the caveat that nylon is not your production plastic.</li>
+              <li><strong>"Will it survive in the production material?"</strong> This is often a question printing cannot answer. Machined parts in the real material, or vacuum castings in a resin chosen to mimic it, are usually better evidence.</li>
+            </ul>
+            <p>
+              <a class="text-link-inline" href="how-many-prototypes-do-you-need.html">How many prototypes do you need?</a> shows how to group questions into rounds, so you can see where each process fits in your plan.
+            </p>
+
+            <h2 id="design">Designing parts for printing</h2>
+            <p>Printing removes many moulding constraints, but it adds a few of its own. These points are qualitative; ask your bureau for the minimum sizes their process and material support.</p>
+            <ul>
+              <li><strong>Wall thickness.</strong> Very thin walls can warp or break during cleaning, and very thick sections can distort. Keep walls reasonably even, and if the part will later be moulded, use the wall thickness intended for moulding so the prototype stays honest.</li>
+              <li><strong>Orientation.</strong> Orientation decides where layer lines fall, which faces are smoothest and, for FDM, which directions are weak. Put loaded features such as clips and bosses so the load runs along the layers, and keep cosmetic faces away from supports.</li>
+              <li><strong>Supports.</strong> FDM, SLA and metal printing need supports under overhangs, which leave marks. Chamfers instead of flat overhangs, or splitting a part in two, can reduce them. Powder processes need no supports, but enclosed hollows need escape holes for the powder.</li>
+              <li><strong>Holes and threads.</strong> Small holes often print undersize or out of round; plan to drill or ream holes that matter. Printed threads are weak and wear quickly, so use heat-set or press-fit threaded inserts, or self-tapping screws into bosses, for anything assembled more than once.</li>
+              <li><strong>Clearances.</strong> Parts that must slide or snap together need more clearance than the same parts moulded. Print a quick test piece for critical fits rather than relying on nominal sizes, and see <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances and engineering drawings</a> for how to state the fits that matter.</li>
+              <li><strong>Post-processing.</strong> Sanding, painting, dyeing, vapour smoothing and machining critical faces all help. For looks-like models, finishing often takes longer than printing.</li>
+            </ul>
+
+            <h2 id="files">Preparing files and asking for quotes</h2>
+            <p>A print bureau can only quote and build what the files and notes tell them. A clean package avoids delays and surprises:</p>
+            <ol>
+              <li><strong>Export the right files.</strong> STL is the common format for printing; export at a fine enough resolution that curves are not faceted. Send STEP as well, because it keeps exact geometry.</li>
+              <li><strong>Check units and scale.</strong> State the units, and give one or two key overall dimensions so the bureau can check the scale.</li>
+              <li><strong>Name the process and material, or ask for advice.</strong> If you are unsure, describe what the part must do and let the bureau suggest options.</li>
+              <li><strong>Add orientation and finish notes.</strong> Mark cosmetic faces, faces that must be free of support marks, loaded features and any holes to be drilled or inserts to be fitted.</li>
+              <li><strong>Give quantity and deadline.</strong> Quantity changes the best process and the price per part.</li>
+            </ol>
+            <p>
+              When quotes come back, check they are for the same process, material, finish and quantity before comparing price. <a class="text-link-inline" href="comparing-manufacturing-quotes.html">Getting and comparing manufacturing quotes</a> explains how to compare like with like.
+            </p>
+
+            <h2 id="move-on">When to move beyond printing</h2>
+            <p>Printing is strongest while the design is changing. As questions shift from "what should it be?" to "will it work as made?", other routes usually give better evidence:</p>
+            <ul>
+              <li><strong>CNC machining</strong> when you need real materials, tight geometry or durable functional parts, typically from one part up to low hundreds.</li>
+              <li><strong>Vacuum casting</strong> when you need tens of looks-like or trial parts in production-like plastics; a silicone mould typically yields roughly 10 to 25 parts, often from an SLA master.</li>
+              <li><strong>Bridge tooling</strong> when you need hundreds to several thousand moulded parts for pilots or early sales, and the design is stable enough to commit to a tool.</li>
+            </ul>
+            <p>
+              <a class="text-link-inline" href="risk-progressive-manufacturing-strategy.html">The risk-progressive manufacturing strategy</a> explains how to step through these routes without over-committing, and <a class="text-link-inline" href="from-3d-printed-prototype-to-moulded-part.html">from 3D-printed prototype to moulded part</a> covers the design changes a printed part usually needs before it can be moulded.
+              The <a class="text-link-inline" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a> scores printing against CNC, vacuum casting, bridge tooling and pilot injection for a specific build, and the
+              <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a> shows where a tooled route starts to pay back.
+            </p>
+
+            <h2 id="example">Worked example: three rounds of a handheld product</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A small team is developing a handheld battery-powered device with a two-part plastic housing, a button, a clip-on cover and a small <a class="text-link-inline" href="electronics-in-a-physical-product.html">circuit board</a>.
+                They plan three prototype rounds and choose a printing process, or not, for each based on the question that round must answer.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Round</th>
+                  <th>Question</th>
+                  <th>Process chosen</th>
+                  <th>Why</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1. Form and fit</td>
+                  <td>Is the size comfortable in the hand, and do the board and battery fit inside?</td>
+                  <td>FDM, several variants</td>
+                  <td>Quick and cheap; layer lines do not matter for grip and packaging checks</td>
+                </tr>
+                <tr>
+                  <td>2. Appearance and function</td>
+                  <td>Do users like the look and feel, and does the cover clip survive repeated use?</td>
+                  <td>SLA for painted looks-like models; SLS nylon for the working clip and housing</td>
+                  <td>Two questions, two processes: resin for finish, nylon for a clip that must flex</td>
+                </tr>
+                <tr>
+                  <td>3. Field trial</td>
+                  <td>Does the product hold up in real use by a small group of users?</td>
+                  <td>Vacuum cast housings from SLA masters</td>
+                  <td>Production-like plastic and finish for a few dozen units</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              In round 2 the FDM clip from round 1 would have been misleading: it snapped along a layer line, while the nylon clip flexed as intended. The team still treats the nylon result as indicative and plans to re-test the clip in moulded parts before design freeze.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Judging strength from FDM parts.</strong>
+                A filament part that breaks along a layer line tells you about the print, not the design; one that survives may still fail when moulded. Use FDM for geometry and test strength in more representative material.
+              </div>
+              <div>
+                <strong>Expecting production finish.</strong>
+                No printed part comes off the machine looking moulded. If appearance matters, budget for finishing, or use vacuum casting once the form is settled.
+              </div>
+              <div>
+                <strong>Using one process for every question.</strong>
+                A single favourite process is convenient but answers some questions badly. Match the process to the question, round by round.
+              </div>
+              <div>
+                <strong>Ignoring orientation.</strong>
+                Orientation changes strength, accuracy and where support marks fall. Left to chance, it can put a weak layer line through a clip or a support scar on a cosmetic face.
+              </div>
+            </div>
+
+            <h2 id="rules">Decision rules</h2>
+            <ul>
+              <li><strong>If the question is fit or size</strong>, use FDM and print variants quickly.</li>
+              <li><strong>If the question is appearance or fine detail</strong>, use SLA and budget for finishing.</li>
+              <li><strong>If the part must flex, carry load or survive handling</strong>, use SLS or MJF nylon and treat results as indicative.</li>
+              <li><strong>If the part is metal and complex</strong>, compare metal printing with machining before choosing.</li>
+              <li><strong>If the answer depends on the production material</strong>, move to machining, vacuum casting or tooling rather than printing again.</li>
+            </ul>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Write down the question each upcoming prototype must answer.</li>
+              <li>Compare printing with other routes for each build in the <a class="text-link-inline" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>.</li>
+              <li>Prepare STL and STEP files with units, orientation and finish notes before requesting quotes.</li>
+              <li>See where these rounds sit in the wider journey in the <a class="text-link-inline" href="development-and-prototyping.html">development and prototyping hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Pick a prototype route</h3>
+                <p>Score 3D printing against CNC, vacuum casting and tooling for your build.</p>
+                <a class="button button-primary" href="../tools/prototype-strategy-tool.html" data-analytics-event="article_cta_click" data-analytics-label="tdp_guide_to_proto">Open Prototype Strategy Tool</a>
+              </div>
+              <div class="article-action-card">
+                <h3>See when tooling pays back</h3>
+                <p>Compare tooled and untooled routes as volumes grow.</p>
+                <a class="button button-secondary" href="../tools/manufacturing-payoff.html" data-analytics-event="article_cta_click" data-analytics-label="tdp_guide_to_payoff">Open Manufacturing Payoff Visualiser</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/startup-cost-planner.html">Startup Cost Planner</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="looks-like-vs-works-like-prototypes.html">Looks-like vs works-like prototypes</a></div>
+                <div class="aside-item"><a class="text-link" href="how-many-prototypes-do-you-need.html">How many prototypes do you need?</a></div>
+                <div class="aside-item"><a class="text-link" href="prototyping-vs-production-startup-guide.html">Prototyping vs production</a></div>
+                <div class="aside-item"><a class="text-link" href="comparing-manufacturing-quotes.html">Getting and comparing quotes</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>3D printing</span>
+                <span>FDM vs SLA</span>
+                <span>SLS and MJF</span>
+                <span>Prototype methods</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Which 3D printing process is best for prototypes?</h3>
+                <p>It depends on the question the prototype must answer. FDM suits quick fit and form checks, SLA suits appearance and fine detail, SLS or MJF nylon suits tougher functional parts and small batches, and metal printing suits complex metal parts. Many products use several processes across their prototype rounds.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between FDM and SLA printing?</h3>
+                <p>FDM lays down melted plastic filament, giving quick, low-cost parts with visible layer lines and weaker bonds between layers. SLA cures liquid resin with light, giving smoother surfaces and finer detail, but many resins are more brittle.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Are SLS and MJF parts strong enough for functional testing?</h3>
+                <p>For many functional checks, yes. Powder bed nylon parts are tough and fairly even in strength in all directions, which suits clips, brackets and trial housings. They are still not your production material, so treat results as indicative and re-test critical features in production-intent parts.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What file format should I send to a 3D print bureau?</h3>
+                <p>STL is the common format for printing, exported at a fine enough resolution that curves are smooth. Send STEP as well where possible, state the units, and add notes on orientation, cosmetic faces, holes to be drilled and inserts to be fitted.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should I stop 3D printing and use another process?</h3>
+                <p>When the questions depend on the production material, finish or quantity. CNC machining suits real-material functional parts, vacuum casting suits tens of production-like parts, and bridge tooling suits hundreds to several thousand moulded parts once the design is stable.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

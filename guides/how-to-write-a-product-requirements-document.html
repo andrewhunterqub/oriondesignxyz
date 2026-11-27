@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>How to Write a Product Requirements Document | Orion Design</title>
+    <meta
+      name="description"
+      content="How to write a product requirements document for a physical product: what to include, writing testable requirements, an example, keeping it up to date and mistakes."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/how-to-write-a-product-requirements-document.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="How to write a product requirements document | Orion Design">
+    <meta
+      property="og:description"
+      content="How to write a product requirements document for a physical product: what to include, writing testable requirements, an example, keeping it up to date and mistakes."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/how-to-write-a-product-requirements-document.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-how-to-write-a-product-requirements-document.jpg">
+    <meta property="og:image:alt" content="How to write a product requirements document guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to write a product requirements document | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to write a product requirements document for a physical product: what to include, writing testable requirements, an example, keeping it up to date and mistakes."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-how-to-write-a-product-requirements-document.jpg">
+    <meta name="twitter:image:alt" content="How to write a product requirements document guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-how-to-write-a-product-requirements-document.jpg",
+        "headline": "How to write a product requirements document for a physical product",
+        "description": "How to write a product requirements document for a physical product: what to include, writing testable requirements, an example, keeping it up to date and mistakes.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-26",
+        "articleSection": "Opportunity and concept",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/how-to-write-a-product-requirements-document.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Product requirements document"
+          },
+          {
+            "@type": "Thing",
+            "name": "Product specification"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How to write a product requirements document",
+                "item": "https://oriondesign.xyz/guides/how-to-write-a-product-requirements-document.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a product requirements document?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A document that sets out what a product must do, for whom, in what conditions and to what standard, along with cost, volume and regulatory targets, so a team can design, cost and test against it. It describes the need rather than the design."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long should a product requirements document be?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Long enough to cover the essentials and short enough to be read and used. For many physical products, a focused few pages with numbered, prioritised requirements works better than a long document."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What makes a good requirement?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It is specific, testable, prioritised and says what is needed rather than how to achieve it. If you cannot describe how you would test it, rewrite it."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is a PRD the same as a design brief?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "They overlap. A design brief often focuses on the project, scope and goals for a designer, while a PRD focuses on the product's requirements. Many small teams combine them into one document."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should the requirements be updated?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Whenever research, prototypes, testing or quotes change what you know. Record what changed and why, so decisions can be traced back to evidence."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">How to write a product requirements document</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders and product teams turning an idea into a brief that can be designed and tested</p>
+            <h1>How to write a product requirements document for a physical product</h1>
+            <p>
+              A practical guide to writing requirements for a physical product: what to include, how to make each requirement specific and testable, and how to keep the document useful as the project moves from idea to production.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A product requirements document says what the product must do, for whom, and how you will know it does it, without deciding how it will be designed.</h2>
+              <p>
+                Write down the user and the problem, the use environment, the functional and performance requirements, regulatory and safety needs, cost and volume targets, and constraints.
+                Make each requirement specific and testable, mark which are essential, and keep it short enough that people actually read it. Update it as you learn, and use it to brief designers, judge concepts and plan tests.
+              </p>
+            </div>
+
+            <h2>Why write one</h2>
+            <p>
+              A <a class="glossary-term" href="../knowledge/glossary.html#term-product-requirements-document-prd" data-definition="A written list of what a product must do, for whom, with measurable targets and constraints." aria-label="product requirements document: A written list of what a product must do, for whom, with measurable targets and constraints. (glossary)">product requirements document</a> (PRD), sometimes called a product specification or design brief, turns an idea into something a team can design, cost and test against.
+              Without one, decisions drift, each person imagines a different product, and nobody can say when the design is good enough.
+              It is also the basis for a clear brief to a consultancy; see <a class="text-link-inline" href="working-with-a-product-design-consultancy.html">working with a product design consultancy</a>.
+            </p>
+
+            <h2>What to include</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Section</th>
+                  <th>What it answers</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Purpose and user</td>
+                  <td>Who the product is for, the problem it solves and why they will choose it over their current alternative</td>
+                </tr>
+                <tr>
+                  <td>Use environment</td>
+                  <td>Where and how it is used: indoors or outdoors, temperature, moisture, drops, cleaning, who handles it</td>
+                </tr>
+                <tr>
+                  <td>Functional requirements</td>
+                  <td>What it must do</td>
+                </tr>
+                <tr>
+                  <td>Performance requirements</td>
+                  <td>How well: capacity, speed, battery life, accuracy, strength, with numbers</td>
+                </tr>
+                <tr>
+                  <td>Usability and appearance</td>
+                  <td>Size and weight limits, controls, accessibility, brand and finish expectations; check them through <a class="text-link-inline" href="usability-testing-a-prototype.html">usability testing</a></td>
+                </tr>
+                <tr>
+                  <td>Regulatory and safety</td>
+                  <td>Markets, likely regulations and standards, and safety requirements</td>
+                </tr>
+                <tr>
+                  <td>Commercial targets</td>
+                  <td>Target <a class="glossary-term" href="../knowledge/glossary.html#term-retail-price-rrp" data-definition="Recommended retail price: the price the end customer is expected to pay, usually including VAT in the UK." aria-label="retail price: Recommended retail price: the price the end customer is expected to pay, usually including VAT in the UK. (glossary)">retail price</a>, target unit cost, launch volumes and timing</td>
+                </tr>
+                <tr>
+                  <td>Life and sustainability</td>
+                  <td>Expected lifetime, servicing and repair, materials and end-of-life expectations</td>
+                </tr>
+                <tr>
+                  <td>Constraints and assumptions</td>
+                  <td>Fixed decisions, existing parts or platforms, and what you have assumed but not yet confirmed</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>How to write good requirements</h2>
+            <ul>
+              <li><strong>Specific and testable.</strong> "Survives a 1 m drop onto concrete on any face" can be tested; "robust" cannot.</li>
+              <li><strong>What, not how.</strong> "Holds 500 ml" leaves room for design; "a 70 mm diameter cylinder" decides too early, unless it is a genuine constraint.</li>
+              <li><strong>Prioritised.</strong> Mark each requirement as must-have or nice-to-have, so trade-offs are clear.</li>
+              <li><strong>Justified.</strong> Note where each requirement comes from: user research, regulation, a retailer or a cost target.</li>
+              <li><strong>Numbered.</strong> Give each requirement an ID so tests, concepts and decisions can refer to it.</li>
+            </ul>
+
+            <div class="worked-example">
+              <p>
+                Illustrative example for a portable outdoor light. Weak: "long battery life, tough, affordable".
+                Better: "R1 Must give at least 8 hours on the medium setting. R2 Must survive a 1 m drop onto concrete on any face. R3 Must resist rain (target rating to be confirmed against the relevant standard).
+                R4 Should retail at or below £40, with a target <a class="glossary-term" href="../knowledge/glossary.html#term-landed-cost" data-definition="The total cost of getting a product from the supplier to your warehouse ready to sell." aria-label="landed cost: The total cost of getting a product from the supplier to your warehouse ready to sell. (glossary)">landed cost</a> set from the <a class="glossary-term" href="../knowledge/glossary.html#term-route-to-market" data-definition="How a product reaches customers: direct, marketplaces, retailers, distributors or business sales." aria-label="route to market: How a product reaches customers: direct, marketplaces, retailers, distributors or business sales. (glossary)">route to market</a>."
+              </p>
+            </div>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              for every requirement, ask "how would we test this?" If there is no answer, rewrite it until there is.
+            </div>
+
+            <h2>Keep it alive</h2>
+            <p>
+              A PRD is not written once and filed. Early on it will contain targets and open questions; as research, prototypes and quotes come in, firm them up and record what changed and why.
+              Use it to score concepts with the <a class="text-link-inline" href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a>, and turn the testable requirements into a test plan with the
+              <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a>.
+            </p>
+
+            <h2>Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Writing the solution, not the need.</strong>
+                It closes off better designs before anyone has explored them.
+              </div>
+              <div>
+                <strong>Vague words.</strong>
+                "Durable", "premium" and "easy to use" mean different things to everyone until you add numbers or tests.
+              </div>
+              <div>
+                <strong>Everything is essential.</strong>
+                Without priorities, the team cannot make sensible trade-offs.
+              </div>
+              <div>
+                <strong>No cost target.</strong>
+                Designing without a target unit cost often leads to a product that cannot be sold profitably.
+              </div>
+              <div>
+                <strong>Too long to read.</strong>
+                A focused few pages that people use beats a long document nobody opens.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Define the user, problem and purpose with the <a class="text-link-inline" href="../tools/product-purpose.html">Product Purpose Framework</a>.</li>
+              <li>Set a <a class="glossary-term" href="../knowledge/glossary.html#term-target-cost" data-definition="The most a product can cost to make and land while still meeting the business's margin at its price and route to market." aria-label="target cost: The most a product can cost to make and land while still meeting the business's margin at its price and route to market. (glossary)">target cost</a> from your price with <a class="text-link-inline" href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a>.</li>
+              <li>Collect the requirements and decisions in the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a>.</li>
+              <li>Read <a class="text-link-inline" href="how-to-validate-a-product-idea.html">how to validate a product idea</a> to back the requirements with evidence.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Start with purpose</h3>
+                <p>Clarify who the product is for and the problem it solves.</p>
+                <a class="button button-primary" href="../tools/product-purpose.html" data-analytics-event="article_cta_click" data-analytics-label="prd_guide_to_purpose">Open Product Purpose Framework</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Turn requirements into tests</h3>
+                <p>Plan how each requirement will be checked.</p>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html" data-analytics-event="article_cta_click" data-analytics-label="prd_guide_to_test_plan">Open Product Test Plan Builder</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="opportunity-and-concept.html">Opportunity and concept: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/product-purpose.html">Product Purpose Framework</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Product Test Plan Builder</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="how-to-validate-a-product-idea.html">Validate a product idea</a></div>
+                <div class="aside-item"><a class="text-link" href="working-with-a-product-design-consultancy.html">Working with a consultancy</a></div>
+                <div class="aside-item"><a class="text-link" href="how-to-price-a-physical-product.html">How to price a physical product</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Requirements</span>
+                <span>Specification</span>
+                <span>Design brief</span>
+                <span>Testing</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is a product requirements document?</h3>
+                <p>A document that sets out what a product must do, for whom, in what conditions and to what standard, along with cost, volume and regulatory targets, so a team can design, cost and test against it. It describes the need rather than the design.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How long should a product requirements document be?</h3>
+                <p>Long enough to cover the essentials and short enough to be read and used. For many physical products, a focused few pages with numbered, prioritised requirements works better than a long document.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What makes a good requirement?</h3>
+                <p>It is specific, testable, prioritised and says what is needed rather than how to achieve it. If you cannot describe how you would test it, rewrite it.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is a PRD the same as a design brief?</h3>
+                <p>They overlap. A design brief often focuses on the project, scope and goals for a designer, while a PRD focuses on the product's requirements. Many small teams combine them into one document.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should the requirements be updated?</h3>
+                <p>Whenever research, prototypes, testing or quotes change what you know. Record what changed and why, so decisions can be traced back to evidence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

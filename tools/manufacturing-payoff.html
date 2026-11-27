@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Manufacturing Payoff Visualiser | Orion Design</title>
+    <meta
+      name="description"
+      content="Visualise manufacturing route crossover points between 3D printing, CNC machining, vacuum casting, and injection moulding or die casting."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/manufacturing-payoff.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Manufacturing Payoff Visualiser | Orion Design">
+    <meta
+      property="og:description"
+      content="Compare manufacturing route crossover points across 3D printing, CNC machining, vacuum casting, and injection moulding or die casting."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/manufacturing-payoff.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-manufacturing-payoff.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manufacturing Payoff Visualiser | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Compare manufacturing route crossover points across 3D printing, CNC machining, vacuum casting, and injection moulding or die casting."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-manufacturing-payoff.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "image": "https://oriondesign.xyz/images/social/og/tools-manufacturing-payoff.jpg",
+        "name": "Manufacturing Payoff Visualiser",
+        "url": "https://oriondesign.xyz/tools/manufacturing-payoff.html",
+        "description": "Compare manufacturing route crossover points across 3D printing, CNC machining, vacuum casting, and injection moulding or die casting.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-manufacturing-payoff.jpg",
+        "name": "Manufacturing Payoff Visualiser",
+        "url": "https://oriondesign.xyz/tools/manufacturing-payoff.html",
+        "description": "Visualise manufacturing route crossover points between 3D printing, CNC machining, vacuum casting, and injection moulding or die casting.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Manufacturing Payoff Visualiser",
+                "item": "https://oriondesign.xyz/tools/manufacturing-payoff.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "When should a team tool up for injection moulding?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Only when projected demand, part maturity, and cash-flow tolerance justify the tooling commitment, not just when unit cost looks attractive. Use breakeven analysis to support the decision."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why compare total cost rather than unit cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Total cost reveals when low setup methods stop being the sensible choice and when high-commitment routes finally become economically defensible. Unit cost alone is misleading."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if my actual costs differ from these defaults?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Update the inputs with your actual supplier quotes. The tool works best when you plug in real numbers from manufacturers who've seen your design."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should I include labour overhead in unit cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, but be consistent. Include the fully-loaded cost of labour (wages plus facilities) in your unit cost estimates."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use this for a die-cast metal part?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Set the tooled route to die casting, then enter the die caster's quoted die cost (die, trim tool and fixtures) and unit cost (casting plus trimming, machining and finishing). The sums work the same way as for injection moulding. The tool does not suggest die-casting figures, so use real quotes. See die casting explained for what drives those costs."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Manufacturing Payoff Visualiser</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Manufacturing Payoff Visualiser</h1>
+            <p>
+              Compare total cost curves across common prototyping and production methods. Adjust setup and unit assumptions,
+              then inspect which route wins at your target volume and where crossover points occur.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Manufacturing payoff worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"targetQuantity":"2000","maxQuantity":"10000","printingSetup":"0","printingUnit":"6.5","cncSetup":"150","cncUnit":"7.5","vacuumSetup":"700","vacuumUnit":"3.2","mouldSetup":"4500","mouldUnit":"0.35","tooledRoute":"injection-moulding"}'>Torch end cap</button>
+              <button class="preset-button" type="button" data-tool-preset='{"targetQuantity":"300","maxQuantity":"3000","printingSetup":"0","printingUnit":"22","cncSetup":"220","cncUnit":"16","vacuumSetup":"1100","vacuumUnit":"7","mouldSetup":"9000","mouldUnit":"1.1","tooledRoute":"injection-moulding"}'>Instrument front bezel</button>
+              <button class="preset-button" type="button" data-tool-preset='{"targetQuantity":"1000","maxQuantity":"5000","printingSetup":"0","printingUnit":"42","cncSetup":"400","cncUnit":"55","vacuumSetup":"1600","vacuumUnit":"14","mouldSetup":"18000","mouldUnit":"2.4","tooledRoute":"injection-moulding"}'>Speaker housing shell</button>
+            </div>
+            <form class="tool-form" id="manufacturing-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="targetQuantity">
+                    Target quantity
+                    <span class="tooltip-trigger" data-tooltip="Enter the volume you're planning to manufacture."></span>
+                  </label>
+                  <input id="targetQuantity" name="targetQuantity" type="number" min="1" max="100000" value="500">
+                </div>
+                <div class="field-group">
+                  <label for="maxQuantity">
+                    Chart max quantity
+                    <span class="tooltip-trigger" data-tooltip="Set the right edge of the chart to see the full cost curve for your range."></span>
+                  </label>
+                  <input id="maxQuantity" name="maxQuantity" type="number" min="10" max="200000" value="5000">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="printingSetup">
+                    3D printing setup cost
+                    <span class="tooltip-trigger" data-tooltip="Usually £0. No setup for 3D printing."></span>
+                  </label>
+                  <input id="printingSetup" type="number" min="0" value="0" step="10">
+                </div>
+                <div class="field-group">
+                  <label for="printingUnit">
+                    3D printing unit cost
+                    <span class="tooltip-trigger" data-tooltip="Cost per part in £. Includes material and labour."></span>
+                  </label>
+                  <input id="printingUnit" type="number" min="0" value="18" step="0.1">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="cncSetup">
+                    CNC setup cost
+                    <span class="tooltip-trigger" data-tooltip="Programming, tooling, and first-part setup."></span>
+                  </label>
+                  <input id="cncSetup" type="number" min="0" value="180" step="10">
+                </div>
+                <div class="field-group">
+                  <label for="cncUnit">
+                    CNC unit cost
+                    <span class="tooltip-trigger" data-tooltip="Cost per machined part in £."></span>
+                  </label>
+                  <input id="cncUnit" type="number" min="0" value="9.5" step="0.1">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="vacuumSetup">
+                    Vacuum casting setup cost
+                    <span class="tooltip-trigger" data-tooltip="Master pattern creation and mould tooling."></span>
+                  </label>
+                  <input id="vacuumSetup" type="number" min="0" value="950" step="10">
+                </div>
+                <div class="field-group">
+                  <label for="vacuumUnit">
+                    Vacuum casting unit cost
+                    <span class="tooltip-trigger" data-tooltip="Cost per cast copy in £."></span>
+                  </label>
+                  <input id="vacuumUnit" type="number" min="0" value="4.2" step="0.1">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="tooledRoute">
+                    Tooled route
+                    <span class="tooltip-trigger" data-tooltip="Both routes cost a tool up front, then a unit cost per part, so the sums are the same."></span>
+                  </label>
+                  <select id="tooledRoute">
+                    <option value="injection-moulding" selected>Injection moulding (plastic)</option>
+                    <option value="die-casting">Die casting (metal)</option>
+                  </select>
+                  <p class="helper-text" id="tooledRouteNote" aria-live="polite" hidden>Your figures are unchanged: enter the die caster's quoted die cost and unit cost below.</p>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="mouldSetup">
+                    Injection moulding tool cost
+                    <span class="tooltip-trigger" data-tooltip="Full injection mould tooling and qualification."></span>
+                  </label>
+                  <input id="mouldSetup" type="number" min="0" value="6500" step="100">
+                </div>
+                <div class="field-group">
+                  <label for="mouldUnit">
+                    Injection moulding unit cost
+                    <span class="tooltip-trigger" data-tooltip="Cost per moulded part in £. Only material and labour."></span>
+                  </label>
+                  <input id="mouldUnit" type="number" min="0" value="0.7" step="0.05">
+                </div>
+              </div>
+
+              <button class="button button-primary" type="submit">Recalculate comparison</button>
+            </form>
+            <p class="helper-text">
+              Model assumption: total cost = setup cost + (unit cost × quantity). Use this as an early decision aid, not a final <a class="text-link-inline" href="../guides/comparing-manufacturing-quotes.html">supplier quote</a>.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell">
+              <canvas id="manufacturingChart" role="img" aria-label="Manufacturing cost comparison chart"></canvas>
+            </div>
+            <div class="result-grid" id="manufacturingSummary"></div>
+            <div class="comparison-list" id="crossoverList"></div>
+            <div class="copy-shell">
+              <div class="copy-format-options">
+                <button class="copy-format-btn active" data-format="plain" type="button">Plain text</button>
+                <button class="copy-format-btn" data-format="email" type="button">Email</button>
+                <button class="copy-format-btn" data-format="csv" type="button">Spreadsheet</button>
+              </div>
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#manufacturingCopy"
+                  data-copy-feedback="#manufacturingCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="manufacturingCopy" class="copy-output" readonly></textarea>
+              <div id="manufacturingCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="manufacturing_payoff_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Injection moulding becomes cheaper when the tooling cost is repaid by the lower unit cost.</h2>
+              <div class="formula-block">Break-even volume = tooling cost ÷ (prototype unit cost − moulded unit cost)</div>
+              <p>Using the default assumptions against 3D printing: £6,500 ÷ (£18 − £0.70) = roughly 376 units.</p>
+            </div>
+
+            <h2>Worked example</h2>
+            <div class="worked-example">
+              <p>
+                If a part costs £18 to 3D print and £0.70 to mould, but the tool costs £6,500, the cheapest route depends entirely on realistic
+                demand and how confident you are that the geometry is stable enough to tool.
+              </p>
+              <p>At 200 units: 3D printing costs £3,600, injection moulding costs £6,640 (tooling makes it more expensive).</p>
+              <p>At 500 units: 3D printing costs £9,000, injection moulding costs £7,350 (tooling is now justified).</p>
+              <p>At 1000 units: 3D printing costs £18,000, injection moulding costs £8,200 (tooling saves £9,800).</p>
+            </div>
+
+            <h2>How this calculator works</h2>
+            <p>
+              The lines show total cost, not unit cost. That matters because early manufacturing decisions are usually distorted by low setup options looking cheaper
+              at the start, while tooled routes only win once volume justifies the upfront commitment.
+            </p>
+            <ul>
+              <li><strong>Use low setup routes for learning and early uncertainty:</strong> 3D printing and CNC let you iterate without tooling risk.</li>
+              <li><strong>Use bridge routes when demand is growing but tooling still feels risky:</strong> Vacuum casting offers lower setup than injection moulding.</li>
+              <li><strong>Use injection moulding when volume and design stability support the investment:</strong> Only commit to tooling when the numbers make sense.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <p>
+              The top result names the route with the lowest total cost at your target quantity, what that route costs in total, and how far
+              ahead it is of the next-best option. Below that, the ranking lists every route, followed by the crossover points where one
+              route overtakes another.
+            </p>
+            <ul>
+              <li><strong>A clear winner:</strong> if the gap to the next route is large and your target sits well past the relevant crossover, the decision is fairly robust to small changes in quotes or demand.</li>
+              <li><strong>A narrow gap:</strong> if two routes are close, or your target quantity sits near a crossover, the answer can flip with a modest change in volume or price. Choose on lead time, design stability and cash flow rather than cost alone.</li>
+              <li><strong>Tooling only just wins:</strong> this is the most common trap. If the mould pays back only at your most optimistic forecast, a bridge route such as vacuum casting usually keeps you safer while demand is proven.</li>
+            </ul>
+            <p>
+              Before committing, replace the defaults with real quotes for your part and test a lower volume to see how sensitive the answer is.
+              Remember that most products have several parts, so run the comparison for the expensive ones individually. Save your result to
+              your <a href="product-plan-builder.html">product plan</a> so the chosen route feeds into your cost and launch planning. If a tooling
+              decision is close, a <a href="../contact/index.html">second opinion from Andrew</a> before you place the order can be worthwhile.
+            </p>
+
+            <h2>Key definitions</h2>
+            <dl>
+              <dt><strong>Bridge production</strong></dt>
+              <dd>An intermediate manufacturing route (vacuum casting, bridge tooling) used to validate design and market fit before committing to full injection moulding tooling.</dd>
+              <dt><strong>Breakeven volume</strong></dt>
+              <dd>The quantity at which the lower unit cost of tooling offsets the upfront tooling investment.</dd>
+              <dt><strong>Setup cost (fixed cost)</strong></dt>
+              <dd>The one-time investment in tooling, programming, or mould creation that doesn't change with quantity.</dd>
+              <dt><strong>Unit cost (variable cost)</strong></dt>
+              <dd>The per-part cost in material and labour that scales linearly with quantity.</dd>
+            </dl>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">When to use this tool</p>
+              <div class="tag-row">
+                <span>Route selection</span>
+                <span>Volume planning</span>
+                <span>Cost forecasting</span>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/manufacturing-processes-compared.html">Manufacturing processes compared</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/cnc-machining-design-rules.html">CNC machining design rules</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/injection-mould-break-even.html">When does injection moulding become cheaper?</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="product-purpose.html">Product Purpose Framework</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="assembly-time.html">Assembly Time Estimator</a>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/manufacturing-and-cost.html">Manufacturing and cost: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/injection-moulding-explained.html">Injection moulding explained: the process, tooling types, lead times and cost drivers</a>
+                </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>When should a team tool up for injection moulding?</h3>
+                <p>Only when projected demand, part maturity, and cash-flow tolerance justify the tooling commitment, not just when unit cost looks attractive. Use breakeven analysis to support the decision.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why compare total cost rather than unit cost?</h3>
+                <p>Total cost reveals when low setup methods stop being the sensible choice and when high-commitment routes finally become economically defensible. Unit cost alone is misleading.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What if my actual costs differ from these defaults?</h3>
+                <p>Update the inputs with your actual supplier quotes. The tool works best when you plug in real numbers from manufacturers who've seen your design.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should I include labour overhead in unit cost?</h3>
+                <p>Yes, but be consistent. Include the fully-loaded cost of labour (wages plus facilities) in your unit cost estimates.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I use this for a die-cast metal part?</h3>
+                <p>Yes. Set the tooled route to die casting, then enter the die caster's quoted die cost (die, trim tool and fixtures) and unit cost (casting plus trimming, machining and finishing). The sums work the same way as for injection moulding. The tool does not suggest die-casting figures, so use real quotes. See <a class="text-link-inline" href="../guides/die-casting-explained.html">die casting explained</a> for what drives those costs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early engineering or commercial estimate. It is most useful for comparing options, surfacing trade-offs, and deciding what needs to be proven before committing to tooling. Use it for scenario planning, not supplier negotiations.</p>
+            <p><strong>Created by:</strong> <a href="../about/index.html" class="text-link">Andrew Hunter, Orion Design</a></p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Use the result as an early decision aid, then confirm the numbers with suppliers, manufacturing partners, and your own cost accounting. The breakeven logic is based on standard manufacturing economics principles.</p>
+            <p><a href="https://www.linkedin.com/in/andrew-hunter-product-design/" class="text-link">View credentials on LinkedIn →</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering tools for manufacturing trade-offs, product purpose, and systems-level clarity.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related tools</h3>
+          <a href="product-purpose.html">Product Purpose Framework</a>
+          <a href="assembly-time.html">Assembly Time Estimator</a>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/manufacturing-payoff.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>3D-Printed Prototype to Moulded Part | Orion Design</title>
+    <meta
+      name="description"
+      content="What has to change when a 3D-printed prototype becomes an injection-moulded part: draft, even walls, ribs, bosses, undercuts, marks, tolerances and materials."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/from-3d-printed-prototype-to-moulded-part.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="From 3D-printed prototype to injection-moulded part | Orion Design">
+    <meta
+      property="og:description"
+      content="What has to change when a 3D-printed prototype becomes an injection-moulded part: draft, even walls, ribs, bosses, undercuts, marks, tolerances and materials."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/from-3d-printed-prototype-to-moulded-part.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-from-3d-printed-prototype-to-moulded-part.jpg">
+    <meta property="og:image:alt" content="From 3D-printed prototype to injection-moulded part guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="From 3D-printed prototype to injection-moulded part | Orion Design">
+    <meta
+      name="twitter:description"
+      content="What has to change when a 3D-printed prototype becomes an injection-moulded part: draft, even walls, ribs, bosses, undercuts, marks, tolerances and materials."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-from-3d-printed-prototype-to-moulded-part.jpg">
+    <meta name="twitter:image:alt" content="From 3D-printed prototype to injection-moulded part guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-from-3d-printed-prototype-to-moulded-part.jpg",
+        "headline": "From 3D-printed prototype to injection-moulded part: what has to change",
+        "description": "What has to change when a 3D-printed prototype becomes an injection-moulded part: draft, even walls, ribs, bosses, undercuts, marks, tolerances and materials.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/from-3d-printed-prototype-to-moulded-part.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Injection moulding"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design for manufacture"
+          },
+          {
+            "@type": "Thing",
+            "name": "3D printing"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "From 3D-printed prototype to moulded part",
+                "item": "https://oriondesign.xyz/guides/from-3d-printed-prototype-to-moulded-part.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can I injection mould my 3D-printed design as it is?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Rarely. Printed designs usually lack draft, have thick or uneven walls, sharp corners and undercuts that printing makes freely. Those cause sink, warping, sticking and costly side actions in a tool, so the CAD normally needs redesigning for moulding first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much draft do I need to add to a printed part?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A common starting point is at least 0.5 to 1 degree on faces parallel to the direction the tool opens, with more for deep features and textured surfaces. Textured faces can need several degrees; the texture supplier will usually state a minimum."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will a moulded part be stronger than my 3D print?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Often, but not always, and not in a predictable way. Printed parts are weaker between layers and printing materials differ from moulding grades. Choose the moulding grade from the requirements and test critical features on the first moulded samples."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will snap fits that work printed also work moulded?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not necessarily. Clearances, stiffness and snap forces change with the material and process. Re-specify the fit for the moulding grade, design the snap to mould straight-pull where possible, and confirm it on the first samples."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What can I use while the injection mould is being made?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Vacuum casting gives tens of parts in production-like plastics from silicone moulds, and an aluminium or soft-steel bridge tool gives real moulded parts in the production material for the first few thousand, at lower tool cost but with a shorter tool life."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">From 3D-printed prototype to moulded part</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders, designers and engineers with a printed prototype that works and a plan to injection mould it</p>
+            <h1>From 3D-printed prototype to injection-moulded part: what has to change</h1>
+            <p>
+              Why a part that prints well can be impossible or expensive to mould, the design changes moulding usually needs, how to sequence the redesign with your moulder, and the bridge options that keep you moving while the tool is made.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A printed part proves the idea, not the mouldability: before tooling it usually needs draft, even cored-out walls, properly proportioned ribs and bosses, radiused corners and fewer undercuts.</h2>
+              <p>
+                Printing builds a part layer by layer, so almost any shape can be made. Moulding fills a steel or aluminium tool and must then pull the part straight out of it, so the geometry has to suit flow, cooling and ejection.
+                Redesign the CAD for moulding, review it with your moulder, choose the moulding grade, and expect the first tool samples to need some adjustment.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#why">Why a good print can be a bad moulding</a></li>
+              <li><a class="text-link-inline" href="#draft">Draft on faces in the direction of pull</a></li>
+              <li><a class="text-link-inline" href="#walls">Even walls: coring out thick sections</a></li>
+              <li><a class="text-link-inline" href="#ribs">Ribs, bosses and corners</a></li>
+              <li><a class="text-link-inline" href="#undercuts">Undercuts: side actions or redesign</a></li>
+              <li><a class="text-link-inline" href="#marks">Parting lines, gates and ejector marks</a></li>
+              <li><a class="text-link-inline" href="#tolerances">Shrinkage, warp and tolerances</a></li>
+              <li><a class="text-link-inline" href="#parts">Splitting or merging parts</a></li>
+              <li><a class="text-link-inline" href="#materials">Printing materials are not moulding grades</a></li>
+              <li><a class="text-link-inline" href="#sequence">Sequencing the redesign</a></li>
+              <li><a class="text-link-inline" href="#bridge">Bridge options while the tool is made</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a printed enclosure lid</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+            </ol>
+
+            <h2 id="why">Why a good print can be a bad moulding</h2>
+            <p>
+              A printer adds material only where the file says, so a solid block, a sharp corner, a sideways hook or an untapered wall costs it nothing extra. Those are exactly the features that cause trouble in a <a class="glossary-term" href="../knowledge/glossary.html#term-mould-tool" data-definition="The machined metal tool that shapes parts in injection moulding or casting." aria-label="mould tool: The machined metal tool that shapes parts in injection moulding or casting. (glossary)">mould tool</a>.
+            </p>
+            <p>
+              In moulding, molten plastic is forced into a closed tool, cools against its walls, shrinks slightly, and is pushed out once the tool opens. <a class="text-link-inline" href="injection-moulding-explained.html">Injection moulding explained</a> covers the cycle. The plastic must <strong>flow</strong> into every feature, <strong>cool evenly</strong> (cooling is usually the longest step, set by the thickest wall), and <strong>come straight out</strong> of the tool. A print that ignores these can mould with sink marks, voids and warping, stick in the tool, or need costly moving tool parts.
+            </p>
+            <p>
+              Changes are also cheaper on the model than on the tool: once it is cut, removing material from the part can mean welding and re-machining the tool, or a new insert.
+            </p>
+
+            <h2 id="draft">Draft on faces in the direction of pull</h2>
+            <p>
+              Draft is the slight taper on faces that run in the direction the tool opens. Prints rarely have it. Without it, a moulded part drags and sticks on ejection and scuffs its <a class="glossary-term" href="../knowledge/glossary.html#term-cosmetic-face" data-definition="A face of a part that people will see or touch, marked on the drawing so that suppliers keep marks, defects and support or contact points off it and finish it to the agreed standard." aria-label="cosmetic faces: A face of a part that people will see or touch, marked on the drawing so that suppliers keep marks, defects and support or contact points off it and finish it to the agreed standard. (glossary)">cosmetic faces</a>. The <a class="text-link-inline" href="injection-moulding-dfm-checklist.html">injection moulding DFM checklist</a> gives a common starting point of at least 0.5 to 1 degree on every face parallel to the direction the tool opens, with more for deep features and textured surfaces; a textured face can need several degrees, and the texture supplier will usually state a minimum.
+            </p>
+            <p>
+              Add draft in CAD early: retrofitting it ripples through mating dimensions and clearances.
+            </p>
+
+            <h2 id="walls">Even walls: coring out thick sections</h2>
+            <p>
+              Prototypes are often printed thick, for strength or because solid was easier to model. In moulding, even wall thickness is the most important single rule. A thick section stays molten longest and, as it cools and shrinks, pulls the surface into a <a class="glossary-term" href="../knowledge/glossary.html#term-sink-mark" data-definition="A shallow depression on a moulded surface caused by a thick section shrinking as it cools." aria-label="sink mark: A shallow depression on a moulded surface caused by a thick section shrinking as it cools. (glossary)">sink mark</a> or leaves an internal void, and lengthens the cycle every part pays for.
+            </p>
+            <p>
+              The fix is to core thick features out so they are made of walls close to the nominal thickness, and to blend any change in thickness gradually rather than in steps. The checklist's typical range is around 1 to 4 mm for many small and medium parts, depending on material and size; the material datasheet and your <a class="glossary-term" href="../knowledge/glossary.html#term-moulder" data-definition="A company that runs injection-moulding machines to make parts from a mould tool. It may also make the tool, or work with a separate toolmaker." aria-label="moulder: A company that runs injection-moulding machines to make parts from a mould tool. It may also make the tool, or work with a separate toolmaker. (glossary)">moulder</a> set the actual figure.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 296" width="100%" role="img" aria-labelledby="p2m-fig-title p2m-fig-desc">
+                <title id="p2m-fig-title">A solid, square printed section compared with the same feature cored out and drafted for moulding</title>
+                <desc id="p2m-fig-desc">Two cross-sections, not to scale. Top, as printed: a plate with a solid block underneath for a screw, with square sides, sharp corners and no draft. Bottom, redesigned for moulding: the same plate at an even wall thickness, a hollow screw boss with slightly tapered walls and gussets joining it to the plate, and two thin ribs underneath for stiffness.</desc>
+                <text x="20" y="20" class="gd-h">As printed: solid and square</text>
+                <path d="M30,34 H310 V48 H210 V108 H130 V48 H30 Z" class="gd-box-indigo"/>
+                <rect x="164" y="64" width="12" height="44" class="gd-box"/>
+                <text x="122" y="80" text-anchor="end" class="gd-m">square, no draft</text>
+                <text x="218" y="80" class="gd-m">solid: sinks and</text>
+                <text x="218" y="97" class="gd-m">cools slowly</text>
+                <text x="20" y="160" class="gd-h">For moulding: cored out, drafted</text>
+                <text x="310" y="190" text-anchor="end" class="gd-m">even wall</text>
+                <path d="M30,194 H310 V208 H274 L273,244 H267 L266,208 H215 L188.5,236 L187,268 H178 L177,208 H163 L162,268 H153 L151.5,236 L125,208 H74 L73,244 H67 L66,208 H30 Z" class="gd-box-teal"/>
+                <text x="70" y="262" text-anchor="middle" class="gd-m">rib</text>
+                <text x="270" y="262" text-anchor="middle" class="gd-m">rib</text>
+                <text x="170" y="288" text-anchor="middle" class="gd-m">cored boss, gussets, draft</text>
+              </svg>
+              <figcaption>Cross-sections, not to scale. The printed block is fine for a printer but would sink, cool slowly and stick in a tool. Moulded, the same job is done by even walls, a cored boss joined to the plate by gussets, thin ribs for stiffness, and draft on faces in the direction of pull.</figcaption>
+            </figure>
+
+            <h2 id="ribs">Ribs, bosses and corners</h2>
+            <p>
+              With thinner walls, stiffness and fixings come from ribs and bosses; too thick, they sink the face opposite. The <a class="glossary-term" href="../knowledge/glossary.html#term-design-for-manufacture-dfm" data-definition="Designing parts so they can be made reliably and economically by the chosen process." aria-label="DFM: Designing parts so they can be made reliably and economically by the chosen process. (glossary)">DFM</a> checklist's typical starting points are:
+            </p>
+            <ul>
+              <li><strong>Ribs:</strong> thickness about 40 to 60 per cent of the adjoining wall; height up to about 3 times the wall; spaced at least about 2 wall thicknesses apart; drafted.</li>
+              <li><strong>Bosses:</strong> outside diameter around twice the hole; boss wall thinner than the main wall; supported by <a class="glossary-term" href="../knowledge/glossary.html#term-gusset" data-definition="A triangular rib that supports a boss or wall in a moulded part." aria-label="gusset: A triangular rib that supports a boss or wall in a moulded part. (glossary)">gusset</a> ribs or joined to nearby walls; cored from below. Follow the screw manufacturer's hole size for your chosen plastic, not the hole that happened to work in the print.</li>
+              <li><strong>Corners:</strong> inside radius at least about half the wall; outside radius about inside radius plus the wall, so the wall stays even around the bend. Sharp printed corners concentrate stress, restrict flow and are harder to fill and eject.</li>
+            </ul>
+            <p>
+              The <a class="text-link-inline" href="../tools/dfm-checker.html">Injection Moulding DFM Checker</a> applies these rules to your own dimensions and explains each result.
+            </p>
+
+            <h2 id="undercuts">Undercuts: side actions or redesign</h2>
+            <p>
+              An <a class="glossary-term" href="../knowledge/glossary.html#term-undercut" data-definition="A feature that stops a moulded part being pulled straight out of the tool." aria-label="undercut: A feature that stops a moulded part being pulled straight out of the tool. (glossary)">undercut</a> is anything that stops the part pulling straight out of the tool: a side-facing clip, a side hole, an internal groove. Prototypes collect them freely. In a tool each usually needs a <a class="glossary-term" href="../knowledge/glossary.html#term-side-action" data-definition="A moving part of a mould tool that forms an undercut and slides out before the part is ejected." aria-label="side action: A moving part of a mould tool that forms an undercut and slides out before the part is ejected. (glossary)">side action</a>, a lifter or another moving part, which adds cost, lead time and maintenance.
+            </p>
+            <p>
+              Before accepting a side action, ask whether the feature can be redesigned. A snap-fit hook can often be moulded straight-pull by putting a hole in the wall behind it, so a core passes through and forms the hook's underside. Some joins are better changed altogether, to screws into bosses, heat-set inserts or a different snap arrangement; <a class="text-link-inline" href="joining-methods-for-product-design.html">joining methods compared</a> sets out the options. Keep a side action only where the feature earns its cost.
+            </p>
+
+            <h2 id="marks">Parting lines, gates and ejector marks</h2>
+            <p>
+              A moulded part carries three marks a print never has:
+            </p>
+            <ul>
+              <li><strong>Parting line:</strong> a fine line where the two halves of the tool meet, usually around the widest outline of the part.</li>
+              <li><strong>Gate:</strong> a small blemish where the plastic entered, left when the feed channel is cut or broken off.</li>
+              <li><strong>Ejector marks:</strong> small round witness marks from the pins that push the part out, usually on the inside faces.</li>
+            </ul>
+            <p>
+              Agree gate, ejector and parting-line positions with the moulder, away from cosmetic faces; moving them after the tool is cut is costly. <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">Surface finishes for plastic and metal parts</a> covers polish and texture choices, and why texture needs extra draft.
+            </p>
+
+            <h2 id="tolerances">Shrinkage, warp and tolerances</h2>
+            <p>
+              Every moulded plastic shrinks as it cools, by an amount that depends on the material, the wall thickness and the process. The toolmaker allows for it when cutting the tool, which is one reason the tool is cut for a specific material and choosing the material late causes trouble. Uneven walls and large flat areas shrink unevenly and can warp; ribs or gentle curvature help flat areas stay flat.
+            </p>
+            <p>
+              Fits proven in a print do not carry over: printed clearances reflect the printer, orientation and finishing, so a snap that works printed may be tight or loose moulded. Call up tight tolerances only where the function needs them, check critical fits with the <a class="text-link-inline" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a>, and state them on a drawing as described in <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances and engineering drawings</a>.
+            </p>
+
+            <h2 id="parts">Splitting or merging parts</h2>
+            <p>
+              A prototype's split into parts often reflects the printer's build volume rather than production. Merging parts can remove assembly steps and fasteners but makes a more complex tool; splitting one can turn deep pockets or undercuts into two simple straight-pull parts. Each part normally needs its own tool or cavity, so balance tool cost, assembly time and servicing.
+            </p>
+
+            <h2 id="materials">Printing materials are not moulding grades</h2>
+            <p>
+              Printing filaments, powders and resins are formulated for printing. Even where a material shares a name with a moulding plastic, such as nylon, its strength, stiffness, toughness and heat resistance differ, and resins can behave quite unlike any moulded thermoplastic. Prints are also weaker between layers, so a printed failure, or success, may not repeat when moulded.
+            </p>
+            <p>
+              Choose the moulding grade from the product's requirements, not from what printed well, using <a class="text-link-inline" href="choosing-plastic-materials.html">choosing plastic materials</a> and the <a class="text-link-inline" href="../tools/material-selector.html">Plastic Material Selector</a>. Then re-check the wall thickness, ribs and snap fits against that grade's datasheet, since materials flow and shrink differently.
+            </p>
+
+            <h2 id="sequence">Sequencing the redesign</h2>
+            <ol>
+              <li><strong>Freeze the function first.</strong> Use prints to settle what the part must do. Redesigning for moulding while the requirements are still moving means doing it twice.</li>
+              <li><strong>Redesign the CAD for moulding.</strong> Choose the material, set the nominal wall, add draft, core out thick sections, then size ribs, bosses and radii, and remove undercuts where you can.</li>
+              <li><strong>Print the redesigned part</strong> to confirm assembly, treating strength and fits as indicative.</li>
+              <li><strong>DFM review with the moulder.</strong> Most toolmakers provide a DFM report proposing gate, parting line and ejector positions; for complex parts, ask for a mould-flow simulation as well. Read it before approving the tool design.</li>
+              <li><strong>First samples (T1).</strong> Check the first parts off the tool against your drawings and plan for at least one modification round. <a class="text-link-inline" href="quality-control-and-first-article-inspection.html">Quality control and first-article inspection</a> explains how parts are signed off.</li>
+            </ol>
+
+            <h2 id="bridge">Bridge options while the tool is made</h2>
+            <p>
+              If you need parts before the production tool is ready, two common bridges are:
+            </p>
+            <ul>
+              <li><strong>Vacuum casting:</strong> silicone moulds, often made from a printed master, produce tens of parts in production-like plastics. Good for samples and trials, though not in the moulding grade.</li>
+              <li><strong>Aluminium or soft-steel bridge tools:</strong> real injection-moulded parts in the production material for the first few thousand parts, at lower tool cost and shorter lead time, with a shorter tool life. They need the same DFM as a production tool.</li>
+            </ul>
+            <p>
+              The <a class="text-link-inline" href="risk-progressive-manufacturing-strategy.html">risk-progressive manufacturing strategy</a> explains how to stage these commitments, and <a class="text-link-inline" href="prototyping-vs-production-startup-guide.html">prototyping vs production</a> compares the routes by volume and cost.
+            </p>
+
+            <h2 id="example">Worked example: a printed enclosure lid</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative and qualitative. A start-up's handheld device has a lid printed in nylon powder that fits and survived early <a class="text-link-inline" href="usability-testing-a-prototype.html">user testing</a>. They plan to mould it in PC/ABS. The redesign changes:
+              </p>
+              <ul>
+                <li><strong>Thick walls thinned to an even nominal wall,</strong> avoiding sink and shortening the cycle, with three internal ribs to restore stiffness.</li>
+                <li><strong>Solid screw pillars cored out</strong> into bosses joined to the side walls with gussets, so the outer face does not sink and the bosses do not crack under screw torque.</li>
+                <li><strong>Draft added to the side walls,</strong> with more on the textured top face, so the lid releases cleanly without drag marks.</li>
+                <li><strong>Sharp inside corners radiused</strong> relative to the wall, for better flow and lower stress.</li>
+                <li><strong>Two sideways clips redesigned</strong> as straight-pull snaps with pass-through cores, removing two side actions from the tool.</li>
+                <li><strong>Snap and lid-to-base clearances re-specified</strong> on the drawing for the moulded material, rather than copied from what worked printed.</li>
+                <li><strong>Gate and ejector positions agreed</strong> on the inside of the lid, and the parting line placed on an edge where it will not be seen.</li>
+              </ul>
+              <p>
+                None of these changes alters what the lid does. The team prints the redesign to check assembly, then requests quotes and a DFM review.
+              </p>
+            </div>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Sending the print file as the tooling file.</strong>
+                A print mesh, or a model with no draft and solid sections, gives the toolmaker nothing sound to quote or cut from. Send a CAD model redesigned for moulding, with a drawing.
+              </div>
+              <div>
+                <strong>Keeping thick printed walls.</strong>
+                Walls made thick to strengthen a print will sink, void and lengthen every cycle when moulded. Core them out and stiffen with ribs.
+              </div>
+              <div>
+                <strong>Zero draft.</strong>
+                Prints need none, so prototypes rarely have it. Without it, parts stick and scuff; adding it late changes every mating dimension.
+              </div>
+              <div>
+                <strong>Assuming printed fits will match moulded fits.</strong>
+                Clearances, snap forces and stiffness all change with the process and material. Re-specify critical fits and confirm them on the first moulded samples.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Run your key dimensions through the <a class="text-link-inline" href="../tools/dfm-checker.html">Injection Moulding DFM Checker</a> and work through the <a class="text-link-inline" href="injection-moulding-dfm-checklist.html">DFM checklist</a>.</li>
+              <li>Check whether you are ready to commit with <a class="text-link-inline" href="../tools/ready-for-tooling.html">Am I Ready to Commit to Tooling?</a></li>
+              <li>Plan bridge or production tooling with the <a class="text-link-inline" href="../tools/production-strategy-planner.html">Production Strategy Planner</a>.</li>
+              <li>See where this sits in the wider picture in the <a class="text-link-inline" href="manufacturing-and-cost.html">manufacturing and cost hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Check the redesign</h3>
+                <p>Enter wall, draft, rib, boss and corner dimensions for instant feedback.</p>
+                <a class="button button-primary" href="../tools/dfm-checker.html" data-analytics-event="article_cta_click" data-analytics-label="print_to_mould_guide_to_dfm_checker">Open DFM Checker</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Choose the moulding grade</h3>
+                <p>Filter plastics by the properties your product needs.</p>
+                <a class="button button-secondary" href="../tools/material-selector.html" data-analytics-event="article_cta_click" data-analytics-label="print_to_mould_guide_to_material_selector">Open Material Selector</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/dfm-checker.html">Injection Moulding DFM Checker</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/material-selector.html">Plastic Material Selector</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/ready-for-tooling.html">Ready for Tooling self-check</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="choosing-a-3d-printing-process.html">Choosing a 3D printing process</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-explained.html">Injection moulding explained</a></div>
+                <div class="aside-item"><a class="text-link" href="joining-methods-for-product-design.html">Joining methods</a></div>
+                <div class="aside-item"><a class="text-link" href="prototyping-vs-production-startup-guide.html">Prototyping vs production</a></div>
+                <div class="aside-item"><a class="text-link" href="mould-tool-trials-and-sample-approval.html">Mould tool trials and sample approval</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>3D printing</span>
+                <span>Injection moulding</span>
+                <span>DFM</span>
+                <span>Draft</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Can I injection mould my 3D-printed design as it is?</h3>
+                <p>Rarely. Printed designs usually lack draft, have thick or uneven walls, sharp corners and undercuts that printing makes freely. Those cause sink, warping, sticking and costly side actions in a tool, so the CAD normally needs redesigning for moulding first.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How much draft do I need to add to a printed part?</h3>
+                <p>A common starting point is at least 0.5 to 1 degree on faces parallel to the direction the tool opens, with more for deep features and textured surfaces. Textured faces can need several degrees; the texture supplier will usually state a minimum.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Will a moulded part be stronger than my 3D print?</h3>
+                <p>Often, but not always, and not in a predictable way. Printed parts are weaker between layers and printing materials differ from moulding grades. Choose the moulding grade from the requirements and test critical features on the first moulded samples.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Will snap fits that work printed also work moulded?</h3>
+                <p>Not necessarily. Clearances, stiffness and snap forces change with the material and process. Re-specify the fit for the moulding grade, design the snap to mould straight-pull where possible, and confirm it on the first samples.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What can I use while the injection mould is being made?</h3>
+                <p>Vacuum casting gives tens of parts in production-like plastics from silicone moulds, and an aluminium or soft-steel bridge tool gives real moulded parts in the production material for the first few thousand, at lower tool cost but with a shorter tool life.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/dfm-checker.html">DFM Checker</a>
+          <a href="../tools/material-selector.html">Material Selector</a>
+          <a href="../tools/ready-for-tooling.html">Ready for Tooling</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Mapping the Product Design Process | Orion Design</title>
+    <meta name="description" content="How to map the product design process using stage, complexity, regulation, manufacturing novelty, and launch pressure.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/mapping-the-product-design-process.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Mapping the Product Design Process">
+    <meta property="og:description" content="How to map the product design process using stage, complexity, regulation, manufacturing novelty, and launch pressure.">
+    <meta property="og:url" content="https://oriondesign.xyz/guides/mapping-the-product-design-process.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-mapping-the-product-design-process.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mapping the Product Design Process">
+    <meta name="twitter:description" content="How to map the product design process using stage, complexity, regulation, manufacturing novelty, and launch pressure.">
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-mapping-the-product-design-process.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-mapping-the-product-design-process.jpg",
+        "headline": "Mapping the Product Design Process",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-24",
+        "articleSection": "Product development",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/mapping-the-product-design-process.html",
+        "datePublished": "2026-03-12"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Product design process map",
+                "item": "https://oriondesign.xyz/guides/mapping-the-product-design-process.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What are the stages of the product design process?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For physical products the usual stages are discovery, concept development, prototyping and detailed design, verification and validation, industrialisation, and launch. In practice the stages overlap and loop back when testing reveals problems. The balance between them depends on the product’s complexity, regulation and manufacturing route."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does it take to develop a physical product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It varies widely. A simple mechanical product with a stable concept can often reach production in well under a year, while a connected or regulated electronic product commonly takes a year or more. Compliance testing, tooling lead times and the number of prototype loops are usually what decide the timeline."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What do EVT, DVT and PVT mean?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "They are common names for build stages in hardware development. EVT (engineering validation test) checks that the design works, DVT (design validation test) checks that production-intent parts meet the specification and standards, and PVT (production validation test) checks that the production line can make it repeatably."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is the product design process linear?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It is usually drawn as a sequence, but real projects iterate. Prototyping often sends teams back to concept decisions, and verification can send them back to detailed design. A good process map plans for those loops instead of pretending they will not happen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should you start thinking about manufacturing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "From the concept stage. Choices about materials, part count and process shape cost and feasibility long before tooling is ordered. An early design for manufacture review is far cheaper than changing a design after it has been tooled."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "@id": "https://oriondesign.xyz/guides/mapping-the-product-design-process.html#howto-1",
+            "name": "How to build a product design process map",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "text": "List the open uncertainties: user need, technical function, cost, compliance, supply and demand."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "text": "Rank them by the cost of getting each one wrong late in the project."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "text": "Match each high-ranking uncertainty to the stage and activity that resolves it."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "text": "Define a simple gate for each stage: the evidence needed before committing more money."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "text": "Hold a short design review at each gate and record the decision and actions."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 6,
+                "text": "Plan the next three to six months in detail and the rest in outline only."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 7,
+                "text": "Revisit the map at every gate, because the biggest uncertainty will change."
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home"><picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="page-hero"><div class="container page-shell"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../guides/index.html">Guides</a><span>/</span><span aria-current="page">Product design process map</span></nav><div class="page-intro"><span class="page-badge">Guide</span><p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 24 November 2026 <span aria-hidden="true">·</span> For founders and teams planning the stages of a product development project</p><h1>Mapping the product design process.</h1><p>Projects slow down when teams cannot see what should happen next. A process map helps prioritise discovery, prototyping, verification, industrialisation, and launch work based on the actual project context.</p></div></div></section>
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A product design process map shows the stages from discovery to launch and which of them deserve emphasis now.</h2>
+              <div class="formula-block">Stage emphasis = biggest open uncertainty + cost of getting it wrong + time available</div>
+              <p>
+                Most hardware projects move through discovery, concept development, prototyping, verification, industrialisation and launch. The <a class="text-link-inline" href="../idea-to-manufacture/">idea-to-manufacture explainer</a> covers each stage in turn, and the <a class="text-link-inline" href="../walkthrough/">walkthrough</a> follows one product through all of them.
+                The stages overlap, and the time spent in each depends on product complexity, regulatory burden and how new the manufacturing route is.
+              </p>
+            </div>
+
+            <p>
+              No two hardware projects follow the exact same path, but almost all of them suffer when the team confuses stage pressure with process clarity.
+              Mapping the process makes dependencies visible before the schedule starts making bad decisions for you.
+            </p>
+            <div class="article-highlight"><strong>Useful process rule:</strong> the right next stage is defined by what uncertainty matters most, not by which activity feels most familiar to the team.</div>
+
+            <h2>The typical stages of hardware product development</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Stage</th>
+                  <th>Main question</th>
+                  <th>Typical outputs</th>
+                  <th>Evidence to move on</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Discovery</td>
+                  <td>Is there a real problem worth solving, for whom?</td>
+                  <td>User research, problem statement, early requirements</td>
+                  <td>A specific user and buyer with a clear, repeated need</td>
+                </tr>
+                <tr>
+                  <td>Concept development</td>
+                  <td>Which approach best solves it?</td>
+                  <td>Sketches, rough models, <a class="glossary-term" href="../knowledge/glossary.html#term-concept-selection" data-definition="Choosing between design concepts using structured criteria rather than preference." aria-label="concept selection: Choosing between design concepts using structured criteria rather than preference. (glossary)">concept selection</a> matrix</td>
+                  <td>A chosen direction with its key risks named</td>
+                </tr>
+                <tr>
+                  <td>Prototyping and detailed design</td>
+                  <td>Does it work, and can it be made?</td>
+                  <td>CAD, works-like and <a class="text-link-inline" href="looks-like-vs-works-like-prototypes.html">looks-like prototypes</a>, draft <a class="glossary-term" href="../knowledge/glossary.html#term-bill-of-materials-bom" data-definition="The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly." aria-label="BOM: The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly. (glossary)">BOM</a></td>
+                  <td>Critical functions proven on representative prototypes</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-verification" data-definition="Checking that a product meets its specified requirements, through tests, inspection and analysis." aria-label="Verification: Checking that a product meets its specified requirements, through tests, inspection and analysis. (glossary)">Verification</a> and validation</td>
+                  <td>Does it meet the specification, standards and user needs?</td>
+                  <td>Test plans, test reports, pre-compliance results</td>
+                  <td>Design passes testing with production-intent parts</td>
+                </tr>
+                <tr>
+                  <td>Industrialisation</td>
+                  <td>Can it be made repeatably at the right cost?</td>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-design-for-manufacture-dfm" data-definition="Designing parts so they can be made reliably and economically by the chosen process." aria-label="DFM: Designing parts so they can be made reliably and economically by the chosen process. (glossary)">DFM</a> changes, tooling, supplier agreements, <a class="text-link-inline" href="planning-a-pilot-production-run.html">pilot builds</a></td>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-pilot-production" data-definition="A small production run on the real process to prove it can make the product repeatably." aria-label="Pilot run: A small production run on the real process to prove it can make the product repeatably. (glossary)">Pilot run</a> meets quality and yield targets</td>
+                </tr>
+                <tr>
+                  <td>Launch and support</td>
+                  <td>Can it be sold, delivered and supported?</td>
+                  <td>Production orders, packaging, service and spares plan</td>
+                  <td>Stable supply, returns and feedback being tracked</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Teams with electronics often describe the later stages as <a class="glossary-term" href="../knowledge/glossary.html#term-evt-dvt-and-pvt" data-definition="Engineering, design and production validation testing: the last three development stages, as named in many electronics teams." aria-label="EVT, DVT and PVT: Engineering, design and production validation testing: the last three development stages, as named in many electronics teams. (glossary)">EVT, DVT and PVT</a>: engineering validation, design validation and production validation builds.
+              The labels matter less than the principle. Each build should answer a defined question, and the next stage should not start in earnest until that question has a reasonable answer.
+            </p>
+
+            <h2>What changes the process emphasis</h2>
+            <ul>
+              <li><strong>Product complexity and system interactions.</strong> More subsystems mean more integration work and more prototype loops.</li>
+              <li><strong>Regulatory burden and verification load.</strong> Products with mains power, radios, <a class="glossary-term" href="../knowledge/glossary.html#term-food-contact-materials" data-definition="Materials and parts intended to touch food or drink, such as containers, utensils and appliance parts. They need grades and evidence suited to that use, so check the rules early." aria-label="food contact: Materials and parts intended to touch food or drink, such as containers, utensils and appliance parts. They need grades and evidence suited to that use, so check the rules early. (glossary)">food contact</a> or medical claims need compliance planning from the concept stage, not the end.</li>
+              <li><strong>Manufacturing novelty and supply-chain learning.</strong> A new process or a first-time supplier relationship needs more industrialisation time and earlier conversations.</li>
+              <li><strong>Launch pressure.</strong> Schedule compression pushes stages to overlap, which is manageable only if the team knows which overlaps carry the most risk.</li>
+            </ul>
+
+            <h2>Illustrative example: two products, two maps</h2>
+            <div class="worked-example">
+              <p>
+                A low-complexity product with a long launch window can stay discovery and prototyping heavy for longer. A regulated product with manufacturing novelty may need earlier verification and industrialisation planning than the team expects.
+              </p>
+              <p>
+                Consider two illustrative projects. The first is a mechanical camping accessory made from two moulded parts and a stainless pin, with no electronics.
+                Its map puts weight on discovery and prototyping, because the main risks are whether users want it and whether it survives rough handling.
+                Verification is mostly drop and load testing, and industrialisation centres on one tooling decision.
+              </p>
+              <p>
+                The second is a mains-powered kitchen device with Wi-Fi. Here, electrical safety, <a class="glossary-term" href="../knowledge/glossary.html#term-electromagnetic-compatibility-emc" data-definition="The ability of electrical equipment to work without causing or suffering unacceptable electromagnetic interference." aria-label="EMC: The ability of electrical equipment to work without causing or suffering unacceptable electromagnetic interference. (glossary)">EMC</a> and radio requirements shape the electronics architecture, enclosure and labelling.
+                Its map should start compliance planning during concept development, run pre-compliance checks on prototypes, and allow more time for verification and supplier qualification.
+                Following the first project’s map would leave the second team discovering test failures after tooling has started.
+              </p>
+            </div>
+
+            <h2>How to build a process map for your project</h2>
+            <ol data-howto="How to build a product design process map">
+              <li>List the open uncertainties: user need, technical function, cost, compliance, supply and demand.</li>
+              <li>Rank them by the cost of getting each one wrong late in the project.</li>
+              <li>Match each high-ranking uncertainty to the stage and activity that resolves it.</li>
+              <li>Define a simple gate for each stage: the evidence needed before committing more money.</li>
+              <li>Hold a short <a class="text-link-inline" href="running-a-design-review.html">design review</a> at each gate and record the decision and actions.</li>
+              <li>Plan the next three to six months in detail and the rest in outline only.</li>
+              <li>Revisit the map at every gate, because the biggest uncertainty will change.</li>
+            </ol>
+
+            <h2>Common process-mapping mistakes</h2>
+            <div class="article-summary-list">
+              <div><strong>Treating the process as a straight line.</strong> Real projects loop back. A failed test can send a team from verification back to detailed design, and the plan should expect that.</div>
+              <div><strong>Skipping discovery because the founder knows the user.</strong> Personal experience is a good starting point, not a substitute for talking to other buyers.</div>
+              <div><strong>Leaving compliance to the end.</strong> Late test failures are among the most expensive surprises in hardware because they can force changes to tooled parts.</div>
+              <div><strong>Starting tooling while verification is unresolved.</strong> Tooling against an unproven design locks in geometry that may still need to change.</div>
+              <div><strong>Planning every stage in equal detail.</strong> Detailed plans for stages a year away usually turn out wrong. Effort is better spent on the next gate.</div>
+            </div>
+
+            <div class="pull-quote">
+              <p>
+                A good process map does not predict the project. It makes the next decision obvious and the cost of skipping a stage visible.
+              </p>
+            </div>
+
+            <h2>Turning the map into a working plan</h2>
+            <p>The <a class="text-link-inline" href="../tools/product-design-process-map.html">Product Design Process Map</a> helps teams convert those project signals into a clearer stage emphasis so the next 3-6 months of work become easier to plan.</p>
+            <p>
+              If the team is still choosing between directions, read
+              <a class="text-link-inline" href="how-engineers-choose-between-concepts.html">How engineers choose between concepts</a> first.
+              For the manufacturing side of the map, <a class="text-link-inline" href="risk-progressive-manufacturing-strategy.html">The risk-progressive manufacturing strategy</a>
+              explains how to stage the move from prototype to bridge to scale, and the <a class="text-link-inline" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>
+              helps pick the right build method for each stage. When the stages are clear, the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a>
+              can pull timing, cost and milestones into one plan to share with the team or investors.
+            </p>
+            <div class="related-path-grid">
+              <div class="article-action-card"><h3>Map the next phase of work</h3><p>Use the process map to see which stages deserve emphasis now and which ones should wait.</p><a class="button button-primary" href="../tools/product-design-process-map.html" data-analytics-event="article_cta_click" data-analytics-label="process_article_to_process_map">Open Product Design Process Map</a></div>
+              <div class="article-action-card"><h3>Use concept selection before process detail</h3><p>If the team is still debating options, narrow the concepts first so the process map is built around the right direction.</p><a class="button button-secondary" href="../tools/pugh-concept-selector.html" data-analytics-event="article_cta_click" data-analytics-label="process_article_to_pugh_tool">Open Pugh Concept Selector</a></div>
+            </div>
+          </article>
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div><p class="aside-title">Related tools</p><div class="aside-list"><div class="aside-item"><a class="text-link" href="../tools/product-design-process-map.html">Product Design Process Map</a></div><div class="aside-item"><a class="text-link" href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a></div><div class="aside-item"><a class="text-link" href="../tools/production-strategy-planner.html">Production Strategy Planner</a></div></div></div>
+            <div><p class="aside-title">Typical questions</p><div class="tag-row"><span>Product design process map</span><span>Hardware development process</span><span>Product development stages</span></div></div>
+          </aside>
+        </div>
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What are the stages of the product design process?</h3>
+                <p>For physical products the usual stages are discovery, concept development, prototyping and detailed design, verification and validation, industrialisation, and launch. In practice the stages overlap and loop back when testing reveals problems. The balance between them depends on the product’s complexity, regulation and manufacturing route.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How long does it take to develop a physical product?</h3>
+                <p>It varies widely. A simple mechanical product with a stable concept can often reach production in well under a year, while a connected or regulated electronic product commonly takes a year or more. Compliance testing, tooling lead times and the number of prototype loops are usually what decide the timeline.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What do EVT, DVT and PVT mean?</h3>
+                <p>They are common names for build stages in hardware development. EVT (engineering validation test) checks that the design works, DVT (design validation test) checks that production-intent parts meet the specification and standards, and PVT (production validation test) checks that the production line can make it repeatably.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is the product design process linear?</h3>
+                <p>No. It is usually drawn as a sequence, but real projects iterate. Prototyping often sends teams back to concept decisions, and verification can send them back to detailed design. A good process map plans for those loops instead of pretending they will not happen.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should you start thinking about manufacturing?</h3>
+                <p>From the concept stage. Choices about materials, part count and process shape cost and feasibility long before tooling is ordered. An early design for manufacture review is far cheaper than changing a design after it has been tooled.</p>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="how-to-write-a-product-requirements-document.html">Write a product requirements document</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="product-testing-and-validation-plans.html">Testing and validation plans</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">Author</p>
+            <h2>Andrew Hunter</h2>
+            <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to inform early decisions, then validate against project-specific data, supplier input, and production constraints.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144"><p class="footer-copy">Process writing for engineering-led product development.</p></div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div><h3>Continue reading</h3><a href="../tools/product-design-process-map.html">Product Design Process Map</a><a href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a></div>
+        <div><h3>Contact</h3><a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a><a href="../privacy/index.html">Privacy</a></div>
+      </div>
+    </footer>
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

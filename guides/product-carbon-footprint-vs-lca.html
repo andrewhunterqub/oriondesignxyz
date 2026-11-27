@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Product Carbon Footprint vs LCA | Orion Design</title>
+    <meta
+      name="description"
+      content="Product carbon footprint vs life cycle assessment: what each measures, standards, boundaries, when a design-stage estimate is enough and when to do a formal study."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/product-carbon-footprint-vs-lca.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Product carbon footprint vs LCA | Orion Design">
+    <meta
+      property="og:description"
+      content="Product carbon footprint vs life cycle assessment: what each measures, standards, boundaries, when a design-stage estimate is enough and when to do a formal study."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/product-carbon-footprint-vs-lca.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-product-carbon-footprint-vs-lca.jpg">
+    <meta property="og:image:alt" content="Product carbon footprint vs LCA guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Product carbon footprint vs LCA | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Product carbon footprint vs life cycle assessment: what each measures, standards, boundaries, when a design-stage estimate is enough and when to do a formal study."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-product-carbon-footprint-vs-lca.jpg">
+    <meta name="twitter:image:alt" content="Product carbon footprint vs LCA guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-product-carbon-footprint-vs-lca.jpg",
+        "headline": "Product carbon footprint vs LCA: what each measures and when to use it",
+        "description": "Product carbon footprint vs life cycle assessment: what each measures, standards, boundaries, when a design-stage estimate is enough and when to do a formal study.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-25",
+        "articleSection": "Sustainability and product life",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/product-carbon-footprint-vs-lca.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Carbon footprint"
+          },
+          {
+            "@type": "Thing",
+            "name": "Life-cycle assessment"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Product carbon footprint vs LCA",
+                "item": "https://oriondesign.xyz/guides/product-carbon-footprint-vs-lca.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the difference between a carbon footprint and an LCA?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A product carbon footprint measures greenhouse gas emissions only, usually in kg CO₂e. A life cycle assessment looks at several environmental impacts, such as climate change, water use and resource depletion, across the product's life."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which standards apply to product carbon footprints and LCAs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Product carbon footprints are commonly calculated to ISO 14067, the GHG Protocol Product Standard or PAS 2050. Life cycle assessments follow ISO 14040 and ISO 14044."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does cradle to gate mean?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A boundary that covers raw materials and manufacturing up to the product leaving the factory. Cradle to grave adds distribution, use and end of life."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is a design-stage estimate good enough?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For comparing options and finding hotspots during design, usually yes. For public claims, customer requirements or close comparisons, a formal study to a recognised standard is more appropriate."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I publish my product's carbon footprint?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Environmental claims must be accurate and supported by evidence. In the UK, the CMA's Green Claims Code sets out what businesses should consider. Early estimates should not be presented as verified figures."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Product carbon footprint vs LCA</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 25 November 2026 <span aria-hidden="true">·</span> For designers and founders deciding how to measure a product's environmental impact</p>
+            <h1>Product carbon footprint vs LCA: what each measures and when to use it</h1>
+            <p>
+              The difference between a product carbon footprint and a life cycle assessment, the standards behind each, how boundaries change the result, and when a quick design-stage estimate is enough.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A product carbon footprint measures one impact, greenhouse gas emissions; a life cycle assessment (LCA) looks at many impacts across the product's whole life.</h2>
+              <p>
+                For early design decisions, a simple carbon estimate is usually enough to compare options and find the biggest contributors.
+                A full, standards-based footprint or LCA takes far more data and effort, and is worth it when you need to make public claims, meet a customer's requirements,
+                or compare options where the differences are small or the trade-offs involve impacts other than carbon.
+              </p>
+            </div>
+
+            <h2>The difference at a glance</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Product carbon footprint</th>
+                  <th>Life cycle assessment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Measures</td>
+                  <td>Greenhouse gas emissions, usually as kg CO₂e</td>
+                  <td>Several impact categories, such as climate change, water use, resource depletion and toxicity</td>
+                </tr>
+                <tr>
+                  <td>Main standards</td>
+                  <td>ISO 14067; the GHG Protocol Product Standard; PAS 2050</td>
+                  <td>ISO 14040 and ISO 14044</td>
+                </tr>
+                <tr>
+                  <td>Effort</td>
+                  <td>Lower, especially for a design-stage estimate</td>
+                  <td>Higher: more data, more modelling, often external review</td>
+                </tr>
+                <tr>
+                  <td>Good for</td>
+                  <td>Comparing design options on climate impact; finding hotspots</td>
+                  <td>Avoiding trade-offs where reducing carbon raises another impact; formal comparisons and claims</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>Boundaries: what is included</h2>
+            <ul>
+              <li><strong>Cradle to gate:</strong> materials and manufacturing, up to the product leaving the factory.</li>
+              <li><strong>Cradle to grave:</strong> adds distribution, use, maintenance and end of life.</li>
+              <li><strong>Functional unit:</strong> what is being compared, for example "one year of use" rather than "one product", so products with different lifetimes compare fairly.</li>
+            </ul>
+            <p>
+              Results only compare fairly when the boundaries, <a class="glossary-term" href="../knowledge/glossary.html#term-functional-unit" data-definition="The basis a footprint or LCA compares on, such as one year of use, so products with different lifetimes compare fairly." aria-label="functional unit: The basis a footprint or LCA compares on, such as one year of use, so products with different lifetimes compare fairly. (glossary)">functional unit</a> and data sources are the same. For products that use energy, the use phase is often large,
+              so leaving it out can be misleading; see <a class="text-link-inline" href="why-product-lifetime-matters-more-than-recycling.html">why product lifetime matters more than recycling</a>.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              use a quick estimate to steer design, and a formal study to support claims. Don't publish a number from an early estimate as if it were a verified footprint.
+            </div>
+
+            <h2>When an estimate is enough</h2>
+            <ul>
+              <li>Comparing two materials, processes or transport options early in design.</li>
+              <li>Finding which parts or life stages dominate, so effort goes where it matters.</li>
+              <li>Setting internal targets and tracking improvements between design versions.</li>
+            </ul>
+            <p>The <a class="text-link-inline" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a> is built for this kind of design-stage comparison; see <a class="text-link-inline" href="estimating-product-carbon-footprint-during-design.html">estimating carbon footprint during design</a>.</p>
+
+            <h2>When you need more</h2>
+            <ul>
+              <li><strong>Public environmental claims</strong> must be accurate and supported by evidence; see the CMA's <a class="text-link-inline" href="https://www.gov.uk/government/publications/green-claims-code-making-environmental-claims" rel="noopener">Green Claims Code</a>.</li>
+              <li><strong>Customer or retailer requirements</strong> for footprints to a named standard.</li>
+              <li><strong>Close comparisons</strong> where differences are within the uncertainty of an estimate.</li>
+              <li><strong>Possible trade-offs</strong> beyond carbon, such as water use or toxicity, where an <a class="glossary-term" href="../knowledge/glossary.html#term-life-cycle-assessment-lca" data-definition="A standard method for assessing a product's environmental impacts across its whole life." aria-label="LCA: A standard method for assessing a product's environmental impacts across its whole life. (glossary)">LCA</a> is needed.</li>
+            </ul>
+
+            <h2>Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Comparing results with different boundaries.</strong>
+                A cradle-to-gate figure cannot be compared with a cradle-to-grave one.
+              </div>
+              <div>
+                <strong>Ignoring the use phase.</strong>
+                For products that use energy or consumables, it can outweigh manufacturing.
+              </div>
+              <div>
+                <strong>False precision.</strong>
+                Early estimates carry wide uncertainty; present them as ranges.
+              </div>
+              <div>
+                <strong>Making claims from estimates.</strong>
+                Public claims need robust evidence.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Estimate the main contributors with the <a class="text-link-inline" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a>.</li>
+              <li>Compare lifetime and repair scenarios with the <a class="text-link-inline" href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a>.</li>
+              <li>Read <a class="text-link-inline" href="sustainable-product-design.html">the most sustainable product</a> and <a class="text-link-inline" href="design-for-repair-and-disassembly.html">design for repair and disassembly</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Estimate the footprint</h3>
+                <p>Compare design options and find the hotspots.</p>
+                <a class="button button-primary" href="../tools/carbon-footprint.html" data-analytics-event="article_cta_click" data-analytics-label="lca_guide_to_carbon">Open Carbon Footprint Estimator</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Explore product life</h3>
+                <p>See how lifetime and repair change the picture.</p>
+                <a class="button button-secondary" href="../tools/product-lifecycle-explorer.html" data-analytics-event="article_cta_click" data-analytics-label="lca_guide_to_lifecycle">Open Product Lifecycle Explorer</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="sustainability-and-product-life.html">Sustainability and product life: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/material-selector.html">Material Selector</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="estimating-product-carbon-footprint-during-design.html">Estimating carbon footprint in design</a></div>
+                <div class="aside-item"><a class="text-link" href="why-product-lifetime-matters-more-than-recycling.html">Why lifetime matters</a></div>
+                <div class="aside-item"><a class="text-link" href="design-for-repair-and-disassembly.html">Design for repair and disassembly</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Carbon footprint</span>
+                <span>LCA</span>
+                <span>Standards</span>
+                <span>Green claims</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is the difference between a carbon footprint and an LCA?</h3>
+                <p>A product carbon footprint measures greenhouse gas emissions only, usually in kg CO₂e. A life cycle assessment looks at several environmental impacts, such as climate change, water use and resource depletion, across the product's life.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Which standards apply to product carbon footprints and LCAs?</h3>
+                <p>Product carbon footprints are commonly calculated to ISO 14067, the GHG Protocol Product Standard or PAS 2050. Life cycle assessments follow ISO 14040 and ISO 14044.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What does cradle to gate mean?</h3>
+                <p>A boundary that covers raw materials and manufacturing up to the product leaving the factory. Cradle to grave adds distribution, use and end of life.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is a design-stage estimate good enough?</h3>
+                <p>For comparing options and finding hotspots during design, usually yes. For public claims, customer requirements or close comparisons, a formal study to a recognised standard is more appropriate.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I publish my product's carbon footprint?</h3>
+                <p>Environmental claims must be accurate and supported by evidence. In the UK, the CMA's Green Claims Code sets out what businesses should consider. Early estimates should not be presented as verified figures.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

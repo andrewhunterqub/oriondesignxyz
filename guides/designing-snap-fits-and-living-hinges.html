@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Designing Snap Fits and Living Hinges | Orion Design</title>
+    <meta
+      name="description"
+      content="How to design snap fits and living hinges in moulded plastic: cantilever strain, root radius, angles, undercuts, testing prints and polypropylene hinges."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/designing-snap-fits-and-living-hinges.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Designing snap fits and living hinges | Orion Design">
+    <meta
+      property="og:description"
+      content="How to design snap fits and living hinges in moulded plastic: cantilever strain, root radius, angles, undercuts, testing prints and polypropylene hinges."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/designing-snap-fits-and-living-hinges.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-designing-snap-fits-and-living-hinges.jpg">
+    <meta property="og:image:alt" content="Designing snap fits and living hinges guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Designing snap fits and living hinges | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to design snap fits and living hinges in moulded plastic: cantilever strain, root radius, angles, undercuts, testing prints and polypropylene hinges."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-designing-snap-fits-and-living-hinges.jpg">
+    <meta name="twitter:image:alt" content="Designing snap fits and living hinges guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-designing-snap-fits-and-living-hinges.jpg",
+        "headline": "Designing snap fits and living hinges: flexible features that last",
+        "description": "How to design snap fits and living hinges in moulded plastic: cantilever strain, root radius, angles, undercuts, testing prints and polypropylene hinges.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/designing-snap-fits-and-living-hinges.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Snap fit"
+          },
+          {
+            "@type": "Thing",
+            "name": "Living hinge"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design for injection moulding"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Designing snap fits and living hinges",
+                "item": "https://oriondesign.xyz/guides/designing-snap-fits-and-living-hinges.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Where do I find the permissible strain for my plastic?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "In the material supplier's design data or snap-fit design guide for the exact grade. Ask the supplier or your moulder if it is not published. Use the figure for repeated use if the snap will be opened more than once."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use snap fits in glass-filled plastics?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sometimes, but glass-filled grades usually tolerate much less strain than unfilled ones, so the beam must be longer, thinner or deflect less. Run the strain check with the supplier's figure for the filled grade before committing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why did my 3D-printed snap fit break?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Printed parts are often weaker between layers and tolerate less strain than moulded parts, so a beam that breaks in a print may be fine when moulded. Print the beam with layers along its length and confirm durability on moulded samples."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do snap fits always make the mould more expensive?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not always. A hook facing sideways is an undercut that needs a slider or lifter, but a through-hole behind the hook often lets a bypass core form it with a straight pull. Agree the approach with your moulder at the DFM review."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can a living hinge be made in ABS?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not one that flexes repeatedly: ABS and most other common rigid plastics crack after a few cycles. Polypropylene is the usual material for living hinges. For an ABS part, use a separate pin hinge or a moulded snap-in hinge instead."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Designing snap fits and living hinges</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders and designers adding clips, catches and hinges to moulded plastic parts</p>
+            <h1>Designing snap fits and living hinges: flexible features that last</h1>
+            <p>
+              How snap fits work, the simple strain check that stops a cantilever snap from cracking, the angles that decide whether it can be undone, what they mean for the mould, how to test them on prototypes, and how to design a polypropylene living hinge.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A snap fit works only if the plastic can bend far enough to clear the catch without being strained beyond what the material can take. Check that strain before the tool is cut.</h2>
+              <p>
+                For a cantilever snap, the strain at the root is roughly 1.5 × thickness × deflection ÷ length². Keep it below the permissible strain in your material supplier's design data, add a radius at the root, and choose the angles to suit whether the joint must come apart.
+                Living hinges are thin flexible webs, almost always moulded in polypropylene, that need careful gating so the plastic flows straight across the hinge.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#types">Types of snap fit</a></li>
+              <li><a class="text-link-inline" href="#strain">The cantilever rule: checking strain</a></li>
+              <li><a class="text-link-inline" href="#root">Root radius and stress concentration</a></li>
+              <li><a class="text-link-inline" href="#angles">Assembly angle, retention angle and friction</a></li>
+              <li><a class="text-link-inline" href="#mould">What snap fits mean for the mould</a></li>
+              <li><a class="text-link-inline" href="#repair">Designing for disassembly and repair</a></li>
+              <li><a class="text-link-inline" href="#prototypes">Testing snap fits on 3D-printed prototypes</a></li>
+              <li><a class="text-link-inline" href="#hinges">Living hinges</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: checking a battery-door snap</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+            </ol>
+
+            <h2 id="types">Types of snap fit</h2>
+            <p>
+              A snap fit is a flexible feature that deflects as two parts are pushed together and springs back behind a catch. It needs no screws or loose parts. The <a class="text-link-inline" href="joining-methods-for-product-design.html">joining methods guide</a> sets snap fits against screws, welding and adhesives; this guide goes into how to design them.
+            </p>
+            <ul>
+              <li><strong>Cantilever:</strong> a hook on the end of a short flexible beam. The most common type, and the easiest to calculate.</li>
+              <li><strong>Annular:</strong> a continuous bead or groove around a round part, as on a pen cap or a container lid. It can be strong and help to seal, but needs more force to assemble.</li>
+              <li><strong>Torsional:</strong> a lever held on a short bar that twists. Pressing one end of the lever lifts the hook at the other, which makes it a natural choice for a catch that the user releases by hand.</li>
+            </ul>
+
+            <h2 id="strain">The cantilever rule: checking strain</h2>
+            <p>
+              When a <a class="glossary-term" href="../knowledge/glossary.html#term-cantilever-snap-fit" data-definition="The most common type of snap fit: a hook on the end of a short flexible beam that bends as the parts are pushed together and springs back behind a catch. The strain at the root of the beam must stay below the material's permissible strain." aria-label="cantilever snap: The most common type of snap fit: a hook on the end of a short flexible beam that bends as the parts are pushed together and springs back behind a catch. The strain at the root of the beam must stay below the material's permissible strain. (glossary)">cantilever snap</a> deflects, the plastic on the outside of the bend is stretched, most of all at the root, where the beam meets the wall. If it goes beyond what the material can take, the beam cracks or stays permanently bent.
+            </p>
+            <p>
+              For a beam of constant rectangular section, the strain at the root is approximately:
+            </p>
+            <div class="article-highlight">
+              <strong>ε = 1.5 × t × y ÷ L²</strong>
+              where <strong>t</strong> is the beam thickness at the root, measured in the direction it bends; <strong>y</strong> is the deflection, how far the hook must move to clear the catch; and <strong>L</strong> is the beam length, from the root to the point where the catch acts on the hook. Use the same units for all three. The answer is a fraction, so multiply by 100 for a percentage.
+            </div>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 360 230" width="100%" role="img" aria-labelledby="snap-fig-title snap-fig-desc">
+                <title id="snap-fig-title">A cantilever snap fit with its thickness, deflection and length marked</title>
+                <desc id="snap-fig-desc">Side view of a cantilever snap. A flat beam sticks out from a wall, with a hook on its free end. Its thickness is marked t, its length from the wall to the hook is marked L, and a dashed outline shows the beam bent upwards by a distance y as the hook rides over a catch. A label at the root, where the beam meets the wall, says strain is highest there and a radius should be added. Not to scale.</desc>
+                <defs><marker id="snap-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <rect x="20" y="30" width="40" height="170" class="gd-box"/>
+                <path d="M68,90 Q170,90 262,72 L262,88 Q170,106 68,106" class="gd-ghost"/>
+                <path d="M60,96 Q60,104 68,104 L262,104 L262,120 L238,142 L226,142 L226,120 L68,120 Q60,120 60,128 Z" class="gd-box-teal"/>
+                <line x1="150" y1="72" x2="150" y2="102" class="gd-line" marker-end="url(#snap-arrow)"/>
+                <line x1="150" y1="146" x2="150" y2="122" class="gd-line" marker-end="url(#snap-arrow)"/>
+                <text x="140" y="86" text-anchor="end" class="gd-h">t</text>
+                <line x1="270" y1="80" x2="300" y2="80" class="gd-grid"/>
+                <line x1="270" y1="112" x2="300" y2="112" class="gd-grid"/>
+                <line x1="292" y1="112" x2="292" y2="82" class="gd-line" marker-end="url(#snap-arrow)"/>
+                <text x="302" y="101" class="gd-h">y</text>
+                <line x1="60" y1="150" x2="60" y2="182" class="gd-grid"/>
+                <line x1="232" y1="146" x2="232" y2="182" class="gd-grid"/>
+                <line x1="62" y1="176" x2="230" y2="176" class="gd-line" marker-start="url(#snap-arrow)" marker-end="url(#snap-arrow)"/>
+                <text x="146" y="196" text-anchor="middle" class="gd-h">L</text>
+                <text x="70" y="30" class="gd-t">Root: highest strain,</text>
+                <text x="70" y="48" class="gd-t">so add a radius here</text>
+                <line x1="76" y1="54" x2="64" y2="96" class="gd-line"/>
+                <text x="244" y="160" class="gd-m">Hook</text>
+                <text x="190" y="220" text-anchor="middle" class="gd-m">ε = 1.5 × t × y ÷ L²</text>
+              </svg>
+              <figcaption>Side view, not to scale. The dashed outline shows the beam bent by y as the hook rides over the catch. Strain rises with thickness and deflection, and falls with the square of the length.</figcaption>
+            </figure>
+            <p>
+              The result must stay below the <strong>permissible strain</strong> for your material, taken from the supplier's design data for the exact grade. Plastics differ widely here: tough, unfilled grades usually tolerate far more than brittle or glass-filled ones, and some supplier guides give a higher value for a snap that is assembled once than for one that will be opened again and again.
+            </p>
+            <p>
+              Because L is squared, <strong>lengthening the beam</strong> is the most powerful way to reduce strain. <strong>Tapering the beam</strong>, so it is thicker at the root and thinner towards the hook, spreads the bending more evenly and also lowers the peak strain; supplier design guides give adjusted formulas for tapered beams. A shallower catch reduces deflection too, but leaves less engagement.
+            </p>
+            <p>
+              The formula is a simplified beam calculation that assumes a rigid wall and modest deflections. Treat it as a design check and confirm it by testing real parts.
+            </p>
+
+            <h2 id="root">Root radius and stress concentration</h2>
+            <p>
+              A sharp internal corner where the beam meets the wall concentrates stress, so the local strain can be much higher than the formula suggests, and it is where most snap fits crack. A radius at the root spreads the load; a radius of around half the beam thickness is a commonly cited starting point, and larger is generally better if the space allows.
+            </p>
+            <p>
+              Keep the beam's wall junction consistent with the <a class="text-link-inline" href="injection-moulding-dfm-checklist.html">injection moulding DFM checklist</a>: a beam much thicker than the wall it grows from will sink, and a beam much thinner may not fill.
+            </p>
+
+            <h2 id="angles">Assembly angle, retention angle and friction</h2>
+            <p>
+              A cantilever hook has two working faces. The <strong>assembly angle</strong>, or lead-in, is the sloping face that rides over the catch as the parts go together. A shallow slope makes assembly easier but needs a longer hook. The <strong>retention angle</strong> is the face that holds the parts together once assembled, and it decides whether the joint can come apart:
+            </p>
+            <ul>
+              <li><strong>Permanent:</strong> a retention face at or near 90° to the pull will not push the beam aside, so the joint cannot be separated by pulling. Something must break first, or the hook must be lifted by hand or with a tool.</li>
+              <li><strong>Releasable:</strong> a retention face set at a shallower angle lets the hook slide out under a firm pull, so the joint can be opened without a tool. The shallower the slope, the lower the force needed to separate it.</li>
+            </ul>
+            <p>
+              <strong>Friction</strong> matters more than people expect. The force to push a snap together comes from bending the beam, multiplied by a factor that depends on the angle and the friction between the two surfaces. A commonly used relationship is W = P × (μ + tan α) ÷ (1 − μ × tan α), where P is the force to deflect the beam, α is the angle of the face and μ is the coefficient of friction. The same expression with the <a class="glossary-term" href="../knowledge/glossary.html#term-retention-angle" data-definition="The face of a snap-fit hook that holds the parts together once assembled. At or near 90° to the pull the joint cannot be pulled apart; a shallower angle lets the hook slide out under a firm pull." aria-label="retention angle: The face of a snap-fit hook that holds the parts together once assembled. At or near 90° to the pull the joint cannot be pulled apart; a shallower angle lets the hook slide out under a firm pull. (glossary)">retention angle</a> gives the force to pull it apart.
+              As the angle steepens, the term (1 − μ × tan α) approaches zero and the force rises sharply, which is why a steep retention face behaves as if it were locked. Friction varies with the materials and <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">surface finish</a>, so take values from supplier data and confirm forces by testing.
+            </p>
+
+            <h2 id="mould">What snap fits mean for the mould</h2>
+            <p>
+              A hook that faces sideways is an <strong>undercut</strong>: it would lock the part on the tool when the mould opens. As <a class="text-link-inline" href="injection-moulding-explained.html">injection moulding explained</a> describes, undercuts are formed by moving parts of the tool. <strong>Sliders</strong> (side actions) move out sideways before the part is ejected, and <strong>lifters</strong> move at an angle as the part is pushed off the core. Both add tool cost and maintenance.
+            </p>
+            <p>
+              Often the better answer is to design them out. Putting a <strong>through-hole</strong> in the wall behind the hook lets a <strong>bypass core</strong> pass through and form the hook's underside, so the hook can be moulded with a straight pull. Shallow annular snaps in a flexible material can sometimes be pushed off the core without a <a class="glossary-term" href="../knowledge/glossary.html#term-side-action" data-definition="A moving part of a mould tool that forms an undercut and slides out before the part is ejected." aria-label="side action: A moving part of a mould tool that forms an undercut and slides out before the part is ejected. (glossary)">side action</a>; your <a class="glossary-term" href="../knowledge/glossary.html#term-moulder" data-definition="A company that runs injection-moulding machines to make parts from a mould tool. It may also make the tool, or work with a separate toolmaker." aria-label="moulder: A company that runs injection-moulding machines to make parts from a mould tool. It may also make the tool, or work with a separate toolmaker. (glossary)">moulder</a> will know whether that suits the part. Agree every snap detail at the <a class="glossary-term" href="../knowledge/glossary.html#term-design-for-manufacture-dfm" data-definition="Designing parts so they can be made reliably and economically by the chosen process." aria-label="DFM: Designing parts so they can be made reliably and economically by the chosen process. (glossary)">DFM</a> review, before the steel is cut, and check draft on the beam faces.
+            </p>
+            <p>
+              Removing steel from the tool, which makes a feature thicker or deeper, is usually easier than adding steel back. So start with a beam on the thin side and a slightly shallow catch: if first samples are too weak or too easy to release, the <a class="glossary-term" href="../knowledge/glossary.html#term-toolmaker" data-definition="The company or specialist that designs and makes mould tools, and reviews part designs for mouldability before the tool is cut." aria-label="toolmaker: The company or specialist that designs and makes mould tools, and reviews part designs for mouldability before the tool is cut. (glossary)">toolmaker</a> can thicken the beam or deepen the catch by removing steel.
+            </p>
+
+            <h2 id="repair">Designing for disassembly and repair</h2>
+            <p>
+              A housing held shut by hidden one-way snaps cannot be opened without breaking it, which turns a battery change into a new product. If the product may ever be serviced, follow <a class="text-link-inline" href="design-for-repair-and-disassembly.html">design for repair and disassembly</a>:
+            </p>
+            <ul>
+              <li>Use releasable angles, or provide a slot where a flat tool can press the hook back, and show where it is.</li>
+              <li>Design for the number of openings expected and check the <a class="glossary-term" href="../knowledge/glossary.html#term-permissible-strain" data-definition="The most strain a plastic can take in a flexing feature, such as a snap fit, without cracking or staying bent, taken from the material supplier's design data for the exact grade. Suppliers often give a lower figure for a joint opened many times than for one assembled once." aria-label="permissible strain: The most strain a plastic can take in a flexing feature, such as a snap fit, without cracking or staying bent, taken from the material supplier's design data for the exact grade. Suppliers often give a lower figure for a joint opened many times than for one assembled once. (glossary)">permissible strain</a> for repeated use, not single assembly.</li>
+              <li>Make sure the closed snap is relaxed, not left bent: plastics creep under constant load.</li>
+            </ul>
+
+            <h2 id="prototypes">Testing snap fits on 3D-printed prototypes</h2>
+            <p>
+              3D-printed prototypes are a good way to check that a snap engages, how it feels, and whether a hand or tool can release it. They are a poor guide to how long it will last. Printed parts are usually <strong>anisotropic</strong>: they are weaker between layers than along them, so a beam whose layers run across the root can snap at a strain a moulded part would shrug off. Many printed materials also tolerate <strong>less strain</strong> than the moulded grade, and their surface and friction differ.
+            </p>
+            <p>
+              Print beams with the layers running along their length where you can, and do not change a sound design only because a print failed; equally, a print that survives is not proof. Make the decisive tests on first samples from the tool. <a class="text-link-inline" href="from-3d-printed-prototype-to-moulded-part.html">From 3D-printed prototype to moulded part</a> covers the wider changes, and <a class="text-link-inline" href="choosing-a-3d-printing-process.html">choosing a 3D printing process</a> compares the processes, some of which give tougher parts than others.
+            </p>
+
+            <h2 id="hinges">Living hinges</h2>
+            <p>
+              A <a class="glossary-term" href="../knowledge/glossary.html#term-living-hinge" data-definition="A thin, flexible section of plastic that acts as a hinge, typically moulded in polypropylene." aria-label="living hinge: A thin, flexible section of plastic that acts as a hinge, typically moulded in polypropylene. (glossary)">living hinge</a> is a thin, flexible web of plastic that joins two parts of the same moulding, as on a flip-top bottle cap. It saves a separate hinge and its assembly, but only works in the right material with the right detail.
+            </p>
+            <ul>
+              <li><strong>Material:</strong> polypropylene is the usual choice because it can flex many times without cracking; polyethylene is sometimes used. Most other common plastics, such as ABS and polycarbonate, crack after a few flexes. Check the grade with the supplier; <a class="text-link-inline" href="choosing-plastic-materials.html">choosing plastic materials</a> explains how plastics differ.</li>
+              <li><strong>Geometry:</strong> the web is very thin compared with the walls either side, short in the direction of bending, and blends into the thicker sections with smooth radii rather than sharp steps. The supplier's design guide or your moulder will give the starting dimensions for the grade.</li>
+              <li><strong>Gate location:</strong> plastic should flow straight across the hinge, from one side to the other, in a single front. The molecules then line up across the hinge, which gives it its strength. Avoid a gate that sends flow along the hinge or makes two flow fronts meet in it, because the resulting weld line is weak.</li>
+              <li><strong>Flexing after moulding:</strong> a commonly cited practice is to flex the hinge a few times soon after the part leaves the tool, while it is still warm, to set the orientation. Practice varies, so ask your moulder whether they recommend it for your grade.</li>
+            </ul>
+            <p>
+              Living hinges are hard to prototype faithfully: printed versions rarely behave like moulded polypropylene, so treat them as fit checks and plan to prove the hinge on tool samples.
+            </p>
+
+            <h2 id="example">Worked example: checking a battery-door snap</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example, with round numbers chosen to show the method. A moulded battery door has a cantilever snap with a beam <strong>t = 1.5 mm</strong> thick at the root and <strong>L = 15 mm</strong> long. The hook must move <strong>y = 1 mm</strong> to clear the catch.
+              </p>
+              <p>
+                ε = 1.5 × 1.5 × 1 ÷ 15² = 2.25 ÷ 225 = 0.010, or <strong>about 1.0%</strong> strain at the root.
+              </p>
+            </div>
+            <p>
+              The next step is to compare that 1.0% with the permissible strain for the exact grade, taken from the supplier's design data. If the supplier's figure is comfortably higher, the beam is likely to be fine. If it is lower, or only just higher, change the design. Lengthening the beam to 20 mm, for example, gives 1.5 × 1.5 × 1 ÷ 400, about 0.56%; reducing the deflection to 0.8 mm gives about 0.8%. Tapering the beam would also help.
+            </p>
+            <p>
+              Because the door will be opened for battery changes, the team uses the permissible strain for repeated use, adds a root radius, gives the hook a releasable retention angle and a slot for a coin, then proves it by opening and closing moulded samples many times.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>A sharp corner at the root.</strong>
+                It concentrates strain where it is already highest. Add a radius.
+              </div>
+              <div>
+                <strong>Checking strain against the wrong figure.</strong>
+                A value from a different grade, a general table or a single-assembly figure for a snap that is opened often. Use the supplier's data for your grade and use case.
+              </div>
+              <div>
+                <strong>Short, stiff beams.</strong>
+                Halving the length quadruples the strain. Find the space for a longer beam early in the layout.
+              </div>
+              <div>
+                <strong>Judging durability from 3D prints.</strong>
+                Printed parts are weaker between layers and tolerate less strain. Use them for fit and feel, and moulded samples for durability.
+              </div>
+              <div>
+                <strong>Every snap needing a side action.</strong>
+                Ask whether a through-hole and bypass core can form the hook instead.
+              </div>
+              <div>
+                <strong>A living hinge in the wrong plastic, or with a weld line across it.</strong>
+                Use a suitable polypropylene and gate so the flow crosses the hinge in one front.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>List every snap and hinge in the design and note whether each must be opened again.</li>
+              <li>Get the design data for your chosen grade from the supplier and check each cantilever with the formula above, or with the <a class="text-link-inline" href="../tools/snap-fit-calculator.html">Snap-fit Calculator</a>, which also estimates the assembly and separation forces.</li>
+              <li>Check walls, draft and undercuts with the <a class="text-link-inline" href="../tools/dfm-checker.html">Injection Moulding DFM Checker</a>, then review the snap details with your moulder.</li>
+              <li>See where this sits in the wider picture in the <a class="text-link-inline" href="manufacturing-and-cost.html">manufacturing and cost hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Check a cantilever snap</h3>
+                <p>Root strain against your material's permissible strain, plus the forces to assemble and release it.</p>
+                <a class="button button-primary" href="../tools/snap-fit-calculator.html" data-analytics-event="article_cta_click" data-analytics-label="snap_fit_guide_to_calculator">Open Snap-fit Calculator</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Check moulded features</h3>
+                <p>Walls, draft, ribs, bosses, corners and undercuts against typical rules.</p>
+                <a class="button button-secondary" href="../tools/dfm-checker.html" data-analytics-event="article_cta_click" data-analytics-label="snap_fit_guide_to_dfm">Open DFM Checker</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/dfm-checker.html">Injection Moulding DFM Checker</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/material-selector.html">Material Selector</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/assembly-time.html">Assembly Time Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/snap-fit-calculator.html">Snap-fit Calculator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="joining-methods-for-product-design.html">Joining methods</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-explained.html">Injection moulding explained</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-plastic-materials.html">Choosing plastic materials</a></div>
+                <div class="aside-item"><a class="text-link" href="design-for-repair-and-disassembly.html">Design for repair and disassembly</a></div>
+                <div class="aside-item"><a class="text-link" href="designing-buttons-switches-and-controls.html">Designing buttons, switches and controls</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Snap fits</span>
+                <span>Cantilever strain</span>
+                <span>Undercuts</span>
+                <span>Living hinges</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Where do I find the permissible strain for my plastic?</h3>
+                <p>In the material supplier's design data or snap-fit design guide for the exact grade. Ask the supplier or your moulder if it is not published. Use the figure for repeated use if the snap will be opened more than once.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I use snap fits in glass-filled plastics?</h3>
+                <p>Sometimes, but glass-filled grades usually tolerate much less strain than unfilled ones, so the beam must be longer, thinner or deflect less. Run the strain check with the supplier's figure for the filled grade before committing.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why did my 3D-printed snap fit break?</h3>
+                <p>Printed parts are often weaker between layers and tolerate less strain than moulded parts, so a beam that breaks in a print may be fine when moulded. Print the beam with layers along its length and confirm durability on moulded samples.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do snap fits always make the mould more expensive?</h3>
+                <p>Not always. A hook facing sideways is an undercut that needs a slider or lifter, but a through-hole behind the hook often lets a bypass core form it with a straight pull. Agree the approach with your moulder at the DFM review.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can a living hinge be made in ABS?</h3>
+                <p>Not one that flexes repeatedly: ABS and most other common rigid plastics crack after a few cycles. Polypropylene is the usual material for living hinges. For an ABS part, use a separate pin hinge or a moulded snap-in hinge instead.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

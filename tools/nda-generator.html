@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Free NDA Generator for Product Discussions | Orion Design</title>
+    <meta
+      name="description"
+      content="Generate a simple one-way or mutual NDA draft for product, design, and manufacturing discussions."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/nda-generator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="NDA Generator for Product and Manufacturing Conversations | Orion Design">
+    <meta
+      property="og:description"
+      content="Generate a simple one-way or mutual NDA draft for product, design, and manufacturing discussions."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/nda-generator.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-nda-generator.jpg">
+    <meta property="og:image:alt" content="NDA generator for product and manufacturing conversations from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NDA Generator for Product and Manufacturing Conversations | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Generate a simple one-way or mutual NDA draft for product, design, and manufacturing discussions."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-nda-generator.jpg">
+    <meta name="twitter:image:alt" content="NDA generator for product and manufacturing conversations from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-nda-generator.jpg",
+        "name": "NDA Generator",
+        "url": "https://oriondesign.xyz/tools/nda-generator.html",
+        "description": "Generate a simple one-way or mutual NDA draft for product, design, and manufacturing discussions.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "NDA Generator",
+                "item": "https://oriondesign.xyz/tools/nda-generator.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is this legal advice?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It is a drafting aid for early product and manufacturing conversations. Have the final agreement reviewed by a qualified legal professional."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does an NDA mean it is safe to share everything?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Use staged disclosure. Share only what the other party needs to answer the next useful question."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should I ask someone to sign an NDA?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Before you share confidential information that is not already public, such as unfiled designs, technical know-how, test results or detailed business plans. A first conversation can often stay at a high level without one, which lets you check whether the relationship is worth pursuing before sharing the detail."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does an NDA protect my idea in the same way as a patent?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. An NDA is a contract with the people who sign it. It does not stop someone else from developing a similar product independently, and it does not give you rights against third parties. Registered rights such as patents and registered designs work differently; the IP protection guide explains the options."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if a manufacturer asks me to sign their NDA instead?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "That is common, particularly with larger suppliers. Read it carefully: check that it is mutual if you are both sharing information, that the definition of confidential information covers what you will share, and that the duration and permitted uses are reasonable. If the terms matter to your business, ask a solicitor to review them."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">NDA Generator</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>NDA Generator</h1>
+            <p>
+              Generate a simple one-way or mutual NDA draft for early product, design, and manufacturing conversations.
+              Use it to structure discussions, then have the final agreement reviewed for your specific legal context.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="NDA worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"ndaType":"One-way","termYears":"3","disclosingParty":"Your company","receivingParty":"Contract manufacturer","purpose":"obtaining quotations and assessing manufacturing feasibility for a new product","confidentialItems":"Product designs, CAD files, technical drawings, bill of materials, target costs, and forecast volumes.","jurisdiction":"England and Wales"}'>Talking to a manufacturer</button>
+              <button class="preset-button" type="button" data-tool-preset='{"ndaType":"One-way","termYears":"5","disclosingParty":"Your company","receivingParty":"Freelance designer","purpose":"providing industrial design and engineering services for a new product","confidentialItems":"Product concepts, sketches, CAD files, prototypes, user research findings, and launch plans.","jurisdiction":"Northern Ireland"}'>Freelance designer</button>
+              <button class="preset-button" type="button" data-tool-preset='{"ndaType":"Mutual","termYears":"2","disclosingParty":"Your company","receivingParty":"Technology partner","purpose":"exploring the joint development of a connected product","confidentialItems":"Product designs, electronics schematics, firmware, test data, pricing, and commercial plans of either party.","jurisdiction":"England and Wales"}'>Mutual with partner</button>
+            </div>
+            <form class="tool-form" id="ndaForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="ndaType">Agreement type</label>
+                  <select id="ndaType">
+                    <option value="One-way" selected>One-way NDA</option>
+                    <option value="Mutual">Mutual NDA</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="termYears">Term (years)</label>
+                  <input id="termYears" type="number" min="1" value="3" step="1">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="disclosingParty">Disclosing party</label>
+                  <input id="disclosingParty" type="text" value="Orion Design">
+                </div>
+                <div class="field-group">
+                  <label for="receivingParty">Receiving party</label>
+                  <input id="receivingParty" type="text" value="Prospective supplier">
+                </div>
+              </div>
+              <div class="field-group">
+                <label for="purpose">Purpose of disclosure</label>
+                <input id="purpose" type="text" value="Evaluating manufacturing, costing, and technical feasibility for a new product">
+              </div>
+              <div class="field-group">
+                <label for="confidentialItems">Confidential information covered</label>
+                <textarea id="confidentialItems" rows="4">Product designs, CAD files, drawings, BOM details, commercial plans, prototypes, and manufacturing data.</textarea>
+              </div>
+              <div class="field-group">
+                <label for="jurisdiction">Jurisdiction</label>
+                <input id="jurisdiction" type="text" value="England and Wales">
+              </div>
+              <button class="button button-primary" type="submit">Generate NDA draft</button>
+            </form>
+            <p class="helper-text">
+              This tool provides a starting draft only. It is not legal advice, and the final agreement should be reviewed by a qualified legal professional.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Draft</span>
+            <div class="result-grid" id="ndaSummary"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#ndaCopy"
+                  data-copy-feedback="#ndaCopyFeedback"
+                >
+                  Copy NDA draft
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="ndaCopy" class="copy-output" rows="16" readonly></textarea>
+              <div id="ndaCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="nda_generator_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">When to use this</p>
+              <h2>Use the NDA generator to prepare early product and supplier conversations.</h2>
+              <p>
+                The draft is intended to help structure confidentiality before sharing product designs, CAD files, drawings,
+                prototypes, supplier quotes, commercial plans, or manufacturing assumptions. It is a starting point, not legal advice.
+              </p>
+            </div>
+
+            <h2>What the draft does</h2>
+            <p>
+              The generated text sets out the agreement type, parties, purpose of disclosure, confidential information,
+              core obligations, exclusions, term, return or destruction language, and governing law.
+            </p>
+
+            <div class="worked-example">
+              <p>
+                For a supplier discussion, keep the purpose narrow enough to match the real conversation: evaluating manufacturing feasibility,
+                cost, quality, and production route for a defined product. Avoid using an NDA as a substitute for careful staged disclosure.
+              </p>
+            </div>
+
+            <h2>How to read your result</h2>
+            <p>
+              <strong>Important:</strong> the generated text is a starting point for discussion, not legal advice and not a finished agreement.
+              It has not been reviewed for your circumstances, and a qualified solicitor should check it before anyone signs.
+            </p>
+            <p>
+              The summary cards confirm the three choices that shape the agreement most: whether it is one-way or mutual, how long the
+              confidentiality obligations last, and which country's law applies. The draft itself sets out who is sharing with whom, why,
+              what is covered, what is excluded, and what happens to the information afterwards.
+            </p>
+            <ul>
+              <li><strong>Looks right:</strong> the parties are correctly named legal entities, the purpose describes the actual conversation, and the information listed matches what you plan to share. A term of two to five years is common for early product discussions.</li>
+              <li><strong>Worth checking:</strong> a one-way NDA when the other party will also share drawings or pricing usually should be mutual. A very broad purpose or a vague list of information can make the agreement harder to rely on.</li>
+              <li><strong>Get advice first:</strong> if you are sharing something that would be hard to protect any other way, such as a process or formulation you plan to keep secret, if the other party is overseas, or if they send back their own terms, have a solicitor review before disclosing anything.</li>
+            </ul>
+            <p>
+              A solicitor may also add clauses this draft leaves out, such as remedies for breach, confirmation that no licence or ownership
+              is transferred, and how the agreement can be ended. Keep a record in your <a href="product-plan-builder.html">product plan</a>
+              of who has signed what and when, so disclosure stays staged and traceable. If you are unsure what to share with a manufacturer
+              at each stage, <a href="../contact/index.html">Andrew can talk you through it</a> from an engineering point of view.
+            </p>
+
+            <h2>What to do next</h2>
+            <ul>
+              <li>Check that the parties are named correctly before sending anything.</li>
+              <li>Keep the purpose specific to the conversation you are actually having.</li>
+              <li>Share only the information required for the next decision.</li>
+              <li>Have the agreement reviewed for your jurisdiction, project risk, and commercial context.</li>
+            </ul>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/freedom-to-operate-explained.html">Freedom to operate explained</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/design-registration-vs-patents.html">Design registration vs patents</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/how-to-protect-product-ip.html">How to protect product IP before talking to manufacturers</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/must-have-documents-before-talking-to-a-manufacturer.html">Must-have documents before talking to a manufacturer</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="product-cost-estimator.html">Product Cost Estimator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/ip-partners-and-compliance.html">IP, partners and compliance: overview</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Supplier prep</span>
+                <span>File disclosure</span>
+                <span>Early confidentiality</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Is this legal advice?</h3>
+                <p>No. It is a drafting aid for early product and manufacturing conversations. Have the final agreement reviewed by a qualified legal professional.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does an NDA mean it is safe to share everything?</h3>
+                <p>No. Use staged disclosure. Share only what the other party needs to answer the next useful question.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should I ask someone to sign an NDA?</h3>
+                <p>Before you share confidential information that is not already public, such as unfiled designs, technical know-how, test results or detailed business plans. A first conversation can often stay at a high level without one, which lets you check whether the relationship is worth pursuing before sharing the detail.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does an NDA protect my idea in the same way as a patent?</h3>
+                <p>No. An NDA is a contract with the people who sign it. It does not stop someone else from developing a similar product independently, and it does not give you rights against third parties. Registered rights such as patents and registered designs work differently; the <a class="text-link-inline" href="../guides/how-to-protect-product-ip.html">IP protection guide</a> explains the options.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What if a manufacturer asks me to sign their NDA instead?</h3>
+                <p>That is common, particularly with larger suppliers. Read it carefully: check that it is mutual if you are both sharing information, that the definition of confidential information covers what you will share, and that the duration and permitted uses are reasonable. If the terms matter to your business, ask a solicitor to review them.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this generator works</p>
+            <h2>Drafting aid, not legal advice</h2>
+            <p>This tool combines the inputs you enter into a simple NDA draft. It is useful for preparing a conversation, but it does not replace legal review.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This generator and supporting guidance were created by Orion Design for product and manufacturing conversations. Confirm legal terms with a qualified adviser before relying on the draft.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="../guides/how-to-protect-product-ip.html">Protect product IP guide</a>
+          <a href="../guides/must-have-documents-before-talking-to-a-manufacturer.html">Document readiness guide</a>
+          <a href="prototype-strategy-tool.html">Prototype Strategy Tool</a>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/nda-generator.js" defer></script>
+  </body>
+</html>

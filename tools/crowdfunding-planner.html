@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Crowdfunding Planner for Hardware Products | Orion Design</title>
+    <meta
+      name="description"
+      content="Work out what each backer really contributes after fees, VAT, product and shipping, and how many backers a hardware campaign needs to cover its costs."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/crowdfunding-planner.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Crowdfunding Planner for hardware | Orion Design">
+    <meta
+      property="og:description"
+      content="Work out what each backer really contributes after fees, VAT, product and shipping, and how many backers a hardware campaign needs to cover its costs."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/crowdfunding-planner.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-crowdfunding-planner.jpg">
+    <meta property="og:image:alt" content="Crowdfunding planner from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crowdfunding Planner for hardware | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Work out what each backer really contributes after fees, VAT, product and shipping, and how many backers a hardware campaign needs to cover its costs."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-crowdfunding-planner.jpg">
+    <meta name="twitter:image:alt" content="Crowdfunding planner from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-crowdfunding-planner.jpg",
+        "name": "Crowdfunding Planner",
+        "url": "https://oriondesign.xyz/tools/crowdfunding-planner.html",
+        "description": "Plan a hardware crowdfunding campaign: net contribution per backer after fees, VAT, product and shipping, and backers needed to cover fixed and campaign costs.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Crowdfunding Planner",
+                "item": "https://oriondesign.xyz/tools/crowdfunding-planner.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much should a crowdfunding reward cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Enough that, after platform and payment fees, VAT, making the reward and shipping it, each backer still contributes towards tooling and launch costs. Many campaigns underprice rewards as a retail-style discount and then find the money runs out before delivery."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I pay VAT on crowdfunding pledges?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pledges made in return for a reward are usually treated as sales, so VAT can be due if you are VAT-registered. The rules depend on the details, so take advice from an accountant before setting reward prices."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should I charge shipping separately?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Often, yes, especially for international backers, because shipping costs vary widely by destination. Either way, get real carrier quotes for your parcel size and weight before launch."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What fixed costs should the campaign fund?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Typically tooling, certification, the set-up costs of the first production batch and the campaign itself. Include contingency: delays and tool modifications are common in hardware."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are the platform fee defaults accurate?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "They are example values only. Platforms change their fees and payment providers charge differently by country and card type, so check the current terms of the platform you plan to use."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Crowdfunding Planner</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Crowdfunding Planner</h1>
+            <p>
+              A crowdfunding target is not the same as the money you need. Work out what each backer actually leaves you after platform and payment fees, VAT,
+              making the reward and shipping it, and how many backers it takes to cover tooling and campaign costs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Crowdfunding planner worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"cfPledge":"89","cfBackers":"600","cfUnitCost":"24","cfShipping":"9","cfShippingCharged":"yes","cfPlatformFee":"5","cfPaymentFee":"4","cfVat":"20","cfFixed":"30000","cfMarketing":"6000"}'>Connected gadget</button>
+              <button class="preset-button" type="button" data-tool-preset='{"cfPledge":"39","cfBackers":"1000","cfUnitCost":"9","cfShipping":"5","cfShippingCharged":"yes","cfPlatformFee":"5","cfPaymentFee":"4","cfVat":"20","cfFixed":"12000","cfMarketing":"3000"}'>Small accessory</button>
+              <button class="preset-button" type="button" data-tool-preset='{"cfPledge":"49","cfBackers":"800","cfUnitCost":"28","cfShipping":"12","cfShippingCharged":"no","cfPlatformFee":"5","cfPaymentFee":"4","cfVat":"20","cfFixed":"15000","cfMarketing":"4000"}'>Underpriced reward</button>
+            </div>
+            <form class="tool-form" id="cfForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="cfPledge">Reward pledge price (£, inc. VAT)</label>
+                  <input id="cfPledge" type="number" min="0" step="0.01" value="89">
+                </div>
+                <div class="field-group">
+                  <label for="cfBackers">Expected backers</label>
+                  <input id="cfBackers" type="number" min="0" step="1" value="600">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="cfUnitCost">Landed cost to make each reward (£)</label>
+                  <input id="cfUnitCost" type="number" min="0" step="0.01" value="24">
+                </div>
+                <div class="field-group">
+                  <label for="cfShipping">Shipping to each backer (£)</label>
+                  <input id="cfShipping" type="number" min="0" step="0.01" value="9">
+                  <p class="helper-text">Average across destinations, including packaging</p>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="cfShippingCharged">Is shipping charged on top of the pledge?</label>
+                  <select id="cfShippingCharged">
+                    <option value="yes" selected>Yes, backers pay shipping</option>
+                    <option value="no">No, included in the pledge</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="cfVat">VAT included in pledges (%)</label>
+                  <input id="cfVat" type="number" min="0" step="0.5" value="20">
+                  <p class="helper-text">Use 0 if you are not VAT-registered</p>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="cfPlatformFee">Platform fee (%)</label>
+                  <input id="cfPlatformFee" type="number" min="0" step="0.1" value="5">
+                  <p class="helper-text">Example value: check your platform's current fees</p>
+                </div>
+                <div class="field-group">
+                  <label for="cfPaymentFee">Payment processing fee (%)</label>
+                  <input id="cfPaymentFee" type="number" min="0" step="0.1" value="4">
+                  <p class="helper-text">Example value: check your platform's current fees</p>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="cfFixed">Fixed costs to fund (£)</label>
+                  <input id="cfFixed" type="number" min="0" step="100" value="30000">
+                  <p class="helper-text">Tooling, certification, first batch set-up</p>
+                </div>
+                <div class="field-group">
+                  <label for="cfMarketing">Campaign marketing and video (£)</label>
+                  <input id="cfMarketing" type="number" min="0" step="100" value="6000">
+                </div>
+              </div>
+              <button class="button button-primary" type="submit">Plan the campaign</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="cfSummary"></div>
+            <div class="comparison-list" id="cfBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#cfCopy"
+                  data-copy-feedback="#cfCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="cfCopy" class="copy-output" readonly></textarea>
+              <div id="cfCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want a second opinion before you launch?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="crowdfunding_planner_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Only what is left after fees, VAT, making and shipping each reward goes towards tooling and launch costs.</h2>
+              <div class="formula-block">Collected per backer = pledge (+ shipping if charged separately)
+Left per backer = collected − fees − VAT in the pledge − reward cost − shipping
+Backers needed = (fixed costs + campaign costs) ÷ left per backer</div>
+              <p>A campaign can hit its headline target and still leave too little to pay for tooling, especially when shipping is under-estimated or the reward is priced like a retail discount.</p>
+            </div>
+            <h2>How to read your result</h2>
+            <ul>
+              <li><strong>Comfortable surplus:</strong> the campaign covers fixed and campaign costs with room for surprises. Keep a reserve for manufacturing delays and support.</li>
+              <li><strong>Small surplus or shortfall:</strong> revisit the pledge price, the reward cost, shipping or the fixed costs you expect the campaign to fund.</li>
+              <li><strong>Negative per backer:</strong> each reward loses money. Raise the pledge, charge shipping, or reduce the reward cost before launching; more backers would make it worse.</li>
+            </ul>
+            <p>
+              Fees, VAT treatment and shipping vary by platform, country and product, so the defaults are examples: check your platform's current fees and take accounting advice on VAT.
+              <a class="text-link-inline" href="../guides/funding-and-cash.html">Funding and cash</a> explains where crowdfunding fits among other funding routes, and the
+              <a class="text-link-inline" href="cashflow-projection.html">Cashflow Projection Tool</a> shows the cash between campaign and delivery. Save your plan to your <a href="product-plan-builder.html">product plan</a>.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/crowdfunding-a-hardware-product.html">Crowdfunding a hardware product</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/funding-and-cash.html">Funding and cash</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/funding-routes-uk-northern-ireland.html">Funding routes (UK and NI)</a></div>
+                <div class="aside-item"><a class="text-link" href="landed-cost-calculator.html">Landed Cost Calculator</a></div>
+                <div class="aside-item"><a class="text-link" href="cashflow-projection.html">Cashflow Projection Tool</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Crowdfunding</span>
+                <span>Pre-orders</span>
+                <span>Funding</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>How much should a crowdfunding reward cost?</h3>
+                <p>Enough that, after platform and payment fees, VAT, making the reward and shipping it, each backer still contributes towards tooling and launch costs. Many campaigns underprice rewards as a retail-style discount and then find the money runs out before delivery.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I pay VAT on crowdfunding pledges?</h3>
+                <p>Pledges made in return for a reward are usually treated as sales, so VAT can be due if you are VAT-registered. The rules depend on the details, so take advice from an accountant before setting reward prices.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should I charge shipping separately?</h3>
+                <p>Often, yes, especially for international backers, because shipping costs vary widely by destination. Either way, get real carrier quotes for your parcel size and weight before launch.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What fixed costs should the campaign fund?</h3>
+                <p>Typically tooling, certification, the set-up costs of the first production batch and the campaign itself. Include contingency: delays and tool modifications are common in hardware.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Are the platform fee defaults accurate?</h3>
+                <p>They are example values only. Platforms change their fees and payment providers charge differently by country and card type, so check the current terms of the platform you plan to use.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="cashflow-projection.html">Cashflow Projection</a>
+          <a href="../guides/financial-break-even-for-hardware-products.html">Break-even guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/crowdfunding-planner.js" defer></script>
+  </body>
+</html>

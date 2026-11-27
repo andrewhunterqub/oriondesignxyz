@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>How Much Does It Cost to Develop a Hardware Product? | Orion Design</title>
+    <meta
+      name="description"
+      content="What it costs to develop a hardware product: the six cost blocks (engineering, prototypes, tooling, certification, inventory, launch), contingency and a worked example."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/estimating-hardware-development-costs.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="How Much Does It Cost to Develop a Hardware Product?">
+    <meta
+      property="og:description"
+      content="What it costs to develop a hardware product: the six cost blocks (engineering, prototypes, tooling, certification, inventory, launch), contingency and a worked example."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/estimating-hardware-development-costs.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-estimating-hardware-development-costs.jpg">
+    <meta property="og:image:alt" content="Guide to estimating hardware development costs before launch">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How Much Does It Cost to Develop a Hardware Product?">
+    <meta
+      name="twitter:description"
+      content="What it costs to develop a hardware product: the six cost blocks (engineering, prototypes, tooling, certification, inventory, launch), contingency and a worked example."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-estimating-hardware-development-costs.jpg">
+    <meta name="twitter:image:alt" content="Guide to estimating hardware development costs before launch">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-estimating-hardware-development-costs.jpg",
+        "headline": "How Much Does It Cost to Develop a Hardware Product?",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-25",
+        "articleSection": "Startup finance",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/estimating-hardware-development-costs.html",
+        "datePublished": "2026-03-13"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Hardware development costs",
+                "item": "https://oriondesign.xyz/guides/estimating-hardware-development-costs.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does it cost to develop a hardware product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends heavily on complexity, regulation and launch volume. A simple non-electronic product can reach launch for a modest budget, while a connected or regulated device can cost several times more. The reliable way to answer it for your product is to estimate each cost block separately and add contingency."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much contingency should a hardware budget include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A common working range is 15 to 25 per cent of the estimated cost blocks, added on top. Use more for new technology, regulated products or a first-time team, and less for a simple product on a proven architecture."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many prototype rounds should I budget for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most products need at least two or three rounds, moving from proof of concept to looks-like and works-like models and then near-production samples. Each round should answer a specific question. More complex or safety-critical products often need more."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is tooling a development cost or a production cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For budgeting, treat it as an upfront pre-launch cost because it has to be paid before production starts, often in stages. In the business case it is part of the investment the product must recover, alongside design and certification."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What hardware costs do founders most often forget?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The usual gaps are extra prototype rounds, compliance re-testing, tooling modifications, packaging, inbound freight and duty on first stock, and launch assets. Contingency is also frequently left out entirely."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Hardware development costs</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 25 November 2026 <span aria-hidden="true">·</span> For founders and teams budgeting for development before launch</p>
+            <h1>How much does it cost to develop a hardware product?</h1>
+            <p>
+              Founders often ask what it costs to develop a hardware product as if there is one number. There is not.
+              The useful question is which cost blocks are likely to matter for this product, at this stage, on this route to launch.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Pre-launch cost is usually a stack, not a single project fee.</h2>
+              <div class="formula-block">Pre-launch requirement = engineering + prototypes + tooling + compliance + inventory + launch work + contingency</div>
+              <p>
+                To estimate hardware development cost, price each block separately for your product and route to market, then add a contingency,
+                commonly 15 to 25 per cent and more for novel technology. Teams usually under-budget because they remember the exciting parts and forget the expensive supporting work around them.
+              </p>
+            </div>
+
+            <p>
+              A simple mechanical accessory and a connected, battery-powered device can differ in development cost by an order of magnitude.
+              The number that matters is not an industry average. It is your own stack, built from the decisions your product actually requires,
+              with the uncertain parts clearly marked.
+            </p>
+
+            <h2>The six blocks most teams should expect</h2>
+            <ol>
+              <li><strong>Design and engineering:</strong> concept development, CAD, iteration, testing support, and supplier-ready detail.</li>
+              <li><strong>Prototype builds:</strong> multiple prototype rounds, fixtures, sample tools, and validation parts.</li>
+              <li><strong>Tooling and setup:</strong> mould tools, jigs, fixtures, or production setup costs.</li>
+              <li><strong>Compliance:</strong> test labs, standards work, documentation, and re-test risk.</li>
+              <li><strong>First inventory:</strong> stock, packaging, inserts, and pre-launch <a class="glossary-term" href="../knowledge/glossary.html#term-working-capital" data-definition="Cash tied up between paying for stock and being paid for it." aria-label="working capital: Cash tied up between paying for stock and being paid for it. (glossary)">working capital</a>.</li>
+              <li><strong>Launch work:</strong> imagery, packaging, copy, early commercial assets, and market-entry effort.</li>
+            </ol>
+            <p><a class="glossary-term" href="../knowledge/glossary.html#term-contingency" data-definition="Money set aside in a budget for problems that will happen but cannot yet be named; commonly 15 to 25 per cent in hardware development." aria-label="Contingency: Money set aside in a budget for problems that will happen but cannot yet be named; commonly 15 to 25 per cent in hardware development. (glossary)">Contingency</a> then sits on top of the whole stack, not inside one block.</p>
+
+            <h2>What pushes development cost up or down</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cost driver</th>
+                  <th>Tends to raise cost</th>
+                  <th>Tends to lower cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Electronics</td>
+                  <td>Custom <a class="text-link-inline" href="electronics-in-a-physical-product.html">PCBs</a>, radios, batteries, <a class="glossary-term" href="../knowledge/glossary.html#term-firmware" data-definition="The software built into a product's electronics that controls how the hardware behaves." aria-label="firmware: The software built into a product's electronics that controls how the hardware behaves. (glossary)">firmware</a> and an app</td>
+                  <td>No electronics, or proven off-the-shelf modules</td>
+                </tr>
+                <tr>
+                  <td>Enclosure and parts</td>
+                  <td>Many moulded parts, tight tolerances, cosmetic finishes</td>
+                  <td>Few parts, standard materials, forgiving tolerances</td>
+                </tr>
+                <tr>
+                  <td>Regulation</td>
+                  <td>Medical, child-facing, food-contact, mains-powered or wireless products</td>
+                  <td>Low-risk categories with well-understood standards</td>
+                </tr>
+                <tr>
+                  <td>Novelty</td>
+                  <td>New mechanisms or technology with unknown <a class="glossary-term" href="../knowledge/glossary.html#term-failure-mode" data-definition="The way in which a product or part fails, such as cracking, wearing, leaking or not switching on. Recording failures by mode makes patterns and their causes easier to spot." aria-label="failure modes: The way in which a product or part fails, such as cracking, wearing, leaking or not switching on. Recording failures by mode makes patterns and their causes easier to spot. (glossary)">failure modes</a></td>
+                  <td>Familiar architecture adapted to a new use</td>
+                </tr>
+                <tr>
+                  <td>Volume and route</td>
+                  <td>Retail launch needing large first stock and <a class="text-link-inline" href="retail-ready-packaging-and-barcodes.html">retail-ready packaging</a></td>
+                  <td>Small direct launch with bridge production</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>Worked example: a small connected consumer device</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative figures only. A team is developing a battery-powered household device with a two-part plastic enclosure, a custom <a class="glossary-term" href="../knowledge/glossary.html#term-printed-circuit-board-pcb" data-definition="The board that holds and connects a product's electronic components through copper tracks. Once the components are fitted it is often called a PCB assembly (PCBA)." aria-label="PCB: The board that holds and connects a product's electronic components through copper tracks. Once the components are fitted it is often called a PCB assembly (PCBA). (glossary)">PCB</a> using a pre-certified Bluetooth module,
+                and a simple companion app supplied by a partner. They plan three prototype rounds and a first production batch of 1,000 units.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cost block</th>
+                  <th>Estimate</th>
+                  <th>Main assumption</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Design and engineering</td>
+                  <td>GBP45,000</td>
+                  <td><a class="text-link-inline" href="industrial-design-vs-engineering-design.html">Industrial design</a>, mechanical and electronics engineering to production release</td>
+                </tr>
+                <tr>
+                  <td>Prototype builds</td>
+                  <td>GBP14,000</td>
+                  <td>Three rounds, from <a class="text-link-inline" href="looks-like-vs-works-like-prototypes.html">looks-like and works-like</a> models to near-production samples</td>
+                </tr>
+                <tr>
+                  <td>Tooling and setup</td>
+                  <td>GBP38,000</td>
+                  <td>Injection mould tools for enclosure parts plus test and assembly fixtures</td>
+                </tr>
+                <tr>
+                  <td>Compliance</td>
+                  <td>GBP16,000</td>
+                  <td>Safety, <a class="glossary-term" href="../knowledge/glossary.html#term-electromagnetic-compatibility-emc" data-definition="The ability of electrical equipment to work without causing or suffering unacceptable electromagnetic interference." aria-label="EMC: The ability of electrical equipment to work without causing or suffering unacceptable electromagnetic interference. (glossary)">EMC</a> and radio testing for UKCA and <a class="glossary-term" href="../knowledge/glossary.html#term-ce-marking" data-definition="The conformity marking used for many products sold in the EU and in Northern Ireland, and recognised in Great Britain for many product types." aria-label="CE marking: The conformity marking used for many products sold in the EU and in Northern Ireland, and recognised in Great Britain for many product types. (glossary)">CE marking</a>, plus one re-test allowance</td>
+                </tr>
+                <tr>
+                  <td>First inventory</td>
+                  <td>GBP26,000</td>
+                  <td>1,000 units at GBP24 unit cost, plus packaging and inbound freight</td>
+                </tr>
+                <tr>
+                  <td>Launch work</td>
+                  <td>GBP9,000</td>
+                  <td>Photography, packaging artwork, product page and early marketing</td>
+                </tr>
+                <tr>
+                  <td>Subtotal</td>
+                  <td>GBP148,000</td>
+                  <td>All six blocks</td>
+                </tr>
+                <tr>
+                  <td>Contingency at 20%</td>
+                  <td>GBP29,600</td>
+                  <td>Moderate novelty, first product for this team</td>
+                </tr>
+                <tr>
+                  <td>Pre-launch requirement</td>
+                  <td>GBP177,600</td>
+                  <td>Before any sales income</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Notice that design and engineering is only about 30 per cent of the subtotal. Founders who budget only for the design fee are often surprised by the other 70 per cent.
+              Note too that the estimate covers pre-launch spend only. Monthly overhead and the cash needed to fund the second stock order belong in the <a class="text-link-inline" href="building-a-hardware-financial-model.html">cash flow model</a>.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 466" width="100%" role="img" aria-labelledby="dc-fig-title dc-fig-desc">
+                <title id="dc-fig-title">The pre-launch cost stack for the example connected device</title>
+                <desc id="dc-fig-desc">A single stacked column drawn to scale, using the worked example. From the bottom: design and engineering £45,000, about 30 per cent of the subtotal; prototype builds £14,000; tooling and setup £38,000; compliance £16,000; first inventory £26,000; launch work £9,000; and contingency at 20 per cent, £29,600, on top. Six blocks total £148,000; with contingency the pre-launch requirement is £177,600 before any sales.</desc>
+                <rect x="20" y="16" width="80" height="66.67" class="gd-box-magenta"/>
+                <rect x="20" y="82.67" width="80" height="20.27" class="gd-fill-teal-soft gd-seg"/>
+                <rect x="20" y="102.94" width="80" height="58.56" class="gd-fill-teal gd-seg"/>
+                <rect x="20" y="161.5" width="80" height="36.04" class="gd-fill-teal-soft gd-seg"/>
+                <rect x="20" y="197.54" width="80" height="85.59" class="gd-fill-teal gd-seg"/>
+                <rect x="20" y="283.13" width="80" height="31.53" class="gd-fill-teal-soft gd-seg"/>
+                <rect x="20" y="314.66" width="80" height="101.35" class="gd-fill-indigo gd-seg"/>
+                <line x1="104" y1="43.3" x2="114" y2="43.3" class="gd-line"/>
+                <text x="118" y="47.3" class="gd-t gd-tm">Contingency (20%)</text>
+                <text x="118" y="64.3" class="gd-v">£29,600</text>
+                <line x1="104" y1="86.8" x2="114" y2="86.8" class="gd-line"/>
+                <text x="118" y="90.8" class="gd-t">Launch work</text>
+                <text x="118" y="107.8" class="gd-v">£9,000</text>
+                <line x1="104" y1="126.2" x2="114" y2="126.2" class="gd-line"/>
+                <text x="118" y="130.2" class="gd-t">First inventory</text>
+                <text x="118" y="147.2" class="gd-v">£26,000</text>
+                <line x1="104" y1="173.5" x2="114" y2="173.5" class="gd-line"/>
+                <text x="118" y="177.5" class="gd-t">Compliance</text>
+                <text x="118" y="194.5" class="gd-v">£16,000</text>
+                <line x1="104" y1="234.3" x2="114" y2="234.3" class="gd-line"/>
+                <text x="118" y="238.3" class="gd-t">Tooling and setup</text>
+                <text x="118" y="255.3" class="gd-v">£38,000</text>
+                <line x1="104" y1="292.9" x2="114" y2="292.9" class="gd-line"/>
+                <text x="118" y="296.9" class="gd-t">Prototype builds</text>
+                <text x="118" y="313.9" class="gd-v">£14,000</text>
+                <line x1="104" y1="351.3" x2="114" y2="351.3" class="gd-line"/>
+                <text x="118" y="355.3" class="gd-t gd-ti">Design and engineering</text>
+                <text x="118" y="372.3" class="gd-v">£45,000</text>
+                <text x="118" y="389.3" class="gd-m">about 30% of the subtotal</text>
+                <text x="20" y="442" class="gd-t"><tspan class="gd-v">£177,600</tspan> before any sales</text>
+                <text x="20" y="460" class="gd-m">six blocks £148,000 + 20% contingency</text>
+              </svg>
+              <figcaption>Illustrative figures from the worked example, drawn to scale. Design and engineering is the largest block but only about 30 per cent of the six; the other five make up about 70 per cent, and contingency sits on top of the whole stack.</figcaption>
+            </figure>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              treat the first estimate as a range. If the low and high ends are far apart, the gap usually points to one or two decisions, such as the number of moulded parts or the certification route, that are worth settling early.
+            </div>
+
+            <h2>How much contingency to hold</h2>
+            <p>
+              Contingency is the acknowledgement that physical product development creates surprises: a failed test, a tool modification, a component going out of stock, an extra prototype round.
+              A common working range is 15 to 25 per cent of the subtotal. Use the lower end for a simple product built on a proven architecture,
+              and the upper end, or more, for new technology, regulated categories, or a team building its first product. Contingency should be released deliberately as risks close, not spent by default.
+            </p>
+
+            <h2>Common budgeting mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Prototype count is usually underestimated.</strong>
+                The first build rarely answers every important question. Budget for at least two or three rounds.
+              </div>
+              <div>
+                <strong>Compliance arrives later than expected.</strong>
+                Teams often budget the first test but not the cost of fixing and re-testing.
+              </div>
+              <div>
+                <strong>First inventory is not just product cost.</strong>
+                Packaging, labels, inserts, and freight decisions often land here too.
+              </div>
+              <div>
+                <strong>Tooling changes are not free.</strong>
+                Modifications after first samples are normal. Allow for them rather than assuming the first shots will be right.
+              </div>
+              <div>
+                <strong>Contingency is not optional.</strong>
+                Leaving it out does not remove the risk. It only moves the surprise to a point where it is harder to fund.
+              </div>
+            </div>
+
+            <h2>How to use the estimate well</h2>
+            <ul>
+              <li>separate pre-launch cost from recurring monthly overhead</li>
+              <li>keep the cost blocks visible instead of collapsing them too early</li>
+              <li>connect the total to <a class="glossary-term" href="../knowledge/glossary.html#term-runway" data-definition="How long a business can operate before its cash runs out at the current burn rate." aria-label="runway: How long a business can operate before its cash runs out at the current burn rate. (glossary)">runway</a> and cashflow, not just fundraising ambition</li>
+              <li>stage the spend so that the largest commitments, usually tooling and first inventory, come after the riskiest questions are answered</li>
+            </ul>
+
+            <h2>Practical next steps</h2>
+            <ol>
+              <li>List the six blocks for your product and mark each figure as quoted, estimated or guessed.</li>
+              <li>Plan your prototype rounds with the <a class="text-link-inline" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>, so each round has a clear question to answer.</li>
+              <li>Estimate unit cost for the first inventory using the <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>.</li>
+              <li>Add contingency and check the total against runway using the guide to <a class="text-link-inline" href="calculating-hardware-startup-cash-flow.html">calculating hardware startup cash flow</a>.</li>
+              <li>Decide whether bridge production could delay the tooling commitment, as described in <a class="text-link-inline" href="prototyping-vs-production-startup-guide.html">prototyping versus production</a>.</li>
+            </ol>
+            <p>
+              The <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a> can then lay the cost blocks against development stages, so the team can see when each commitment falls due.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Build the pre-launch cost stack</h3>
+                <p>Estimate the budget needed before launch including contingency.</p>
+                <a
+                  class="button button-primary"
+                  href="../tools/startup-cost-planner.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="startup_cost_article_to_tool"
+                >
+                  Open Startup Cost Planner
+                </a>
+              </div>
+              <div class="article-action-card">
+                <h3>Check the runway after that</h3>
+                <p>Use the cashflow model to see whether the pre-launch requirement and growth timing can actually be financed.</p>
+                <a
+                  class="button button-secondary"
+                  href="../tools/cashflow-projection.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="startup_cost_article_to_cashflow"
+                >
+                  Open Cashflow Projection Tool
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="funding-and-cash.html">Funding and cash: the hub guide</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This article answers</p>
+              <div class="tag-row">
+                <span>Development costs</span>
+                <span>Startup budget</span>
+                <span>Pre-launch planning</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>How much does it cost to develop a hardware product?</h3>
+                <p>It depends heavily on complexity, regulation and launch volume. A simple non-electronic product can reach launch for a modest budget, while a connected or regulated device can cost several times more. The reliable way to answer it for your product is to estimate each cost block separately and add contingency.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How much contingency should a hardware budget include?</h3>
+                <p>A common working range is 15 to 25 per cent of the estimated cost blocks, added on top. Use more for new technology, regulated products or a first-time team, and less for a simple product on a proven architecture.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How many prototype rounds should I budget for?</h3>
+                <p>Most products need at least two or three rounds, moving from proof of concept to looks-like and works-like models and then near-production samples. Each round should answer a specific question. More complex or safety-critical products often need more.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is tooling a development cost or a production cost?</h3>
+                <p>For budgeting, treat it as an upfront pre-launch cost because it has to be paid before production starts, often in stages. In the business case it is part of the investment the product must recover, alongside design and certification.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What hardware costs do founders most often forget?</h3>
+                <p>The usual gaps are extra prototype rounds, compliance re-testing, tooling modifications, packaging, inbound freight and duty on first stock, and launch assets. Contingency is also frequently left out entirely.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

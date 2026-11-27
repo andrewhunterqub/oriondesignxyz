@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Manufacturing Processes Compared | Orion Design</title>
+    <meta
+      name="description"
+      content="A reference comparison of manufacturing processes for physical products: typical volumes, tooling, unit cost, lead time and design constraints, with how to choose."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/manufacturing-processes-compared.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Manufacturing processes compared | Orion Design">
+    <meta
+      property="og:description"
+      content="A reference comparison of manufacturing processes for physical products: typical volumes, tooling, unit cost, lead time and design constraints, with how to choose."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/manufacturing-processes-compared.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-manufacturing-processes-compared.jpg">
+    <meta property="og:image:alt" content="Manufacturing processes compared reference from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manufacturing processes compared | Orion Design">
+    <meta
+      name="twitter:description"
+      content="A reference comparison of manufacturing processes for physical products: typical volumes, tooling, unit cost, lead time and design constraints, with how to choose."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-manufacturing-processes-compared.jpg">
+    <meta name="twitter:image:alt" content="Manufacturing processes compared reference from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-manufacturing-processes-compared.jpg",
+        "headline": "Manufacturing processes compared: volumes, tooling, cost and constraints",
+        "description": "A reference comparison of manufacturing processes for physical products: typical volumes, tooling, unit cost, lead time and design constraints, with how to choose.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-25",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/manufacturing-processes-compared.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Manufacturing process"
+          },
+          {
+            "@type": "Thing",
+            "name": "Tooling"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Manufacturing processes compared",
+                "item": "https://oriondesign.xyz/guides/manufacturing-processes-compared.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Which manufacturing process is cheapest?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on volume. Processes without tooling, such as 3D printing and CNC machining, are usually cheapest for small quantities; tooled processes such as injection moulding become cheaper per part at higher volumes once tooling is paid for."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should I switch from 3D printing to injection moulding?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "When the design is stable and expected volumes make the tooling cost worthwhile. Compare total cost, tooling plus unit cost times volume, at realistic volumes, and use quotes rather than rules of thumb."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is vacuum casting used for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Making small batches of moulding-like parts from silicone moulds taken from a master pattern, often for pilot runs, testing and pre-production samples."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is CNC machining suitable for production?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, for low to medium volumes, precise metal parts and engineering plastics, as it needs no tooling. At higher volumes, tooled processes are usually cheaper per part."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why do lead times differ so much between processes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tooled processes need moulds or dies to be designed, made and tested before the first part, which takes weeks to months. Untooled processes can start within days but take longer per part."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Manufacturing processes compared</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Reference</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 25 November 2026 <span aria-hidden="true">·</span> For founders and designers choosing how to make parts at each stage</p>
+            <h1>Manufacturing processes compared: volumes, tooling, cost and constraints</h1>
+            <p>
+              A side-by-side reference of common manufacturing processes, from 3D printing to injection moulding, comparing volumes, tooling, unit cost, lead time and design constraints in relative terms, with how to choose and when to move between them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Choose a process by volume, tooling budget, unit cost and the design features you need; low-volume processes avoid tooling but cost more per part.</h2>
+              <p>
+                At one-offs and small batches, 3D printing, CNC machining and vacuum casting avoid expensive tooling. As volumes grow, processes with tooling, such as injection moulding,
+                die casting and pressed sheet metal, bring the unit cost down but need investment and a stable design. The table compares common processes in relative terms;
+                real break points depend on the part, material and supplier, so use quotes to decide.
+              </p>
+            </div>
+
+            <h2>Processes at a glance</h2>
+            <p>Relative, typical characteristics for planning, not quotes. Volumes and lead times vary widely by part size, complexity and supplier.</p>
+            <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Process</th>
+                  <th>Typical volumes</th>
+                  <th>Tooling</th>
+                  <th>Unit cost</th>
+                  <th>Time to first parts</th>
+                  <th>Main design constraints</th>
+                  <th>Read more</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>3D printing (<a class="text-link-inline" href="choosing-a-3d-printing-process.html">FDM</a>, <a class="glossary-term" href="../knowledge/glossary.html#term-sla" data-definition="Stereolithography: 3D printing that cures liquid resin with light, giving fine detail and smooth surfaces." aria-label="SLA: Stereolithography: 3D printing that cures liquid resin with light, giving fine detail and smooth surfaces. (glossary)">SLA</a>, <a class="glossary-term" href="../knowledge/glossary.html#term-sls" data-definition="Selective laser sintering: 3D printing that fuses nylon powder with a laser, producing strong functional parts." aria-label="SLS: Selective laser sintering: 3D printing that fuses nylon powder with a laser, producing strong functional parts. (glossary)">SLS</a>, <a class="glossary-term" href="../knowledge/glossary.html#term-mjf" data-definition="Multi Jet Fusion: 3D printing that fuses fine plastic powder, usually nylon, layer by layer, giving tough functional parts without support structures." aria-label="MJF: Multi Jet Fusion: 3D printing that fuses fine plastic powder, usually nylon, layer by layer, giving tough functional parts without support structures. (glossary)">MJF</a>)</td>
+                  <td>One-offs to small batches</td>
+                  <td>None</td>
+                  <td>High, and roughly flat with volume</td>
+                  <td>Days</td>
+                  <td>Very high; build orientation, supports and <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">surface finish</a> matter</td>
+                  <td><a class="text-link-inline" href="prototyping-vs-production-startup-guide.html">Prototyping vs production</a></td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-cnc-machining" data-definition="Computer-controlled cutting of parts from solid material, used for prototypes, precise parts and low volumes." aria-label="CNC machining: Computer-controlled cutting of parts from solid material, used for prototypes, precise parts and low volumes. (glossary)">CNC machining</a></td>
+                  <td>One-offs to medium batches</td>
+                  <td>None (fixtures only)</td>
+                  <td>Medium to high; set-up spread over the batch</td>
+                  <td>Days to weeks</td>
+                  <td>Internal corners have radii; deep, narrow features are slow</td>
+                  <td><a class="text-link-inline" href="cnc-machining-design-rules.html">CNC machining design rules</a></td>
+                </tr>
+                <tr>
+                  <td>Vacuum (urethane) casting</td>
+                  <td>Small batches from a master pattern</td>
+                  <td>Low (silicone moulds that wear out)</td>
+                  <td>Medium</td>
+                  <td>Weeks</td>
+                  <td>Moulding-like parts; limited materials and mould life</td>
+                  <td><a class="text-link-inline" href="how-many-prototypes-do-you-need.html">How many prototypes do you need?</a></td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-sheet-metal" data-definition="Parts made by cutting, punching and bending flat metal sheet, such as enclosures and brackets." aria-label="Sheet metal: Parts made by cutting, punching and bending flat metal sheet, such as enclosures and brackets. (glossary)">Sheet metal</a> fabrication</td>
+                  <td>One-offs to high volumes</td>
+                  <td>Low for laser and brake work; high for progressive press tools</td>
+                  <td>Low to medium</td>
+                  <td>Days to weeks</td>
+                  <td>Uniform thickness; bend radii, reliefs and hole spacing</td>
+                  <td><a class="text-link-inline" href="sheet-metal-design-basics.html">Sheet metal design basics</a></td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-injection-moulding" data-definition="Making plastic parts by injecting molten plastic into a machined metal tool, cooling it and ejecting the part." aria-label="Injection moulding: Making plastic parts by injecting molten plastic into a machined metal tool, cooling it and ejecting the part. (glossary)">Injection moulding</a></td>
+                  <td>Thousands upwards</td>
+                  <td>High (steel or aluminium moulds)</td>
+                  <td>Low at volume</td>
+                  <td>Weeks to months for tooling</td>
+                  <td>Draft, even walls, ribs, no undercuts without side actions</td>
+                  <td><a class="text-link-inline" href="injection-moulding-explained.html">Injection moulding explained</a></td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-die-casting" data-definition="Forcing molten metal, often aluminium or zinc, into a steel die to make metal parts at volume." aria-label="Die casting: Forcing molten metal, often aluminium or zinc, into a steel die to make metal parts at volume. (glossary)">Die casting</a></td>
+                  <td>Thousands upwards</td>
+                  <td>High</td>
+                  <td>Low at volume</td>
+                  <td>Months for tooling</td>
+                  <td>Draft, wall thickness, porosity; often needs some machining after</td>
+                  <td><a class="text-link-inline" href="die-casting-explained.html">Die casting explained</a></td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-thermoforming" data-definition="Heating plastic sheet and forming it over a mould, used for trays, covers and large thin parts." aria-label="Thermoforming: Heating plastic sheet and forming it over a mould, used for trays, covers and large thin parts. (glossary)">Thermoforming</a></td>
+                  <td>Hundreds to high volumes</td>
+                  <td>Low to medium</td>
+                  <td>Low to medium</td>
+                  <td>Weeks</td>
+                  <td>Shallow, open shapes in sheet; one surface controlled</td>
+                  <td><a class="text-link-inline" href="choosing-plastic-materials.html">Choosing plastic materials</a></td>
+                </tr>
+                <tr>
+                  <td>Extrusion</td>
+                  <td>Long runs of one profile</td>
+                  <td>Low to medium (a die)</td>
+                  <td>Low per metre</td>
+                  <td>Weeks</td>
+                  <td>Constant cross-section; cut and machined to length</td>
+                  <td><a class="text-link-inline" href="aluminium-extrusions-for-product-enclosures.html">Aluminium extrusions for product enclosures</a></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+
+            <figure class="ixt-figure" id="costCurveExplorer" aria-labelledby="costCurveTitle">
+              <p class="ixt-figure-title" id="costCurveTitle">Explore it: cost per part against volume</p>
+              <p class="ixt-note">Illustrative figures for one small plastic part, not quotes: 3D printing £14 a part; CNC machining £250 set-up plus £22 a part; vacuum casting £1,000 for the master and first mould, £6 a part and £250 for each further mould every 25 parts; injection moulding the mould cost you choose plus £0.80 a part. Cost per part = set-up or tooling ÷ parts + cost per part.</p>
+              <div class="ixt-controls" id="costCurveControls" hidden>
+                <div class="ixt-control">
+                  <label for="costCurveVolume">Parts made</label>
+                  <input id="costCurveVolume" type="range" min="0" max="12" step="1" value="6">
+                  <output id="costCurveVolumeOut" for="costCurveVolume">1,000 parts</output>
+                </div>
+                <div class="ixt-control">
+                  <label for="costCurveTool">Mould cost</label>
+                  <input id="costCurveTool" type="range" min="3000" max="40000" step="1000" value="12000">
+                  <output id="costCurveToolOut" for="costCurveTool">£12,000</output>
+                </div>
+              </div>
+              <svg class="ixt-svg" id="costCurveChart" role="img" aria-label="Illustrative line chart of cost per part against number of parts for 3D printing, CNC machining, vacuum casting and injection moulding, on log scales." viewBox="0 0 560 280" hidden></svg>
+              <ul class="ixt-legend" id="costCurveLegend" aria-hidden="true" hidden>
+                <li><span class="ixt-swatch ixt-swatch-print"></span>3D printing</li>
+                <li><span class="ixt-swatch ixt-swatch-cnc"></span>CNC machining</li>
+                <li><span class="ixt-swatch ixt-swatch-cast"></span>Vacuum casting</li>
+                <li><span class="ixt-swatch ixt-swatch-mould"></span>Injection moulding</li>
+              </ul>
+              <noscript><p class="ixt-note">The interactive chart needs JavaScript. The sentence below gives the figures for 1,000 parts.</p></noscript>
+              <figcaption class="ixt-caption" id="costCurveSummary" aria-live="polite">At 1,000 parts, with a £12,000 mould, injection moulding is cheapest at about £12.80 a part, against 3D printing £14.00, vacuum casting £16.75, CNC machining £22.25. In this example injection moulding becomes cheaper than 3D printing above about 909 parts; a cheaper mould moves that point lower.</figcaption>
+            </figure>
+            <p>Vacuum casting is rarely the cheapest option in a chart like this; it is chosen for moulding-like appearance and materials in small batches, before a production mould is justified.</p>
+
+            <h2>How to choose</h2>
+            <ol>
+              <li><strong>Volume over the product's life,</strong> not just the first order.</li>
+              <li><strong>Design stability:</strong> tooling locks in the design; keep flexible processes while it is still changing.</li>
+              <li><strong>Cash:</strong> tooling is paid up front; low-volume processes spread cost per part instead.</li>
+              <li><strong>Features and quality:</strong> surface finish, tolerances, materials and strength may rule processes in or out.</li>
+              <li><strong>Lead time:</strong> tooled processes take longer to the first part but are faster per part after.</li>
+            </ol>
+
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              compare total cost (tooling plus unit cost times volume) at your realistic volumes, and remember that many products move from one process to another as they scale.
+            </div>
+
+            <h2>Moving between processes</h2>
+            <p>
+              A common path is 3D printing for early prototypes, CNC or vacuum casting for pilot batches, then tooling once demand and design are stable.
+              Designing early with the final process in mind avoids redesign later; see <a class="text-link-inline" href="prototyping-vs-production-startup-guide.html">prototyping vs production</a>.
+              The <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a> shows where tooling pays back, and the
+              <a class="text-link-inline" href="../tools/production-strategy-planner.html">Production Strategy Planner</a> suggests a route for each stage.
+              For a product's housing specifically, <a class="text-link-inline" href="choosing-how-to-make-an-enclosure.html">choosing how to make an enclosure</a> narrows these options to the routes that suit enclosures.
+            </p>
+
+            <h2>Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Choosing on unit cost alone.</strong>
+                Tooling, minimum orders and lead time can outweigh a lower part price.
+              </div>
+              <div>
+                <strong>Tooling too early.</strong>
+                Design changes after tooling are slow and expensive.
+              </div>
+              <div>
+                <strong>Designing for the prototype process.</strong>
+                A part that prints well may not mould or machine well.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Find the tooling break-even with the <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>.</li>
+              <li>Plan the route by stage with the <a class="text-link-inline" href="../tools/production-strategy-planner.html">Production Strategy Planner</a>.</li>
+              <li>Estimate unit cost with the <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Find the break-even</h3>
+                <p>See where tooling pays back against low-volume methods.</p>
+                <a class="button button-primary" href="../tools/manufacturing-payoff.html" data-analytics-event="article_cta_click" data-analytics-label="proc_guide_to_payoff">Open Manufacturing Payoff Visualiser</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Plan the route</h3>
+                <p>A production approach for each stage of the product.</p>
+                <a class="button button-secondary" href="../tools/production-strategy-planner.html" data-analytics-event="article_cta_click" data-analytics-label="proc_guide_to_strategy">Open Production Strategy Planner</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/production-strategy-planner.html">Production Strategy Planner</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="injection-moulding-explained.html">Injection moulding explained</a></div>
+                <div class="aside-item"><a class="text-link" href="cnc-machining-design-rules.html">CNC machining design rules</a></div>
+                <div class="aside-item"><a class="text-link" href="sheet-metal-design-basics.html">Sheet metal design basics</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Processes</span>
+                <span>Tooling</span>
+                <span>Volumes</span>
+                <span>Reference</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Which manufacturing process is cheapest?</h3>
+                <p>It depends on volume. Processes without tooling, such as 3D printing and CNC machining, are usually cheapest for small quantities; tooled processes such as injection moulding become cheaper per part at higher volumes once tooling is paid for.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should I switch from 3D printing to injection moulding?</h3>
+                <p>When the design is stable and expected volumes make the tooling cost worthwhile. Compare total cost, tooling plus unit cost times volume, at realistic volumes, and use quotes rather than rules of thumb.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is vacuum casting used for?</h3>
+                <p>Making small batches of moulding-like parts from silicone moulds taken from a master pattern, often for <a class="text-link-inline" href="planning-a-pilot-production-run.html">pilot runs</a>, testing and pre-production samples.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is CNC machining suitable for production?</h3>
+                <p>Yes, for low to medium volumes, precise metal parts and engineering plastics, as it needs no tooling. At higher volumes, tooled processes are usually cheaper per part.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why do lead times differ so much between processes?</h3>
+                <p>Tooled processes need moulds or dies to be designed, made and tested before the first part, which takes weeks to months. Untooled processes can start within days but take longer per part.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/diagrams-cost-curves.js" defer></script>
+  </body>
+</html>

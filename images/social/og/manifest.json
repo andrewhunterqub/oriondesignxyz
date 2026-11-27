@@ -1,0 +1,727 @@
+{
+ "tools/index.html": {
+  "file": "images/social/og/tools.jpg",
+  "hash": "a52fe16174b1",
+  "title": "Interactive tools for hardware decisions"
+ },
+ "tools/assembly-time.html": {
+  "file": "images/social/og/tools-assembly-time.jpg",
+  "hash": "ac87f7a4b335",
+  "title": "Assembly Time Estimator"
+ },
+ "tools/bom-builder.html": {
+  "file": "images/social/og/tools-bom-builder.jpg",
+  "hash": "0b18d136cce3",
+  "title": "Bill of Materials Cost Builder"
+ },
+ "tools/break-even-calculator.html": {
+  "file": "images/social/og/tools-break-even-calculator.jpg",
+  "hash": "87178a099928",
+  "title": "Break-even Calculator"
+ },
+ "tools/carbon-footprint.html": {
+  "file": "images/social/og/tools-carbon-footprint.jpg",
+  "hash": "1dee7f7192f7",
+  "title": "Carbon Footprint Estimator"
+ },
+ "tools/cashflow-projection.html": {
+  "file": "images/social/og/tools-cashflow-projection.jpg",
+  "hash": "b5ab0ce5c135",
+  "title": "Cashflow Projection Tool"
+ },
+ "tools/certification-readiness.html": {
+  "file": "images/social/og/tools-certification-readiness.jpg",
+  "hash": "95390e9aed91",
+  "title": "Certification Readiness Checklist"
+ },
+ "tools/crowdfunding-planner.html": {
+  "file": "images/social/og/tools-crowdfunding-planner.jpg",
+  "hash": "02c3019403cb",
+  "title": "Crowdfunding Planner"
+ },
+ "tools/dfm-checker.html": {
+  "file": "images/social/og/tools-dfm-checker.jpg",
+  "hash": "9288afa8fd14",
+  "title": "Injection Moulding DFM Checker"
+ },
+ "tools/hardware-business-case-builder.html": {
+  "file": "images/social/og/tools-hardware-business-case-builder.jpg",
+  "hash": "230ea7aede0a",
+  "title": "Hardware Business Case Builder"
+ },
+ "tools/investor-metrics-kpis.html": {
+  "file": "images/social/og/tools-investor-metrics-kpis.jpg",
+  "hash": "67ffc0c3eb0f",
+  "title": "Investor Metrics and KPIs"
+ },
+ "tools/landed-cost-calculator.html": {
+  "file": "images/social/og/tools-landed-cost-calculator.jpg",
+  "hash": "73b6cfd06601",
+  "title": "Landed Cost Calculator"
+ },
+ "tools/manufacturing-payoff.html": {
+  "file": "images/social/og/tools-manufacturing-payoff.jpg",
+  "hash": "806638194d02",
+  "title": "Manufacturing Payoff Visualiser"
+ },
+ "tools/material-selector.html": {
+  "file": "images/social/og/tools-material-selector.jpg",
+  "hash": "1b2d302cff16",
+  "title": "Plastic Material Selector"
+ },
+ "tools/nda-generator.html": {
+  "file": "images/social/og/tools-nda-generator.jpg",
+  "hash": "d33d0d584976",
+  "title": "NDA Generator"
+ },
+ "tools/pricing-ladder.html": {
+  "file": "images/social/og/tools-pricing-ladder.jpg",
+  "hash": "c070928bf065",
+  "title": "Pricing Ladder"
+ },
+ "tools/product-cost-estimator.html": {
+  "file": "images/social/og/tools-product-cost-estimator.jpg",
+  "hash": "4c753b88f6b2",
+  "title": "Product Cost Estimator"
+ },
+ "tools/product-design-process-map.html": {
+  "file": "images/social/og/tools-product-design-process-map.jpg",
+  "hash": "64929177bc8e",
+  "title": "Product Design Process Map"
+ },
+ "tools/product-lifecycle-explorer.html": {
+  "file": "images/social/og/tools-product-lifecycle-explorer.jpg",
+  "hash": "4b438a3b405f",
+  "title": "Product Lifecycle Explorer"
+ },
+ "tools/product-plan-builder.html": {
+  "file": "images/social/og/tools-product-plan-builder.jpg",
+  "hash": "7d8ba7e79f62",
+  "title": "Product Plan Builder"
+ },
+ "tools/product-purpose.html": {
+  "file": "images/social/og/tools-product-purpose.jpg",
+  "hash": "8fc8ab8cdc32",
+  "title": "Product Purpose Framework"
+ },
+ "tools/production-strategy-planner.html": {
+  "file": "images/social/og/tools-production-strategy-planner.jpg",
+  "hash": "ed782810fcc5",
+  "title": "Production Strategy Planner"
+ },
+ "tools/prototype-strategy-tool.html": {
+  "file": "images/social/og/tools-prototype-strategy-tool.jpg",
+  "hash": "e11f6da28a21",
+  "title": "Prototype Strategy Tool"
+ },
+ "tools/pugh-concept-selector.html": {
+  "file": "images/social/og/tools-pugh-concept-selector.jpg",
+  "hash": "c715c0e2e5ee",
+  "title": "Pugh Concept Selector"
+ },
+ "tools/ready-for-manufacturer.html": {
+  "file": "images/social/og/tools-ready-for-manufacturer.jpg",
+  "hash": "9eb7d4413b71",
+  "title": "Ready to Talk to a Manufacturer?"
+ },
+ "tools/ready-for-tooling.html": {
+  "file": "images/social/og/tools-ready-for-tooling.jpg",
+  "hash": "5b539f4ce9a2",
+  "title": "Ready to Commit to Tooling?"
+ },
+ "tools/revenue-margin-simulator.html": {
+  "file": "images/social/og/tools-revenue-margin-simulator.jpg",
+  "hash": "7aaecdbc3d5f",
+  "title": "Launch margin planner"
+ },
+ "tools/rfq-pack-builder.html": {
+  "file": "images/social/og/tools-rfq-pack-builder.jpg",
+  "hash": "0e4d968533bb",
+  "title": "RFQ Pack Builder"
+ },
+ "tools/route-to-market-simulator.html": {
+  "file": "images/social/og/tools-route-to-market-simulator.jpg",
+  "hash": "1a87a0489a72",
+  "title": "Target COGS by route to market"
+ },
+ "tools/startup-cost-planner.html": {
+  "file": "images/social/og/tools-startup-cost-planner.jpg",
+  "hash": "2ebc0900bccf",
+  "title": "Startup Cost Planner"
+ },
+ "tools/test-plan-builder.html": {
+  "file": "images/social/og/tools-test-plan-builder.jpg",
+  "hash": "bcaf261a019f",
+  "title": "Product Test Plan Builder"
+ },
+ "tools/timeline-planner.html": {
+  "file": "images/social/og/tools-timeline-planner.jpg",
+  "hash": "06fcba30e09c",
+  "title": "Product Development Timeline Planner"
+ },
+ "tools/tolerance-stack-up.html": {
+  "file": "images/social/og/tools-tolerance-stack-up.jpg",
+  "hash": "2706e2e8aaf3",
+  "title": "Tolerance Stack-up Calculator"
+ },
+ "guides/index.html": {
+  "file": "images/social/og/guides.jpg",
+  "hash": "134823bc5b1d",
+  "title": "Product development guides for teams moving from idea to launch"
+ },
+ "guides/assembly-time-estimate.html": {
+  "file": "images/social/og/guides-assembly-time-estimate.jpg",
+  "hash": "bb0ae3cc12e1",
+  "title": "Estimating assembly time during design"
+ },
+ "guides/building-a-hardware-business-case.html": {
+  "file": "images/social/og/guides-building-a-hardware-business-case.jpg",
+  "hash": "44728c6d5dae",
+  "title": "Building a hardware business case"
+ },
+ "guides/calculating-hardware-startup-cash-flow.html": {
+  "file": "images/social/og/guides-calculating-hardware-startup-cash-flow.jpg",
+  "hash": "cb6661c9fe4d",
+  "title": "Calculating hardware startup cash flow"
+ },
+ "guides/choosing-lower-carbon-materials.html": {
+  "file": "images/social/og/guides-choosing-lower-carbon-materials.jpg",
+  "hash": "9bf1e8e9a474",
+  "title": "Choosing lower-carbon materials: less material, better material, longer life"
+ },
+ "guides/choosing-plastic-materials.html": {
+  "file": "images/social/og/guides-choosing-plastic-materials.jpg",
+  "hash": "091fabbaacd0",
+  "title": "Choosing materials for plastic products: common polymers, trade-offs and how to decide"
+ },
+ "guides/cnc-machining-design-rules.html": {
+  "file": "images/social/og/guides-cnc-machining-design-rules.jpg",
+  "hash": "5ef87ab1d9cb",
+  "title": "CNC machining design rules: designing parts that are quick to machine"
+ },
+ "guides/competitor-and-patent-landscape-review.html": {
+  "file": "images/social/og/guides-competitor-and-patent-landscape-review.jpg",
+  "hash": "01708b12a8e6",
+  "title": "Competitor and patent landscape review: mapping what already exists"
+ },
+ "guides/crowdfunding-a-hardware-product.html": {
+  "file": "images/social/og/guides-crowdfunding-a-hardware-product.jpg",
+  "hash": "5665224793c8",
+  "title": "Crowdfunding a hardware product: funding a first run and delivering it"
+ },
+ "guides/customer-discovery-for-hardware.html": {
+  "file": "images/social/og/guides-customer-discovery-for-hardware.jpg",
+  "hash": "7f319c89f97e",
+  "title": "Customer discovery for hardware: learning what matters before you design"
+ },
+ "guides/design-for-repair-and-disassembly.html": {
+  "file": "images/social/og/guides-design-for-repair-and-disassembly.jpg",
+  "hash": "d680d2eccc07",
+  "title": "Design for repair and disassembly: making products that last longer"
+ },
+ "guides/design-registration-vs-patents.html": {
+  "file": "images/social/og/guides-design-registration-vs-patents.jpg",
+  "hash": "745263f979e2",
+  "title": "Design registration vs patents: protecting how a product looks and works"
+ },
+ "guides/development-and-prototyping.html": {
+  "file": "images/social/og/guides-development-and-prototyping.jpg",
+  "hash": "11b073a1a847",
+  "title": "Development and prototyping: how a hardware product gets from idea to production-ready"
+ },
+ "guides/estimating-hardware-development-costs.html": {
+  "file": "images/social/og/guides-estimating-hardware-development-costs.jpg",
+  "hash": "d695497eae3e",
+  "title": "How much does it cost to develop a hardware product?"
+ },
+ "guides/estimating-product-carbon-footprint-during-design.html": {
+  "file": "images/social/og/guides-estimating-product-carbon-footprint-during-design.jpg",
+  "hash": "246c32be3f67",
+  "title": "Estimating product carbon footprint during design"
+ },
+ "guides/financial-break-even-for-hardware-products.html": {
+  "file": "images/social/og/guides-financial-break-even-for-hardware-products.jpg",
+  "hash": "0c348cac528c",
+  "title": "Financial break-even for hardware products"
+ },
+ "guides/freedom-to-operate-explained.html": {
+  "file": "images/social/og/guides-freedom-to-operate-explained.jpg",
+  "hash": "ce592df1ac56",
+  "title": "Freedom to operate explained: checking you can make and sell your product"
+ },
+ "guides/funding-and-cash.html": {
+  "file": "images/social/og/guides-funding-and-cash.jpg",
+  "hash": "8efc577c4575",
+  "title": "Funding and cash: how much a hardware product needs, and where the money can come from"
+ },
+ "guides/funding-routes-uk-northern-ireland.html": {
+  "file": "images/social/og/guides-funding-routes-uk-northern-ireland.jpg",
+  "hash": "73d12736915c",
+  "title": "Funding routes for hardware start-ups in the UK and Northern Ireland"
+ },
+ "guides/hardware-investor-metrics.html": {
+  "file": "images/social/og/guides-hardware-investor-metrics.jpg",
+  "hash": "aad2b9d12365",
+  "title": "Hardware investor metrics that actually matter"
+ },
+ "guides/hardware-revenue-margin-planning.html": {
+  "file": "images/social/og/guides-hardware-revenue-margin-planning.jpg",
+  "hash": "722b2d08f496",
+  "title": "How to turn RRP into target COGS"
+ },
+ "guides/how-engineers-choose-between-concepts.html": {
+  "file": "images/social/og/guides-how-engineers-choose-between-concepts.jpg",
+  "hash": "d45e0dac42d5",
+  "title": "How engineers choose between concepts"
+ },
+ "guides/how-many-prototypes-do-you-need.html": {
+  "file": "images/social/og/guides-how-many-prototypes-do-you-need.jpg",
+  "hash": "5d210084fd09",
+  "title": "How many prototypes do you need? Planning prototype rounds"
+ },
+ "guides/how-to-estimate-manufacturing-cost.html": {
+  "file": "images/social/og/guides-how-to-estimate-manufacturing-cost.jpg",
+  "hash": "283139548a59",
+  "title": "How to estimate manufacturing cost for a hardware product"
+ },
+ "guides/how-to-find-and-brief-a-manufacturer.html": {
+  "file": "images/social/og/guides-how-to-find-and-brief-a-manufacturer.jpg",
+  "hash": "e6d85be8f32e",
+  "title": "How to find and brief a manufacturer, in the UK or overseas"
+ },
+ "guides/how-to-price-a-physical-product.html": {
+  "file": "images/social/og/guides-how-to-price-a-physical-product.jpg",
+  "hash": "cd9ec8d5d8f1",
+  "title": "How to price a physical product: value, competitors, margins and testing"
+ },
+ "guides/how-to-protect-product-ip.html": {
+  "file": "images/social/og/guides-how-to-protect-product-ip.jpg",
+  "hash": "8bce0547372c",
+  "title": "How to protect product IP before talking to manufacturers"
+ },
+ "guides/how-to-validate-a-product-idea.html": {
+  "file": "images/social/og/guides-how-to-validate-a-product-idea.jpg",
+  "hash": "9efc9f20226b",
+  "title": "How to validate a product idea before you build it"
+ },
+ "guides/how-to-write-a-product-requirements-document.html": {
+  "file": "images/social/og/guides-how-to-write-a-product-requirements-document.jpg",
+  "hash": "2aab0b2b5966",
+  "title": "How to write a product requirements document for a physical product"
+ },
+ "guides/injection-mould-break-even.html": {
+  "file": "images/social/og/guides-injection-mould-break-even.jpg",
+  "hash": "f836ea6fae83",
+  "title": "When does injection moulding become cheaper?"
+ },
+ "guides/injection-moulding-dfm-checklist.html": {
+  "file": "images/social/og/guides-injection-moulding-dfm-checklist.jpg",
+  "hash": "adf1e005cde8",
+  "title": "DFM checklist for injection-moulded parts: walls, draft, ribs, bosses and undercuts"
+ },
+ "guides/injection-moulding-explained.html": {
+  "file": "images/social/og/guides-injection-moulding-explained.jpg",
+  "hash": "eea677db0164",
+  "title": "Injection moulding explained: the process, tooling types, lead times and cost drivers"
+ },
+ "guides/ip-partners-and-compliance.html": {
+  "file": "images/social/og/guides-ip-partners-and-compliance.jpg",
+  "hash": "b4f6f9ab7a9f",
+  "title": "IP, partners and compliance: protecting a product, working with partners and meeting the rules"
+ },
+ "guides/landed-cost-freight-duty-vat.html": {
+  "file": "images/social/og/guides-landed-cost-freight-duty-vat.jpg",
+  "hash": "67ce0e5f6051",
+  "title": "Landed cost explained: freight, duty and import VAT for physical products"
+ },
+ "guides/learning-paths.html": {
+  "file": "images/social/og/guides-learning-paths.jpg",
+  "hash": "5f0c2199a185",
+  "title": "Learning paths: guided routes through product development for founders, engineers, spin-outs and students"
+ },
+ "guides/manufacturing-and-cost.html": {
+  "file": "images/social/og/guides-manufacturing-and-cost.jpg",
+  "hash": "be60cb4c6650",
+  "title": "Manufacturing and cost: how physical products are made, and what drives the price"
+ },
+ "guides/manufacturing-processes-compared.html": {
+  "file": "images/social/og/guides-manufacturing-processes-compared.jpg",
+  "hash": "d61dde6c36f5",
+  "title": "Manufacturing processes compared: volumes, tooling, cost and constraints"
+ },
+ "guides/mapping-the-product-design-process.html": {
+  "file": "images/social/og/guides-mapping-the-product-design-process.jpg",
+  "hash": "3a51d5bab228",
+  "title": "Mapping the product design process"
+ },
+ "guides/minimum-order-quantities-and-cash.html": {
+  "file": "images/social/og/guides-minimum-order-quantities-and-cash.jpg",
+  "hash": "9d14543f8d13",
+  "title": "Minimum order quantities and cash: planning your first production order"
+ },
+ "guides/must-have-documents-before-talking-to-a-manufacturer.html": {
+  "file": "images/social/og/guides-must-have-documents-before-talking-to-a-manufacturer.jpg",
+  "hash": "33f01ae9fb41",
+  "title": "Must-have documents before talking to a manufacturer"
+ },
+ "guides/opportunity-and-concept.html": {
+  "file": "images/social/og/guides-opportunity-and-concept.jpg",
+  "hash": "28472b915991",
+  "title": "Opportunity and concept: how to test a product idea and choose what to build"
+ },
+ "guides/packaging-design-for-shipping.html": {
+  "file": "images/social/og/guides-packaging-design-for-shipping.jpg",
+  "hash": "6f0eaa4b9294",
+  "title": "Packaging design for shipping: protecting products from factory to customer"
+ },
+ "guides/product-carbon-footprint-vs-lca.html": {
+  "file": "images/social/og/guides-product-carbon-footprint-vs-lca.jpg",
+  "hash": "2508c65c9bb2",
+  "title": "Product carbon footprint vs LCA: what each measures and when to use it"
+ },
+ "guides/product-certification-basics.html": {
+  "file": "images/social/og/guides-product-certification-basics.jpg",
+  "hash": "38bf3966cda7",
+  "title": "Product certification basics for hardware start-ups: UKCA, CE, safety and EMC"
+ },
+ "guides/product-development-checklists.html": {
+  "file": "images/social/og/guides-product-development-checklists.jpg",
+  "hash": "210ba816162c",
+  "title": "Printable product development checklists"
+ },
+ "guides/product-liability-basics.html": {
+  "file": "images/social/og/guides-product-liability-basics.jpg",
+  "hash": "e67603f282fb",
+  "title": "Product liability basics: what product developers should know"
+ },
+ "guides/product-testing-and-validation-plans.html": {
+  "file": "images/social/og/guides-product-testing-and-validation-plans.jpg",
+  "hash": "0e1c6eefe9d2",
+  "title": "Product testing and validation plans: proving a product works"
+ },
+ "guides/prototyping-vs-production-startup-guide.html": {
+  "file": "images/social/og/guides-prototyping-vs-production-startup-guide.jpg",
+  "hash": "9288b94a20b8",
+  "title": "Prototyping vs production: a startup guide"
+ },
+ "guides/quality-control-and-first-article-inspection.html": {
+  "file": "images/social/og/guides-quality-control-and-first-article-inspection.jpg",
+  "hash": "b5dc3cc7038a",
+  "title": "Quality control and first-article inspection for new products"
+ },
+ "guides/retail-and-distributor-margins-explained.html": {
+  "file": "images/social/og/guides-retail-and-distributor-margins-explained.jpg",
+  "hash": "07f29295b7eb",
+  "title": "Retail and distributor margins explained: from shelf price to what you receive"
+ },
+ "guides/right-to-repair-and-ecodesign-rules.html": {
+  "file": "images/social/og/guides-right-to-repair-and-ecodesign-rules.jpg",
+  "hash": "340bd695d835",
+  "title": "Right to repair and ecodesign rules: an overview for product designers"
+ },
+ "guides/risk-progressive-manufacturing-strategy.html": {
+  "file": "images/social/og/guides-risk-progressive-manufacturing-strategy.jpg",
+  "hash": "672e7e90dac7",
+  "title": "The risk-progressive manufacturing strategy"
+ },
+ "guides/route-to-market-and-margins.html": {
+  "file": "images/social/og/guides-route-to-market-and-margins.jpg",
+  "hash": "b378309628a3",
+  "title": "Route to market and margins: how sales channels shape price, cost and cash"
+ },
+ "guides/route-to-market-hardware-product.html": {
+  "file": "images/social/og/guides-route-to-market-hardware-product.jpg",
+  "hash": "737f67b885f6",
+  "title": "How route to market shapes product design and cost"
+ },
+ "guides/selling-on-marketplaces.html": {
+  "file": "images/social/og/guides-selling-on-marketplaces.jpg",
+  "hash": "52969f376771",
+  "title": "Selling on marketplaces: fees, fulfilment, listings and responsibilities"
+ },
+ "guides/sheet-metal-design-basics.html": {
+  "file": "images/social/og/guides-sheet-metal-design-basics.jpg",
+  "hash": "3c7868d56cc6",
+  "title": "Sheet metal design basics: bends, holes, reliefs, materials and tolerances"
+ },
+ "guides/sustainability-and-product-life.html": {
+  "file": "images/social/og/guides-sustainability-and-product-life.jpg",
+  "hash": "077b6ab8ad05",
+  "title": "Sustainability and product life: where a product's impact comes from and how design reduces it"
+ },
+ "guides/sustainable-product-design.html": {
+  "file": "images/social/og/guides-sustainable-product-design.jpg",
+  "hash": "1be8614acb47",
+  "title": "The most sustainable product is the one you never make"
+ },
+ "guides/uk-vs-overseas-manufacturing.html": {
+  "file": "images/social/og/guides-uk-vs-overseas-manufacturing.jpg",
+  "hash": "6728681cd17b",
+  "title": "UK vs overseas manufacturing: choosing where to make your product"
+ },
+ "guides/why-product-lifetime-matters-more-than-recycling.html": {
+  "file": "images/social/og/guides-why-product-lifetime-matters-more-than-recycling.jpg",
+  "hash": "a1018befa71a",
+  "title": "Why product lifetime matters more than recycling"
+ },
+ "guides/working-with-a-product-design-consultancy.html": {
+  "file": "images/social/og/guides-working-with-a-product-design-consultancy.jpg",
+  "hash": "bb5353719414",
+  "title": "Working with a product design consultancy: what to expect and how to brief one"
+ },
+ "ready-to-launch/index.html": {
+  "file": "images/social/og/ready-to-launch.jpg",
+  "hash": "6ac8edb5b991",
+  "title": "A phased route through hardware product development"
+ },
+ "case-studies/index.html": {
+  "file": "images/social/og/case-studies.jpg",
+  "hash": "7156a30aa366",
+  "title": "Product design case studies from concept through manufacture"
+ },
+ "case-studies/mlt-industries-switchmaster.html": {
+  "file": "images/social/og/case-studies-mlt-industries-switchmaster.jpg",
+  "hash": "3c3243c394f1",
+  "title": "MLT Industries: from an early product concept to manufacture and a growing product family"
+ },
+ "services/index.html": {
+  "file": "images/social/og/services.jpg",
+  "hash": "fcb48389887a",
+  "title": "Product design engineering help from early idea to manufacture"
+ },
+ "about/index.html": {
+  "file": "images/social/og/about.jpg",
+  "hash": "d198a6c08fb3",
+  "title": "Product design help without the black box"
+ },
+ "contact/index.html": {
+  "file": "images/social/og/contact.jpg",
+  "hash": "e67b3d065705",
+  "title": "Talk to Andrew at Orion Design"
+ },
+ "knowledge/index.html": {
+  "file": "images/social/og/knowledge.jpg",
+  "hash": "5ef9c6f7bbcd",
+  "title": "Orion engineering knowledge base"
+ },
+ "knowledge/engineering-estimation-formulas.html": {
+  "file": "images/social/og/knowledge-engineering-estimation-formulas.jpg",
+  "hash": "2969fcfc33ad",
+  "title": "Engineering estimation formulas"
+ },
+ "knowledge/glossary.html": {
+  "file": "images/social/og/knowledge-glossary.jpg",
+  "hash": "bcc5674d9240",
+  "title": "Product design and manufacturing glossary"
+ },
+ "privacy/index.html": {
+  "file": "images/social/og/privacy.jpg",
+  "hash": "9df01b6d02dd",
+  "title": "Privacy and analytics"
+ },
+ "idea-to-manufacture/index.html": {
+  "file": "images/social/og/idea-to-manufacture.jpg",
+  "hash": "a1b5d23e4101",
+  "title": "Idea to manufacture: how a physical product gets made"
+ },
+ "product-design-belfast/index.html": {
+  "file": "images/social/og/product-design-belfast.jpg",
+  "hash": "1f0cb06fea9d",
+  "title": "Product design and prototyping in Belfast, Northern Ireland"
+ },
+ "walkthrough/index.html": {
+  "file": "images/social/og/walkthrough.jpg",
+  "hash": "0b9f495e50cd",
+  "title": "Walkthrough: one product from idea to manufacture"
+ },
+ "whats-new/index.html": {
+  "file": "images/social/og/whats-new.jpg",
+  "hash": "9b54e94ef50b",
+  "title": "What's new and corrections"
+ },
+ "index.html": {
+  "file": "images/social/og/home.jpg",
+  "hash": "adcaf4d2d6a1",
+  "title": "Turn a product idea into something you can make, cost, test, and launch"
+ },
+ "guides/building-a-hardware-financial-model.html": {
+  "file": "images/social/og/guides-building-a-hardware-financial-model.jpg",
+  "hash": "c8c79c934091",
+  "title": "Building a hardware financial model"
+ },
+ "guides/looks-like-vs-works-like-prototypes.html": {
+  "file": "images/social/og/guides-looks-like-vs-works-like-prototypes.jpg",
+  "hash": "2b6164486541",
+  "title": "Looks-like vs works-like prototypes: what each is for and when to combine them"
+ },
+ "guides/electronics-in-a-physical-product.html": {
+  "file": "images/social/og/guides-electronics-in-a-physical-product.jpg",
+  "hash": "dcde676b95ec",
+  "title": "Electronics in a physical product: what to plan early"
+ },
+ "guides/comparing-manufacturing-quotes.html": {
+  "file": "images/social/og/guides-comparing-manufacturing-quotes.jpg",
+  "hash": "a58f8d262df6",
+  "title": "Getting and comparing manufacturing quotes"
+ },
+ "guides/tolerances-and-engineering-drawings.html": {
+  "file": "images/social/og/guides-tolerances-and-engineering-drawings.jpg",
+  "hash": "8e68f296c89d",
+  "title": "Tolerances and engineering drawings: the basics"
+ },
+ "guides/choosing-a-3d-printing-process.html": {
+  "file": "images/social/og/guides-choosing-a-3d-printing-process.jpg",
+  "hash": "a7599ce83ea2",
+  "title": "Choosing a 3D printing process for prototypes: FDM, SLA, SLS, MJF and metal"
+ },
+ "guides/joining-methods-for-product-design.html": {
+  "file": "images/social/og/guides-joining-methods-for-product-design.jpg",
+  "hash": "152d7f5b26e8",
+  "title": "Joining methods: screws, snap fits, adhesives and welding"
+ },
+ "guides/surface-finishes-for-plastic-and-metal-parts.html": {
+  "file": "images/social/og/guides-surface-finishes-for-plastic-and-metal-parts.jpg",
+  "hash": "9ca4dcdb7023",
+  "title": "Surface finishes for plastic and metal parts"
+ },
+ "guides/usability-testing-a-prototype.html": {
+  "file": "images/social/og/guides-usability-testing-a-prototype.jpg",
+  "hash": "34c6699b93b0",
+  "title": "Usability testing a prototype: how to find out whether people can actually use it"
+ },
+ "guides/sealing-and-waterproofing-an-enclosure.html": {
+  "file": "images/social/og/guides-sealing-and-waterproofing-an-enclosure.jpg",
+  "hash": "99fd19f349a4",
+  "title": "Sealing and waterproofing an enclosure: gaskets, O-rings and IP ratings"
+ },
+ "guides/industrial-design-vs-engineering-design.html": {
+  "file": "images/social/og/guides-industrial-design-vs-engineering-design.jpg",
+  "hash": "7c3a5bf20877",
+  "title": "Industrial design vs engineering design: who does what"
+ },
+ "guides/reducing-the-cost-of-an-existing-product.html": {
+  "file": "images/social/og/guides-reducing-the-cost-of-an-existing-product.jpg",
+  "hash": "7b9d6cf0f424",
+  "title": "Reducing the cost of an existing product"
+ },
+ "guides/after-launch-returns-feedback-and-design-changes.html": {
+  "file": "images/social/og/guides-after-launch-returns-feedback-and-design-changes.jpg",
+  "hash": "61fbdf3c78ed",
+  "title": "After launch: returns, feedback and design changes"
+ },
+ "guides/planning-a-pilot-production-run.html": {
+  "file": "images/social/og/guides-planning-a-pilot-production-run.jpg",
+  "hash": "ef01879dc1c8",
+  "title": "Planning a pilot production run"
+ },
+ "guides/from-3d-printed-prototype-to-moulded-part.html": {
+  "file": "images/social/og/guides-from-3d-printed-prototype-to-moulded-part.jpg",
+  "hash": "70ed990419e0",
+  "title": "From 3D-printed prototype to injection-moulded part: what has to change"
+ },
+ "guides/retail-ready-packaging-and-barcodes.html": {
+  "file": "images/social/og/guides-retail-ready-packaging-and-barcodes.jpg",
+  "hash": "9700c2fdee5a",
+  "title": "Retail-ready packaging and barcodes: the basics"
+ },
+ "guides/trade-marks-and-product-names.html": {
+  "file": "images/social/og/guides-trade-marks-and-product-names.jpg",
+  "hash": "f62e24c222a7",
+  "title": "Trade marks and product names: the basics"
+ },
+ "guides/supply-agreements-with-a-manufacturer.html": {
+  "file": "images/social/og/guides-supply-agreements-with-a-manufacturer.jpg",
+  "hash": "87d51aabdbc2",
+  "title": "Supply agreements with a manufacturer: what to cover"
+ },
+ "guides/running-a-design-review.html": {
+  "file": "images/social/og/guides-running-a-design-review.jpg",
+  "hash": "924384a13ced",
+  "title": "Running a design review: catching problems while they are cheap to fix"
+ },
+ "guides/choosing-metals-for-a-product.html": {
+  "file": "images/social/og/guides-choosing-metals-for-a-product.jpg",
+  "hash": "e938a870529b",
+  "title": "Choosing metals for a product: common alloys, trade-offs and how to decide"
+ },
+ "tools/snap-fit-calculator.html": {
+  "file": "images/social/og/tools-snap-fit-calculator.jpg",
+  "hash": "1c11f829ac08",
+  "title": "Snap-fit Calculator"
+ },
+ "guides/bills-of-materials-and-revision-control.html": {
+  "file": "images/social/og/guides-bills-of-materials-and-revision-control.jpg",
+  "hash": "bec341d35ba0",
+  "title": "Bills of materials and revision control: making sure everyone builds the same product"
+ },
+ "guides/designing-snap-fits-and-living-hinges.html": {
+  "file": "images/social/og/guides-designing-snap-fits-and-living-hinges.jpg",
+  "hash": "48a209dc6a08",
+  "title": "Designing snap fits and living hinges: flexible features that last"
+ },
+ "guides/mould-tool-trials-and-sample-approval.html": {
+  "file": "images/social/og/guides-mould-tool-trials-and-sample-approval.jpg",
+  "hash": "3e54de4ff49a",
+  "title": "Mould tool trials and sample approval: from first shots to signed-off parts"
+ },
+ "tools/change-request-builder.html": {
+  "file": "images/social/og/tools-change-request-builder.jpg",
+  "hash": "dd019e8c6e64",
+  "title": "Change Request Builder"
+ },
+ "guides/managing-heat-in-a-product-enclosure.html": {
+  "file": "images/social/og/guides-managing-heat-in-a-product-enclosure.jpg",
+  "hash": "93aa69199013",
+  "title": "Managing heat in a product enclosure: giving heat a path out"
+ },
+ "guides/assembly-and-work-instructions.html": {
+  "file": "images/social/og/guides-assembly-and-work-instructions.jpg",
+  "hash": "534da562c202",
+  "title": "Assembly instructions and work instructions for production"
+ },
+ "tools/temperature-rise-estimator.html": {
+  "file": "images/social/og/tools-temperature-rise-estimator.jpg",
+  "hash": "022f6fea5c65",
+  "title": "Enclosure Temperature Rise Estimator"
+ },
+ "guides/designing-for-drops-and-impacts.html": {
+  "file": "images/social/og/guides-designing-for-drops-and-impacts.jpg",
+  "hash": "287404dd6727",
+  "title": "Designing a product to survive drops and impacts"
+ },
+ "guides/designing-buttons-switches-and-controls.html": {
+  "file": "images/social/og/guides-designing-buttons-switches-and-controls.jpg",
+  "hash": "4d77731e2925",
+  "title": "Designing buttons, switches and controls: controls that feel right and keep working"
+ },
+ "tools/bracket-deflection-calculator.html": {
+  "file": "images/social/og/tools-bracket-deflection-calculator.jpg",
+  "hash": "13ed565159f2",
+  "title": "Bracket Deflection Calculator"
+ },
+ "guides/cables-wiring-and-connectors-inside-a-product.html": {
+  "file": "images/social/og/guides-cables-wiring-and-connectors-inside-a-product.jpg",
+  "hash": "f9eb3cb0facc",
+  "title": "Cables, wiring and connectors inside a product"
+ },
+ "guides/die-casting-explained.html": {
+  "file": "images/social/og/guides-die-casting-explained.jpg",
+  "hash": "650e6c7932ce",
+  "title": "Die casting explained: the process, alloys, design rules and when it pays"
+ },
+ "guides/aluminium-extrusions-for-product-enclosures.html": {
+  "file": "images/social/og/guides-aluminium-extrusions-for-product-enclosures.jpg",
+  "hash": "e3b44c7892af",
+  "title": "Aluminium extrusions for product enclosures: profiles, end caps and finishing"
+ },
+ "guides/choosing-how-to-make-an-enclosure.html": {
+  "file": "images/social/og/guides-choosing-how-to-make-an-enclosure.jpg",
+  "hash": "70993acb0b70",
+  "title": "Choosing how to make an enclosure: matching the route to your volume and design"
+ },
+ "guides/overmoulding-and-two-shot-moulding.html": {
+  "file": "images/social/og/guides-overmoulding-and-two-shot-moulding.jpg",
+  "hash": "5da6425ba380",
+  "title": "Overmoulding and two-shot moulding explained"
+ }
+}

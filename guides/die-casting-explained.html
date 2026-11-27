@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Die Casting Explained: Process and Design | Orion Design</title>
+    <meta
+      name="description"
+      content="How die casting works: hot- and cold-chamber machines, common alloys, design rules, finishing, die trials, and when it beats machining or moulding."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/die-casting-explained.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Die casting explained | Orion Design">
+    <meta
+      property="og:description"
+      content="How die casting works: hot- and cold-chamber machines, common alloys, design rules, finishing, die trials, and when it beats machining or moulding."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/die-casting-explained.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-die-casting-explained.jpg">
+    <meta property="og:image:alt" content="Die casting explained guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Die casting explained | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How die casting works: hot- and cold-chamber machines, common alloys, design rules, finishing, die trials, and when it beats machining or moulding."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-die-casting-explained.jpg">
+    <meta name="twitter:image:alt" content="Die casting explained guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-die-casting-explained.jpg",
+        "headline": "Die casting explained: the process, alloys, design rules and when it pays",
+        "description": "How die casting works: hot- and cold-chamber machines, common alloys, design rules, finishing, die trials, and when it beats machining or moulding.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Manufacturing processes",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/die-casting-explained.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Die casting"
+          },
+          {
+            "@type": "Thing",
+            "name": "Die casting design rules"
+          },
+          {
+            "@type": "Thing",
+            "name": "Aluminium and zinc die-casting alloys"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Die casting explained",
+                "item": "https://oriondesign.xyz/guides/die-casting-explained.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the difference between die casting and injection moulding?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Both force a liquid into a closed steel tool and eject the finished part. Die casting uses molten metal, so the die must survive far higher temperatures, the castings usually need trimming and some machining afterwards, and they contain some porosity that the design has to allow for."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is die casting cheaper than CNC machining?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Per part, usually yes once volumes are high enough, but the die, trim tool and fixtures must be paid for first and the design must stop changing. Compare the total cost of each route at realistic volumes using real quotes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can die-cast aluminium be anodised?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It can be, but it is commonly reported to give a darker, less even finish than wrought aluminium, because of the silicon in casting alloys and porosity near the surface. Powder coat or paint are more usual; if anodising matters, test it on sample castings first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why do die castings need machining?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "As-cast surfaces carry draft, parting lines and small variations, so they are rarely flat or accurate enough for sealing faces, bearing bores or threads. Those features are machined afterwards, and the casting is designed so the cuts land in sound metal."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does a die-casting die last?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on the alloy, the part, the die steel and maintenance. Zinc dies generally last much longer than aluminium dies, because zinc casts at a lower temperature. Ask each die caster for the life they expect and how repairs are handled."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Die casting explained</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders, designers and engineers with a metal part that may be outgrowing CNC machining</p>
+            <h1>Die casting explained: the process, alloys, design rules and when it pays</h1>
+            <p>
+              A plain-English explanation of die casting for people considering it for the first time: how the process works, the alloys you will be offered, the design rules that make a part castable, what happens to a casting afterwards, and how to tell whether a die will pay for itself.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Die casting forces molten metal under pressure into a hardened steel die, giving detailed, near-finished metal parts at a low cost per part once the die is paid for.</h2>
+              <div class="formula-block">Part cost ≈ metal + (machine rate × cycle time ÷ cavities) + trimming + machining + finishing + scrap allowance + tooling ÷ volume</div>
+              <p>
+                Zinc is usually cast in hot-chamber machines and aluminium in cold-chamber machines.
+                Design the part much like a moulding: even walls, draft, radii, ribs instead of thick sections, few undercuts.
+                Castings contain some porosity, so sealing faces and threads are usually machined afterwards.
+                The die is expensive and slow to change, so die casting suits stable designs at volumes that can share its cost.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#process">How die casting works</a></li>
+              <li><a class="text-link-inline" href="#chambers">Hot-chamber and cold-chamber machines</a></li>
+              <li><a class="text-link-inline" href="#alloys">Common die-casting alloys</a></li>
+              <li><a class="text-link-inline" href="#right-choice">When die casting makes sense</a></li>
+              <li><a class="text-link-inline" href="#design-rules">Design rules for die-cast parts</a></li>
+              <li><a class="text-link-inline" href="#post">Trimming, machining and finishing</a></li>
+              <li><a class="text-link-inline" href="#tooling">Dies, die life and trials</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a housing moving from CNC to die casting</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Next steps</a></li>
+            </ol>
+
+            <h2 id="process">How die casting works</h2>
+            <p>
+              A die-casting die is a pair of hardened steel blocks with the shape of the part cut into them, much like an injection mould but built to survive molten metal.
+              The die is clamped shut, molten metal is driven into the cavity at high speed and pressure, and once it solidifies the die opens and ejector pins push the casting out, with its runner, overflows and flash still attached for trimming.
+            </p>
+            <p>
+              Fast, pressurised filling gives fine detail, thin walls and short cycles. It also traps some gas and leaves <a class="glossary-term" href="../knowledge/glossary.html#term-porosity" data-definition="Small pores inside a casting, from trapped gas and from shrinkage where thick sections freeze last; every die casting has some. Machining can open pores into a leak path on a sealing face or weak engagement in a thread, so machined features are kept in even sections." aria-label="shrinkage porosity: Small pores inside a casting, from trapped gas and from shrinkage where thick sections freeze last; every die casting has some. Machining can open pores into a leak path on a sealing face or weak engagement in a thread, so machined features are kept in even sections. (glossary)">shrinkage porosity</a>, which shapes several design rules below.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 440 244" width="100%" role="img" aria-labelledby="dc-fig-title dc-fig-desc">
+                <title id="dc-fig-title">A simplified section through a die-casting die</title>
+                <desc id="dc-fig-desc">Two die halves meet at a horizontal parting line: the fixed half on top and the moving half below. Molten metal enters from the top through the fixed half, runs along a runner on the parting line, and passes through a narrow gate into the cavity, which forms the part. A short channel beyond the cavity leads to an overflow. Ejector pins pass up through the moving half from an ejector plate below to push the casting out.</desc>
+                <defs><marker id="dc-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <rect x="30" y="40" width="290" height="80" rx="6" class="gd-box-indigo"/>
+                <rect x="30" y="120" width="290" height="80" rx="6" class="gd-box-teal"/>
+                <line x1="20" y1="120" x2="330" y2="120" class="gd-line gd-dash"/>
+                <line x1="81" y1="6" x2="81" y2="34" class="gd-arrow" marker-end="url(#dc-arrow)"/>
+                <text x="96" y="22" class="gd-t">Molten metal in</text>
+                <rect x="74" y="40" width="14" height="80" class="gd-fill-magenta"/>
+                <rect x="74" y="114" width="86" height="12" class="gd-fill-magenta"/>
+                <rect x="160" y="117" width="12" height="6" class="gd-fill-magenta"/>
+                <rect x="172" y="96" width="90" height="48" rx="3" class="gd-fill-magenta"/>
+                <rect x="262" y="117" width="14" height="6" class="gd-fill-magenta"/>
+                <rect x="276" y="110" width="22" height="20" rx="3" class="gd-fill-magenta"/>
+                <rect x="192" y="144" width="8" height="76" class="gd-fill-indigo"/>
+                <rect x="234" y="144" width="8" height="76" class="gd-fill-indigo"/>
+                <rect x="283" y="130" width="8" height="90" class="gd-fill-indigo"/>
+                <rect x="150" y="220" width="160" height="12" rx="3" class="gd-fill-indigo"/>
+                <line x1="166" y1="114" x2="166" y2="86" class="gd-line"/>
+                <text x="148" y="80" class="gd-t">Gate</text>
+                <line x1="217" y1="94" x2="217" y2="86" class="gd-line"/>
+                <text x="196" y="80" class="gd-t">Cavity</text>
+                <text x="96" y="146" class="gd-m">Runner</text>
+                <text x="336" y="72" class="gd-h">Fixed half</text>
+                <line x1="299" y1="110" x2="332" y2="100" class="gd-line"/>
+                <text x="336" y="104" class="gd-t">Overflow</text>
+                <text x="336" y="124" class="gd-t">Parting line</text>
+                <text x="336" y="172" class="gd-h">Moving half</text>
+                <text x="318" y="230" class="gd-t">Ejector pins</text>
+              </svg>
+              <figcaption>A simplified section through a die. Metal flows along the runner and through the gate into the cavity. The overflow beside the cavity collects the first, coldest metal and some trapped air. Ejector pins in the moving half push the casting out and leave small round marks on it.</figcaption>
+            </figure>
+
+            <h2 id="chambers">Hot-chamber and cold-chamber machines</h2>
+            <p>
+              There are two main kinds of die-casting machine. The alloy usually decides which is used, but knowing the difference helps you follow a quote.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Machine</th>
+                  <th>How the metal gets to the die</th>
+                  <th>Usually used for</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hot-chamber</td>
+                  <td>The injection mechanism sits in the molten metal; a plunger pushes each shot straight into the die, keeping cycles short</td>
+                  <td>Zinc and other low-melting alloys, some magnesium</td>
+                </tr>
+                <tr>
+                  <td>Cold-chamber</td>
+                  <td>Metal is ladled from a separate furnace into a shot sleeve, then a plunger drives it into the die</td>
+                  <td>Aluminium, which would attack parts left sitting in it, and much magnesium</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Some die casters specialise in one alloy family, so ask early whether a supplier casts the alloy you need.
+            </p>
+
+            <h2 id="alloys">Common die-casting alloys</h2>
+            <p>
+              Few alloys suit <a class="glossary-term" href="../knowledge/glossary.html#term-die-casting" data-definition="Forcing molten metal, often aluminium or zinc, into a steel die to make metal parts at volume." aria-label="die casting: Forcing molten metal, often aluminium or zinc, into a steel die to make metal parts at volume. (glossary)">die casting</a>, and they differ from the wrought alloys used for machined and sheet parts: they are formulated to flow and fill the die, so their properties and finishes differ too.
+              <a class="text-link-inline" href="choosing-metals-for-a-product.html">Choosing metals for a product</a> covers the wider choice.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Alloy family</th>
+                  <th>Strengths</th>
+                  <th>Watch out for</th>
+                  <th>Typical uses</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Aluminium die-casting alloys</td>
+                  <td>Light, stiff for the weight, conduct heat well, reasonable corrosion resistance</td>
+                  <td>Contain silicon to help them flow, which also tends to make them <a class="glossary-term" href="../knowledge/glossary.html#term-anodising" data-definition="A process that grows a hard oxide layer out of the surface of a metal, usually aluminium. It can be clear or dyed, resists wear and corrosion, does not chip like paint and is electrically insulating." aria-label="anodise: A process that grows a hard oxide layer out of the surface of a metal, usually aluminium. It can be clear or dyed, resists wear and corrosion, does not chip like paint and is electrically insulating. (glossary)">anodise</a> poorly; dies wear faster than for zinc</td>
+                  <td>Housings, enclosures, heat-sinking covers, brackets, frames</td>
+                </tr>
+                <tr>
+                  <td>Zinc die-casting alloys</td>
+                  <td>Fine detail, thin walls, long die life, good base for <a class="glossary-term" href="../knowledge/glossary.html#term-plating" data-definition="Depositing a thin layer of metal, such as zinc, nickel or chrome, onto a part for corrosion protection, wear resistance or a decorative metal look." aria-label="plating: Depositing a thin layer of metal, such as zinc, nickel or chrome, onto a part for corrosion protection, wear resistance or a decorative metal look. (glossary)">plating</a></td>
+                  <td>Heavy, nearly as dense as steel; weaker than steel; creeps under load when warm</td>
+                  <td>Handles, knobs, buckles, lock parts, small housings and decorative trim</td>
+                </tr>
+                <tr>
+                  <td>Magnesium die-casting alloys</td>
+                  <td>The lightest of the three for a given size</td>
+                  <td>Needs specialist handling and corrosion protection; fewer suppliers</td>
+                  <td>Housings and frames for portable equipment where every gram counts</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              do not put a wrought alloy such as 6082 on a die-casting drawing. Ask the die caster which casting alloy they recommend and check your design against its datasheet.
+            </div>
+
+            <h2 id="right-choice">When die casting makes sense</h2>
+            <p>
+              Die casting is a tooled process: expensive to start, cheap to repeat. It makes sense when the design is stable, volumes can share the die cost, and the part needs metal.
+              <a class="text-link-inline" href="manufacturing-processes-compared.html">Manufacturing processes compared</a> sets it alongside the alternatives in relative terms.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Alternative</th>
+                  <th>Choose the alternative when</th>
+                  <th>Die casting tends to win when</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="text-link-inline" href="cnc-machining-design-rules.html">CNC machining</a></td>
+                  <td>Volumes are low, the design is still changing, or the look depends on anodised wrought aluminium</td>
+                  <td>Volumes grow and the shape has pockets, ribs and bosses that are slow to machine</td>
+                </tr>
+                <tr>
+                  <td><a class="text-link-inline" href="sheet-metal-design-basics.html">Sheet metal</a></td>
+                  <td>The part is a folded shell, panel or bracket of even thickness</td>
+                  <td>The part needs ribs, bosses or rounded 3D forms</td>
+                </tr>
+                <tr>
+                  <td>Investment casting</td>
+                  <td>Volumes are lower, or the part must be steel or another alloy that cannot be die cast; its tooling generally costs less</td>
+                  <td>Volumes are higher and the part suits aluminium, zinc or magnesium, where faster cycles cut the cost per part</td>
+                </tr>
+                <tr>
+                  <td><a class="text-link-inline" href="injection-moulding-explained.html">Plastic injection moulding</a></td>
+                  <td>The part does not need metal; plastic is lighter and usually cheaper per part</td>
+                  <td>The part must be stiff in thin sections, carry heat, screen electronics or feel solid</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <a class="text-link-inline" href="injection-mould-break-even.html">When does injection moulding become cheaper?</a> explains why demand confidence and design stability matter as much as break-even volume; the same applies to a die.
+            </p>
+
+            <h2 id="design-rules">Design rules for die-cast parts</h2>
+            <p>
+              Many rules echo the <a class="text-link-inline" href="injection-moulding-dfm-checklist.html">injection moulding DFM checklist</a>. Treat this as typical guidance and confirm values with your die caster, who will set them by alloy, part size and process.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Typical guidance</th>
+                  <th>Why</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Wall thickness</td>
+                  <td>Keep walls uniform and change thickness gradually; zinc generally allows thinner walls than aluminium</td>
+                  <td>Thick sections freeze last and gather porosity and sink</td>
+                </tr>
+                <tr>
+                  <td>Draft</td>
+                  <td>Draft faces parallel to the die opening, more on internal walls</td>
+                  <td>The casting shrinks onto cores and would drag or stick</td>
+                </tr>
+                <tr>
+                  <td>Radii</td>
+                  <td>Round internal and external corners; avoid sharp edges</td>
+                  <td>Better flow, lower stress, and sharp die corners are prone to cracking</td>
+                </tr>
+                <tr>
+                  <td>Ribs</td>
+                  <td>Stiffen with ribs rather than thicker walls; keep ribs thinner than the wall they join</td>
+                  <td>Stiffness without a thick, porous section</td>
+                </tr>
+                <tr>
+                  <td>Bosses</td>
+                  <td>Core bosses hollow and tie them to walls with ribs</td>
+                  <td>A solid boss is a thick, porous spot; a cored hole can be tapped afterwards</td>
+                </tr>
+                <tr>
+                  <td>Undercuts</td>
+                  <td>Avoid them, for example by moving a hole to a face in line with the die opening; otherwise the die needs a slide</td>
+                  <td>Each slide adds cost, maintenance and flash to trim</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-parting-line" data-definition="The line where the two halves of a mould meet; it can leave a visible mark on the part." aria-label="Parting line: The line where the two halves of a mould meet; it can leave a visible mark on the part. (glossary)">Parting line</a></td>
+                  <td>Agree it early; keep it simple and away from cosmetic and sealing faces</td>
+                  <td>Flash forms there and trimming leaves a witness line</td>
+                </tr>
+                <tr>
+                  <td>Ejector pins</td>
+                  <td>Leave flat areas for pins on hidden faces, spread across the part</td>
+                  <td>Pins leave marks, and uneven pushing can distort the casting</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <strong>Porosity, and why some features are machined afterwards.</strong>
+              Every die casting contains some porosity, from trapped gas and from shrinkage where thick sections freeze last; the skin that freezes against the die is usually the soundest metal.
+              As-cast surfaces carry draft and parting lines, so they are rarely accurate enough for a <a class="text-link-inline" href="sealing-and-waterproofing-an-enclosure.html">gasket</a> face, bore or thread. Those features are machined, which cuts through the skin and can open pores: a leak path on a sealing face, or weak engagement in a thread.
+            </p>
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              keep machined features in even sections, not thick lumps, with a small machining allowance. Ask the die caster where porosity is likely and, for parts that must seal, about leak testing and impregnation.
+            </div>
+
+            <h2 id="post">Trimming, machining and finishing</h2>
+            <ul>
+              <li><strong>Trimming:</strong> runner, overflows and flash are removed, at volume in a press with its own <a class="glossary-term" href="../knowledge/glossary.html#term-trim-tool" data-definition="A press tool that removes the runner, overflows and flash from die castings at volume. It is a separate cost from the die, so check it is in the quote." aria-label="trim tool: A press tool that removes the runner, overflows and flash from die castings at volume. It is a separate cost from the die, so check it is in the quote. (glossary)">trim tool</a>, a separate cost to check for in the quote.</li>
+              <li><strong>Machining critical features:</strong> sealing faces, bores and threads need fixtures to locate the casting. Mark which features are as-cast and which machined, keep tight tolerances to machined ones, and pick <a class="glossary-term" href="../knowledge/glossary.html#term-datum" data-definition="A feature, such as a face, edge, hole or axis, that a drawing declares as the reference from which measurements start. Datums are usually the features that locate the part in an assembly." aria-label="datums: A feature, such as a face, edge, hole or axis, that a drawing declares as the reference from which measurements start. Datums are usually the features that locate the part in an assembly. (glossary)">datums</a> found on the raw casting (see <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances and engineering drawings</a>).</li>
+              <li><strong>Finishing:</strong> <a class="glossary-term" href="../knowledge/glossary.html#term-powder-coating" data-definition="A finish in which a dry powder is sprayed onto a metal part and baked into a tough, even coat. It comes in many colours and textures, builds up thicker than paint and is electrically insulating." aria-label="powder coating: A finish in which a dry powder is sprayed onto a metal part and baked into a tough, even coat. It comes in many colours and textures, builds up thicker than paint and is electrically insulating. (glossary)">powder coating</a>, paint and plating are common; zinc takes decorative plating well. <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">Surface finishes for plastic and metal parts</a> covers each finish and masking.</li>
+            </ul>
+            <p>
+              Anodising is commonly reported to suit die-cast aluminium poorly compared with wrought alloys: the silicon tends to give a darker, uneven finish, and surface porosity can show through.
+              If the look depends on anodising, test it on sample castings, or plan for powder coat or paint.
+            </p>
+
+            <h2 id="tooling">Dies, die life and trials</h2>
+            <p>
+              A die is hardened tool steel that is heated sharply by every shot and cooled again. Over time this causes fine surface cracks, called heat checking, which show as raised lines on castings until the die is repaired.
+            </p>
+            <p>
+              Die life varies with the alloy, part, steel and maintenance. Zinc casts at a much lower temperature, so zinc dies generally last much longer than aluminium dies.
+              Ask each die caster for the life they expect, what maintenance is included and who pays for repairs, and put that and die ownership in writing (see <a class="text-link-inline" href="supply-agreements-with-a-manufacturer.html">supply agreements with a manufacturer</a>).
+            </p>
+            <p>
+              Die cost follows part size, complexity, slides and cavities, plus the trim tool and machining fixtures.
+            </p>
+            <p>
+              New dies are proved in trials, like moulds. Many suppliers call the first shots T0 and the first customer samples T1, but labels vary, so agree what each means.
+              Ask for samples machined as in production, a porosity check on critical areas (by sectioning or X-ray, for example), and a leak test if the part must seal.
+              Ask for each die caster's lead time to first samples, and plan for at least one modification round.
+              <a class="text-link-inline" href="mould-tool-trials-and-sample-approval.html">Mould tool trials and sample approval</a> covers reading samples and signing them off, and most of it applies to dies.
+            </p>
+
+            <h2 id="example">Worked example: a housing moving from CNC to die casting</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A small company makes a handheld measuring instrument with a housing machined from 6082 aluminium and anodised. Sales are growing, the housing is the most expensive part on the bill of materials, and the design has been stable for a year. Would die casting cut the cost, and what must change?
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature of the machined housing</th>
+                  <th>What changes for die casting</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Straight pocket walls and corners sized for the cutter</td>
+                  <td>Draft on every wall; larger internal radii</td>
+                </tr>
+                <tr>
+                  <td>Thick floor and walls left by the machining strategy</td>
+                  <td>Even walls; floor thinned and ribbed</td>
+                </tr>
+                <tr>
+                  <td>Solid bosses, drilled and tapped</td>
+                  <td>Cored bosses tied to walls; threads tapped after casting</td>
+                </tr>
+                <tr>
+                  <td>Side port for a cable connector</td>
+                  <td>An undercut that cannot move, so the team accepts one slide</td>
+                </tr>
+                <tr>
+                  <td>Gasket groove and lid sealing face</td>
+                  <td>Still machined, with a small allowance; samples leak tested</td>
+                </tr>
+                <tr>
+                  <td>6082 aluminium, anodised</td>
+                  <td>The die caster's recommended casting alloy, powder coated instead of anodised</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The team gets quotes from their machining shop and two die casters for the same volumes, and enters them in the <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>: machining in the CNC fields, and die casting in the tooled route, after switching that route from injection moulding to die casting.
+              The tool cost is the die, trim tool, fixtures and redesign work, and the unit cost is the casting with trimming, machining and powder coat. They run conservative, expected and optimistic volumes.
+            </p>
+            <p>
+              If the crossover sits well inside the conservative case, the die is likely to pay back; if only the optimistic case reaches it, keep machining for now.
+              This example gives no prices on purpose: get real quotes for your own part.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Sending the machined part for a die-casting quote.</strong>
+                A part designed for machining has no draft and too many thick sections. Redesign it for casting first, or ask for a DFM review alongside the quote.
+              </div>
+              <div>
+                <strong>Expecting cast surfaces to seal.</strong>
+                Plan to machine sealing faces, keep them in sound metal, and leak test samples.
+              </div>
+              <div>
+                <strong>Keeping the wrought alloy and anodised finish by habit.</strong>
+                Agree a casting alloy and a finish that suits it before the die is cut.
+              </div>
+              <div>
+                <strong>Tight tolerances on as-cast features.</strong>
+                Hold tight tolerances only on machined features, and say which is which on the drawing.
+              </div>
+              <div>
+                <strong>Comparing the casting price with the machined price.</strong>
+                Include the die, trim tool, fixtures, machining, finishing and redesign in the comparison, not just the raw casting.
+              </div>
+            </div>
+
+            <h2 id="next-steps">Next steps</h2>
+            <ol>
+              <li>Check whether a die could pay back at your volumes with the <a class="text-link-inline" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>, using quoted figures.</li>
+              <li>Shortlist the alloy with <a class="text-link-inline" href="choosing-metals-for-a-product.html">choosing metals for a product</a> and the die caster's datasheets.</li>
+              <li>Brief two or three die casters, using <a class="text-link-inline" href="how-to-find-and-brief-a-manufacturer.html">finding and briefing a manufacturer</a>, and ask each for a DFM review with the quote.</li>
+              <li>Compare the quotes like for like with <a class="text-link-inline" href="comparing-manufacturing-quotes.html">comparing manufacturing quotes</a>, then plan the die trials and sample approval.</li>
+            </ol>
+            <p>For the wider picture of processes and cost, see the <a class="text-link-inline" href="manufacturing-and-cost.html">Manufacturing and cost hub</a>.</p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Will a die pay back?</h3>
+                <p>Compare machining with a tooled route at your volumes.</p>
+                <a class="button button-primary" href="../tools/manufacturing-payoff.html" data-analytics-event="article_cta_click" data-analytics-label="die_casting_guide_to_payoff">Open Manufacturing Payoff Visualiser</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Prepare the quote request</h3>
+                <p>Gather drawings, volumes and requirements for die casters.</p>
+                <a class="button button-secondary" href="../tools/rfq-pack-builder.html" data-analytics-event="article_cta_click" data-analytics-label="die_casting_guide_to_rfq">Open RFQ Pack Builder</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/production-strategy-planner.html">Production Strategy Planner</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="injection-moulding-explained.html">Injection moulding explained</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-metals-for-a-product.html">Choosing metals for a product</a></div>
+                <div class="aside-item"><a class="text-link" href="cnc-machining-design-rules.html">CNC machining design rules</a></div>
+                <div class="aside-item"><a class="text-link" href="manufacturing-processes-compared.html">Manufacturing processes compared</a></div>
+                <div class="aside-item"><a class="text-link" href="surface-finishes-for-plastic-and-metal-parts.html">Surface finishes for plastic and metal parts</a></div>
+                <div class="aside-item"><a class="text-link" href="mould-tool-trials-and-sample-approval.html">Mould tool trials and sample approval</a></div>
+                <div class="aside-item"><a class="text-link" href="aluminium-extrusions-for-product-enclosures.html">Aluminium extrusions for product enclosures</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-how-to-make-an-enclosure.html">Choosing how to make an enclosure</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Die casting</span>
+                <span>Aluminium and zinc</span>
+                <span>Porosity</span>
+                <span>Tooling</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is the difference between die casting and injection moulding?</h3>
+                <p>Both force a liquid into a closed steel tool and eject the finished part. Die casting uses molten metal, so the die must survive far higher temperatures, the castings usually need trimming and some machining afterwards, and they contain some porosity that the design has to allow for.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is die casting cheaper than CNC machining?</h3>
+                <p>Per part, usually yes once volumes are high enough, but the die, trim tool and fixtures must be paid for first and the design must stop changing. Compare the total cost of each route at realistic volumes using real quotes.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can die-cast aluminium be anodised?</h3>
+                <p>It can be, but it is commonly reported to give a darker, less even finish than wrought aluminium, because of the silicon in casting alloys and porosity near the surface. Powder coat or paint are more usual; if anodising matters, test it on sample castings first.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why do die castings need machining?</h3>
+                <p>As-cast surfaces carry draft, parting lines and small variations, so they are rarely flat or accurate enough for sealing faces, bearing bores or threads. Those features are machined afterwards, and the casting is designed so the cuts land in sound metal.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How long does a die-casting die last?</h3>
+                <p>It depends on the alloy, the part, the die steel and maintenance. Zinc dies generally last much longer than aluminium dies, because zinc casts at a lower temperature. Ask each die caster for the life they expect and how repairs are handled.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Bills of Materials and Revision Control | Orion Design</title>
+    <meta
+      name="description"
+      content="How to build a bill of materials, number parts, control revisions and design changes, and send suppliers the right files, with an illustrative example."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/bills-of-materials-and-revision-control.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Bills of materials and revision control | Orion Design">
+    <meta
+      property="og:description"
+      content="How to build a bill of materials, number parts, control revisions and design changes, and send suppliers the right files, with an illustrative example."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/bills-of-materials-and-revision-control.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-bills-of-materials-and-revision-control.jpg">
+    <meta property="og:image:alt" content="Bills of materials and revision control guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bills of materials and revision control | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to build a bill of materials, number parts, control revisions and design changes, and send suppliers the right files, with an illustrative example."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-bills-of-materials-and-revision-control.jpg">
+    <meta name="twitter:image:alt" content="Bills of materials and revision control guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-bills-of-materials-and-revision-control.jpg",
+        "headline": "Bills of materials and revision control: making sure everyone builds the same product",
+        "description": "How to build a bill of materials, number parts, control revisions and design changes, and send suppliers the right files, with an illustrative example.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Manufacturing and cost",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/bills-of-materials-and-revision-control.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Bill of materials"
+          },
+          {
+            "@type": "Thing",
+            "name": "Revision control"
+          },
+          {
+            "@type": "Thing",
+            "name": "Engineering change control"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Bills of materials and revision control",
+                "item": "https://oriondesign.xyz/guides/bills-of-materials-and-revision-control.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need special software to manage a BOM?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not at first. A well-structured spreadsheet, a part number register and a change log are enough for most small products. Dedicated product data software becomes worthwhile when several people edit the same data, the product range grows or a customer requires it."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When should a change get a new part number instead of a new revision?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "When the old and new parts are no longer interchangeable in form, fit or function. If the new part can replace the old one everywhere without any other change, raise the revision; if mixing them could cause a problem, give the new part its own number."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should bought-in parts have my own part numbers?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually yes. Your own number stays the same if you change supplier or approve an alternative, while the supplier and manufacturer part numbers sit alongside it in the BOM."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between an engineering BOM and a manufacturing BOM?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The engineering BOM describes the product as designed, usually following the CAD structure. The manufacturing BOM describes it as built, grouped by assembly steps and including consumables such as adhesive and packing materials. Small teams usually keep the engineering BOM and check the manufacturer's version against it."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does effectivity mean?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It is the point from which a change applies, given as a date, a production batch or a serial number. Recording it means you can always tell which units contain the old part and which contain the new one."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Bills of materials and revision control</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders and small teams who need their supplier to build exactly the version they approved</p>
+            <h1>Bills of materials and revision control: making sure everyone builds the same product</h1>
+            <p>
+              What a bill of materials is and who relies on it, the columns worth having, engineering and manufacturing BOMs, simple part numbers, revision letters, release states, a light change process for a small team, and how to send suppliers the right files.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A bill of materials (BOM) lists every part in the product with its part number, revision and quantity; revision control makes sure everyone is working from the same version of each part.</h2>
+              <p>
+                Give every part a plain, sequential part number and a revision letter, and keep the CAD, drawing and BOM at the same revision. Raise the revision when a change keeps the part interchangeable, and create a new part number when it does not.
+                Only send suppliers released files, as STEP models plus PDF drawings, log what you sent, and put every change through a short request, impact check and approval with a clear date or serial number from which it applies.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#what">What a BOM is and who uses it</a></li>
+              <li><a class="text-link-inline" href="#columns">The columns that matter</a></li>
+              <li><a class="text-link-inline" href="#structure">Engineering vs manufacturing BOMs, flat vs indented</a></li>
+              <li><a class="text-link-inline" href="#numbering">Part numbering</a></li>
+              <li><a class="text-link-inline" href="#revisions">Revision control</a></li>
+              <li><a class="text-link-inline" href="#release">Release states: draft, released, obsolete</a></li>
+              <li><a class="text-link-inline" href="#change">A simple change process</a></li>
+              <li><a class="text-link-inline" href="#sharing">Sharing files with suppliers</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a bike light BOM and one change</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+            </ol>
+
+            <h2 id="what">What a BOM is and who uses it</h2>
+            <p>
+              A <a class="glossary-term" href="../knowledge/glossary.html#term-bill-of-materials-bom" data-definition="The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly." aria-label="bill of materials: The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly. (glossary)">bill of materials</a> is the parts list for your product: every moulding, fastener, <a class="text-link-inline" href="electronics-in-a-physical-product.html">circuit board</a>, label, cable and carton needed to make one finished unit, with the quantity of each. It ties the design to what actually gets bought, built and checked, and several people rely on it:
+            </p>
+            <ul>
+              <li><strong>You</strong>, to see the whole product in one place, estimate cost and work out what a change will affect.</li>
+              <li><strong>The manufacturer</strong>, to quote, plan assembly and check that every part on the line is the right one.</li>
+              <li><strong>Purchasing</strong>, whether you or the factory, to order the right quantities and spot long lead-time items.</li>
+              <li><strong>Quality control</strong>, to inspect parts and finished units against the correct revision, as in <a class="text-link-inline" href="quality-control-and-first-article-inspection.html">quality control and first-article inspection</a>.</li>
+            </ul>
+            <p>
+              If they read different versions of the list, you get parts ordered to an old drawing and units inspected against the wrong standard. Revision control prevents that.
+            </p>
+
+            <h2 id="columns">The columns that matter</h2>
+            <p>A spreadsheet is enough for most small products. These are the columns worth having from the start:</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Column</th>
+                  <th>What it holds</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Item</td><td>A line number, or a position such as 1.2.3 that shows where the part sits in the structure</td></tr>
+                <tr><td>Part number</td><td>Your unique identifier for the part; the same part always has the same number</td></tr>
+                <tr><td>Revision</td><td>The current released revision of that part, such as B</td></tr>
+                <tr><td>Description</td><td>A short, consistent name: noun first, then detail, such as "Screw, M2 x 6, pan head"</td></tr>
+                <tr><td>Quantity</td><td>How many are used per parent assembly, with the unit if it is not "each" (grams of adhesive, millimetres of tubing)</td></tr>
+                <tr><td>Material and finish</td><td>The material grade, colour and finish, or "see drawing" where the drawing holds the detail</td></tr>
+                <tr><td>Make or buy</td><td>Make: made to your drawing. Buy: a catalogue part you order as it is</td></tr>
+                <tr><td>Supplier and manufacturer part number</td><td>For bought parts, the maker's own part number, plus approved alternatives if you have them</td></tr>
+                <tr><td>Unit cost</td><td>The cost per part at your expected order quantity, with the date of the quote</td></tr>
+                <tr><td>Notes</td><td>Anything that affects buying or building: lead time, single source, safety-critical, torque setting</td></tr>
+              </tbody>
+            </table>
+            <p>
+              Include the small things: screws, labels, adhesive, the leaflet and the box. Leaving them off is a common reason an early <a class="text-link-inline" href="how-to-estimate-manufacturing-cost.html">manufacturing cost estimate</a> comes in low.
+            </p>
+
+            <h2 id="structure">Engineering vs manufacturing BOMs, flat vs indented</h2>
+            <p>
+              The <strong>engineering BOM</strong> describes the product as designed. It usually mirrors the assembly structure in your CAD model and is owned by the design team.
+              The <strong>manufacturing BOM</strong> describes the product as built. It is grouped by how the factory assembles it, and adds things CAD does not show: glue, grease, solder paste, protective film, packing materials and sometimes an allowance for scrap.
+            </p>
+            <p>
+              For a small company, you usually keep the <a class="glossary-term" href="../knowledge/glossary.html#term-engineering-bom-ebom" data-definition="The bill of materials for the product as designed. It usually mirrors the assembly structure in the CAD model and is owned by the design team." aria-label="engineering BOM: The bill of materials for the product as designed. It usually mirrors the assembly structure in the CAD model and is owned by the design team. (glossary)">engineering BOM</a> and the manufacturer creates its own <a class="glossary-term" href="../knowledge/glossary.html#term-manufacturing-bom-mbom" data-definition="The bill of materials for the product as built, grouped by how the factory assembles it. It adds things CAD does not show, such as glue, grease, protective film and packing materials." aria-label="manufacturing BOM: The bill of materials for the product as built, grouped by how the factory assembles it. It adds things CAD does not show, such as glue, grease, protective film and packing materials. (glossary)">manufacturing BOM</a> from it. Ask to see theirs before the first build and check it against yours; differences are where wrong parts hide.
+            </p>
+            <p>A BOM can be laid out two ways:</p>
+            <ul>
+              <li><strong>Flat:</strong> every part listed once with its total quantity per product. Good for purchasing and costing.</li>
+              <li><strong>Indented (multi-level):</strong> parts grouped under their sub-assemblies, with quantities per parent. Good for assembly planning and for seeing what a change touches.</li>
+            </ul>
+            <p>
+              Keep the indented version as your master and produce a flat list from it when needed: a part's total is its quantity multiplied by the quantity of each assembly above it.
+            </p>
+
+            <h2 id="numbering">Part numbering</h2>
+            <p>
+              A part number has one job: to identify a part uniquely and permanently. The simplest scheme that does that is a plain sequential number, such as 1001, 1002, 1003, with a short fixed prefix if you like, issued from a single register so nobody hands out the same number twice.
+            </p>
+            <p>
+              Resist building meaning into the number. Schemes that encode material, colour, product family or supplier look tidy, but the meaning goes out of date when the part is reused or the material changes, leaving a misleading number or a renumbering job.
+              Put that information in the description, where it can change. A little grouping, such as a separate range for assemblies, is fine if it never needs to change.
+            </p>
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              a part number identifies; it does not describe. The revision letter, not the part number, tells you which version you are looking at.
+            </div>
+
+            <h2 id="revisions">Revision control</h2>
+            <p>
+              Every made part has a revision, usually a letter: A for the first released version, then B, C and so on. Many teams skip I, O and Q because they look like numbers. Some use numbers or a prefix such as X1, X2 for pre-release drafts and switch to letters at first release; either works if you are consistent.
+              The revision appears in the drawing <a class="glossary-term" href="../knowledge/glossary.html#term-title-block" data-definition="The box of information in the corner of an engineering drawing, giving details such as the part name and number, revision, material, scale and general tolerance." aria-label="title block: The box of information in the corner of an engineering drawing, giving details such as the part name and number, revision, material, scale and general tolerance. (glossary)">title block</a>, in the file names and in the BOM line.
+            </p>
+            <h3>New revision or new part number?</h3>
+            <p>
+              The usual test is <strong>form, fit and function</strong>. If the changed part can still replace the old one in every product where it is used, without any other change, it is interchangeable: raise the revision. If it no longer fits, works or looks the same in a way that matters, so that mixing old and new parts would cause a problem, give it a new part number.
+            </p>
+            <ul>
+              <li><strong>New revision:</strong> a thicker rib inside a housing, a corrected drawing note, a tighter tolerance that old parts also meet.</li>
+              <li><strong>New part number:</strong> a hole that moves so the old screw no longer reaches, a change of colour where both colours will be stocked, a connector that is no longer compatible with the old cable.</li>
+            </ul>
+            <p>
+              When a part gets a new number, the parent BOM needs a new revision too. When in doubt, ask whether anyone, including a repair technician years from now, could pick up the wrong one and get into trouble. If so, it needs a new number.
+            </p>
+            <h3>Keeping CAD, drawings and BOM in step</h3>
+            <p>
+              The 3D model, the 2D drawing and the BOM line for a part should always carry the same revision. A practical way to keep them together is to name files with part number and revision, such as 1103_C.step and 1103_C.pdf, and never edit a released file: copy it, raise the revision, and work on the copy.
+              The <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances and engineering drawings</a> guide covers what the title block and revision table on a drawing should show.
+            </p>
+
+            <h2 id="release">Release states: draft, released, obsolete</h2>
+            <p>Each revision of a part sits in one of three states:</p>
+            <ul>
+              <li><strong>Draft:</strong> work in progress. It can change without notice. It can be sent out for an early budget quote if it is clearly marked as draft, but never used to cut tooling or order production parts.</li>
+              <li><strong>Released:</strong> approved for quoting, tooling and production. From now on it only changes through the change process, and the change creates a new revision.</li>
+              <li><strong>Obsolete:</strong> replaced by a later revision or no longer used. Keep the files, because you may need them to support products already sold, but mark them clearly so nobody orders from them.</li>
+            </ul>
+            <p>
+              Releasing a part is a decision, often taken at a <a class="text-link-inline" href="running-a-design-review.html">design review</a>. Record who released it and when.
+            </p>
+
+            <h2 id="change">A simple change process</h2>
+            <p>
+              Large companies run formal <a class="glossary-term" href="../knowledge/glossary.html#term-engineering-change-request-ecr" data-definition="A short, numbered record of a proposed change to a released part: what should change, why, and which part numbers are affected. It then carries the impact check, the approval decision and the effectivity, so the whole history of the change is in one place." aria-label="change requests: A short, numbered record of a proposed change to a released part: what should change, why, and which part numbers are affected. It then carries the impact check, the approval decision and the effectivity, so the whole history of the change is in one place. (glossary)">change requests</a> and change orders through dedicated software. A small team needs the same steps, not the overhead: a spreadsheet log and a folder per change is enough.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 300 330" width="100%" role="img" aria-labelledby="bom-fig-title bom-fig-desc">
+                <title id="bom-fig-title">A simple design change process for a small team</title>
+                <desc id="bom-fig-desc">Five steps in order. 1 Change request: what, why and which parts. 2 Impact check: stock, tooling, certification and cost. 3 Approval: a named person decides. 4 Release: new revision of CAD, drawing and BOM. 5 Effectivity: the date or serial it applies from, and suppliers told.</desc>
+                <defs><marker id="bom-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <rect x="8" y="8" width="284" height="50" rx="10" class="gd-box-indigo"/>
+                <text x="20" y="28" class="gd-h">1 Change request</text>
+                <text x="20" y="48" class="gd-m">What, why and which parts</text>
+                <rect x="8" y="76" width="284" height="50" rx="10" class="gd-box-teal"/>
+                <text x="20" y="96" class="gd-h">2 Impact check</text>
+                <text x="20" y="116" class="gd-m">Stock, tooling, certification, cost</text>
+                <rect x="8" y="144" width="284" height="50" rx="10" class="gd-box-magenta"/>
+                <text x="20" y="164" class="gd-h">3 Approval</text>
+                <text x="20" y="184" class="gd-m">A named person decides</text>
+                <rect x="8" y="212" width="284" height="50" rx="10" class="gd-box-teal"/>
+                <text x="20" y="232" class="gd-h">4 Release</text>
+                <text x="20" y="252" class="gd-m">New revision: CAD, drawing, BOM</text>
+                <rect x="8" y="280" width="284" height="50" rx="10" class="gd-box-indigo"/>
+                <text x="20" y="300" class="gd-h">5 Effectivity</text>
+                <text x="20" y="320" class="gd-m">From date or serial; suppliers told</text>
+                <line x1="150" y1="59" x2="150" y2="73" class="gd-arrow" marker-end="url(#bom-arrow)"/>
+                <line x1="150" y1="127" x2="150" y2="141" class="gd-arrow" marker-end="url(#bom-arrow)"/>
+                <line x1="150" y1="195" x2="150" y2="209" class="gd-arrow" marker-end="url(#bom-arrow)"/>
+                <line x1="150" y1="263" x2="150" y2="277" class="gd-arrow" marker-end="url(#bom-arrow)"/>
+              </svg>
+              <figcaption>The same five steps work for a one-line drawing correction and a new moulding; only the depth of the impact check changes.</figcaption>
+            </figure>
+            <ol>
+              <li><strong>Change request.</strong> Anyone can raise one. Write down what should change, why, and which part numbers are affected. Give it a number.</li>
+              <li><strong>Impact check.</strong> Before deciding, work out what the change touches: parts in stock and on order, tooling that needs modifying, certification or test results that may no longer hold (see <a class="text-link-inline" href="product-certification-basics.html">product certification basics</a>), and the effect on unit and one-off cost. Use the <a class="glossary-term" href="../knowledge/glossary.html#term-indented-bom" data-definition="A bill of materials laid out in levels, with parts grouped under their sub-assemblies and quantities given per parent. It shows what a change touches, and a flat list of total quantities can be produced from it." aria-label="indented BOM: A bill of materials laid out in levels, with parts grouped under their sub-assemblies and quantities given per parent. It shows what a change touches, and a flat list of total quantities can be produced from it. (glossary)">indented BOM</a> to find every assembly that contains the part.</li>
+              <li><strong>Approval.</strong> One named person, usually whoever owns the product, approves or rejects the change and records the decision with the date.</li>
+              <li><strong>Release.</strong> Update the CAD, drawing and BOM together, raise the revision or issue a new part number, and mark the previous revision obsolete or "use up existing stock".</li>
+              <li><strong>Effectivity.</strong> State when the change takes effect: from a date, a production batch or a serial number. Tell suppliers in writing and ask them to confirm. This is what lets you answer "which customers have the old version?" later.</li>
+            </ol>
+            <p>
+              Changes driven by faults found after launch follow the same steps, with <a class="glossary-term" href="../knowledge/glossary.html#term-root-cause-analysis" data-definition="Working back from a reported symptom to the underlying reason it happened, so the fix removes the cause rather than the symptom. A common method is to keep asking why, sometimes called the five whys." aria-label="root cause: Working back from a reported symptom to the underlying reason it happened, so the fix removes the cause rather than the symptom. A common method is to keep asking why, sometimes called the five whys. (glossary)">root cause</a> and re-testing added; <a class="text-link-inline" href="after-launch-returns-feedback-and-design-changes.html">after launch: returns, feedback and design changes</a> covers that side.
+            </p>
+
+            <h2 id="sharing">Sharing files with suppliers</h2>
+            <p>
+              Most revision mix-ups start in an email thread. A few habits prevent nearly all of them:
+            </p>
+            <ul>
+              <li><strong>Send released revisions only</strong> for anything that will be quoted firmly, tooled or built. If you must send a draft for an early opinion, mark it as draft in the file name and on the drawing.</li>
+              <li><strong>Send STEP plus a PDF drawing</strong> for every made part. <a class="glossary-term" href="../knowledge/glossary.html#term-step-file" data-definition="A neutral 3D CAD file format that most CAD systems can open, commonly used to share part models with suppliers." aria-label="STEP: A neutral 3D CAD file format that most CAD systems can open, commonly used to share part models with suppliers. (glossary)">STEP</a> gives the geometry in a neutral format any CAD system can open; the PDF drawing gives tolerances, material, finish and the revision. Where they disagree, say which one governs, usually the drawing.</li>
+              <li><strong>Send a matching BOM</strong> that lists the same revisions as the files in the pack.</li>
+              <li><strong>Log what you sent:</strong> date, supplier, part numbers, revisions and the purpose (quote, tooling, production). Ask the supplier to quote the revision back on their quotation and order confirmation.</li>
+            </ul>
+            <p>
+              The <a class="text-link-inline" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a> helps you assemble a quote pack with the right files listed, and <a class="text-link-inline" href="must-have-documents-before-talking-to-a-manufacturer.html">must-have documents before talking to a manufacturer</a> covers the rest of the pack.
+            </p>
+
+            <h2 id="example">Worked example: a bike light BOM and one change</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A small company is about to order its first production batch of a rechargeable front bike light: a moulded housing and rear cover sealed with an <a class="text-link-inline" href="sealing-and-waterproofing-an-enclosure.html">O-ring</a>, a lens, a circuit board, a battery cell, a handlebar clip and a retail box. The part numbers, revisions and structure below are invented to show the layout; the material, make-or-buy, supplier and cost columns are left out so the table fits the page.
+              </p>
+            </div>
+            <table class="wt-table">
+              <caption>Illustrative indented BOM for a rechargeable bike light</caption>
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Part no.</th>
+                  <th>Rev</th>
+                  <th>Description</th>
+                  <th>Qty</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>1000</td><td>A</td><td>Bike light, packed</td><td>1</td></tr>
+                <tr><td>1.1</td><td>1100</td><td>A</td><td>Light assembly</td><td>1</td></tr>
+                <tr><td>1.1.1</td><td>1101</td><td>B</td><td>Housing, PC/ABS, black</td><td>1</td></tr>
+                <tr><td>1.1.2</td><td>1102</td><td>A</td><td>Lens, clear PC</td><td>1</td></tr>
+                <tr><td>1.1.3</td><td>1103</td><td>B</td><td>Rear cover, PC/ABS, black</td><td>1</td></tr>
+                <tr><td>1.1.4</td><td>1104</td><td>A</td><td>O-ring, nitrile</td><td>1</td></tr>
+                <tr><td>1.1.5</td><td>1105</td><td>C</td><td>PCB assembly, LED driver</td><td>1</td></tr>
+                <tr><td>1.1.6</td><td>1106</td><td>A</td><td>Battery cell with protection</td><td>1</td></tr>
+                <tr><td>1.1.7</td><td>1107</td><td>A</td><td>Screw, M2 x 6, pan head</td><td>4</td></tr>
+                <tr><td>1.2</td><td>1200</td><td>A</td><td>Handlebar clip assembly</td><td>1</td></tr>
+                <tr><td>1.2.1</td><td>1201</td><td>A</td><td>Clip body, nylon</td><td>1</td></tr>
+                <tr><td>1.2.2</td><td>1202</td><td>A</td><td>Strap, silicone</td><td>1</td></tr>
+                <tr><td>1.3</td><td>1300</td><td>A</td><td>Charging cable, USB-C</td><td>1</td></tr>
+                <tr><td>1.4</td><td>1400</td><td>A</td><td>Retail box, printed</td><td>1</td></tr>
+                <tr><td>1.5</td><td>1500</td><td>A</td><td>Instruction leaflet</td><td>1</td></tr>
+              </tbody>
+            </table>
+            <p>
+              <strong>The change.</strong> During pilot assembly, two rear covers crack at a screw boss when the screws are driven. The team raises change request CR-007: thicken the boss wall and add a small fillet at its base on 1103.
+            </p>
+            <p>
+              <strong>Form, fit and function.</strong> The outside of the cover, the screw holes and the sealing face do not move, so a rev C cover fits every housing and uses the same screws. Old and new covers are interchangeable, so this is a new revision, not a new part number.
+            </p>
+            <p>
+              <strong>Impact check.</strong> Stock: rev B covers already moulded are used up with an extra visual check at assembly, and rev B moulding stops. Tooling: adding plastic means removing steel from the mould, a modification the moulder quotes. Certification: the sealing face is unchanged, but the water test is repeated on first-off rev C parts. Cost: a one-off tool charge; the piece price is unchanged.
+            </p>
+            <p>
+              <strong>Approval and release.</strong> The founder approves CR-007. 1103 rev C is released with an updated STEP file and drawing; rev B is marked "use up stock, then obsolete". Because the light assembly BOM lists revisions, 1100 is reissued as rev B, and the packed product 1000 as rev B in turn.
+            </p>
+            <p>
+              <strong>Effectivity and suppliers.</strong> The change applies from serial number 0501. The moulder and assembler receive the rev C files and updated BOM, confirm in writing, and the send log records it.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Part numbers that try to say everything.</strong>
+                Encoded numbers go out of date as soon as a part changes material or gets reused. Keep the number plain and put the detail in the description.
+              </div>
+              <div>
+                <strong>CAD, drawing and BOM at different revisions.</strong>
+                If the drawing says rev C and the STEP file is still rev B, the supplier has to guess. Release all three together, every time.
+              </div>
+              <div>
+                <strong>Changing a released file in place.</strong>
+                Overwriting a released revision destroys the record of what was built. Copy, raise the revision and keep the old one.
+              </div>
+              <div>
+                <strong>A new revision where a new part number was needed.</strong>
+                If old and new parts are not interchangeable, sharing a number means someone will eventually fit the wrong one.
+              </div>
+              <div>
+                <strong>Changes agreed by email with no effectivity.</strong>
+                Without a date or serial number, nobody can tell which units have the change. Record where every change starts.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>Set up your BOM with the columns above and cost it in the <a class="text-link-inline" href="../tools/bom-builder.html">BOM Cost Builder</a>.</li>
+              <li>Start a part number register and a change log, even if each is a single spreadsheet tab.</li>
+              <li>Put every change to a released part through a numbered request, impact check, approval and effectivity with the <a class="text-link-inline" href="../tools/change-request-builder.html">Change Request Builder</a>.</li>
+              <li>Check that every made part has a drawing with a revision letter; <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances and engineering drawings</a> explains what it should show.</li>
+              <li>Assemble your quote pack from released files with the <a class="text-link-inline" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a>.</li>
+              <li>See where this fits in the wider journey in the <a class="text-link-inline" href="manufacturing-and-cost.html">manufacturing and cost hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Cost your BOM</h3>
+                <p>Roll the parts list up into a cost per product by category.</p>
+                <a class="button button-primary" href="../tools/bom-builder.html" data-analytics-event="article_cta_click" data-analytics-label="bom_guide_to_bom_builder">Open BOM Cost Builder</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Build the quote pack</h3>
+                <p>List the files, revisions and questions to send each supplier.</p>
+                <a class="button button-secondary" href="../tools/rfq-pack-builder.html" data-analytics-event="article_cta_click" data-analytics-label="bom_guide_to_rfq_pack">Open RFQ Pack Builder</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/bom-builder.html">BOM Cost Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/change-request-builder.html">Change Request Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/product-cost-estimator.html">Product Cost Estimator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="must-have-documents-before-talking-to-a-manufacturer.html">Documents for manufacturers</a></div>
+                <div class="aside-item"><a class="text-link" href="tolerances-and-engineering-drawings.html">Tolerances and engineering drawings</a></div>
+                <div class="aside-item"><a class="text-link" href="how-to-estimate-manufacturing-cost.html">Estimate manufacturing cost</a></div>
+                <div class="aside-item"><a class="text-link" href="after-launch-returns-feedback-and-design-changes.html">After launch: returns, feedback and design changes</a></div>
+                <div class="aside-item"><a class="text-link" href="assembly-and-work-instructions.html">Assembly and work instructions</a></div>
+                <div class="aside-item"><a class="text-link" href="mould-tool-trials-and-sample-approval.html">Mould tool trials and sample approval</a></div>
+                <div class="aside-item"><a class="text-link" href="planning-a-pilot-production-run.html">Planning a pilot production run</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Bill of materials</span>
+                <span>Part numbers</span>
+                <span>Revision letters</span>
+                <span>Change control</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Do I need special software to manage a BOM?</h3>
+                <p>Not at first. A well-structured spreadsheet, a part number register and a change log are enough for most small products. Dedicated product data software becomes worthwhile when several people edit the same data, the product range grows or a customer requires it.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When should a change get a new part number instead of a new revision?</h3>
+                <p>When the old and new parts are no longer interchangeable in form, fit or function. If the new part can replace the old one everywhere without any other change, raise the revision; if mixing them could cause a problem, give the new part its own number.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should bought-in parts have my own part numbers?</h3>
+                <p>Usually yes. Your own number stays the same if you change supplier or approve an alternative, while the supplier and manufacturer part numbers sit alongside it in the BOM.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between an engineering BOM and a manufacturing BOM?</h3>
+                <p>The engineering BOM describes the product as designed, usually following the CAD structure. The manufacturing BOM describes it as built, grouped by assembly steps and including consumables such as adhesive and packing materials. Small teams usually keep the engineering BOM and check the manufacturer's version against it.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What does effectivity mean?</h3>
+                <p>It is the point from which a change applies, given as a date, a production batch or a serial number. Recording it means you can always tell which units contain the old part and which contain the new one.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

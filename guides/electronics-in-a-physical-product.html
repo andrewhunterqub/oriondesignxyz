@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Planning Electronics in a Physical Product | Orion Design</title>
+    <meta
+      name="description"
+      content="How to plan electronics in a physical product: PCB and enclosure together, batteries, heat, EMC and antennas, test access, supply risk and what to hand over."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/electronics-in-a-physical-product.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Electronics in a physical product: what to plan early | Orion Design">
+    <meta
+      property="og:description"
+      content="How to plan electronics in a physical product: PCB and enclosure together, batteries, heat, EMC and antennas, test access, supply risk and what to hand over."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/electronics-in-a-physical-product.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-electronics-in-a-physical-product.jpg">
+    <meta property="og:image:alt" content="Electronics in a physical product guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Electronics in a physical product: what to plan early | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to plan electronics in a physical product: PCB and enclosure together, batteries, heat, EMC and antennas, test access, supply risk and what to hand over."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-electronics-in-a-physical-product.jpg">
+    <meta name="twitter:image:alt" content="Electronics in a physical product guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-electronics-in-a-physical-product.jpg",
+        "headline": "Electronics in a physical product: what to plan early",
+        "description": "How to plan electronics in a physical product: PCB and enclosure together, batteries, heat, EMC and antennas, test access, supply risk and what to hand over.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-26",
+        "dateModified": "2026-11-26",
+        "articleSection": "Development and prototyping",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/electronics-in-a-physical-product.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Electronics integration"
+          },
+          {
+            "@type": "Thing",
+            "name": "Product development"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Electronics in a physical product",
+                "item": "https://oriondesign.xyz/guides/electronics-in-a-physical-product.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Should the circuit board or the enclosure be designed first?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Neither should be finished first. Agree a rough board outline, mounting points, height limits and connector positions early, then develop both together using a shared 3D model and freeze them at the same time."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need an electronics engineer if I use development boards?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Development boards are a good way to prove the function, but a product usually needs a custom board to fit the enclosure, reach the cost target, and be tested and certified. Most teams bring in electronics design skills when moving from a rig to a custom board."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does a pre-certified radio module mean my product is certified?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. A pre-certified module can greatly reduce the radio testing needed, but the finished product still has to comply as a whole, and the module's antenna guidance must be followed in your enclosure."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can a metal enclosure be used for a wireless product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It can, but metal blocks radio signals, so the design needs a window, a non-metal section or an external antenna. Plan this before the enclosure design is fixed, and check radio performance in the real housing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What are test points and why do they matter?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Test points are pads on the board that a test fixture or programmer can touch. They let every board be programmed and checked quickly in production, so faults are found before assembly, when they cost least to fix."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Electronics in a physical product</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 26 November 2026 <span aria-hidden="true">·</span> For founders whose product contains electronics and who need the board, the enclosure and production to fit together</p>
+            <h1>Electronics in a physical product: what to plan early</h1>
+            <p>
+              A product design engineer's view of the decisions between the circuit and the housing: board and enclosure together, batteries, heat, EMC and radio,
+              assembly, test access, prototyping, supply risk and what to hand to an electronics partner. It is about planning and integration, not circuit design.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Design the circuit board and the enclosure together from the first layout, because each sets limits on the other.</h2>
+              <p>
+                Agree the board outline, mounting points, component heights, connector and button positions, battery space, antenna zone and the path heat will take out, before either side is frozen.
+                Treat EMC, radio performance, test access, programming and component supply as design inputs rather than late checks. Most expensive surprises in electronic products come from integration, not from the circuit itself.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#why">Why integration is where the risk sits</a></li>
+              <li><a class="text-link-inline" href="#board">Design the board and enclosure together</a></li>
+              <li><a class="text-link-inline" href="#power">Power and batteries</a></li>
+              <li><a class="text-link-inline" href="#heat">Heat needs a path out</a></li>
+              <li><a class="text-link-inline" href="#emc">EMC and radio as design inputs</a></li>
+              <li><a class="text-link-inline" href="#assembly">Cables, connectors and assembly</a></li>
+              <li><a class="text-link-inline" href="#production">Firmware, test points and programming in production</a></li>
+              <li><a class="text-link-inline" href="#prototyping">How electronics prototypes usually progress</a></li>
+              <li><a class="text-link-inline" href="#supply">Component supply and second sources</a></li>
+              <li><a class="text-link-inline" href="#handover">What to hand to an electronics partner</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a small battery-powered handheld device</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#rules">Decision rules</a></li>
+            </ol>
+
+            <h2 id="why">Why integration is where the risk sits</h2>
+            <p>
+              Often an electronics engineer designs a circuit that works on the bench while a designer draws a housing that looks right. Both can succeed and the product still fail:
+              the board does not fit, the antenna sits behind metal, the battery is too small, or the assembled board cannot be programmed. These problems are cheap to avoid early and expensive to fix after tooling.
+            </p>
+
+            <h2 id="board">Design the board and enclosure together</h2>
+            <p>
+              The <a class="glossary-term" href="../knowledge/glossary.html#term-printed-circuit-board-pcb" data-definition="The board that holds and connects a product's electronic components through copper tracks. Once the components are fitted it is often called a PCB assembly (PCBA)." aria-label="printed circuit board: The board that holds and connects a product's electronic components through copper tracks. Once the components are fitted it is often called a PCB assembly (PCBA). (glossary)">printed circuit board</a> (PCB) and the enclosure share one space, so treat their interface as a design item with an owner. In practice that means a shared 3D model: the mechanical designer exports the board outline and keep-outs,
+              the electronics designer places parts within them and exports the populated board back. Agree, and revise together:
+            </p>
+            <ul>
+              <li><strong>Board outline and mounting.</strong> Shape, thickness and fixing points (screws, bosses, clips or slots), with clearance around fixings.</li>
+              <li><strong>Keep-out zones.</strong> Where no parts or tracks may go: under ribs and bosses, near the antenna and along edges that slide into guides.</li>
+              <li><strong>Component heights.</strong> Height limits for each region, so tall capacitors, connectors and modules sit where the housing has room.</li>
+              <li><strong>Openings that line up.</strong> Connectors, buttons, LEDs, displays and sensors must meet a hole, window or actuator, within the tolerance of both parts, including <a class="glossary-term" href="../knowledge/glossary.html#term-light-pipe" data-definition="A clear plastic part that carries light from an LED on a circuit board to the outside of an enclosure." aria-label="light pipes: A clear plastic part that carries light from an LED on a circuit board to the outside of an enclosure. (glossary)">light pipes</a> and button actuators. <a class="text-link-inline" href="designing-buttons-switches-and-controls.html">Designing buttons, switches and controls</a> covers choosing switches and getting the button stack-up right.</li>
+            </ul>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 300" width="100%" role="img" aria-labelledby="elec-fig-title elec-fig-desc">
+                <title id="elec-fig-title">Board-in-enclosure checklist, shown in side section</title>
+                <desc id="elec-fig-desc">A side section of a circuit board inside an enclosure. Numbered points show: 1, a connector lined up with an opening in the enclosure wall; 2, the board outline sitting on mounting bosses; 3, height clearance between the tallest component and the lid; 4, an antenna keep-out zone near a plastic wall with no metal or tracks nearby; 5, a heat path from a warm component through a thermal pad to the case wall.</desc>
+                <path d="M20,92 L20,40 L320,40 L320,170 L20,170 L20,118" class="gd-axis"/>
+                <rect x="40" y="122" width="270" height="9" rx="2" class="gd-box-indigo"/>
+                <rect x="70" y="131" width="12" height="39" class="gd-box"/>
+                <rect x="250" y="131" width="12" height="39" class="gd-box"/>
+                <rect x="22" y="104" width="34" height="18" rx="2" class="gd-box-teal"/>
+                <rect x="120" y="76" width="34" height="46" rx="2" class="gd-box"/>
+                <line x1="137" y1="74" x2="137" y2="42" class="gd-ghost"/>
+                <rect x="186" y="108" width="28" height="14" rx="2" class="gd-box"/>
+                <rect x="186" y="131" width="28" height="39" class="gd-fill-teal-soft"/>
+                <rect x="244" y="46" width="70" height="70" rx="4" class="gd-box-magenta"/>
+                <circle cx="39" cy="84" r="10" class="gd-box"/>
+                <text x="39" y="89" text-anchor="middle" class="gd-v">1</text>
+                <circle cx="100" cy="152" r="10" class="gd-box"/>
+                <text x="100" y="157" text-anchor="middle" class="gd-v">2</text>
+                <circle cx="160" cy="58" r="10" class="gd-box"/>
+                <text x="160" y="63" text-anchor="middle" class="gd-v">3</text>
+                <circle cx="279" cy="81" r="10" class="gd-box"/>
+                <text x="279" y="86" text-anchor="middle" class="gd-v">4</text>
+                <circle cx="228" cy="152" r="10" class="gd-box"/>
+                <text x="228" y="157" text-anchor="middle" class="gd-v">5</text>
+                <text x="20" y="200" class="gd-m"><tspan class="gd-v">1</tspan> Connector lines up with its opening</text>
+                <text x="20" y="220" class="gd-m"><tspan class="gd-v">2</tspan> Board outline and mounting bosses</text>
+                <text x="20" y="240" class="gd-m"><tspan class="gd-v">3</tspan> Clearance from tallest part to lid</text>
+                <text x="20" y="260" class="gd-m"><tspan class="gd-v">4</tspan> Antenna keep-out near a plastic wall</text>
+                <text x="20" y="280" class="gd-m"><tspan class="gd-v">5</tspan> Heat path from warm part to the case</text>
+              </svg>
+              <figcaption>Five items to agree between the electronics and mechanical sides before either design is frozen. Each one is cheap to change in CAD and expensive to change after tooling.</figcaption>
+            </figure>
+            <p>
+              Neither side should be frozen first. Freezing the enclosure forces the board into awkward shapes or extra cables; freezing the board forces the housing to grow around it. Iterate both, then freeze them together.
+            </p>
+
+            <h2 id="power">Power and batteries</h2>
+            <p>
+              The battery is often the largest and heaviest part inside, so power decisions shape the product. At a planning level:
+            </p>
+            <ul>
+              <li><strong>Runtime and capacity.</strong> Estimate average power across real use, including standby and radio activity, then size the battery for the runtime you promise. Capacity scales roughly with cell size, so the runtime target sets the size of the product.</li>
+              <li><strong>Type and charging.</strong> Replaceable cells, a built-in rechargeable pack or mains power each change the enclosure; for charging, decide the port position, the indicator and what charger you supply or specify.</li>
+              <li><strong>Access.</strong> Whether the battery can be reached for replacement, and how it is held so it cannot move, rub or be crushed. See <a class="text-link-inline" href="design-for-repair-and-disassembly.html">design for repair and disassembly</a>.</li>
+            </ul>
+            <p>
+              Lithium cells also bring battery safety, transport and producer-responsibility requirements, which <a class="text-link-inline" href="product-certification-basics.html">product certification basics</a> lists among the things to identify at the requirements stage.
+            </p>
+
+            <h2 id="heat">Heat needs a path out</h2>
+            <p>
+              A board that runs cool in open air on a bench can run much hotter inside a closed housing. Identify the parts that get warm (processors, regulators, chargers, motor drivers and the battery while charging)
+              and decide how their heat reaches the outside: board copper, a <a class="glossary-term" href="../knowledge/glossary.html#term-thermal-pad" data-definition="A soft, heat-conducting pad that fills the gap between a warm component and a heatsink or case wall, giving the heat a path out." aria-label="thermal pad: A soft, heat-conducting pad that fills the gap between a warm component and a heatsink or case wall, giving the heat a path out. (glossary)">thermal pad</a> to the case wall, a metal part, vents or airflow. Plastics conduct heat poorly, and a surface safe for the electronics may still feel too hot in the hand.
+              Measure temperatures inside a representative enclosure early.
+              The guide to <a class="text-link-inline" href="managing-heat-in-a-product-enclosure.html">managing heat in a product enclosure</a> covers thermal paths, simple temperature estimates and testing in more detail.
+            </p>
+
+            <h2 id="emc">EMC and radio as design inputs</h2>
+            <p>
+              <a class="glossary-term" href="../knowledge/glossary.html#term-electromagnetic-compatibility-emc" data-definition="The ability of electrical equipment to work without causing or suffering unacceptable electromagnetic interference." aria-label="Electromagnetic compatibility: The ability of electrical equipment to work without causing or suffering unacceptable electromagnetic interference. (glossary)">Electromagnetic compatibility</a> (EMC) means the product neither emits too much interference nor is upset by it. It depends largely on layout, grounding, cabling and the enclosure, so it belongs in the mechanical design too.
+            </p>
+            <ul>
+              <li><strong>Cables act as antennas.</strong> Keep internal cables short and consistently routed, and plan where external cables leave.</li>
+              <li><strong>Grounding and shielding.</strong> Decide early whether the enclosure is plastic, metal or coated, and how the board connects to any metal parts.</li>
+              <li><strong>Antenna placement.</strong> An antenna needs clear space near an outside wall, away from the battery, metal parts, displays and the user's hand. Metal housings block radio unless the design provides a window or non-metal section; plastics are more forgiving.</li>
+            </ul>
+            <p>
+              A <a class="glossary-term" href="../knowledge/glossary.html#term-pre-certified-radio-module" data-definition="A ready-made radio module that has already been tested as a module. It reduces the radio testing a product needs, but it does not certify the whole product and its antenna guidance must still be followed." aria-label="pre-certified radio module: A ready-made radio module that has already been tested as a module. It reduces the radio testing a product needs, but it does not certify the whole product and its antenna guidance must still be followed. (glossary)">pre-certified radio module</a> can greatly reduce the radio testing needed, but it does not certify the whole product, and its antenna guidance still applies in your enclosure.
+              Book pre-compliance checks on engineering prototypes while the layout can still change. <a class="text-link-inline" href="product-certification-basics.html">Product certification basics</a> explains how EMC and radio testing fit into conformity,
+              and the <a class="text-link-inline" href="../tools/certification-readiness.html">Certification Readiness Checklist</a> helps you see what is still open.
+            </p>
+
+            <h2 id="assembly">Cables, connectors and assembly</h2>
+            <p>
+              Every internal cable is a part to buy, route, fit and inspect, and a common source of faults; fewer boards and cables usually mean easier assembly. Where cables are needed:
+            </p>
+            <ul>
+              <li>Fix them so they cannot be pinched, rub on sharp edges or move near hot parts.</li>
+              <li>Give external cables <a class="glossary-term" href="../knowledge/glossary.html#term-strain-relief" data-definition="A feature that takes the pull on a cable at the housing, so the force does not reach the connector or solder joints." aria-label="strain relief: A feature that takes the pull on a cable at the housing, so the force does not reach the connector or solder joints. (glossary)">strain relief</a>, so a pull is taken by the housing, not the solder joints.</li>
+              <li>Use keyed connectors that cannot be fitted the wrong way round and can be reached during assembly.</li>
+              <li>Plan the assembly order, and whether the product can be reopened for rework or repair.</li>
+            </ul>
+            <p>
+              The <a class="text-link-inline" href="assembly-time-estimate.html">guide to estimating assembly time</a> shows how fixings and cable connections add up.
+              <a class="text-link-inline" href="cables-wiring-and-connectors-inside-a-product.html">Cables, wiring and connectors inside a product</a> covers routing, strain relief, choosing connectors and harness drawings in more detail.
+            </p>
+
+            <h2 id="production">Firmware, test points and programming in production</h2>
+            <p>
+              In production every unit must be loaded with <a class="glossary-term" href="../knowledge/glossary.html#term-firmware" data-definition="The software built into a product's electronics that controls how the hardware behaves." aria-label="firmware: The software built into a product's electronics that controls how the hardware behaves. (glossary)">firmware</a>, tested and often serialised or calibrated, quickly and repeatably. Plan for this in the first custom board:
+            </p>
+            <ul>
+              <li><strong>Test points</strong> for power, programming and key signals, placed so a fixture can reach them, usually from one side.</li>
+              <li><strong>A programming route</strong> that works before the board goes into the enclosure, and ideally a way to update firmware afterwards.</li>
+              <li><strong>A board-level functional test</strong>, so faults are found before assembly.</li>
+              <li><strong>Firmware version control</strong>, so you know which version is in which batch.</li>
+            </ul>
+            <p>
+              Write these into your test plan alongside product-level tests. <a class="text-link-inline" href="product-testing-and-validation-plans.html">Product testing and validation plans</a> covers the wider testing picture, and the
+              <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a> turns requirements into a test list.
+            </p>
+
+            <h2 id="prototyping">How electronics prototypes usually progress</h2>
+            <p>
+              Electronics prototyping usually moves from off-the-shelf parts towards a custom board, in step with the
+              <a class="text-link-inline" href="looks-like-vs-works-like-prototypes.html">looks-like and works-like</a> streams described elsewhere.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Stage</th>
+                  <th>What it is</th>
+                  <th>What it answers</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-development-board" data-definition="An off-the-shelf circuit board carrying a processor, radio or sensors with easy connections, used to prove electronics and firmware before a custom board is designed." aria-label="Development boards: An off-the-shelf circuit board carrying a processor, radio or sensors with easy connections, used to prove electronics and firmware before a custom board is designed. (glossary)">Development boards</a></td>
+                  <td>Off-the-shelf boards and modules wired together on a bench</td>
+                  <td>Can the chosen sensors, radio and processor do the job? Early firmware and power measurements</td>
+                </tr>
+                <tr>
+                  <td>Breakout or interim board</td>
+                  <td>A simple custom board or carrier for the chosen parts, not yet in the final shape</td>
+                  <td>Does the chosen circuit work together, and what does it really draw in power?</td>
+                </tr>
+                <tr>
+                  <td>Custom PCB in an integrated prototype</td>
+                  <td>A board in the real outline, fitted in a printed or cast housing</td>
+                  <td>Fit, heat, antenna performance, assembly, test access and pre-compliance checks</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Expect more than one revision of the custom board. <a class="text-link-inline" href="how-many-prototypes-do-you-need.html">How many prototypes do you need?</a> explains how to plan rounds so each answers a clear question.
+            </p>
+
+            <h2 id="supply">Component supply and second sources</h2>
+            <p>
+              A board is only as available as its scarcest part. Before committing, check that each part is in active production, stocked by more than one distributor and not marked as not recommended for new designs.
+              Prefer parts with a second source or drop-in alternative, and list approved alternatives on the bill of materials. Processors, radio modules, displays, batteries and custom parts are hardest to replace without redesign.
+              Discuss stock and lead-time risk with your manufacturer before setting a launch date.
+            </p>
+
+            <h2 id="handover">What to hand to an electronics partner</h2>
+            <p>Whether briefing an electronics design partner or an assembly manufacturer, a clear pack avoids quotes based on guesses:</p>
+            <ol>
+              <li><strong>Requirements:</strong> functions, power and runtime, environment, interfaces, markets and known regulations.</li>
+              <li><strong>Mechanical interface:</strong> outline, keep-outs, height limits, mounting and opening positions, ideally as a 3D model.</li>
+              <li><strong>Bill of materials</strong> with part numbers and approved alternatives.</li>
+              <li><strong>Manufacturing files</strong> for the board and assembly, plus programming and test instructions.</li>
+              <li><strong>Volumes, timing and target cost</strong>, including prototype and pilot quantities.</li>
+            </ol>
+            <p>
+              <a class="text-link-inline" href="must-have-documents-before-talking-to-a-manufacturer.html">The documents to prepare before talking to a manufacturer</a> covers the wider pack, and the
+              <a class="text-link-inline" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a> helps you assemble a request for quotation.
+            </p>
+
+            <h2 id="example">Worked example: a small battery-powered handheld device</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A start-up is developing a small handheld device with a rechargeable battery, a Bluetooth link to a phone, two buttons, a status LED and a sensor at one end.
+                The <a class="text-link-inline" href="industrial-design-vs-engineering-design.html">industrial design</a> has a slim, rounded form that users liked in looks-like testing.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Question</th>
+                  <th>Decision</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Will the battery give the runtime promised?</td>
+                  <td>Power measured on a development-board rig; the battery needed was larger than assumed, so the housing was lengthened slightly rather than cutting runtime</td>
+                </tr>
+                <tr>
+                  <td>Where does the antenna go?</td>
+                  <td>A pre-certified module placed at the end opposite the sensor, near a plastic wall, away from the battery and outside the area covered by the user's hand</td>
+                </tr>
+                <tr>
+                  <td>Do buttons, LED and charging port line up?</td>
+                  <td>Board outline and heights shared as a 3D model; light pipe and actuators designed with the housing; charging port backed by a housing rib</td>
+                </tr>
+                <tr>
+                  <td>How does heat get out while charging?</td>
+                  <td>Charger placed away from the battery, with a thermal pad to the housing wall; temperature checked inside a printed housing</td>
+                </tr>
+                <tr>
+                  <td>How will each unit be programmed and tested?</td>
+                  <td>Test pads on the underside for a fixture, programming before assembly, and a short functional test of buttons, LED, sensor and radio</td>
+                </tr>
+                <tr>
+                  <td>What if a part becomes hard to get?</td>
+                  <td>Alternatives listed for the passive parts and charger; the module and battery flagged as single-source risks to monitor</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              None of these decisions needed advanced circuit design; they needed both sides working from one model early enough that each change was made in CAD, not in a tool.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Freezing the enclosure before the board.</strong>
+                The board is then forced into a shape that may need more layers, extra cables or a second board.
+              </div>
+              <div>
+                <strong>Leaving no room for the antenna.</strong>
+                An antenna squeezed beside the battery or metal, or under the hand, can perform poorly, and the fix may mean a housing change.
+              </div>
+              <div>
+                <strong>No test access.</strong>
+                Without test points and a programming route, units are slow to program and faults surface only after assembly.
+              </div>
+              <div>
+                <strong>Single-source parts everywhere.</strong>
+                One unavailable part can stop production. Check availability and alternatives before the design is frozen.
+              </div>
+              <div>
+                <strong>Ignoring heat.</strong>
+                A board that is fine on the bench can overheat in a sealed housing. Measure temperatures in a representative enclosure.
+              </div>
+            </div>
+
+            <h2 id="rules">Decision rules</h2>
+            <ul>
+              <li><strong>If different people design the board and housing</strong>, share one 3D model and agree the interface list first.</li>
+              <li><strong>If the product has a radio</strong>, reserve the antenna zone in the first layout.</li>
+              <li><strong>If runtime is a selling point</strong>, measure power on a rig before fixing the product's size.</li>
+              <li><strong>If a part has no alternative</strong>, accept the risk, hold stock or design it out, and record the decision.</li>
+              <li><strong>Freeze the board and enclosure together</strong>, after an integrated prototype passes fit, heat and pre-compliance checks.</li>
+            </ul>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>List the interface items between your board and enclosure and give each an owner.</li>
+              <li>Plan board, product and production tests with the <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a>.</li>
+              <li>Check what compliance work is still open with the <a class="text-link-inline" href="../tools/certification-readiness.html">Certification Readiness Checklist</a>.</li>
+              <li>See where this work sits in the wider journey in the <a class="text-link-inline" href="development-and-prototyping.html">development and prototyping hub</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Plan the tests</h3>
+                <p>Turn requirements into board, product and production tests.</p>
+                <a class="button button-primary" href="../tools/test-plan-builder.html" data-analytics-event="article_cta_click" data-analytics-label="elec_guide_to_test_plan">Open Product Test Plan Builder</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Check compliance readiness</h3>
+                <p>See which certification tasks are done and which are still open.</p>
+                <a class="button button-secondary" href="../tools/certification-readiness.html" data-analytics-event="article_cta_click" data-analytics-label="elec_guide_to_cert">Open Certification Readiness Checklist</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Product Test Plan Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/certification-readiness.html">Certification Readiness Checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="looks-like-vs-works-like-prototypes.html">Looks-like vs works-like prototypes</a></div>
+                <div class="aside-item"><a class="text-link" href="how-many-prototypes-do-you-need.html">How many prototypes do you need?</a></div>
+                <div class="aside-item"><a class="text-link" href="product-testing-and-validation-plans.html">Product testing and validation plans</a></div>
+                <div class="aside-item"><a class="text-link" href="product-certification-basics.html">Product certification basics</a></div>
+                <div class="aside-item"><a class="text-link" href="must-have-documents-before-talking-to-a-manufacturer.html">Documents for manufacturers</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Electronics</span>
+                <span>PCB and enclosure</span>
+                <span>Batteries</span>
+                <span>EMC and antennas</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Should the circuit board or the enclosure be designed first?</h3>
+                <p>Neither should be finished first. Agree a rough board outline, mounting points, height limits and connector positions early, then develop both together using a shared 3D model and freeze them at the same time.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need an electronics engineer if I use development boards?</h3>
+                <p>Development boards are a good way to prove the function, but a product usually needs a custom board to fit the enclosure, reach the cost target, and be tested and certified. Most teams bring in electronics design skills when moving from a rig to a custom board.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does a pre-certified radio module mean my product is certified?</h3>
+                <p>No. A pre-certified module can greatly reduce the radio testing needed, but the finished product still has to comply as a whole, and the module's antenna guidance must be followed in your enclosure.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can a metal enclosure be used for a wireless product?</h3>
+                <p>It can, but metal blocks radio signals, so the design needs a window, a non-metal section or an external antenna. Plan this before the enclosure design is fixed, and check radio performance in the real housing.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What are test points and why do they matter?</h3>
+                <p>Test points are pads on the board that a test fixture or programmer can touch. They let every board be programmed and checked quickly in production, so faults are found before assembly, when they cost least to fix.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container knowledge-footer">
+          <div class="knowledge-meta">
+            <div class="author-card">
+              <p class="eyebrow">Author</p>
+              <h2>Andrew Hunter</h2>
+              <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+            </div>
+            <div class="citation-card">
+              <p class="eyebrow">Source and Attribution</p>
+              <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. It describes general integration practice for products containing electronics; it is not circuit design or certification advice, so check specific decisions with your electronics partner and a test laboratory.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

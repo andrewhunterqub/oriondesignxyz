@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Break-even Calculator for Hardware Products | Orion Design</title>
+    <meta
+      name="description"
+      content="Calculate break-even units and revenue for a hardware product using fixed costs, selling price, variable cost, and target volume."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/break-even-calculator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Break-even Calculator for Hardware Products | Orion Design">
+    <meta
+      property="og:description"
+      content="Calculate break-even units and revenue for a hardware product using fixed costs, selling price, variable cost, and target volume."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/break-even-calculator.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-break-even-calculator.jpg">
+    <meta property="og:image:alt" content="Break-even calculator for hardware products from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Break-even Calculator for Hardware Products | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Calculate break-even units and revenue for a hardware product using fixed costs, selling price, variable cost, and target volume."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-break-even-calculator.jpg">
+    <meta name="twitter:image:alt" content="Break-even calculator for hardware products from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-break-even-calculator.jpg",
+        "name": "Break-even Calculator",
+        "url": "https://oriondesign.xyz/tools/break-even-calculator.html",
+        "description": "Calculate break-even units and revenue for a hardware product using fixed costs, selling price, variable cost, and target volume.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Break-even Calculator",
+                "item": "https://oriondesign.xyz/tools/break-even-calculator.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What counts as a fixed cost for a hardware product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Costs you pay regardless of how many units you sell: design and engineering, tooling, certification, and ongoing overheads such as salaries, rent and software. Decide whether you are testing recovery of one-off launch costs or a year of running costs, and keep that consistent when you compare scenarios."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should the selling price include VAT or retailer margin?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Use the price you actually receive per unit, excluding VAT and after any retailer, distributor or marketplace share. For a product sold through retail, that is usually the wholesale price, which can be roughly half of the shelf price or less."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should go into the variable cost per unit?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Everything that is spent each time a unit is made and sold: the bill of materials, assembly, packaging, freight and duty, fulfilment, payment fees and an allowance for returns or warranty. Leaving these out is the most common reason a break-even point looks better than it really is."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does my break-even jump when I change the price slightly?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Break-even divides fixed costs by contribution per unit, so when contribution is small, a modest change in price or cost changes it by a large percentage. That sensitivity is itself useful information: it shows how much margin of safety the plan really has."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Break-even Calculator</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Break-even Calculator</h1>
+            <p>
+              Calculate how many units a hardware product needs to sell before fixed costs are repaid,
+              and see whether the current price and variable cost structure make that target realistic.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Break-even worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"fixedCosts":"45000","sellingPriceBreakEven":"29","variableCost":"13","targetUnits":"3000","chartMaxUnits":"6000"}'>Kitchen gadget, DTC</button>
+              <button class="preset-button" type="button" data-tool-preset='{"fixedCosts":"180000","sellingPriceBreakEven":"82","variableCost":"44","targetUnits":"6000","chartMaxUnits":"10000"}'>Smart home, retail</button>
+              <button class="preset-button" type="button" data-tool-preset='{"fixedCosts":"250000","sellingPriceBreakEven":"1200","variableCost":"430","targetUnits":"500","chartMaxUnits":"1000"}'>B2B instrument</button>
+            </div>
+            <form class="tool-form" id="breakEvenForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="fixedCosts">Fixed costs to recover</label>
+                  <input id="fixedCosts" type="number" min="0" value="65000" step="1000">
+                </div>
+                <div class="field-group">
+                  <label for="sellingPriceBreakEven">Selling price per unit</label>
+                  <input id="sellingPriceBreakEven" type="number" min="0" value="49" step="0.1">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="variableCost">Variable cost per unit</label>
+                  <input id="variableCost" type="number" min="0" value="22" step="0.1">
+                </div>
+                <div class="field-group">
+                  <label for="targetUnits">Target units to test</label>
+                  <input id="targetUnits" type="number" min="50" value="4000" step="50">
+                </div>
+              </div>
+              <div class="field-group">
+                <label for="chartMaxUnits">Chart max units</label>
+                <input id="chartMaxUnits" type="number" min="100" value="8000" step="100">
+              </div>
+              <button class="button button-primary" type="submit">Calculate break-even</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell">
+              <canvas id="breakEvenChart" role="img" aria-label="Break-even profit chart"></canvas>
+            </div>
+            <div class="result-grid" id="breakEvenSummary"></div>
+            <div class="comparison-list" id="breakEvenBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#breakEvenCopy"
+                  data-copy-feedback="#breakEvenCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="breakEvenCopy" class="copy-output" readonly></textarea>
+              <div id="breakEvenCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="break_even_calculator_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Break-even units depend on contribution, not just revenue.</h2>
+              <div class="formula-block">Break-even units = fixed costs / (selling price - variable cost)</div>
+              <p>If the contribution per unit is weak, the required sales volume rises quickly even when the top-line number looks attractive.</p>
+            </div>
+
+            <h2>Use this after product cost is credible</h2>
+            <p>
+              Break-even is useful when the variable cost per unit already reflects reality. If the COGS figure is still optimistic,
+              the break-even point will be optimistic as well.
+            </p>
+            <h2>How to read your result</h2>
+            <p>
+              Start with the contribution per unit, then compare the break-even volume with the number of units you have real evidence you can sell.
+            </p>
+            <ul>
+              <li><strong>Comfortable:</strong> break-even sits well below the volume you expect to sell in the first year or two, and contribution is a healthy share of the price you receive. A drop in demand or a small cost increase would delay payback rather than threaten it.</li>
+              <li><strong>Borderline:</strong> break-even is close to your realistic sales forecast, or contribution is a thin slice of the price. Small changes in unit cost, discounting or channel terms will move the break-even point a long way, so test a few pessimistic cases.</li>
+              <li><strong>Worrying:</strong> break-even is higher than any volume you can credibly reach, or contribution is near zero or negative. Selling more will not fix this; the price, the unit cost or the fixed cost base needs to change first.</li>
+            </ul>
+            <p>
+              In the first two cases, check that the variable cost includes everything that scales with each sale, such as packaging, fulfilment, payment fees and returns, not just the factory price. In the last case, look at design for manufacture, a different route to market, or a smaller first tooling commitment before adding volume. Save your result to your <a href="product-plan-builder.html">product plan</a> so the break-even volume sits alongside your cost and cashflow assumptions.
+            </p>
+            <p>
+              If the result depends heavily on a unit cost that has not yet been quoted by a supplier, it is worth a second opinion before you commit to tooling. You can <a href="../contact/index.html">get in touch with Andrew</a> if you would like to talk it through.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/financial-break-even-for-hardware-products.html">Financial break-even for hardware products</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="product-cost-estimator.html">Product Cost Estimator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="cashflow-projection.html">Cashflow Projection Tool</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/route-to-market-and-margins.html">Route to market and margins: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/hardware-revenue-margin-planning.html">How to turn RRP into target COGS</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Contribution margin</span>
+                <span>Volume target</span>
+                <span>Fixed-cost recovery</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What counts as a fixed cost for a hardware product?</h3>
+                <p>Costs you pay regardless of how many units you sell: design and engineering, tooling, certification, and ongoing overheads such as salaries, rent and software. Decide whether you are testing recovery of one-off launch costs or a year of running costs, and keep that consistent when you compare scenarios.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should the selling price include VAT or retailer margin?</h3>
+                <p>No. Use the price you actually receive per unit, excluding VAT and after any retailer, distributor or marketplace share. For a product sold through retail, that is usually the wholesale price, which can be roughly half of the shelf price or less.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should go into the variable cost per unit?</h3>
+                <p>Everything that is spent each time a unit is made and sold: the bill of materials, assembly, packaging, freight and duty, fulfilment, payment fees and an allowance for returns or warranty. Leaving these out is the most common reason a break-even point looks better than it really is.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why does my break-even jump when I change the price slightly?</h3>
+                <p>Break-even divides fixed costs by contribution per unit, so when contribution is small, a modest change in price or cost changes it by a large percentage. That sensitivity is itself useful information: it shows how much margin of safety the plan really has.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="cashflow-projection.html">Cashflow Projection</a>
+          <a href="../guides/financial-break-even-for-hardware-products.html">Break-even guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/break-even-calculator.js" defer></script>
+  </body>
+</html>

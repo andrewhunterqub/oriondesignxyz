@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Idea to Manufacture: How Products Get Made | Orion Design</title>
+    <meta
+      name="description"
+      content="The seven stages of developing a physical product, from idea to manufacture: what happens at each stage, typical timescales, cost drivers, pitfalls and tools."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/idea-to-manufacture/">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Idea to Manufacture: How a Physical Product Gets Made | Orion Design">
+    <meta property="og:description" content="The seven stages of developing a physical product, from idea to manufacture: what happens at each stage, typical timescales, cost drivers, pitfalls and tools.">
+    <meta property="og:url" content="https://oriondesign.xyz/idea-to-manufacture/">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/idea-to-manufacture.jpg">
+    <meta property="og:image:alt" content="The seven stages of physical product development, from idea to manufacture">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Idea to Manufacture: How a Physical Product Gets Made | Orion Design">
+    <meta name="twitter:description" content="The seven stages of developing a physical product, from idea to manufacture: what happens at each stage, typical timescales, cost drivers, pitfalls and tools.">
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/idea-to-manufacture.jpg">
+    <meta name="twitter:image:alt" content="The seven stages of physical product development, from idea to manufacture">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/idea-to-manufacture.jpg",
+        "headline": "Idea to Manufacture: How Products Get Made",
+        "description": "The seven stages of developing a physical product, from idea to manufacture: what happens at each stage, typical timescales, cost drivers, pitfalls and tools.",
+        "author": { "@type": "Person", "name": "Andrew Hunter", "jobTitle": "Product Design Engineer", "url": "https://oriondesign.xyz/about/" },
+        "publisher": { "@type": "Organization", "name": "Orion Design", "url": "https://oriondesign.xyz/", "logo": { "@type": "ImageObject", "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png" } },
+        "datePublished": "2026-11-25",
+        "dateModified": "2026-11-25",
+        "mainEntityOfPage": "https://oriondesign.xyz/idea-to-manufacture/"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Idea to Manufacture",
+                "item": "https://oriondesign.xyz/idea-to-manufacture/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What are the stages of developing a physical product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A common way to describe it is seven stages: discover the problem, define the requirements, choose a concept, prototype, verify the design, industrialise for production, and launch. The stages overlap in practice, and most products loop back at least once as testing reveals something new."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does it take to take a product from idea to manufacture?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends heavily on complexity. A simple mechanical product can reach first production within a year; electromechanical, connected or regulated products often take one to two years or more. Prototyping and industrialisation, including tooling, usually take the most time."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does it cost to develop a physical product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Costs vary by an order of magnitude between a simple moulded item and a connected, certified device, so a single average is misleading. Build your own estimate block by block, as explained in how much it costs to develop a hardware product, and use the Startup Cost Planner."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need a prototype before talking to a manufacturer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not necessarily for a first conversation, but manufacturers can only quote accurately against a defined design: CAD, drawings, materials, volumes and quality expectations. A tested prototype makes the conversation far more productive. See what to have ready."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I skip stages to launch faster?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can compress them, but skipping usually moves the cost later. Skipping discovery risks building the wrong product; skipping verification risks tooling changes, failed certification or returns. Running stages in parallel where it is safe, and testing the riskiest assumptions first, is usually the faster route overall."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <span aria-current="page">Idea to Manufacture</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive explainer</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Updated 25 November 2026 <span aria-hidden="true">·</span> For first-time founders and product teams</p>
+            <h1>Idea to manufacture: how a physical product gets made</h1>
+            <p>
+              Developing a physical product follows a recognisable sequence: discover the problem, define what the product must do, choose a concept,
+              prototype, verify the design, industrialise it for production, then launch. Pick the stage you are at to see what happens there,
+              what it typically takes, what goes wrong, and which tools and guides help.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="summary-card">
+            <p class="eyebrow">Quick answer</p>
+            <h2>Seven overlapping stages, each ending with evidence that it is safe to move on.</h2>
+            <p>
+              Simple products can reach first production within a year; electromechanical, connected or regulated products often take one to two years
+              or more. Most of the time and money goes into prototyping and industrialisation, and most expensive surprises come from moving to the next
+              stage before the evidence is in. The timescales below are typical ranges for a moderately complex product and vary widely.
+            </p>
+          </div>
+
+          <figure class="guide-figure">
+            <svg viewBox="0 0 340 344" width="100%" role="img" aria-labelledby="i2m-fig-title i2m-fig-desc">
+              <title id="i2m-fig-title">Typical duration of each of the seven stages</title>
+              <desc id="i2m-fig-desc">Range bars on a common scale from 0 to 6 months, for a moderately complex product. Discover: 2 to 8 weeks. Define: 2 to 6 weeks. Concept: 3 to 8 weeks. Prototype: 2 to 6 months, over several rounds. Verify: 1 to 4 months, longer for regulated or electrical products. Industrialise: often 2 to 5 months overall. Launch: 1 to 3 months of preparation, overlapping with industrialisation. Prototype and industrialise are the longest.</desc>
+              <text x="20" y="18" class="gd-h">1 Discover</text>
+              <text x="320" y="18" text-anchor="end" class="gd-m">2–8 weeks</text>
+              <rect x="20" y="25" width="300" height="10" rx="5" class="gd-track"/>
+              <rect x="43" y="25" width="69.1" height="10" rx="5" class="gd-fill-teal-soft"/>
+              <text x="20" y="60" class="gd-h">2 Define</text>
+              <text x="320" y="60" text-anchor="end" class="gd-m">2–6 weeks</text>
+              <rect x="20" y="67" width="300" height="10" rx="5" class="gd-track"/>
+              <rect x="43" y="67" width="46" height="10" rx="5" class="gd-fill-teal-soft"/>
+              <text x="20" y="102" class="gd-h">3 Concept</text>
+              <text x="320" y="102" text-anchor="end" class="gd-m">3–8 weeks</text>
+              <rect x="20" y="109" width="300" height="10" rx="5" class="gd-track"/>
+              <rect x="54.5" y="109" width="57.6" height="10" rx="5" class="gd-fill-teal-soft"/>
+              <text x="20" y="144" class="gd-h gd-ti">4 Prototype</text>
+              <text x="320" y="144" text-anchor="end" class="gd-m">2–6 months</text>
+              <rect x="20" y="151" width="300" height="10" rx="5" class="gd-track"/>
+              <rect x="120" y="151" width="200" height="10" rx="5" class="gd-fill-indigo"/>
+              <text x="20" y="186" class="gd-h">5 Verify</text>
+              <text x="320" y="186" text-anchor="end" class="gd-m">1–4 months</text>
+              <rect x="20" y="193" width="300" height="10" rx="5" class="gd-track"/>
+              <rect x="70" y="193" width="150" height="10" rx="5" class="gd-fill-teal-soft"/>
+              <text x="20" y="228" class="gd-h gd-ti">6 Industrialise</text>
+              <text x="320" y="228" text-anchor="end" class="gd-m">2–5 months</text>
+              <rect x="20" y="235" width="300" height="10" rx="5" class="gd-track"/>
+              <rect x="120" y="235" width="150" height="10" rx="5" class="gd-fill-indigo"/>
+              <text x="20" y="270" class="gd-h">7 Launch</text>
+              <text x="320" y="270" text-anchor="end" class="gd-m">1–3 months</text>
+              <rect x="20" y="277" width="300" height="10" rx="5" class="gd-track"/>
+              <rect x="70" y="277" width="100" height="10" rx="5" class="gd-fill-teal-soft"/>
+              <line x1="20" y1="300" x2="320" y2="300" class="gd-axis"/>
+              <line x1="20" y1="300" x2="20" y2="306" class="gd-axis"/>
+              <line x1="320" y1="300" x2="320" y2="306" class="gd-axis"/>
+              <text x="20" y="322" class="gd-m">0</text>
+              <text x="320" y="322" text-anchor="end" class="gd-m">6 months</text>
+              <text x="170" y="340" text-anchor="middle" class="gd-m">moderately complex product</text>
+            </svg>
+            <figcaption>Typical ranges drawn to the same scale; real projects vary widely and stages overlap. Prototyping and industrialisation take the longest, and they are also where most of the money goes.</figcaption>
+          </figure>
+
+          <div class="i2m-finder" data-i2m-finder hidden>
+            <label for="i2mWhere">Where are you now?</label>
+            <select id="i2mWhere">
+                <option value="discover">1. Discover: Is this a problem worth solving, and for whom?</option>
+                <option value="define">2. Define: What exactly must the product do, at what cost?</option>
+                <option value="concept">3. Concept: Which design direction should we develop?</option>
+                <option value="prototype">4. Prototype: Does it work, and does it work for people?</option>
+                <option value="verify">5. Verify: Is the design proven, safe and ready to freeze?</option>
+                <option value="industrialise">6. Industrialise: Can it be made reliably, at the right cost and volume?</option>
+                <option value="launch">7. Launch: Can we sell, deliver and support it sustainably?</option>
+            </select>
+          </div>
+          <nav class="i2m-stepper" data-i2m-stepper aria-label="Product development stages" hidden></nav>
+
+          <div class="i2m-stages" data-i2m-stages>
+          <section class="i2m-stage" id="stage-discover" data-stage="discover" data-stage-name="Discover" aria-labelledby="stage-discover-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">1</span>
+              <div>
+                <h2 id="stage-discover-title">1. Discover</h2>
+                <p class="i2m-question">Is this a problem worth solving, and for whom?</p>
+              </div>
+            </div>
+            <p>Understand the problem, the people who have it and how they cope today, before any design work. Talk to potential users, watch how they currently solve the problem, glance at competitors and existing patents, and form a rough view of how many people might buy.</p>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Typical duration</p><p>Typically 2–8 weeks</p></div>
+              <div><p class="plan-label">What drives cost</p><p>Low: mostly time and a few conversations.</p></div>
+            </div>
+            <div class="i2m-columns">
+              <div>
+                <h3>Outputs</h3>
+                <ul>
+                  <li>A clear problem statement and target user</li>
+                  <li>Evidence from real conversations, not assumptions</li>
+                  <li>A first list of must-have requirements</li>
+                  <li>A rough sense of market size and price expectations</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Common pitfalls</h3>
+                <ul>
+                  <li>Building something before checking anyone needs it</li>
+                  <li>Asking leading questions, or only asking friends and family</li>
+                  <li>Mistaking polite interest for demand</li>
+                </ul>
+              </div>
+            </div>
+            <div class="article-highlight"><strong>Ready to move on when:</strong> People describe the problem without prompting, and some say what they would pay or switch from to solve it.</div>
+            <div class="page-links">
+                  <a href="../tools/product-purpose.html">Product Purpose Framework</a>
+                  <a href="../tools/hardware-business-case-builder.html">Hardware Business Case Builder</a>
+                  <a href="../guides/how-to-validate-a-product-idea.html">How to validate a product idea</a>
+                  <a href="../guides/opportunity-and-concept.html">Opportunity and concept hub</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage" id="stage-define" data-stage="define" data-stage-name="Define" aria-labelledby="stage-define-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">2</span>
+              <div>
+                <h2 id="stage-define-title">2. Define</h2>
+                <p class="i2m-question">What exactly must the product do, at what cost?</p>
+              </div>
+            </div>
+            <p>Turn what you learned into a product requirements document: what the product must do, how well, for whom, at what target cost and volume, through which sales route, and which regulations apply. This is the brief every later decision is checked against.</p>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Typical duration</p><p>Typically 2–6 weeks</p></div>
+              <div><p class="plan-label">What drives cost</p><p>Low: desk work, plus any specialist advice on regulations.</p></div>
+            </div>
+            <div class="i2m-columns">
+              <div>
+                <h3>Outputs</h3>
+                <ul>
+                  <li>Product requirements (functions, performance, size, environment)</li>
+                  <li>Target cost (COGS) worked back from the price and sales route</li>
+                  <li>Expected volumes for year one and beyond</li>
+                  <li>A list of standards and certification that may apply</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Common pitfalls</h3>
+                <ul>
+                  <li>Vague requirements (&quot;robust&quot;, &quot;easy to use&quot;) that cannot be tested</li>
+                  <li>No target cost, so the design drifts expensive</li>
+                  <li>Discovering certification needs after the design is finished</li>
+                </ul>
+              </div>
+            </div>
+            <div class="article-highlight"><strong>Ready to move on when:</strong> Requirements are specific enough to test against, and the target cost leaves a workable margin for the chosen route.</div>
+            <div class="page-links">
+                  <a href="../tools/route-to-market-simulator.html">Target COGS by Route to Market</a>
+                  <a href="../tools/product-design-process-map.html">Product Design Process Map</a>
+                  <a href="../guides/route-to-market-hardware-product.html">Why route to market matters</a>
+                  <a href="../guides/ip-partners-and-compliance.html">IP, partners and compliance hub</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage" id="stage-concept" data-stage="concept" data-stage-name="Concept" aria-labelledby="stage-concept-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">3</span>
+              <div>
+                <h2 id="stage-concept-title">3. Concept</h2>
+                <p class="i2m-question">Which design direction should we develop?</p>
+              </div>
+            </div>
+            <p>Generate several genuinely different ways of meeting the requirements: sketches, quick models, rough architectures. Compare them against the requirements and target cost, then choose one direction to develop, with the reasons written down.</p>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Typical duration</p><p>Typically 3–8 weeks</p></div>
+              <div><p class="plan-label">What drives cost</p><p>Low to moderate: design time, quick models and early CAD.</p></div>
+            </div>
+            <div class="i2m-columns">
+              <div>
+                <h3>Outputs</h3>
+                <ul>
+                  <li>Several concepts explored, not just the first idea</li>
+                  <li>A chosen concept and product architecture</li>
+                  <li>A first bottom-up cost estimate</li>
+                  <li>The key technical risks to test next</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Common pitfalls</h3>
+                <ul>
+                  <li>Falling for the first idea</li>
+                  <li>Choosing on appearance alone</li>
+                  <li>Not costing concepts until later, when changing direction is expensive</li>
+                </ul>
+              </div>
+            </div>
+            <div class="article-highlight"><strong>Ready to move on when:</strong> One concept clearly fits the requirements best, and its biggest risks are known and testable.</div>
+            <div class="page-links">
+                  <a href="../tools/pugh-concept-selector.html">Pugh Concept Selector</a>
+                  <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+                  <a href="../guides/how-engineers-choose-between-concepts.html">How engineers choose between concepts</a>
+                  <a href="../guides/development-and-prototyping.html">Development and prototyping hub</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage" id="stage-prototype" data-stage="prototype" data-stage-name="Prototype" aria-labelledby="stage-prototype-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">4</span>
+              <div>
+                <h2 id="stage-prototype-title">4. Prototype</h2>
+                <p class="i2m-question">Does it work, and does it work for people?</p>
+              </div>
+            </div>
+            <p>Build and test prototypes that each answer specific questions: looks-like models for size and feel, works-like rigs for the mechanism or electronics, then integrated prototypes that combine both. Iterate the design and CAD between rounds.</p>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Typical duration</p><p>Typically 2–6 months, over several rounds</p></div>
+              <div><p class="plan-label">What drives cost</p><p>Moderate, and rising with each round as parts get closer to production quality.</p></div>
+            </div>
+            <div class="i2m-columns">
+              <div>
+                <h3>Outputs</h3>
+                <ul>
+                  <li>Prototypes that each answered a defined question</li>
+                  <li>Test results and user feedback</li>
+                  <li>Refined CAD and an updated bill of materials</li>
+                  <li>A clearer cost estimate and assembly approach</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Common pitfalls</h3>
+                <ul>
+                  <li>Prototypes that do not answer a specific question</li>
+                  <li>Polishing appearance before the function is proven</li>
+                  <li>Assuming 3D-printed parts behave like moulded ones</li>
+                </ul>
+              </div>
+            </div>
+            <div class="article-highlight"><strong>Ready to move on when:</strong> The integrated prototype meets the key requirements, and the remaining changes are refinements rather than redesigns.</div>
+            <div class="page-links">
+                  <a href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>
+                  <a href="../tools/assembly-time.html">Assembly Time Estimator</a>
+                  <a href="../guides/prototyping-vs-production-startup-guide.html">Prototyping vs production</a>
+                  <a href="../guides/mapping-the-product-design-process.html">Mapping the product design process</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage" id="stage-verify" data-stage="verify" data-stage-name="Verify" aria-labelledby="stage-verify-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">5</span>
+              <div>
+                <h2 id="stage-verify-title">5. Verify</h2>
+                <p class="i2m-question">Is the design proven, safe and ready to freeze?</p>
+              </div>
+            </div>
+            <p>Test production-intent parts against the requirements: performance, durability, drops, temperature, user trials, and the pre-compliance or certification testing the product needs. When the evidence is in, freeze the design so tooling can start.</p>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Typical duration</p><p>Typically 1–4 months; longer for regulated or electrical products</p></div>
+              <div><p class="plan-label">What drives cost</p><p>Moderate to high: test labs, certification and production-intent parts.</p></div>
+            </div>
+            <div class="i2m-columns">
+              <div>
+                <h3>Outputs</h3>
+                <ul>
+                  <li>Test reports against each requirement</li>
+                  <li>Certification plan or results where needed</li>
+                  <li>A frozen design with controlled drawings</li>
+                  <li>Updated cost and sustainability estimates</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Common pitfalls</h3>
+                <ul>
+                  <li>Leaving certification until after tooling</li>
+                  <li>Skipping reliability and drop tests to save time</li>
+                  <li>Freezing the design while known problems remain</li>
+                </ul>
+              </div>
+            </div>
+            <div class="article-highlight"><strong>Ready to move on when:</strong> The design passes its key tests, certification has a clear path, and no further changes are expected that would affect tooling.</div>
+            <div class="page-links">
+                  <a href="../tools/product-lifecycle-explorer.html">Product Lifecycle Explorer</a>
+                  <a href="../tools/carbon-footprint.html">Carbon Footprint Estimator</a>
+                  <a href="../guides/ip-partners-and-compliance.html">IP, partners and compliance hub</a>
+                  <a href="../guides/sustainability-and-product-life.html">Sustainability and product life hub</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage" id="stage-industrialise" data-stage="industrialise" data-stage-name="Industrialise" aria-labelledby="stage-industrialise-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">6</span>
+              <div>
+                <h2 id="stage-industrialise-title">6. Industrialise</h2>
+                <p class="i2m-question">Can it be made reliably, at the right cost and volume?</p>
+              </div>
+            </div>
+            <p>Prepare the design and supply chain for production: design for manufacture, choosing processes and suppliers, making tooling, approving first-off samples, setting up quality checks, packaging and assembly instructions, then a <a class="text-link-inline" href="../guides/planning-a-pilot-production-run.html">pilot run</a>.</p>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Typical duration</p><p>Tooling commonly takes several weeks to a few months, plus sample iterations; often 2–5 months overall</p></div>
+              <div><p class="plan-label">What drives cost</p><p>Usually the largest single block: tooling, first inventory and supplier set-up.</p></div>
+            </div>
+            <div class="i2m-columns">
+              <div>
+                <h3>Outputs</h3>
+                <ul>
+                  <li>Production drawings, tolerances and a full bill of materials</li>
+                  <li>Tooling made and first samples approved</li>
+                  <li>Supplier agreements, quality and inspection plan</li>
+                  <li>Packaging and a pilot production run</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Common pitfalls</h3>
+                <ul>
+                  <li>Cutting tooling before the design is frozen</li>
+                  <li>No inspection plan, so quality problems surface at the customer</li>
+                  <li><a class="text-link-inline" href="../guides/minimum-order-quantities-and-cash.html">Minimum order quantities</a> and lead times that strain cash</li>
+                </ul>
+              </div>
+            </div>
+            <div class="article-highlight"><strong>Ready to move on when:</strong> Pilot units meet the specification and the landed unit cost fits the target.</div>
+            <div class="page-links">
+                  <a href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>
+                  <a href="../tools/production-strategy-planner.html">Production Strategy Planner</a>
+                  <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+                  <a href="../guides/injection-moulding-dfm-checklist.html">DFM checklist for injection-moulded parts</a>
+                  <a href="../guides/must-have-documents-before-talking-to-a-manufacturer.html">Documents to have before talking to a manufacturer</a>
+                  <a href="../guides/manufacturing-and-cost.html">Manufacturing and cost hub</a>
+            </div>
+          </section>
+
+          <section class="i2m-stage" id="stage-launch" data-stage="launch" data-stage-name="Launch" aria-labelledby="stage-launch-title">
+            <div class="i2m-stage-head">
+              <span class="i2m-stage-num" aria-hidden="true">7</span>
+              <div>
+                <h2 id="stage-launch-title">7. Launch</h2>
+                <p class="i2m-question">Can we sell, deliver and support it sustainably?</p>
+              </div>
+            </div>
+            <p>Produce the first stock, set up sales channels and fulfilment, prepare marketing, customer support, returns and warranty, and plan how feedback from early customers will feed into improvements and the next version.</p>
+            <div class="i2m-facts">
+              <div><p class="plan-label">Typical duration</p><p>Typically 1–3 months of preparation, overlapping with industrialisation</p></div>
+              <div><p class="plan-label">What drives cost</p><p>Inventory, launch marketing and working capital; this is where cash is usually tightest.</p></div>
+            </div>
+            <div class="i2m-columns">
+              <div>
+                <h3>Outputs</h3>
+                <ul>
+                  <li>First production stock and packaging</li>
+                  <li>Sales channels, pricing and fulfilment in place</li>
+                  <li>Support, returns and warranty processes</li>
+                  <li>A plan for feedback and the next iteration</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Common pitfalls</h3>
+                <ul>
+                  <li>Underestimating the cash tied up in inventory</li>
+                  <li>No returns or warranty process</li>
+                  <li>Treating launch as the end rather than the start of learning</li>
+                </ul>
+              </div>
+            </div>
+            <div class="article-highlight"><strong>Ready to move on when:</strong> Units are selling at the planned margin, and cash covers the time until revenue arrives.</div>
+            <div class="page-links">
+                  <a href="../tools/break-even-calculator.html">Break-even Calculator</a>
+                  <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+                  <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+                  <a href="../guides/calculating-hardware-startup-cash-flow.html">Calculating hardware start-up cash flow</a>
+                  <a href="../guides/route-to-market-and-margins.html">Route to market and margins hub</a>
+                  <a href="../guides/funding-and-cash.html">Funding and cash hub</a>
+            </div>
+          </section>
+          </div>
+          <div class="i2m-pager" data-i2m-pager hidden></div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What are the stages of developing a physical product?</h3>
+                <p>A common way to describe it is seven stages: discover the problem, define the requirements, choose a concept, prototype, verify the design, industrialise for production, and launch. The stages overlap in practice, and most products loop back at least once as testing reveals something new.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How long does it take to take a product from idea to manufacture?</h3>
+                <p>It depends heavily on complexity. A simple mechanical product can reach first production within a year; electromechanical, connected or regulated products often take one to two years or more. Prototyping and industrialisation, including tooling, usually take the most time.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How much does it cost to develop a physical product?</h3>
+                <p>Costs vary by an order of magnitude between a simple moulded item and a connected, certified device, so a single average is misleading. Build your own estimate block by block, as explained in <a class="text-link-inline" href="../guides/estimating-hardware-development-costs.html">how much it costs to develop a hardware product</a>, and use the <a class="text-link-inline" href="../tools/startup-cost-planner.html">Startup Cost Planner</a>.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do I need a prototype before talking to a manufacturer?</h3>
+                <p>Not necessarily for a first conversation, but manufacturers can only quote accurately against a defined design: CAD, drawings, materials, volumes and quality expectations. A tested prototype makes the conversation far more productive. See <a class="text-link-inline" href="../guides/must-have-documents-before-talking-to-a-manufacturer.html">what to have ready</a>.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I skip stages to launch faster?</h3>
+                <p>You can compress them, but skipping usually moves the cost later. Skipping discovery risks building the wrong product; skipping verification risks tooling changes, failed certification or returns. Running stages in parallel where it is safe, and testing the riskiest assumptions first, is usually the faster route overall.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container callout-banner">
+          <h2>Keep track as you go</h2>
+          <p>
+            Tick off the steps you have covered on the <a class="text-link-inline" href="../ready-to-launch/index.html">Ready to Launch roadmap</a>, and save results from
+            any tool to your <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a>. For a reading order suited to your role, see the <a class="text-link-inline" href="../guides/learning-paths.html">learning paths</a>. To see one illustrative product taken through all seven stages, with the numbers carried from tool to tool, read the <a class="text-link-inline" href="../walkthrough/index.html">scenario walkthrough</a>. If a stage decision is live and you would like a second opinion,
+            Andrew is happy to help.
+          </p>
+          <div class="cta-row">
+            <a class="button button-primary" href="../tools/index.html">Explore the tools</a>
+            <a class="button button-secondary" href="../contact/index.html">Ask Andrew</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">A phased route through product definition, engineering, manufacture, and launch planning.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Key Phases</h3>
+          <a href="../tools/product-purpose.html">Validate the idea</a>
+          <a href="../tools/pugh-concept-selector.html">Choose the concept</a>
+          <a href="../tools/manufacturing-payoff.html">Plan manufacture</a>
+          <a href="../tools/route-to-market-simulator.html">Set target COGS</a>
+        </div>
+        <div>
+          <h3>Pages</h3>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/idea-to-manufacture.js" defer></script>
+  </body>
+</html>

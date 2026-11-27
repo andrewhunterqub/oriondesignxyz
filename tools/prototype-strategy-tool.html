@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Prototype Strategy Tool for Hardware Teams | Orion Design</title>
+    <meta
+      name="description"
+      content="Choose between 3D printing, CNC machining, vacuum casting, bridge tooling, and pilot injection based on quantity, fidelity, urgency, and budget."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/prototype-strategy-tool.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Prototype Strategy Tool for Hardware Teams | Orion Design">
+    <meta
+      property="og:description"
+      content="Choose between 3D printing, CNC machining, vacuum casting, bridge tooling, and pilot injection based on quantity, fidelity, urgency, and budget."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/prototype-strategy-tool.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-prototype-strategy-tool.jpg">
+    <meta property="og:image:alt" content="Prototype strategy tool for hardware teams from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prototype Strategy Tool for Hardware Teams | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Choose between 3D printing, CNC machining, vacuum casting, bridge tooling, and pilot injection based on quantity, fidelity, urgency, and budget."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-prototype-strategy-tool.jpg">
+    <meta name="twitter:image:alt" content="Prototype strategy tool for hardware teams from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-prototype-strategy-tool.jpg",
+        "name": "Prototype Strategy Tool",
+        "url": "https://oriondesign.xyz/tools/prototype-strategy-tool.html",
+        "description": "Choose between 3D printing, CNC machining, vacuum casting, bridge tooling, and pilot injection based on quantity, fidelity, urgency, and budget.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Prototype Strategy Tool",
+                "item": "https://oriondesign.xyz/tools/prototype-strategy-tool.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Should the prototype use the final production process?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Only when the question requires it. Early builds often need speed and learning more than production fidelity."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When is bridge tooling sensible?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Bridge tooling is useful when demand or test needs exceed one-off prototypes, but the product is not ready for full production commitment."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many prototype rounds does a product usually need?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most products go through several: early looks-like and works-like models, an integrated prototype that combines form and function, and pre-production parts made by or close to the production process. Simple single-material products may need fewer rounds; electromechanical or regulated products usually need more. Plan each round around the question it must answer."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is 3D printing good enough for testing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For form, fit, ergonomics and many functional checks, yes, and it is quick and cheap to iterate. Printed parts can behave differently from moulded or machined parts in strength, stiffness, surface finish and tolerance, so final validation, drop tests and certification testing usually need production-intent parts."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between looks-like and works-like prototypes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A looks-like prototype represents appearance, size and feel; a works-like prototype proves the mechanism, electronics or performance, often without the final form. Splitting them lets you answer design and engineering questions in parallel before combining them into an integrated prototype."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Prototype Strategy Tool</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Prototype Strategy Tool</h1>
+            <p>
+              Match the prototype route to the real job of the build. Compare low-volume processes against quantity, cosmetic fidelity,
+              functional fidelity, urgency, unit budget, and your willingness to commit to tooling.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Prototype strategy presets">
+              <button class="preset-button" type="button" data-tool-preset='{"buildGoal":"demo","buildQuantity":"8","unitBudget":"120","cosmeticFidelity":"4","functionalFidelity":"2","urgencyLevel":"5","toolingTolerance":"1"}'>Investor demo</button>
+              <button class="preset-button" type="button" data-tool-preset='{"buildGoal":"functional","buildQuantity":"40","unitBudget":"80","cosmeticFidelity":"2","functionalFidelity":"5","urgencyLevel":"4","toolingTolerance":"1"}'>Functional validation</button>
+              <button class="preset-button" type="button" data-tool-preset='{"buildGoal":"pilot","buildQuantity":"250","unitBudget":"45","cosmeticFidelity":"4","functionalFidelity":"4","urgencyLevel":"3","toolingTolerance":"3"}'>Pilot field trial</button>
+            </div>
+            <form class="tool-form" id="prototypeStrategyForm">
+              <div class="field-group">
+                <label for="buildGoal">Primary goal of this build</label>
+                <select id="buildGoal">
+                  <option value="demo">Investor or concept demo</option>
+                  <option value="looks">Looks-like product</option>
+                  <option value="functional" selected>Functional validation</option>
+                  <option value="pilot">Pilot sale or field trial</option>
+                </select>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="buildQuantity">Quantity needed</label>
+                  <input id="buildQuantity" type="number" min="1" value="80" step="1">
+                </div>
+                <div class="field-group">
+                  <label for="unitBudget">Target unit budget</label>
+                  <input id="unitBudget" type="number" min="0" value="55" step="1">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="cosmeticFidelity">Cosmetic fidelity needed (1-5)</label>
+                  <input id="cosmeticFidelity" type="number" min="1" max="5" value="3" step="1">
+                </div>
+                <div class="field-group">
+                  <label for="functionalFidelity">Functional fidelity needed (1-5)</label>
+                  <input id="functionalFidelity" type="number" min="1" max="5" value="4" step="1">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="urgencyLevel">Urgency (1-5)</label>
+                  <input id="urgencyLevel" type="number" min="1" max="5" value="4" step="1">
+                </div>
+                <div class="field-group">
+                  <label for="toolingTolerance">Tolerance for tooling commitment (1-5)</label>
+                  <input id="toolingTolerance" type="number" min="1" max="5" value="2" step="1">
+                </div>
+              </div>
+              <button class="button button-primary" type="submit">Compare prototype routes</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell chart-shell-small">
+              <canvas id="prototypeChart" role="img" aria-label="Prototype strategy comparison chart"></canvas>
+            </div>
+            <div class="result-grid" id="prototypeSummary"></div>
+            <div class="comparison-list" id="prototypeRanking"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#prototypeCopy"
+                  data-copy-feedback="#prototypeCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="prototypeCopy" class="copy-output" readonly></textarea>
+              <div id="prototypeCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="prototype_strategy_tool_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">When to use this</p>
+              <h2>Choose the prototype route around the question the build must answer.</h2>
+              <p>
+                A prototype is not automatically better because it looks more production-like. The right route depends on quantity,
+                fidelity, urgency, budget, and whether the design is mature enough to justify tooling commitment.
+              </p>
+            </div>
+
+            <h2>How to read your result</h2>
+            <p>
+              The score is a route-fit signal. A high score means the method is a reasonable match for the current build brief,
+              not that it is the final manufacturing route. Close scores should trigger a discussion about what evidence the next prototype must create.
+            </p>
+            <ul>
+              <li><strong>A clear leader:</strong> when the top route is a few points ahead of the rest, the brief is pointing firmly one way. Get quotes for that route and confirm lead time before planning the build around it.</li>
+              <li><strong>Two routes close together:</strong> this is common and usually means the brief is mixing goals, such as wanting appearance and function from one build. Splitting into a looks-like and a works-like prototype often resolves it.</li>
+              <li><strong>Tooled routes ranking highly early on:</strong> if bridge tooling or pilot injection comes out on top while the design is still changing, treat that as a warning. Tooling changes are slow and costly, so check design stability first.</li>
+            </ul>
+
+            <div class="worked-example">
+              <p>
+                If CNC and 3D printing score closely for a functional validation build, the better choice may depend on tolerance,
+                material behaviour, and whether cosmetic finish matters yet. If bridge tooling wins, check that the design is stable enough first.
+              </p>
+            </div>
+
+            <h2>What to do next</h2>
+            <ul>
+              <li>Write down the one decision the prototype must unlock.</li>
+              <li>Separate looks-like, works-like, and production-like requirements.</li>
+              <li>Check whether the selected route creates reusable learning or only a better-looking sample.</li>
+              <li>Use production strategy planning before moving from prototype to bridge or pilot production.</li>
+            </ul>
+            <p>
+              Save your result to your <a href="product-plan-builder.html">product plan</a> so the prototype route sits alongside your budget and timeline.
+              If you are unsure what the next build needs to prove, a <a href="../contact/index.html">short conversation with Andrew</a> can help shape the brief.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/how-many-prototypes-do-you-need.html">How many prototypes do you need?</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/looks-like-vs-works-like-prototypes.html">Looks-like vs works-like prototypes</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/prototyping-vs-production-startup-guide.html">Prototyping vs production: a startup guide</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="production-strategy-planner.html">Production Strategy Planner</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/development-and-prototyping.html">Development and prototyping: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/risk-progressive-manufacturing-strategy.html">The risk-progressive manufacturing strategy</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Prototype route</span>
+                <span>Build fidelity</span>
+                <span>Learning speed</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Should the prototype use the final production process?</h3>
+                <p>Only when the question requires it. Early builds often need speed and learning more than production fidelity.</p>
+              </div>
+              <div class="faq-item">
+                <h3>When is bridge tooling sensible?</h3>
+                <p>Bridge tooling is useful when demand or test needs exceed one-off prototypes, but the product is not ready for full production commitment.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How many prototype rounds does a product usually need?</h3>
+                <p>Most products go through several: early looks-like and works-like models, an integrated prototype that combines form and function, and pre-production parts made by or close to the production process. Simple single-material products may need fewer rounds; electromechanical or regulated products usually need more. Plan each round around the question it must answer.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is 3D printing good enough for testing?</h3>
+                <p>For form, fit, ergonomics and many functional checks, yes, and it is quick and cheap to iterate. Printed parts can behave differently from moulded or machined parts in strength, stiffness, <a class="text-link-inline" href="../guides/surface-finishes-for-plastic-and-metal-parts.html">surface finish</a> and tolerance, so final validation, drop tests and certification testing usually need production-intent parts.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is the difference between looks-like and works-like prototypes?</h3>
+                <p>A looks-like prototype represents appearance, size and feel; a works-like prototype proves the mechanism, electronics or performance, often without the final form. Splitting them lets you answer design and engineering questions in parallel before combining them into an integrated prototype.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This tool scores route fit from the assumptions you enter. Use it to structure prototype planning, then confirm process capability, lead time, and cost with suppliers.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Treat the result as a decision aid for planning the next useful build.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="production-strategy-planner.html">Production Strategy Planner</a>
+          <a href="manufacturing-payoff.html">Manufacturing Payoff</a>
+          <a href="../guides/prototyping-vs-production-startup-guide.html">Prototype method guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/prototype-strategy-tool.js" defer></script>
+  </body>
+</html>

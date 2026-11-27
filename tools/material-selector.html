@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Plastic Material Selector for Product Design | Orion Design</title>
+    <meta
+      name="description"
+      content="Shortlist plastics for a part by what matters: stiffness, toughness, heat, chemicals, UV, wear, finish and cost, with essentials, filters and plain-English notes."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/material-selector.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Plastic Material Selector | Orion Design">
+    <meta
+      property="og:description"
+      content="Shortlist plastics for a part by what matters: stiffness, toughness, heat, chemicals, UV, wear, finish and cost, with essentials, filters and plain-English notes."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/material-selector.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-material-selector.jpg">
+    <meta property="og:image:alt" content="Plastic material selector from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Plastic Material Selector | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Shortlist plastics for a part by what matters: stiffness, toughness, heat, chemicals, UV, wear, finish and cost, with essentials, filters and plain-English notes."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-material-selector.jpg">
+    <meta name="twitter:image:alt" content="Plastic material selector from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-material-selector.jpg",
+        "name": "Plastic Material Selector",
+        "url": "https://oriondesign.xyz/tools/material-selector.html",
+        "description": "Shortlist common plastics for a part from weighted requirements using indicative relative ratings for typical grades.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Plastic Material Selector",
+                "item": "https://oriondesign.xyz/tools/material-selector.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Where do the material ratings come from?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "They are Orion Design's relative ratings for typical unfilled general-purpose grades, based on widely known properties of each plastic family. They are a shortlisting aid, not datasheet values, so confirm with the data for the specific grade you plan to use."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is my preferred material ruled out?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A criterion marked Essential requires a rating of 4 or 5. If a material is rated 3 or lower on that criterion, or does not meet the transparency or feel filter, it is ruled out. Change Essential to Important to keep it in the ranking."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does the selector include glass-filled grades?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Fillers such as glass fibre raise stiffness and heat resistance considerably, especially for nylon, but reduce toughness and increase tool wear. If a filled grade could be suitable, discuss it with your material supplier."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can it tell me if a plastic is food-safe or flame-rated?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Food-contact suitability and flammability ratings belong to specific grades, not plastic families. Ask suppliers for the relevant declarations or test data for the grade you choose."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should I choose the cheapest suitable material?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not automatically. Material is only part of part cost: a material that moulds faster, needs no painting or avoids failures in use can be cheaper overall. Compare the whole cost, not just price per kilogram."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Plastic Material Selector</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Plastic Material Selector</h1>
+            <p>
+              Say how much each property matters for your part and get a ranked shortlist of common plastics, with the ones that miss your essentials ruled out and explained.
+              It uses Orion Design's relative ratings for typical grades, so treat it as a starting point for conversations with material suppliers and moulders.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Material selector worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"mat_stiffness":"2","mat_toughness":"2","mat_heat":"2","mat_chemical":"1","mat_uv":"0","mat_wear":"0","mat_finish":"3","mat_cost":"2","matClear":"no","matSoft":"rigid"}'>Electronics enclosure</button>
+              <button class="preset-button" type="button" data-tool-preset='{"mat_stiffness":"2","mat_toughness":"2","mat_heat":"1","mat_chemical":"1","mat_uv":"0","mat_wear":"3","mat_finish":"0","mat_cost":"2","matClear":"no","matSoft":"rigid"}'>Gear or mechanism</button>
+              <button class="preset-button" type="button" data-tool-preset='{"mat_stiffness":"2","mat_toughness":"2","mat_heat":"1","mat_chemical":"1","mat_uv":"3","mat_wear":"0","mat_finish":"2","mat_cost":"1","matClear":"yes","matSoft":"rigid"}'>Clear outdoor cover</button>
+              <button class="preset-button" type="button" data-tool-preset='{"mat_stiffness":"0","mat_toughness":"2","mat_heat":"0","mat_chemical":"2","mat_uv":"1","mat_wear":"0","mat_finish":"2","mat_cost":"2","matClear":"no","matSoft":"soft"}'>Soft-touch grip</button>
+            </div>
+            <form class="tool-form" id="matForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="mat_stiffness">Stiffness</label>
+                  <select id="mat_stiffness">
+                    <option value="0">Not needed</option>
+                    <option value="1">Useful</option>
+                    <option value="2" selected>Important</option>
+                    <option value="3">Essential</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="mat_toughness">Impact toughness</label>
+                  <select id="mat_toughness">
+                    <option value="0">Not needed</option>
+                    <option value="1">Useful</option>
+                    <option value="2" selected>Important</option>
+                    <option value="3">Essential</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="mat_heat">Heat resistance</label>
+                  <select id="mat_heat">
+                    <option value="0">Not needed</option>
+                    <option value="1" selected>Useful</option>
+                    <option value="2">Important</option>
+                    <option value="3">Essential</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="mat_chemical">Chemical resistance</label>
+                  <select id="mat_chemical">
+                    <option value="0">Not needed</option>
+                    <option value="1" selected>Useful</option>
+                    <option value="2">Important</option>
+                    <option value="3">Essential</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="mat_uv">UV and outdoor resistance</label>
+                  <select id="mat_uv">
+                    <option value="0" selected>Not needed</option>
+                    <option value="1">Useful</option>
+                    <option value="2">Important</option>
+                    <option value="3">Essential</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="mat_wear">Low friction and wear</label>
+                  <select id="mat_wear">
+                    <option value="0" selected>Not needed</option>
+                    <option value="1">Useful</option>
+                    <option value="2">Important</option>
+                    <option value="3">Essential</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="mat_finish">Surface finish, paint and print</label>
+                  <select id="mat_finish">
+                    <option value="0">Not needed</option>
+                    <option value="1">Useful</option>
+                    <option value="2" selected>Important</option>
+                    <option value="3">Essential</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="mat_cost">Low material cost</label>
+                  <select id="mat_cost">
+                    <option value="0">Not needed</option>
+                    <option value="1">Useful</option>
+                    <option value="2" selected>Important</option>
+                    <option value="3">Essential</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="matClear">Must it be transparent?</label>
+                  <select id="matClear">
+                    <option value="no" selected>No</option>
+                    <option value="yes">Yes, a clear grade</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="matSoft">Feel</label>
+                  <select id="matSoft">
+                    <option value="rigid" selected>Rigid</option>
+                    <option value="soft">Soft or rubber-like</option>
+                    <option value="either">Either</option>
+                  </select>
+                </div>
+              </div>
+              <button class="button button-primary" type="submit">Update shortlist</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="matSummary"></div>
+            <div class="mat-list" id="matList"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#matCopy"
+                  data-copy-feedback="#matCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="matCopy" class="copy-output" readonly></textarea>
+              <div id="matCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want a second opinion on the material?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="material_selector_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Shortlist from requirements, then confirm with real grades and real tests.</h2>
+              <div class="formula-block">Match % = Σ (importance × rating) ÷ Σ (importance × 5)
+Essential = rating of 4 or 5 required, otherwise the material is ruled out</div>
+              <p>The ratings compare typical unfilled general-purpose grades with each other. They are Orion Design's judgement for shortlisting, not values from a standard or datasheet.</p>
+            </div>
+
+            <h2>The ratings used</h2>
+            <p>1 is poor and 5 is excellent; for cost, 5 means cheapest. Fillers, additives and specific grades can move any of these considerably.</p>
+            <table>
+              <thead>
+                <tr><th>Material</th><th>Stiff</th><th>Tough</th><th>Heat</th><th>Chemical</th><th>UV</th><th>Wear</th><th>Finish</th><th>Cost</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>PP</td><td>2</td><td>4</td><td>3</td><td>5</td><td>2</td><td>3</td><td>2</td><td>5</td></tr>
+                <tr><td>HDPE</td><td>1</td><td>5</td><td>2</td><td>5</td><td>2</td><td>3</td><td>1</td><td>5</td></tr>
+                <tr><td>ABS</td><td>3</td><td>3</td><td>2</td><td>2</td><td>1</td><td>2</td><td>5</td><td>4</td></tr>
+                <tr><td>PC/ABS</td><td>3</td><td>4</td><td>3</td><td>2</td><td>2</td><td>2</td><td>4</td><td>3</td></tr>
+                <tr><td>PC</td><td>3</td><td>5</td><td>4</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td></tr>
+                <tr><td>PETG</td><td>3</td><td>3</td><td>2</td><td>3</td><td>2</td><td>2</td><td>3</td><td>4</td></tr>
+                <tr><td>Nylon (PA)</td><td>3</td><td>4</td><td>4</td><td>4</td><td>2</td><td>4</td><td>2</td><td>3</td></tr>
+                <tr><td>Acetal (POM)</td><td>4</td><td>3</td><td>3</td><td>4</td><td>1</td><td>5</td><td>2</td><td>3</td></tr>
+                <tr><td>Acrylic (PMMA)</td><td>4</td><td>1</td><td>2</td><td>2</td><td>5</td><td>2</td><td>4</td><td>3</td></tr>
+                <tr><td>TPE / TPU</td><td>1</td><td>4</td><td>2</td><td>3</td><td>3</td><td>2</td><td>3</td><td>3</td></tr>
+                <tr><td>PPS, PEEK</td><td>5</td><td>3</td><td>5</td><td>5</td><td>3</td><td>4</td><td>2</td><td>1</td></tr>
+              </tbody>
+            </table>
+            <h2>How to read your result</h2>
+            <ul>
+              <li><strong>Several good matches:</strong> ask suppliers for datasheets of specific grades of the top two or three, and compare price and availability.</li>
+              <li><strong>Only one or two:</strong> your essentials are demanding. Check each is truly essential, and look at filled or modified grades.</li>
+              <li><strong>None:</strong> relax an essential, consider a specialist grade, or reconsider the design, for example by protecting a part from UV or heat rather than asking the material to cope.</li>
+            </ul>
+            <p>
+              Regulatory needs, such as flame ratings for electrical enclosures or food-contact suitability, depend on specific grades and must be checked separately.
+              <a class="text-link-inline" href="../guides/choosing-plastic-materials.html">Choosing plastic materials</a> explains the trade-offs in more depth, and the
+              <a class="text-link-inline" href="dfm-checker.html">Injection Moulding DFM Checker</a> uses typical wall thicknesses for each material.
+              Save your shortlist to your <a href="product-plan-builder.html">product plan</a>.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/choosing-lower-carbon-materials.html">Choosing lower-carbon materials</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/choosing-plastic-materials.html">Choosing plastic materials</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/injection-moulding-explained.html">Injection moulding explained</a></div>
+                <div class="aside-item"><a class="text-link" href="dfm-checker.html">Injection Moulding DFM Checker</a></div>
+                <div class="aside-item"><a class="text-link" href="carbon-footprint.html">Carbon Footprint Estimator</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/development-and-prototyping.html">Development and prototyping: overview</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Material selection</span>
+                <span>Plastics</span>
+                <span>Shortlisting</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Where do the material ratings come from?</h3>
+                <p>They are Orion Design's relative ratings for typical unfilled general-purpose grades, based on widely known properties of each plastic family. They are a shortlisting aid, not datasheet values, so confirm with the data for the specific grade you plan to use.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why is my preferred material ruled out?</h3>
+                <p>A criterion marked Essential requires a rating of 4 or 5. If a material is rated 3 or lower on that criterion, or does not meet the transparency or feel filter, it is ruled out. Change Essential to Important to keep it in the ranking.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Does the selector include glass-filled grades?</h3>
+                <p>No. Fillers such as glass fibre raise stiffness and heat resistance considerably, especially for nylon, but reduce toughness and increase tool wear. If a filled grade could be suitable, discuss it with your material supplier.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can it tell me if a plastic is food-safe or flame-rated?</h3>
+                <p>No. Food-contact suitability and flammability ratings belong to specific grades, not plastic families. Ask suppliers for the relevant declarations or test data for the grade you choose.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should I choose the cheapest suitable material?</h3>
+                <p>Not automatically. Material is only part of part cost: a material that moulds faster, needs no painting or avoids failures in use can be cheaper overall. Compare the whole cost, not just price per kilogram.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="cashflow-projection.html">Cashflow Projection</a>
+          <a href="../guides/financial-break-even-for-hardware-products.html">Break-even guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/material-selector.js" defer></script>
+  </body>
+</html>

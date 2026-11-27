@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>RFQ Pack Builder: Request for Quotation Template | Orion Design</title>
+    <meta
+      name="description"
+      content="Check your supplier pack is complete and generate a clear request for quotation covering quantities, target price, attachments, delivery terms and what to quote."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/rfq-pack-builder.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="RFQ Pack Builder | Orion Design">
+    <meta
+      property="og:description"
+      content="Check your supplier pack is complete and generate a clear request for quotation covering quantities, target price, attachments, delivery terms and what to quote."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/rfq-pack-builder.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-rfq-pack-builder.jpg">
+    <meta property="og:image:alt" content="RFQ pack builder from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RFQ Pack Builder | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Check your supplier pack is complete and generate a clear request for quotation covering quantities, target price, attachments, delivery terms and what to quote."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-rfq-pack-builder.jpg">
+    <meta name="twitter:image:alt" content="RFQ pack builder from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-rfq-pack-builder.jpg",
+        "name": "RFQ Pack Builder",
+        "url": "https://oriondesign.xyz/tools/rfq-pack-builder.html",
+        "description": "Checklist of what to send manufacturers with a generated request-for-quotation document.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "RFQ Pack Builder",
+                "item": "https://oriondesign.xyz/tools/rfq-pack-builder.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a request for quotation (RFQ)?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A request to suppliers to price a defined piece of work, sent with the drawings, quantities and requirements they need. Sending the same RFQ to several suppliers lets you compare their quotes fairly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should I tell suppliers my target price?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It often helps: a realistic target tells suppliers what you are trying to achieve and invites cost-saving suggestions. Leave it out if you have no basis for it yet, or if you want unanchored quotes first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should a quote include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Unit prices at your quantities, tooling and set-up costs with ownership and tool life, lead times to samples and production, minimum order quantity, payment terms, delivery terms, and any recommended design changes. The generated RFQ asks for all of these."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is what I type stored anywhere?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not on a server. The RFQ is generated in your browser, and your inputs are remembered in your own browser's storage so they are still there when you come back; clearing this site's data removes them. The RFQ is added to your product plan only if you choose to save it there, and the plan also stays in your browser."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many suppliers should I send an RFQ to?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Enough to compare, usually three to five well-chosen suppliers. Sending it to many more takes time to manage and rarely improves the result."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">RFQ Pack Builder</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>RFQ Pack Builder</h1>
+            <p>
+              Check that your supplier pack is complete, then generate a clear request for quotation (RFQ) to send with it. A complete, consistent pack gets faster,
+              more accurate quotes that you can compare like for like. The RFQ is generated in your browser, and your company, contact and product details are not sent anywhere.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="RFQ pack worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"rfqCad":"yes","rfqDrawings":"no","rfqBom":"no","rfqSpec":"no","rfqQuality":"no","rfqCompliance":"no","rfqPackaging":"no","rfqSamples":"no","rfqNda":"yes","rfqProcess":"moulding","rfqFirstQty":"500","rfqAnnualQty":"2000","rfqTarget":"0","rfqIncoterm":"any"}'>Early enquiry</button>
+              <button class="preset-button" type="button" data-tool-preset='{"rfqCad":"yes","rfqDrawings":"yes","rfqBom":"yes","rfqSpec":"yes","rfqQuality":"yes","rfqCompliance":"yes","rfqPackaging":"yes","rfqSamples":"yes","rfqNda":"yes","rfqProcess":"assembly","rfqFirstQty":"1000","rfqAnnualQty":"5000","rfqTarget":"12.5","rfqIncoterm":"fob"}'>Ready to quote</button>
+              <button class="preset-button" type="button" data-tool-preset='{"rfqCad":"yes","rfqDrawings":"yes","rfqBom":"yes","rfqSpec":"no","rfqQuality":"yes","rfqCompliance":"no","rfqPackaging":"no","rfqSamples":"no","rfqNda":"yes","rfqProcess":"sheet","rfqFirstQty":"50","rfqAnnualQty":"300","rfqTarget":"85","rfqIncoterm":"ddp"}'>UK sheet metal</button>
+            </div>
+            <form class="tool-form" id="rfqForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="rfqCompany">Your company</label>
+                  <input id="rfqCompany" type="text" value="">
+                </div>
+                <div class="field-group">
+                  <label for="rfqContact">Contact name and email</label>
+                  <input id="rfqContact" type="text" value="">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="rfqProduct">Product or part name</label>
+                  <input id="rfqProduct" type="text" value="">
+                </div>
+                <div class="field-group">
+                  <label for="rfqProcess">What are you asking for?</label>
+                  <select id="rfqProcess">
+                    <option value="moulding" selected>Injection-moulded parts</option>
+                    <option value="machining">CNC-machined parts</option>
+                    <option value="sheet">Sheet-metal fabrication</option>
+                    <option value="casting">Cast parts</option>
+                    <option value="pcba">Circuit board assembly</option>
+                    <option value="assembly">Complete product (contract manufacture)</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="rfqFirstQty">First order quantity</label>
+                  <input id="rfqFirstQty" type="number" min="0" step="1" value="500">
+                </div>
+                <div class="field-group">
+                  <label for="rfqAnnualQty">Expected annual volume</label>
+                  <input id="rfqAnnualQty" type="number" min="0" step="1" value="2000">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="rfqTarget">Target price per unit (£, 0 for none)</label>
+                  <input id="rfqTarget" type="number" min="0" step="0.01" value="0">
+                </div>
+                <div class="field-group">
+                  <label for="rfqIncoterm">Delivery terms to quote</label>
+                  <select id="rfqIncoterm">
+                    <option value="any" selected>Supplier's usual terms</option>
+                    <option value="exw">EXW (ex works)</option>
+                    <option value="fob">FOB (free on board)</option>
+                    <option value="ddp">DDP (delivered duty paid)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="rfqSampleWeeks">Samples wanted within (weeks, 0 for no preference)</label>
+                  <input id="rfqSampleWeeks" type="number" min="0" step="1" value="0">
+                </div>
+                <div class="field-group">
+                  <label for="rfqDeadline">Reply by (date)</label>
+                  <input id="rfqDeadline" type="text" value="" placeholder="e.g. 18 December 2026">
+                </div>
+              </div>
+              <p class="tool-chip">Your pack</p>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="rfqCad">3D CAD files (STEP)</label>
+                  <select id="rfqCad">
+                    <option value="yes" selected>Ready</option>
+                    <option value="no">Not yet</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="rfqDrawings">2D drawings with tolerances</label>
+                  <select id="rfqDrawings">
+                    <option value="yes" selected>Ready</option>
+                    <option value="no">Not yet</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="rfqBom">Bill of materials</label>
+                  <select id="rfqBom">
+                    <option value="yes" selected>Ready</option>
+                    <option value="no">Not yet</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="rfqSpec">Product specification</label>
+                  <select id="rfqSpec">
+                    <option value="yes">Ready</option>
+                    <option value="no" selected>Not yet</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="rfqQuality">Quality and inspection requirements</label>
+                  <select id="rfqQuality">
+                    <option value="yes">Ready</option>
+                    <option value="no" selected>Not yet</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="rfqCompliance">Compliance and marking requirements</label>
+                  <select id="rfqCompliance">
+                    <option value="yes">Ready</option>
+                    <option value="no" selected>Not yet</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="rfqPackaging">Packaging and labelling requirements</label>
+                  <select id="rfqPackaging">
+                    <option value="yes">Ready</option>
+                    <option value="no" selected>Not yet</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="rfqSamples">Samples or prototypes available</label>
+                  <select id="rfqSamples">
+                    <option value="yes" selected>Ready</option>
+                    <option value="no">Not yet</option>
+                  </select>
+                </div>
+              </div>
+                <div class="field-group">
+                  <label for="rfqNda">Confidentiality agreement in place</label>
+                  <select id="rfqNda">
+                    <option value="yes" selected>Ready</option>
+                    <option value="no">Not yet</option>
+                  </select>
+                </div>
+              <button class="button button-primary" type="submit">Update RFQ</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="rfqSummary"></div>
+            <div id="rfqGaps"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#rfqCopy"
+                  data-copy-feedback="#rfqCopyFeedback"
+                >
+                  Copy RFQ text
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="rfqCopy" class="copy-output rfq-output" readonly></textarea>
+              <div id="rfqCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want a second opinion before you send it?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="rfq_pack_builder_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>A good RFQ tells every supplier the same things: what to make, how many, to what standard, delivered how, and what to include in the price.</h2>
+              <div class="formula-block">Completeness = items ready (weighted by how much they affect the quote) + quantities stated</div>
+              <p>CAD and drawings carry the most weight because suppliers cannot price accurately without them. The generated RFQ asks for the details you need to compare quotes fairly: tooling, lead times, minimum order, payment and delivery terms.</p>
+            </div>
+            <h2>How to use the RFQ</h2>
+            <ol>
+              <li>Complete the checklist and fill the gaps it lists.</li>
+              <li>Copy the RFQ text into an email or document and edit it for your product.</li>
+              <li>Send the same RFQ and attachments to each shortlisted supplier, with the same reply date.</li>
+              <li>Put the replies side by side on a landed-cost basis with the <a class="text-link-inline" href="landed-cost-calculator.html">Landed Cost Calculator</a>.</li>
+            </ol>
+            <h2>How to read your result</h2>
+            <ul>
+              <li><strong>85% or more:</strong> suppliers have what they need to quote accurately.</li>
+              <li><strong>60 to 85%:</strong> they can quote, but expect questions and allowances in the price.</li>
+              <li><strong>Below 60%:</strong> quotes will be rough and hard to compare; prepare the missing items first.</li>
+            </ul>
+            <p>
+              The score is a rule of thumb for how complete the pack is, not a guarantee of a good quote.
+              <a class="text-link-inline" href="../guides/how-to-find-and-brief-a-manufacturer.html">How to find and brief a manufacturer</a> and
+              <a class="text-link-inline" href="../guides/must-have-documents-before-talking-to-a-manufacturer.html">the documents to prepare</a> explain each item. Save your RFQ to your <a href="product-plan-builder.html">product plan</a>.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/product-development-checklists.html">Printable checklists</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/how-to-find-and-brief-a-manufacturer.html">How to find and brief a manufacturer</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/must-have-documents-before-talking-to-a-manufacturer.html">Documents for manufacturers</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/comparing-manufacturing-quotes.html">Comparing manufacturing quotes</a></div>
+                <div class="aside-item"><a class="text-link" href="nda-generator.html">NDA Generator</a></div>
+                <div class="aside-item"><a class="text-link" href="landed-cost-calculator.html">Landed Cost Calculator</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/ip-partners-and-compliance.html">IP, partners and compliance: overview</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>RFQ</span>
+                <span>Supplier quotes</span>
+                <span>Manufacturing</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is a request for quotation (RFQ)?</h3>
+                <p>A request to suppliers to price a defined piece of work, sent with the drawings, quantities and requirements they need. Sending the same RFQ to several suppliers lets you compare their quotes fairly.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Should I tell suppliers my target price?</h3>
+                <p>It often helps: a realistic target tells suppliers what you are trying to achieve and invites cost-saving suggestions. Leave it out if you have no basis for it yet, or if you want unanchored quotes first.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should a quote include?</h3>
+                <p>Unit prices at your quantities, tooling and set-up costs with ownership and tool life, lead times to samples and production, <a class="text-link-inline" href="../guides/minimum-order-quantities-and-cash.html">minimum order quantity</a>, payment terms, delivery terms, and any recommended design changes. The generated RFQ asks for all of these.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is what I type stored anywhere?</h3>
+                <p>Not on a server. The RFQ is generated in your browser, and your inputs are remembered in your own browser's storage so they are still there when you come back; clearing this site's data removes them. The RFQ is added to your product plan only if you choose to save it there, and the plan also stays in your browser.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How many suppliers should I send an RFQ to?</h3>
+                <p>Enough to compare, usually three to five well-chosen suppliers. Sending it to many more takes time to manage and rarely improves the result.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="cashflow-projection.html">Cashflow Projection</a>
+          <a href="../guides/financial-break-even-for-hardware-products.html">Break-even guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/rfq-pack-builder.js" defer></script>
+  </body>
+</html>

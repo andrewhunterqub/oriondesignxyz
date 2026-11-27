@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Documents Before Talking to a Manufacturer | Orion Design</title>
+    <meta
+      name="description"
+      content="A practical guide to the documents hardware teams should prepare before talking to a manufacturer, including NDAs, drawings, BOMs, prototypes, and scope notes."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/must-have-documents-before-talking-to-a-manufacturer.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Documents Before Talking to a Manufacturer">
+    <meta
+      property="og:description"
+      content="A practical guide to the documents hardware teams should prepare before talking to a manufacturer, including NDAs, drawings, BOMs, prototypes, and scope notes."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/must-have-documents-before-talking-to-a-manufacturer.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-must-have-documents-before-talking-to-a-manufacturer.jpg">
+    <meta property="og:image:alt" content="Guide to the documents needed before talking to a manufacturer">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Documents Before Talking to a Manufacturer">
+    <meta
+      name="twitter:description"
+      content="A practical guide to the documents hardware teams should prepare before talking to a manufacturer, including NDAs, drawings, BOMs, prototypes, and scope notes."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-must-have-documents-before-talking-to-a-manufacturer.jpg">
+    <meta name="twitter:image:alt" content="Guide to the documents needed before talking to a manufacturer">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-must-have-documents-before-talking-to-a-manufacturer.jpg",
+        "headline": "Documents Before Talking to a Manufacturer",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-24",
+        "articleSection": "Manufacturing preparation",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/must-have-documents-before-talking-to-a-manufacturer.html",
+        "datePublished": "2026-03-13"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Manufacturer documents",
+                "item": "https://oriondesign.xyz/guides/must-have-documents-before-talking-to-a-manufacturer.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need an NDA before talking to a manufacturer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "If you are sharing unpublished designs or sensitive technical detail, an NDA is a sensible baseline and most established suppliers will sign a reasonable one. It sets expectations but does not replace careful, staged disclosure. For a general first enquiry with no sensitive detail, it is often not needed yet."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What file format should I send to a manufacturer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "STEP is the most widely accepted neutral 3D format for machined and moulded parts, with a PDF drawing for dimensions, tolerances and finishes. STL files suit 3D printing but lose the precise geometry most other processes need. Ask the supplier if they prefer native files."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should a request for quotation (RFQ) include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "An RFQ should include the part files and drawings, material and finish, quantities and batch sizes, required delivery dates, quality expectations and the specific items you want priced, such as tooling, samples and unit cost. The clearer the RFQ, the easier it is to compare quotes fairly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a bill of materials?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A bill of materials, or BOM, is a structured list of every part, component and material in a product, with the quantity used per unit. It usually shows whether each item is made or bought and who supplies it. Manufacturers use it to quote assembly and sourcing, and teams use it to estimate unit cost."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much detail does a manufacturer need to give a quote?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For a budgetary quote, 3D files, material, finish and realistic volumes are often enough. For a firm quote, they also need toleranced drawings, quality requirements and delivery expectations. If a detail is missing, the supplier will either ask, assume, or add margin to cover the uncertainty."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Manufacturer documents</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 24 November 2026 <span aria-hidden="true">·</span> For founders and engineers preparing to request quotes from manufacturers</p>
+            <h1>Must-have documents before talking to a manufacturer</h1>
+            <p>
+              Manufacturer conversations go badly when the team brings a vague idea, a half-defined file pack, and no shared view of what is confidential.
+              The fastest route to better feedback is better preparation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>An NDA is useful, but it is not the only document that matters.</h2>
+              <div class="formula-block">Useful supplier pack = NDA + product scope + drawings + BOM + volumes and target cost + prototype evidence + decision questions</div>
+              <p>
+                Before talking to a manufacturer, prepare a short scope note, current 3D CAD and drawings, a bill of materials, realistic volumes and a target cost,
+                plus any prototype evidence and the specific questions you need answered. Suppliers respond better when the technical brief is clear, the scope is explicit, and the commercial conversation is framed properly from the start.
+              </p>
+            </div>
+
+            <p>
+              A manufacturer can only quote what it can understand. A vague enquiry tends to produce a vague quote, a long list of questions, or no reply at all,
+              because the supplier cannot judge whether the work suits them. A clear, well-organised pack signals that the team is serious and makes quotes from different suppliers easier to compare.
+            </p>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#core-documents">The core documents most teams need first</a></li>
+              <li><a class="text-link-inline" href="#checklist">Manufacturer document checklist</a></li>
+              <li><a class="text-link-inline" href="#what-to-send">What to send at each stage of the conversation</a></li>
+              <li><a class="text-link-inline" href="#example">Illustrative example: a moulded sensor enclosure</a></li>
+              <li><a class="text-link-inline" href="#nda">Where the NDA fits</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes when approaching manufacturers</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Practical next steps</a></li>
+            </ol>
+
+            <h2 id="core-documents">The core documents most teams need first</h2>
+            <ol>
+              <li><strong>NDA:</strong> sets the confidentiality baseline if the discussion is sensitive.</li>
+              <li><strong>Product scope note:</strong> explains what the product is, what stage it is at, and what kind of help is being requested.</li>
+              <li><strong>Drawings or 3D files:</strong> enough geometry to discuss manufacturability meaningfully.</li>
+              <li><strong>BOM or major component list:</strong> shows the parts and bought-in items likely to matter.</li>
+              <li><strong>Prototype evidence:</strong> photos, test results, or lessons from existing builds.</li>
+              <li><strong>Open questions:</strong> what you actually want the supplier to comment on.</li>
+            </ol>
+
+            <h2 id="checklist">Manufacturer document checklist</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Document</th>
+                  <th>What it contains</th>
+                  <th>When you need it</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-nda" data-definition="Non-disclosure agreement: a contract that keeps shared information confidential." aria-label="NDA: Non-disclosure agreement: a contract that keeps shared information confidential. (glossary)">NDA</a></td>
+                  <td>Who is disclosing, what counts as confidential, how long the obligation lasts</td>
+                  <td>Before sharing anything sensitive, usually at first contact</td>
+                </tr>
+                <tr>
+                  <td>Product scope note</td>
+                  <td>One or two pages: what the product does, development stage, the parts or services you need, timeline</td>
+                  <td>First contact</td>
+                </tr>
+                <tr>
+                  <td>3D CAD</td>
+                  <td>Neutral files such as <a class="glossary-term" href="../knowledge/glossary.html#term-step-file" data-definition="A neutral 3D CAD file format that most CAD systems can open, commonly used to share part models with suppliers." aria-label="STEP: A neutral 3D CAD file format that most CAD systems can open, commonly used to share part models with suppliers. (glossary)">STEP</a> for each part, at the current revision</td>
+                  <td>Feasibility and <a class="glossary-term" href="../knowledge/glossary.html#term-design-for-manufacture-dfm" data-definition="Designing parts so they can be made reliably and economically by the chosen process." aria-label="DFM: Designing parts so they can be made reliably and economically by the chosen process. (glossary)">DFM</a> review, quoting</td>
+                </tr>
+                <tr>
+                  <td>2D drawings</td>
+                  <td>Critical dimensions, tolerances, material, finish, colour, <a class="glossary-term" href="../knowledge/glossary.html#term-revision" data-definition="A recorded version of a part, drawing or bill of materials, usually marked with a letter such as Rev B. Each change raises the revision, so everyone can tell exactly which version they are working from." aria-label="revision letter: A recorded version of a part, drawing or bill of materials, usually marked with a letter such as Rev B. Each change raises the revision, so everyone can tell exactly which version they are working from. (glossary)">revision letter</a></td>
+                  <td>Formal quotation and production</td>
+                </tr>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-bill-of-materials-bom" data-definition="The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly." aria-label="Bill of materials: The structured list of every part, material and quantity needed to make a product, used for costing, purchasing and assembly. (glossary)">Bill of materials</a> (BOM)</td>
+                  <td>Every part and bought-in component, quantities per unit, make or buy, preferred suppliers</td>
+                  <td>Quoting for assembly or sourcing; useful earlier as a summary</td>
+                </tr>
+                <tr>
+                  <td>Specification</td>
+                  <td>Performance requirements, operating environment, relevant standards, cosmetic expectations</td>
+                  <td>Feasibility review onwards</td>
+                </tr>
+                <tr>
+                  <td>Volumes and <a class="glossary-term" href="../knowledge/glossary.html#term-target-cost" data-definition="The most a product can cost to make and land while still meeting the business's margin at its price and route to market." aria-label="target cost: The most a product can cost to make and land while still meeting the business's margin at its price and route to market. (glossary)">target cost</a></td>
+                  <td>First order quantity, expected annual volume, batch sizes, target part or unit cost</td>
+                  <td>Any meaningful quote; tooling and process choices depend on it</td>
+                </tr>
+                <tr>
+                  <td>Prototype evidence</td>
+                  <td>Photos, test results, known issues and what has already changed</td>
+                  <td>Feasibility and DFM review</td>
+                </tr>
+                <tr>
+                  <td>Question list</td>
+                  <td>The specific decisions you want supplier input on</td>
+                  <td>Every conversation</td>
+                </tr>
+                <tr>
+                  <td>Quality and inspection criteria</td>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-critical-to-quality-ctq" data-definition="A dimension, function or property that decides whether a product works, is safe or is acceptable to the customer. CTQ features are marked on drawings and checked more closely than the rest." aria-label="Critical-to-quality: A dimension, function or property that decides whether a product works, is safe or is acceptable to the customer. CTQ features are marked on drawings and checked more closely than the rest. (glossary)">Critical-to-quality</a> features, acceptance criteria, approved samples</td>
+                  <td>Before first production order</td>
+                </tr>
+                <tr>
+                  <td>Packaging and labelling</td>
+                  <td>Pack format, labels, markings, regulatory information, carton quantities</td>
+                  <td>Before production, if the supplier assembles or packs</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 id="what-to-send">What to send at each stage of the conversation</h2>
+            <p>
+              Not every document belongs in the first email. A staged approach protects sensitive information and keeps the conversation focused.
+            </p>
+            <ul>
+              <li><strong>First contact:</strong> scope note, an image or overview drawing, rough volumes, and the NDA if needed.</li>
+              <li><strong>Feasibility or DFM review:</strong> 3D CAD, a draft BOM, prototype evidence and your question list.</li>
+              <li><strong>Formal quotation:</strong> fully toleranced drawings, material and finish specifications, volumes and delivery expectations.</li>
+              <li><strong>Pre-production:</strong> inspection criteria, approved samples, packaging and labelling details.</li>
+            </ul>
+
+            <div class="article-summary-list">
+              <div>
+                <strong>Do not send everything by default.</strong>
+                Send the right amount for the conversation you need, not every file you have.
+              </div>
+              <div>
+                <strong>Revision control matters.</strong>
+                Suppliers lose confidence when they cannot tell which file is current.
+              </div>
+              <div>
+                <strong>Asking better questions improves quotes.</strong>
+                If you need feedback on tooling risk, tolerances, or yield, ask that directly.
+              </div>
+            </div>
+
+            <h2 id="example">Illustrative example: a moulded sensor enclosure</h2>
+            <div class="worked-example">
+              <p>
+                Imagine a startup that needs a two-part injection-moulded enclosure for an outdoor wall-mounted sensor. A weak enquiry says “please quote for our enclosure” and attaches a single native CAD file.
+                A stronger pack, sent after an NDA, includes a one-page scope note, STEP files for both parts, a drawing showing the critical dimensions around the seal groove and <a class="text-link-inline" href="joining-methods-for-product-design.html">snap fits</a>,
+                a preferred material with UV stabilisation, the texture finish, a first order of a few thousand units with expected growth, and a target part cost range.
+              </p>
+              <p>
+                It closes with three questions: are the draft angles and wall thicknesses suitable for moulding, would a <a class="glossary-term" href="../knowledge/glossary.html#term-family-tool" data-definition="An injection-mould tool that makes several different parts in one cycle." aria-label="family tool: An injection-mould tool that makes several different parts in one cycle. (glossary)">family tool</a> make sense for both parts, and what tool life should the team specify for the expected volumes.
+                The figures and choices here are illustrative, but the effect is typical: suppliers can quote on the same basis, and their DFM comments arrive before tooling, not after.
+              </p>
+            </div>
+
+            <h2 id="nda">Where the NDA fits</h2>
+            <p>
+              An NDA is usually about setting expectations, not about making a weak brief safe. If the product definition is still vague,
+              the real problem is often not legal. It is that the supplier cannot respond properly because the pack does not yet make sense.
+            </p>
+            <p>
+              If your main concern is protecting sensitive information before the conversation starts, read
+              <a class="text-link-inline" href="how-to-protect-product-ip.html">How to protect product IP before talking to manufacturers</a>.
+              It covers staged disclosure, file control, and the practical limits of NDAs on their own.
+            </p>
+
+            <h2 id="mistakes">Common mistakes when approaching manufacturers</h2>
+            <div class="article-summary-list">
+              <div><strong>Leaving out volumes.</strong> Without quantities, a supplier cannot choose between processes or size tooling, so the quote becomes guesswork.</div>
+              <div><strong>Tolerancing everything tightly.</strong> Tight tolerances on non-critical features raise cost. Mark only what genuinely matters to function or fit.</div>
+              <div><strong>Sending native CAD only.</strong> Not every supplier uses the same software. A STEP file and a PDF drawing are the safer default.</div>
+              <div><strong>Reusing file names across revisions.</strong> Add a revision letter to every file name and drawing title block. <a class="text-link-inline" href="bills-of-materials-and-revision-control.html">Bills of materials and revision control</a> sets out a simple scheme for part numbers, revisions and changes.</div>
+              <div><strong>Asking only for the best price.</strong> Price without context invites shortcuts. Ask about lead time, tool ownership, tool life and what is excluded.</div>
+            </div>
+
+            <div class="pull-quote">
+              <p>
+                The quality of a quote rarely exceeds the quality of the brief that requested it.
+              </p>
+            </div>
+
+            <h2 id="next-steps">Practical next steps</h2>
+            <ol>
+              <li>Draft a one-page scope note and decide what stays confidential until a later stage.</li>
+              <li>Export current parts as STEP files and create drawings for critical parts, with revision letters; <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances and engineering drawings</a> covers what each drawing should show.</li>
+              <li>Build a simple BOM and a first estimate of unit cost; the guide on <a class="text-link-inline" href="how-to-estimate-manufacturing-cost.html">how to estimate manufacturing cost</a> can help.</li>
+              <li>Write down the volumes you can defend and the questions you need answered.</li>
+              <li>Prepare an NDA with the <a class="text-link-inline" href="../tools/nda-generator.html">NDA Generator</a> if the discussion is sensitive.</li>
+            </ol>
+            <p>
+              If you are not sure which build method suits the next batch, the <a class="text-link-inline" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a> helps frame the request.
+              For a wider view of costs, timing and milestones around the supplier conversation, the <a class="text-link-inline" href="../tools/product-plan-builder.html">Product Plan Builder</a> brings the plan together in one place.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Generate a starter NDA</h3>
+                <p>Create a simple one-way or mutual confidentiality draft for early product and manufacturing conversations.</p>
+                <a
+                  class="button button-primary"
+                  href="../tools/nda-generator.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="nda_article_to_tool"
+                >
+                  Open NDA Generator
+                </a>
+              </div>
+              <div class="article-action-card">
+                <h3>Pressure-test the product pack</h3>
+                <p>Use costing, prototype, and manufacturing tools so the supplier conversation is built around clearer decisions.</p>
+                <a
+                  class="button button-secondary"
+                  href="../tools/product-cost-estimator.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="nda_article_to_cost_tool"
+                >
+                  Open Product Cost Estimator
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="ip-partners-and-compliance.html">IP, partners and compliance: the hub guide</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/ready-for-manufacturer.html">Ready to Talk to a Manufacturer?</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/rfq-pack-builder.html">RFQ Pack Builder</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/nda-generator.html">NDA Generator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="product-development-checklists.html">Printable checklists</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="how-to-write-a-product-requirements-document.html">Write a product requirements document</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This article answers</p>
+              <div class="tag-row">
+                <span>NDA for manufacturers</span>
+                <span>Supplier pack</span>
+                <span>Product documents</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Do I need an NDA before talking to a manufacturer?</h3>
+                <p>If you are sharing unpublished designs or sensitive technical detail, an NDA is a sensible baseline and most established suppliers will sign a reasonable one. It sets expectations but does not replace careful, staged disclosure. For a general first enquiry with no sensitive detail, it is often not needed yet.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What file format should I send to a manufacturer?</h3>
+                <p>STEP is the most widely accepted neutral 3D format for machined and moulded parts, with a PDF drawing for dimensions, tolerances and finishes. STL files suit 3D printing but lose the precise geometry most other processes need. Ask the supplier if they prefer native files.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should a request for quotation (RFQ) include?</h3>
+                <p>An RFQ should include the part files and drawings, material and finish, quantities and batch sizes, required delivery dates, quality expectations and the specific items you want priced, such as tooling, samples and unit cost. The clearer the RFQ, the easier it is to <a class="text-link-inline" href="comparing-manufacturing-quotes.html">compare quotes</a> fairly.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is a bill of materials?</h3>
+                <p>A bill of materials, or BOM, is a structured list of every part, component and material in a product, with the quantity used per unit. It usually shows whether each item is made or bought and who supplies it. Manufacturers use it to quote assembly and sourcing, and teams use it to estimate unit cost.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How much detail does a manufacturer need to give a quote?</h3>
+                <p>For a budgetary quote, 3D files, material, finish and realistic volumes are often enough. For a firm quote, they also need toleranced drawings, quality requirements and delivery expectations. If a detail is missing, the supplier will either ask, assume, or add margin to cover the uncertainty.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/nda-generator.html">NDA Generator</a>
+          <a href="../tools/prototype-strategy-tool.html">Prototype Strategy Tool</a>
+          <a href="../tools/manufacturing-payoff.html">Manufacturing Payoff</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

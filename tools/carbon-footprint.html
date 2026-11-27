@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Carbon Footprint Estimator | Orion Design</title>
+    <meta
+      name="description"
+      content="Estimate product carbon footprint during design using material, process, transport, energy use, and recycled content assumptions."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/carbon-footprint.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Carbon Footprint Estimator | Orion Design">
+    <meta
+      property="og:description"
+      content="Estimate product carbon footprint during design using material, process, transport, energy use, and recycled content assumptions."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/carbon-footprint.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-carbon-footprint.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Carbon Footprint Estimator | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Estimate product carbon footprint during design using material, process, transport, energy use, and recycled content assumptions."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-carbon-footprint.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-carbon-footprint.jpg",
+        "name": "Carbon Footprint Estimator",
+        "url": "https://oriondesign.xyz/tools/carbon-footprint.html",
+        "description": "Estimate product carbon footprint during design using material, process, transport, energy use, and recycled content assumptions.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Carbon Footprint Estimator",
+                "item": "https://oriondesign.xyz/tools/carbon-footprint.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How can you estimate product carbon footprint during design?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use early assumptions for material mass, manufacturing process, transport, energy use, and recycled content to compare concepts before detailed LCA work."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is this a full lifecycle assessment?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. This is a concept-stage estimator intended to compare options and expose major drivers, not replace a formal LCA."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which part of a product's footprint usually matters most?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on the product. For products that use energy, such as heaters, kettles or chargers, the use phase often dominates the total. For passive products such as housewares, furniture or enclosures, materials and manufacturing usually account for most of it. Running both scenarios in the estimator shows which side your product sits on, and therefore where design effort pays off."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How accurate are the carbon factors for materials and processes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Published factors vary with the data source, region, recycled content and the boundaries used, so treat the result as a comparison between design options rather than a declared figure. For a formal footprint, use a recognised lifecycle database and method, such as ISO 14040/14044 for lifecycle assessment or ISO 14067 for product carbon footprints."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use this result in marketing or on packaging?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not on its own. It is an early design estimate. Public environmental claims in the UK need to be accurate and backed by evidence, and the Competition and Markets Authority's Green Claims Code sets out what that means. Use this tool to make better design decisions, then commission or carry out a proper assessment before making claims."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../vendor/chart.js-4.6.2/chart.umd.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Carbon Footprint Estimator</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Live tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> <a href="#method">Method and assumptions</a></p>
+            <h1>Carbon Footprint Estimator</h1>
+            <p>
+              Estimate a product's concept-stage carbon footprint using material, process, transport, and use-phase assumptions.
+              The goal is not perfect certainty. It is to reveal where the biggest carbon drivers are likely to sit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Carbon footprint worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"materialMass":"0.45","materialType":"abs","processType":"injection","recycledContent":"30","transportDistance":"18000","transportMode":"sea","annualEnergy":"0","lifetimeYears":"8"}'>Moulded storage caddy</button>
+              <button class="preset-button" type="button" data-tool-preset='{"materialMass":"1.2","materialType":"pcabs","processType":"injection","recycledContent":"10","transportDistance":"19000","transportMode":"sea","annualEnergy":"25","lifetimeYears":"6"}'>Desk fan</button>
+              <button class="preset-button" type="button" data-tool-preset='{"materialMass":"4.5","materialType":"steel","processType":"sheet","recycledContent":"25","transportDistance":"600","transportMode":"road","annualEnergy":"0","lifetimeYears":"15"}'>Steel wall enclosure</button>
+            </div>
+            <form class="tool-form" id="carbon-form">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="materialMass">Material mass (kg)</label>
+                  <input id="materialMass" type="number" min="0.01" step="0.01" value="0.65">
+                </div>
+                <div class="field-group">
+                  <label for="materialType">Material type</label>
+                  <select id="materialType">
+                    <option value="aluminium">Aluminium</option>
+                    <option value="steel">Steel</option>
+                    <option value="abs" selected>ABS</option>
+                    <option value="pcabs">PC/ABS</option>
+                    <option value="recycledAbs">Recycled ABS</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="processType">Manufacturing process</label>
+                  <select id="processType">
+                    <option value="injection">Injection moulding</option>
+                    <option value="cnc">CNC machining</option>
+                    <option value="printing" selected>3D printing</option>
+                    <option value="sheet">Sheet metal / formed parts</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="recycledContent">Recycled content (%)</label>
+                  <input id="recycledContent" type="number" min="0" max="100" step="1" value="15">
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="transportDistance">Transport distance (km)</label>
+                  <input id="transportDistance" type="number" min="0" step="10" value="1200">
+                </div>
+                <div class="field-group">
+                  <label for="transportMode">Transport mode</label>
+                  <select id="transportMode">
+                    <option value="sea">Sea freight</option>
+                    <option value="road" selected>Road freight</option>
+                    <option value="air">Air freight</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="annualEnergy">Annual use-phase energy (kWh)</label>
+                  <input id="annualEnergy" type="number" min="0" step="0.1" value="18">
+                </div>
+                <div class="field-group">
+                  <label for="lifetimeYears">Expected product lifetime (years)</label>
+                  <input id="lifetimeYears" type="number" min="1" step="1" value="5">
+                </div>
+              </div>
+
+              <button class="button button-primary" type="submit">Estimate footprint</button>
+            </form>
+            <p class="helper-text">
+              Use this for option comparison during design. A formal lifecycle assessment should follow once materials, suppliers, and energy data are more stable.
+            </p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="chart-shell chart-shell-small">
+              <canvas id="carbonChart" role="img" aria-label="Carbon footprint breakdown chart"></canvas>
+            </div>
+            <div class="result-grid" id="carbonSummary"></div>
+            <div class="comparison-list" id="carbonBreakdown"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#carbonCopy"
+                  data-copy-feedback="#carbonCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="carbonCopy" class="copy-output" readonly></textarea>
+              <div id="carbonCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want help interpreting this for a real product?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="carbon_footprint_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <h2>What this estimate is useful for</h2>
+            <p>
+              Early carbon decisions are usually directional rather than exact. If a concept carries heavy material burden, energy-intensive use,
+              or unnecessarily long transport routes, that is enough to justify design changes before detailed LCA work begins.
+            </p>
+            <div class="worked-example">
+              <p>
+                A relatively small product can still become carbon-heavy if its use phase dominates. Equally, a passive product may be driven mostly by
+                material selection and transport assumptions.
+              </p>
+            </div>
+            <h2>Use the estimate to compare</h2>
+            <ul>
+              <li>material substitutions</li>
+              <li>manufacturing route changes</li>
+              <li>transport assumptions</li>
+              <li>durability and energy-consumption trade-offs</li>
+            </ul>
+
+            <h2 id="method">Method and assumptions</h2>
+            <div class="formula-block">Material = mass × material factor × (1 − recycled share × 0.35)
+Process = mass × process factor
+Transport = mass × distance × transport factor
+Use = annual energy (kWh) × lifetime (years) × 0.193
+Total = material + process + transport + use (kg CO₂e)</div>
+            <p><strong>Assumptions</strong></p>
+            <ul>
+              <li>Material factors are typical cradle-to-gate values per kilogram, and process factors are typical allowances per kilogram processed; both are built into the tool for comparison rather than certification.</li>
+              <li>Recycled content lowers the material factor by up to 35% at 100% recycled.</li>
+              <li>Use-phase electricity uses a fixed grid factor of 0.193 kg CO₂e per kWh, close to a recent UK grid average; official factors are updated each year.</li>
+            </ul>
+            <p><strong>Limits</strong></p>
+            <ul>
+              <li>It is a design-stage estimate, not a footprint to ISO 14067 or an LCA; see <a class="text-link-inline" href="../guides/product-carbon-footprint-vs-lca.html">product carbon footprint vs LCA</a>.</li>
+              <li>Packaging, consumables, end of life and real supplier data are not included; factors vary by source and region.</li>
+              <li>Do not use the result for public environmental claims.</li>
+            </ul>
+
+            <h2>How to read your result</h2>
+            <p>
+              The total is an estimate of the greenhouse gas emissions linked to one product over its life, in kilograms of CO2 equivalent.
+              The embodied figure covers material, manufacturing and transport before the product is switched on. The use-phase share tells
+              you how much of the total comes from the energy the product draws while in service.
+            </p>
+            <ul>
+              <li><strong>Use phase above roughly half:</strong> typical of products that plug in or run on batteries every day. Energy efficiency, standby power and lifetime are where design effort pays back most.</li>
+              <li><strong>Material dominates:</strong> common for passive products such as housewares and enclosures. Reducing mass, choosing a lower-impact material or raising recycled content will move the number more than anything else.</li>
+              <li><strong>Transport looks large:</strong> this usually points to air freight. Sea freight is far lower per kilogram, so check whether air is genuinely needed beyond urgent first shipments.</li>
+              <li><strong>Manufacturing stands out:</strong> often a sign of machining or printing parts that could be moulded or formed at volume.</li>
+            </ul>
+            <p>
+              Treat the result as a way to rank options rather than a figure to publish. If you need a number for customers, retailers or
+              regulators, a formal lifecycle assessment with supplier data is the right next step. Save your result to your
+              <a href="product-plan-builder.html">product plan</a> so sustainability choices sit beside cost and production decisions.
+              If you are unsure which lever to pull first, a <a href="../contact/index.html">short conversation with Andrew</a> can help.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/choosing-lower-carbon-materials.html">Choosing lower-carbon materials</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/product-carbon-footprint-vs-lca.html">Product carbon footprint vs LCA</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/packaging-design-for-shipping.html">Packaging design for shipping</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/estimating-product-carbon-footprint-during-design.html">Estimating Product Carbon Footprint During Design</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/why-product-lifetime-matters-more-than-recycling.html">Why Product Lifetime Matters More Than Recycling</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/sustainability-and-product-life.html">Sustainability and product life: overview</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/design-for-repair-and-disassembly.html">Design for repair and disassembly: making products that last longer</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Embodied carbon</span>
+                <span>Use-phase energy</span>
+                <span>Concept comparison</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>How can you estimate product carbon footprint during design?</h3>
+                <p>Use early assumptions for material mass, manufacturing process, transport, energy use, and recycled content to compare concepts before detailed LCA work.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is this a full lifecycle assessment?</h3>
+                <p>No. This is a concept-stage estimator intended to compare options and expose major drivers, not replace a formal LCA.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Which part of a product's footprint usually matters most?</h3>
+                <p>It depends on the product. For products that use energy, such as heaters, kettles or chargers, the use phase often dominates the total. For passive products such as housewares, furniture or enclosures, materials and manufacturing usually account for most of it. Running both scenarios in the estimator shows which side your product sits on, and therefore where design effort pays off.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How accurate are the carbon factors for materials and processes?</h3>
+                <p>Published factors vary with the data source, region, recycled content and the boundaries used, so treat the result as a comparison between design options rather than a declared figure. For a formal footprint, use a recognised lifecycle database and method, such as ISO 14040/14044 for lifecycle assessment or ISO 14067 for product carbon footprints.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I use this result in marketing or on packaging?</h3>
+                <p>Not on its own. It is an early design estimate. Public environmental claims in the UK need to be accurate and backed by evidence, and the Competition and Markets Authority's Green Claims Code sets out what that means. Use this tool to make better design decisions, then commission or carry out a proper assessment before making claims.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">How this calculator works</p>
+            <h2>Early-stage estimate, not final quotation</h2>
+            <p>This calculator turns the assumptions you enter into an early engineering or commercial estimate. It is most useful for comparing options, surfacing trade-offs, and deciding what needs deeper validation next.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This engineering calculator and supporting analysis were created by Orion Design. Use the result as an early decision aid, then confirm the numbers with suppliers, manufacturing partners, and project-specific data.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-purpose.html">Product Purpose</a>
+          <a href="product-lifecycle-explorer.html">Lifecycle Explorer</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/carbon-footprint.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Estimating Assembly Time During Design | Orion Design</title>
+    <meta
+      name="description"
+      content="How engineers estimate assembly time during design using part count, joining effort, handling complexity, inspection time, and batch economics."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/assembly-time-estimate.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Estimating Assembly Time During Design">
+    <meta
+      property="og:description"
+      content="How engineers estimate assembly time during design using part count, joining effort, handling complexity, inspection time, and batch economics."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/assembly-time-estimate.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-assembly-time-estimate.jpg">
+    <meta property="og:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Estimating Assembly Time During Design">
+    <meta
+      name="twitter:description"
+      content="How engineers estimate assembly time during design using part count, joining effort, handling complexity, inspection time, and batch economics."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-assembly-time-estimate.jpg">
+    <meta name="twitter:image:alt" content="Orion Design product design engineering projects, tools, and case studies">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-assembly-time-estimate.jpg",
+        "headline": "Estimating Assembly Time During Design",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "dateModified": "2026-11-25",
+        "articleSection": "Design for assembly",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/assembly-time-estimate.html",
+        "datePublished": "2026-03-12"
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Assembly time estimate",
+                "item": "https://oriondesign.xyz/guides/assembly-time-estimate.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do engineers estimate assembly time before production?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "They use early proxies such as part count, join count, handling difficulty, reorientation, and inspection effort to compare concepts before process engineering is locked."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What design changes reduce assembly time most?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Reducing part count, removing unnecessary joins, simplifying orientation, and improving part location usually provide the strongest gains."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does assembly time matter so early?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Because recurring seconds become recurring cost across pilot, launch, and scaled production, and those costs are often created by decisions made during architecture and concept development."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does it take to assemble a product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends almost entirely on the design. A small product with a handful of snap-fitted parts may take well under a minute by hand; one with many screws, cables and checks can take several minutes or more. Count the parts, joins, reorientations and checks to get a first estimate."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is design for assembly (DFA)?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Design for assembly is the practice of designing parts and products so they are quick, easy and hard to get wrong when assembled. Its core principles are fewer parts, fewer separate fasteners, parts that are easy to handle and self-locating, and an assembly built from one direction with few reorientations. Boothroyd and Dewhurst developed the classic structured method."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Assembly time estimate</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 25 November 2026 <span aria-hidden="true">·</span> For engineers and designers reducing assembly cost before the design is fixed</p>
+            <h1>Estimating assembly time during design.</h1>
+            <p>
+              Assembly cost is often locked in long before the manufacturing line exists. Part count, fastening logic,
+              awkward handling, and repeated checks all leave early signals if you know how to read them.
+            </p>
+          </div>
+          <div class="metric-strip">
+            <div class="metric-pill">
+              <strong>Topic</strong>
+              <span>Design for assembly</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Audience</strong>
+              <span>Engineers and product teams</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Tool</strong>
+              <span>Assembly Time Estimator</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Use it for</strong>
+              <span>Architecture comparison</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>To estimate assembly time during design, count the parts, joins, reorientations and checks in each concept, give each a typical time, and add them up.</h2>
+              <div class="formula-block">Assembly time ≈ (parts × handling and insertion time) + (joins × fastening time) + (reorientations × turn time) + (checks × inspection time)</div>
+              <p>
+                Multiply the total in seconds by a fully loaded labour rate per second to get labour cost per unit. The result is a comparison tool, not a forecast:
+                it shows which concept is likely to be quicker and cheaper to build, and which parts and joins are driving the time, long before a production line is planned.
+              </p>
+            </div>
+
+            <p>
+              Early-stage assembly estimates are imperfect, but they are still highly useful. The goal is not to predict final takt time to the second.
+              The goal is to expose which concept directions are likely to become labour-heavy and which ones are quietly removing future cost.
+            </p>
+
+            <div class="article-highlight">
+              <strong>Best use of the estimate:</strong>
+              compare concepts, not absolutes. If one architecture removes joins, handling steps, or reorientation, that signal is more valuable than pretending the estimate is exact.
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#where-time-goes">Where the time usually comes from</a></li>
+              <li><a class="text-link-inline" href="#typical-times">Typical times to use at concept stage</a></li>
+              <li><a class="text-link-inline" href="#dfa-method">The classic method: design for assembly</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example</a></li>
+              <li><a class="text-link-inline" href="#why-it-matters">Why this matters before manufacturing engineering starts</a></li>
+              <li><a class="text-link-inline" href="#review-questions">Five design-for-assembly questions to ask in review</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#conversation-starter">Use the estimate as a design conversation starter</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Next steps</a></li>
+              <li><a class="text-link-inline" href="#related-tools">Pair the assembly tool with other decisions</a></li>
+            </ol>
+
+            <h2 id="where-time-goes">Where the time usually comes from</h2>
+            <p>
+              In manual or semi-manual assembly, recurring time often accumulates from mundane actions rather than dramatic ones: picking up a part, turning the assembly,
+              aligning a fastener, checking that a feature has seated correctly, or pausing because the next step is not obvious.
+            </p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Assembly driver</th>
+                  <th>What it looks like in the design</th>
+                  <th>Why it matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-part-count" data-definition="The number of separate parts in a product. Each one adds tooling or set-up, stock, handling and assembly time, so reducing it is a core aim of design for assembly." aria-label="Part count: The number of separate parts in a product. Each one adds tooling or set-up, stock, handling and assembly time, so reducing it is a core aim of design for assembly. (glossary)">Part count</a></td>
+                  <td>More individual handled items</td>
+                  <td>Each extra part creates handling, orientation, and error potential</td>
+                </tr>
+                <tr>
+                  <td>Handling difficulty</td>
+                  <td>Small, flexible, slippery, sharp or tangling parts; parts that look symmetrical but are not</td>
+                  <td>Awkward parts slow the pick and raise the chance of fitting them the wrong way round</td>
+                </tr>
+                <tr>
+                  <td>Insertion difficulty</td>
+                  <td>Tight fits with no lead-in, parts that must be held while something else is fitted, obstructed access or poor visibility</td>
+                  <td>Insertion that needs care or a second hand is slower and less repeatable</td>
+                </tr>
+                <tr>
+                  <td>Join count</td>
+                  <td>More screws, clips, adhesives, or repeated fastening steps</td>
+                  <td>Joining effort scales directly with labour time</td>
+                </tr>
+                <tr>
+                  <td>Reorientation</td>
+                  <td>The build must be turned repeatedly during the process</td>
+                  <td>Operator movement adds non-value time and often increases mistake risk</td>
+                </tr>
+                <tr>
+                  <td>Inspection burden</td>
+                  <td>Frequent checks to confirm fit or function</td>
+                  <td>QA time is recurring cost and often indicates design ambiguity</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 id="typical-times">Typical times to use at concept stage</h2>
+            <p>
+              You do not need a stopwatch study to start. Use rough, consistent allowances for each action, and apply the same allowances to every concept you compare.
+              The ranges below are broad, hedged starting points for manual bench assembly of small products; real times depend on the part, the operator, the fixtures and the batch size.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Action</th>
+                  <th>Rough allowance</th>
+                  <th>What pushes it up</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pick and place an easy part</td>
+                  <td>A few seconds</td>
+                  <td>Small or nested parts, tweezers, holding down while fitting</td>
+                </tr>
+                <tr>
+                  <td>Snap fit or push fit</td>
+                  <td>A few seconds</td>
+                  <td>No lead-in, high insertion force, uncertain engagement</td>
+                </tr>
+                <tr>
+                  <td>Driving a screw</td>
+                  <td>Often several seconds or more</td>
+                  <td>Hand starting, mixed screw types, poor access, torque checks</td>
+                </tr>
+                <tr>
+                  <td>Adhesive or tape</td>
+                  <td>Several seconds plus any cure or hold time</td>
+                  <td><a class="glossary-term" href="../knowledge/glossary.html#term-surface-preparation" data-definition="Cleaning and treating a surface before bonding, painting or coating, for example by removing grease and mould release, abrading or priming, so the adhesive or coating holds." aria-label="Surface preparation: Cleaning and treating a surface before bonding, painting or coating, for example by removing grease and mould release, abrading or priming, so the adhesive or coating holds. (glossary)">Surface preparation</a>, careful alignment, waiting before the next step</td>
+                </tr>
+                <tr>
+                  <td>Turning the assembly over</td>
+                  <td>A few seconds</td>
+                  <td>Loose parts that must be held in place, heavy or awkward assemblies</td>
+                </tr>
+                <tr>
+                  <td>Visual or functional check</td>
+                  <td>A few seconds to much longer</td>
+                  <td>Hidden features, test equipment, recording results</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              If you have timed a similar product, use those figures instead. The <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a> applies consistent allowances so you can compare concepts quickly.
+            </p>
+
+            <h2 id="dfa-method">The classic method: design for assembly</h2>
+            <p>
+              Structured <a class="glossary-term" href="../knowledge/glossary.html#term-design-for-assembly-dfa" data-definition="Designing a product so it is quick and reliable to put together, for example with fewer parts and fasteners." aria-label="design for assembly: Designing a product so it is quick and reliable to put together, for example with fewer parts and fasteners. (glossary)">design for assembly</a> (DFA) was formalised by Geoffrey Boothroyd and Peter Dewhurst, whose method estimates handling and insertion time for each part from its features
+              and compares the design against a theoretical minimum number of parts. You do not need the full method to use its core idea. For each part, ask three questions:
+            </p>
+            <ol>
+              <li>Does the part move relative to the parts it joins during normal use?</li>
+              <li>Must it be a different material, or isolated from the others, for a real functional reason?</li>
+              <li>Must it be separate so that other parts can be assembled, removed or serviced?</li>
+            </ol>
+            <p>
+              If the answer to all three is no, the part is a candidate for combining with a neighbour. Fasteners, brackets, spacers and covers often fail this test.
+              Treat the result as a prompt, not a rule: a separate part can still be the right choice for cost, tooling, repair or supply reasons.
+            </p>
+
+            <div class="pull-quote">
+              <p>
+                A few seconds lost in one unit rarely look alarming. A few seconds repeated across every unit, every batch, and every operator become a design decision with financial consequences.
+              </p>
+            </div>
+
+            <h2 id="example">Worked example</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative figures only. Imagine two concepts that create similar user value. Concept A uses 12 parts, 8 screwed joins, 3 reorientations and 2 checks.
+                Concept B uses 9 parts and 5 joins, removes one awkward reorientation, and needs only 1 check because its parts can only fit one way.
+              </p>
+              <p>
+                Using assumed allowances (lower than the <a class="glossary-term" href="../knowledge/glossary.html#term-assembly-time" data-definition="The labour time needed to put a product together, which drives assembly cost on every unit." aria-label="Assembly Time: The labour time needed to put a product together, which drives assembly cost on every unit. (glossary)">Assembly Time</a> Estimator's defaults of 7 to 18 seconds per part and 6 seconds per reorientation) of 4 seconds to handle and insert each part, 8 seconds per screw, 4 seconds per reorientation and 5 seconds per check:
+              </p>
+              <ul>
+                <li>Concept A: (12 × 4) + (8 × 8) + (3 × 4) + (2 × 5) = 48 + 64 + 12 + 10 = 134 seconds.</li>
+                <li>Concept B: (9 × 4) + (5 × 8) + (2 × 4) + (1 × 5) = 36 + 40 + 8 + 5 = 89 seconds.</li>
+              </ul>
+              <p>
+                With an assumed fully loaded labour rate of £30 an hour, Concept A costs about £1.12 of labour per unit (134 ÷ 3,600 × £30) and Concept B about £0.74 (89 ÷ 3,600 × £30).
+                The 45-second saving is worth about £0.38 a unit, or roughly £3,750 over 10,000 units, before counting fewer parts to buy, stock and inspect.
+                The absolute numbers will be wrong in detail; the direction, and the fact that screws account for nearly half of Concept A's time, are the useful findings.
+              </p>
+            </div>
+
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 276" width="100%" role="img" aria-labelledby="at-fig-title at-fig-desc">
+                <title id="at-fig-title">Estimated assembly time for two concepts, split by action</title>
+                <desc id="at-fig-desc">Two stacked bars drawn to scale from the worked example. Concept A takes 134 seconds: 48 handling and inserting 12 parts, 64 driving 8 screws, 12 for 3 reorientations and 10 for 2 checks, about £1.12 of labour at £30 an hour. Concept B takes 89 seconds: 36, 40, 8 and 5, about £0.74. The 45-second saving is worth about £0.38 a unit.</desc>
+                <text x="20" y="20" class="gd-t"><tspan class="gd-v">134 s</tspan> Concept A, about £1.12 of labour</text>
+                <rect x="20" y="27" width="107.5" height="20" class="gd-fill-indigo gd-seg"/>
+                <rect x="127.5" y="27" width="143.3" height="20" class="gd-fill-magenta gd-seg"/>
+                <rect x="270.7" y="27" width="26.9" height="20" class="gd-fill-teal gd-seg"/>
+                <rect x="297.6" y="27" width="22.4" height="20" class="gd-fill-teal-soft gd-seg"/>
+                <text x="20" y="78" class="gd-t"><tspan class="gd-v">89 s</tspan> Concept B, about £0.74 of labour</text>
+                <rect x="20" y="85" width="80.6" height="20" class="gd-fill-indigo gd-seg"/>
+                <rect x="100.6" y="85" width="89.6" height="20" class="gd-fill-magenta gd-seg"/>
+                <rect x="190.1" y="85" width="17.9" height="20" class="gd-fill-teal gd-seg"/>
+                <rect x="208.1" y="85" width="11.2" height="20" class="gd-fill-teal-soft gd-seg"/>
+                <text x="250" y="138" text-anchor="end" class="gd-m">A</text>
+                <text x="310" y="138" text-anchor="end" class="gd-m">B</text>
+                <rect x="20" y="150" width="14" height="14" rx="2" class="gd-fill-indigo"/>
+                <text x="40" y="162" class="gd-t">Handle and insert parts</text>
+                <text x="250" y="162" text-anchor="end" class="gd-v">48 s</text>
+                <text x="310" y="162" text-anchor="end" class="gd-v">36 s</text>
+                <rect x="20" y="174" width="14" height="14" rx="2" class="gd-fill-magenta"/>
+                <text x="40" y="186" class="gd-t gd-tm">Drive screws</text>
+                <text x="250" y="186" text-anchor="end" class="gd-v gd-tm">64 s</text>
+                <text x="310" y="186" text-anchor="end" class="gd-v gd-tm">40 s</text>
+                <rect x="20" y="198" width="14" height="14" rx="2" class="gd-fill-teal"/>
+                <text x="40" y="210" class="gd-t">Turn the assembly</text>
+                <text x="250" y="210" text-anchor="end" class="gd-v">12 s</text>
+                <text x="310" y="210" text-anchor="end" class="gd-v">8 s</text>
+                <rect x="20" y="222" width="14" height="14" rx="2" class="gd-fill-teal-soft"/>
+                <text x="40" y="234" class="gd-t">Check</text>
+                <text x="250" y="234" text-anchor="end" class="gd-v">10 s</text>
+                <text x="310" y="234" text-anchor="end" class="gd-v">5 s</text>
+                <text x="20" y="266" class="gd-t">Saving: <tspan class="gd-v gd-tt">45 s, about £0.38 a unit</tspan></text>
+              </svg>
+              <figcaption>Illustrative allowances from the example above, bars drawn to scale. Screws are nearly half of Concept A's time, and fewer screws give Concept B the largest part of its 45-second saving.</figcaption>
+            </figure>
+
+            <h2 id="why-it-matters">Why this matters before manufacturing engineering starts</h2>
+            <ul>
+              <li>Assembly cost compounds over <a class="text-link-inline" href="planning-a-pilot-production-run.html">pilot runs</a>, launch batches, and production scale-up.</li>
+              <li>Complex assembly often hides reliability and quality risk as well as labour cost.</li>
+              <li>Many assembly burdens are locked in by architecture decisions long before detailed production planning exists.</li>
+              <li>Every part removed also removes a drawing, a supplier line, a stock item and an inspection point, so the saving usually reaches beyond labour. For a product already in production, <a class="text-link-inline" href="reducing-the-cost-of-an-existing-product.html">reducing the cost of an existing product</a> shows how to weigh that saving against tool changes and retesting.</li>
+            </ul>
+
+            <h2 id="review-questions">Five design-for-assembly questions to ask in review</h2>
+            <ol>
+              <li>Can two parts become one without damaging serviceability?</li>
+              <li>Can alignment features become more self-locating?</li>
+              <li>Can the join count be reduced without compromising strength or repair? (<a class="text-link-inline" href="joining-methods-for-product-design.html">Joining methods compared</a> sets out the trade-offs.)</li>
+              <li>Can the build be completed in fewer orientations?</li>
+              <li>Does the design force extra checking because the correct state is not obvious?</li>
+            </ol>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Treating the estimate as a quote.</strong>
+                Concept-stage figures compare options. Your manufacturer will set real times from their own process, fixtures and labour rates.
+              </div>
+              <div>
+                <strong>Merging parts at any cost.</strong>
+                Combining parts can create a complex, expensive moulding or make repair impossible. Check the tooling cost and the service plan before merging.
+              </div>
+              <div>
+                <strong>Counting parts but not joins.</strong>
+                Two designs with the same part count can differ greatly in time if one uses screws and the other uses snap fits or locating features.
+              </div>
+              <div>
+                <strong>Ignoring mistake-proofing.</strong>
+                A part that can be fitted the wrong way round adds checking time and rework. Make asymmetric parts clearly asymmetric, or fully symmetrical.
+              </div>
+              <div>
+                <strong>Using different allowances for different concepts.</strong>
+                The comparison is only fair if each action is valued the same way in every option.
+              </div>
+              <div>
+                <strong>Forgetting cables, labels and packing.</strong>
+                Routing wires, fitting labels and packing the product are real steps and are often missing from early estimates.
+              </div>
+            </div>
+
+            <h2 id="conversation-starter">Use the estimate as a design conversation starter</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Look for repeated actions.</strong>
+                Repetition is where labour hides. One difficult step repeated eight times is usually more important than one obviously awkward step.
+              </div>
+              <div>
+                <strong>Challenge false precision.</strong>
+                The point is not to claim that assembly will take exactly 4.6 minutes. The point is to know which concept is directionally better.
+              </div>
+              <div>
+                <strong>Link time to architecture.</strong>
+                If the estimate changes substantially after a small architecture change, that is a strong design signal worth acting on.
+              </div>
+            </div>
+
+            <h2 id="next-steps">Next steps</h2>
+            <ol>
+              <li>List the parts and joins for each concept, ideally in the <a class="text-link-inline" href="../tools/bom-builder.html">BOM Builder</a>.</li>
+              <li>Run each concept through the <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a> using the same allowances.</li>
+              <li>Apply the three minimum-part questions above to the parts driving the most time.</li>
+              <li>Check that any merged parts are still mouldable or machinable with the <a class="text-link-inline" href="../tools/dfm-checker.html">DFM Checker</a>.</li>
+              <li>Feed the labour figure into the <a class="text-link-inline" href="../tools/product-cost-estimator.html">Product Cost Estimator</a> to see its effect on unit cost.</li>
+            </ol>
+            <p>
+              For the wider context, see <a class="text-link-inline" href="how-to-estimate-manufacturing-cost.html">how to estimate manufacturing cost</a>,
+              <a class="text-link-inline" href="how-engineers-choose-between-concepts.html">how engineers choose between concepts</a>, and
+              <a class="text-link-inline" href="design-for-repair-and-disassembly.html">design for repair and disassembly</a>, which covers the other side of the same joints.
+              The <a class="text-link-inline" href="development-and-prototyping.html">Development and prototyping hub</a> and the
+              <a class="text-link-inline" href="manufacturing-and-cost.html">Manufacturing and cost hub</a> put this in the wider product journey.
+            </p>
+
+            <h2 id="related-tools">Pair the assembly tool with other decisions</h2>
+            <p>
+              Use the <a class="text-link-inline" href="../tools/assembly-time.html">Assembly Time Estimator</a> during concept comparison, then pair it with the
+              <a class="text-link-inline" href="../tools/manufacturing-payoff.html"> Manufacturing Payoff Visualiser</a> to understand whether a simpler assembly route also supports a stronger production model.
+              If the design is moving toward scale, the <a class="text-link-inline" href="../tools/production-strategy-planner.html">Production Strategy Planner</a> helps decide when to formalise the route.
+            </p>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Estimate the labour burden</h3>
+                <p>Run the assembly model using your current part count, join count, and handling assumptions.</p>
+                <a
+                  class="button button-primary"
+                  href="../tools/assembly-time.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="assembly_article_to_assembly_tool"
+                >
+                  Open Assembly Time Estimator
+                </a>
+              </div>
+              <div class="article-action-card">
+                <h3>Connect assembly to manufacturing strategy</h3>
+                <p>Use the adjacent tools to compare whether the simpler concept also improves scale economics and production timing.</p>
+                <div class="cta-row">
+                  <a
+                    class="button button-secondary"
+                    href="../tools/manufacturing-payoff.html"
+                    data-analytics-event="article_cta_click"
+                    data-analytics-label="assembly_article_to_manufacturing_tool"
+                  >
+                    Manufacturing Payoff
+                  </a>
+                  <a
+                    class="button button-secondary"
+                    href="../tools/production-strategy-planner.html"
+                    data-analytics-event="article_cta_click"
+                    data-analytics-label="assembly_article_to_production_tool"
+                  >
+                    Production Strategy
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="callout-banner">
+              <h2>If assembly complexity is growing, fix it in the architecture rather than pricing it into operations.</h2>
+              <p>
+                Orion Design helps teams turn concept-stage DFA signals into clearer architecture and manufacturing decisions before recurring labour becomes locked in.
+              </p>
+              <div class="cta-row">
+                <a
+                  class="button button-primary"
+                  href="../contact/index.html"
+                  data-analytics-event="article_cta_click"
+                  data-analytics-label="assembly_article_to_contact"
+                >
+                  Discuss a product architecture
+                </a>
+                <a class="button button-secondary" href="../tools/index.html">Browse all tools</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related tools</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/assembly-time.html">Assembly Time Estimator</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a>
+                </div>
+                <div class="aside-item">
+                  <a class="text-link" href="../tools/production-strategy-planner.html">Production Strategy Planner</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item">
+                  <a class="text-link" href="manufacturing-processes-compared.html">Manufacturing processes compared</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Typical questions</p>
+              <div class="tag-row">
+                <span>Assembly time calculator</span>
+                <span>DFA estimate</span>
+                <span>Part count cost</span>
+              </div>
+            </div>
+            <div class="notice-card">
+              <p class="aside-title">Design review prompt</p>
+              <p>If the assembly estimate rises mainly because of repeated joins or reorientation, the problem is probably structural, not operational.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>How do engineers estimate assembly time before production?</h3>
+                <p>They use early proxies such as part count, join count, handling difficulty, reorientation, and inspection effort to compare concepts before process engineering is locked.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What design changes reduce assembly time most?</h3>
+                <p>Reducing part count, removing unnecessary joins, simplifying orientation, and improving part location usually provide the strongest gains.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Why does assembly time matter so early?</h3>
+                <p>Because recurring seconds become recurring cost across pilot, launch, and scaled production, and those costs are often created by decisions made during architecture and concept development.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How long does it take to assemble a product?</h3>
+                <p>It depends almost entirely on the design. A small product with a handful of snap-fitted parts may take well under a minute by hand; one with many screws, cables and checks can take several minutes or more. Count the parts, joins, reorientations and checks to get a first estimate.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is design for assembly (DFA)?</h3>
+                <p>Design for assembly is the practice of designing parts and products so they are quick, easy and hard to get wrong when assembled. Its core principles are fewer parts, fewer separate fasteners, parts that are easy to handle and self-locating, and an assembly built from one direction with few reorientations. Boothroyd and Dewhurst developed the classic structured method.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section knowledge-footer">
+        <div class="container knowledge-meta">
+          <div class="author-card">
+            <p class="eyebrow">Author</p>
+            <h2>Andrew Hunter</h2>
+            <p>Product design engineer working across manufacturability, sustainability, and hardware commercial decisions in Belfast, Northern Ireland.</p>
+          </div>
+          <div class="citation-card">
+            <p class="eyebrow">Source and Attribution</p>
+            <p>This article was created by Orion Design as part of a human-first engineering knowledge resource for product teams. Use it to inform early decisions, then validate against project-specific data, supplier input, and production constraints.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Practical guidance for engineers, designers, and startup teams building physical products.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/assembly-time.html">Assembly Time tool</a>
+          <a href="../tools/manufacturing-payoff.html">Manufacturing Payoff</a>
+          <a href="sustainable-product-design.html">Sustainability article</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

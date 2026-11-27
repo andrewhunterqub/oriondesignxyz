@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Overmoulding and Two-Shot Moulding | Orion Design</title>
+    <meta
+      name="description"
+      content="What overmoulding, two-shot and insert moulding are, when to use them, bonding and interlocks, design rules, tooling trade-offs and how to prototype."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/overmoulding-and-two-shot-moulding.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Overmoulding and two-shot moulding explained | Orion Design">
+    <meta
+      property="og:description"
+      content="What overmoulding, two-shot and insert moulding are, when to use them, bonding and interlocks, design rules, tooling trade-offs and how to prototype."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/overmoulding-and-two-shot-moulding.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-overmoulding-and-two-shot-moulding.jpg">
+    <meta property="og:image:alt" content="Overmoulding and two-shot moulding guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Overmoulding and two-shot moulding explained | Orion Design">
+    <meta
+      name="twitter:description"
+      content="What overmoulding, two-shot and insert moulding are, when to use them, bonding and interlocks, design rules, tooling trade-offs and how to prototype."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-overmoulding-and-two-shot-moulding.jpg">
+    <meta name="twitter:image:alt" content="Overmoulding and two-shot moulding guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-overmoulding-and-two-shot-moulding.jpg",
+        "headline": "Overmoulding and two-shot moulding explained",
+        "description": "What overmoulding, two-shot and insert moulding are, when to use them, bonding and interlocks, design rules, tooling trade-offs and how to prototype.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Manufacturing processes",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/overmoulding-and-two-shot-moulding.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Overmoulding"
+          },
+          {
+            "@type": "Thing",
+            "name": "Two-shot injection moulding"
+          },
+          {
+            "@type": "Thing",
+            "name": "Insert moulding"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Overmoulding and two-shot moulding",
+                "item": "https://oriondesign.xyz/guides/overmoulding-and-two-shot-moulding.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the difference between overmoulding and two-shot moulding?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Overmoulding is the general term for moulding a second material over a first part. Two-shot moulding is one way of doing it, with both materials made in one machine and one tool. Pick-and-place overmoulding uses two separate tools instead."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will a soft grip stay bonded to a hard plastic housing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It can, if the two grades are compatible and the part is designed well. Check the material suppliers' compatibility data for the exact grades, add mechanical interlocks where peeling would matter, and test the bond on trial parts from the real tool."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is overmoulding worth it at low volumes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Often not. The extra tooling is shared over few parts, so a separately moulded grip or seal that is glued or pressed in is usually cheaper at first. Overmoulding tends to pay back once volumes are steady or a loose part causes problems."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is insert moulding used for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Moulding plastic around a part placed in the tool before each shot, such as a threaded metal insert, a pin, a cable or a small electronic part. It gives a strong, sealed joint without a separate assembly step."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I prototype an overmoulded part without a mould tool?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, approximately. Cast urethane over a printed substrate, or multi-material printing, shows shape and feel well enough for user testing. Neither shows how the production materials will bond, so the bond is proven only at tool trials."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Overmoulding and two-shot moulding</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders and engineers deciding whether a soft grip, seal or bumper should be moulded on or fitted separately</p>
+            <h1>Overmoulding and two-shot moulding explained</h1>
+            <p>
+              What overmoulding, two-shot and insert moulding mean, why products use them, how the two materials stay together, the design rules to agree with your moulder, the tooling trade-offs, and how to prototype a two-material part before committing to steel.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Overmoulding moulds a second material, often a soft thermoplastic elastomer (TPE), over or around a first part so the two come out of the tool as one component.</h2>
+              <p>
+                It gives grip, impact protection, a seal or strain relief without separate parts to fit. It works only when the materials bond well or are locked together, and it costs more in tooling than a separate part.
+                At low volumes a glued or pressed-in part is often the better choice; at higher volumes, or where a loose part would be a reliability problem, overmoulding usually earns its place.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#terms">What the terms mean</a></li>
+              <li><a class="text-link-inline" href="#why">Why use a second material</a></li>
+              <li><a class="text-link-inline" href="#bonding">Bonding between materials</a></li>
+              <li><a class="text-link-inline" href="#design">Design guidance</a></li>
+              <li><a class="text-link-inline" href="#cost">Cost and tooling trade-offs</a></li>
+              <li><a class="text-link-inline" href="#prototyping">Prototyping a two-material part</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: from glued sleeve to overmoulded grip</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+              <li><a class="text-link-inline" href="#next-steps">Next steps</a></li>
+            </ol>
+
+            <h2 id="terms">What the terms mean</h2>
+            <p>
+              All three processes are variations on standard <a class="text-link-inline" href="injection-moulding-explained.html">injection moulding</a>. The difference is what is already in the tool when the plastic is injected, and how it got there.
+            </p>
+            <ul>
+              <li><strong>Overmoulding</strong> is the general term for moulding a second material over a first part, called the substrate. The most common case is a rigid plastic housing with a soft <a class="glossary-term" href="../knowledge/glossary.html#term-tpe" data-definition="Thermoplastic elastomer: a rubber-like plastic that can be moulded and over-moulded." aria-label="TPE: Thermoplastic elastomer: a rubber-like plastic that can be moulded and over-moulded. (glossary)">TPE</a> grip, bumper or seal moulded onto it. The substrate may be made in a separate tool and moved across, by hand or by robot, which is often called pick-and-place <a class="glossary-term" href="../knowledge/glossary.html#term-overmoulding" data-definition="Moulding one material, often a soft TPE, over another part to add grip, seals or colour." aria-label="overmoulding: Moulding one material, often a soft TPE, over another part to add grip, seals or colour. (glossary)">overmoulding</a>.</li>
+              <li><strong>Two-shot moulding</strong>, also called 2K or multi-shot moulding, makes both materials in one machine and one tool. The machine has two injection units. The first shot forms the substrate, the tool rotates or shuttles it to a second cavity, and the second shot is moulded onto it while it is still warm.</li>
+              <li><strong>Insert moulding</strong> moulds plastic around a part that is not itself moulded in that tool: a threaded metal insert, a pin, a cable, or an electronic part such as a sensor or small <a class="text-link-inline" href="electronics-in-a-physical-product.html">circuit board</a>. The insert is placed in the tool before each shot.</li>
+            </ul>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 230" width="100%" role="img" aria-labelledby="om-fig-title om-fig-desc">
+                <title id="om-fig-title">Cross-section of an overmoulded part with an interlock hole</title>
+                <desc id="om-fig-desc">A rigid substrate shown as a horizontal bar. A soft overmould layer sits on top of part of it, stopping at shut-off edges on the substrate. Under the overmould, a hole passes through the substrate; the soft material fills the hole and spreads into a small cap on the underside, locking the two materials together mechanically.</desc>
+                <text x="170" y="22" text-anchor="middle" class="gd-h">Soft overmould (TPE)</text>
+                <line x1="170" y1="30" x2="170" y2="68" class="gd-line"/>
+                <rect x="30" y="90" width="280" height="40" class="gd-box-indigo"/>
+                <path d="M70 90 V70 H270 V90 H180 V130 H192 V142 H148 V130 H160 V90 Z" class="gd-box-teal"/>
+                <text x="36" y="115" class="gd-t">Rigid substrate</text>
+                <line x1="270" y1="90" x2="300" y2="60" class="gd-line"/>
+                <text x="250" y="52" class="gd-m">Shut-off edge</text>
+                <line x1="170" y1="142" x2="170" y2="176" class="gd-line"/>
+                <text x="170" y="194" text-anchor="middle" class="gd-t">Interlock hole: soft material</text>
+                <text x="170" y="212" text-anchor="middle" class="gd-t">flows through and locks behind</text>
+              </svg>
+              <figcaption>Illustrative cross-section. The overmould stops at a defined shut-off edge, and where the chemical bond may be weak, the material flows through a hole and forms a small head behind the substrate so it cannot peel away.</figcaption>
+            </figure>
+
+            <h2 id="why">Why use a second material</h2>
+            <ul>
+              <li><strong>Grip and feel.</strong> A soft-touch grip on a handheld tool or device feels better, is less slippery and can hide fastener heads and joins.</li>
+              <li><strong>Bumpers and impact protection.</strong> A soft band at the corners spreads the force of a drop over a longer time. The <a class="text-link-inline" href="designing-for-drops-and-impacts.html">drops and impacts guide</a> explains when that beats a geometry change.</li>
+              <li><strong>Seals moulded in place.</strong> A TPE seal moulded onto a housing flange cannot be lost or fitted wrongly, though it cannot be replaced on its own. The <a class="text-link-inline" href="sealing-and-waterproofing-an-enclosure.html">sealing and waterproofing guide</a> compares it with <a class="glossary-term" href="../knowledge/glossary.html#term-gasket" data-definition="A soft rubber or foam seal squeezed between two parts so it fills the small gaps between them. It needs a stiff flange and even, controlled compression to seal reliably." aria-label="gaskets: A soft rubber or foam seal squeezed between two parts so it fills the small gaps between them. It needs a stiff flange and even, controlled compression to seal reliably. (glossary)">gaskets</a> and <a class="glossary-term" href="../knowledge/glossary.html#term-o-ring" data-definition="A moulded rubber ring that sits in a groove and seals when squeezed between two parts. Because the groove controls the squeeze, it is one of the most dependable seals, and standard sizes are widely available." aria-label="O-rings: A moulded rubber ring that sits in a groove and seals when squeezed between two parts. Because the groove controls the squeeze, it is one of the most dependable seals, and standard sizes are widely available. (glossary)">O-rings</a>.</li>
+              <li><strong>Cable strain relief.</strong> An overmoulded boot where a lead leaves a plug or housing takes the bending and pulling away from the conductors, as described in <a class="text-link-inline" href="cables-wiring-and-connectors-inside-a-product.html">cables, wiring and connectors</a>.</li>
+              <li><strong>Integrated buttons.</strong> A flexible membrane moulded into a rigid housing can act as a sealed button over a switch. See <a class="text-link-inline" href="designing-buttons-switches-and-controls.html">designing buttons, switches and controls</a> for the feel and travel side.</li>
+              <li><strong>Fewer assembly steps.</strong> One component instead of two means no adhesive, no fitting operation and nothing to fall off in use.</li>
+            </ul>
+
+            <h2 id="bonding">Bonding between materials</h2>
+            <p>
+              The two materials hold together in two ways: a chemical bond, where the hot second material partly fuses with the surface of the substrate, and a mechanical lock, where the geometry stops them separating. Most reliable parts use both.
+            </p>
+            <p>
+              Chemical compatibility is the first check. TPEs are commonly overmoulded onto PP, <a class="glossary-term" href="../knowledge/glossary.html#term-abs" data-definition="Acrylonitrile butadiene styrene: a common, low-cost rigid plastic with a good surface finish, widely used for enclosures and consumer products." aria-label="ABS: Acrylonitrile butadiene styrene: a common, low-cost rigid plastic with a good surface finish, widely used for enclosures and consumer products. (glossary)">ABS</a> or PC, for example, but whether a particular pair bonds well depends on the grades, not just the families. TPE suppliers publish compatibility data and offer grades intended to bond to specific substrates.
+              Check that data for the exact grades you plan to use, tell your <a class="glossary-term" href="../knowledge/glossary.html#term-moulder" data-definition="A company that runs injection-moulding machines to make parts from a mould tool. It may also make the tool, or work with a separate toolmaker." aria-label="moulder: A company that runs injection-moulding machines to make parts from a mould tool. It may also make the tool, or work with a separate toolmaker. (glossary)">moulder</a> which pair you have chosen, and confirm the bond with peel tests on trial parts. The <a class="text-link-inline" href="choosing-plastic-materials.html">choosing plastic materials guide</a> covers the substrate side of that choice.
+            </p>
+            <p>
+              Where bonding is weak, or peel forces will be high, add <strong>mechanical interlocks</strong>: holes through the substrate that the second material flows through and caps behind, undercuts or grooves it wraps into, or a wrap over an edge. They are also a sensible backstop for parts that will be handled roughly or heat cycled.
+            </p>
+            <div class="article-highlight">
+              <strong>Practical rule:</strong>
+              never rely on a chemical bond you have not tested on real moulded parts. Design in at least some mechanical interlock wherever a peeled edge would be a product failure.
+            </div>
+
+            <h2 id="design">Design guidance</h2>
+            <p>
+              These are typical guidelines; the right values depend on the materials, part size and the moulder's equipment, so confirm each one with your moulder before the tool is designed. The general rules in the <a class="text-link-inline" href="injection-moulding-dfm-checklist.html">injection moulding DFM checklist</a> still apply to both shots.
+            </p>
+            <ul>
+              <li><strong>Shut-off edges.</strong> The second material needs a crisp line on the substrate where the tool seals against it and the soft material stops. A small step, groove or raised lip gives the tool a positive edge to clamp on; a shut-off on a smooth, flat surface is more likely to flash.</li>
+              <li><strong>Avoid thin, feathered edges.</strong> A soft layer that tapers to nothing at its edge is likely to lift, peel or tear. End it against a step so it keeps a sensible thickness right to the edge.</li>
+              <li><strong>Flow paths.</strong> The second material must be able to fill the whole area from its gate. Long, thin runs of soft material may not fill, so keep flow lengths reasonable or add gates, and make sure air can escape at the far end.</li>
+              <li><strong>Uniform overmould thickness.</strong> As with any moulding, even thickness helps the part fill and cool evenly. Very thin areas may not fill; very thick areas can sink and take longer to cool.</li>
+              <li><strong>Gates and parting lines.</strong> Agree early where each material's gate and <a class="glossary-term" href="../knowledge/glossary.html#term-parting-line" data-definition="The line where the two halves of a mould meet; it can leave a visible mark on the part." aria-label="parting line: The line where the two halves of a mould meet; it can leave a visible mark on the part. (glossary)">parting line</a> will go. Gate marks and witness lines on a soft grip are visible and can be felt, so keep them away from where the hand rests or a seal must seal.</li>
+            </ul>
+
+            <h2 id="cost">Cost and tooling trade-offs</h2>
+            <p>
+              In relative terms, from cheapest tooling to most expensive, the options usually run like this:
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Route</th>
+                  <th>Tooling</th>
+                  <th>Usually suits</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Separate part, glued or pressed in</td>
+                  <td>A simple tool or bought-in part for the soft piece</td>
+                  <td>Low volumes, early production, parts that must be replaceable</td>
+                </tr>
+                <tr>
+                  <td>Pick-and-place overmoulding</td>
+                  <td>Two tools: one for the substrate, one for the overmould; a standard machine can run each</td>
+                  <td>Moderate volumes; moulders without two-shot machines</td>
+                </tr>
+                <tr>
+                  <td>Two-shot moulding</td>
+                  <td>One more complex tool, run on a specialised two-shot machine</td>
+                  <td>Higher volumes, where the shorter cycle and lack of handling pay back the tool</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Two-shot tools are more complex to design and trial, and fewer moulders have the machines. Pick-and-place adds handling time to every part.
+              At low volumes, a separately moulded grip or seal that is glued or pressed into a groove often does the job for far less tooling. You can move to overmoulding later once sales justify it, as part of a <a class="text-link-inline" href="risk-progressive-manufacturing-strategy.html">risk-progressive manufacturing strategy</a>.
+            </p>
+
+            <h2 id="prototyping">Prototyping a two-material part</h2>
+            <p>
+              You can approximate an overmoulded part before tooling, but none of the methods fully reproduces the real thing:
+            </p>
+            <ul>
+              <li><strong>Cast urethane overmoulding.</strong> A soft urethane is cast in a silicone mould around a printed or machined substrate. It gives a good impression of feel and appearance and is useful for <a class="text-link-inline" href="usability-testing-a-prototype.html">user testing</a>, but the bond and the material are not those of the production pair.</li>
+              <li><strong>Multi-material printing.</strong> Some printers can combine rigid and flexible materials in one build. Good for checking shape, layout and rough feel quickly, but the soft materials, <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">surface finish</a> and bond strength differ from moulded TPE.</li>
+            </ul>
+            <p>
+              Use prototypes to decide shape and feel, not as evidence of the production bond or durability; that comes only from trial parts off the real tool.
+            </p>
+
+            <h2 id="example">Worked example: from glued sleeve to overmoulded grip</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example. A small company makes a handheld measuring device with a rigid moulded housing and a rubber sleeve glued around the handle. Returns showed sleeves lifting at one end after a few months, and gluing was a slow, messy assembly step.
+              </p>
+              <p>
+                With volumes now steady, they ask their moulder about a TPE overmould onto the existing housing material. The moulder suggests pick-and-place overmoulding, so the existing housing tool can be modified rather than replaced, with a second tool for the grip.
+              </p>
+            </div>
+            <p>The design changes agreed before the tool was made:</p>
+            <ul>
+              <li><strong>Material pair:</strong> a TPE grade the supplier lists as bonding to the housing grade, confirmed with the moulder.</li>
+              <li><strong>Interlocks:</strong> a row of small holes through the handle wall at each end of the grip, where peeling had started on the old sleeve, with a recess inside so the soft material forms a head behind each hole.</li>
+              <li><strong>Shut-offs:</strong> a small step around the handle at both ends of the grip, so the overmould ends at a defined edge instead of feathering out.</li>
+              <li><strong>Thickness and gating:</strong> an even grip thickness, with the gate placed on the underside away from the thumb rest.</li>
+            </ul>
+            <p>
+              At the <a class="text-link-inline" href="mould-tool-trials-and-sample-approval.html">tool trials</a>, the team checked trial parts for flash at the shut-offs, <a class="glossary-term" href="../knowledge/glossary.html#term-short-shot" data-definition="A moulding defect in which the plastic does not fill the tool, leaving the part incomplete, often at the end furthest from the gate or at thin features." aria-label="short shots: A moulding defect in which the plastic does not fill the tool, leaving the part incomplete, often at the end furthest from the gate or at thin features. (glossary)">short shots</a> at the far end of the grip, and sink in the thicker areas. They ran simple peel tests by hand and after a few days of heat and cold cycling, and checked that the housing had not distorted in the second shot. One shut-off showed light flash and was corrected before the samples were signed off. The gluing step was removed from the assembly line.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Choosing materials by family, not grade.</strong>
+                "TPE on ABS" says little on its own. Check the suppliers' compatibility data for the exact grades and test the bond.
+              </div>
+              <div>
+                <strong>No mechanical interlock.</strong>
+                Relying only on the chemical bond leaves nothing to stop an edge lifting once it starts.
+              </div>
+              <div>
+                <strong>Feathered edges and vague shut-offs.</strong>
+                A soft layer that thins to nothing peels, and a shut-off with no edge to clamp on flashes.
+              </div>
+              <div>
+                <strong>Overmoulding too early.</strong>
+                Committing to a two-shot tool before the design and volumes have settled makes every change expensive. A separate part is often better for the first batches.
+              </div>
+              <div>
+                <strong>Trusting the prototype bond.</strong>
+                Cast or printed parts show the feel, not how the production materials will hold together.
+              </div>
+            </div>
+
+            <h2 id="next-steps">Next steps</h2>
+            <ol>
+              <li>Write down what the second material must do: grip, protect, seal or relieve strain. That sets the material and thickness.</li>
+              <li>Shortlist material pairs using the suppliers' compatibility data, then discuss them with your moulder.</li>
+              <li>Decide between a separate part, pick-and-place and two-shot based on your expected volumes, and revisit it as volumes grow.</li>
+              <li>Add interlocks and shut-off steps to the CAD, and check both parts with the <a class="text-link-inline" href="../tools/dfm-checker.html">DFM Checker</a>.</li>
+              <li>Plan bond, flash and fill checks into the <a class="text-link-inline" href="mould-tool-trials-and-sample-approval.html">tool trials</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Check the design</h3>
+                <p>Run both the substrate and the overmould through the main moulding rules.</p>
+                <a class="button button-primary" href="../tools/dfm-checker.html" data-analytics-event="article_cta_click" data-analytics-label="overmoulding_guide_to_dfm">Open DFM Checker</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Compare against volume</h3>
+                <p>See when extra tooling pays back against a cheaper route.</p>
+                <a class="button button-secondary" href="../tools/manufacturing-payoff.html" data-analytics-event="article_cta_click" data-analytics-label="overmoulding_guide_to_payoff">Open Manufacturing Payoff Visualiser</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="manufacturing-and-cost.html">Manufacturing and cost: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/dfm-checker.html">DFM Checker</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/manufacturing-payoff.html">Manufacturing Payoff Visualiser</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/ready-for-tooling.html">Ready for Tooling self-check</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="injection-moulding-explained.html">Injection moulding explained</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-plastic-materials.html">Choosing plastic materials</a></div>
+                <div class="aside-item"><a class="text-link" href="injection-moulding-dfm-checklist.html">Injection moulding DFM checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="sealing-and-waterproofing-an-enclosure.html">Sealing and waterproofing an enclosure</a></div>
+                <div class="aside-item"><a class="text-link" href="mould-tool-trials-and-sample-approval.html">Mould tool trials and sample approval</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Overmoulding</span>
+                <span>Two-shot moulding</span>
+                <span>Insert moulding</span>
+                <span>TPE grips</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>What is the difference between overmoulding and two-shot moulding?</h3>
+                <p>Overmoulding is the general term for moulding a second material over a first part. Two-shot moulding is one way of doing it, with both materials made in one machine and one tool. Pick-and-place overmoulding uses two separate tools instead.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Will a soft grip stay bonded to a hard plastic housing?</h3>
+                <p>It can, if the two grades are compatible and the part is designed well. Check the material suppliers' compatibility data for the exact grades, add mechanical interlocks where peeling would matter, and test the bond on trial parts from the real tool.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is overmoulding worth it at low volumes?</h3>
+                <p>Often not. The extra tooling is shared over few parts, so a separately moulded grip or seal that is glued or pressed in is usually cheaper at first. Overmoulding tends to pay back once volumes are steady or a loose part causes problems.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What is insert moulding used for?</h3>
+                <p>Moulding plastic around a part placed in the tool before each shot, such as a threaded metal insert, a pin, a cable or a small electronic part. It gives a strong, sealed joint without a separate assembly step.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I prototype an overmoulded part without a mould tool?</h3>
+                <p>Yes, approximately. Cast urethane over a printed substrate, or multi-material printing, shows shape and feel well enough for user testing. Neither shows how the production materials will bond, so the bond is proven only at tool trials.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Managing Heat in a Product Enclosure | Orion Design</title>
+    <meta
+      name="description"
+      content="How to manage heat in a product enclosure: where heat comes from, how it moves, venting vs sealing, simple temperature estimates and thermal testing."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/guides/managing-heat-in-a-product-enclosure.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Managing heat in a product enclosure | Orion Design">
+    <meta
+      property="og:description"
+      content="How to manage heat in a product enclosure: where heat comes from, how it moves, venting vs sealing, simple temperature estimates and thermal testing."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/guides/managing-heat-in-a-product-enclosure.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/guides-managing-heat-in-a-product-enclosure.jpg">
+    <meta property="og:image:alt" content="Managing heat in a product enclosure guide from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Managing heat in a product enclosure | Orion Design">
+    <meta
+      name="twitter:description"
+      content="How to manage heat in a product enclosure: where heat comes from, how it moves, venting vs sealing, simple temperature estimates and thermal testing."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/guides-managing-heat-in-a-product-enclosure.jpg">
+    <meta name="twitter:image:alt" content="Managing heat in a product enclosure guide from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "image": "https://oriondesign.xyz/images/social/og/guides-managing-heat-in-a-product-enclosure.jpg",
+        "headline": "Managing heat in a product enclosure: giving heat a path out",
+        "description": "How to manage heat in a product enclosure: where heat comes from, how it moves, venting vs sealing, simple temperature estimates and thermal testing.",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://oriondesign.xyz/images/brand/orion-design-logo-wordmark.png"
+          }
+        },
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "articleSection": "Development and prototyping",
+        "mainEntityOfPage": "https://oriondesign.xyz/guides/managing-heat-in-a-product-enclosure.html",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Thermal management"
+          },
+          {
+            "@type": "Thing",
+            "name": "Electronics enclosure"
+          },
+          {
+            "@type": "Thing",
+            "name": "Thermal resistance"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://oriondesign.xyz/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Managing heat in a product enclosure",
+                "item": "https://oriondesign.xyz/guides/managing-heat-in-a-product-enclosure.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need thermal simulation software?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not usually at the start. A list of power figures and a simple ΔT = P × Rθ estimate show whether you have a problem. Simulation becomes worthwhile for products that run hot, are tightly packed or must be sealed with little margin, and its results should still be checked with measurements on a prototype."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is a metal housing always cooler than a plastic one?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Inside, usually yes, because metal spreads and conducts heat far better. But a metal surface can feel hotter to touch, can block radio signals and, if dark, can absorb a lot of sunlight. A metal lid or panel on a plastic housing is often a good compromise."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I seal a product that gets warm?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, but the heat must then leave by conduction through the walls. Give the hot parts a solid path to the housing with thermal pads, use metal for at least part of the enclosure if needed, and add a membrane vent so the seal is not strained as the air inside warms and cools."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where do I find the touch-temperature limits for my product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "In the safety standard that applies to your product type. They vary with the material, how long the surface is touched and the kind of product, so identify your standard early through the certification process and design to it from the first prototype."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long should a temperature test run?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Until the readings stop rising and stay level, which is called steady state. For a small product that can take an hour or more. Run it at your highest expected ambient temperature and heaviest realistic load."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design logo" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a class="active" href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="../guides/index.html">Guides</a>
+            <span>/</span>
+            <span aria-current="page">Managing heat in a product enclosure</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Guide</span>
+            <p class="content-byline">By <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Last reviewed 27 November 2026 <span aria-hidden="true">·</span> For founders and small teams putting electronics, batteries or motors inside a housing</p>
+            <h1>Managing heat in a product enclosure: giving heat a path out</h1>
+            <p>
+              Why heat matters in a physical product, where it comes from, how it moves in plain terms, the trade-off between venting and sealing, simple first estimates you can do on paper, and how to test temperatures on a prototype before the design is frozen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Almost all the power your product uses ends up as heat, and that heat has to find a way out of the housing. Design that path on purpose rather than hoping the enclosure copes.</h2>
+              <p>
+                List the parts that get warm and how much power each one uses, then give the hottest ones a solid route to the outside: a thermal pad to the case wall, a metal lid or panel, more surface area, or vents if the product does not need to be sealed.
+                A rough estimate of temperature rise (power multiplied by thermal resistance) tells you early whether you have a problem. Then measure a prototype at its worst-case temperature and load, and check the results against the component datasheets and the touch-temperature limits in your product's safety standard.
+              </p>
+            </div>
+
+            <h2>Contents</h2>
+            <ol>
+              <li><a class="text-link-inline" href="#why">Why heat matters</a></li>
+              <li><a class="text-link-inline" href="#sources">Where the heat comes from</a></li>
+              <li><a class="text-link-inline" href="#moves">How heat moves, in plain terms</a></li>
+              <li><a class="text-link-inline" href="#design">What that means for the design</a></li>
+              <li><a class="text-link-inline" href="#venting">Venting versus sealing</a></li>
+              <li><a class="text-link-inline" href="#sinks">Heat sinks and spreaders</a></li>
+              <li><a class="text-link-inline" href="#fans">Fans, and when to avoid them</a></li>
+              <li><a class="text-link-inline" href="#estimates">Simple first estimates</a></li>
+              <li><a class="text-link-inline" href="#testing">Testing temperatures on a prototype</a></li>
+              <li><a class="text-link-inline" href="#touch">Touch temperature</a></li>
+              <li><a class="text-link-inline" href="#example">Worked example: a sealed outdoor sensor</a></li>
+              <li><a class="text-link-inline" href="#mistakes">Common mistakes</a></li>
+            </ol>
+
+            <h2 id="why">Why heat matters</h2>
+            <p>
+              A circuit that runs happily on an open bench can run much hotter inside a housing, as the <a class="text-link-inline" href="electronics-in-a-physical-product.html">electronics guide</a> points out. Heat causes problems in four ways:
+            </p>
+            <ul>
+              <li><strong>Component ratings.</strong> Every electronic part has a maximum operating temperature in its datasheet. Near it, parts may slow down, shut off, drift or wear out early.</li>
+              <li><strong>Battery temperature limits.</strong> The cell maker sets temperature ranges for charging and for use. The charging range is often narrower, and a battery next to a warm charger can be pushed outside it.</li>
+              <li><strong>Touch temperature.</strong> A surface that is safe for the electronics may still be too hot to hold; see <a class="text-link-inline" href="#touch">below</a>.</li>
+              <li><strong>Plastic softening and creep.</strong> Plastics lose stiffness as they warm, and under a steady load, such as a screw boss, they slowly deform. Warm plastic creeps faster. The <a class="text-link-inline" href="choosing-plastic-materials.html">plastics guide</a> covers choosing a grade with enough heat resistance.</li>
+            </ul>
+
+            <h2 id="sources">Where the heat comes from</h2>
+            <p>
+              Almost all the electrical power a product uses becomes heat inside it. The usual sources are:
+            </p>
+            <ul>
+              <li><strong>Processors and radio modules</strong>, especially when busy or transmitting.</li>
+              <li><strong>Voltage regulators.</strong> A linear regulator turns the whole voltage drop into heat; a switching one wastes less.</li>
+              <li><strong>Battery chargers</strong> and the battery itself while charging.</li>
+              <li><strong>Motors and motor drivers</strong>, especially when stalled or working hard.</li>
+              <li><strong>LEDs</strong>, which turn much of their power into heat, not light.</li>
+              <li><strong>Sunlight.</strong> Sunshine on a dark housing can add more heat than the electronics do, and it never appears on the circuit diagram.</li>
+            </ul>
+            <p>
+              Ask your electronics engineer for each part's power in its worst realistic mode, not the average. That list starts every estimate below.
+            </p>
+
+            <h2 id="moves">How heat moves, in plain terms</h2>
+            <p>Heat always flows from hotter to cooler, in three ways:</p>
+            <ul>
+              <li><strong>Conduction</strong> is heat passing through solid material, or between two surfaces pressed together. Metals conduct well; plastics and still air conduct poorly, so even a small air gap insulates.</li>
+              <li><strong>Convection</strong> is heat carried away by moving air or liquid. Warm air rises, so even without a fan there is a gentle flow over a warm surface.</li>
+              <li><strong>Radiation</strong> is infrared given off by any warm surface, and received from the sun.</li>
+            </ul>
+            <p>
+              In a closed housing, heat conducts from a component into the board, crosses air or a pad to the wall, passes through it, then leaves the outer surface by convection and radiation. Each step resists the flow, and the slowest one tends to set the temperature.
+            </p>
+            <figure class="guide-figure">
+              <svg viewBox="0 0 340 260" width="100%" role="img" aria-labelledby="heat-fig-title heat-fig-desc">
+                <title id="heat-fig-title">Heat paths out of a sealed enclosure</title>
+                <desc id="heat-fig-desc">A cross-section of a sealed housing with a plastic base and an aluminium lid. A hot chip sits on a circuit board. A thermal pad joins the top of the chip to a raised boss on the underside of the lid, so heat conducts up into the lid. Arrows show heat leaving the top of the lid to the outside air by convection and radiation. The sun shines on the lid from above. A note says a slower path also runs through the plastic walls.</desc>
+                <defs><marker id="heat-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="gd-head"/></marker></defs>
+                <text x="20" y="22" class="gd-t">Heat leaves to outside air</text>
+                <text x="272" y="29" class="gd-m">Sun</text>
+                <circle cx="318" cy="24" r="10" class="gd-fill-magenta"/>
+                <line x1="308" y1="36" x2="286" y2="64" class="gd-line gd-dash"/>
+                <line x1="90" y1="64" x2="90" y2="34" class="gd-arrow" marker-end="url(#heat-arrow)"/>
+                <line x1="170" y1="64" x2="170" y2="34" class="gd-arrow" marker-end="url(#heat-arrow)"/>
+                <line x1="250" y1="64" x2="250" y2="34" class="gd-arrow" marker-end="url(#heat-arrow)"/>
+                <rect x="40" y="84" width="260" height="136" class="gd-box"/>
+                <rect x="40" y="70" width="260" height="14" class="gd-box-teal"/>
+                <rect x="140" y="84" width="60" height="56" class="gd-box-teal"/>
+                <rect x="140" y="140" width="60" height="12" class="gd-fill-teal-soft"/>
+                <rect x="140" y="152" width="60" height="18" class="gd-fill-magenta"/>
+                <rect x="70" y="170" width="200" height="10" class="gd-box-indigo"/>
+                <line x1="128" y1="160" x2="128" y2="94" class="gd-arrow" marker-end="url(#heat-arrow)"/>
+                <text x="50" y="112" class="gd-t">Conduction</text>
+                <text x="50" y="128" class="gd-t">to the lid</text>
+                <text x="50" y="150" class="gd-m">Pad</text>
+                <text x="208" y="106" class="gd-m">Aluminium lid</text>
+                <text x="208" y="166" class="gd-m">Hot chip</text>
+                <text x="70" y="200" class="gd-m">Circuit board</text>
+                <text x="190" y="212" class="gd-m">Plastic base</text>
+                <text x="20" y="248" class="gd-m">Slower path: through the plastic walls</text>
+              </svg>
+              <figcaption>Section through a sealed housing, not to scale. A thermal pad and a boss on the lid give the hot chip a solid conduction path to the aluminium lid, which then loses heat to the air. Sunlight on the lid works against it.</figcaption>
+            </figure>
+
+            <h2 id="design">What that means for the design</h2>
+            <ul>
+              <li><strong>Give hot parts a thermal path to the housing.</strong> Connect the hottest component to the case wall or a metal part through solid material, rather than letting heat soak into trapped air. Board copper also spreads heat sideways.</li>
+              <li><strong>Use thermal pads or gap fillers to bridge gaps.</strong> These soft, conductive pads fill the air gap between a component and the case. The gap must stay within the pad's range across your <a class="text-link-inline" href="tolerances-and-engineering-drawings.html">tolerances</a>.</li>
+              <li><strong>Metal versus plastic housings.</strong> A metal housing, or just a metal lid, spreads heat over its surface far better than plastic, which tends to leave a hot spot. Metal has trade-offs, such as blocking radio; see <a class="text-link-inline" href="choosing-metals-for-a-product.html">choosing metals for a product</a>.</li>
+              <li><strong>Surface area.</strong> The outer surface hands heat to the air, so more area, ribs or fins lower the temperature.</li>
+              <li><strong>Colour and finish.</strong> Outdoors, a light colour or a shade often helps more than any internal change. A matt or <a class="text-link-inline" href="surface-finishes-for-plastic-and-metal-parts.html">anodised</a> finish radiates better than shiny bare metal.</li>
+            </ul>
+
+            <h2 id="venting">Venting versus sealing</h2>
+            <p>
+              Vents let warm air out and cool air in: cheap and effective. Put inlets low and outlets high so rising warm air does the work, away from where a hand or surface could block them.
+            </p>
+            <p>
+              But every opening also lets in water and dust. If the product must be <a class="text-link-inline" href="sealing-and-waterproofing-an-enclosure.html">sealed against water and dust</a>, heat must leave by conduction through the walls, so the thermal path and housing material matter much more. A <a class="glossary-term" href="../knowledge/glossary.html#term-membrane-vent" data-definition="A small patch of microporous membrane on a sealed housing that lets air through but blocks liquid water, so the pressure changes as the housing heats and cools do not strain the seal." aria-label="membrane vent: A small patch of microporous membrane on a sealed housing that lets air through but blocks liquid water, so the pressure changes as the housing heats and cools do not strain the seal. (glossary)">membrane vent</a> equalises pressure as the air inside warms and cools, but moves very little heat. Decide early whether the product is vented or sealed; they lead to different designs.
+            </p>
+
+            <h2 id="sinks">Heat sinks and spreaders</h2>
+            <p>
+              A <strong>heat sink</strong> is finned metal, usually aluminium, fixed to a hot component to give it more surface area. It needs moving air around it, so it suits vented products; in a small sealed box it mostly warms the trapped air.
+            </p>
+            <p>
+              A <strong>heat spreader</strong> is a plate that moves heat sideways from a small hot spot to a larger area. A metal lid, chassis or bracket can do this alongside its structural job. In sealed products, the best <a class="glossary-term" href="../knowledge/glossary.html#term-heat-sink" data-definition="Finned metal, usually aluminium, fixed to a hot component to give it more surface area to lose heat. It needs moving air around it, so it suits vented products better than small sealed ones." aria-label="heat sink: Finned metal, usually aluminium, fixed to a hot component to give it more surface area to lose heat. It needs moving air around it, so it suits vented products better than small sealed ones. (glossary)">heat sink</a> is often the housing itself.
+            </p>
+
+            <h2 id="fans">Fans, and when to avoid them</h2>
+            <p>
+              A fan moves far more heat than natural convection, and some products need one. For most small products, try hard to avoid it:
+            </p>
+            <ul>
+              <li><strong>Noise.</strong> Users notice it, and it changes as the fan ages.</li>
+              <li><strong>Dust.</strong> A fan pulls dust in, where it coats the board and blocks vents.</li>
+              <li><strong>A failure point.</strong> Its bearings wear out, and its life may set the product's life.</li>
+            </ul>
+            <p>
+              It also needs openings, which rules it out for most sealed products. Reduce power and improve the conduction path first. If a fan is still needed, plan for filters, cleaning and a <a class="text-link-inline" href="design-for-repair-and-disassembly.html">replaceable fan</a>, and make the product protect itself if it stops.
+            </p>
+
+            <h2 id="estimates">Simple first estimates</h2>
+            <p>You can catch most heat problems with two simple ideas and a calculator.</p>
+            <p>
+              <strong>Power in equals heat out.</strong> Once the product has settled, all the power going in leaves as heat. If the board uses 2 W, the housing must shed 2 W, plus any sunshine.
+            </p>
+            <p>
+              <strong>Temperature rise follows thermal resistance.</strong> Each heat path has a <a class="glossary-term" href="../knowledge/glossary.html#term-thermal-resistance" data-definition="How strongly a heat path resists the flow of heat, in degrees Celsius per watt (°C/W): how many degrees warmer one end gets for each watt flowing through it. Resistances in a chain add, and the temperature rise is the power multiplied by the total." aria-label="thermal resistance: How strongly a heat path resists the flow of heat, in degrees Celsius per watt (°C/W): how many degrees warmer one end gets for each watt flowing through it. Resistances in a chain add, and the temperature rise is the power multiplied by the total. (glossary)">thermal resistance</a>, <strong>Rθ</strong>, in degrees Celsius per watt (°C/W): how many degrees warmer one end gets per watt flowing through it.
+            </p>
+            <div class="formula-block">Temperature rise ΔT (°C) = power P (W) × thermal resistance Rθ (°C/W)</div>
+            <p>
+              Resistances in a chain add together. The result is a rise above the surrounding air, so add your worst-case ambient temperature.
+            </p>
+            <div class="article-highlight">
+              <strong>Illustrative example, round numbers.</strong>
+              A regulator uses 1 W and its datasheet gives a thermal resistance from the chip to the surrounding air of 50 °C/W on a typical board. ΔT = 1 × 50 = 50 °C. At an ambient of 40 °C, the chip would reach about 40 + 50 = 90 °C. Compare that with the datasheet maximum, with a margin.
+            </div>
+            <p>
+              <strong>Check the datasheets.</strong> Datasheets usually give thermal resistances, such as junction to case or junction to ambient, and the test board they were measured on. That rarely matches your housing, so treat them as a starting point. Pad datasheets give a figure too. The estimates are rough, but show quickly whether you are clear or need a change.
+            </p>
+
+            <h2 id="testing">Testing temperatures on a prototype</h2>
+            <p>
+              Estimates point the way; measurements decide. Build temperature tests into your <a class="text-link-inline" href="product-testing-and-validation-plans.html">test and validation plan</a>, on a prototype with the real housing material, walls, pads and seals.
+            </p>
+            <ul>
+              <li><strong>Thermocouples on the hottest parts.</strong> Small wire sensors fixed to the processor, regulator, charger, battery and the housing above them, recorded on a logger.</li>
+              <li><strong>Worst-case ambient and load.</strong> Test at the highest ambient the product must work in, with the heaviest realistic load, such as charging while transmitting, and in sun for outdoor products. A temperature chamber helps.</li>
+              <li><strong>Steady state.</strong> Keep going until readings stop rising, which can take an hour or more.</li>
+              <li><strong>A thermal camera as an aid.</strong> It finds hot spots quickly and shows where to put thermocouples, but its readings depend on <a class="glossary-term" href="../knowledge/glossary.html#term-surface-finish" data-definition="The texture and appearance of a part's surface, such as as-machined, polished, textured, bead-blasted or painted. Finer or specified finishes usually add cost." aria-label="surface finish: The texture and appearance of a part's surface, such as as-machined, polished, textured, bead-blasted or painted. Finer or specified finishes usually add cost. (glossary)">surface finish</a>, so confirm with thermocouples.</li>
+            </ul>
+
+            <h2 id="touch">Touch temperature</h2>
+            <p>
+              How hot a surface may safely get depends on the material, how long it is touched and the type of product. Metal feels hotter than plastic at the same temperature because it conducts heat into the skin faster.
+              The limits come from your product's applicable safety standard, so this guide does not quote them. Identify that standard early, as described in <a class="text-link-inline" href="product-certification-basics.html">product certification basics</a>, and design to it from the first prototype. A metal lid that cools the electronics can make the outside hotter, so check both.
+            </p>
+
+            <h2 id="example">Worked example: a sealed outdoor sensor</h2>
+            <div class="worked-example">
+              <p>
+                Illustrative example, with round numbers chosen to show the method. A start-up is developing a sealed outdoor sensor with a 2 W circuit board inside a moulded plastic housing. The product must work in shaded outdoor air up to 40 °C, and the team has set a target of keeping the hottest component below 65 °C, taken from its datasheet with a margin.
+              </p>
+              <p>
+                <strong>Before.</strong> The board sits in still air inside the sealed plastic box. Heat must warm the trapped air, cross the plastic wall and leave the outer surface. The team estimates the whole path at about 25 °C/W, to be confirmed on a prototype.
+                ΔT = 2 W × 25 °C/W = 50 °C. Component temperature ≈ 40 + 50 = 90 °C, well above the 65 °C target.
+              </p>
+              <p>
+                <strong>After.</strong> The lid is changed to aluminium, about 100 × 100 mm, with a boss on its underside and a <a class="glossary-term" href="../knowledge/glossary.html#term-thermal-pad" data-definition="A soft, heat-conducting pad that fills the gap between a warm component and a heatsink or case wall, giving the heat a path out." aria-label="thermal pad: A soft, heat-conducting pad that fills the gap between a warm component and a heatsink or case wall, giving the heat a path out. (glossary)">thermal pad</a> pressing on the hottest chip. The path is now: pad and contact surfaces about 1 °C/W, then the lid's outer surface to the air.
+                For a surface in still air, engineers often use a rough combined convection and radiation figure of around 10 W per square metre per °C. The lid's area is 0.1 × 0.1 = 0.01 m², so its resistance to air is about 1 ÷ (10 × 0.01) = 10 °C/W.
+                Total ≈ 1 + 10 = 11 °C/W. ΔT = 2 W × 11 °C/W = 22 °C. Component temperature ≈ 40 + 22 = 62 °C, just under the target.
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Design</th>
+                  <th>Rθ</th>
+                  <th>Rise</th>
+                  <th>At 40&nbsp;°C</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Plastic, no thermal path</td>
+                  <td>25&nbsp;°C/W</td>
+                  <td>50&nbsp;°C</td>
+                  <td>90&nbsp;°C</td>
+                </tr>
+                <tr>
+                  <td>Aluminium lid and pad</td>
+                  <td>11&nbsp;°C/W</td>
+                  <td>22&nbsp;°C</td>
+                  <td>62&nbsp;°C</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Some heat still leaves through the plastic walls, so reality should be slightly better. But 62 °C leaves little margin, and the estimate assumed shade. The team chooses a light-coloured lid finish, checks the lid against the touch limits in their safety standard, and plans a thermocouple test in sun before freezing the design.
+            </p>
+
+            <h2 id="mistakes">Common mistakes</h2>
+            <div class="article-summary-list">
+              <div>
+                <strong>Testing the board on the bench.</strong>
+                Open-air temperatures say little about a closed housing. Measure inside a representative enclosure.
+              </div>
+              <div>
+                <strong>Using average power.</strong>
+                Heat problems happen in the worst case, such as charging while transmitting on a hot day. Estimate and test at that load.
+              </div>
+              <div>
+                <strong>Forgetting the sun.</strong>
+                A dark housing in sunshine can gain more heat than the electronics produce. Choose the colour and test outdoors.
+              </div>
+              <div>
+                <strong>Leaving an air gap.</strong>
+                A small gap between a hot part and the case wall acts as insulation. Bridge it with a pad sized for the tolerance range.
+              </div>
+              <div>
+                <strong>Treating touch temperature as an afterthought.</strong>
+                Fixing a hot outer surface after tooling is expensive. Check the limits in your standard from the start.
+              </div>
+            </div>
+
+            <h2>Next steps</h2>
+            <ol>
+              <li>List the parts that get warm and their worst-case power, and add them up.</li>
+              <li>Decide whether the product is vented or sealed, and sketch the path heat will take to the outside.</li>
+              <li>Do a rough ΔT = P × Rθ estimate for the hottest part at your highest ambient temperature, using the <a class="text-link-inline" href="../tools/temperature-rise-estimator.html">Enclosure Temperature Rise Estimator</a>.</li>
+              <li>Add worst-case temperature tests to your plan with the <a class="text-link-inline" href="../tools/test-plan-builder.html">Product Test Plan Builder</a>.</li>
+              <li>Identify your safety standard, and its touch-temperature limits, with the <a class="text-link-inline" href="../tools/certification-readiness.html">Certification Readiness Checklist</a>.</li>
+            </ol>
+
+            <div class="related-path-grid">
+              <div class="article-action-card">
+                <h3>Estimate the temperature rise</h3>
+                <p>Run this guide's method on your own power, pad and lid, with the margin to your target.</p>
+                <a class="button button-primary" href="../tools/temperature-rise-estimator.html" data-analytics-event="article_cta_click" data-analytics-label="heat_guide_to_temperature_rise">Open Temperature Rise Estimator</a>
+              </div>
+              <div class="article-action-card">
+                <h3>Plan the temperature tests</h3>
+                <p>Add worst-case ambient, load and sunlight tests to your prototype plan.</p>
+                <a class="button button-secondary" href="../tools/test-plan-builder.html" data-analytics-event="article_cta_click" data-analytics-label="heat_guide_to_test_plan">Open Product Test Plan Builder</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Part of a hub</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="development-and-prototyping.html">Development and prototyping: the hub guide</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use these tools next</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../tools/temperature-rise-estimator.html">Enclosure Temperature Rise Estimator</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/test-plan-builder.html">Product Test Plan Builder</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/material-selector.html">Plastic Material Selector</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/certification-readiness.html">Certification Readiness Checklist</a></div>
+                <div class="aside-item"><a class="text-link" href="../tools/tolerance-stack-up.html">Tolerance Stack-up Calculator</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Related guides</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="electronics-in-a-physical-product.html">Electronics in a physical product</a></div>
+                <div class="aside-item"><a class="text-link" href="sealing-and-waterproofing-an-enclosure.html">Sealing and waterproofing an enclosure</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-plastic-materials.html">Choosing materials for plastic products</a></div>
+                <div class="aside-item"><a class="text-link" href="choosing-metals-for-a-product.html">Choosing metals for a product</a></div>
+                <div class="aside-item"><a class="text-link" href="product-testing-and-validation-plans.html">Product testing and validation plans</a></div>
+                <div class="aside-item"><a class="text-link" href="product-certification-basics.html">Product certification basics</a></div>
+                <div class="aside-item"><a class="text-link" href="cables-wiring-and-connectors-inside-a-product.html">Cables, wiring and connectors</a></div>
+                <div class="aside-item"><a class="text-link" href="aluminium-extrusions-for-product-enclosures.html">Aluminium extrusions for product enclosures</a></div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">This guide answers</p>
+              <div class="tag-row">
+                <span>Thermal management</span>
+                <span>Venting vs sealing</span>
+                <span>Thermal resistance</span>
+                <span>Touch temperature</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>Do I need thermal simulation software?</h3>
+                <p>Not usually at the start. A list of power figures and a simple ΔT = P × Rθ estimate show whether you have a problem. Simulation becomes worthwhile for products that run hot, are tightly packed or must be sealed with little margin, and its results should still be checked with measurements on a prototype.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Is a metal housing always cooler than a plastic one?</h3>
+                <p>Inside, usually yes, because metal spreads and conducts heat far better. But a metal surface can feel hotter to touch, can block radio signals and, if dark, can absorb a lot of sunlight. A metal lid or panel on a plastic housing is often a good compromise.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I seal a product that gets warm?</h3>
+                <p>Yes, but the heat must then leave by conduction through the walls. Give the hot parts a solid path to the housing with thermal pads, use metal for at least part of the enclosure if needed, and add a membrane vent so the seal is not strained as the air inside warms and cools.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Where do I find the touch-temperature limits for my product?</h3>
+                <p>In the safety standard that applies to your product type. They vary with the material, how long the surface is touched and the kind of product, so identify your standard early through the certification process and design to it from the first prototype.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How long should a temperature test run?</h3>
+                <p>Until the readings stop rising and stay level, which is called steady state. For a small product that can take an hour or more. Run it at your highest expected ambient temperature and heaviest realistic load.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Engineering writing that supports better product, manufacturing, and commercial decisions.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Continue reading</h3>
+          <a href="../tools/startup-cost-planner.html">Startup Cost Planner</a>
+          <a href="../tools/cashflow-projection.html">Cashflow Projection Tool</a>
+          <a href="../tools/product-cost-estimator.html">Product Cost Estimator</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

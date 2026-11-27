@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1f2a44" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b101b" media="(prefers-color-scheme: dark)">
+    <title>Product Development Timeline Planner | Orion Design</title>
+    <meta
+      name="description"
+      content="Plan a hardware product timeline from discovery to launch with typical stage durations, prototype rounds, overlap, contingency and a CSV export of the plan."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://oriondesign.xyz/tools/timeline-planner.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Orion Design">
+    <meta property="og:title" content="Product Development Timeline Planner | Orion Design">
+    <meta
+      property="og:description"
+      content="Plan a hardware product timeline from discovery to launch with typical stage durations, prototype rounds, overlap, contingency and a CSV export of the plan."
+    >
+    <meta property="og:url" content="https://oriondesign.xyz/tools/timeline-planner.html">
+    <meta property="og:image" content="https://oriondesign.xyz/images/social/og/tools-timeline-planner.jpg">
+    <meta property="og:image:alt" content="Product development timeline planner from Orion Design">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Product Development Timeline Planner | Orion Design">
+    <meta
+      name="twitter:description"
+      content="Plan a hardware product timeline from discovery to launch with typical stage durations, prototype rounds, overlap, contingency and a CSV export of the plan."
+    >
+    <meta name="twitter:image" content="https://oriondesign.xyz/images/social/og/tools-timeline-planner.jpg">
+    <meta name="twitter:image:alt" content="Product development timeline planner from Orion Design">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "image": "https://oriondesign.xyz/images/social/og/tools-timeline-planner.jpg",
+        "name": "Product Development Timeline Planner",
+        "url": "https://oriondesign.xyz/tools/timeline-planner.html",
+        "description": "Plan a hardware product development timeline from typical stage durations, prototype rounds, complexity and contingency, with export.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Hunter",
+          "jobTitle": "Product Design Engineer",
+          "url": "https://oriondesign.xyz/about/",
+          "sameAs": "https://www.linkedin.com/in/andrew-hunter-product-design/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Orion Design",
+          "url": "https://oriondesign.xyz/"
+        }
+      }
+    </script>
+    <script type="application/ld+json" data-auto="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://oriondesign.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://oriondesign.xyz/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Product Development Timeline Planner",
+                "item": "https://oriondesign.xyz/tools/timeline-planner.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How long does it take to develop a hardware product?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It varies widely. A simple mechanical product can go from idea to launch in well under a year, while connected or regulated products commonly take considerably longer. Prototype rounds, certification and tooling are the biggest variables, so plan your own stages rather than relying on an average."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where do the stage durations come from?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "They are typical planning ranges, consistent with the stage durations on the Idea to manufacture page. They are not quotes. Replace them with your own estimates and supplier lead times as soon as you have them."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many prototype rounds should I plan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Many products need two or three rounds before production-intent parts; complex or regulated products often need more. Plan rounds around the questions that must be answered and allow for at least one you cannot yet name."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much contingency should a hardware timeline have?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Hardware timelines often slip because of failed tests, tool modifications and supplier delays. A contingency of around 15 to 25 per cent is a common starting point, with more for novel technology or a first product."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can stages overlap?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, and they usually do. The planner overlaps launch preparation with industrialisation. You can shorten other stages by overlapping work, but overlapping tooling with unfinished testing increases the risk of costly changes."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Orion Design home">
+          <picture><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.webp" type="image/webp"><source media="screen and (prefers-color-scheme: dark)" srcset="../images/brand/orion-design-logo-wordmark-white.png"><source srcset="../images/brand/orion-design-logo-wordmark.webp" type="image/webp"><img class="brand-wordmark" src="../images/brand/orion-design-logo-wordmark.png" alt="Orion Design" width="360" height="202"></picture>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+                <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a class="active" href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../about/index.html">About</a>
+          <a class="nav-cta" href="../contact/index.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero">
+        <div class="container page-shell">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Tools</a>
+            <span>/</span>
+            <span aria-current="page">Product Development Timeline Planner</span>
+          </nav>
+          <div class="page-intro">
+            <span class="page-badge">Interactive tool</span>
+            <p class="content-byline">Built by <a href="../about/index.html">Andrew Hunter</a>, Product Design Engineer <span aria-hidden="true">·</span> Free to use <span aria-hidden="true">·</span> Method and assumptions explained below</p>
+            <h1>Product Development Timeline Planner</h1>
+            <p>
+              Build a first timeline for a hardware product from idea to launch. Choose how complex the product is and how many prototype rounds you expect;
+              the planner uses typical duration ranges for each stage, which you can override with your own estimates, and adds contingency.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tool-layout">
+          <div class="tool-surface">
+            <span class="tool-chip">Inputs</span>
+            <div class="preset-row" role="group" aria-label="Timeline planner worked examples">
+              <button class="preset-button" type="button" data-tool-preset='{"tlComplexity":"simple","tlRounds":"2","tlContingency":"15","tlInclude_discover":"yes","tlWeeks_discover":"0","tlInclude_define":"yes","tlWeeks_define":"0","tlInclude_concept":"yes","tlWeeks_concept":"0","tlInclude_prototype":"yes","tlWeeks_prototype":"0","tlInclude_verify":"yes","tlWeeks_verify":"0","tlInclude_industrialise":"yes","tlWeeks_industrialise":"0","tlInclude_launch":"yes","tlWeeks_launch":"0"}'>Simple mechanical accessory</button>
+              <button class="preset-button" type="button" data-tool-preset='{"tlComplexity":"complex","tlRounds":"3","tlContingency":"20","tlInclude_discover":"yes","tlWeeks_discover":"0","tlInclude_define":"yes","tlWeeks_define":"0","tlInclude_concept":"yes","tlWeeks_concept":"0","tlInclude_prototype":"yes","tlWeeks_prototype":"0","tlInclude_verify":"yes","tlWeeks_verify":"0","tlInclude_industrialise":"yes","tlWeeks_industrialise":"0","tlInclude_launch":"yes","tlWeeks_launch":"0"}'>Connected consumer device</button>
+              <button class="preset-button" type="button" data-tool-preset='{"tlComplexity":"regulated","tlRounds":"4","tlContingency":"25","tlInclude_discover":"yes","tlWeeks_discover":"0","tlInclude_define":"yes","tlWeeks_define":"0","tlInclude_concept":"yes","tlWeeks_concept":"0","tlInclude_prototype":"yes","tlWeeks_prototype":"0","tlInclude_verify":"yes","tlWeeks_verify":"0","tlInclude_industrialise":"yes","tlWeeks_industrialise":"0","tlInclude_launch":"yes","tlWeeks_launch":"0"}'>Regulated product</button>
+              <button class="preset-button" type="button" data-tool-preset='{"tlComplexity":"moderate","tlRounds":"3","tlContingency":"20","tlInclude_discover":"no","tlWeeks_discover":"0","tlInclude_define":"no","tlWeeks_define":"0","tlInclude_concept":"no","tlWeeks_concept":"0","tlInclude_prototype":"yes","tlWeeks_prototype":"0","tlInclude_verify":"yes","tlWeeks_verify":"0","tlInclude_industrialise":"yes","tlWeeks_industrialise":"0","tlInclude_launch":"yes","tlWeeks_launch":"0"}'>Already have a concept</button>
+            </div>
+            <form class="tool-form" id="tlForm">
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="tlComplexity">Product complexity</label>
+                  <select id="tlComplexity">
+                    <option value="simple">Simple mechanical product</option>
+                    <option value="moderate" selected>Moderate: several parts, some electronics</option>
+                    <option value="complex">Complex: connected or multi-disciplinary</option>
+                    <option value="regulated">Regulated: medical, safety-critical or similar</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="tlStart">Start month</label>
+                  <input id="tlStart" type="month">
+                </div>
+              </div>
+              <div class="input-grid">
+                <div class="field-group">
+                  <label for="tlRounds">Prototype rounds</label>
+                  <input id="tlRounds" type="number" min="1" step="1" value="3">
+                </div>
+                <div class="field-group">
+                  <label for="tlContingency">Contingency (%)</label>
+                  <input id="tlContingency" type="number" min="0" step="5" value="20">
+                </div>
+              </div>
+              <table class="tool-table">
+                <thead>
+                  <tr>
+                    <th>Stage</th>
+                    <th>Include</th>
+                    <th>Weeks (0 = typical)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Discover</td>
+                    <td>
+                      <select id="tlInclude_discover" aria-label="Include Discover">
+                        <option value="yes" selected>Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </td>
+                    <td><input id="tlWeeks_discover" type="number" min="0" step="1" value="0" aria-label="Discover weeks, 0 for typical"></td>
+                  </tr>
+                  <tr>
+                    <td>Define</td>
+                    <td>
+                      <select id="tlInclude_define" aria-label="Include Define">
+                        <option value="yes" selected>Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </td>
+                    <td><input id="tlWeeks_define" type="number" min="0" step="1" value="0" aria-label="Define weeks, 0 for typical"></td>
+                  </tr>
+                  <tr>
+                    <td>Concept</td>
+                    <td>
+                      <select id="tlInclude_concept" aria-label="Include Concept">
+                        <option value="yes" selected>Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </td>
+                    <td><input id="tlWeeks_concept" type="number" min="0" step="1" value="0" aria-label="Concept weeks, 0 for typical"></td>
+                  </tr>
+                  <tr>
+                    <td>Prototype (per round × rounds)</td>
+                    <td>
+                      <select id="tlInclude_prototype" aria-label="Include Prototype (per round × rounds)">
+                        <option value="yes" selected>Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </td>
+                    <td><input id="tlWeeks_prototype" type="number" min="0" step="1" value="0" aria-label="Prototype (per round × rounds) weeks, 0 for typical"></td>
+                  </tr>
+                  <tr>
+                    <td>Verify and certify</td>
+                    <td>
+                      <select id="tlInclude_verify" aria-label="Include Verify and certify">
+                        <option value="yes" selected>Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </td>
+                    <td><input id="tlWeeks_verify" type="number" min="0" step="1" value="0" aria-label="Verify and certify weeks, 0 for typical"></td>
+                  </tr>
+                  <tr>
+                    <td>Industrialise</td>
+                    <td>
+                      <select id="tlInclude_industrialise" aria-label="Include Industrialise">
+                        <option value="yes" selected>Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </td>
+                    <td><input id="tlWeeks_industrialise" type="number" min="0" step="1" value="0" aria-label="Industrialise weeks, 0 for typical"></td>
+                  </tr>
+                  <tr>
+                    <td>Launch preparation</td>
+                    <td>
+                      <select id="tlInclude_launch" aria-label="Include Launch preparation">
+                        <option value="yes" selected>Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </td>
+                    <td><input id="tlWeeks_launch" type="number" min="0" step="1" value="0" aria-label="Launch preparation weeks, 0 for typical"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <button class="button button-primary" type="submit">Update timeline</button>
+            </form>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-chip">Results</span>
+            <div class="result-grid" id="tlSummary"></div>
+            <div class="tl-chart" id="tlChart" role="img" aria-label="Timeline chart of the development stages"></div>
+            <div class="comparison-list" id="tlTable"></div>
+            <div class="copy-shell">
+              <div class="button-row">
+                <button
+                  class="button button-tertiary"
+                  type="button"
+                  data-copy-target="#tlCopy"
+                  data-copy-feedback="#tlCopyFeedback"
+                >
+                  Copy result summary
+                </button>
+                <button class="button button-tertiary" type="button" id="tlCsv">Download CSV</button>
+              </div>
+              <textarea aria-label="Result summary (select all to copy)" id="tlCopy" class="copy-output" readonly></textarea>
+              <div id="tlCopyFeedback" class="copy-feedback" aria-live="polite"></div>
+            </div>
+              <div class="result-cta">
+                <h2>Want a second opinion on the plan?</h2>
+                <p>Send the current result context to the contact page, review the generated note, and email Andrew when you are ready.</p>
+                <a class="button button-secondary" href="../contact/index.html?source=tool" data-tool-lead-link data-analytics-event="tool_result_cta_click" data-analytics-label="timeline_planner_to_contact">Send this result to Andrew</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container article-shell">
+          <article class="article-content">
+            <div class="summary-card">
+              <p class="eyebrow">Quick answer</p>
+              <h2>Most hardware products take many months from idea to launch; the variables are prototype rounds, certification and tooling.</h2>
+              <div class="formula-block">Stage weeks = typical range, positioned by complexity (or your own figure)
+Prototype weeks = weeks per round × rounds
+Launch preparation overlaps the second half of industrialisation
+Planned duration = end of last stage × (1 + contingency)</div>
+              <p>The typical ranges match the stage durations on the <a class="text-link-inline" href="../idea-to-manufacture/index.html">Idea to manufacture</a> page. They are planning ranges, not quotes, and your own estimates should replace them as soon as you have them.</p>
+            </div>
+
+            <h2>Typical stage durations used</h2>
+            <table>
+              <thead><tr><th>Stage</th><th>Typical range</th></tr></thead>
+              <tbody>
+                <tr><td>Discover</td><td>2 to 8 weeks</td></tr>
+                <tr><td>Define</td><td>2 to 6 weeks</td></tr>
+                <tr><td>Concept</td><td>3 to 8 weeks</td></tr>
+                <tr><td>Prototype</td><td>4 to 10 weeks per round</td></tr>
+                <tr><td>Verify and certify</td><td>About 1 to 4 months</td></tr>
+                <tr><td>Industrialise (tooling, suppliers, pilot)</td><td>About 2 to 5 months</td></tr>
+                <tr><td>Launch preparation</td><td>About 1 to 3 months, overlapping industrialisation</td></tr>
+              </tbody>
+            </table>
+            <p>A simple product is placed near the bottom of each range, a regulated one at the top. The "quick to cautious" range shows the whole timeline at both ends, with contingency on the cautious end.</p>
+            <h2>How to read your result</h2>
+            <ul>
+              <li><strong>Use the planned duration for commitments</strong> such as launch dates and funding, not the quick end of the range.</li>
+              <li><strong>Look at the longest stage:</strong> that is usually where better planning, fewer rounds or earlier decisions save the most time.</li>
+              <li><strong>Revisit the plan at each stage gate</strong> and replace typical ranges with your own estimates and supplier lead times.</li>
+            </ul>
+            <p>
+              Plan what each prototype round must prove with the <a class="text-link-inline" href="prototype-strategy-tool.html">Prototype Strategy Tool</a>, budget the stages with the
+              <a class="text-link-inline" href="startup-cost-planner.html">Startup Cost Planner</a>, and read <a class="text-link-inline" href="../guides/development-and-prototyping.html">Development and prototyping</a> for what happens in each stage.
+              Save your timeline to your <a href="product-plan-builder.html">product plan</a>, or download it as a CSV to open in a spreadsheet.
+            </p>
+          </article>
+
+          <aside class="article-aside">
+            <div>
+              <p class="aside-title">Related reading</p>
+              <div class="aside-list">
+                <div class="aside-item"><a class="text-link" href="../guides/how-many-prototypes-do-you-need.html">How many prototypes do you need?</a></div>
+                <div class="aside-item"><a class="text-link" href="../idea-to-manufacture/index.html">Idea to manufacture</a></div>
+                <div class="aside-item"><a class="text-link" href="../guides/development-and-prototyping.html">Development and prototyping</a></div>
+                <div class="aside-item"><a class="text-link" href="prototype-strategy-tool.html">Prototype Strategy Tool</a></div>
+                <div class="aside-item"><a class="text-link" href="product-design-process-map.html">Product Design Process Map</a></div>
+                <div class="aside-item">
+                  <a class="text-link" href="../guides/mapping-the-product-design-process.html">Mapping the product design process</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="aside-title">Use it for</p>
+              <div class="tag-row">
+                <span>Timeline</span>
+                <span>Launch date</span>
+                <span>Planning</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container">
+          <div class="faq-card">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <h3>How long does it take to develop a hardware product?</h3>
+                <p>It varies widely. A simple mechanical product can go from idea to launch in well under a year, while connected or regulated products commonly take considerably longer. Prototype rounds, certification and tooling are the biggest variables, so plan your own stages rather than relying on an average.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Where do the stage durations come from?</h3>
+                <p>They are typical planning ranges, consistent with the stage durations on the Idea to manufacture page. They are not quotes. Replace them with your own estimates and supplier lead times as soon as you have them.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How many prototype rounds should I plan?</h3>
+                <p>Many products need two or three rounds before production-intent parts; complex or regulated products often need more. Plan rounds around the questions that must be answered and allow for at least one you cannot yet name.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How much contingency should a hardware timeline have?</h3>
+                <p>Hardware timelines often slip because of failed tests, tool modifications and supplier delays. A contingency of around 15 to 25 per cent is a common starting point, with more for novel technology or a first product.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can stages overlap?</h3>
+                <p>Yes, and they usually do. The planner overlaps launch preparation with industrialisation. You can shorten other stages by overlapping work, but overlapping tooling with unfinished testing increases the risk of costly changes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img loading="lazy" decoding="async" class="footer-mark" src="../images/brand/orion-design-logo-mark-white.svg" alt="Orion Design symbol" width="144" height="144">
+          <p class="footer-copy">Tools and guidance for teams making cost, cash, and launch decisions with better structure.</p>
+        </div>
+                <div>
+          <h3>Navigation</h3>
+          <a href="../index.html">Home</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="../ready-to-launch/index.html">Roadmap</a>
+          <a href="../guides/index.html">Guides</a>
+          <a href="../case-studies/index.html">Case Studies</a>
+          <a href="../services/index.html">Services</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
+        <div>
+          <h3>Related</h3>
+          <a href="product-cost-estimator.html">Product Cost Estimator</a>
+          <a href="cashflow-projection.html">Cashflow Projection</a>
+          <a href="../guides/financial-break-even-for-hardware-products.html">Break-even guide</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@oriondesign.xyz">hello@oriondesign.xyz</a>
+          <a href="../privacy/index.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/analytics-config.js" defer></script>
+    <script src="../scripts/analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../scripts/timeline-planner.js" defer></script>
+  </body>
+</html>
